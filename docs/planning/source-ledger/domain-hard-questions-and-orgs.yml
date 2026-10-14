@@ -1,0 +1,29 @@
+sources:
+  - id: web-stress-interview-hipeople
+    title: Stress Interview, types, strategies, questions, examples (HiPeople)
+    url: https://www.hipeople.io/glossary/stress-interview
+    status: used
+    questions:
+      - g-resilience-recovery-challenged-claim
+      - h-expectations-fit-why-leave
+      - h-integrity-gap-in-history
+  - id: web-stress-interview-zhihu
+    title: 面试官为什么刁难你，压力面试的套路（知乎专栏）
+    url: https://zhuanlan.zhihu.com/p/66575222
+    status: used
+    questions:
+      - f-hiring-pressure-questions-boundary
+  - id: author-org-change-and-conflict-questions
+    title: 作者的面试提问套路（组织调整、员工与管理者之间的冲突、工作量评估）
+    url: https://github.com/Liyuk/interview-compass
+    status: used
+    questions:
+      - g-resilience-recovery-challenged-claim
+      - h-expectations-fit-why-leave
+      - h-integrity-gap-in-history
+      - f-hiring-pressure-questions-boundary
+      - f-team-design-team-split
+      - f-team-design-receive-new-members
+      - f-frontline-management-judge-member-conflict
+      - f-frontline-management-workload-fairness
+      - f-manager-of-managers-conflict-between-leads
