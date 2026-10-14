@@ -1,0 +1,26 @@
+sources:
+  - id: author-leveled-interview-framework
+    title: 作者的分级面试框架（初级、中级、高级、一线技术经理、高阶管理者的深度问题与面试官追问）
+    url: https://github.com/Liyuk/interview-compass
+    status: used
+    questions:
+      - a-coding-abstraction-defensive-edge-cases
+      - a-debugging-api-works-locally-frontend-disagrees
+      - h-boundaries-when-to-ask-for-help
+      - a-system-design-cross-system-consistency
+      - a-coding-abstraction-performance-pitfalls
+      - e-negotiation-costly-requirement-alternative
+      - f-hiring-probe-generic-claims
+      - a-engineering-systems-anticorruption-layer
+      - c-investment-choices-ship-now-quality-later
+      - f-frontline-management-mechanism-over-confrontation
+      - f-frontline-management-weakest-member-correction
+      - a-system-design-five-x-growth-bottlenecks
+      - f-frontline-management-retain-stars-bad-year
+      - f-frontline-management-improvement-plan
+      - c-metrics-causality-translate-business-pain
+      - c-planning-zero-to-one-first-thirty-days
+      - f-manager-of-managers-filtered-reporting
+      - f-manager-of-managers-cost-cutting-restructure
+      - f-manager-of-managers-employee-backlash
+      - c-product-judgment-twenty-four-month-shift
