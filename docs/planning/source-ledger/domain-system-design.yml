@@ -1,0 +1,22 @@
+sources:
+  - id: author-system-design-questions
+    title: 作者的系统设计题（协同文档、大模型对话、人机写作、编辑器、发布器、音视频、信息流、活动搭建、交易营销、权限、裂变、账务、风控、搜索）
+    url: https://github.com/Liyuk/interview-compass
+    status: used
+    questions:
+      - a-system-design-collaborative-document
+      - a-system-design-llm-chat
+      - a-system-design-human-ai-writing
+      - a-system-design-rich-editor-model
+      - a-system-design-article-publisher
+      - a-system-design-av-editor
+      - a-system-design-av-decode-playback
+      - a-system-design-streaming-loading
+      - a-system-design-immersive-feed
+      - a-system-design-campaign-builder
+      - a-system-design-trading-marketing
+      - a-system-design-admin-permissions
+      - a-system-design-referral-campaign
+      - b-commercial-rules-ledger-design
+      - a-system-design-risk-control
+      - a-system-design-search-system

@@ -1,0 +1,18 @@
+sources:
+  - id: author-management-and-engineering-questions
+    title: 作者的面试提问套路（架构升级、技术债、推动前瞻事项、排期冲突、研发效能、留人、团队氛围、多元团队、技术驱动业务、战略对齐、跨部门冲突、额外承担）
+    url: https://github.com/Liyuk/interview-compass
+    status: used
+    questions:
+      - a-engineering-systems-architecture-upgrade
+      - a-engineering-systems-debt-paydown
+      - e-influence-drive-forward-initiative
+      - d-project-management-schedule-collision
+      - d-project-management-eng-effectiveness
+      - f-frontline-management-retain-core-talent
+      - f-team-design-team-climate
+      - f-team-design-diverse-and-multilingual
+      - c-product-judgment-tech-driven-business
+      - c-planning-strategy-alignment
+      - e-conflict-cross-department
+      - h-ownership-take-on-extra
