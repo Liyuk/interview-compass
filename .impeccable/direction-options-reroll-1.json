@@ -1,0 +1,115 @@
+{
+  "title": "选择 Interview Book 的第二轮视觉方向",
+  "question": "上一轮已按你的操作重新抽取并排除旧方向。现在对比这组全新方向；选定后我会再制作三版构图 comp。",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Question Field Guide",
+      "kicker": "THE ROLL",
+      "lineage": "Professional field guides and compact classification keys",
+      "thesis": "A clear subject key leads to each open question and the capability it is meant to explore.",
+      "palette": ["#f7f7f3", "#252824", "#58745f", "#b44e42"],
+      "materials": ["neutral page", "ink", "sage subject key", "muted red current marker"],
+      "viewport": "Visible search leads; a compact key names the capability domains; one question record shows its purpose and related subjects.",
+      "case": "The field-guide taxonomy fits independent exploration while giving every question a clear subject and observation note.",
+      "risk": "It could feel like a training manual; keep the heading literal and make search the first action.",
+      "raised": [
+        {"from": "challenger-zine", "raise": "Plain-language first: a direct question and readable purpose label carry meaning without mascots or explanatory cartoons."},
+        {"from": "challenger-emission", "raise": "Explicit state labels: active filters and current selections always use text, never color alone."},
+        {"from": "challenger-alphabet", "raise": "Reversible navigation: every topic route returns to a stable, shareable question index."},
+        {"from": "challenger-sneaker", "raise": "No commerce metaphor: omit inventory, variant, ownership, and product-selection cues."}
+      ],
+      "comp": ".impeccable/mocks/decision-r1/question-field-guide.png"
+    },
+    {
+      "id": "pick",
+      "label": "The Conversation Prompt Deck",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Facilitator prompt decks and open conversation cards",
+      "thesis": "Each prompt remains self-contained, with its purpose printed beside it for reflection or discussion.",
+      "palette": ["#faf9f6", "#252629", "#3c6381", "#cc604d"],
+      "materials": ["warm neutral", "ink", "blue topic marker", "coral purpose label"],
+      "viewport": "Search sits above a sparse column of question prompts, each paired with a small purpose note and topic label.",
+      "case": "The everyday prompt format is immediately understandable across candidates, interviewers, and promotion reflection.",
+      "risk": "Literal card tiles are a familiar interface cliché; the layout must stay editorial and avoid a game feel.",
+      "comp": ".impeccable/mocks/decision-r1/conversation-prompt-deck.png"
+    },
+    {
+      "id": "challenger-plate",
+      "label": "The Design Annual Plate Index",
+      "kicker": "COMPETITIVE ALTERNATE",
+      "lineage": "Design annual plate sections with registration marks and clear attribution",
+      "thesis": "Questions read as carefully registered editorial plates with source and subject kept distinct.",
+      "palette": ["#F5F4F6", "#16181A", "#DCDDF3", "#C9C7C4"],
+      "materials": ["near-white stock", "hairline rules", "registration crosses", "single seal accent"],
+      "viewport": "A precise index and featured question sit on one aligned sheet; compact attribution is separated from intent.",
+      "case": "A strong grid and source-conscious editorial treatment work well for a curated bilingual reference.",
+      "risk": "Could become a print portfolio rather than a practical question site if the index is too quiet.",
+      "verdict": "competitive",
+      "comp": ".impeccable/mocks/decision-r1/design-annual-plate.png",
+      "hero": "https://impeccable.style/worlds/cards/design-annual-s-plate-section-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/design-annual-s-plate-section.webp"
+    },
+    {
+      "id": "challenger-star-atlas",
+      "label": "The Star Atlas Index",
+      "kicker": "COMPETITIVE ALTERNATE",
+      "lineage": "Celestial star-atlas charts with coordinate grids and indexed objects",
+      "thesis": "Independent topic paths connect through a readable coordinate system rather than one fixed sequence.",
+      "palette": ["#111c31", "#f4f2e9", "#d19554", "#64728a"],
+      "materials": ["night-sky navy", "chalk labels", "amber locator", "fine chart grid"],
+      "viewport": "Search and capability topics remain at the top; a restrained chart links topic and role paths around a featured question.",
+      "case": "The atlas supports non-linear exploration and can make cross-links visible across a large question set.",
+      "risk": "Constellation imagery could obscure the question and imply that readers must follow a route.",
+      "verdict": "competitive",
+      "comp": ".impeccable/mocks/decision-r1/star-atlas.png",
+      "hero": "https://impeccable.style/worlds/cards/notation-diagram-systems-star-atlas-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/notation-diagram-systems-star-atlas.webp"
+    },
+    {
+      "id": "challenger-zine",
+      "label": "Hand-Drawn Zine Explainer",
+      "verdict": "declined",
+      "lineage": "Marker-lettered technical zines with doodle arrows and comic panels",
+      "case": "The mascot and sequential explainer panels imply instruction or answers, while the site is for open question exploration.",
+      "kept": "Plain-language prompts and purpose labels that need no decorative explanation."
+    },
+    {
+      "id": "challenger-emission",
+      "label": "Emission-Line Rail",
+      "verdict": "declined",
+      "lineage": "Spectral emission instruments with calibrated rails and line-form states",
+      "case": "The single rail narrows a multi-dimensional question library and is unfamiliar outside technical audiences.",
+      "kept": "Named filter states and high-contrast labels that never rely on hue alone."
+    },
+    {
+      "id": "challenger-alphabet",
+      "label": "Alphabet Storm",
+      "verdict": "declined",
+      "lineage": "Surreal concrete poetry where letters become changing weather",
+      "case": "Transforming words would make stable questions harder to read and return to.",
+      "kept": "Stable question URLs and reversible movement between topics."
+    },
+    {
+      "id": "challenger-sneaker",
+      "label": "Sneaker Archive Wall",
+      "verdict": "declined",
+      "lineage": "Retail sneaker walls with stacked boxes, colorway labels, and size runs",
+      "case": "Inventory, variants, and ownership do not describe an open question library.",
+      "kept": "No commerce or product-variant signals in the question interface."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "comp", "toggle": true},
+  "canon": true,
+  "canonCard": {
+    "label": "The conventional docs site",
+    "thesis": "A straightforward documentation library with an ordinary search, topic sidebar, and question pages.",
+    "palette": ["#ffffff", "#111827", "#2563eb"],
+    "materials": ["neutral interface", "blue links", "plain text hierarchy"],
+    "viewport": "Header, sidebar, search field, and a featured question with its purpose below.",
+    "risk": "Clear and familiar, but does little to express this question-first library.",
+    "comp": ".impeccable/mocks/decision-r1/conventional-docs.png"
+  },
+  "steer": true
+}

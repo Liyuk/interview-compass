@@ -1,0 +1,1184 @@
+{
+  "tool": "comp-spec",
+  "version": 1,
+  "createdAt": "2026-10-14T19:47:04.881Z",
+  "comp": ".impeccable/mocks/question-causal-comparison-matrix.png",
+  "warnings": [],
+  "uncoveredInkCells": [],
+  "compSize": {
+    "width": 1505,
+    "height": 1045
+  },
+  "aspect": 1.4402,
+  "orientation": "landscape",
+  "palette": [
+    {
+      "hex": "#f7f7f7",
+      "coverage": 0.9639
+    },
+    {
+      "hex": "#9094a2",
+      "coverage": 0.0124
+    },
+    {
+      "hex": "#c2c7cf",
+      "coverage": 0.0115
+    },
+    {
+      "hex": "#b8322c",
+      "coverage": 0.0063
+    },
+    {
+      "hex": "#0b0d17",
+      "coverage": 0.0058
+    }
+  ],
+  "bands": [
+    {
+      "y": 0.0225,
+      "strength": 0.3337
+    },
+    {
+      "y": 0.236,
+      "strength": 0.5453
+    },
+    {
+      "y": 0.2697,
+      "strength": 0.4081
+    },
+    {
+      "y": 0.3034,
+      "strength": 0.43
+    },
+    {
+      "y": 0.3933,
+      "strength": 0.3039
+    },
+    {
+      "y": 0.7303,
+      "strength": 0.2035
+    },
+    {
+      "y": 0.8202,
+      "strength": 0.2466
+    },
+    {
+      "y": 0.8764,
+      "strength": 0.3721
+    }
+  ],
+  "regions": [
+    {
+      "id": "masthead",
+      "kind": "chrome",
+      "note": "White global navigation; logo, section links, bilingual switch, profile icon.",
+      "grid": "A0:J0",
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 0.1
+      },
+      "px": {
+        "x": 0,
+        "y": 0,
+        "w": 1505,
+        "h": 105
+      },
+      "aspect": 14.3333,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.9629
+        },
+        {
+          "hex": "#b83229",
+          "coverage": 0.0185
+        },
+        {
+          "hex": "#0c142b",
+          "coverage": 0.0086
+        },
+        {
+          "hex": "#a1a2b1",
+          "coverage": 0.0062
+        },
+        {
+          "hex": "#c6c9cf",
+          "coverage": 0.0038
+        }
+      ],
+      "detail": {
+        "energy": 17.7944
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "search",
+      "kind": "control",
+      "note": "Wide bilingual question search and red submit button; keep keyboard focus visible.",
+      "grid": "C0:J1",
+      "coverBox": {
+        "x": 0.2,
+        "y": 0,
+        "w": 0.8,
+        "h": 0.2
+      },
+      "box": {
+        "x": 0.8857,
+        "y": 0.0689,
+        "w": 0.0917,
+        "h": 0.0689
+      },
+      "px": {
+        "x": 1333,
+        "y": 72,
+        "w": 138,
+        "h": 72
+      },
+      "aspect": 1.9167,
+      "palette": [
+        {
+          "hex": "#b83029",
+          "coverage": 0.6212
+        },
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.3447
+        },
+        {
+          "hex": "#c8cfd7",
+          "coverage": 0.0157
+        },
+        {
+          "hex": "#d58482",
+          "coverage": 0.0101
+        },
+        {
+          "hex": "#f8d6d1",
+          "coverage": 0.0083
+        }
+      ],
+      "detail": {
+        "energy": 13.4044
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "topic-index",
+      "kind": "chrome",
+      "note": "Quiet left topic navigation with active red marker and no fabricated counts.",
+      "grid": "A1:B9",
+      "box": {
+        "x": 0,
+        "y": 0.1,
+        "w": 0.2,
+        "h": 0.9
+      },
+      "px": {
+        "x": 0,
+        "y": 105,
+        "w": 301,
+        "h": 941
+      },
+      "aspect": 0.3199,
+      "palette": [
+        {
+          "hex": "#f8f7f7",
+          "coverage": 0.9793
+        },
+        {
+          "hex": "#3d4858",
+          "coverage": 0.0063
+        },
+        {
+          "hex": "#6f7787",
+          "coverage": 0.0054
+        },
+        {
+          "hex": "#9fa4b2",
+          "coverage": 0.0046
+        },
+        {
+          "hex": "#c1c8cc",
+          "coverage": 0.0045
+        }
+      ],
+      "detail": {
+        "energy": 10.1692
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "breadcrumbs",
+      "kind": "text",
+      "note": "Question index and topic breadcrumbs.",
+      "grid": "C1:G1",
+      "coverBox": {
+        "x": 0.2,
+        "y": 0.1,
+        "w": 0.5,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.212,
+        "y": 0.1636,
+        "w": 0.4146,
+        "h": 0.0287
+      },
+      "px": {
+        "x": 319,
+        "y": 171,
+        "w": 624,
+        "h": 30
+      },
+      "aspect": 20.8,
+      "palette": [
+        {
+          "hex": "#f6f7f7",
+          "coverage": 0.85
+        },
+        {
+          "hex": "#979aa8",
+          "coverage": 0.0503
+        },
+        {
+          "hex": "#c3c6cf",
+          "coverage": 0.0478
+        },
+        {
+          "hex": "#93c1f8",
+          "coverage": 0.0259
+        },
+        {
+          "hex": "#4190f7",
+          "coverage": 0.0259
+        }
+      ],
+      "detail": {
+        "energy": 34.2619
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 41,
+          "capHeightPx": 13.6,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.9578,
+          "advTall": 0.9578,
+          "advX": null,
+          "gap": 0.1473,
+          "xRatio": null,
+          "stemW": 0.1748,
+          "contrast": 1.1984,
+          "serif": 0.8369,
+          "densTall": 0.6128,
+          "densX": null,
+          "weight": 0.6128
+        },
+        "widthClass": "wide",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "question-title",
+      "kind": "text",
+      "note": "Dominant Chinese question title; editorial serif, dark ink.",
+      "grid": "C2:I2",
+      "coverBox": {
+        "x": 0.2,
+        "y": 0.2,
+        "w": 0.7,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.2159,
+        "y": 0.223,
+        "w": 0.5621,
+        "h": 0.0517
+      },
+      "px": {
+        "x": 325,
+        "y": 233,
+        "w": 846,
+        "h": 54
+      },
+      "aspect": 15.6667,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.7151
+        },
+        {
+          "hex": "#0b0e16",
+          "coverage": 0.1546
+        },
+        {
+          "hex": "#babec4",
+          "coverage": 0.0491
+        },
+        {
+          "hex": "#81858d",
+          "coverage": 0.0464
+        },
+        {
+          "hex": "#464955",
+          "coverage": 0.0348
+        }
+      ],
+      "detail": {
+        "energy": 121.3168
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 30,
+          "capHeightPx": 36.6,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.6973,
+          "advTall": 0.7109,
+          "advX": null,
+          "gap": 0.1094,
+          "xRatio": null,
+          "stemW": 0.1326,
+          "contrast": 2.0384,
+          "serif": 0.2983,
+          "densTall": 0.4958,
+          "densX": null,
+          "weight": 0.4958
+        },
+        "widthClass": "normal",
+        "weightClass": "medium",
+        "chosen": {
+          "family": "Zen Old Mincho",
+          "weight": 700,
+          "fontSizePx": 41,
+          "source": "index",
+          "fp": {
+            "lines": 1,
+            "glyphs": 30,
+            "capHeightPx": 35.9,
+            "inkIsDark": true,
+            "allCaps": true,
+            "advance": 0.6822,
+            "advTall": 0.6822,
+            "advX": null,
+            "gap": 0.1114,
+            "xRatio": null,
+            "stemW": 0.1314,
+            "contrast": 1.1128,
+            "serif": 1,
+            "densTall": 0.5179,
+            "densX": null,
+            "weight": 0.5179
+          },
+          "stamp": "f3ebdb37f92e"
+        }
+      }
+    },
+    {
+      "id": "question-path-labels",
+      "kind": "text",
+      "note": "Three numbered sections: intent, related topics, source and extension.",
+      "grid": "C3:J4",
+      "coverBox": {
+        "x": 0.2,
+        "y": 0.3,
+        "w": 0.8,
+        "h": 0.2
+      },
+      "box": {
+        "x": 0.2159,
+        "y": 0.3005,
+        "w": 0.7615,
+        "h": 0.1206
+      },
+      "px": {
+        "x": 325,
+        "y": 314,
+        "w": 1146,
+        "h": 126
+      },
+      "aspect": 9.0952,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.9336
+        },
+        {
+          "hex": "#ba3433",
+          "coverage": 0.0196
+        },
+        {
+          "hex": "#b10e10",
+          "coverage": 0.0169
+        },
+        {
+          "hex": "#616b78",
+          "coverage": 0.0163
+        },
+        {
+          "hex": "#333a4a",
+          "coverage": 0.0136
+        }
+      ],
+      "detail": {
+        "energy": 32.2534
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 2,
+          "glyphs": 69,
+          "capHeightPx": 17.1,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.9364,
+          "advTall": 0.9397,
+          "advX": null,
+          "gap": 0.1609,
+          "xRatio": null,
+          "stemW": 0.136,
+          "contrast": 1.0921,
+          "serif": 1.0639,
+          "densTall": 0.5524,
+          "densX": null,
+          "weight": 0.5524
+        },
+        "widthClass": "wide",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "intent-heading",
+      "kind": "text",
+      "note": "Detail section label 考察意图.",
+      "grid": null,
+      "box": {
+        "x": 0.25,
+        "y": 0.455,
+        "w": 0.2,
+        "h": 0.045
+      },
+      "px": {
+        "x": 376,
+        "y": 475,
+        "w": 301,
+        "h": 47
+      },
+      "aspect": 6.4043,
+      "palette": [
+        {
+          "hex": "#f8f8f7",
+          "coverage": 0.9417
+        },
+        {
+          "hex": "#9496a4",
+          "coverage": 0.0182
+        },
+        {
+          "hex": "#2f3744",
+          "coverage": 0.0157
+        },
+        {
+          "hex": "#080a1c",
+          "coverage": 0.0138
+        },
+        {
+          "hex": "#bfc2c8",
+          "coverage": 0.0107
+        }
+      ],
+      "detail": {
+        "energy": 22.4591
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 4,
+          "capHeightPx": 18.3,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.9425,
+          "advTall": 0.9425,
+          "advX": null,
+          "gap": 0.1639,
+          "xRatio": null,
+          "stemW": 0.1466,
+          "contrast": 1.1429,
+          "serif": 1.4986,
+          "densTall": 0.639,
+          "densX": null,
+          "weight": 0.639
+        },
+        "widthClass": "wide",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "intent-copy",
+      "kind": "text",
+      "note": "Third step summary: sources and extension context.",
+      "grid": null,
+      "box": {
+        "x": 0.772,
+        "y": 0.37,
+        "w": 0.19,
+        "h": 0.05
+      },
+      "px": {
+        "x": 1162,
+        "y": 387,
+        "w": 286,
+        "h": 52
+      },
+      "aspect": 5.5,
+      "palette": [
+        {
+          "hex": "#f6f7f7",
+          "coverage": 0.7927
+        },
+        {
+          "hex": "#40475b",
+          "coverage": 0.0848
+        },
+        {
+          "hex": "#9398a5",
+          "coverage": 0.0489
+        },
+        {
+          "hex": "#c0c6ce",
+          "coverage": 0.0424
+        },
+        {
+          "hex": "#696f80",
+          "coverage": 0.0312
+        }
+      ],
+      "detail": {
+        "energy": 67.1774
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 2,
+          "glyphs": 29,
+          "capHeightPx": 15.5,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.9647,
+          "advTall": 0.9647,
+          "advX": null,
+          "gap": 0.1286,
+          "xRatio": null,
+          "stemW": 0.1367,
+          "contrast": 1.0981,
+          "serif": 0.947,
+          "densTall": 0.5621,
+          "densX": null,
+          "weight": 0.5621
+        },
+        "widthClass": "wide",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "intent-callout",
+      "kind": "control",
+      "note": "Muted intent callout beneath the first detail heading.",
+      "grid": null,
+      "box": {
+        "x": 0.25,
+        "y": 0.5,
+        "w": 0.72,
+        "h": 0.07
+      },
+      "px": {
+        "x": 376,
+        "y": 523,
+        "w": 1084,
+        "h": 73
+      },
+      "aspect": 14.8493,
+      "palette": [
+        {
+          "hex": "#f8f8f3",
+          "coverage": 0.9794
+        },
+        {
+          "hex": "#434959",
+          "coverage": 0.0096
+        },
+        {
+          "hex": "#b6b8ba",
+          "coverage": 0.0044
+        },
+        {
+          "hex": "#7b7b8b",
+          "coverage": 0.0036
+        },
+        {
+          "hex": "#21283c",
+          "coverage": 0.003
+        }
+      ],
+      "detail": {
+        "energy": 9.9502
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "topics-heading",
+      "kind": "text",
+      "note": "Detail section label 相关主题.",
+      "grid": null,
+      "box": {
+        "x": 0.25,
+        "y": 0.565,
+        "w": 0.2,
+        "h": 0.09
+      },
+      "px": {
+        "x": 376,
+        "y": 590,
+        "w": 301,
+        "h": 94
+      },
+      "aspect": 3.2021,
+      "palette": [
+        {
+          "hex": "#f4f6f7",
+          "coverage": 0.8954
+        },
+        {
+          "hex": "#aaafb9",
+          "coverage": 0.0422
+        },
+        {
+          "hex": "#74788c",
+          "coverage": 0.0367
+        },
+        {
+          "hex": "#287ff8",
+          "coverage": 0.014
+        },
+        {
+          "hex": "#92c1f8",
+          "coverage": 0.0117
+        }
+      ],
+      "detail": {
+        "energy": 32.9262
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 2,
+          "glyphs": 23,
+          "capHeightPx": 17.1,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.9895,
+          "advTall": 0.9895,
+          "advX": null,
+          "gap": 0.1649,
+          "xRatio": 0.8197,
+          "stemW": 0.1346,
+          "contrast": 1.1379,
+          "serif": 1.3157,
+          "densTall": 0.5143,
+          "densX": null,
+          "weight": 0.5143
+        },
+        "widthClass": "wide",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "topics-links",
+      "kind": "control",
+      "note": "Linked topic labels for resource allocation, prioritization, planning and execution.",
+      "grid": null,
+      "box": {
+        "x": 0.25,
+        "y": 0.63,
+        "w": 0.28,
+        "h": 0.06
+      },
+      "px": {
+        "x": 376,
+        "y": 658,
+        "w": 421,
+        "h": 63
+      },
+      "aspect": 6.6825,
+      "palette": [
+        {
+          "hex": "#f2f5f8",
+          "coverage": 0.9451
+        },
+        {
+          "hex": "#287ef8",
+          "coverage": 0.0218
+        },
+        {
+          "hex": "#8ec0f8",
+          "coverage": 0.015
+        },
+        {
+          "hex": "#60a1f8",
+          "coverage": 0.0092
+        },
+        {
+          "hex": "#b7d8f8",
+          "coverage": 0.0089
+        }
+      ],
+      "detail": {
+        "energy": 15.2919
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "sources-heading",
+      "kind": "text",
+      "note": "Detail section label 来源与延伸.",
+      "grid": null,
+      "box": {
+        "x": 0.25,
+        "y": 0.69,
+        "w": 0.25,
+        "h": 0.07
+      },
+      "px": {
+        "x": 376,
+        "y": 721,
+        "w": 376,
+        "h": 73
+      },
+      "aspect": 5.1507,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.8629
+        },
+        {
+          "hex": "#898e9c",
+          "coverage": 0.0586
+        },
+        {
+          "hex": "#bdc1c7",
+          "coverage": 0.0481
+        },
+        {
+          "hex": "#5f6178",
+          "coverage": 0.0173
+        },
+        {
+          "hex": "#0d0f1a",
+          "coverage": 0.0131
+        }
+      ],
+      "detail": {
+        "energy": 35.0537
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 2,
+          "glyphs": 33,
+          "capHeightPx": 17.4,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.9223,
+          "advTall": 0.9305,
+          "advX": null,
+          "gap": 0.1283,
+          "xRatio": null,
+          "stemW": 0.1289,
+          "contrast": 1.0485,
+          "serif": 0.6194,
+          "densTall": 0.5178,
+          "densX": null,
+          "weight": 0.5178
+        },
+        "widthClass": "wide",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "sources-copy",
+      "kind": "text",
+      "note": "Related-question comparison context.",
+      "grid": null,
+      "box": {
+        "x": 0.25,
+        "y": 0.73,
+        "w": 0.7,
+        "h": 0.06
+      },
+      "px": {
+        "x": 376,
+        "y": 763,
+        "w": 1054,
+        "h": 63
+      },
+      "aspect": 16.7302,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.9118
+        },
+        {
+          "hex": "#898e9c",
+          "coverage": 0.0427
+        },
+        {
+          "hex": "#bdc1c9",
+          "coverage": 0.0278
+        },
+        {
+          "hex": "#61647b",
+          "coverage": 0.0125
+        },
+        {
+          "hex": "#2e3a4c",
+          "coverage": 0.0052
+        }
+      ],
+      "detail": {
+        "energy": 20.7836
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 2,
+          "glyphs": 52,
+          "capHeightPx": 14.4,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.9751,
+          "advTall": 0.9751,
+          "advX": null,
+          "gap": 0.1486,
+          "xRatio": 0.8139,
+          "stemW": 0.1328,
+          "contrast": 1.0953,
+          "serif": 0.644,
+          "densTall": 0.531,
+          "densX": null,
+          "weight": 0.531
+        },
+        "widthClass": "wide",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "comparison-heading",
+      "kind": "text",
+      "note": "Column headings for the related-question comparison matrix.",
+      "grid": null,
+      "box": {
+        "x": 0.25,
+        "y": 0.76,
+        "w": 0.7,
+        "h": 0.06
+      },
+      "px": {
+        "x": 376,
+        "y": 794,
+        "w": 1054,
+        "h": 63
+      },
+      "aspect": 16.7302,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.9759
+        },
+        {
+          "hex": "#abb0bd",
+          "coverage": 0.011
+        },
+        {
+          "hex": "#727888",
+          "coverage": 0.0052
+        },
+        {
+          "hex": "#464a61",
+          "coverage": 0.0046
+        },
+        {
+          "hex": "#181838",
+          "coverage": 0.0033
+        }
+      ],
+      "detail": {
+        "energy": 12.4322
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 15,
+          "capHeightPx": 15.1,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.9925,
+          "advTall": 0.9925,
+          "advX": null,
+          "gap": 0.1323,
+          "xRatio": 0.8197,
+          "stemW": 0.1665,
+          "contrast": 1.1671,
+          "serif": 0.9855,
+          "densTall": 0.5791,
+          "densX": null,
+          "weight": 0.5791
+        },
+        "widthClass": "wide",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "comparison-question-column",
+      "kind": "text",
+      "note": "Related question prompts; focus on question wording.",
+      "grid": null,
+      "box": {
+        "x": 0.25,
+        "y": 0.81,
+        "w": 0.3,
+        "h": 0.18
+      },
+      "px": {
+        "x": 376,
+        "y": 846,
+        "w": 452,
+        "h": 188
+      },
+      "aspect": 2.4043,
+      "palette": [
+        {
+          "hex": "#f7f7f8",
+          "coverage": 0.8975
+        },
+        {
+          "hex": "#58a0f8",
+          "coverage": 0.0302
+        },
+        {
+          "hex": "#a9d0f8",
+          "coverage": 0.0279
+        },
+        {
+          "hex": "#2782f8",
+          "coverage": 0.0276
+        },
+        {
+          "hex": "#828a98",
+          "coverage": 0.0168
+        }
+      ],
+      "detail": {
+        "energy": 30.1439
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 6,
+          "glyphs": 112,
+          "capHeightPx": 15.5,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.9621,
+          "advTall": 0.9663,
+          "advX": null,
+          "gap": 0.125,
+          "xRatio": 0.8234,
+          "stemW": 0.1487,
+          "contrast": 1.0489,
+          "serif": 0.7411,
+          "densTall": 0.5626,
+          "densX": null,
+          "weight": 0.5626
+        },
+        "widthClass": "wide",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "comparison-relation-column",
+      "kind": "text",
+      "note": "How each adjacent question relates to the current question.",
+      "grid": null,
+      "box": {
+        "x": 0.48,
+        "y": 0.8,
+        "w": 0.25,
+        "h": 0.18
+      },
+      "px": {
+        "x": 722,
+        "y": 836,
+        "w": 376,
+        "h": 188
+      },
+      "aspect": 2,
+      "palette": [
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.8671
+        },
+        {
+          "hex": "#9ca0ae",
+          "coverage": 0.0552
+        },
+        {
+          "hex": "#c8cbd1",
+          "coverage": 0.0377
+        },
+        {
+          "hex": "#6d7787",
+          "coverage": 0.0337
+        },
+        {
+          "hex": "#626481",
+          "coverage": 0.0063
+        }
+      ],
+      "detail": {
+        "energy": 27.8683
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 6,
+          "glyphs": 88,
+          "capHeightPx": 15,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.9632,
+          "advTall": 0.9674,
+          "advX": null,
+          "gap": 0.1027,
+          "xRatio": 0.818,
+          "stemW": 0.1555,
+          "contrast": 1.0815,
+          "serif": 0.7358,
+          "densTall": 0.5724,
+          "densX": null,
+          "weight": 0.5724
+        },
+        "widthClass": "wide",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "comparison-difference-column",
+      "kind": "text",
+      "note": "Main difference in what the question is intended to explore.",
+      "grid": null,
+      "box": {
+        "x": 0.7,
+        "y": 0.8,
+        "w": 0.28,
+        "h": 0.18
+      },
+      "px": {
+        "x": 1054,
+        "y": 836,
+        "w": 421,
+        "h": 188
+      },
+      "aspect": 2.2394,
+      "palette": [
+        {
+          "hex": "#f7f7f8",
+          "coverage": 0.92
+        },
+        {
+          "hex": "#9b9fac",
+          "coverage": 0.0352
+        },
+        {
+          "hex": "#6e7688",
+          "coverage": 0.0279
+        },
+        {
+          "hex": "#bfc5ca",
+          "coverage": 0.0136
+        },
+        {
+          "hex": "#53586e",
+          "coverage": 0.0033
+        }
+      ],
+      "detail": {
+        "energy": 20.5581
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "type": {
+        "comp": {
+          "lines": 3,
+          "glyphs": 50,
+          "capHeightPx": 14.6,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.9799,
+          "advTall": 0.9799,
+          "advX": null,
+          "gap": 0.1352,
+          "xRatio": 0.8392,
+          "stemW": 0.1568,
+          "contrast": 1.1107,
+          "serif": 1.2339,
+          "densTall": 0.595,
+          "densX": null,
+          "weight": 0.595
+        },
+        "widthClass": "wide",
+        "weightClass": "bold"
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { getQuestions } from '../../../lib/question-catalog';
+import { addBase } from '../../../lib/locale-paths';
+const entries = await getCollection('questions');
+const questions = getQuestions(entries.map(({ data }) => data), { locale: 'en', scenario: 'promotion' });
+const base = import.meta.env.BASE_URL;
+---
+<SiteLayout locale="en" title="Promotion questions" description="Explore questions for promotion conversations and growth." switchPath={addBase('/promotion/', base)}><div class="page-shell"><aside class="side-nav"><h2>Promotion</h2><ul><li><a href={addBase('/en/questions/', base)}>Questions</a></li><li><a href={addBase('/en/topics/', base)}>Topics</a></li></ul></aside><main class="main-content" data-pagefind-body><nav class="breadcrumbs"><a href={addBase('/en/', base)}>Home</a><span>›</span><span>Promotion</span></nav><p class="eyebrow">PROMOTION</p><h1 class="page-title">Promotion and growth</h1><p class="intro">Explore capability and impact in promotion conversations through past facts, scope of work, and measurable outcomes.</p><ul class="question-list">{questions.map((q) => <li><a href={addBase(`/en/questions/${q.questionId}/`, base)}><span>{q.question}</span><span class="question-id">{q.questionId}　›</span></a></li>)}</ul></main></div></SiteLayout>

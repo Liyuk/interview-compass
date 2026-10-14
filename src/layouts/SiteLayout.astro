@@ -1,0 +1,81 @@
+---
+import '@radix-ui/themes/styles.css';
+import '../styles/global.css';
+import { addBase } from '../lib/locale-paths';
+import type { Locale } from '../lib/taxonomy';
+
+interface Props { locale: Locale; title: string; description?: string; switchPath?: string }
+const { locale, title, description = '', switchPath } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const home = addBase(en ? '/en/' : '/', base);
+const index = addBase(en ? '/en/questions/' : '/questions/', base);
+const topics = addBase(en ? '/en/topics/' : '/topics/', base);
+const roles = addBase(en ? '/en/roles/' : '/roles/', base);
+const promotion = addBase(en ? '/en/promotion/' : '/promotion/', base);
+const guide = addBase(en ? '/en/handbook/' : '/handbook/', base);
+const languageTarget = switchPath ?? addBase(en ? '/' : '/en/', base);
+const currentPath = Astro.url.pathname;
+const activeNav = currentPath.includes('/questions/') || currentPath.includes('/questions') ? 'questions' : currentPath.includes('/topics/') ? 'topics' : currentPath.includes('/roles/') ? 'roles' : currentPath.includes('/promotion/') ? 'promotion' : '';
+---
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#fbfaf8" />
+    <title>{title} · Interview Compass</title>
+  </head>
+  <body class="radix-themes" data-accent-color="red" data-gray-color="sand" data-radius="medium">
+    <header class="site-header">
+      <a class="wordmark" href={home}>Interview Compass</a>
+      <nav class="primary-nav" aria-label={en ? 'Main navigation' : '主导航'}>
+        <a href={index} aria-current={activeNav === 'questions' ? 'page' : undefined}>{en ? 'Questions' : '问题索引'}</a>
+        <a href={topics} aria-current={activeNav === 'topics' ? 'page' : undefined}>{en ? 'Topics' : '主题'}</a>
+        <a href={roles} aria-current={activeNav === 'roles' ? 'page' : undefined}>{en ? 'Roles' : '岗位'}</a>
+        <a href={promotion} aria-current={activeNav === 'promotion' ? 'page' : undefined}>{en ? 'Promotion' : '晋升'}</a>
+      </nav>
+      <div class="language-switch" aria-label={en ? 'Language: English' : '语言：简体中文'}><span aria-current="true">{en ? 'EN' : '中文'}</span><span aria-hidden="true"> / </span><a href={languageTarget} lang={en ? 'zh-CN' : 'en'}>{en ? '中文' : 'EN'}</a></div>
+    </header>
+    <div class="search-strip">
+      <form class="search-form" role="search" data-pagefind-search>
+        <label class="sr-only" for="site-search">{en ? 'Search questions, topics, or keywords' : '搜索问题、主题或关键词'}</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="site-search" name="q" type="search" placeholder={en ? 'Search questions, topics, or keywords (Chinese & English)' : '搜索问题、主题或关键词（支持中英文）'} autocomplete="off" />
+        <button type="submit">{en ? 'Search' : '搜索'}</button>
+      </form>
+      <div class="search-results" aria-live="polite" hidden></div>
+    </div>
+    <slot />
+    <footer class="site-footer">
+      <span>Interview Compass</span>
+      <a href={guide}>{en ? 'How to use this question library' : '如何使用这套问题库'}</a>
+      <a href="https://github.com/Liyuk/interview-compass">GitHub</a>
+    </footer>
+    <script>
+      const form = document.querySelector<HTMLFormElement>('.search-form');
+      const input = form?.querySelector<HTMLInputElement>('input');
+      const results = document.querySelector<HTMLElement>('.search-results');
+      const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+      let pagefind: any;
+      let timer: number | undefined;
+      async function search(query: string) {
+        if (!results || !query.trim()) { if (results) results.hidden = true; return; }
+        pagefind ??= await import(`${base}/pagefind/pagefind.js`);
+        const response = await pagefind.search(query);
+        const items = (await Promise.all(response.results.slice(0, 8).map((item: any) => item.data())));
+        const lang = document.documentElement.lang;
+        const localized = items.filter((item: any) => lang === 'en' ? item.url.includes('/en/') : !item.url.includes('/en/'));
+        results.innerHTML = localized.length ? localized.map((item: any) => `<a class="search-result" href="${item.url}"><strong>${item.meta?.title ?? item.url}</strong><span>${item.excerpt ?? ''}</span></a>`).join('') : `<p class="search-empty">${lang === 'en' ? 'No matching questions.' : '没有找到匹配的问题。'}</p>`;
+        results.hidden = false;
+      }
+      form?.addEventListener('submit', (event) => { event.preventDefault(); if (input) search(input.value); });
+      input?.addEventListener('input', () => { window.clearTimeout(timer); timer = window.setTimeout(() => search(input.value), 160); });
+      document.addEventListener('keydown', (event) => {
+        if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); input?.focus(); }
+        if (event.key === 'Escape') { if (results) results.hidden = true; input?.blur(); }
+      });
+    </script>
+  </body>
+</html>

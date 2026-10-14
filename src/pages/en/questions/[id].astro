@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import QuestionPage from '../../../components/QuestionPage.astro';
+import { addBase } from '../../../lib/locale-paths';
+import type { QuestionRecord } from '../../../lib/content-model';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('questions', ({ data }) => data.locale === 'en' && data.status === 'published');
+  const all = await getCollection('questions');
+  return entries.map(({ data }) => ({ params: { id: data.questionId }, props: { record: data, records: all.map((entry: { data: QuestionRecord }) => entry.data), switchPath: addBase(`/questions/${data.questionId}/`, import.meta.env.BASE_URL) } }));
+}
+const { record, records, switchPath } = Astro.props;
+---
+<QuestionPage record={record} records={records} locale="en" switchPath={switchPath} />

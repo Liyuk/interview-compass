@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getQuestions } from '../../lib/question-catalog';
+import { addBase } from '../../lib/locale-paths';
+const entries = await getCollection('questions');
+const questions = getQuestions(entries.map(({ data }) => data), { locale: 'zh-CN' });
+const base = import.meta.env.BASE_URL;
+---
+<SiteLayout locale="zh-CN" title="问题索引" description="浏览全部已发布的面试与晋升问题。" switchPath={addBase('/en/questions/', base)}>
+  <div class="page-shell"><aside class="side-nav"><h2>问题索引</h2><p class="detail-copy">{questions.length} 道双语问题</p></aside><main class="main-content" data-pagefind-body><nav class="breadcrumbs"><a href={addBase('/', base)}>首页</a><span>›</span><span>问题索引</span></nav><h1 class="page-title">问题索引</h1><p class="intro">每道问题都附有考察意图、能力与主题标签，并可对照相关问题。</p><ul class="question-list">{questions.map((q) => <li><a href={addBase(`/questions/${q.questionId}/`, base)}><span>{q.question}</span><span class="question-id">{q.questionId}　›</span></a></li>)}</ul></main></div>
+</SiteLayout>

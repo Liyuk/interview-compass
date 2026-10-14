@@ -1,0 +1,21 @@
+{
+  "regions": [
+    { "id": "masthead", "kind": "chrome", "grid": "A0:J0", "note": "White global navigation; logo, section links, bilingual switch, profile icon." },
+    { "id": "search", "kind": "control", "grid": "C0:J1", "note": "Wide bilingual question search and red submit button; keep keyboard focus visible." },
+    { "id": "topic-index", "kind": "chrome", "grid": "A1:B9", "note": "Quiet left topic navigation with active red marker and no fabricated counts." },
+    { "id": "breadcrumbs", "kind": "text", "grid": "C1:G1", "note": "Question index and topic breadcrumbs." },
+    { "id": "question-title", "kind": "text", "grid": "C2:I2", "note": "Dominant Chinese question title; editorial serif, dark ink." },
+    { "id": "question-path-labels", "kind": "text", "grid": "C3:J4", "note": "Three numbered sections: intent, related topics, source and extension." },
+    { "id": "intent-heading", "kind": "text", "box": { "x": 0.25, "y": 0.455, "w": 0.2, "h": 0.045 }, "note": "Detail section label 考察意图." },
+    { "id": "intent-copy", "kind": "text", "box": { "x": 0.772, "y": 0.37, "w": 0.19, "h": 0.05 }, "note": "Third step summary: sources and extension context." },
+    { "id": "intent-callout", "kind": "control", "box": { "x": 0.25, "y": 0.5, "w": 0.72, "h": 0.07 }, "note": "Muted intent callout beneath the first detail heading." },
+    { "id": "topics-heading", "kind": "text", "box": { "x": 0.25, "y": 0.565, "w": 0.2, "h": 0.09 }, "note": "Detail section label 相关主题." },
+    { "id": "topics-links", "kind": "control", "box": { "x": 0.25, "y": 0.63, "w": 0.28, "h": 0.06 }, "note": "Linked topic labels for resource allocation, prioritization, planning and execution." },
+    { "id": "sources-heading", "kind": "text", "box": { "x": 0.25, "y": 0.69, "w": 0.25, "h": 0.07 }, "note": "Detail section label 来源与延伸." },
+    { "id": "sources-copy", "kind": "text", "box": { "x": 0.25, "y": 0.73, "w": 0.7, "h": 0.06 }, "note": "Related-question comparison context." },
+    { "id": "comparison-heading", "kind": "text", "box": { "x": 0.25, "y": 0.76, "w": 0.7, "h": 0.06 }, "note": "Column headings for the related-question comparison matrix." },
+    { "id": "comparison-question-column", "kind": "text", "box": { "x": 0.25, "y": 0.81, "w": 0.3, "h": 0.18 }, "note": "Related question prompts; focus on question wording." },
+    { "id": "comparison-relation-column", "kind": "text", "box": { "x": 0.48, "y": 0.8, "w": 0.25, "h": 0.18 }, "note": "How each adjacent question relates to the current question." },
+    { "id": "comparison-difference-column", "kind": "text", "box": { "x": 0.7, "y": 0.8, "w": 0.28, "h": 0.18 }, "note": "Main difference in what the question is intended to explore." }
+  ]
+}

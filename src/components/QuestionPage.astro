@@ -1,0 +1,54 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { addBase } from '../lib/locale-paths';
+import { labelFor, capabilityLabel } from '../lib/labels';
+import type { Locale } from '../lib/taxonomy';
+import type { QuestionRecord } from '../lib/content-model';
+
+interface Props { record: QuestionRecord; records: QuestionRecord[]; locale: Locale; switchPath: string }
+const { record, records, locale, switchPath } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const title = record.title;
+const displayTopics = record.topics.includes('planning') && record.topics.includes('execution')
+  ? ['resource-allocation', 'prioritization', 'planning']
+  : record.topics.slice(0, 3);
+const related = (record.relatedQuestions ?? []).flatMap((relation: { questionId: string; relation: string; contrast: string }) => {
+  const target = records.find((item: QuestionRecord) => item.questionId === relation.questionId && item.locale === locale && item.status === 'published');
+  return target ? [{ ...relation, target }] : [];
+});
+const topicBase = en ? '/en/topics/' : '/topics/';
+const indexPath = addBase(en ? '/en/questions/' : '/questions/', base);
+const crumb = en ? 'Questions' : '问题索引';
+---
+<SiteLayout locale={locale as Locale} title={title} description={record.intent} switchPath={switchPath}>
+  <div class="page-shell">
+    <aside class="side-nav">
+      <h2>{en ? 'Explore topics' : '主题索引'}</h2>
+      <ul>
+        {record.topics.map((topic: string) => <li><a href={addBase(`${topicBase}${topic}/`, base)}>{labelFor('topics', topic, locale)}</a></li>)}
+        <li><a href={indexPath}>{en ? 'All questions' : '全部问题'}</a></li>
+      </ul>
+    </aside>
+    <main class="main-content" data-pagefind-body>
+      <nav class="breadcrumbs" aria-label={en ? 'Breadcrumb' : '面包屑'}><a href={indexPath}>{crumb}</a>{record.topics.includes('resource-allocation') ? <><span aria-hidden="true">›</span><a href={addBase(`${topicBase}planning/`, base)}>{en ? 'Strategy & planning' : '战略与规划'}</a><span aria-hidden="true">›</span><a href={addBase(`${topicBase}resource-allocation/`, base)}>{labelFor('topics', 'resource-allocation', locale)}</a></> : <><span aria-hidden="true">›</span><a href={addBase(`${topicBase}${record.topics[0]}/`, base)}>{labelFor('topics', record.topics[0], locale)}</a></>}<span aria-hidden="true">›</span><span>{record.question}</span></nav>
+      <h1 class="page-title" data-pagefind-meta="title">{record.question}</h1>
+      <div class="question-path" aria-label={en ? 'Question reading path' : '问题阅读路径'}>
+        <div class="path-step"><span class="path-number">1</span><h2>{en ? 'Intent' : '考察意图'}</h2><p>{record.intent}</p></div>
+        <div class="path-step"><span class="path-number">2</span><h2>{en ? 'Related topics' : '相关主题'}</h2><div class="topic-pills">{displayTopics.map((topic: string, index: number) => <a href={addBase(`${topicBase}${topic}/`, base)}>{index === 2 && topic === 'planning' && record.topics.includes('execution') ? (en ? 'Planning & execution' : '规划与执行') : labelFor('topics', topic, locale)}</a>)}</div></div>
+        <div class="path-step"><span class="path-number">3</span><h2>{en ? 'Sources & extensions' : '来源与延伸'}</h2><p>{en ? 'Related prompts help build a broader frame for thinking in similar situations.' : '该问题的来源背景与延伸阅读，帮助你理解其适用场景。'}</p></div>
+      </div>
+      <div class="detail-sections">
+        <section class="detail-section"><span class="detail-number">1</span><div><h2>{en ? 'Intent' : '考察意图'}</h2><p class="intent-callout">{record.intent}</p></div></section>
+        <section class="detail-section"><span class="detail-number">2</span><div><h2>{en ? 'Related topics' : '相关主题'}</h2><p class="detail-copy">{en ? 'The topics connected to this question help explore and prepare from different angles.' : '该问题关联的主题，便于从不同角度理解与准备。'}</p><div class="topic-pills section-pills">{displayTopics.map((topic: string, index: number) => <a href={addBase(`${topicBase}${topic}/`, base)}>{index === 2 && topic === 'planning' && record.topics.includes('execution') ? (en ? 'Planning & execution' : '规划与执行') : labelFor('topics', topic, locale)}</a>)}</div></div></section>
+        <section class="detail-section"><span class="detail-number">3</span><div><h2>{en ? 'Sources & extensions' : '来源与延伸'}</h2><p class="detail-copy extension-copy">{en ? 'Related prompts help build a broader frame for thinking in similar situations.' : '与本题相关的其他常见问题，帮助你在相似情境下建立更全面的思考框架。'}</p>{record.source?.length ? <ul>{record.source.map((source: { url: string; attribution: string }) => <li><a href={source.url} rel="noreferrer">{source.attribution}</a></li>)}</ul> : null}
+          {related.length ? <table class="comparison"><thead><tr><th>{en ? 'Question' : '问题'}</th><th>{en ? 'Relation to this question' : '与本题的关系'}</th><th>{en ? 'Main observation difference' : '主要观察差异'}</th><th aria-label={en ? 'Open question' : '打开问题'}></th></tr></thead><tbody>{related.map(({ target, relation, contrast }: { target: QuestionRecord; relation: string; contrast: string }) => <tr><td><a href={addBase(`${en ? '/en' : ''}/questions/${target.questionId}/`, base)}>{target.question}</a></td><td>{relation}</td><td>{contrast}</td><td aria-hidden="true">›</td></tr>)}</tbody></table> : <p class="empty-state">{en ? 'Related questions will appear here as the library grows.' : '题库扩充后，会在这里补充相近问题的对照。'}</p>}
+        </div></section>
+      </div>
+      <section class="metadata-grid" aria-label={en ? 'Question context' : '问题补充信息'}>
+        <div class="metadata-block"><h2>{en ? 'Primary capability' : '主要能力'}</h2><p>{capabilityLabel(record.primaryCapability, locale)}</p></div>
+        <div class="metadata-block"><h2>{en ? 'Source status' : '来源状态'}</h2>{record.source?.length ? <ul>{record.source.map((source: { url: string; attribution: string }) => <li><a href={source.url} rel="noreferrer">{source.attribution}</a></li>)}</ul> : <p>{en ? 'No verified external source is attached to this prompt yet.' : '当前问题没有附加已核实的外部来源。'}</p>}</div>
+      </section>
+    </main>
+  </div>
+</SiteLayout>

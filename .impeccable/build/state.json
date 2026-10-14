@@ -1,0 +1,334 @@
+{
+  "tool": "build-phase",
+  "version": 2,
+  "startedAt": "2026-10-14T09:49:45.683Z",
+  "comp": ".impeccable/mocks/question-causal-comparison-matrix.png",
+  "direction": "69db1690",
+  "breakpoint": "1505x1045",
+  "artifact": null,
+  "phase": "responsive",
+  "phases": {
+    "comps": {
+      "status": "closed",
+      "openedAt": "2026-10-14T09:49:45.681Z",
+      "closedAt": "2026-10-14T09:55:24.313Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "3 comps, 1 approved",
+        "approved": ".impeccable/mocks/question-causal-comparison-matrix.png",
+        "at": "2026-10-14T09:55:24.313Z"
+      },
+      "forced": null
+    },
+    "spec": {
+      "status": "closed",
+      "openedAt": "2026-10-14T09:55:24.347Z",
+      "closedAt": "2026-10-14T09:56:43.395Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "16 regions, 0 plates, 12 text regions measured",
+        "at": "2026-10-14T09:56:43.395Z"
+      },
+      "forced": null
+    },
+    "plates": {
+      "status": "closed",
+      "openedAt": "2026-10-14T09:56:43.395Z",
+      "closedAt": "2026-10-14T09:56:46.532Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "no plates owed",
+        "at": "2026-10-14T09:56:46.531Z"
+      },
+      "forced": null
+    },
+    "hero": {
+      "status": "closed",
+      "openedAt": "2026-10-14T09:56:46.532Z",
+      "closedAt": "2026-10-14T19:58:29.002Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "hero 84% (match)",
+        "score": 0.8412,
+        "verdict": "match",
+        "report": ".impeccable/review/diff/hero/report.json",
+        "sideBySide": ".impeccable/review/diff/hero/side-by-side.png",
+        "worst": [
+          "intent-copy drift 48%",
+          "comparison-question-column drift 61%",
+          "comparison-relation-column drift 61%"
+        ],
+        "worstIds": [
+          "intent-copy",
+          "comparison-question-column",
+          "comparison-relation-column"
+        ],
+        "worstCrops": [
+          {
+            "id": "intent-copy",
+            "verdict": "drift",
+            "score": {
+              "overall": 0.4838,
+              "structure": 0.5065,
+              "color": 0.8093,
+              "colorIntersection": 0.7526,
+              "paletteMatch": 0.8399,
+              "detail": 0.1884,
+              "detailRaw": 0.2718,
+              "detailAdded": 0.1667,
+              "bands": 0
+            },
+            "file": ".impeccable/review/diff/hero/regions/intent-copy.png"
+          },
+          {
+            "id": "comparison-question-column",
+            "verdict": "drift",
+            "score": {
+              "overall": 0.6104,
+              "structure": 0.4477,
+              "color": 0.889,
+              "colorIntersection": 0.8334,
+              "paletteMatch": 0.919,
+              "detail": 0.5195,
+              "detailRaw": 0.6705,
+              "detailAdded": 0.3021,
+              "bands": 0.8636
+            },
+            "file": ".impeccable/review/diff/hero/regions/comparison-question-column.png"
+          },
+          {
+            "id": "comparison-relation-column",
+            "verdict": "drift",
+            "score": {
+              "overall": 0.611,
+              "structure": 0.5008,
+              "color": 0.9181,
+              "colorIntersection": 0.8829,
+              "paletteMatch": 0.9371,
+              "detail": 0.2999,
+              "detailRaw": 0.4665,
+              "detailAdded": 0.3333,
+              "bands": 0.8615
+            },
+            "file": ".impeccable/review/diff/hero/regions/comparison-relation-column.png"
+          }
+        ],
+        "advisories": [
+          "(advisory, above the 72% bar) region intent-callout: its ink sits in a 315x16px box in the comp and 345x68px in the build (padding, row height, or size); match the box, not only the position",
+          "(advisory, above the 72% bar) region topics-links: its ink sits in a 289x16px box in the comp and 231x14px in the build (padding, row height, or size); match the box, not only the position",
+          "(advisory, above the 72% bar; fix in the polish pass before responsive) 4 readings:",
+          "  text comparison-question-column: 5 lines in the build, 6 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape",
+          "  text comparison-relation-column: 4 lines in the build, 6 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape",
+          "  text intent-heading: ink is #2a2a1c in the build, #9496a4 in the comp; use the comp's colour",
+          "  text topics-heading: ink is #535d68 in the build, #aaafb9 in the comp; use the comp's colour",
+          "(advisory, unchanged for 3+ attempts) text intent-copy: 1 line in the build, 2 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape",
+          "(advisory, unchanged for 3+ attempts) chrome masthead: its rule sits 80px into the box in the comp and 62px in the build (-18px), so the strip is shorter than the comp's; match the height, not only the position"
+        ],
+        "regionVerdicts": {
+          "masthead": "match",
+          "search": "drift",
+          "topic-index": "drift",
+          "breadcrumbs": "match",
+          "question-title": "drift",
+          "question-path-labels": "drift",
+          "intent-heading": "drift",
+          "intent-copy": "drift",
+          "intent-callout": "match",
+          "topics-heading": "drift",
+          "topics-links": "drift",
+          "sources-heading": "match",
+          "sources-copy": "match",
+          "comparison-heading": "drift",
+          "comparison-question-column": "drift",
+          "comparison-relation-column": "drift",
+          "comparison-difference-column": "drift"
+        },
+        "at": "2026-10-14T19:58:29.001Z"
+      },
+      "forced": null,
+      "readingsSeen": {
+        "text question-path-labels: cap height 2.3px in the build, 17.1px in the comp (-87%); set font-size so the cap height renders at 17.1px": 1,
+        "text sources-heading: cap height 16.9px in the build, 22.6px in the comp (-25%); set font-size so the cap height renders at 22.6px": 1,
+        "text sources-copy: cap height 10.2px in the build, 15.1px in the comp (-32%); set font-size so the cap height renders at 15.1px": 1,
+        "text question-path-labels: 1 line in the build, 2 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 1,
+        "text comparison-question-column: 1 line in the build, 2 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 1,
+        "text comparison-relation-column: 1 line in the build, 2 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 2,
+        "text topics-heading: ink is #565f69 in the build, #b6312f in the comp; use the comp's colour": 1,
+        "text question-path-labels: its first line starts 21px lower than in the comp (21px vs 0px into the region box); the spacing above it is too large": 4,
+        "text sources-heading: its first line starts 16px lower than in the comp (25px vs 9px into the region box); the spacing above it is too large": 1,
+        "text comparison-relation-column: its first line starts 20px lower than in the comp (26px vs 6px into the region box); the spacing above it is too large": 1,
+        "text comparison-relation-column: it starts 67px further right than in the comp": 1,
+        "text comparison-difference-column: its first line starts 17px lower than in the comp (25px vs 8px into the region box); the spacing above it is too large": 1,
+        "chrome masthead: its rule sits 80px into the box in the comp and 62px in the build (-18px), so the strip is shorter than the comp's; match the height, not only the position": 6,
+        "text sources-copy: cap height 6.2px in the build, 15.1px in the comp (-59%); set font-size so the cap height renders at 15.1px": 1,
+        "text comparison-heading: cap height 20.6px in the build, 15.9px in the comp (+30%); set font-size so the cap height renders at 15.9px": 1,
+        "text comparison-difference-column: cap height 9.3px in the build, 15px in the comp (-38%); set font-size so the cap height renders at 15px": 1,
+        "text comparison-heading: 1 line in the build, 2 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 1,
+        "text question-path-labels: ink is #b7b7b5 in the build, #ba3433 in the comp; use the comp's colour": 2,
+        "text intent-copy: ink is #9d9d9c in the build, #666a7b in the comp; use the comp's colour": 1,
+        "text comparison-heading: its first line starts 39px lower than in the comp (39px vs 0px into the region box); the spacing above it is too large": 1,
+        "control topics-links: its ink is 4px tall in the build and 16px in the comp (-12px); match the height, not only the position": 1,
+        "text topics-heading: cap height 8.1px in the build, 17.1px in the comp (-53%); set font-size so the cap height renders at 17.1px": 1,
+        "text sources-copy: cap height 11.1px in the build, 14.4px in the comp (-23%); set font-size so the cap height renders at 14.4px": 1,
+        "text intent-copy: 1 line in the build, 2 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 4,
+        "text topics-heading: 1 line in the build, 2 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 1,
+        "text sources-heading: 1 line in the build, 2 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 2,
+        "text sources-copy: 1 line in the build, 2 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 2,
+        "text comparison-question-column: 2 lines in the build, 6 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 1,
+        "text comparison-relation-column: 3 lines in the build, 6 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 2,
+        "text intent-heading: ink is #2a2a1d in the build, #9496a4 in the comp; use the comp's colour": 1,
+        "text topics-heading: ink is #2a291f in the build, #aaafb9 in the comp; use the comp's colour": 1,
+        "text sources-heading: ink is #4c8dc5 in the build, #898e9c in the comp; use the comp's colour": 1,
+        "text topics-heading: its first line starts 39px lower than in the comp (47px vs 8px into the region box); the spacing above it is too large": 1,
+        "control topics-links: its ink is 46px tall in the build and 16px in the comp (+30px); match the height, not only the position": 1,
+        "text comparison-heading: cap height 10.6px in the build, 15.1px in the comp (-30%); set font-size so the cap height renders at 15.1px": 1,
+        "text comparison-question-column: 4 lines in the build, 6 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 1,
+        "text comparison-difference-column: 2 lines in the build, 3 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 1,
+        "text question-path-labels: ink is #a0a09e in the build, #ba3433 in the comp; use the comp's colour": 1,
+        "text intent-heading: ink is #2a2a1c in the build, #9496a4 in the comp; use the comp's colour": 3,
+        "text topics-heading: ink is #535d68 in the build, #aaafb9 in the comp; use the comp's colour": 3,
+        "text topics-heading: its first line starts 21px lower than in the comp (29px vs 8px into the region box); the spacing above it is too large": 1,
+        "text sources-heading: its first line starts 21px lower than in the comp (29px vs 8px into the region box); the spacing above it is too large": 1,
+        "text comparison-heading: its first line starts 18px higher than in the comp (0px vs 18px into the region box); the spacing above it is too small": 1,
+        "control topics-links: its ink is 54px tall in the build and 16px in the comp (+38px); match the height, not only the position": 1,
+        "text comparison-question-column: 5 lines in the build, 6 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 2,
+        "text comparison-relation-column: 4 lines in the build, 6 in the comp; the measure (max-width, font-size, letter-spacing) wraps it differently, so the block is a different shape": 2
+      },
+      "records": 4,
+      "history": [
+        {
+          "at": "2026-10-14T19:48:40.408Z",
+          "score": 0.7679,
+          "worstIds": [
+            "intent-copy",
+            "question-title",
+            "sources-heading"
+          ],
+          "regionVerdicts": {
+            "masthead": "match",
+            "search": "drift",
+            "topic-index": "drift",
+            "breadcrumbs": "match",
+            "question-title": "drift",
+            "question-path-labels": "drift",
+            "intent-heading": "missing",
+            "intent-copy": "missing",
+            "intent-callout": "missing",
+            "topics-heading": "drift",
+            "topics-links": "drift",
+            "sources-heading": "missing",
+            "sources-copy": "drift",
+            "comparison-heading": "drift",
+            "comparison-question-column": "drift",
+            "comparison-relation-column": "drift",
+            "comparison-difference-column": "drift"
+          },
+          "artifactHash": null
+        },
+        {
+          "at": "2026-10-14T19:58:29.002Z",
+          "score": 0.8412,
+          "worstIds": [
+            "intent-copy",
+            "comparison-question-column",
+            "comparison-relation-column"
+          ],
+          "regionVerdicts": {
+            "masthead": "match",
+            "search": "drift",
+            "topic-index": "drift",
+            "breadcrumbs": "match",
+            "question-title": "drift",
+            "question-path-labels": "drift",
+            "intent-heading": "drift",
+            "intent-copy": "drift",
+            "intent-callout": "match",
+            "topics-heading": "drift",
+            "topics-links": "drift",
+            "sources-heading": "match",
+            "sources-copy": "match",
+            "comparison-heading": "drift",
+            "comparison-question-column": "drift",
+            "comparison-relation-column": "drift",
+            "comparison-difference-column": "drift"
+          },
+          "artifactHash": null
+        }
+      ]
+    },
+    "sections": {
+      "status": "closed",
+      "openedAt": "2026-10-14T19:58:29.002Z",
+      "closedAt": "2026-10-14T19:59:56.403Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "no mechanical gate",
+        "at": "2026-10-14T19:59:56.402Z"
+      },
+      "forced": null
+    },
+    "motion": {
+      "status": "closed",
+      "openedAt": "2026-10-14T19:59:56.403Z",
+      "closedAt": "2026-10-14T20:01:32.662Z",
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "no mechanical gate",
+        "at": "2026-10-14T20:01:32.662Z"
+      },
+      "forced": null
+    },
+    "responsive": {
+      "status": "open",
+      "openedAt": "2026-10-14T20:01:32.662Z",
+      "closedAt": null,
+      "attempts": 1,
+      "notes": [],
+      "gate": {
+        "ok": false,
+        "reasons": [
+          "at desktop width, region search is missing",
+          "at desktop width, region breadcrumbs is missing",
+          "at desktop width, region intent-heading is missing",
+          "at desktop width, region question-title (text) is contradicted (structure 40%)",
+          "at desktop width, region intent-copy (text) is contradicted (structure 47%)",
+          "at desktop width, region comparison-question-column (text) is contradicted (structure 48%)"
+        ],
+        "summary": "desktop 77% (drift)",
+        "score": 0.7701,
+        "sideBySide": ".impeccable/review/diff/desktop/side-by-side.png",
+        "at": "2026-10-14T20:03:06.545Z"
+      },
+      "forced": null
+    },
+    "review": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    }
+  },
+  "finish": null,
+  "plates": {}
+}

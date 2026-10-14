@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getQuestions } from '../../lib/question-catalog';
+import { topicEntries, roleEntries } from '../../lib/labels';
+import { addBase } from '../../lib/locale-paths';
+const entries = await getCollection('questions');
+const records = entries.map(({ data }) => data);
+const questions = getQuestions(records, { locale: 'en' });
+const topics = topicEntries('en').filter(({ id }) => questions.some((q) => q.topics.includes(id))).slice(0, 9);
+const roles = roleEntries('en').filter(({ id }) => questions.some((q) => q.roles.includes(id))).slice(0, 6);
+const base = import.meta.env.BASE_URL;
+---
+<SiteLayout locale="en" title="Question index" description="Explore interview and promotion questions by topic or role.">
+  <div class="page-shell">
+    <aside class="side-nav"><h2>Explore topics</h2><ul>{topics.map(({ id, label }) => <li><a href={addBase(`/en/topics/${id}/`, base)}>{label}</a></li>)}</ul></aside>
+    <main class="main-content" data-pagefind-body>
+      <p class="eyebrow">QUESTION LIBRARY · INTERVIEWS & PROMOTIONS</p>
+      <h1 class="page-title">Start with a question. See what it explores.</h1>
+      <p class="intro">A heuristic question library. Search for a prompt or browse by topic and role. Each page explains intent, connected topics, and how nearby questions differ.</p>
+      <h2 class="related-title">Browse by topic</h2>
+      <div class="facet-grid">{topics.map(({ id, label }) => <a class="facet-card" href={addBase(`/en/topics/${id}/`, base)}><strong>{label}</strong><span>{questions.filter((q) => q.topics.includes(id)).length} questions</span></a>)}</div>
+      <h2 class="related-title">Browse by role</h2>
+      <div class="facet-grid">{roles.map(({ id, label }) => <a class="facet-card" href={addBase(`/en/roles/${id}/`, base)}><strong>{label}</strong><span>{questions.filter((q) => q.roles.includes(id)).length} questions</span></a>)}</div>
+      <h2 class="related-title">Recently organized questions</h2>
+      <ul class="question-list">{questions.map((q) => <li><a href={addBase(`/en/questions/${q.questionId}/`, base)}><span>{q.question}</span><span class="question-id">{q.questionId}　›</span></a></li>)}</ul>
+    </main>
+  </div>
+</SiteLayout>
