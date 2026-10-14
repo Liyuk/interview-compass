@@ -1,0 +1,67 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import QuestionList from '../components/QuestionList.astro';
+import { bands, crossDomainPaths, domains, pick, type Locale } from '../lib/taxonomy';
+import { pathFor } from '../lib/routes';
+import { capabilityCounts } from '../lib/question-catalog';
+import { loadQuestions } from '../lib/site-data';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const questions = await loadQuestions(locale);
+const counts = capabilityCounts(questions, locale);
+const featured = domains.flatMap((domain) => questions.filter((q) => q.primaryCapability.startsWith(`${domain.id}.`)).slice(0, 1)).slice(0, 8);
+const entries = [
+  { ref: { type: 'capabilities' } as const, title: en ? 'Explore a capability' : '按能力探索', text: en ? 'Start from what you want to examine or build.' : '从想考察或想练习的能力开始。' },
+  { ref: { type: 'roles' } as const, title: en ? 'Prepare for a role' : '按岗位准备', text: en ? 'Follow a path assembled for your craft.' : '沿着为你的职能整理的路径准备。' },
+  { ref: { type: 'scenarios' } as const, title: en ? 'Work through a scenario' : '按场景练习', text: en ? 'Candidate, interviewer, promotion, or self-review.' : '求职、设计面试、晋升或自我复盘。' },
+];
+---
+<SiteLayout locale={locale} route={{ type: 'home' }} description={en ? 'A bilingual library of interview and promotion questions, organized by the capability each one examines.' : '按能力组织的中英文面试与晋升问题库。'}>
+  <section class="hero">
+    <p class="eyebrow">{en ? 'QUESTION LIBRARY · INTERVIEW AND PROMOTION' : '问题库 · 面试与晋升'}</p>
+    <h1 class="page-title">{en ? 'Start with a question. See what it examines.' : '从一个问题开始，看它在考察什么。'}</h1>
+    <p class="intro">{en ? 'Search directly above, or explore by capability, role, or scenario. Every question explains its intent and the signals worth noticing. There are no model answers and no scores.' : '直接在上方搜索，或按能力、岗位、场景探索。每道题都说明提问意图和值得观察的信号，不提供标准答案，也不打分。'}</p>
+  </section>
+
+  <section aria-labelledby="entry-title">
+    <h2 id="entry-title" class="section-title">{en ? 'Three ways in' : '三种进入方式'}</h2>
+    <div class="facet-grid three">
+      {entries.map((entry) => <a class="facet-card" href={pathFor(entry.ref, locale, base)}><strong>{entry.title}</strong><span>{entry.text}</span></a>)}
+    </div>
+  </section>
+
+  <section aria-labelledby="map-title">
+    <h2 id="map-title" class="section-title">{en ? 'Capability map' : '能力地图'}</h2>
+    {bands.map((band) => (
+      <div class="band">
+        <h3>{pick(band.name, locale)}</h3>
+        <p class="band-text">{pick(band.description, locale)}</p>
+        <div class="facet-grid three">
+          {domains.filter((domain) => domain.band === band.id).map((domain) => {
+            const count = counts.domains.get(domain.id) ?? 0;
+            return count > 0
+              ? <a class="facet-card" href={pathFor({ type: 'domain', domain: domain.id }, locale, base)}><strong>{domain.letter} · {pick(domain.name, locale)}</strong><span>{pick(domain.description, locale)}</span><span class="count">{en ? `${count} questions` : `${count} 道问题`}</span></a>
+              : <div class="facet-card muted"><strong>{domain.letter} · {pick(domain.name, locale)}</strong><span>{en ? 'Questions are being added.' : '题目整理中。'}</span></div>;
+          })}
+        </div>
+      </div>
+    ))}
+  </section>
+
+  {crossDomainPaths.map((path) => (
+    <section class="cross-path" aria-labelledby={`path-${path.id}`}>
+      <h2 id={`path-${path.id}`} class="section-title">{pick(path.name, locale)}</h2>
+      <p class="intro">{pick(path.description, locale)}</p>
+      <a class="text-link" href={pathFor({ type: 'path', id: path.id }, locale, base)}>{en ? 'Open this path' : '查看这条路径'} ›</a>
+    </section>
+  ))}
+
+  <section aria-labelledby="featured-title">
+    <h2 id="featured-title" class="section-title">{en ? 'A few to begin with' : '先从这几道看起'}</h2>
+    <QuestionList questions={featured} locale={locale} />
+    <p><a class="text-link" href={pathFor({ type: 'questions' }, locale, base)}>{en ? `Browse all ${questions.length} questions` : `浏览全部 ${questions.length} 道问题`} ›</a></p>
+  </section>
+</SiteLayout>

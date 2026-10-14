@@ -1,0 +1,98 @@
+sources:
+  - id: author-interview-sequence
+    title: 作者的面试提问套路（项目、选型、利弊、三件事、回看、重做、挑战、业务与技术收益、个人贡献、资源与规划）
+    url: https://github.com/Liyuk/interview-compass
+    status: used
+    questions:
+      - a-system-design-tech-choice-tradeoffs
+      - c-prioritization-three-things-worth-it
+      - c-prioritization-hindsight-not-worth
+      - g-structured-reflection-redo-project
+      - d-project-management-biggest-challenge
+      - c-metrics-causality-business-result-attribution
+      - a-engineering-systems-technical-gain
+      - c-investment-choices-short-vs-long-term
+      - b-product-project-model-upstream-downstream
+      - c-planning-goal-backward-vs-resource-forward
+      - g-structured-reflection-honest-retrospective
+      - g-structured-reflection-mistake-lesson-or-gain
+      - h-attribution-tech-choice-participation
+      - h-attribution-contribution-evidence
+      - h-attribution-collaborator-view
+      - h-attribution-lead-or-manage
+      - f-hiring-probe-packaged-claims
+      - f-hiring-probe-personal-part
+      - c-product-judgment-three-levels-of-bar
+      - d-capacity-resources-and-scope
+      - e-influence-break-constraints
+      - c-metrics-causality-competitor-benchmark
+      - c-planning-three-to-five-year-direction
+      - c-planning-half-year-calibration
+      - c-product-judgment-industry-leading-claim
+      - e-influence-external-impact
+      - c-metrics-causality-pm-hit-the-target
+      - c-metrics-causality-pm-metric-without-outcome
+      - d-project-management-pm-cross-functional-alignment
+      - c-metrics-causality-pm-post-launch-review
+      - e-conflict-then-and-now
+      - g-structured-reflection-project-failure
+      - g-structured-reflection-could-it-have-succeeded
+      - g-structured-reflection-improvement-executed
+      - g-learning-transfer-failure-to-future
+      - d-incident-personal-error-view
+      - d-incident-prevent-personal-error
+      - b-data-model-commercial-mapping
+      - b-data-model-industry-interop
+      - b-commercial-rules-money-and-currency
+      - b-business-context-whole-then-part
+      - c-investment-choices-leverage-or-fulcrum
+      - c-metrics-causality-causal-chain-solid
+      - c-metrics-causality-industry-definition-unify
+  - id: blog-career-growth-ten-questions-methods
+    title: 职场发展问题：晋升与面试前的完整自查清单（追问思路部分）
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+    status: used
+    questions:
+      - c-prioritization-hindsight-not-worth
+      - g-structured-reflection-redo-project
+      - c-metrics-causality-business-result-attribution
+      - b-product-project-model-upstream-downstream
+      - c-planning-goal-backward-vs-resource-forward
+      - c-product-judgment-external-benchmark
+      - a-engineering-systems-dependency-change
+      - g-structured-reflection-honest-retrospective
+      - h-attribution-without-you
+      - h-attribution-contribution-evidence
+      - h-attribution-collaborator-view
+      - f-hiring-probe-packaged-claims
+      - e-influence-break-constraints
+  - id: blog-top-k-thinking
+    title: 思维训练（一）：Top K 问题——先找到最重要的事
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
+    status: used
+    questions:
+      - c-prioritization-three-things-worth-it
+  - id: tih-behavioral-rubrics
+    title: Tech Interview Handbook 行为面试评价
+    url: https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
+    status: used
+    questions:
+      - h-ownership-proudest-work
+  - id: sourcegraph-engineering-leadership
+    title: Sourcegraph 工程领导力面试题
+    url: https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
+    status: used
+    questions:
+      - f-growth-development-underperformer
+  - id: em-interviews
+    title: em-interviews 工程领导面试题
+    url: https://github.com/kaushikb9/em-interviews/blob/main/README.md
+    status: used
+    questions:
+      - c-investment-choices-tech-debt-vs-features
+  - id: javaguide
+    title: JavaGuide 数据库与并发知识整理
+    url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
+    status: used
+    questions:
+      - a-computer-science-transaction-isolation

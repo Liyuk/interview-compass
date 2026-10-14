@@ -1,0 +1,41 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { bands, pick, type Locale } from '../lib/taxonomy';
+import { pathFor } from '../lib/routes';
+import { publishedDomains } from '../lib/question-catalog';
+import { loadQuestions } from '../lib/site-data';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const overview = publishedDomains(await loadQuestions(locale), locale);
+---
+<SiteLayout locale={locale} route={{ type: 'capabilities' }} description={en ? 'Eight capability domains and their leaf capabilities.' : '八个能力域及其下的具体能力。'}>
+  <h1 class="page-title">{en ? 'Capability map' : '能力地图'}</h1>
+  <p class="intro">{en ? 'Every question has one primary capability: the one thing it is mainly meant to examine. Counts below are unique questions.' : '每道题只有一个主要能力，即它主要想考察的那一件事。下面的数字是不重复的题目数。'}</p>
+  {bands.map((band) => (
+    <section class="band">
+      <h2>{pick(band.name, locale)}</h2>
+      <p class="band-text">{pick(band.description, locale)}</p>
+      {overview.filter((entry) => entry.domain.band === band.id).map((entry) => (
+        <article class="domain-block">
+          <h3>
+            {entry.count > 0
+              ? <a href={pathFor({ type: 'domain', domain: entry.domain.id }, locale, base)}>{entry.domain.letter} · {pick(entry.domain.name, locale)}</a>
+              : <span>{entry.domain.letter} · {pick(entry.domain.name, locale)}</span>}
+            <span class="count">{en ? `${entry.count} questions` : `${entry.count} 道问题`}</span>
+          </h3>
+          <p>{pick(entry.domain.description, locale)}</p>
+          {entry.leaves.length > 0 && (
+            <ul class="leaf-list">
+              {entry.leaves.map(({ leaf, count }) => (
+                <li><a href={pathFor({ type: 'leaf', domain: entry.domain.id, leaf: leaf.id }, locale, base)}>{pick(leaf.name, locale)}</a><span class="count">{count}</span></li>
+              ))}
+            </ul>
+          )}
+        </article>
+      ))}
+    </section>
+  ))}
+</SiteLayout>

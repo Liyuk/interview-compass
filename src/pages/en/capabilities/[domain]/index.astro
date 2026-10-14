@@ -1,0 +1,8 @@
+---
+import DomainView from '../../../../views/DomainView.astro';
+import { domainStaticPaths } from '../../../../lib/site-data';
+const locale = 'en' as const;
+export function getStaticPaths() { return domainStaticPaths('en'); }
+const { domain } = Astro.params as Record<string, string>;
+---
+<DomainView locale={locale} domainId={domain} />

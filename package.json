@@ -14,6 +14,7 @@
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
     "check:content": "node scripts/check-content.mjs",
+    "report:coverage": "node scripts/coverage-report.mjs",
     "check": "astro check",
     "ci": "npm run check && npm run check:content && npm run test:unit && npm run build && npm run test:e2e"
   },

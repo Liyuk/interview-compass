@@ -1,0 +1,8 @@
+---
+import LeafView from '../../../views/LeafView.astro';
+import { leafStaticPaths } from '../../../lib/site-data';
+const locale = 'zh-CN' as const;
+export function getStaticPaths() { return leafStaticPaths('zh-CN'); }
+const { domain, leaf } = Astro.params as Record<string, string>;
+---
+<LeafView locale={locale} domainId={domain} leafId={leaf} />

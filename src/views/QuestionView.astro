@@ -1,0 +1,107 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { capabilityLabel, facetLabel, facetMeta, pick, splitCapability, type FacetKind, type Locale } from '../lib/taxonomy';
+import { facetRoute, pathFor } from '../lib/routes';
+import { facetValuesOf } from '../lib/question-catalog';
+import { loadAllRecords } from '../lib/site-data';
+
+interface Props { locale: Locale; id: string }
+const { locale, id } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const all = await loadAllRecords();
+const record = all.find((item) => item.questionId === id && item.locale === locale && item.status === 'published')!;
+const { domain, leaf } = splitCapability(record.primaryCapability);
+const route = { type: 'question', questionId: record.questionId, capability: record.primaryCapability, title: record.question } as const;
+const related = (record.relatedQuestions ?? []).flatMap((relation) => {
+  const target = all.find((item) => item.questionId === relation.questionId && item.locale === locale && item.status === 'published');
+  return target ? [{ ...relation, target }] : [];
+});
+const contextKinds: FacetKind[] = ['roles', 'scenarios', 'topics', 'responsibilityScopes', 'careerTracks', 'formats'];
+const context = contextKinds.map((kind) => ({ kind, ids: facetValuesOf(record, kind) })).filter((group) => group.ids.length > 0);
+const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: en ? 'Derived from' : '提炼自', inspired: en ? 'Inspired by' : '启发自', original: en ? 'Original to this site' : '本站原创' };
+---
+<SiteLayout locale={locale} route={route} description={record.intent}>
+  <p class="eyebrow">{domain?.letter} · {domain && pick(domain.name, locale)} › {leaf && pick(leaf.name, locale)}</p>
+  <h1 class="page-title" data-pagefind-meta="title">{record.question}</h1>
+
+  <div data-pagefind-body>
+    <section class="detail-block" aria-labelledby="intent-h">
+      <h2 id="intent-h">{en ? 'What it examines' : '考察意图'}</h2>
+      <p class="intent-callout">{record.intent}</p>
+    </section>
+
+    <section class="detail-block" aria-labelledby="signals-h">
+      <h2 id="signals-h">{en ? 'Signals worth noticing' : '值得观察的信号'}</h2>
+      <ul class="signal-list">{record.signals.map((signal) => <li>{signal}</li>)}</ul>
+    </section>
+
+    {record.followUps?.length ? (
+      <section class="detail-block" aria-labelledby="followups-h">
+        <h2 id="followups-h">{en ? 'Follow-up prompts' : '可以继续追问'}</h2>
+        <ul class="signal-list">{record.followUps.map((item) => <li>{item}</li>)}</ul>
+      </section>
+    ) : null}
+
+    {record.background?.length ? (
+      <section class="detail-block" aria-labelledby="background-h">
+        <h2 id="background-h">{en ? 'Background to review' : '背景知识'}</h2>
+        <ul class="signal-list">{record.background.map((item) => <li>{item}</li>)}</ul>
+      </section>
+    ) : null}
+
+    {related.length > 0 && (
+      <section class="detail-block" aria-labelledby="related-h">
+        <h2 id="related-h">{en ? 'Related questions' : '相近的问题'}</h2>
+        <table class="comparison">
+          <thead><tr><th>{en ? 'Question' : '问题'}</th><th>{en ? 'Relation' : '关系'}</th><th>{en ? 'What changes' : '观察差异'}</th></tr></thead>
+          <tbody>
+            {related.map(({ target, relation, contrast }) => (
+              <tr>
+                <td><a href={pathFor({ type: 'question', questionId: target.questionId, capability: target.primaryCapability, title: target.question }, locale, base)}>{target.question}</a></td>
+                <td>{relation}</td>
+                <td>{contrast}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    )}
+  </div>
+
+  <section class="metadata-grid" aria-label={en ? 'Question context' : '问题的上下文'}>
+    <div class="metadata-block">
+      <h2>{en ? 'Primary capability' : '主要能力'}</h2>
+      <p>
+        {domain && leaf
+          ? <a href={pathFor({ type: 'leaf', domain: domain.id, leaf: leaf.id }, locale, base)}>{capabilityLabel(record.primaryCapability, locale)}</a>
+          : capabilityLabel(record.primaryCapability, locale)}
+      </p>
+    </div>
+    {context.map((group) => (
+      <div class="metadata-block">
+        <h2>{pick(facetMeta[group.kind].name, locale)}</h2>
+        <p class="pill-row">
+          {group.ids.map((facetId) => {
+            const target = facetRoute(group.kind, facetId);
+            return target
+              ? <a href={pathFor(target, locale, base)}>{facetLabel(group.kind, facetId, locale)}</a>
+              : <span>{facetLabel(group.kind, facetId, locale)}</span>;
+          })}
+        </p>
+      </div>
+    ))}
+    <div class="metadata-block">
+      <h2>{en ? 'Source' : '来源'}</h2>
+      <ul>
+        {record.source.map((item) => (
+          <li>
+            {item.url
+              ? <>{provenanceLabel[item.attribution]}：<a href={item.url} rel="noreferrer">{item.label ?? item.url}</a></>
+              : (item.label ?? provenanceLabel[item.attribution])}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</SiteLayout>

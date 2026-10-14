@@ -1,0 +1,8 @@
+---
+import PathView from '../../views/PathView.astro';
+import { pathStaticPaths } from '../../lib/site-data';
+const locale = 'zh-CN' as const;
+export function getStaticPaths() { return pathStaticPaths(); }
+const { id } = Astro.params as Record<string, string>;
+---
+<PathView locale={locale} pathId={id} />

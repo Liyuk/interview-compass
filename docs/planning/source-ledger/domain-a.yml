@@ -1,0 +1,87 @@
+sources:
+  - id: blog-campus-recruitment-training
+    title: 筛选人和面试官到底在看什么
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+    status: used
+    questions:
+      - a-computer-science-cache-boundaries
+      - a-computer-science-slow-page-causal-chain
+      - a-system-design-large-file-upload
+      - a-ai-engineering-ship-ai-output-gate
+      - a-ai-engineering-eval-set-design
+      - a-coding-abstraction-form-state-boundaries
+      - a-debugging-intermittent-duplicate-submit
+  - id: blog-structured-thinking-practice
+    title: 思维训练（四）：结构化思维实践
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/structured-thinking-practice/zh.md
+    status: used
+    questions:
+      - a-engineering-systems-test-critical-path
+  - id: blog-ai-engineering-capability-boundaries
+    title: 把 AI 能力放进工程组织前，先定义哪些边界
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/research/2026/08/ai-engineering-capability-boundaries/zh.md
+    status: used
+    questions:
+      - a-ai-engineering-rag-permission-change
+      - a-ai-engineering-ship-ai-output-gate
+  - id: blog-engineering-decision-skills
+    title: "Engineering Decision Skills：评审、排期、复盘时，我想让 AI 多做一步"
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/projects/2026/09/engineering-decision-skills/zh.md
+    status: used
+    questions:
+      - a-engineering-systems-release-rollback
+      - a-system-design-async-coupon-issuing-review
+  - id: blog-interview-questions-archive
+    title: 面试题与工程师的成长路径
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2018/04/interview-questions-archive/zh.md
+    status: reviewed-not-used
+    reason: 只是 2018 年原题库的索引和整理缘由，没有可提炼的题面；原题库在旧仓库，不批量迁入，其整理原则（写清为什么问、怎么想、哪里容易漏）已体现在 intent 与 signals 字段中。
+  - id: gh-ombharatiya-ai-engineer-interview-questions
+    title: ombharatiya/AI-Engineer-Interview-Questions
+    url: https://github.com/ombharatiya/AI-Engineer-Interview-Questions/blob/main/README.md
+    status: used
+    questions:
+      - a-ai-engineering-rag-permission-change
+      - a-coding-abstraction-retry-limiter
+  - id: gh-ayushbishtdev-ai-engineering-interview-questions
+    title: ayushbishtdev/ai-engineering-interview-questions
+    url: https://github.com/ayushbishtdev/ai-engineering-interview-questions/blob/main/README.md
+    status: used
+    questions:
+      - a-ai-engineering-eval-set-design
+  - id: gh-donnemartin-system-design-primer
+    title: donnemartin/system-design-primer
+    url: https://github.com/donnemartin/system-design-primer/blob/master/README.md
+    status: used
+    questions:
+      - a-system-design-capacity-estimate-first
+  - id: gh-jwasham-coding-interview-university
+    title: jwasham/coding-interview-university
+    url: https://github.com/jwasham/coding-interview-university/blob/main/README.md
+    status: reviewed-not-used
+    reason: 学习清单而非题目；采用 CC BY-SA 4.0，改编要共享相同许可。只借鉴覆盖范围检查，本批题目为原创或博客衍生，不复制其条目。
+  - id: gh-cyc2018-cs-notes
+    title: CyC2018/CS-Notes
+    url: https://github.com/CyC2018/CS-Notes/blob/master/README.md
+    status: reviewed-not-used
+    reason: README 声明 CC BY-NC-SA 4.0，非商业与相同方式共享条件与本站发布方式不兼容；仅用作知识覆盖检查表，不引用其正文。
+  - id: gh-yangshun-tech-interview-handbook
+    title: yangshun/tech-interview-handbook
+    url: https://github.com/yangshun/tech-interview-handbook/blob/main/README.md
+    status: reviewed-not-used
+    reason: 以行为面试与算法编码准备为主，对应 E、G、H 域与通用编码；A 域本批题目没有直接取用，行为证据类题目留给其他域。
+  - id: gh-yangshun-front-end-interview-handbook
+    title: yangshun/front-end-interview-handbook
+    url: https://github.com/yangshun/front-end-interview-handbook/blob/main/README.md
+    status: reviewed-not-used
+    reason: 以前端知识 quiz 与编码为主，且正文指向外站最新版；本批前端题改为场景化的状态与性能判断题，未复用其题面。
+  - id: gh-snailclimb-javaguide
+    title: Snailclimb/JavaGuide
+    url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
+    status: reviewed-not-used
+    reason: 以 Java 机制知识问答为主，版本与框架细节需逐题复核；本批用缓存边界与排查顺序题替代机制背诵题，暂未取用。
+  - id: gh-mindorks-android-interview-questions
+    title: MindorksOpenSource/android-interview-questions
+    url: https://github.com/MindorksOpenSource/android-interview-questions/blob/master/README.md
+    status: reviewed-not-used
+    reason: Android 题多数答案在外链且 API 与架构观念较旧，需逐题复核；客户端专业题留待后续批次，本批仅在多岗位题中包含 mobile 角色。

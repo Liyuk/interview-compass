@@ -1,0 +1,8 @@
+---
+import FacetView from '../../views/FacetView.astro';
+import { facetStaticPaths } from '../../lib/site-data';
+const locale = 'zh-CN' as const;
+export function getStaticPaths() { return facetStaticPaths('scenarios', 'zh-CN'); }
+const { id } = Astro.params as Record<string, string>;
+---
+<FacetView locale={locale} kind="scenarios" id={id} />

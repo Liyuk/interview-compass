@@ -1,0 +1,38 @@
+---
+questionId: d-operations-campaign-landing
+kind: question
+status: published
+locale: en
+title: Landing an already-decided campaign strategy
+question: The strategy for a promotion is set and you own landing it. What do you confirm before it goes live?
+intent: See how you turn strategy into an execution checklist covering goals, audience, resources, impact on existing users, and how it will be verified.
+signals:
+  - Confirms the target metric and how success is judged
+  - Checks the effect on existing business and user entitlements
+  - Fixes when pilot, acceptance, and launch checks happen
+primaryCapability: delivery.operational-execution
+topics:
+  - operations
+  - execution
+  - growth-experiments
+  - risk-management
+roles:
+  - operations
+  - marketing
+  - product
+responsibilityScopes:
+  - team
+careerTracks:
+  - individual-contributor
+  - team-manager
+scenarios:
+  - interview
+  - operations-review
+formats:
+  - case
+  - planning
+source:
+  - attribution: derived
+    label: When product has no capacity and engineering takes the project
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/consulting/2026/09/product-engineer-without-boundaries/zh.md
+---

@@ -1,22 +1,24 @@
 ---
 import '@radix-ui/themes/styles.css';
 import '../styles/global.css';
-import { addBase } from '../lib/locale-paths';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { activeNavFor, breadcrumbsFor, navLabel, pathFor, switchLocaleRoute, titleFor, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
 
-interface Props { locale: Locale; title: string; description?: string; switchPath?: string }
-const { locale, title, description = '', switchPath } = Astro.props;
+interface Props { locale: Locale; route: RouteRef; description?: string }
+const { locale, route, description = '' } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
-const home = addBase(en ? '/en/' : '/', base);
-const index = addBase(en ? '/en/questions/' : '/questions/', base);
-const topics = addBase(en ? '/en/topics/' : '/topics/', base);
-const roles = addBase(en ? '/en/roles/' : '/roles/', base);
-const promotion = addBase(en ? '/en/promotion/' : '/promotion/', base);
-const guide = addBase(en ? '/en/handbook/' : '/handbook/', base);
-const languageTarget = switchPath ?? addBase(en ? '/' : '/en/', base);
-const currentPath = Astro.url.pathname;
-const activeNav = currentPath.includes('/questions/') || currentPath.includes('/questions') ? 'questions' : currentPath.includes('/topics/') ? 'topics' : currentPath.includes('/roles/') ? 'roles' : currentPath.includes('/promotion/') ? 'promotion' : '';
+const other: Locale = en ? 'zh-CN' : 'en';
+const title = titleFor(route, locale);
+const active = activeNavFor(route);
+const crumbs = breadcrumbsFor(route, locale, base);
+const nav = [
+  { key: 'questions', ref: { type: 'questions' } as RouteRef, label: navLabel('questions', locale) },
+  { key: 'capabilities', ref: { type: 'capabilities' } as RouteRef, label: navLabel('capabilities', locale) },
+  { key: 'roles', ref: { type: 'roles' } as RouteRef, label: navLabel('roles', locale) },
+  { key: 'scenarios', ref: { type: 'scenarios' } as RouteRef, label: navLabel('scenarios', locale) },
+];
 ---
 <!doctype html>
 <html lang={locale}>
@@ -25,32 +27,38 @@ const activeNav = currentPath.includes('/questions/') || currentPath.includes('/
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#fbfaf8" />
-    <title>{title} · Interview Compass</title>
+    <title>{route.type === 'home' ? 'Interview Compass' : `${title} · Interview Compass`}</title>
   </head>
   <body class="radix-themes" data-accent-color="red" data-gray-color="sand" data-radius="medium">
+    <a class="skip-link" href="#main">{en ? 'Skip to content' : '跳到正文'}</a>
     <header class="site-header">
-      <a class="wordmark" href={home}>Interview Compass</a>
+      <a class="wordmark" href={pathFor({ type: 'home' }, locale, base)}>Interview Compass</a>
       <nav class="primary-nav" aria-label={en ? 'Main navigation' : '主导航'}>
-        <a href={index} aria-current={activeNav === 'questions' ? 'page' : undefined}>{en ? 'Questions' : '问题索引'}</a>
-        <a href={topics} aria-current={activeNav === 'topics' ? 'page' : undefined}>{en ? 'Topics' : '主题'}</a>
-        <a href={roles} aria-current={activeNav === 'roles' ? 'page' : undefined}>{en ? 'Roles' : '岗位'}</a>
-        <a href={promotion} aria-current={activeNav === 'promotion' ? 'page' : undefined}>{en ? 'Promotion' : '晋升'}</a>
+        {nav.map((item) => <a href={pathFor(item.ref, locale, base)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
       </nav>
-      <div class="language-switch" aria-label={en ? 'Language: English' : '语言：简体中文'}><span aria-current="true">{en ? 'EN' : '中文'}</span><span aria-hidden="true"> / </span><a href={languageTarget} lang={en ? 'zh-CN' : 'en'}>{en ? '中文' : 'EN'}</a></div>
+      <div class="language-switch" role="group" aria-label={en ? 'Language' : '语言'}>
+        <span aria-current="true">{en ? 'EN' : '中文'}</span><span aria-hidden="true"> / </span>
+        <a href={switchLocaleRoute(route, other, base)} lang={other} hreflang={other}>{en ? '中文' : 'EN'}</a>
+      </div>
     </header>
     <div class="search-strip">
       <form class="search-form" role="search" data-pagefind-search>
         <label class="sr-only" for="site-search">{en ? 'Search questions, topics, or keywords' : '搜索问题、主题或关键词'}</label>
         <span class="search-icon" aria-hidden="true">⌕</span>
-        <input id="site-search" name="q" type="search" placeholder={en ? 'Search questions, topics, or keywords (Chinese & English)' : '搜索问题、主题或关键词（支持中英文）'} autocomplete="off" />
+        <input id="site-search" name="q" type="search" placeholder={en ? 'Search questions, topics, or keywords' : '搜索问题、主题或关键词'} autocomplete="off" />
         <button type="submit">{en ? 'Search' : '搜索'}</button>
       </form>
       <div class="search-results" aria-live="polite" hidden></div>
     </div>
-    <slot />
+    <div class="page-frame">
+      {route.type !== 'home' && <Breadcrumbs crumbs={crumbs} locale={locale} />}
+      <main id="main" class="main-content">
+        <slot />
+      </main>
+    </div>
     <footer class="site-footer">
       <span>Interview Compass</span>
-      <a href={guide}>{en ? 'How to use this question library' : '如何使用这套问题库'}</a>
+      <a href={pathFor({ type: 'guide' }, locale, base)}>{en ? 'How to use this question library' : '如何使用这套问题库'}</a>
       <a href="https://github.com/Liyuk/interview-compass">GitHub</a>
     </footer>
     <script>
@@ -58,16 +66,19 @@ const activeNav = currentPath.includes('/questions/') || currentPath.includes('/
       const input = form?.querySelector<HTMLInputElement>('input');
       const results = document.querySelector<HTMLElement>('.search-results');
       const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+      const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char] as string);
       let pagefind: any;
       let timer: number | undefined;
       async function search(query: string) {
         if (!results || !query.trim()) { if (results) results.hidden = true; return; }
-        pagefind ??= await import(`${base}/pagefind/pagefind.js`);
+        pagefind ??= await import(/* @vite-ignore */ `${base}/pagefind/pagefind.js`);
         const response = await pagefind.search(query);
-        const items = (await Promise.all(response.results.slice(0, 8).map((item: any) => item.data())));
+        const items = await Promise.all(response.results.slice(0, 8).map((item: any) => item.data()));
         const lang = document.documentElement.lang;
-        const localized = items.filter((item: any) => lang === 'en' ? item.url.includes('/en/') : !item.url.includes('/en/'));
-        results.innerHTML = localized.length ? localized.map((item: any) => `<a class="search-result" href="${item.url}"><strong>${item.meta?.title ?? item.url}</strong><span>${item.excerpt ?? ''}</span></a>`).join('') : `<p class="search-empty">${lang === 'en' ? 'No matching questions.' : '没有找到匹配的问题。'}</p>`;
+        const localized = items.filter((item: any) => (lang === 'en') === item.url.includes('/en/'));
+        results.innerHTML = localized.length
+          ? localized.map((item: any) => `<a class="search-result" href="${escapeHtml(item.url)}"><strong>${escapeHtml(item.meta?.title ?? item.url)}</strong><span>${item.excerpt ?? ''}</span></a>`).join('')
+          : `<p class="search-empty">${lang === 'en' ? 'No matching questions.' : '没有找到匹配的问题。'}</p>`;
         results.hidden = false;
       }
       form?.addEventListener('submit', (event) => { event.preventDefault(); if (input) search(input.value); });

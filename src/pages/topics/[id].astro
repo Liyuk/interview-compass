@@ -1,15 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
-import FacetPage from '../../components/FacetPage.astro';
-import { getQuestions } from '../../lib/question-catalog';
-import { topicEntries } from '../../lib/labels';
-
-export async function getStaticPaths() {
-  const entries = await getCollection('questions');
-  const records = entries.map(({ data }) => data);
-  const zh = getQuestions(records, { locale: 'zh-CN' });
-  return topicEntries('zh-CN').filter(({ id }) => zh.some((q) => q.topics.includes(id))).map(({ id, label }) => ({ params: { id }, props: { id, label, questions: zh.filter((q) => q.topics.includes(id)), locale: 'zh-CN' } }));
-}
-const { id, label, questions, locale } = Astro.props;
+import FacetView from '../../views/FacetView.astro';
+import { facetStaticPaths } from '../../lib/site-data';
+const locale = 'zh-CN' as const;
+export function getStaticPaths() { return facetStaticPaths('topics', 'zh-CN'); }
+const { id } = Astro.params as Record<string, string>;
 ---
-<FacetPage facet="topic" id={id} label={label} questions={questions} locale={locale} />
+<FacetView locale={locale} kind="topics" id={id} />

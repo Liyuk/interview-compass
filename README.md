@@ -13,7 +13,7 @@ npm ci
 npm run dev
 ```
 
-The first implementation slice has Chinese and English routes, question/topic/role indexes, question-intent pages, Pagefind search, a content validator, and bilingual sample questions. The Pages base path is `/interview-compass/`; the Chinese site is at `/interview-compass/` and English at `/interview-compass/en/` after deployment.
+The site has Chinese and English routes for the home page, a filterable question library, a capability map (eight domains and their leaves), role, scenario and topic views, a cross-domain product path, and question pages that explain intent and observable signals. Search uses Pagefind per language. The Pages base path is `/interview-compass/`; the Chinese site is at `/interview-compass/` and English at `/interview-compass/en/` after deployment.
 
 ## Checks
 
@@ -29,7 +29,7 @@ Or run the full CI sequence with `npm run ci`. The browser suite previews the bu
 
 ## Content model
 
-Question records live under `src/content/questions/zh-CN/` and `src/content/questions/en/`. Keep each pair aligned by stable question ID. Frontmatter provides the question, intent, primary capability, and cross-cutting topic/role metadata; answers and scoring fields are intentionally outside the content model. `docs/planning/` contains the MECE architecture, research, and migration plans. Public project snapshots are archived outside this repository and are not part of the site build.
+Question records live under `src/content/questions/zh-CN/` and `src/content/questions/en/`. Keep each pair aligned by stable question ID and identical primary capability. Frontmatter provides the question, intent, observable `signals`, exactly one `primaryCapability` leaf, independent facets (topics, roles, scopes, tracks, scenarios, formats) and a `source` with provenance (`adapted`, `derived`, `inspired`, or `original`); answers and scoring fields are intentionally outside the content model. The single vocabulary lives in `src/lib/taxonomy.ts`; routes, titles and breadcrumbs come from `src/lib/routes.ts`. Source review status is tracked in `docs/planning/source-ledger/*.yml` and validated by `npm run check:content`. `npm run report:coverage` prints unique question counts by domain, role, scenario, format and locale. `docs/planning/` contains the MECE architecture, research, and migration plans. Public project snapshots are archived outside this repository and are not part of the site build.
 
 ## Deployment
 

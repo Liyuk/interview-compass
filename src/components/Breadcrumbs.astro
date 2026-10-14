@@ -1,0 +1,17 @@
+---
+import type { Crumb } from '../lib/routes';
+import type { Locale } from '../lib/taxonomy';
+
+interface Props { crumbs: Crumb[]; locale: Locale }
+const { crumbs, locale } = Astro.props;
+---
+<nav class="breadcrumbs" aria-label={locale === 'en' ? 'Breadcrumb' : '面包屑'}>
+  <ol>
+    {crumbs.map((crumb, index) => (
+      <li>
+        {crumb.href ? <a href={crumb.href}>{crumb.label}</a> : <span aria-current="page">{crumb.label}</span>}
+        {index < crumbs.length - 1 && <span class="crumb-sep" aria-hidden="true">›</span>}
+      </li>
+    ))}
+  </ol>
+</nav>

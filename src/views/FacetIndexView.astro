@@ -1,0 +1,30 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { facetDefinitions, facetMeta, pick, type Locale } from '../lib/taxonomy';
+import { facetCounts } from '../lib/question-catalog';
+import { pathFor } from '../lib/routes';
+import { loadQuestions } from '../lib/site-data';
+
+type Kind = 'roles' | 'scenarios' | 'topics';
+interface Props { locale: Locale; kind: Kind }
+const { locale, kind } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const counts = facetCounts(await loadQuestions(locale), { locale, facet: kind });
+const entries = facetDefinitions[kind].filter((entry) => counts.has(entry.id));
+const route = { roles: { type: 'roles' }, scenarios: { type: 'scenarios' }, topics: { type: 'topics' } }[kind] as { type: Kind };
+const heading = { roles: en ? 'Roles' : '岗位', scenarios: en ? 'Interview and promotion' : '面试与晋升', topics: en ? 'Topics' : '主题' }[kind];
+const itemRoute = (id: string) => ({ type: kind === 'roles' ? 'role' : kind === 'scenarios' ? 'scenario' : 'topic', id }) as const;
+---
+<SiteLayout locale={locale} route={route} description={pick(facetMeta[kind].description, locale)}>
+  <h1 class="page-title">{heading}</h1>
+  <p class="intro">{pick(facetMeta[kind].description, locale)}</p>
+  <div class="facet-grid three">
+    {entries.map((entry) => (
+      <a class="facet-card" href={pathFor(itemRoute(entry.id), locale, base)}>
+        <strong>{pick(entry.name, locale)}</strong>
+        <span class="count">{en ? `${counts.get(entry.id)} questions` : `${counts.get(entry.id)} 道问题`}</span>
+      </a>
+    ))}
+  </div>
+</SiteLayout>

@@ -1,0 +1,25 @@
+sources:
+  - id: blog-campus-recruitment-training
+    title: 筛选人和面试官到底在看什么
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+    status: used
+    questions:
+      - e-communication-project-walkthrough
+      - c-metrics-causality-no-number-evidence
+      - a-ai-engineering-resume-claim-verification
+      - a-coding-abstraction-mobile-state-restore
+      - a-debugging-split-bundle-slower
+      - g-resilience-recovery-stuck-in-interview
+  - id: blog-career-growth-ten-questions
+    title: 职场发展问题：晋升与面试前的完整自查清单
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+    status: used
+    questions:
+      - c-metrics-causality-no-number-evidence
+      - g-learning-transfer-verify-learned
+      - e-communication-clarify-vague-question
+  - id: blog-interview-questions-archive
+    title: 面试题与工程师的成长路径
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2018/04/interview-questions-archive/zh.md
+    status: reviewed-not-used
+    reason: 该文只是旧题库的整理缘由和外链索引，没有可提炼的具体题目；旧题库属于另一个仓库，本次不复制。

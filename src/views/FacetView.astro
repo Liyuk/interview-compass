@@ -1,0 +1,32 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import QuestionList from '../components/QuestionList.astro';
+import { domains, facetLabel, pick, type Locale } from '../lib/taxonomy';
+import { getQuestions } from '../lib/question-catalog';
+import { loadQuestions } from '../lib/site-data';
+
+type Kind = 'roles' | 'scenarios' | 'topics';
+interface Props { locale: Locale; kind: Kind; id: string }
+const { locale, kind, id } = Astro.props;
+const en = locale === 'en';
+const filterKey = { roles: 'role', scenarios: 'scenario', topics: 'topic' }[kind] as 'role' | 'scenario' | 'topic';
+const questions = getQuestions(await loadQuestions(locale), { locale, [filterKey]: id });
+const route = ({ roles: { type: 'role', id }, scenarios: { type: 'scenario', id }, topics: { type: 'topic', id } } as const)[kind];
+const label = facetLabel(kind, id, locale);
+const groups = domains
+  .map((domain) => ({ domain, items: questions.filter((q) => q.primaryCapability.startsWith(`${domain.id}.`)) }))
+  .filter((group) => group.items.length > 0);
+const eyebrow = { roles: en ? 'ROLE' : '岗位', scenarios: en ? 'USE CASE' : '使用场景', topics: en ? 'TOPIC' : '主题' }[kind];
+---
+<SiteLayout locale={locale} route={route} description={en ? `Questions for ${label}, grouped by the capability each one examines.` : `${label}相关的问题，按主要能力分组。`}>
+  <p class="eyebrow">{eyebrow}</p>
+  <h1 class="page-title">{label}</h1>
+  <p class="intro">{en ? 'These are the same questions found in the library, grouped here by the capability each one mainly examines.' : '这些题与问题库里的是同一批，这里按各自主要考察的能力分组。'}</p>
+  <p class="result-count">{en ? `${questions.length} questions` : `${questions.length} 道问题`}</p>
+  {groups.map(({ domain, items }) => (
+    <section class="leaf-section">
+      <h2>{domain.letter} · {pick(domain.name, locale)}<span class="count">{items.length}</span></h2>
+      <QuestionList questions={items} locale={locale} />
+    </section>
+  ))}
+</SiteLayout>

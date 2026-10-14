@@ -1,0 +1,87 @@
+# Domain D (delivery) and E (collaboration) source ledger fragment.
+sources:
+  - id: blog-management-retrospective
+    title: 管理复盘：从执行到系统的八个判断
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
+    status: used
+    questions:
+      - d-decomposition-vague-goal
+      - d-incident-first-hour
+      - d-incident-verify-the-fix
+      - e-communication-decision-update
+      - e-communication-context-handoff
+      - e-influence-without-authority
+  - id: blog-product-engineer-without-boundaries
+    title: 产品资源排不上，研发接下项目后怎么推进？
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/consulting/2026/09/product-engineer-without-boundaries/zh.md
+    status: used
+    questions:
+      - d-decomposition-unfamiliar-estimate
+      - d-project-late-change-request
+      - d-operations-campaign-landing
+      - e-negotiation-scope-for-date
+      - e-influence-escalation
+  - id: blog-working-under-resource-constraints
+    title: 资源不足时，怎样不让团队靠透支运转
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/working-under-resource-constraints/zh.md
+    status: used
+    questions:
+      - d-capacity-real-capacity
+      - d-capacity-overdraft-signals
+      - d-capacity-blocked-dependency
+      - d-project-name-the-risk
+      - e-negotiation-scope-for-date
+      - e-negotiation-shared-engineers
+      - e-influence-escalation
+  - id: blog-resolving-project-conflicts
+    title: 项目合作发生冲突时，先对齐哪三件事
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
+    status: used
+    questions:
+      - d-capacity-blocked-dependency
+      - d-project-late-change-request
+      - e-conflict-three-alignments
+      - e-conflict-decision-record
+  - id: blog-define-the-measurement
+    title: 数据度量工作指南（二）：指标争论之前，先定义测量对象
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/03/define-the-measurement-before-arguing-about-metrics/zh.md
+    status: used
+    questions:
+      - d-operations-experiment-guardrails
+  - id: blog-use-your-own-product-feedback-loop
+    title: 先用自己的产品：开发者如何建立真实反馈回路
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/05/use-your-own-product-feedback-loop/zh.md
+    status: used
+    questions:
+      - d-incident-verify-the-fix
+  - id: repo-engineering-decision-skills
+    title: Engineering Decision Skills（eng-reporting 方法）
+    url: https://github.com/Liyuk/engineering-decision-skills
+    status: used
+    questions:
+      - d-incident-verify-the-fix
+      - e-communication-decision-update
+  - id: blog-information-sync-for-decisions
+    title: 信息同步不是抄送
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/information-sync-for-decisions/zh.md
+    status: used
+    questions:
+      - e-communication-decision-update
+  - id: blog-one-on-ones-and-decision-rights
+    title: 1-on-1 不是例会：信息、预期与决策权怎样对齐
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/one-on-ones-and-decision-rights/zh.md
+    status: used
+    questions:
+      - e-feedback-align-on-one-on-one
+      - e-feedback-background-vs-authority
+  - id: repo-tech-interview-handbook-behavioral
+    title: Tech Interview Handbook：行为面试
+    url: https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
+    status: used
+    questions:
+      - e-feedback-receiving-hard
+  - id: repo-engineering-decision-skills-tech-review
+    title: Engineering Decision Skills：tech-review
+    url: https://github.com/Liyuk/engineering-decision-skills
+    status: reviewed-not-used
+    reason: 只核对了 README 对 tech-review 的定位：它面向评审已写成的技术方案，不是面试题的直接素材；本轮 D/E 题没有从中派生题目。

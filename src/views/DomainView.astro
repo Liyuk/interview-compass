@@ -1,0 +1,32 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import QuestionList from '../components/QuestionList.astro';
+import { domains, pick, type Locale } from '../lib/taxonomy';
+import { pathFor } from '../lib/routes';
+import { getQuestions } from '../lib/question-catalog';
+import { loadQuestions } from '../lib/site-data';
+
+interface Props { locale: Locale; domainId: string }
+const { locale, domainId } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const domain = domains.find((item) => item.id === domainId)!;
+const questions = await loadQuestions(locale);
+const leaves = domain.leaves
+  .map((leaf) => ({ leaf, items: getQuestions(questions, { locale, capability: `${domain.id}.${leaf.id}` }) }))
+  .filter((entry) => entry.items.length > 0);
+const total = leaves.reduce((sum, entry) => sum + entry.items.length, 0);
+---
+<SiteLayout locale={locale} route={{ type: 'domain', domain: domain.id }} description={pick(domain.description, locale)}>
+  <p class="eyebrow">{en ? `DOMAIN ${domain.letter}` : `能力域 ${domain.letter}`}</p>
+  <h1 class="page-title">{pick(domain.name, locale)}</h1>
+  <p class="intro">{pick(domain.description, locale)}</p>
+  <p class="result-count">{en ? `${total} questions across ${leaves.length} capabilities` : `${leaves.length} 项能力，共 ${total} 道问题`}</p>
+  {leaves.map(({ leaf, items }) => (
+    <section class="leaf-section">
+      <h2><a href={pathFor({ type: 'leaf', domain: domain.id, leaf: leaf.id }, locale, base)}>{pick(leaf.name, locale)}</a><span class="count">{items.length}</span></h2>
+      <p class="band-text">{pick(leaf.description, locale)}</p>
+      <QuestionList questions={items} locale={locale} showCapability={false} />
+    </section>
+  ))}
+</SiteLayout>

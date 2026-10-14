@@ -1,0 +1,44 @@
+---
+questionId: h-expectations-fit-must-have-conditions
+kind: question
+status: published
+locale: en
+title: What do you value most in your next role? Which of those conditions are you unwilling to compromise on, and why?
+question: What do you value most in your next role? Which of those conditions are you unwilling to compromise on, and why?
+intent: Explore whether your motivations and conditions are clear so both sides can tell if expectations are compatible; this records each side's terms rather than ranking anyone.
+signals:
+  - Explains the reasons behind the conditions, not just a list
+  - Separates must-have conditions from negotiable ones
+  - Grounds the answer in choices actually made before
+primaryCapability: work-responsibility.expectations-fit
+topics:
+  - ethics
+  - learning
+roles:
+  - engineering
+  - product
+  - operations
+  - data
+  - design
+  - manager
+responsibilityScopes:
+  - individual
+careerTracks:
+  - individual-contributor
+  - team-manager
+scenarios:
+  - interview
+  - campus
+  - self-reflection
+formats:
+  - behavioral
+followUps:
+  - Have you made trade-offs over these conditions in the past?
+  - If reality differs from your expectations, how would you handle it?
+source:
+  - attribution: original
+    label: Interview Compass editorial
+  - attribution: inspired
+    label: 'Sourcegraph handbook: engineering leadership hiring'
+    url: https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
+---

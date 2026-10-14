@@ -1,29 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
-import SiteLayout from '../layouts/SiteLayout.astro';
-import { getQuestions } from '../lib/question-catalog';
-import { topicEntries, roleEntries } from '../lib/labels';
-import { addBase } from '../lib/locale-paths';
-const entries = await getCollection('questions');
-const records = entries.map(({ data }) => data);
-const questions = getQuestions(records, { locale: 'zh-CN' });
-const topics = topicEntries('zh-CN').filter(({ id }) => questions.some((q) => q.topics.includes(id))).slice(0, 9);
-const roles = roleEntries('zh-CN').filter(({ id }) => questions.some((q) => q.roles.includes(id))).slice(0, 6);
-const base = import.meta.env.BASE_URL;
+import HomeView from '../views/HomeView.astro';
+const locale = 'zh-CN' as const;
 ---
-<SiteLayout locale="zh-CN" title="问题索引" description="从问题、主题和岗位探索面试与晋升问题。">
-  <div class="page-shell">
-    <aside class="side-nav"><h2>主题索引</h2><ul>{topics.map(({ id, label }) => <li><a href={addBase(`/topics/${id}/`, base)}>{label}</a></li>)}</ul></aside>
-    <main class="main-content" data-pagefind-body>
-      <p class="eyebrow">QUESTION LIBRARY · 面试与晋升</p>
-      <h1 class="page-title">从问题出发，理解它在考察什么。</h1>
-      <p class="intro">这是一个启发式问题库。直接搜索一道题，或按主题、岗位探索；每个问题说明考察意图、关联主题，以及相近问题之间的差异。</p>
-      <h2 class="related-title">按主题浏览</h2>
-      <div class="facet-grid">{topics.map(({ id, label }) => <a class="facet-card" href={addBase(`/topics/${id}/`, base)}><strong>{label}</strong><span>{questions.filter((q) => q.topics.includes(id)).length} 道问题</span></a>)}</div>
-      <h2 class="related-title">按岗位浏览</h2>
-      <div class="facet-grid">{roles.map(({ id, label }) => <a class="facet-card" href={addBase(`/roles/${id}/`, base)}><strong>{label}</strong><span>{questions.filter((q) => q.roles.includes(id)).length} 道问题</span></a>)}</div>
-      <h2 class="related-title">最近整理的问题</h2>
-      <ul class="question-list">{questions.map((q) => <li><a href={addBase(`/questions/${q.questionId}/`, base)}><span>{q.question}</span><span class="question-id">{q.questionId}　›</span></a></li>)}</ul>
-    </main>
-  </div>
-</SiteLayout>
+<HomeView locale={locale} />
