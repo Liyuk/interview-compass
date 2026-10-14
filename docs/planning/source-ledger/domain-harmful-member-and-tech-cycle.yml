@@ -1,0 +1,10 @@
+sources:
+  - id: author-harmful-member-policy-and-tech-cycle-questions
+    title: 作者的面试提问套路（接手问题员工、制度推进怨言、技术伪需求、技术周期与个人市场价值）
+    url: https://github.com/Liyuk/interview-compass
+    status: used
+    questions:
+      - f-frontline-management-inherited-harmful-member
+      - f-frontline-management-policy-rollout-pushback
+      - c-product-judgment-pseudo-demand-infra
+      - f-growth-development-legacy-system-market-value
