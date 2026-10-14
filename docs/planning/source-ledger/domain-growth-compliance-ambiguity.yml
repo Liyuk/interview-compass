@@ -1,0 +1,11 @@
+sources:
+  - id: author-growth-compliance-ambiguity-questions
+    title: 作者的面试提问套路（疲惫与惰性、上升受阻、跨地区数据合规、含糊问题的信息来源与资源规划）
+    url: https://github.com/Liyuk/interview-compass
+    status: used
+    questions:
+      - f-growth-development-fatigue-and-inertia
+      - f-growth-development-no-upward-path
+      - a-system-design-cross-border-data-compliance
+      - d-decomposition-ambiguous-information-sources
+      - d-capacity-headcount-for-ambiguous-problem
