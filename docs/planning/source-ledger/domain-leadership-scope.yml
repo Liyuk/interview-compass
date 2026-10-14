@@ -1,0 +1,19 @@
+sources:
+  - id: author-leadership-scope-questions
+    title: 作者的面试提问套路（继任、往上看两层、精力分配、与下属和上司的冲突、小团体、止损、自研与开源、顽固问题、空降融入、业务压榨、低迷期）
+    url: https://github.com/Liyuk/interview-compass
+    status: used
+    questions:
+      - f-delegation-succession-be-replaceable
+      - f-manager-of-managers-think-two-levels-up
+      - h-boundaries-energy-allocation
+      - f-frontline-management-conflict-with-report
+      - e-conflict-with-manager
+      - e-communication-make-value-visible
+      - f-team-design-cliques
+      - c-investment-choices-stop-loss-wrong-direction
+      - a-engineering-systems-build-vs-open-source
+      - d-incident-chronic-instability
+      - f-team-design-outsider-leader-onboarding
+      - f-frontline-management-unreasonable-demands
+      - f-frontline-management-morale-downturn
