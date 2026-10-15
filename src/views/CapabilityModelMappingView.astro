@@ -1,0 +1,53 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { pathFor, type RouteRef } from '../lib/routes';
+import type { Locale } from '../lib/taxonomy';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const route: RouteRef = { type: 'capability-model-mapping' };
+const cn = en ? [
+  { name: 'Alibaba', theme: 'Culture, hiring principles, manager development, and engineering practice', detail: 'Public materials include values and tiered manager development. The supplied historical front-end matrix offers a useful example of business, craft, collaboration, learning, and team growth in one model; it is not evidence of a current group-wide rubric.', link: 'https://home.alibabagroup.com/en-US/esg-employee-development', label: 'Official employee development' },
+  { name: 'ByteDance', theme: 'Hiring and leveling principles, culture, and onboarding', detail: 'Official public pages describe hiring principles and new-hire growth support, but do not provide a complete company-wide progression matrix.', link: 'https://jobs.bytedance.com/campus/page-6272Gc', label: 'Official campus FAQ' },
+  { name: 'Tencent', theme: 'Values and role-specific hiring requirements', detail: 'Public values and job postings are useful context, but neither should be mistaken for a full internal leveling framework.', link: 'https://www.tencent.com/zh-hk/value-for-users-tech-for-good/', label: 'Official values' },
+  { name: 'Baidu', theme: 'Engineering practices and standards', detail: 'The public engineering white paper discusses team engineering practices and standards, rather than individual promotion levels.', link: 'https://developer.baidu.com/article/detail.html?id=290246', label: 'Engineering standards white paper' },
+] : [
+  { name: '阿里巴巴', theme: '文化、招聘原则、管理者发展与工程实践', detail: '公开材料涉及价值观与分层管理者培养。你提供的历史前端图把业务、专业、协作、学习和团队成长放在一张矩阵中，很适合作为历史参考；它不能证明当前集团通用的职级标准。', link: 'https://home.alibabagroup.com/en-US/esg-employee-development', label: '官方员工发展材料' },
+  { name: '字节跳动', theme: '招聘定级原则、文化与新人培养', detail: '官方公开页面说明招聘理念和新人培养支持，但没有公开完整的全公司逐阶段能力矩阵。', link: 'https://jobs.bytedance.com/campus/page-6272Gc', label: '官方校招 FAQ' },
+  { name: '腾讯', theme: '价值观与具体岗位招聘要求', detail: '公开价值观和招聘岗位可以作为背景材料，但都不能替代完整的内部职级能力框架。', link: 'https://www.tencent.com/zh-hk/value-for-users-tech-for-good/', label: '官方价值观' },
+  { name: '百度', theme: '工程实践与标准', detail: '公开工程白皮书讨论团队工程实践和标准，不是个人晋升等级定义。', link: 'https://developer.baidu.com/article/detail.html?id=290246', label: '工程标准白皮书' },
+];
+const us = en ? [
+  { name: 'Dropbox', theme: 'Responsibilities, impact, and multiple senior IC archetypes', detail: 'Its public engineering framework connects role expectations to scope, business acumen, decisions, collaboration, and organizational health, and warns against checklist use.', link: 'https://dropbox.tech/culture/our-updated-engineering-career-framework', label: 'Updated engineering framework' },
+  { name: 'GitLab', theme: 'Published engineering, product, IC, and management paths', detail: 'Separate job-family frameworks make scope, outcomes, and IC/management paths inspectable. The product framework explicitly covers strategy, customer/market, and outcomes.', link: 'https://handbook.gitlab.com/handbook/engineering/careers/matrix/', label: 'Engineering career matrix' },
+] : [
+  { name: 'Dropbox', theme: '职责、影响与多种高级 IC 贡献形态', detail: '公开工程框架把范围、业务理解、决策、协作和组织健康等纳入要求，并明确提醒不要把框架当成打勾清单。', link: 'https://dropbox.tech/culture/our-updated-engineering-career-framework', label: '更新后的工程职业框架' },
+  { name: 'GitLab', theme: '公开工程、产品、IC 与管理路径', detail: '不同岗位族的框架把范围、结果以及 IC/管理路径分别写清。产品框架明确包含战略、客户与市场、业务结果。', link: 'https://handbook.gitlab.com/handbook/engineering/careers/matrix/', label: '工程职业矩阵' },
+];
+const stageMappings = en ? [
+  { stage: 'Junior Engineer', us: 'Junior Software Engineer; entry-level Engineer', scope: 'Delivers well-scoped work with guidance; verifies quality and learns the product and craft.' },
+  { stage: 'Mid-level Engineer', us: 'Software Engineer; Engineer', scope: 'Owns a feature or project slice end to end and coordinates routine dependencies.' },
+  { stage: 'Senior Engineer', us: 'Senior Software Engineer', scope: 'Leads ambiguous projects, shapes technical/product choices, and improves team outcomes.' },
+  { stage: 'Staff Engineer', us: 'Staff Engineer; Principal Engineer', scope: 'Sets direction across a domain or teams through technical judgment and influence.' },
+  { stage: 'Engineering Manager', us: 'Engineering Manager', scope: 'Owns team outcomes through people, priorities, operating mechanisms, and technical context.' },
+  { stage: 'Manager of Managers', us: 'Director of Engineering; manager of managers', scope: 'Owns multi-team or organizational outcomes through managers, resource choices, and org design.' },
+] : [
+  { stage: '初级工程师', us: 'Junior Software Engineer；入门级 Engineer', scope: '在指导下完成边界清晰的工作，验证质量并学习产品与专业基础。' },
+  { stage: '中级工程师', us: 'Software Engineer；Engineer', scope: '端到端负责一个功能或项目切片，协调常规依赖。' },
+  { stage: '高级工程师', us: 'Senior Software Engineer', scope: '主导模糊项目，参与技术/产品取舍并改善团队结果。' },
+  { stage: '资深工程师', us: 'Staff Engineer；Principal Engineer', scope: '通过专业判断与影响力，为领域或多个团队建立方向。' },
+  { stage: '工程管理者', us: 'Engineering Manager', scope: '通过人才、优先级、团队机制和技术语境对团队结果负责。' },
+  { stage: '管理管理者', us: 'Director of Engineering；manager of managers', scope: '通过多个管理者、资源组合和组织设计对多团队或组织结果负责。' },
+];
+---
+<SiteLayout locale={locale} route={route} description={en ? 'Publicly available company frameworks and cautious China–US role mapping.' : '中美互联网公司公开能力框架与谨慎的岗位责任映射。'}>
+  <p class="eyebrow">{en ? 'Public evidence, not title conversion' : '公开材料 · 责任特征对照'}</p>
+  <h1 class="page-title">{en ? 'China–US capability frameworks' : '中美能力模型：公开内容与映射边界'}</h1>
+  <p class="intro">{en ? 'This comparison summarizes what companies publish. It does not claim a national standard or convert titles one-to-one. Public visibility is uneven, and the sample cannot establish that one country has a single model.' : '本页整理公司实际公开了什么，不把职级名称一一换算，也不把有限样本概括成国家差异。公开程度并不相同，未找到公开矩阵不代表公司内部没有使用。'}</p><p class="source-date">{en ? 'Public sources reviewed October 15, 2026. The Alibaba front-end image is historical material supplied by the user.' : '公开来源核对日期：2026 年 10 月 15 日。阿里前端图为用户提供的历史材料。'}</p>
+  <section class="model-section"><div class="model-section-heading"><div><p class="eyebrow">{en ? 'China' : '中国互联网公司'}</p><h2>{en ? 'Public slices vary by company' : '公开切面各不相同，不能互相替代'}</h2></div><p>{en ? 'Values, hiring principles, role postings, manager development, and engineering standards answer different questions.' : '价值观、招聘定级、岗位要求、管理者培养与工程标准回答的是不同问题。'}</p></div><div class="mapping-grid">{cn.map((item) => <article class="mapping-card"><h3>{item.name}</h3><strong>{item.theme}</strong><p>{item.detail}</p><a href={item.link} target="_blank" rel="noreferrer">{item.label} ↗</a></article>)}</div></section>
+  <section class="model-section"><div class="model-section-heading"><div><p class="eyebrow">{en ? 'United States' : '美国互联网公司'}</p><h2>{en ? 'Some companies publish detailed career frameworks' : '部分公司公开了可逐项阅读的职业框架'}</h2></div><p>{en ? 'These are company-specific examples, not a universal US leveling standard.' : '这些是具体公司的公开实例，不是美国统一职级标准。'}</p></div><div class="mapping-grid mapping-grid-two">{us.map((item) => <article class="mapping-card"><h3>{item.name}</h3><strong>{item.theme}</strong><p>{item.detail}</p><a href={item.link} target="_blank" rel="noreferrer">{item.label} ↗</a>{item.name === 'GitLab' && <p class="mapping-source-extra"><a href="https://handbook.gitlab.com/job-description-library/product/product-manager/" target="_blank" rel="noreferrer">{en ? 'Product Manager framework ↗' : '产品经理职业框架 ↗'}</a></p>}</article>)}</div></section>
+  <section class="model-section"><h2>{en ? 'Map responsibility, not title' : '对照责任特征，不换算称谓'}</h2><p class="intro">{en ? 'Use these questions when comparing a role in China with one in the US:' : '比较中国与美国岗位时，可以逐项核对这些责任维度：'}</p><div class="mapping-factors">{(en ? ['Business outcome ownership and time horizon', 'Scope: task, project, domain, multi-team, or organization', 'Autonomy, ambiguity, and decision authority', 'Technical/product depth and quality responsibility', 'Influence through craft, peers, managers, or organization', 'Individual-contributor or people-management path'] : ['业务结果责任及其时间跨度', '影响范围：任务、项目、领域、多团队或组织', '自主性、问题模糊度与决策权', '专业/产品深度与质量责任', '通过专业、协作、管理者或组织产生影响的方式', '专业贡献路径还是人员管理路径']).map((item, index) => <div><span>{String(index + 1).padStart(2, '0')}</span><strong>{item}</strong></div>)}</div><p class="mapping-caution">{en ? 'Similar responsibility patterns can appear under different titles and levels. Treat any mapping as a contextual hypothesis that must be checked against company, function, geography, and time.' : '不同公司可能用不同称谓和级别承载相似责任。任何映射都只是待核对的假设，必须结合公司、职能、地域和时期。'}</p></section>
+  <section class="model-section"><div class="model-section-heading"><div><p class="eyebrow">{en ? 'Illustrative title patterns' : '示意性称谓映射'}</p><h2>{en ? 'Possible title patterns by responsibility stage' : '按责任阶段对照常见称谓模式'}</h2></div><p>{en ? 'These are search and calibration cues, not equivalencies. The same title can cover different scope across companies.' : '以下称谓只用于检索和校准，不代表级别等价。同一称谓在不同公司可能覆盖完全不同的责任范围。'}</p></div><div class="stage-mapping-list">{stageMappings.map((item) => <article class="stage-mapping-row"><div><span>{en ? 'This model' : '本站阶段'}</span><strong>{item.stage}</strong></div><div><span>{en ? 'Possible US title patterns' : '美国常见称谓示例'}</span><strong>{item.us}</strong></div><p>{item.scope}</p></article>)}</div></section>
+  <aside class="model-callout"><div><p class="eyebrow">{en ? 'Our model' : '回到本站模型'}</p><strong>{en ? 'One product-and-engineering outcome model, with paths that branch by responsibility.' : '以产品与工程共同创造结果为主线，按责任路径呈现阶段差异。'}</strong></div><a class="button-link" href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Capability model' : '能力模型总览'} →</a></aside>
+</SiteLayout>
