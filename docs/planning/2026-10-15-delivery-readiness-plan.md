@@ -62,6 +62,6 @@
 
 - [x] Run `npm run ci` and inspect its complete output.
 - [x] Review the full diff, confirm no new question IDs, check whitespace and generated artifacts, then commit.
-- [ ] Push the feature branch, create a PR against the repository default branch, attach the PR to this task, and report its checks/status.
+- [x] Push the feature branch, create PR #4 against `main`, attach it to this task, and report its checks/status.
 
 **Verification note:** Starlight emits one content warning while creating its built-in `/404` fallback because there is no `docs/404` entry. Adding one conflicts with the built-in 404 route and the lower-priority catch-all, so the default fallback is retained. The project-owned Astro diagnostics are clean.
