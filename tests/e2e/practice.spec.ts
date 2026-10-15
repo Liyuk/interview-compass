@@ -36,6 +36,69 @@ test('practice offers a question picker for an invalid ID and does not send answ
   expect(outbound).toEqual([]);
 });
 
+test('changing the selected question clears the previous question prompt', async ({ page }) => {
+  await page.goto('practice/?question=a-coding-abstraction-defensive-edge-cases');
+  await page.getByLabel('你的回答').fill('这是第一道题的回答。');
+  await page.getByRole('button', { name: '生成分析提示词' }).click();
+  await expect(page.locator('#practice-prompt')).toHaveValue(/这是第一道题的回答/);
+
+  await page.getByLabel('搜索并选择问题').fill('有限资源');
+  await page.getByRole('option').first().click();
+  await expect(page.locator('#selected-question-title')).toContainText(/资源|优先级/);
+  await expect(page.locator('#practice-prompt')).toHaveValue('');
+  await page.getByRole('button', { name: '复制提示词' }).click();
+  await expect(page.locator('#copy-status')).toHaveText('请先生成提示词。');
+});
+
+test('switching questions flushes the current answer before the debounce timer fires', async ({ page }) => {
+  await page.addInitScript(() => {
+    const nativeSetTimeout = window.setTimeout.bind(window);
+    window.setTimeout = ((handler: TimerHandler, timeout?: number, ...args: unknown[]) =>
+      nativeSetTimeout(handler, timeout === 120 ? 10_000 : timeout, ...args)) as typeof window.setTimeout;
+  });
+  await page.goto('practice/?question=a-coding-abstraction-defensive-edge-cases');
+  const answer = page.getByLabel('你的回答');
+  await answer.fill('切题前最后一刻补充的证据。');
+
+  await page.getByLabel('搜索并选择问题').fill('有限资源');
+  await page.getByRole('option').first().click();
+  await expect(page.locator('#selected-question-title')).toContainText(/资源|优先级/);
+  await page.getByLabel('搜索并选择问题').fill('边界和非法输入');
+  await page.getByRole('option').first().click();
+  await expect(answer).toHaveValue('切题前最后一刻补充的证据。');
+});
+
+test('a slower earlier question request cannot replace the latest selection', async ({ page }) => {
+  let delayedRequestStarted!: () => void;
+  const requestStarted = new Promise<void>((resolve) => { delayedRequestStarted = resolve; });
+  let delayedResponseReleased!: () => void;
+  const releaseDelayedResponse = new Promise<void>((resolve) => { delayedResponseReleased = resolve; });
+  await page.route('**/data/question/zh-CN/a-coding-abstraction-defensive-edge-cases.json', async (route) => {
+    delayedRequestStarted();
+    await releaseDelayedResponse;
+    await route.continue();
+  });
+  await page.goto('practice/');
+  await expect(page.getByLabel('搜索并选择问题')).toBeVisible();
+
+  await page.getByLabel('搜索并选择问题').fill('边界和非法输入');
+  await page.getByRole('option').first().click();
+  await requestStarted;
+
+  await page.getByLabel('搜索并选择问题').fill('有限资源');
+  await page.getByRole('option').first().click();
+  await expect.poll(() => new URL(page.url()).searchParams.get('question')).not.toBeNull();
+  await expect.poll(() => new URL(page.url()).searchParams.get('question')).not.toBe('a-coding-abstraction-defensive-edge-cases');
+  await expect(page.locator('#selected-question-title')).not.toBeEmpty();
+  const latestId = new URL(page.url()).searchParams.get('question');
+  const latestTitle = await page.locator('#selected-question-title').textContent();
+
+  delayedResponseReleased();
+  await page.waitForResponse('**/data/question/zh-CN/a-coding-abstraction-defensive-edge-cases.json');
+  await expect(page.locator('#selected-question-title')).toHaveText(latestTitle!);
+  await expect.poll(() => new URL(page.url()).searchParams.get('question')).toBe(latestId);
+});
+
 test('practice remains usable when browser storage and clipboard are unavailable', async ({ page }) => {
   await page.addInitScript(() => {
     Object.defineProperty(window, 'localStorage', { configurable: true, get() { throw new Error('blocked'); } });

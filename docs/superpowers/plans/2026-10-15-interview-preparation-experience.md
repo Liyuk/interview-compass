@@ -140,7 +140,7 @@
 - [x] **Step 3: Implement resolver and concise self-contained skill instructions** with the supported modes and no unsupported inference.
 - [x] **Step 4: Validate skill frontmatter, links, script behavior, and discoverability metadata**; install a local copy only to the configured Codex skill directory, preserving the repository source as canonical.
 - [x] **Step 5: Run skill package checks** and confirm the installed and repository copies match.
-- [ ] **Step 6: Commit** as `feat: add Interview Compass coaching skill`.
+- [x] **Step 6: Commit** as `feat: add Interview Compass coaching skill` (`1c55b7a`).
 
 ### Task 6: Full acceptance and pull request
 
@@ -150,6 +150,6 @@
 
 - [x] **Step 1: Run `npm run ci`**; 51 unit tests and 79 browser tests passed, one pre-existing mobile layout case skipped.
 - [x] **Step 2: Build and inspect `dist`**; all requested localized framework, practice, collection routes, and both JSON indexes exist alongside 3,313 built pages.
-- [ ] **Step 3: Run a full git diff review** for accidental content deletion, duplicated question data, stale project references, answer leaks, and deployment-branch behavior.
+- [x] **Step 3: Run a full git diff review** for accidental content deletion, duplicated question data, stale project references, answer leaks, and deployment-branch behavior.
 - [x] **Step 4: Commit remaining docs/content with clear history**; commits are additive and no existing shared commits were rewritten.
 - [ ] **Step 5: Push the branch and open a PR against `main`**; attach the PR to this chat.
