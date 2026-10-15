@@ -14,22 +14,34 @@ primaryCapability: professional.computer-science
 topics:
   - programming-languages
   - concurrency
+  - reliability
 roles:
   - engineering
   - backend
 responsibilityScopes:
   - individual
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
+  - team-manager
 scenarios:
   - interview
   - campus
   - hiring
+  - promotion
 formats:
   - knowledge
+  - debugging
+  - behavioral
 source:
   - attribution: inspired
     label: JavaGuide — backend, Java, database, concurrency, and distributed systems topics
     url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 A
+followUps:
+  - 【取消信号丢失时，怎样避免任务永久运行？】一个请求启动了多个并行任务，其中一个客户端断开，但部分下游不响应取消。你会怎样设计超时、清理和资源回收？
+  - 如果操作已写入外部系统但尚未返回，取消应如何表达？
+  - 如何证明清理逻辑覆盖异常退出？
 ---

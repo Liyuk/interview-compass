@@ -28,12 +28,19 @@ careerTracks:
 scenarios:
   - interview
   - operations-review
+  - hiring
+  - promotion
 formats:
   - case
 source:
   - attribution: original
     label: Interview Compass 原创扩充（2026-10-14）
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 A
 followUps:
   - 若销售激励只按签约金额计算，会诱发什么行为？
   - 出现合同取消或延期履约时，哪些历史报告需要更正或补充说明？
+  - 【收入确认与客户实际使用脱节时看什么？】预付年费推动本季度收入上升，但客户实际使用下降，服务成本仍在增加。你会如何判断合同收入是否代表健康的客户价值？
+  - 未消耗额度应如何影响产品决策？
+  - 如何判断低使用是采用问题还是客户不再需要？
 ---

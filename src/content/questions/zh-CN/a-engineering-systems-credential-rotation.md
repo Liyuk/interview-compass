@@ -21,16 +21,21 @@ roles:
   - backend
 responsibilityScopes:
   - multiple-teams
+  - team
 careerTracks:
   - individual-contributor
   - team-manager
 scenarios:
   - interview
   - hiring
+  - promotion
 formats:
   - planning
   - case
-followUps: []
+followUps:
+  - 【密钥轮换如何避免旧凭证继续生效？】多个服务使用同一签名密钥，轮换时不能同时停机。你会怎样安排新旧密钥并验证所有调用方完成切换？
+  - 时钟偏差会如何影响密钥有效窗口？
+  - 如何在泄露场景跳过常规平滑迁移？
 source:
   - attribution: inspired
     label: DNXLabs DevOps 题库的主题覆盖；题面为本站独立编写
@@ -38,5 +43,7 @@ source:
   - attribution: inspired
     label: DevOps Interview Questions：安全与基础设施管理
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 A
 relatedQuestions: []
 ---

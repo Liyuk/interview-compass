@@ -35,7 +35,12 @@ formats:
 followUps:
   - 哪些市场特征会使地理留出实验失真？
   - 怎样避免把品牌搜索量当成唯一成功指标？
+  - 【品牌投放短期没有转化，怎样判断是否有效？】品牌广告扩大了触达，但短期直接转化没有变化，销售周期可能长达数月。你会如何决定继续观察、调整创意或停止投入？
+  - 如何避免把自然品牌增长归因于广告？
+  - 预算规模小到无法显著性检验时怎么办？
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 E
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 B
 ---

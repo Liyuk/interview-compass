@@ -17,6 +17,7 @@ topics:
   - execution
   - accessibility
   - management
+  - product-thinking
 roles:
   - design
   - frontend
@@ -43,8 +44,13 @@ source:
     url: https://github.com/briannhinton/designer-interview-questions
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 E
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 B
 followUps:
   - 【How do you distinguish valid variation from governance failure as design-system exceptions grow?】Teams copy shared components and add local variants; buttons, validation, and keyboard behavior diverge. How would you decide which exceptions belong in the system and which should be retired?
   - When should an exception be rejected to preserve cross-product consistency?
   - How do contributing teams own maintenance of accepted exceptions?
+  - 【How do you decide when to extend a rigid design-system component?】Several product teams override shared component styles with CSS, causing frequent regressions after upgrades. How would you choose between adding configuration, splitting the component, or keeping exceptions?
+  - Which needs should remain at the product layer?
+  - How can you detect an API that only serves one exception?
 ---

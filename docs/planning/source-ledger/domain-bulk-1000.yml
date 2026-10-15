@@ -25,7 +25,7 @@ sources:
       - bulk1000-a-019-v1
       - a-engineering-systems-ci-untrusted-change
       - bulk1000-a-021-v1
-      - bulk1000-b-033-v1
+      - b-data-model-erasure-audit-history
       - bulk1000-a-023-v1
       - bulk1000-a-024-v1
       - bulk1000-a-025-v1
@@ -41,7 +41,7 @@ sources:
       - bulk1000-b-030-v1
       - bulk1000-b-031-v1
       - bulk1000-b-032-v1
-      - bulk1000-b-033-v1
+      - b-data-model-erasure-audit-history
       - b-feature-model-time-semantics
       - bulk-b-feature-02
       - bulk1000-b-036-v1

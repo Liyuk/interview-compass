@@ -4,12 +4,8 @@ kind: question
 status: published
 locale: en
 title: How do you distinguish brand-created demand from performance-ad capture?
-question: >-
-  During a brand campaign, organic search and direct visits rise, while search-ad spend also increases. How would
-  you estimate brand contribution without counting conversions intercepted by performance ads as brand outcomes?
-intent: >-
-  Assess whether you distinguish demand creation from demand capture and choose suitable time or market
-  comparisons.
+question: During a brand campaign, organic search and direct visits rise, while search-ad spend also increases. How would you estimate brand contribution without counting conversions intercepted by performance ads as brand outcomes?
+intent: Assess whether you distinguish demand creation from demand capture and choose suitable time or market comparisons.
 signals:
   - Define attribution boundaries across brand exposure, organic demand, and paid channels.
   - Compare pre/post, geographic or audience differences, and lagged effects.
@@ -39,7 +35,12 @@ formats:
 followUps:
   - Which market conditions could invalidate a geographic holdout?
   - How do you avoid using brand-search volume as the only success metric?
+  - 【How do you assess brand spend with no short-term conversions?】Brand advertising expands reach, but short-term direct conversions do not change and the sales cycle may last months. How would you decide whether to wait, change creative, or stop?
+  - How do you avoid attributing organic brand growth to ads?
+  - What if the budget is too small for a significance test?
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 E
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 B
 ---

@@ -28,10 +28,17 @@ careerTracks:
 scenarios:
   - interview
   - hiring
+  - promotion
 formats:
   - case
 source:
   - attribution: inspired
     label: DevOps Interview Questions：监控与告警实践
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 A
+followUps:
+  - 【值班交接时关键告警上下文丢失怎么办？】告警在换班前触发但未达到升级级别，接班人不知道此前排查结论，故障扩大。你会怎样设计交接机制？
+  - 机器生成的上下文应保留哪些事实？
+  - 接班人未确认时谁仍负责？
 ---

@@ -13,21 +13,32 @@ signals:
 primaryCapability: professional.computer-science
 topics:
   - computer-networks
+  - reliability
 roles:
   - engineering
+  - backend
 responsibilityScopes:
   - individual
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
+  - team-manager
 scenarios:
   - interview
   - campus
   - hiring
+  - promotion
 formats:
   - case
 source:
   - attribution: inspired
     label: Coding Interview University — computer science foundations
     url: https://github.com/jwasham/coding-interview-university/blob/main/README.md
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 A
+followUps:
+  - 【DNS 缓存导致切流滞后时怎样控制影响？】服务已经切换到新区域，但部分客户端仍连接旧地址，旧区域即将下线。你会怎样处理缓存、连接复用和退出顺序？
+  - TTL 到期为何不等于现有连接已迁移？
+  - 怎样确认长尾客户端已退出？
 ---

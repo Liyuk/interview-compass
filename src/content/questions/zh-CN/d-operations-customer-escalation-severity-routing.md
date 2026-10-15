@@ -35,7 +35,12 @@ formats:
 followUps:
   - 谁有权降低客户提出的严重等级？
   - 如何防止重要客户获得绕过规则的隐性通道？
+  - 【客户升级投诉绕过队列后造成团队失衡怎么办？】销售或高层可直接把客户问题标为最高优先级，支持团队因此无法处理普通但高风险的故障。你会如何设定升级规则？
+  - 生命安全或数据安全事件如何强制越级？
+  - 如何向高层展示被挤出的其他风险？
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 J
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 B
 ---

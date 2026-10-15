@@ -1,0 +1,55 @@
+sources:
+  - id: interview-compass-original-expansion-2026-10-16-b
+    title: Interview Compass 原创扩充批次 2026-10-16 B；来自产品、设计、组织与工程实践的独立题目
+    status: used
+    questions:
+      - bulk-b-commercial-04
+      - next-domain-052
+      - next-domain-053
+      - next-domain-054
+      - b-model-evolution-schema-unknown-enum
+      - next-domain-056
+      - c-marketing-brand-search-vs-demand-capture
+      - next-product-058
+      - next-product-059
+      - next-product-060
+      - next-design-061
+      - next-design-062
+      - next-design-063
+      - next-design-064
+      - next-design-065
+      - next-design-066
+      - next-design-067
+      - bulk-a-frontend-accessibility-focus-order
+      - design-system-adoption-exceptions
+      - next-design-070
+      - next-people-071
+      - f-frontline-management-improvement-plan
+      - next-people-073
+      - next-people-074
+      - next-people-075
+      - next-people-076
+      - bulk1000-f-079-v1
+      - next-people-079
+      - next-people-080
+      - bulk1000-g-085-v1
+      - next-growth-082
+      - next-growth-083
+      - next-growth-084
+      - next-growth-085
+      - next-growth-086
+      - next-growth-087
+      - next-growth-088
+      - next-growth-089
+      - next-growth-090
+      - next-delivery-091
+      - bulk1000-e-070-v1
+      - next-delivery-093
+      - next-delivery-094
+      - next-delivery-095
+      - next-delivery-096
+      - d-operations-customer-escalation-severity-routing
+      - next-delivery-098
+      - next-delivery-099
+      - e-influence-peer-team-evidence-of-impact
+    note: 补强商业模型、产品决策、体验设计、人才管理、个人成长和工程运营。

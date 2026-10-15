@@ -12,16 +12,37 @@ signals:
   - Says what support will be given and how progress is checked and recorded
   - Keeps the process sincere so improvement is genuinely possible, while following company policy and working with HR to stay compliant
 primaryCapability: people-organization.frontline-management
-topics: [management, feedback, ethics]
-roles: [manager]
-responsibilityScopes: [team]
-careerTracks: [team-manager, senior-manager]
-scenarios: [interview, hiring, self-reflection]
-formats: [behavioral, case]
+topics:
+  - management
+  - feedback
+  - ethics
+roles:
+  - manager
+  - engineering
+responsibilityScopes:
+  - team
+  - multiple-teams
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
+scenarios:
+  - interview
+  - hiring
+  - self-reflection
+  - promotion
+formats:
+  - behavioral
+  - case
 followUps:
   - The person feels you are pushing them out. How do you respond?
   - At the end of the period only part of the goals are met. How do you judge?
+  - 【How do you keep a performance plan from becoming a surprise punishment?】A teammate repeatedly misses goals but received scattered feedback and unclear standards. You need to establish a formal improvement plan. How would you make standards fair, support concrete, and progress verifiable?
+  - How should goals change when team dependencies affect them?
+  - How do you distinguish capability gaps from conflicting goals?
 source:
   - attribution: original
-    label: "The author's leveled interview framework, first-line engineering manager"
+    label: The author's leveled interview framework, first-line engineering manager
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 B
 ---

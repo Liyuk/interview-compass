@@ -13,22 +13,35 @@ signals:
 primaryCapability: professional.coding-abstraction
 topics:
   - frontend
+  - accessibility
+  - product-thinking
 roles:
   - frontend
   - design
+  - engineering
 responsibilityScopes:
   - individual
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
+  - team-manager
 scenarios:
   - interview
   - campus
   - hiring
+  - promotion
 formats:
   - artifact-review
+  - case
 source:
   - attribution: inspired
     label: Front-end Interview Handbook — JavaScript and frontend interview topics
     url: https://github.com/yangshun/front-end-interview-handbook/blob/main/README.md
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 B
+followUps:
+  - 【动态内容更新后，键盘焦点跑到了页面顶部怎么办？】提交操作后页面局部刷新，鼠标用户能看到成功消息，但键盘和屏幕阅读器用户不知道状态变化。你会怎样修复？
+  - 哪些消息需要立即播报，哪些不应打断？
+  - 如何避免同一消息被重复朗读？
 ---

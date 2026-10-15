@@ -14,21 +14,34 @@ primaryCapability: professional.debugging
 topics:
   - backend
   - databases
+  - computer-networks
+  - reliability
 roles:
   - backend
+  - engineering
 responsibilityScopes:
   - individual
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
+  - team-manager
 scenarios:
   - interview
   - campus
   - hiring
+  - promotion
 formats:
   - debugging
+  - case
 source:
   - attribution: inspired
     label: JavaGuide — backend, Java, database, concurrency, and distributed systems topics
     url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 A
+followUps:
+  - 【连接池耗尽时，扩容为何可能更糟？】应用实例增加后，数据库连接总数超过上限，排队和超时一起上升。你会怎样重新设计连接预算和过载行为？
+  - 多租户流量如何共享连接预算？
+  - 什么指标触发拒绝新请求？
 ---

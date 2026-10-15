@@ -29,10 +29,17 @@ careerTracks:
 scenarios:
   - interview
   - promotion
+  - hiring
 formats:
   - case
 source:
   - attribution: inspired
     label: 品牌与增长面试工具：定价与促销经济主题
     url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 A
+followUps:
+  - 【最低消费与按量费用应如何组合？】合同约定固定平台费、阶梯用量费和最低月消费，客户要求查看每项优惠如何影响最终金额。你会如何表达规则和账单明细？
+  - 额度跨越两个阶梯时如何拆分？
+  - 负数调整应抵扣哪一周期？
 ---

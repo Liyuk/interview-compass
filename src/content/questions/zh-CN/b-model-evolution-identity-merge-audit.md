@@ -14,6 +14,7 @@ primaryCapability: domain-modeling.model-evolution
 topics:
   - data-modeling
   - operations
+  - reliability
 roles:
   - data
   - backend
@@ -34,7 +35,12 @@ formats:
 followUps:
   - 合并判断后来被推翻时，如何撤销而不篡改历史？
   - 哪些下游指标会因实体合并而发生变化？
+  - 【合并两个实体后如何保存旧标识的可追溯性？】客户并购后两个企业账号需要合并为一个主体，但审计、合同和历史活动仍引用旧 ID。你会怎样设计映射和查询？
+  - 拆分合并后的实体时如何恢复边界？
+  - 哪些引用应该动态解析到主实体？
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 A
 ---

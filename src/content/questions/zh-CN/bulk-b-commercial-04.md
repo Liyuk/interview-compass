@@ -15,6 +15,7 @@ topics:
   - commercialization
   - product-thinking
   - planning
+  - metrics
 roles:
   - product
   - marketing
@@ -22,12 +23,15 @@ roles:
   - manager
 responsibilityScopes:
   - multiple-teams
+  - team
 careerTracks:
   - team-manager
   - senior-manager
+  - individual-contributor
 scenarios:
   - interview
   - promotion
+  - hiring
 formats:
   - case
   - planning
@@ -35,4 +39,10 @@ source:
   - attribution: inspired
     label: 品牌与增长面试工具：产品组合与新品商业化主题
     url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 B
+followUps:
+  - 【降价带来新客户却让老客户迁移，如何评估？】新套餐价格更低，新增客户增加，但不少老客户从高价套餐迁移。你会怎样计算净新增价值并决定是否继续？
+  - 迁移客户是否仍能创造长期扩张价值？
+  - 若随机定价不可行，如何估计影响？
 ---

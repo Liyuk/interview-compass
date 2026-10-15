@@ -17,6 +17,7 @@ topics:
   - execution
   - accessibility
   - management
+  - product-thinking
 roles:
   - design
   - frontend
@@ -43,8 +44,13 @@ source:
     url: https://github.com/briannhinton/designer-interview-questions
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 E
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 B
 followUps:
   - 【设计系统例外不断增加时，怎样区分必要差异和治理失效？】多个产品团队复制共享组件后加入本地变体，按钮、表单校验和键盘行为逐渐不一致。你会怎样决定哪些例外应进入系统、哪些需要回收？
   - 何时应拒绝例外以保护跨产品一致性？
   - 如何让例外贡献团队承担后续维护？
+  - 【设计系统组件过于僵化时怎样决定扩展接口？】多个产品团队通过 CSS 覆盖共享组件样式，升级后频繁回归。你会如何判断应增加配置、拆分组件还是保留例外？
+  - 哪些需求应留在产品层？
+  - 如何判断新增 API 只服务于单一特例？
 ---

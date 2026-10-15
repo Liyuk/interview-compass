@@ -1,0 +1,56 @@
+sources:
+  - id: interview-compass-original-expansion-2026-10-16-a
+    title: Interview Compass 原创扩充批次 2026-10-16 A；来自能力覆盖缺口与研究主题的独立题目
+    status: used
+    questions:
+      - bulk-a-language-async-cancellation
+      - next-cs-002
+      - next-cs-003
+      - bulk-a-dns-cache-staleness
+      - a-backend-read-replica-consistency-window
+      - b-data-model-erasure-audit-history
+      - next-cs-007
+      - b-model-evolution-schema-unknown-enum
+      - a-engineering-systems-credential-rotation
+      - bulk-a-backend-connection-pool-exhaustion
+      - next-ai-011
+      - next-ai-012
+      - next-ai-013
+      - next-ai-014
+      - next-ai-015
+      - next-ai-016
+      - bulk-ai-prompt-injection-boundary
+      - next-ai-018
+      - next-ai-019
+      - next-ai-020
+      - next-domain-021
+      - next-domain-022
+      - b-data-model-consent-purpose-history
+      - next-domain-024
+      - next-domain-025
+      - bulk-b-commercial-01
+      - next-domain-027
+      - next-domain-028
+      - b-model-evolution-identity-merge-audit
+      - b-business-context-revenue-recognition-vs-user-value
+      - bulk-c-product-01
+      - bulk1000-c-038-v1
+      - next-product-033
+      - next-product-034
+      - next-product-035
+      - next-product-036
+      - next-product-037
+      - next-product-038
+      - next-product-039
+      - next-product-040
+      - next-delivery-041
+      - next-delivery-042
+      - bulk-a-oncall-alert-ownership-gap
+      - next-delivery-044
+      - next-delivery-045
+      - next-delivery-046
+      - next-delivery-047
+      - next-delivery-048
+      - next-collab-049
+      - next-collab-050
+    note: 补强计算机基础、AI 工程、领域模型、产品判断与交付协作。

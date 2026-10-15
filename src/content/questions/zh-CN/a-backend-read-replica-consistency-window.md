@@ -23,16 +23,24 @@ responsibilityScopes:
   - multiple-teams
 careerTracks:
   - individual-contributor
+  - team-manager
 scenarios:
   - interview
   - hiring
+  - promotion
 formats:
   - system-design
   - debugging
+  - case
 followUps:
   - 并发修改时怎样避免版本令牌掩盖冲突？
   - 哪些查询可以明确接受最终一致？
+  - 【读己之写要求会怎样改变副本路由？】用户提交更新后立即刷新页面，却偶尔看到旧值。系统使用异步副本且不能全局改为强一致。你会怎样定义并实现所需的一致性？
+  - 同一用户跨设备操作时，会话粘性还够吗？
+  - 怎样给读取等待设置上限？
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 G
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 A
 ---

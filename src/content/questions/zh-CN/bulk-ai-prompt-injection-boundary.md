@@ -19,6 +19,7 @@ roles:
   - ai-engineer
   - backend
   - product
+  - engineering
 responsibilityScopes:
   - team
   - multiple-teams
@@ -28,10 +29,17 @@ careerTracks:
 scenarios:
   - interview
   - hiring
+  - promotion
 formats:
   - case
 source:
   - attribution: inspired
     label: Landed AI Engineer Interview：提示注入与工具安全
     url: https://github.com/landedjobs/awesome-ai-engineer-interview
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 A
+followUps:
+  - 【工具结果返回恶意内容时如何隔离？】Agent 调用网页检索工具后，页面内容试图诱导它发送内部数据。工具本身是可信服务，但返回内容不可信。你会如何设置边界？
+  - 用户明确授权后是否能把敏感信息发送给外部工具？
+  - 如何在安全拦截与任务完成率之间评估？
 ---

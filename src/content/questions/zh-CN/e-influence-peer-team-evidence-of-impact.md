@@ -35,7 +35,12 @@ formats:
 followUps:
   - 如果对方仍拒绝，怎样升级到共同决策人？
   - 如何确保未来不重复依赖临时人情协调？
+  - 【没有汇报关系但对方不断改变优先级怎么办？】关键依赖团队每周切换优先级，你没有管理权限，项目承诺因此反复变化。你会如何影响对方并保护共同结果？
+  - 如何区分对方确实过载与合作意愿不足？
+  - 何时需要把冲突升级到组合层面？
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 I
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 B
 ---
