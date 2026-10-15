@@ -1,0 +1,33 @@
+sources:
+  - id: interview-compass-original-batch-600-626
+    title: Interview Compass 原创扩充批次 600–626；来自本轮博客、来源台账与能力覆盖缺口的独立问题编写
+    status: used
+    questions:
+      - b-business-context-marginal-customer-cost
+      - b-data-model-product-entitlement
+      - b-model-evolution-eligibility-history
+      - bulk-c-product-02
+      - bulk1000-b-031-v1
+      - c-product-judgment-exit-metric
+      - d-ops-playbook-stale-owner
+      - d-project-management-recover-dependency-baseline
+      - d-reliability-manual-fallback-owner
+      - design-accessibility-workflow-tradeoff
+      - e-conflict-sponsor-evidence
+      - e-feedback-correct-misunderstanding
+      - e-feedback-peer-becomes-report
+      - e-influence-decision-window
+      - e-negotiation-capacity-swap
+      - f-mom-calibration-evidence
+      - f-team-design-expert-load-map
+      - g-learning-transfer-practice-invalidated
+      - g-learning-transfer-teach-and-check
+      - g-resilience-repeated-rejection
+      - g-self-direction-competing-requests
+      - g-self-direction-low-visibility-work
+      - h-attribution-credit-dispute
+      - h-boundaries-consult-before-irreversible-action
+      - h-integrity-correct-public-claim
+      - h-integrity-metric-definition-change
+      - h-ownership-resist-taking-over
+    note: 原先 27 个候选中，3 个重复题面已并入既有题卡；另将规则历史与 AI 人工复核的近重复并入相应题卡。保留题卡同时保存合并来源与差异追问。

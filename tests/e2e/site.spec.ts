@@ -44,6 +44,20 @@ test('question detail explains intent and signals, links its source, and keeps t
   await expect(page).toHaveURL(/\/interview-compass\/en\/questions\/prioritization-limited-resources\/$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('How would you plan next quarter');
+  for (const heading of [
+    'Objective problem to resolve or clarify',
+    'What it examines',
+    'What else the answer may imply',
+    'Signals worth noticing',
+    'Context worth asking for',
+    'Decision after context',
+    'Benefits created',
+    'Costs and risks',
+    'Assessment guide',
+  ]) await expect(page.getByRole('heading', { name: heading })).toBeVisible();
+  for (const level of ['1 · Not passing', '2 · Passing', '3 · Excellent', '4 · Exceptional']) {
+    await expect(page.getByRole('heading', { name: level, exact: true })).toBeVisible();
+  }
 });
 
 test('role, scenario and topic pages group the same questions by capability', async ({ page }) => {

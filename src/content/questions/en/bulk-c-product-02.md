@@ -3,38 +3,49 @@ questionId: bulk-c-product-02
 kind: question
 status: published
 locale: en
-title: A high-value customer requests a feature few others would use. How would you decide?
+title: Should a high-value customer’s custom request be delivered once, productized, or declined?
 question: >-
-  Sales brings a valuable custom request from a major customer, but few others would use it and it would add
-  long-term maintenance and product complexity. How would you compare custom delivery, a reusable product
-  capability, a service-based solution, or walking away, and decide whether to productize it?
+  An important customer will pay well for a custom feature, but few other customers may use it.
+  Delivery adds long-term maintenance, permission, or data-definition costs, and sales may already
+  have promised a date. How would you compare custom delivery, configurable product work, a
+  service-based solution, and walking away, then decide whether to invest in productization?
 intent: >-
-  See whether the candidate brings the customer problem, verifiable demand, contract value, product
-  boundaries, long-term cost, and opportunity cost into one decision.
+  Assess whether you bring the customer’s real obstacle, revenue certainty, reuse potential, ongoing
+  maintenance, and customer concentration risk into one verifiable investment decision.
 signals:
   - >-
-    Clarifies the customer commitment, underlying obstacle, willingness to pay, usage frequency, and
-    alternatives
-  - Separates one-time contract revenue from sustainable value across customers
-  - Compares the costs and risks of custom work, a general capability, a service, and walking away
-  - Proposes reversible validation, scale-up conditions, and stop conditions
+    Verifies the customer’s obstacle, willingness to pay and renewal conditions, usage frequency,
+    alternatives, and the boundary of sales commitments.
+  - >-
+    Separates one-time revenue from reuse value across customers, abstraction cost, and long-term
+    permission and data maintenance ownership.
+  - >-
+    Compares custom work, a general capability, a service, and walking away on benefits, risks, and
+    roadmap opportunity cost.
+  - >-
+    Proposes reversible validation and clear thresholds for pilot, pricing, productization,
+    expansion, or stopping.
 primaryCapability: value-direction.product-judgment
 topics:
   - product-thinking
   - product-discovery
   - prioritization
+  - commercialization
 roles:
   - product
   - operations
   - engineering
+  - marketing
 responsibilityScopes:
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
 scenarios:
   - interview
   - promotion
+  - hiring
 formats:
   - case
 source:
@@ -42,18 +53,19 @@ source:
     label: 产品 sense：把功能诉求还原为用户障碍
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/03/product-judgment-for-engineers/zh.md
+  - attribution: original
+    label: Interview Compass 原创题目扩充批次 600–626
 followUps:
-  - If segments differ sharply in value and cost, how would you choose a target audience and guardrails?
   - >-
-    If the budget can fund only one direction, how would you compare opportunity cost and explain what is
-    being given up?
+    If only one customer needs it but the deal has strategic showcase value, how would you quantify
+    that extra value?
   - >-
-    If random assignment is unavailable, what evidence would you use to estimate causal impact and what
-    uncertainty would remain?
+    If customer segments differ sharply in value and cost, how would you choose a target audience
+    and guardrails?
   - >-
-    If leading indicators improve but business outcomes do not, how would you decide whether to continue,
-    adjust, or stop?
+    How do you prevent sales from presenting an exploratory option as a firm commitment before
+    productization is decided?
   - >-
-    If outcomes appear better but the mechanism is unclear, how would you choose between scaling investment
-    and further validation?
+    If the budget can fund only one direction, how would you compare opportunity cost and explain
+    what is being given up?
 ---

@@ -19,6 +19,12 @@ describe('taxonomy', () => {
     }
   });
 
+  it('includes topics used by the published interview questions', () => {
+    expect(hasTaxonomyId('topics', 'accessibility')).toBe(true);
+    expect(hasTaxonomyId('topics', 'resilience')).toBe(true);
+    expect(hasTaxonomyId('topics', 'boundaries')).toBe(true);
+  });
+
   it('splits a capability id into its domain and leaf', () => {
     const { domain, leaf } = splitCapability('delivery.capacity-planning');
     expect(domain?.letter).toBe('D');

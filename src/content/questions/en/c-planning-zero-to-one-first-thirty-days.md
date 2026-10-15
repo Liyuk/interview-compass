@@ -3,25 +3,66 @@ questionId: c-planning-zero-to-one-first-thirty-days
 kind: question
 status: published
 locale: en
-title: The company asks you to open up a technical area that is completely new, giving budget and few requirements. What do you do in the first thirty days?
-question: The company asks you to open up a technical area that is completely new, such as building from scratch a risk control system or a cross-border compliant data foundation, and the boss gives a budget but no specific requirements. What do you do in the first thirty days, how do you set the first-phase north-star metric, and how do you design the early organization and staffing?
-intent: See how you open when uncertainty is high and there is no ready answer, clarifying the goal and building sources of information before deciding organization and metrics.
+title: >-
+  How would you validate the opportunity, team, and direction in the first thirty days of a new
+  market?
+question: >-
+  The core business is slowing, and the boss asks you to lead an exploration of an unfamiliar
+  market, possibly dominated by giants, with a budget and few requirements. In the first thirty
+  days, how would you clarify the goal, estimate the market and its uncertainty, find a viable entry
+  point, design the early team, and define a north-star metric that tests the direction?
+intent: >-
+  Assess whether you break a highly uncertain new-business launch into market judgment, problem
+  validation, organization design, and staged decisions instead of producing a grand blueprint.
 signals:
-  - First aligns with the decision-maker on the result really wanted and the constraints, and finds real sources of information in the field
-  - Proposes a first-phase metric and scope that can be verified rather than a grand blueprint
-  - Explains how the early organization is designed and where key roles and skills come from
-  - Says what is deliberately not done first and what signals would change direction
+  - >-
+    Aligns with the decision-maker on the expected outcome, resource limits, time window, and
+    non-negotiable constraints.
+  - >-
+    Explains market-sizing assumptions and uncertainty, then identifies incumbent advantages, a
+    possible entry point, and the conditions under which it could work.
+  - >-
+    Connects the north-star metric to testing the entry point and sets initial scope, leading
+    evidence, and conditions for stopping or changing direction.
+  - >-
+    Explains the key early roles, where capabilities will come from, how the team will work
+    together, and what will deliberately wait.
 primaryCapability: value-direction.planning
-topics: [planning, management, product-thinking]
-roles: [manager, engineering, product]
-responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
-scenarios: [interview, promotion, hiring]
-formats: [planning, case]
+topics:
+  - planning
+  - management
+  - product-thinking
+  - commercialization
+roles:
+  - manager
+  - engineering
+  - product
+  - operations
+responsibilityScopes:
+  - multiple-teams
+  - organization
+careerTracks:
+  - senior-manager
+  - executive
+scenarios:
+  - interview
+  - promotion
+  - hiring
+formats:
+  - planning
+  - case
 followUps:
-  - After thirty days you find the task is much larger than expected. How do you reset the boss's expectations?
+  - >-
+    After thirty days you find the task is much larger than expected. How do you reset the boss’s
+    expectations?
+  - >-
+    The estimated market is large but your entry point is small. How would you test whether it
+    merits investment?
+  - If a giant is clearly ahead, how would you judge whether a sustainable opening remains?
   - The early team has no expert in this field. What do you do?
 source:
   - attribution: original
-    label: "The author's leveled interview framework, senior manager"
+    label: The author's leveled interview framework, senior manager
+  - attribution: original
+    label: The author's leveled interview framework, product track
 ---

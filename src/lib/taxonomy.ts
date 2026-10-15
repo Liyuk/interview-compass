@@ -141,7 +141,9 @@ export const facetDefinitions = {
     f('operations', '运营', 'Operations'), f('growth-experiments', '增长实验', 'Growth experiments'), f('communication', '沟通', 'Communication'),
     f('conflict-resolution', '冲突处理', 'Conflict resolution'), f('negotiation', '协商', 'Negotiation'), f('feedback', '反馈', 'Feedback'),
     f('management', '团队管理', 'Team management'), f('hiring', '招聘', 'Hiring'), f('promotion', '晋升', 'Promotion'),
-    f('learning', '学习成长', 'Learning'), f('ethics', '职业伦理', 'Professional ethics'),
+    f('learning', '学习成长', 'Learning'), f('resilience', '韧性与恢复', 'Resilience and recovery'),
+    f('boundaries', '责任与授权边界', 'Responsibility and authority boundaries'),
+    f('accessibility', '无障碍', 'Accessibility'), f('ethics', '职业伦理', 'Professional ethics'),
   ],
   roles: [
     f('engineering', '工程', 'Engineering'), f('frontend', '前端', 'Frontend'), f('backend', '后端', 'Backend'), f('mobile', '客户端', 'Mobile'),

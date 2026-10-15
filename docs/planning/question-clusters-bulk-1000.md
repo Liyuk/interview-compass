@@ -246,8 +246,9 @@
 - 如果业务要求追溯调整历史订单，但审计又要求保留原始交易金额，你会怎样保存两种口径？ / If the business wants historical repricing while audit requires original transaction amounts, how would you preserve both views?
 - 如果促销、优惠券和渠道补贴叠加后出现负毛利，你会怎样定义拦截规则和审批例外？ / If promotions, coupons, and channel subsidies combine into negative-margin orders, how would you define guardrails and approval exceptions?
 
-### 佣金冲回与退款归因 / Commission reversals and refund attribution
+### 部分退款、佣金冲回与规则版本 / Partial refunds, commission reversals, and rule versions
 保留：`bulk1000-b-031-v1`；合并：`bulk1000-b-031-v2`、`bulk1000-b-031-v3`、`bulk1000-b-031-v4`、`bulk1000-b-031-v5`
+- 后续将原先独立的部分退款结算和历史规则版本题合并到该主问，保留交易发生时适用的规则、退款跨结算周期、冲回、防重复及账目复核等差异追问。
 - 如果订单经过折扣、税费和多方分账后必须保证金额守恒，你会怎样定义舍入、残差和对账规则？ / If discounts, tax, and multi-party allocation must conserve the total, how would you define rounding, residuals, and reconciliation?
 - 如果退款可能发生在结算前，也可能跨多个结算周期才到达，你会怎样表达冲正和账期归属？ / If refunds may happen before settlement or arrive several cycles later, how would you represent reversals and period ownership?
 - 如果关键客户合同覆盖标准价格规则，你会怎样区分可配置例外和必须改代码的规则？ / If a strategic customer contract overrides standard pricing, how would you distinguish configurable exceptions from rules that require code changes?
