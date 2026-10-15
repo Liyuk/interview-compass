@@ -3,21 +3,48 @@ questionId: c-metrics-causality-campaign-net-lift
 kind: question
 status: published
 locale: en
-title: Next-day retention rose during a campaign. How do you judge whether the campaign caused a net gain rather than something that would have happened anyway?
-question: Next-day retention rose during a campaign. How do you judge whether the campaign caused a net gain rather than something that would have happened anyway?
-intent: See how you find a reasonable comparison for a growth result and say how far the conclusion can be supported.
+title: Estimating campaign lift amid simultaneous product changes
+question: >-
+  Retention rose during a marketing campaign, and the team credits the channel, but a new product flow also
+  launched and participants may already have been more active. How would you establish a credible comparison,
+  estimate the campaign’s net lift, and state the limits of the conclusion?
+intent: >-
+  Examines how you separate correlation from causal impact when several changes occur at once, choose a
+  credible comparison, and calibrate the strength of growth evidence.
 signals:
-  - Settles what to compare against first, such as a control group or the natural trend over the same period
-  - Checks for selection effects, such as participants being more active to begin with
-  - States the limits of the conclusion and what further verification is still needed
+  - Defines target users, outcome measures, observation window, and guardrails
+  - Identifies confounders such as a concurrent product change, selection bias, and natural trends
+  - Compares an experiment, quasi-experiment, or other credible comparison and states assumptions and limits
+  - Sets evidence-based triggers to continue, adjust, expand, or stop investment
 primaryCapability: value-direction.metrics-causality
-topics: [growth-experiments, metrics, operations]
-roles: [operations, marketing, product, data]
-responsibilityScopes: [team]
-careerTracks: [individual-contributor]
-scenarios: [interview, operations-review, promotion]
-formats: [case]
+topics:
+  - growth-experiments
+  - metrics
+  - operations
+roles:
+  - operations
+  - marketing
+  - product
+  - data
+responsibilityScopes:
+  - team
+careerTracks:
+  - individual-contributor
+scenarios:
+  - interview
+  - operations-review
+  - promotion
+formats:
+  - case
 source:
   - attribution: original
     label: Original to this site
+  - attribution: derived
+    label: Liyuk 博客：产品判断、Top-K 与规划方法；题目为本站重新组织
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
+followUps:
+  - >-
+    If random assignment is unavailable, what evidence would you use to estimate lift and what uncertainty
+    would remain?
+  - If leading indicators improve but business outcomes do not, would you continue, adjust, or stop?
 ---

@@ -70,3 +70,17 @@ sources:
       - b-feature-model-time-semantics
       - b-model-evolution-historical-rules
       - b-model-evolution-concept-split
+  - id: gh-dataskew-data-engineering-interview-questions
+    title: dataskew-io/data-engineering-interview-questions
+    url: https://github.com/dataskew-io/data-engineering-interview-questions/tree/715f5fad79373c70bc9b7e9cd3dc1cb126f69428
+    status: used
+    questions:
+      - b-data-model-active-user-grain
+      - b-data-model-late-event-correction
+      - b-data-model-safe-backfill
+      - b-data-model-contract-evolution
+      - b-feature-model-point-in-time
+      - b-feature-model-freshness-cost
+      - b-data-model-ownership-lineage
+      - b-data-quality-blocking-threshold
+      - b-data-engineering-batch-streaming-need

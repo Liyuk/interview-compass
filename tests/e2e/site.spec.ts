@@ -5,8 +5,8 @@ const QUESTION = 'questions/prioritization-limited-resources/';
 test('home page offers search, three entry choices, all eight domains and the product path', async ({ page }) => {
   await page.goto('./');
   await expect(page.getByRole('searchbox')).toBeVisible();
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('从一个问题开始');
-  for (const name of ['按能力探索', '按岗位准备', '按场景练习']) await expect(page.getByRole('link', { name: new RegExp(name) })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('找到问题，也看懂它想了解什么');
+  for (const name of ['主题', '能力', '岗位', '场景']) await expect(page.getByRole('link', { name: new RegExp(name) }).first()).toBeVisible();
   for (const letter of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']) await expect(page.locator('.band .facet-card', { hasText: `${letter} ·` })).toHaveCount(1);
   await expect(page.getByRole('heading', { name: '产品与全链路思维' })).toBeVisible();
 });
@@ -19,7 +19,7 @@ test('capability path: home to domain to leaf to question with a canonical bread
   await expect(page).toHaveURL(/\/capabilities\/delivery\/capacity-planning\/$/);
   await page.getByRole('link', { name: /调整计划/ }).first().click();
   const crumbs = page.getByRole('navigation', { name: '面包屑' });
-  await expect(crumbs.locator('li')).toHaveText(['首页›', '问题库›', '交付执行与持续运营›', '容量与依赖›', /调整计划/]);
+  await expect(crumbs.locator('li')).toHaveText(['首页', '问题库', '交付执行与持续运营', '容量与依赖', /调整计划/]);
   await expect(crumbs.locator('[aria-current="page"]')).toContainText('调整计划');
 });
 
@@ -28,7 +28,15 @@ test('question detail explains intent and signals, links its source, and keeps t
   await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('资源只够做两项');
   await expect(page.getByRole('heading', { name: '考察意图' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '题面情境中的客观问题' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '回答还可能说明什么' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '值得观察的信号' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '值得补充询问的上下文' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '基于上下文的决策' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '方案收益' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '方案成本与风险' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '评估参考' })).toBeVisible();
+  for (const level of ['1 · 不通过', '2 · 通过', '3 · 优秀', '4 · 卓越']) await expect(page.getByRole('heading', { name: level, exact: true })).toBeVisible();
   await expect(page.getByText('本站原创')).toBeVisible();
   const href = await page.locator('.metadata-block a', { hasText: '产品' }).first().getAttribute('href');
   expect(href).toMatch(/^\/interview-compass\/roles\/product\/$/);

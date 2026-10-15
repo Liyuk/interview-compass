@@ -12,16 +12,32 @@ signals:
   - 区分"没有具体事例"和"表达不好"，并给对方补充的机会
   - 对不同候选人使用一致的追问，并记录观察到的具体行为
 primaryCapability: people-organization.hiring
-topics: [hiring, ethics]
-roles: [manager, engineering]
-responsibilityScopes: [team]
-careerTracks: [team-manager, senior-manager]
-scenarios: [hiring]
-formats: [behavioral, case]
+topics:
+  - hiring
+  - ethics
+roles:
+  - manager
+  - engineering
+responsibilityScopes:
+  - team
+careerTracks:
+  - team-manager
+  - senior-manager
+scenarios:
+  - hiring
+formats:
+  - behavioral
+  - case
 followUps:
   - 候选人给了一个很具体的例子，你怎么确认它是真的？
   - 候选人确实没有这类经历，但表现出强烈的学习意愿，你怎么评价？
 source:
   - attribution: original
-    label: "作者的分级面试框架，面试官追问"
+    label: 作者的分级面试框架，面试官追问
+  - attribution: original
+    label: 作者的面试提问套路：辨别项目与产出是否被包装
+  - attribution: derived
+    label: 博客《职场发展问题：晋升与面试前的完整自查清单》
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
 ---

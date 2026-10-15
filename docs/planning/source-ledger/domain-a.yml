@@ -85,3 +85,29 @@ sources:
     url: https://github.com/MindorksOpenSource/android-interview-questions/blob/master/README.md
     status: reviewed-not-used
     reason: Android 题多数答案在外链且 API 与架构观念较旧，需逐题复核；客户端专业题留待后续批次，本批仅在多岗位题中包含 mobile 角色。
+  - id: gh-atryx-ai-engineer-interview-questions
+    title: atryx/ai-engineer-interview-questions
+    url: https://github.com/atryx/ai-engineer-interview-questions/tree/2ebafa2e5d53bb114ab07541ac40c1e4feb9885f
+    status: used
+    questions:
+      - a-ai-engineering-eval-disagreement
+      - a-ai-engineering-retrieval-quality-regression
+      - a-ai-engineering-source-deletion-propagation
+      - a-ai-engineering-agent-duplicate-side-effect
+      - a-ai-engineering-model-change-release
+      - a-ai-engineering-latency-budget
+      - a-ai-engineering-human-review-capacity
+      - a-ai-engineering-traceable-release
+  - id: gh-dnxlabs-devops-interview-questions
+    title: DNXLabs/DevOps-Interview-Questions
+    url: https://github.com/DNXLabs/DevOps-Interview-Questions/tree/4d4b3ae44a0abd87cf5b5f79b9fce7abd6ce7e9a
+    status: used
+    questions:
+      - a-engineering-systems-progressive-fleet-deploy
+      - a-engineering-systems-ci-untrusted-change
+      - a-engineering-systems-infrastructure-drift
+      - a-engineering-systems-alert-noise-slo
+      - a-engineering-systems-schema-deploy-rollback
+      - a-engineering-systems-credential-rotation
+      - a-engineering-systems-cost-reliability-tradeoff
+      - a-engineering-systems-incident-update-evidence

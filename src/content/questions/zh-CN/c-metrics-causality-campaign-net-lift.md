@@ -11,13 +11,29 @@ signals:
   - 检查参与活动的用户本来就更活跃之类的选择偏差
   - 说明结论的边界，以及还需要补哪些验证
 primaryCapability: value-direction.metrics-causality
-topics: [growth-experiments, metrics, operations]
-roles: [operations, marketing, product, data]
-responsibilityScopes: [team]
-careerTracks: [individual-contributor]
-scenarios: [interview, operations-review, promotion]
-formats: [case]
+topics:
+  - growth-experiments
+  - metrics
+  - operations
+roles:
+  - operations
+  - marketing
+  - product
+  - data
+responsibilityScopes:
+  - team
+careerTracks:
+  - individual-contributor
+scenarios:
+  - interview
+  - operations-review
+  - promotion
+formats:
+  - case
 source:
   - attribution: original
     label: 本站原创
+  - attribution: derived
+    label: Liyuk 博客：产品判断、Top-K 与规划方法；题目为本站重新组织
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
 ---

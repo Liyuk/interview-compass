@@ -12,16 +12,32 @@ signals:
   - 指出之后某个具体情形中做法的变化，而不是泛泛地说"我成长了"
   - 不把错误包装成"其实是好事"，也不过度自责
 primaryCapability: learning-adaptation.structured-reflection
-topics: [learning, ethics]
-roles: [engineering, product, operations, manager]
-responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
-scenarios: [interview, promotion, self-reflection]
-formats: [behavioral]
+topics:
+  - learning
+  - ethics
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+responsibilityScopes:
+  - individual
+  - team
+careerTracks:
+  - individual-contributor
+  - team-manager
+scenarios:
+  - interview
+  - promotion
+  - self-reflection
+formats:
+  - behavioral
 followUps:
   - 如果当时的信息是同样的，你现在还会做出同样的判断吗？
   - 谁发现了这个错误，你是怎么知道的？
 source:
   - attribution: original
     label: 作者的面试提问套路：怎样看待做错的事
+  - attribution: original
+    label: 作者的面试提问套路：个人原因造成的事故
 ---

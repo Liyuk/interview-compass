@@ -1,0 +1,784 @@
+sources:
+  - id: bulk500-source-001
+    title: Coding Interview University — computer science foundations
+    url: https://github.com/jwasham/coding-interview-university/blob/main/README.md
+    status: used
+    questions:
+      - bulk-a-cache-coherence-sharing
+      - bulk-a-code-incremental-parser
+      - bulk-a-code-merge-interval-stream
+      - bulk-a-context-switch-cost
+      - bulk-a-dns-cache-staleness
+      - bulk-a-language-compiler-optimization-observable
+      - bulk-a-page-fault-working-set
+      - bulk-a-tcp-retransmission-evidence
+      - bulk-a-virtual-memory-isolation
+  - id: bulk500-source-002
+    title: JavaGuide — backend, Java, database, concurrency, and distributed systems topics
+    url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
+    status: used
+    questions:
+      - bulk-a-atomic-memory-ordering
+      - bulk-a-backend-backpressure-queue-growth
+      - bulk-a-backend-connection-pool-exhaustion
+      - bulk-a-backend-idempotency-key-scope
+      - bulk-a-backend-outbox-ordering
+      - bulk-a-backend-pagination-consistency
+      - bulk-a-backend-rate-limit-distributed
+      - bulk-a-backend-schema-compatibility
+      - bulk-a-btree-vs-lsm-write-profile
+      - bulk-a-code-bounded-retry-policy
+      - bulk-a-code-concurrent-expiring-map
+      - bulk-a-code-deterministic-task-scheduler
+      - bulk-a-framework-dependency-injection-scope
+      - bulk-a-framework-middleware-order
+      - bulk-a-gc-pause-latency
+      - bulk-a-language-async-cancellation
+      - bulk-a-language-equality-hash-contract
+      - bulk-a-language-type-erasure-api
+  - id: bulk500-source-003
+    title: System Design Primer — requirements, constraints, and trade-offs
+    url: https://github.com/donnemartin/system-design-primer/blob/master/README.md
+    status: used
+    questions:
+      - bulk-a-distributed-clock-ordering
+      - bulk-a-framework-module-boundary-cycles
+  - id: bulk500-source-004
+    title: Front-end Interview Handbook — JavaScript and frontend interview topics
+    url: https://github.com/yangshun/front-end-interview-handbook/blob/main/README.md
+    status: used
+    questions:
+      - bulk-a-code-deep-equality-cyclic-objects
+      - bulk-a-framework-angular-change-detection-boundary
+      - bulk-a-framework-react-state-identity
+      - bulk-a-frontend-accessibility-focus-order
+      - bulk-a-frontend-bundle-cache-invalidation
+      - bulk-a-frontend-event-loop-starvation
+      - bulk-a-frontend-hydration-mismatch
+      - bulk-a-frontend-layout-thrashing
+      - bulk-a-frontend-render-waterfall
+      - bulk-a-frontend-virtualized-list-state
+      - bulk-a-language-closure-capture
+  - id: bulk500-source-005
+    title: Android Interview Questions — Android, Kotlin, lifecycle, and architecture topics
+    url: https://github.com/MindorksOpenSource/android-interview-questions/blob/master/README.md
+    status: used
+    questions:
+      - bulk-a-client-background-work-expiration
+      - bulk-a-client-deep-link-auth-boundary
+      - bulk-a-client-offline-write-conflict
+      - bulk-a-client-process-death-lifecycle
+      - bulk-a-client-render-thread-jank
+  - id: bulk500-source-006
+    title: System Design Primer：分布式系统与可靠性设计
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-webhook-delivery
+  - id: bulk500-source-007
+    title: System Design Primer：扩展与容量权衡
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-backend-rate-limit-distributed
+  - id: bulk500-source-008
+    title: System Design Primer：队列与分布式任务处理
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-delayed-task-scheduler
+  - id: bulk500-source-009
+    title: System Design Primer：数据模型与业务系统设计
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-subscription-entitlements
+  - id: bulk500-source-010
+    title: System Design Primer：数据存储与访问模式
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-audit-log-query
+  - id: bulk500-source-011
+    title: System Design Primer：缓存、可用性与故障隔离
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-feature-flag-control-plane
+  - id: bulk500-source-012
+    title: System Design Primer：消息队列与扇出模式
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-notification-fanout
+  - id: bulk500-source-013
+    title: System Design Primer：数据迁移与演进
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-incremental-data-migration
+  - id: bulk500-source-014
+    title: System Design Primer：索引与读写路径
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-search-index-refresh
+  - id: bulk500-source-015
+    title: System Design Primer：实时系统与一致性
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-live-collaboration-presence
+  - id: bulk500-source-016
+    title: System Design Primer：对象存储与内容分发
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - a-system-design-large-file-upload
+  - id: bulk500-source-017
+    title: System Design Primer：跨区域系统设计
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-region-aware-config
+  - id: bulk500-source-018
+    title: System Design Primer：事件处理与数据建模
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-usage-metering-pipeline
+  - id: bulk500-source-019
+    title: System Design Primer：性能与延迟分析
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-debug-tail-latency
+  - id: bulk500-source-020
+    title: System Design Primer：故障模式与重试
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-retry-amplification
+  - id: bulk500-source-021
+    title: Tech Interview Handbook：将问题拆成可验证证据
+    url: https://github.com/yangshun/tech-interview-handbook
+    status: used
+    questions:
+      - a-computer-science-memory-growth-vs-leak
+  - id: bulk500-source-022
+    title: System Design Primer：分布式系统时序问题
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-debug-clock-skew
+  - id: bulk500-source-023
+    title: DevOps Interview Questions：容量与运行诊断
+    url: https://github.com/DNXLabs/DevOps-Interview-Questions
+    status: used
+    questions:
+      - bulk-a-debug-queue-backlog
+  - id: bulk500-source-024
+    title: 原创：数据质量与生产问题定位
+    status: used
+    questions:
+      - bulk-a-debug-data-drift
+  - id: bulk500-source-025
+    title: System Design Primer：依赖故障与降级
+    url: https://github.com/donnemartin/system-design-primer
+    status: used
+    questions:
+      - bulk-a-debug-partial-dependency-outage
+  - id: bulk500-source-026
+    title: 原创：渐进式数据库变更诊断
+    status: used
+    questions:
+      - bulk-a-debug-after-schema-rollout
+  - id: bulk500-source-027
+    title: DevOps Interview Questions：监控与告警实践
+    url: https://github.com/DNXLabs/DevOps-Interview-Questions
+    status: used
+    questions:
+      - bulk-a-oncall-alert-ownership-gap
+  - id: bulk500-source-028
+    title: 原创：事故恢复验证与用户影响闭环
+    status: used
+    questions:
+      - bulk-a-incident-recovery-validation
+  - id: bulk500-source-029
+    title: DevOps Interview Questions：构建与交付链路
+    url: https://github.com/DNXLabs/DevOps-Interview-Questions
+    status: used
+    questions:
+      - bulk-a-build-provenance
+  - id: bulk500-source-030
+    title: DevOps Interview Questions：CI 流程与自动化测试
+    url: https://github.com/DNXLabs/DevOps-Interview-Questions
+    status: used
+    questions:
+      - bulk-a-flaky-test-triage
+  - id: bulk500-source-031
+    title: DevOps Interview Questions：安全与基础设施管理
+    url: https://github.com/DNXLabs/DevOps-Interview-Questions
+    status: used
+    questions:
+      - bulk-a-secret-rotation
+  - id: bulk500-source-032
+    title: DevOps Interview Questions：基础设施即代码
+    url: https://github.com/DNXLabs/DevOps-Interview-Questions
+    status: used
+    questions:
+      - a-engineering-systems-infrastructure-drift
+  - id: bulk500-source-033
+    title: DevOps Interview Questions：环境与部署自动化
+    url: https://github.com/DNXLabs/DevOps-Interview-Questions
+    status: used
+    questions:
+      - bulk-a-environment-parity
+  - id: bulk500-source-034
+    title: 原创：紧急修复的发布控制
+    status: used
+    questions:
+      - bulk-a-release-policy-for-emergency-fix
+  - id: bulk500-source-035
+    title: DevOps Interview Questions：CI/CD 系统与迁移
+    url: https://github.com/DNXLabs/DevOps-Interview-Questions
+    status: used
+    questions:
+      - bulk-a-ci-migration-sequencing
+  - id: bulk500-source-036
+    title: 原创：测试数据治理与隔离
+    status: used
+    questions:
+      - bulk-a-test-data-lifecycle
+  - id: bulk500-source-037
+    title: 原创：依赖更新与漏洞响应机制
+    status: used
+    questions:
+      - bulk-a-dependency-update-policy
+  - id: bulk500-source-038
+    title: DevOps Interview Questions：制品管理与发布
+    url: https://github.com/DNXLabs/DevOps-Interview-Questions
+    status: used
+    questions:
+      - bulk-a-artifact-retention-and-reproducibility
+  - id: bulk500-source-039
+    title: Landed AI Engineer Interview：RAG 与知识库更新
+    url: https://github.com/landedjobs/awesome-ai-engineer-interview
+    status: used
+    questions:
+      - a-ai-engineering-source-deletion-propagation
+  - id: bulk500-source-040
+    title: Landed AI Engineer Interview：检索与 RAG 评估
+    url: https://github.com/landedjobs/awesome-ai-engineer-interview
+    status: used
+    questions:
+      - bulk-ai-rag-retrieval-diagnosis
+  - id: bulk500-source-041
+    title: Landed AI Engineer Interview：评测集与数据质量
+    url: https://github.com/landedjobs/awesome-ai-engineer-interview
+    status: used
+    questions:
+      - bulk-ai-eval-contamination
+  - id: bulk500-source-042
+    title: Landed AI Engineer Interview：Agent 工具调用可靠性
+    url: https://github.com/landedjobs/awesome-ai-engineer-interview
+    status: used
+    questions:
+      - bulk-ai-agent-tool-idempotency
+  - id: bulk500-source-043
+    title: Landed AI Engineer Interview：Agent 运行治理
+    url: https://github.com/landedjobs/awesome-ai-engineer-interview
+    status: used
+    questions:
+      - bulk-ai-agent-budget-and-loop
+  - id: bulk500-source-044
+    title: Landed AI Engineer Interview：提示注入与工具安全
+    url: https://github.com/landedjobs/awesome-ai-engineer-interview
+    status: used
+    questions:
+      - bulk-ai-prompt-injection-boundary
+  - id: bulk500-source-045
+    title: Landed AI Engineer Interview：推理服务与模型路由
+    url: https://github.com/landedjobs/awesome-ai-engineer-interview
+    status: used
+    questions:
+      - bulk-ai-model-provider-fallback
+  - id: bulk500-source-046
+    title: Landed AI Engineer Interview：训练数据治理
+    url: https://github.com/landedjobs/awesome-ai-engineer-interview
+    status: used
+    questions:
+      - bulk-ai-fine-tuning-data-lineage
+  - id: bulk500-source-047
+    title: Landed AI Engineer Interview：模型部署与发布评估
+    url: https://github.com/landedjobs/awesome-ai-engineer-interview
+    status: used
+    questions:
+      - bulk-ai-llm-release-canary
+  - id: bulk500-source-048
+    title: Landed AI Engineer Interview：人机协同与不确定性处理
+    url: https://github.com/landedjobs/awesome-ai-engineer-interview
+    status: used
+    questions:
+      - bulk-ai-human-review-routing
+  - id: bulk500-source-049
+    title: Landed AI Engineer Interview：向量检索与索引演进
+    url: https://github.com/landedjobs/awesome-ai-engineer-interview
+    status: used
+    questions:
+      - bulk-ai-embedding-migration
+  - id: bulk500-source-050
+    title: 原创：生成式 AI 观测与敏感数据边界
+    status: used
+    questions:
+      - a-ai-engineering-traceable-release
+  - id: bulk500-source-051
+    title: 工程师为什么需要产品判断：从用户任务理解价值
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+    status: used
+    questions:
+      - bulk-c-product-01
+  - id: bulk500-source-052
+    title: 产品 sense：把功能诉求还原为用户障碍
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/03/product-judgment-for-engineers/zh.md
+    status: used
+    questions:
+      - bulk-c-product-02
+  - id: bulk500-source-053
+    title: The Product Manager Interview Project：产品判断题卡结构
+    url: https://github.com/deanpeters/The-Product-Manager-Interview-Project
+    status: used
+    questions:
+      - bulk-c-product-03
+  - id: bulk500-source-054
+    title: 产品概览作为决策模型：事实、推断与待验证问题
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/09/product-overview-is-a-decision-model/zh.md
+    status: used
+    questions:
+      - bulk-c-product-04
+  - id: bulk500-source-055
+    title: Top K 问题：排序口径、必要条件与不做项
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
+    status: used
+    questions:
+      - bulk-c-product-05
+  - id: bulk500-source-056
+    title: 工程师为什么需要产品判断：外部实践需结合本业务条件
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+    status: used
+    questions:
+      - bulk-c-product-06
+  - id: bulk500-source-057
+    title: 如何写一份产品概览：从参与者到价值流
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/09/product-overview-is-a-decision-model/zh.md
+    status: used
+    questions:
+      - bulk-b-context-01
+  - id: bulk500-source-058
+    title: 技术规划作为业务与竞争分析：识别价值链上的位置
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2025/11/technical-planning-business-and-competitive-analysis/zh.md
+    status: used
+    questions:
+      - bulk-b-context-02
+  - id: bulk500-source-059
+    title: 产品判断：将跨职能流程画成可讨论的模型
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+    status: used
+    questions:
+      - bulk-b-context-03
+  - id: bulk500-source-060
+    title: 品牌与增长面试工具：商业情境与专业角色覆盖
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-b-context-04
+  - id: bulk500-source-061
+    title: 品牌与增长面试工具：定价与促销经济主题
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-b-commercial-01
+      - bulk-b-commercial-02
+  - id: bulk500-source-062
+    title: 品牌与增长面试工具：品牌损益与营销组合建模主题
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-b-commercial-03
+  - id: bulk500-source-063
+    title: 品牌与增长面试工具：产品组合与新品商业化主题
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-b-commercial-04
+  - id: bulk500-source-064
+    title: 品牌与增长面试工具：促销、定价与商业结果主题
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-b-commercial-05
+  - id: bulk500-source-065
+    title: 数据度量工作指南：先定义测量对象再讨论指标
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/03/define-the-measurement-before-arguing-about-metrics/zh.md
+    status: used
+    questions:
+      - bulk-b-data-01
+  - id: bulk500-source-066
+    title: 指标字典模板：把定义变成可复算的协作接口
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
+    status: used
+    questions:
+      - bulk-b-data-02
+  - id: bulk500-source-067
+    title: dataskew-io/data-engineering-interview-questions：数据契约与数据所有权主题
+    url: https://github.com/dataskew-io/data-engineering-interview-questions
+    status: used
+    questions:
+      - bulk-b-data-03
+  - id: bulk500-source-068
+    title: dataskew-io/data-engineering-interview-questions：数据质量与变化记录主题
+    url: https://github.com/dataskew-io/data-engineering-interview-questions
+    status: used
+    questions:
+      - bulk-b-data-04
+  - id: bulk500-source-069
+    title: 数据度量工作指南：指标定义需要可复算
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
+    status: used
+    questions:
+      - bulk-b-data-05
+  - id: bulk500-source-070
+    title: dataskew-io/data-engineering-interview-questions：时间点一致性与特征可复算
+    url: https://github.com/dataskew-io/data-engineering-interview-questions
+    status: used
+    questions:
+      - b-feature-model-window-definition
+  - id: bulk500-source-071
+    title: dataskew-io/data-engineering-interview-questions：特征新鲜度与训练服务一致性
+    url: https://github.com/dataskew-io/data-engineering-interview-questions
+    status: used
+    questions:
+      - bulk-b-feature-02
+  - id: bulk500-source-072
+    title: dataskew-io/data-engineering-interview-questions：特征所有权与下游影响
+    url: https://github.com/dataskew-io/data-engineering-interview-questions
+    status: used
+    questions:
+      - bulk-b-feature-03
+  - id: bulk500-source-073
+    title: dataskew-io/data-engineering-interview-questions：特征新鲜度、成本与业务价值
+    url: https://github.com/dataskew-io/data-engineering-interview-questions
+    status: used
+    questions:
+      - bulk-b-feature-04
+  - id: bulk500-source-074
+    title: Interview Compass 领域建模研究：概念演进与历史可解释性
+    url: https://github.com/Liyuk/interview-compass/blob/main/docs/planning/2026-10-14-content-architecture-mece.md
+    status: used
+    questions:
+      - bulk-b-model-evolution-01
+  - id: bulk500-source-075
+    title: dataskew-io/data-engineering-interview-questions：数据契约变化与消费者兼容
+    url: https://github.com/dataskew-io/data-engineering-interview-questions
+    status: used
+    questions:
+      - bulk-b-model-evolution-02
+  - id: bulk500-source-076
+    title: 指标争论之前，先定义测量对象
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/03/define-the-measurement-before-arguing-about-metrics/zh.md
+    status: used
+    questions:
+      - bulk-c-metrics-01
+  - id: bulk500-source-077
+    title: 品牌与增长面试工具：渠道组合与营销效果衡量
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-c-metrics-02
+  - id: bulk500-source-078
+    title: 指标分级：先服务最重要的决策
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-tiers-prioritize-decisions/zh.md
+    status: used
+    questions:
+      - bulk-c-metrics-03
+  - id: bulk500-source-079
+    title: 指标字典模板：使指标能复算并支持共同决策
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
+    status: used
+    questions:
+      - bulk-c-metrics-04
+  - id: bulk500-source-080
+    title: 品牌与增长面试工具：营销组合建模与回报评估
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-c-metrics-05
+  - id: bulk500-source-081
+    title: 工程师为什么需要产品判断：技术作用需连接业务结果
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+    status: used
+    questions:
+      - bulk-c-metrics-06
+  - id: bulk500-source-082
+    title: 品牌与增长面试工具：从实验假设到业务结果
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-growth-01
+  - id: bulk500-source-083
+    title: 品牌与增长面试工具：推广活动的运营执行和测量
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-growth-02
+  - id: bulk500-source-084
+    title: 品牌与增长面试工具：活动执行、渠道和客户体验
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-growth-03
+  - id: bulk500-source-085
+    title: 品牌与增长面试工具：跨渠道执行与效果判断
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-growth-04
+  - id: bulk500-source-086
+    title: 品牌与增长面试工具：用户洞察与细分主题
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-growth-05
+  - id: bulk500-source-087
+    title: 品牌与增长面试工具：渠道、促销与品牌风险主题
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-growth-06
+  - id: bulk500-source-088
+    title: 品牌与增长面试工具：品牌效果与市场组合建模主题
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-growth-07
+  - id: bulk500-source-089
+    title: 品牌与增长面试工具：用户细分与营销组合
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-growth-08
+  - id: bulk500-source-090
+    title: 品牌与增长面试工具：定价、促销与品牌效果
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-growth-09
+  - id: bulk500-source-091
+    title: 品牌与增长面试工具：新品发布与市场进入主题
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-growth-10
+  - id: bulk500-source-092
+    title: 品牌与增长面试工具：用户洞察、细分和体验主题
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-growth-11
+  - id: bulk500-source-093
+    title: 品牌与增长面试工具：渠道策略、预算和商业结果
+    url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+    status: used
+    questions:
+      - bulk-growth-12
+  - id: bulk500-source-094
+    title: 资源不足时，怎样不让团队靠透支运转
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/working-under-resource-constraints/zh.md
+    status: used
+    questions:
+      - bulk-d-portfolio-dependency-release
+      - bulk-d-resource-commitment-overlap
+      - bulk-e-negotiate-fair-workload
+  - id: bulk500-source-095
+    title: 'The Product Manager Interview Project: prioritization and decision cards'
+    url: https://github.com/deanpeters/The-Product-Manager-Interview-Project
+    status: used
+    questions:
+      - bulk-d-critical-path-uncertain-estimates
+  - id: bulk500-source-096
+    title: 管理复盘：从执行到系统的八个判断
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
+    status: used
+    questions:
+      - bulk-d-pmo-status-integrity
+      - bulk-d-recovery-plan-after-missed-milestone
+      - bulk-e-conflict-repair-after-escalation
+  - id: bulk500-source-097
+    title: 项目合作发生冲突时，先对齐哪三件事
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
+    status: used
+    questions:
+      - bulk-d-scope-change-after-contract
+      - bulk-e-conflict-disputed-acceptance
+      - bulk-e-cross-team-decision-deadlock
+  - id: bulk500-source-098
+    title: Sourcegraph engineering leadership interview themes
+    url: >-
+      https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
+    status: used
+    questions:
+      - bulk-d-risk-trigger-escalation
+      - bulk-e-disagree-publicly-with-lead
+  - id: bulk500-source-099
+    title: 技术规划，本质上是业务分析与竞品分析
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2025/11/technical-planning-business-and-competitive-analysis/zh.md
+    status: used
+    questions:
+      - bulk-d-project-exit-criteria
+  - id: bulk500-source-100
+    title: 产品资源排不上，研发接下项目后怎么推进？
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/consulting/2026/09/product-engineer-without-boundaries/zh.md
+    status: used
+    questions:
+      - bulk-d-dependency-ownership-boundary
+  - id: bulk500-source-101
+    title: 'Engineering Decision Skills: tech-planning and management-retro'
+    url: https://github.com/Liyuk/engineering-decision-skills
+    status: used
+    questions:
+      - bulk-d-pmo-signal-vs-metric
+  - id: bulk500-source-102
+    title: 'Tech Interview Handbook: behavioral interview rubrics'
+    url: >-
+      https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
+    status: used
+    questions:
+      - bulk-e-influence-no-authority-experiment
+      - bulk-h-integrity-delayed-disclosure
+  - id: bulk500-source-103
+    title: 1-on-1 不是例会：信息、预期与决策权怎样对齐
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/one-on-ones-and-decision-rights/zh.md
+    status: used
+    questions:
+      - bulk-e-feedback-defensive-peer
+  - id: bulk500-source-104
+    title: 'Engineering Decision Skills: eng-reporting'
+    url: https://github.com/Liyuk/engineering-decision-skills
+    status: used
+    questions:
+      - bulk-e-remote-collaboration-information-gap
+  - id: bulk500-source-105
+    title: 思维训练（四）：结构化思维实践
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/structured-thinking-practice/zh.md
+    status: used
+    questions:
+      - bulk-e-stakeholder-changing-expectations
+  - id: bulk500-source-106
+    title: 一线技术管理的三种产出
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/frontline-engineering-management/zh.md
+    status: used
+    questions:
+      - bulk-f-manager-boundary-between-coaching-and-performance
+      - bulk-f-manager-coach-without-taking-over
+      - bulk-f-team-goals-drift
+  - id: bulk500-source-107
+    title: 为什么需要管理管理者，以及什么样的人适合这段责任
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/managing-managers-and-leader-profile/zh.md
+    status: used
+    questions:
+      - bulk-f-manage-manager-data-discrepancy
+      - bulk-f-manager-of-managers-local-incentives
+  - id: bulk500-source-108
+    title: 团队成长不是扩张：效率、梯队与延续
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/01/team-growth-is-not-expansion/zh.md
+    status: used
+    questions:
+      - bulk-f-manager-talent-retention-counteroffer
+      - bulk-f-team-structure-after-product-line-split
+  - id: bulk500-source-109
+    title: U.S. OPM Structured Interviews guidance
+    url: https://www.opm.gov/policy-data-oversight/assessment-and-selection/structured-interviews/
+    status: used
+    questions:
+      - bulk-f-hiring-interview-loop-coverage
+  - id: bulk500-source-110
+    title: 管理管理者如何找到、培养和交接负责人：HRBP、TA 与技术负责人的分工
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/manager-of-managers-leadership-supply/zh.md
+    status: used
+    questions:
+      - bulk-f-succession-emergency-readiness
+  - id: bulk500-source-111
+    title: 'Tech Interview Handbook: interview process and behavioral evidence'
+    url: https://github.com/yangshun/tech-interview-handbook
+    status: used
+    questions:
+      - bulk-f-early-performance-mismatch
+  - id: bulk500-source-112
+    title: 成长里程碑：把“我想成长”聊成具体的样子
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/08/specific-growth-milestones/zh.md
+    status: used
+    questions:
+      - bulk-g-growth-goal-without-promotion-slot
+      - bulk-g-growth-path-specialist-vs-manager
+      - bulk-g-learning-from-rejected-promotion
+  - id: bulk500-source-113
+    title: 目标、规划与复盘：把“交作业”变成自己的成长
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/07/goals-retrospectives-and-next-actions/zh.md
+    status: used
+    questions:
+      - bulk-g-repeated-setback-adjust-approach
+      - bulk-g-self-direction-unowned-improvement
+  - id: bulk500-source-114
+    title: 评估潜力时，我们真正该看什么
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/02/evaluating-potential-with-care/zh.md
+    status: used
+    questions:
+      - bulk-g-learn-without-formal-course
+      - bulk-g-recovery-after-public-mistake
+      - bulk-g-recovery-sustainable-boundary
+  - id: bulk500-source-115
+    title: 职场发展问题：晋升与面试前的完整自查清单
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+    status: used
+    questions:
+      - bulk-h-expectations-role-incentives
+      - bulk-h-integrity-correct-attribution
+      - bulk-h-ownership-deliverable-unclaimed
+      - bulk-h-ownership-raise-uncertainty-early
+  - id: bulk500-source-116
+    title: 'Monzo progression framework: responsibility and impact across levels'
+    url: https://github.com/monzo/progression-framework
+    status: used
+    questions:
+      - bulk-h-boundaries-pressure-to-skip-review
+  - id: bulk500-source-117
+    title: Designer Interview Questions（仅作主题启发；本站独立原创，不复制原问题）
+    url: https://github.com/briannhinton/designer-interview-questions
+    status: used
+    questions:
+      - design-accessibility-deadline-tradeoff
+      - design-engineering-handoff-behavior-contract
+      - design-information-architecture-findability
+      - design-interaction-system-state-coverage
+      - design-portfolio-evidence-walkthrough
+      - design-postlaunch-outcome-attribution
+      - design-research-conflicting-evidence
+      - design-system-adoption-exceptions

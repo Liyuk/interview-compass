@@ -20,7 +20,7 @@ sources:
       - h-attribution-contribution-evidence
       - h-attribution-collaborator-view
       - h-attribution-lead-or-manage
-      - f-hiring-probe-packaged-claims
+      - f-hiring-probe-generic-claims
       - f-hiring-probe-personal-part
       - c-product-judgment-three-levels-of-bar
       - d-capacity-resources-and-scope
@@ -39,7 +39,7 @@ sources:
       - g-structured-reflection-could-it-have-succeeded
       - g-structured-reflection-improvement-executed
       - g-learning-transfer-failure-to-future
-      - d-incident-personal-error-view
+      - g-structured-reflection-mistake-lesson-or-gain
       - d-incident-prevent-personal-error
       - b-data-model-commercial-mapping
       - b-data-model-industry-interop
@@ -64,7 +64,7 @@ sources:
       - h-attribution-without-you
       - h-attribution-contribution-evidence
       - h-attribution-collaborator-view
-      - f-hiring-probe-packaged-claims
+      - f-hiring-probe-generic-claims
       - e-influence-break-constraints
   - id: blog-top-k-thinking
     title: 思维训练（一）：Top K 问题——先找到最重要的事

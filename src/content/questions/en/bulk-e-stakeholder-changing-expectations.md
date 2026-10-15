@@ -1,0 +1,41 @@
+---
+questionId: bulk-e-stakeholder-changing-expectations
+kind: question
+status: published
+locale: en
+title: Align a stakeholder who keeps changing the definition of success
+question: >-
+  A project sponsor has successively defined success as launch, adoption, and cost reduction, each
+  change affecting different teams. How would you make goal changes explicit and protect teams from
+  repeated rework?
+intent: Examines goal clarification, change-impact communication, and governance negotiation.
+signals:
+  - Clarifies the priority among outcomes and their evidence windows.
+  - Explains the value or sunk cost of completed work under the new goal.
+  - Establishes authorized change and re-estimation of scope, date, and resources.
+primaryCapability: collaboration.stakeholder-influence
+topics:
+  - communication
+  - negotiation
+  - planning
+roles:
+  - pmo
+  - product
+  - manager
+responsibilityScopes:
+  - multiple-teams
+  - organization
+careerTracks:
+  - team-manager
+  - senior-manager
+scenarios:
+  - interview
+  - promotion
+formats:
+  - case
+source:
+  - attribution: derived
+    label: 思维训练（四）：结构化思维实践
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/structured-thinking-practice/zh.md
+---

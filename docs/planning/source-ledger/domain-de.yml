@@ -28,7 +28,7 @@ sources:
     questions:
       - d-capacity-real-capacity
       - d-capacity-overdraft-signals
-      - d-capacity-blocked-dependency
+      - bulk1000-d-055-v1
       - d-project-name-the-risk
       - e-negotiation-scope-for-date
       - e-negotiation-shared-engineers
@@ -38,7 +38,7 @@ sources:
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
     status: used
     questions:
-      - d-capacity-blocked-dependency
+      - bulk1000-d-055-v1
       - d-project-late-change-request
       - e-conflict-three-alignments
       - e-conflict-decision-record
@@ -85,3 +85,12 @@ sources:
     url: https://github.com/Liyuk/engineering-decision-skills
     status: reviewed-not-used
     reason: 只核对了 README 对 tech-review 的定位：它面向评审已写成的技术方案，不是面试题的直接素材；本轮 D/E 题没有从中派生题目。
+  - id: gh-pingananth-fde-decomp-interview-guide
+    title: pingananth/fde-decomp-interview-guide
+    url: https://github.com/pingananth/fde-decomp-interview-guide
+    status: used
+    questions:
+      - d-decomposition-reduce-deploy-failure
+      - d-decomposition-solution-shaped-customer-request
+      - d-decomposition-conflicting-evidence-start
+      - d-decomposition-resource-cut-midflight

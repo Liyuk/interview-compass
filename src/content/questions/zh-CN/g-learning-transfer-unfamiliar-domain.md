@@ -35,8 +35,10 @@ followUps:
 source:
   - attribution: derived
     label: 职场发展问题：晋升与面试前的完整自查清单
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
   - attribution: derived
     label: 评估潜力时，我们真正该看什么
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/02/evaluating-potential-with-care/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/02/evaluating-potential-with-care/zh.md
 ---

@@ -1,6 +1,7 @@
 ---
 import type { Crumb } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
+import Icon from './Icon.astro';
 
 interface Props { crumbs: Crumb[]; locale: Locale }
 const { crumbs, locale } = Astro.props;
@@ -10,7 +11,7 @@ const { crumbs, locale } = Astro.props;
     {crumbs.map((crumb, index) => (
       <li>
         {crumb.href ? <a href={crumb.href}>{crumb.label}</a> : <span aria-current="page">{crumb.label}</span>}
-        {index < crumbs.length - 1 && <span class="crumb-sep" aria-hidden="true">›</span>}
+        {index < crumbs.length - 1 && <Icon name="chevron-right" size={15} class="crumb-sep" />}
       </li>
     ))}
   </ol>

@@ -2,6 +2,7 @@
 import '@radix-ui/themes/styles.css';
 import '../styles/global.css';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Icon from '../components/Icon.astro';
 import { activeNavFor, breadcrumbsFor, navLabel, pathFor, switchLocaleRoute, titleFor, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
 
@@ -9,6 +10,7 @@ interface Props { locale: Locale; route: RouteRef; description?: string }
 const { locale, route, description = '' } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
+const publicBase = base.endsWith('/') ? base : `${base}/`;
 const other: Locale = en ? 'zh-CN' : 'en';
 const title = titleFor(route, locale);
 const active = activeNavFor(route);
@@ -27,12 +29,16 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#fbfaf8" />
+    <link rel="icon" type="image/svg+xml" href={`${publicBase}favicon.svg`} />
     <title>{route.type === 'home' ? 'Interview Compass' : `${title} · Interview Compass`}</title>
   </head>
   <body class="radix-themes" data-accent-color="red" data-gray-color="sand" data-radius="medium">
     <a class="skip-link" href="#main">{en ? 'Skip to content' : '跳到正文'}</a>
     <header class="site-header">
-      <a class="wordmark" href={pathFor({ type: 'home' }, locale, base)}>Interview Compass</a>
+      <a class="wordmark" href={pathFor({ type: 'home' }, locale, base)}>
+        <img src={`${publicBase}favicon.svg`} width="30" height="30" alt="" aria-hidden="true" />
+        <span>Interview Compass</span>
+      </a>
       <nav class="primary-nav" aria-label={en ? 'Main navigation' : '主导航'}>
         {nav.map((item) => <a href={pathFor(item.ref, locale, base)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
       </nav>
@@ -44,7 +50,7 @@ const nav = [
     <div class="search-strip">
       <form class="search-form" role="search" data-pagefind-search>
         <label class="sr-only" for="site-search">{en ? 'Search questions, topics, or keywords' : '搜索问题、主题或关键词'}</label>
-        <span class="search-icon" aria-hidden="true">⌕</span>
+        <Icon name="search" size={21} class="search-icon" />
         <input id="site-search" name="q" type="search" placeholder={en ? 'Search questions, topics, or keywords' : '搜索问题、主题或关键词'} autocomplete="off" />
         <button type="submit">{en ? 'Search' : '搜索'}</button>
       </form>
@@ -57,7 +63,10 @@ const nav = [
       </main>
     </div>
     <footer class="site-footer">
-      <span>Interview Compass</span>
+      <a class="footer-wordmark" href={pathFor({ type: 'home' }, locale, base)}>
+        <img src={`${publicBase}favicon.svg`} width="20" height="20" alt="" aria-hidden="true" />
+        <span>Interview Compass</span>
+      </a>
       <a href={pathFor({ type: 'guide' }, locale, base)}>{en ? 'How to use this question library' : '如何使用这套问题库'}</a>
       <a href="https://github.com/Liyuk/interview-compass">GitHub</a>
     </footer>

@@ -147,5 +147,12 @@ sources:
   - id: blog-manager-of-managers-leadership-supply
     title: 管理管理者如何找到、培养和交接负责人：HRBP、TA 与技术负责人的分工
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/manager-of-managers-leadership-supply/zh.md
-    status: reviewed-not-used
-    reason: 只核对了 frontmatter 和导语，未逐段详读；负责人供给相关题目留待下一轮补充。
+    status: used
+    questions:
+      - f-hiring-headcount-trade-offs
+      - f-hiring-role-division-hrbp-ta
+      - f-hiring-hard-market-vs-requirements
+      - f-hiring-lead-leveling-evidence
+      - f-hiring-candidate-promise-honesty
+      - f-manager-of-managers-verify-new-lead
+      - f-delegation-succession-internal-external-fairness

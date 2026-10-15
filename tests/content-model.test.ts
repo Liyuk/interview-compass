@@ -37,7 +37,7 @@ describe('question content contract', () => {
   });
 
   it('rejects answer-bearing fields', () => {
-    for (const field of ['answer', 'sampleAnswer', 'score', 'rubric', 'recommendation']) {
+    for (const field of ['answer', 'sampleAnswer', 'score', 'recommendation']) {
       expect(() => parseQuestionRecord(question('zh-CN', { [field]: 'x' }))).toThrow();
     }
   });

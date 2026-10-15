@@ -54,7 +54,7 @@ docs/planning/            本次规划，不进入公开内容集合
 
 默认语言使用中文根路径，英文使用 `/en/` 前缀。每个公开题目的两种语言使用相同文件路径和稳定 `questionId`，不同语言各自保存标题、正文和搜索文本；构建校验确保发布题目均有中英配对，避免 Starlight 的默认语言回退悄悄输出未翻译内容。语言切换保留当前页的配对路径；若目标语言没有对应页面，切到目标语言首页并说明该内容尚未翻译。UI 标签和 Starlight 内置字符串也必须本地化。
 
-在 Starlight 内容 schema 上扩展 `kind` 和题目元数据；题目、参考资料与方法文档分别校验。题目必须有问题、考察意图和主能力；追问、场景和背景知识按需填写，不设置答案或评分字段。题目详情仍由 Starlight 渲染，定制入口只读取同一个集合。Starlight 支持 Markdown frontmatter 和自定义字段。[内容写作说明](https://starlight.astro.build/guides/authoring-content/)
+在 Starlight 内容 schema 上扩展 `kind` 和题目元数据；题目、参考资料与方法文档分别校验。题目必须有问题、考察意图和主能力；追问、场景和背景知识按需填写。题目详情展示客观问题、考察意图、潜在推论、观察信号、补充上下文、决策与收益/成本风险，并以题目自己的观察信号形成 1–4 分评估锚点；不保存候选人分数或录用建议。题目详情仍由 Starlight 渲染，定制入口只读取同一个集合。Starlight 支持 Markdown frontmatter 和自定义字段。[内容写作说明](https://starlight.astro.build/guides/authoring-content/)
 
 视觉系统采用分层约束：Starlight 定义阅读页的导航与文档节奏；Radix Themes 约束定制页面和控件的颜色、排版、间距、密度与状态；Radix Primitives 处理需要弹窗、菜单、选择器等交互语义的场景。全站 CSS token 映射到 Starlight 变量和 Radix Theme 配置，避免出现两套互不相关的按钮、字体或表面样式。静态链接、标题和简单表单继续使用语义 HTML，不为了“使用 Radix”而增加客户端框架。
 

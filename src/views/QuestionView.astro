@@ -1,8 +1,10 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import Icon from '../components/Icon.astro';
 import { capabilityLabel, facetLabel, facetMeta, pick, splitCapability, type FacetKind, type Locale } from '../lib/taxonomy';
 import { facetRoute, pathFor } from '../lib/routes';
 import { facetValuesOf } from '../lib/question-catalog';
+import { questionEvaluation } from '../lib/question-evaluation';
 import { loadAllRecords } from '../lib/site-data';
 
 interface Props { locale: Locale; id: string }
@@ -11,6 +13,7 @@ const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const all = await loadAllRecords();
 const record = all.find((item) => item.questionId === id && item.locale === locale && item.status === 'published')!;
+const evaluation = questionEvaluation(record);
 const { domain, leaf } = splitCapability(record.primaryCapability);
 const route = { type: 'question', questionId: record.questionId, capability: record.primaryCapability, title: record.question } as const;
 const related = (record.relatedQuestions ?? []).flatMap((relation) => {
@@ -22,13 +25,23 @@ const context = contextKinds.map((kind) => ({ kind, ids: facetValuesOf(record, k
 const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: en ? 'Derived from' : '提炼自', inspired: en ? 'Inspired by' : '启发自', original: en ? 'Original to this site' : '本站原创' };
 ---
 <SiteLayout locale={locale} route={route} description={record.intent}>
-  <p class="eyebrow">{domain?.letter} · {domain && pick(domain.name, locale)} › {leaf && pick(leaf.name, locale)}</p>
+  <p class="eyebrow">{domain?.letter} · {domain && pick(domain.name, locale)} <Icon name="chevron-right" size={14} /> {leaf && pick(leaf.name, locale)}</p>
   <h1 class="page-title" data-pagefind-meta="title">{record.question}</h1>
 
   <div data-pagefind-body>
+    <section class="detail-block" aria-labelledby="objective-h">
+      <h2 id="objective-h">{evaluation.objectiveTitle}</h2>
+      <p class="intent-callout">{evaluation.objective}</p>
+    </section>
+
     <section class="detail-block" aria-labelledby="intent-h">
-      <h2 id="intent-h">{en ? 'What it examines' : '考察意图'}</h2>
-      <p class="intent-callout">{record.intent}</p>
+      <h2 id="intent-h">{evaluation.intentTitle}</h2>
+      <p>{evaluation.intent}</p>
+    </section>
+
+    <section class="detail-block" aria-labelledby="inference-h">
+      <h2 id="inference-h">{evaluation.inferenceTitle}</h2>
+      <p>{evaluation.inference}</p>
     </section>
 
     <section class="detail-block" aria-labelledby="signals-h">
@@ -36,12 +49,48 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
       <ul class="signal-list">{record.signals.map((signal) => <li>{signal}</li>)}</ul>
     </section>
 
-    {record.followUps?.length ? (
-      <section class="detail-block" aria-labelledby="followups-h">
-        <h2 id="followups-h">{en ? 'Follow-up prompts' : '可以继续追问'}</h2>
-        <ul class="signal-list">{record.followUps.map((item) => <li>{item}</li>)}</ul>
-      </section>
-    ) : null}
+    <section class="detail-block" aria-labelledby="context-h">
+      <h2 id="context-h">{evaluation.contextTitle}</h2>
+      <ul class="signal-list">{evaluation.contextQuestions.map((item) => <li>{item}</li>)}</ul>
+    </section>
+
+    <section class="analysis-grid" aria-label={evaluation.decisionTitle}>
+      <article class="analysis-card decision-card">
+        <h2>{evaluation.decisionTitle}</h2>
+        <p>{evaluation.decision}</p>
+      </article>
+      <article class="analysis-card tradeoff-card">
+        <h2>{en ? 'Examine the trade-offs' : '分析方案的利与弊'}</h2>
+        <div class="tradeoff-columns">
+          <section aria-labelledby="benefits-h">
+            <h3 id="benefits-h">{evaluation.benefitsTitle}</h3>
+            <ul class="signal-list">{evaluation.benefits.map((item) => <li>{item}</li>)}</ul>
+          </section>
+          <section aria-labelledby="costs-h">
+            <h3 id="costs-h">{evaluation.costsTitle}</h3>
+            <ul class="signal-list">{evaluation.costs.map((item) => <li>{item}</li>)}</ul>
+          </section>
+        </div>
+      </article>
+    </section>
+
+    <section class="detail-block assessment-block" aria-labelledby="assessment-h">
+      <div class="assessment-heading">
+        <div>
+          <h2 id="assessment-h">{evaluation.title}</h2>
+          <p>{evaluation.note}</p>
+        </div>
+      </div>
+      <div class="assessment-grid">
+        {evaluation.levels.map((level) => (
+          <article class={`assessment-level assessment-${level.id}`}>
+            <h3>{level.label}</h3>
+            <p>{level.meaning}</p>
+            <p class="assessment-reference">{level.reference}</p>
+          </article>
+        ))}
+      </div>
+    </section>
 
     {record.background?.length ? (
       <section class="detail-block" aria-labelledby="background-h">

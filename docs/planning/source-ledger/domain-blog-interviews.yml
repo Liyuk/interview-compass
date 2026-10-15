@@ -16,7 +16,7 @@ sources:
     status: used
     questions:
       - c-metrics-causality-no-number-evidence
-      - g-learning-transfer-verify-learned
+      - g-learning-transfer-unfamiliar-domain
       - e-communication-clarify-vague-question
   - id: blog-interview-questions-archive
     title: 面试题与工程师的成长路径
