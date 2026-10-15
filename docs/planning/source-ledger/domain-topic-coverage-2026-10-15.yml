@@ -1,0 +1,65 @@
+sources:
+  - id: interview-compass-original-topic-expansion-microservices
+    title: Interview Compass 原创主题补充：微服务
+    status: used
+    questions:
+      - a-microservices-team-boundary-change
+      - a-microservices-saga-compensation-boundary
+      - a-microservices-contract-version-rollout
+      - a-microservices-timeout-retry-amplification
+      - a-microservices-read-model-freshness-contract
+      - a-microservices-service-ownership-oncall-gap
+      - a-microservices-data-ownership-migration
+    note: 补充服务边界、分布式流程、契约演进、故障传播、一致性、责任链和数据所有权。
+  - id: interview-compass-original-topic-expansion-micro-frontends
+    title: Interview Compass 原创主题补充：微前端
+    status: used
+    questions:
+      - a-mfe-independent-deploy-boundary
+      - a-mfe-shell-routing-history-contract
+      - a-mfe-css-style-isolation-collision
+      - a-mfe-shared-dependencies-version-governance
+      - a-mfe-auth-session-cross-app
+      - a-mfe-cross-app-event-contract
+      - a-mfe-runtime-failure-isolation
+      - a-mfe-cross-team-observability
+      - a-mfe-monolith-incremental-extraction
+    note: 补充自治发布、路由契约、样式隔离、共享依赖、认证、事件、运行时隔离、观测和渐进迁移。
+  - id: interview-compass-original-topic-expansion-monorepo
+    title: Interview Compass 原创主题补充：Monorepo
+    status: used
+    questions:
+      - a-monorepo-package-ownership-contract
+      - a-monorepo-build-graph-invalidation
+      - a-monorepo-cyclic-dependency-boundary
+      - a-monorepo-selective-ci-change-detection
+      - a-monorepo-codeowner-permission-boundaries
+      - a-monorepo-package-release-independent-versioning
+      - a-monorepo-migration-repo-split-sequence
+    note: 补充包所有权、构建图、依赖环、选择性 CI、权限、版本策略和仓库迁移。
+  - id: interview-compass-original-topic-expansion-framework-compiler-mobile-planning
+    title: Interview Compass 原创主题补充：框架、编译、客户端与技术规划
+    status: used
+    questions:
+      - a-framework-form-state-validation-boundary
+      - a-framework-server-state-cache-invalidation
+      - a-framework-upgrade-hidden-default-change
+      - a-framework-async-transition-stale-result
+      - a-compiler-incremental-build-dependency-invalidation
+      - a-compiler-diagnostic-source-map-macro-expansion
+      - a-compiler-language-abi-boundary-change
+      - a-mobile-local-database-schema-upgrade-rollback
+      - a-mobile-cold-start-budget-low-end-device
+      - c-technical-planning-platform-capability-sequencing
+      - c-technical-planning-technology-sunset-exit
+    note: 补充框架状态与缓存、升级验证、并发渲染、增量构建、诊断映射、ABI、客户端升级和技术路线图。
+  - id: interview-compass-original-topic-expansion-resilience
+    title: Interview Compass 原创主题补充：韧性与恢复
+    status: used
+    questions:
+      - g-resilience-rebuild-after-strategy-reversal
+      - g-resilience-learn-without-overgeneralizing
+      - g-resilience-priority-interruptions-recovery
+      - g-resilience-critical-feedback-boundaries
+      - g-resilience-ask-for-support-before-crisis
+    note: 补充战略变化后的恢复、模糊反馈、持续中断、尖锐反馈下的合作和及早求助。

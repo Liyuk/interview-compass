@@ -42,11 +42,9 @@ Use the name “Interview Compass.” The site is a practical, question-led refe
 
 ## Evidence on Hand
 
-- Existing Interview-Book source content remains in the separate legacy repository and has not yet been migrated into this project.
 - Blog-source inventory in `docs/planning/2026-10-14-blog-source-catalog.md`.
 - Research and MECE content architecture in `docs/planning/`.
-- Five locally archived public reference projects at `/Users/kunli/Documents/Repos/Interview-Book-References`; these are for research and are outside the publishable site.
-- The first implementation slice currently includes four bilingual question pairs; the larger legacy library is still to be inventoried and migrated.
+- Public reference-project snapshots are kept outside this repository and are not part of the site build.
 
 ## Product Principles
 

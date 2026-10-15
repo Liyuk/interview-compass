@@ -2,7 +2,7 @@
 
 Interview Compass is a bilingual, question-first library for exploring external interviews and internal promotion. It explains what a question is intended to surface and links it to related capabilities, topics, roles, and responsibility paths; it does not prescribe answers or score people.
 
-The new personal project lives at [Liyuk/interview-compass](https://github.com/Liyuk/interview-compass). The existing [Mountain-Buzhou/Interview-Book](https://github.com/Mountain-Buzhou/Interview-Book) project remains a separate legacy site and is not changed by this repository.
+This repository contains the Interview Compass site and its source content.
 
 ## Explore locally
 
@@ -13,7 +13,7 @@ npm ci
 npm run dev
 ```
 
-The site has Chinese and English routes for the home page, a filterable question library, a capability map (eight domains and their leaves), role, scenario and topic views, a cross-domain product path, and question pages that explain intent and observable signals. The capability-model guide contains a heuristic editorial draft for organizing questions and a separate, explicitly partial page about cross-company level mapping. Search uses Pagefind per language. The Pages base path is `/interview-compass/`; the Chinese site is at `/interview-compass/` and English at `/interview-compass/en/`.
+The site has Chinese and English routes for the home page, a filterable question library, a capability map (eight domains and their leaves), role, scenario and topic views, a cross-domain product path, and question pages that explain intent and observable signals. Stage profiles describe role-specific behaviors, evidence to inspect, and the distinction between the IC and management paths. Search uses Pagefind per language. The Pages base path is `/interview-compass/`; the Chinese site is at `/interview-compass/` and English at `/interview-compass/en/`.
 
 ## Checks
 

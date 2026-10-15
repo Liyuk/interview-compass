@@ -1,6 +1,6 @@
 # Interview Compass 产品技术方案与实施顺序
 
-日期：2026-10-14。状态：用户确认 Astro + Starlight、Radix 设计约束、双语首发、comp-first 和首轮 TDD 接缝。首个可运行切片已迁移到 Interview Compass，包含内容校验、索引、搜索和子路径浏览器检查；完整旧内容迁移、拓展题库与首次 Pages 发布仍待实施。
+日期：2026-10-14。状态：用户确认 Astro + Starlight、Radix 设计约束、双语首发、comp-first 和首轮 TDD 接缝。当前站点已包含内容校验、索引、搜索、多视角入口和 Pages 部署；后续按覆盖审计扩充题目与能力说明。
 
 ## 产品契约
 
@@ -44,7 +44,7 @@ src/lib/locale-paths.ts             当前页语言切换与 base-aware URL
 src/pages/                           首页和多视角目录页
 src/components/                      Astro 静态组件与必要的 Radix 交互岛
 src/styles/tokens.css                Starlight/Radix Theme token 映射
-scripts/                             内容、链接、双语覆盖与旧 URL 校验
+scripts/                             内容、内部链接、双语覆盖与 Pages base 校验
 ```
 
 `question-catalog` 是入口的唯一读取接口，隐藏 Starlight collection 查询、语言映射和筛选细节。它接收显式语言与筛选条件，返回已发布且满足条件的题目摘要；页面不用自行遍历 frontmatter 或复制分类逻辑。URL module 是所有站内链接的单一生成处，必须处理 `/interview-compass/` base 和 `zh`/`en` 当前语言。
@@ -101,7 +101,7 @@ source:
 
 1. **基础轮**：中英文文档壳、首页搜索/主题浏览、题目详情和 Radix 视觉基线。
 2. **发现轮**：岗位、能力、主题和责任范围多视角列表，筛选 URL、Pagefind 双语搜索。
-3. **覆盖轮**：产品/运营/AI/管理/晋升入口，旧内容迁移和旧 URL 兼容，贡献与维护流程。
+3. **覆盖轮**：产品/运营/AI/管理/晋升入口，持续扩充可追溯题目与能力标准，完善贡献与维护流程。
 4. **发布轮**：GitHub Actions、无障碍与响应式完善、真实内容验证、回归检查。
 
 每轮完成后运行对应测试并按用户要求做代码/设计审阅。视觉 screenshot review 遵守 Impeccable 的轮数上限；三轮以上是功能与内容迭代，不重复无限调整截图。

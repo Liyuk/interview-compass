@@ -1,0 +1,57 @@
+sources:
+  - id: interview-compass-original-coverage-expansion-2026-10-15-a
+    title: Interview Compass 原创覆盖扩充批次 A：AI 评估与治理
+    status: used
+    questions:
+      - ai-governance-evaluation-set-representativeness
+      - ai-governance-benchmark-contamination
+      - ai-governance-release-gate-risk-thresholds
+      - ai-governance-model-version-behavior-drift
+      - ai-governance-human-review-escalation
+      - ai-governance-production-sampling-privacy
+      - ai-governance-user-segment-harm-disparity
+      - ai-governance-evidence-traceability-user-claims
+      - ai-governance-provider-data-and-change-terms
+      - ai-governance-tool-permission-boundaries
+      - ai-governance-uncertainty-safe-fallback
+      - ai-governance-harmful-output-incident-accountability
+    note: 以本站原创情境补齐独立治理能力；不复用外部题面。
+  - id: interview-compass-original-coverage-expansion-2026-10-15-b
+    title: Interview Compass 原创覆盖扩充批次 B：市场与经济判断
+    status: used
+    questions:
+      - c-market-economics-contribution-margin-service-cost
+      - c-market-economics-customer-acquisition-payback
+      - c-market-economics-free-tier-conversion-cost
+      - c-market-economics-bundle-cannibalization
+      - c-market-economics-subsidy-side-effects-marketplace
+      - c-market-economics-market-entry-localization
+      - c-market-economics-customer-concentration-risk
+      - c-market-economics-competitive-substitute-response
+    note: 覆盖单位经济、获客回收、套餐结构、平台补贴、市场进入、客户集中和竞争响应。
+  - id: interview-compass-original-coverage-expansion-2026-10-15-c
+    title: Interview Compass 原创覆盖扩充批次 C：业务结果与验证
+    status: used
+    questions:
+      - c-outcomes-guardrail-regression-release
+      - c-outcomes-baseline-shift-during-delivery
+      - c-outcomes-multiple-initiatives-attribution
+      - c-outcomes-leading-indicators-validation-window
+      - c-outcomes-user-value-vs-monetization
+      - c-outcomes-null-result-decision
+      - c-outcomes-scaling-cohort-reproducibility
+      - c-outcomes-resource-reallocation-from-evidence
+      - c-outcomes-impact-persistence-after-launch
+    note: 补充目标护栏、基线变化、混合归因、领先信号、无结果决策、推广复制与效果持续性。
+  - id: interview-compass-original-coverage-expansion-2026-10-15-d
+    title: Interview Compass 原创覆盖扩充批次 D：质量、安全与防护
+    status: used
+    questions:
+      - a-quality-critical-user-journey-test-plan
+      - a-quality-error-budget-release-policy
+      - a-quality-data-retention-deletion-proof
+      - a-quality-accessible-keyboard-screen-reader-release
+      - a-quality-threat-model-new-integration
+      - a-quality-restore-drill-evidence
+      - a-quality-dependency-supply-chain-control
+    note: 补齐测试策略、错误预算、删除证明、无障碍、威胁建模、恢复演练和供应链风险。
