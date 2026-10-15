@@ -35,10 +35,14 @@ formats:
 followUps:
   - 你过去有没有因为这些条件做过取舍？
   - 如果实际情况与你的预期不同，你会怎么处理？
+  - 如果这是你的第一份全职工作，前两年最希望获得什么学习机会？哪些工作条件是必须满足的？
 source:
   - attribution: original
     label: Interview Compass editorial
   - attribution: inspired
     label: 'Sourcegraph handbook: engineering leadership hiring'
-    url: https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
+    url: >-
+      https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
+  - attribution: original
+    label: Interview Compass 原创扩充（2026-10-14）
 ---

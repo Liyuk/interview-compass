@@ -5,7 +5,9 @@ status: published
 locale: en
 title: What do you value most in your next role? Which of those conditions are you unwilling to compromise on, and why?
 question: What do you value most in your next role? Which of those conditions are you unwilling to compromise on, and why?
-intent: Explore whether your motivations and conditions are clear so both sides can tell if expectations are compatible; this records each side's terms rather than ranking anyone.
+intent: >-
+  Explore whether your motivations and conditions are clear so both sides can tell if expectations are compatible; this
+  records each side's terms rather than ranking anyone.
 signals:
   - Explains the reasons behind the conditions, not just a list
   - Separates must-have conditions from negotiable ones
@@ -35,10 +37,16 @@ formats:
 followUps:
   - Have you made trade-offs over these conditions in the past?
   - If reality differs from your expectations, how would you handle it?
+  - >-
+    If this is your first full-time role, what learning opportunities do you want in the first two years, and which
+    working conditions are essential?
 source:
   - attribution: original
     label: Interview Compass editorial
   - attribution: inspired
     label: 'Sourcegraph handbook: engineering leadership hiring'
-    url: https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
+    url: >-
+      https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
+  - attribution: original
+    label: Interview Compass 原创扩充（2026-10-14）
 ---

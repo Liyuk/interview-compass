@@ -1,0 +1,50 @@
+sources:
+  - id: interview-compass-original-expansion-2026-10-14
+    title: Interview Compass 原创扩充批次（2026-10-14）
+    status: used
+    questions:
+      - a-coding-abstraction-streaming-validation
+      - a-computer-networks-http-cache-validator
+      - a-databases-index-write-amplification
+      - a-databases-read-replica-stale-read
+      - a-debugging-cache-stampede-warmup
+      - a-debugging-concurrent-test-flake-order-dependence
+      - a-distributed-systems-clock-deadline-propagation
+      - a-distributed-systems-partition-key-hotspot
+      - a-programming-languages-ownership-transfer-async
+      - a-programming-languages-unicode-normalization-identity
+      - a-security-download-url-authorization-lifetime
+      - a-system-design-feature-flag-control-plane-failure
+      - b-business-context-revenue-recognition-vs-user-value
+      - b-business-context-service-tier-contribution
+      - b-business-context-support-obligation
+      - b-commercial-rules-bundle-discount-allocation
+      - b-commercial-rules-cancellation-fee
+      - b-commercial-rules-contract-exception-expiry
+      - b-commercial-rules-credit-expiry
+      - b-data-model-effective-dated-ownership
+      - b-data-model-erasure-audit-history
+      - b-data-model-source-of-truth-conflict
+      - b-feature-model-feature-retirement-compatibility
+      - b-feature-model-late-label-maturity
+      - b-model-evolution-reopened-work-item
+      - b-model-evolution-retroactive-correction-boundary
+      - bulk-a-webhook-delivery
+      - bulk1000-b-032-v1
+      - bulk1000-g-086-v1
+      - c-prioritization-cost-delay-reversible-step
+      - d-project-management-change-freeze-criteria
+      - e-communication-customer-impact-notice
+      - e-communication-uncertainty-update
+      - e-feedback-measure-behavior-not-intent
+      - e-negotiation-service-level-capacity
+      - e-stakeholder-decision-log-objection
+      - f-team-design-single-expert-continuity
+      - g-learning-transfer-practice-check
+      - g-self-direction-focus-budget
+      - h-boundaries-confidential-info
+      - h-expectations-fit-must-have-conditions
+      - h-integrity-disclose-data-incident
+    note: >-
+      本批次原创生成 42 道题卡候选；4 道与既有题目核心重复，分别并入
+      bulk-a-webhook-delivery、bulk1000-b-032-v1、bulk1000-g-086-v1、h-expectations-fit-must-have-conditions，保留其独有场景作为追问。

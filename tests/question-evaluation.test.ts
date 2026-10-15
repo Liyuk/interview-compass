@@ -96,7 +96,10 @@ describe('question evaluation guide', () => {
           expect(question.intent, file).toContain(title);
           expect(question.signals.length, file).toBe(3);
           expect(question.signals[0], file).toContain(title);
-          expect(question.followUps, file).toBeUndefined();
+          if (question.followUps !== undefined) {
+            expect(question.followUps.length, file).toBeGreaterThan(0);
+            expect(question.followUps.every((item) => typeof item === 'string' && item.trim().length > 0), file).toBe(true);
+          }
         }
       }
       checked++;

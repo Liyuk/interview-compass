@@ -32,4 +32,8 @@ source:
   - attribution: inspired
     label: System Design Primer：分布式系统与可靠性设计
     url: https://github.com/donnemartin/system-design-primer
+  - attribution: original
+    label: Interview Compass 原创扩充（2026-10-14）
+followUps:
+  - 合作方要求“只发送一次”时，为什么发送方通常只能保证至少一次投递？如何通过事件标识、接收端幂等和可追踪重放定义双方契约？
 ---
