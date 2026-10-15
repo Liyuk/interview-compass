@@ -164,8 +164,8 @@ export const facetDefinitions = {
     f('senior-manager', '管理管理者', 'Senior manager'), f('executive', '高管', 'Executive'),
   ],
   scenarios: [
-    f('interview', '求职准备', 'Preparing as a candidate'), f('campus', '校招准备', 'Campus hiring'), f('hiring', '面试官设计', 'Designing as an interviewer'),
-    f('promotion', '晋升', 'Promotion'), f('self-reflection', '自我复盘', 'Self-reflection'), f('operations-review', '运营复盘', 'Operations review'),
+    f('interview', '外部求职面试', 'External job interviews'), f('campus', '校招准备', 'Campus hiring'), f('hiring', '面试官设计', 'Designing as an interviewer'),
+    f('promotion', '晋升准备', 'Promotion preparation'), f('self-reflection', '自我复盘', 'Self-reflection'), f('operations-review', '运营复盘', 'Operations review'),
   ],
   formats: [
     f('knowledge', '知识解释', 'Knowledge explanation'), f('coding', '编码', 'Coding'), f('debugging', '调试', 'Debugging'),
@@ -182,7 +182,7 @@ export const facetMeta: Record<FacetKind, { name: Bilingual; description: Biling
   roles: { name: { zh: '岗位', en: 'Role' }, description: { zh: '谁需要这类证据。岗位只是入口，不直接决定职级。', en: 'Who needs this kind of evidence. A role is an entry point, not a level.' } },
   responsibilityScopes: { name: { zh: '责任范围', en: 'Responsibility scope' }, description: { zh: '为多大范围负责。范围大不等于表现好。', en: 'How wide the responsibility reaches. A wider scope does not mean better performance.' } },
   careerTracks: { name: { zh: '职业轨道', en: 'Career track' }, description: { zh: '专业贡献者、团队管理者或管理管理者。管理不是所有人的下一步。', en: 'Individual contributor, team manager, or senior manager. Management is not everyone’s next step.' } },
-  scenarios: { name: { zh: '使用场景', en: 'Use case' }, description: { zh: '为什么读这道题：求职、设计面试、晋升、复盘。', en: 'Why you are reading: preparing, designing an interview, promotion, or review.' } },
+  scenarios: { name: { zh: '使用场景', en: 'Use case' }, description: { zh: '按外部求职面试、校招、面试官设计、内部晋升或复盘进入同一题库。', en: 'Browse the same question library by external interviews, campus hiring, interviewer design, internal promotion, or reflection.' } },
   formats: { name: { zh: '题型', en: 'Question format' }, description: { zh: '怎样采集证据：知识解释、编码、案例、行为等。', en: 'How evidence is gathered: explanation, coding, case, behavioral, and so on.' } },
 };
 

@@ -35,7 +35,7 @@ const labels = {
   questions: text('问题库', 'Questions'),
   capabilities: text('能力地图', 'Capability map'),
   roles: text('岗位', 'Roles'),
-  scenarios: text('面试与晋升', 'Interview and promotion'),
+  scenarios: text('使用场景', 'Use cases'),
   capabilityModel: text('能力模型', 'Capability model'),
   topics: text('主题', 'Topics'),
   guide: text('使用说明', 'Guide'),

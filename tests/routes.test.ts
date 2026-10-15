@@ -62,7 +62,7 @@ describe('route model', () => {
   });
 
   it('derives page titles and the active navigation entry from the same route', () => {
-    expect(titleFor({ type: 'scenarios' }, 'zh-CN')).toBe('面试与晋升');
+    expect(titleFor({ type: 'scenarios' }, 'zh-CN')).toBe('使用场景');
     expect(activeNavFor(question)).toBe('questions');
     expect(activeNavFor({ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' })).toBe('capabilities');
     expect(activeNavFor({ type: 'scenario', id: 'promotion' })).toBe('scenarios');
