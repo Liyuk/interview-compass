@@ -61,13 +61,40 @@ test('question detail explains intent and signals, links its source, and keeps t
 });
 
 test('role, scenario and topic pages group the same questions by capability', async ({ page }) => {
-  for (const [path, heading] of [['roles/product/', '产品'], ['scenarios/promotion/', '晋升'], ['topics/planning/', '规划']] as const) {
+  for (const [path, heading] of [['roles/product/', '产品'], ['scenarios/promotion/', '晋升准备'], ['topics/planning/', '规划']] as const) {
     await page.goto(path);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(heading);
     await expect(page.locator('.question-list li').first()).toBeVisible();
   }
+  await page.goto('scenarios/');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('准备场景');
+  await page.goto('scenarios/promotion/');
+  await expect(page.getByRole('heading', { name: '把晋升准备成一组持续证据' })).toBeVisible();
+  await expect(page.getByText(/这是共用题库的浏览路径，不是公司职级标准/)).toBeVisible();
+  await expect(page.getByRole('link', { name: /专业贡献者晋升/ })).toHaveAttribute('href', /scenario=promotion.*track=individual-contributor/);
+  await expect(page.getByRole('link', { name: /转向或发展为一线管理者/ })).toHaveAttribute('href', /scenario=promotion.*track=team-manager/);
+  await expect(page.getByRole('link', { name: /管理管理者/ })).toHaveAttribute('href', /scenario=promotion.*track=senior-manager/);
+  await page.getByRole('link', { name: /专业贡献者晋升/ }).click();
+  await expect(page).toHaveURL(/questions\/?\?/);
+  await expect(page.locator('select[name="scenario"]')).toHaveValue('promotion');
+  await expect(page.locator('select[name="track"]')).toHaveValue('individual-contributor');
+  await expect(page.locator('#question-list > li:visible').first()).toBeVisible();
+  await page.goto('en/scenarios/promotion/');
+  await expect(page.getByRole('heading', { name: 'Prepare for promotion as a body of evidence' })).toBeVisible();
   await page.goto('en/roles/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Roles');
+});
+
+test('footer publishes copyright and the separate code and content licenses', async ({ page }) => {
+  await page.goto('./');
+  const footer = page.locator('.site-footer');
+  await expect(footer).toContainText('© 2026 Li Yu');
+  await expect(footer.getByRole('link', { name: '代码许可 · MIT' })).toHaveAttribute('href', '/interview-compass/LICENSE');
+  await expect(footer.getByRole('link', { name: '内容许可 · CC BY-NC-SA 4.0' })).toHaveAttribute('href', '/interview-compass/CONTENT-LICENSE.md');
+  for (const file of ['LICENSE', 'CONTENT-LICENSE.md']) {
+    const response = await page.request.get(new URL(file, page.url()).href);
+    expect(response.ok()).toBeTruthy();
+  }
 });
 
 test('question library filters combine, update the shareable URL, and clear', async ({ page }) => {
@@ -112,7 +139,7 @@ test('skip link and navigation are keyboard reachable', async ({ page }) => {
   await page.goto('./');
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: '跳到正文' })).toBeFocused();
-  await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText(['问题库', '能力地图', '岗位', '面试与晋升']);
+  await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText(['问题库', '能力地图', '能力模型', '岗位', '使用场景']);
 });
 
 test('deep links resolve under the Pages base in both languages', async ({ page }) => {
@@ -121,6 +148,28 @@ test('deep links resolve under the Pages base in both languages', async ({ page 
     expect(response?.status()).toBe(200);
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   }
+});
+
+test('capability model internal links retain the GitHub Pages base path', async ({ page }) => {
+  await page.goto('capability-model/');
+  const stageLink = page.locator('.stage-card').first();
+  await expect(stageLink).toHaveAttribute('href', /^\/interview-compass\/capability-model\/stages\//);
+  await stageLink.click();
+  await expect(page).toHaveURL(/\/interview-compass\/capability-model\/stages\/junior-engineer\//);
+  await expect(page.getByRole('link', { name: /查看维度变迁/ }).first()).toHaveAttribute('href', /^\/interview-compass\/capability-model\/dimensions\//);
+});
+
+test('capability dimension progression separates the IC and management paths', async ({ page }) => {
+  await page.goto('capability-model/dimensions/business-results/');
+  await expect(page.getByRole('heading', { name: '专业贡献路径', level: 2 })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '管理路径从高级工程师处分叉', level: 2 })).toBeVisible();
+});
+
+test('mapping page records stage-level matches and leaves unsupported stages unmatched', async ({ page }) => {
+  await page.goto('capability-model/mapping/');
+  await expect(page.getByRole('heading', { name: '阶段责任范围映射结果', level: 2 })).toBeVisible();
+  await expect(page.locator('.mapping-stage-row')).toHaveCount(6);
+  await expect(page.locator('.mapping-stage-row').first()).toContainText('现有调研来源中暂无可核验的中国公司职级对应');
 });
 
 test('mobile layout keeps the main content within the viewport', async ({ page, isMobile }) => {

@@ -4,11 +4,13 @@ import QuestionList from '../components/QuestionList.astro';
 import { domains, facetLabel, pick, type Locale } from '../lib/taxonomy';
 import { getQuestions } from '../lib/question-catalog';
 import { loadQuestions } from '../lib/site-data';
+import { pathFor } from '../lib/routes';
 
 type Kind = 'roles' | 'scenarios' | 'topics';
 interface Props { locale: Locale; kind: Kind; id: string }
 const { locale, kind, id } = Astro.props;
 const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
 const filterKey = { roles: 'role', scenarios: 'scenario', topics: 'topic' }[kind] as 'role' | 'scenario' | 'topic';
 const questions = getQuestions(await loadQuestions(locale), { locale, [filterKey]: id });
 const route = ({ roles: { type: 'role', id }, scenarios: { type: 'scenario', id }, topics: { type: 'topic', id } } as const)[kind];
@@ -17,10 +19,50 @@ const groups = domains
   .map((domain) => ({ domain, items: questions.filter((q) => q.primaryCapability.startsWith(`${domain.id}.`)) }))
   .filter((group) => group.items.length > 0);
 const eyebrow = { roles: en ? 'ROLE' : '岗位', scenarios: en ? 'USE CASE' : '使用场景', topics: en ? 'TOPIC' : '主题' }[kind];
+const promotionLanes = [
+  {
+    id: 'individual-contributor',
+    title: en ? 'Individual-contributor promotion' : '专业贡献者晋升',
+    scope: en ? 'Build a case around deeper craft, wider ownership, and impact beyond your own tasks.' : '围绕专业深度、责任范围扩大，以及超出个人任务的影响来整理证据。',
+  },
+  {
+    id: 'team-manager',
+    title: en ? 'Transition to or growth as a first-line manager' : '转向或发展为一线管理者',
+    scope: en ? 'Show how results increasingly come through team design, coaching, delegation, and operating mechanisms.' : '说明结果如何逐渐通过团队设计、辅导、授权和运行机制产生。',
+  },
+  {
+    id: 'senior-manager',
+    title: en ? 'Manager-of-managers' : '管理管理者',
+    scope: en ? 'Show durable outcomes through leaders, cross-team decisions, succession, and organizational health.' : '说明如何通过负责人取得持续结果，并处理跨团队决策、继任和组织健康。',
+  },
+];
+const promotionQuestionPath = `${pathFor({ type: 'questions' }, locale, base)}?scenario=promotion&track=`;
 ---
 <SiteLayout locale={locale} route={route} description={en ? `Questions for ${label}, grouped by the capability each one examines.` : `${label}相关的问题，按主要能力分组。`}>
   <p class="eyebrow">{eyebrow}</p>
   <h1 class="page-title">{label}</h1>
+  {kind === 'scenarios' && id === 'promotion' && <section class="promotion-guide" aria-labelledby="promotion-guide-heading">
+    <div class="promotion-guide-intro">
+      <div><p class="eyebrow">{en ? 'INTERNAL GROWTH' : '内部发展'}</p><h2 id="promotion-guide-heading">{en ? 'Prepare for promotion as a body of evidence' : '把晋升准备成一组持续证据'}</h2></div>
+      <p>{en ? 'A promotion case asks whether you have sustained the next scope of responsibility and produced verifiable results over time. It is different from a one-off external interview.' : '晋升评审要判断你是否已持续承担下一范围的责任，并在一段时间内取得可核验的结果；它不同于一次外部求职面试。'}</p>
+    </div>
+    <p class="promotion-model-note">{en ? 'These are browsing paths through shared questions, not company level criteria. Map the evidence to your organization’s capability model and review period.' : '这是共用题库的浏览路径，不是公司职级标准。具体阶段要求和评审周期要以所在组织的能力模型为准。'}</p>
+    <div class="promotion-lanes">
+      {promotionLanes.map((lane) => <a class="promotion-lane" href={`${promotionQuestionPath}${lane.id}`}>
+        <span>{en ? 'CAREER PATH' : '发展路径'}</span><strong>{lane.title}</strong><p>{lane.scope}</p>
+        <span class="stage-link">{en ? 'Browse matching questions →' : '浏览相关问题 →'}</span>
+      </a>)}
+    </div>
+    <div class="promotion-evidence">
+      <h3>{en ? 'Build the case in four parts' : '用四部分整理晋升材料'}</h3>
+      <ol>
+        <li><strong>{en ? 'Target scope' : '目标范围'}</strong><span>{en ? 'Name the path and responsibilities expected next.' : '明确目标路径，以及下一阶段要承担的责任。'}</span></li>
+        <li><strong>{en ? 'Sustained outcomes' : '持续结果'}</strong><span>{en ? 'Show the baseline, outcome, time span, and your attributable contribution.' : '呈现基线、结果、持续时间，以及可归因于自己的贡献。'}</span></li>
+        <li><strong>{en ? 'How the result was achieved' : '结果如何产生'}</strong><span>{en ? 'Explain trade-offs, collaborators, risks, and what changed after setbacks.' : '解释取舍、协作者、风险，以及遇到挫折后做了什么调整。'}</span></li>
+        <li><strong>{en ? 'Evidence and gaps' : '证据与差距'}</strong><span>{en ? 'Separate verified facts from claims, include counterevidence, and name the next gap to close.' : '区分核验事实与主张，呈现反向证据，并说明下一步要补足的差距。'}</span></li>
+      </ol>
+    </div>
+  </section>}
   <p class="intro">{en ? 'These are the same questions found in the library, grouped here by the capability each one mainly examines.' : '这些题与问题库里的是同一批，这里按各自主要考察的能力分组。'}</p>
   <p class="result-count">{en ? `${questions.length} questions` : `${questions.length} 道问题`}</p>
   {groups.map(({ domain, items }) => (

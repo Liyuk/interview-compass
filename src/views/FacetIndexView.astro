@@ -13,7 +13,7 @@ const base = import.meta.env.BASE_URL;
 const counts = facetCounts(await loadQuestions(locale), { locale, facet: kind });
 const entries = facetDefinitions[kind].filter((entry) => counts.has(entry.id));
 const route = { roles: { type: 'roles' }, scenarios: { type: 'scenarios' }, topics: { type: 'topics' } }[kind] as { type: Kind };
-const heading = { roles: en ? 'Roles' : '岗位', scenarios: en ? 'Interview and promotion' : '面试与晋升', topics: en ? 'Topics' : '主题' }[kind];
+const heading = { roles: en ? 'Roles' : '岗位', scenarios: en ? 'Preparation scenarios' : '准备场景', topics: en ? 'Topics' : '主题' }[kind];
 const itemRoute = (id: string) => ({ type: kind === 'roles' ? 'role' : kind === 'scenarios' ? 'scenario' : 'topic', id }) as const;
 ---
 <SiteLayout locale={locale} route={route} description={pick(facetMeta[kind].description, locale)}>
