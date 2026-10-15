@@ -1,4 +1,5 @@
 import { addBase } from './locale-paths';
+import { questionCollectionById } from './question-collections';
 import { getDimensionProgression, getStageProfile, type CapabilityDimensionId, type StageId } from './capability-model';
 import {
   crossDomainPaths, domains, facetLabel, facetMeta, pick, splitCapability,
@@ -10,6 +11,10 @@ export type Crumb = { label: string; href?: string };
 export type RouteRef =
   | { type: 'home' }
   | { type: 'questions' }
+  | { type: 'collections' }
+  | { type: 'collection'; id: string }
+  | { type: 'framework' }
+  | { type: 'practice' }
   | { type: 'capabilities' }
   | { type: 'domain'; domain: string }
   | { type: 'leaf'; domain: string; leaf: string }
@@ -27,7 +32,7 @@ export type RouteRef =
   | { type: 'capability-model-mapping' }
   | { type: 'guide' };
 
-export type NavKey = 'questions' | 'capabilities' | 'capability-model' | 'roles' | 'scenarios' | 'topics' | '';
+export type NavKey = 'questions' | 'capabilities' | 'capability-model' | 'roles' | 'scenarios' | 'topics' | 'framework' | '';
 
 const text = (zh: string, en: string): Bilingual => ({ zh, en });
 const labels = {
@@ -39,6 +44,8 @@ const labels = {
   capabilityModel: text('阶段能力', 'Stage expectations'),
   topics: text('主题索引', 'Topics'),
   guide: text('使用说明', 'Guide'),
+  collections: text('精选题单', 'Curated sets'),
+  framework: text('提问框架', 'Questioning framework'),
 };
 
 export const navLabel = (key: keyof typeof labels, locale: Locale) => pick(labels[key], locale);
@@ -51,6 +58,10 @@ export function pathFor(ref: RouteRef, locale: Locale, base = ''): string {
     switch (ref.type) {
       case 'home': return `${root}/`;
       case 'questions': return `${root}/questions/`;
+      case 'collections': return `${root}/collections/`;
+      case 'collection': return `${root}/collections/${ref.id}/`;
+      case 'framework': return `${root}/framework/`;
+      case 'practice': return `${root}/practice/`;
       case 'capabilities': return `${root}/capabilities/`;
       case 'capability-model': return `${root}/capability-model/`;
       case 'capability-model-stage': return `${root}/capability-model/stages/${ref.stage}/`;
@@ -90,6 +101,13 @@ export function titleFor(ref: RouteRef, locale: Locale): string {
   switch (ref.type) {
     case 'home': return pick(labels.home, locale);
     case 'questions': return pick(labels.questions, locale);
+    case 'collections': return pick(labels.collections, locale);
+    case 'collection': {
+      const collection = questionCollectionById(ref.id);
+      return collection ? pick(collection.title, locale) : ref.id;
+    }
+    case 'framework': return pick(labels.framework, locale);
+    case 'practice': return locale === 'en' ? 'Answer practice' : '回答练习';
     case 'capabilities': return pick(labels.capabilities, locale);
     case 'capability-model': return pick(labels.capabilityModel, locale);
     case 'capability-model-stage': return getStageProfile(ref.stage, locale).name;
@@ -112,7 +130,10 @@ export function titleFor(ref: RouteRef, locale: Locale): string {
 export function parentOf(ref: RouteRef): RouteRef | undefined {
   switch (ref.type) {
     case 'home': return undefined;
-    case 'questions': case 'capabilities': case 'roles': case 'scenarios': case 'topics': case 'guide': return { type: 'home' };
+    case 'questions': case 'capabilities': case 'roles': case 'scenarios': case 'topics': case 'guide': case 'framework': return { type: 'home' };
+    case 'practice': return { type: 'questions' };
+    case 'collections': return { type: 'questions' };
+    case 'collection': return { type: 'collections' };
     case 'capability-model': return { type: 'home' };
     case 'capability-model-stage': case 'capability-model-dimension': case 'capability-model-mapping': return { type: 'capability-model' };
     case 'domain': return { type: 'capabilities' };
@@ -143,7 +164,8 @@ export function breadcrumbsFor(ref: RouteRef, locale: Locale, base = ''): Crumb[
 
 export function activeNavFor(ref: RouteRef): NavKey {
   switch (ref.type) {
-    case 'questions': case 'question': return 'questions';
+    case 'questions': case 'question': case 'collections': case 'collection': case 'practice': return 'questions';
+    case 'framework': return 'framework';
     case 'capabilities': case 'domain': case 'leaf': return 'capabilities';
     case 'capability-model': case 'capability-model-stage': case 'capability-model-dimension': case 'capability-model-mapping': return 'capability-model';
     case 'roles': case 'role': return 'roles';

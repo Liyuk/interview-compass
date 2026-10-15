@@ -14,7 +14,7 @@ test('home page offers search, task entry choices, all eight domains and curated
 test('primary navigation follows task discovery before capability reference', async ({ page }) => {
   await page.goto('./');
   await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText([
-    '面试题库', '主题索引', '岗位导航', '使用场景', '能力地图', '阶段能力',
+    '面试题库', '提问框架', '主题索引', '岗位导航', '使用场景', '能力地图', '阶段能力',
   ]);
   await page.getByRole('navigation', { name: '主导航' }).getByRole('link', { name: '主题索引' }).click();
   await expect(page).toHaveURL(/\/topics\/$/);
@@ -28,7 +28,7 @@ test('primary navigation follows task discovery before capability reference', as
   }
   await page.goto('en/');
   await expect(page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link')).toHaveText([
-    'Question bank', 'Topics', 'Role paths', 'Use cases', 'Capability map', 'Stage expectations',
+    'Question bank', 'Questioning framework', 'Topics', 'Role paths', 'Use cases', 'Capability map', 'Stage expectations',
   ]);
 });
 
@@ -351,7 +351,7 @@ test('skip link and navigation are keyboard reachable', async ({ page }) => {
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: '跳到正文' })).toBeFocused();
   await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText([
-    '面试题库', '主题索引', '岗位导航', '使用场景', '能力地图', '阶段能力',
+    '面试题库', '提问框架', '主题索引', '岗位导航', '使用场景', '能力地图', '阶段能力',
   ]);
 });
 

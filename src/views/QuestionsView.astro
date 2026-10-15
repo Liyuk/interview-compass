@@ -21,6 +21,10 @@ const facetOptions = filterKinds.map((kind) => {
 }).filter((group) => group.options.length > 0);
 ---
 <SiteLayout locale={locale} route={{ type: 'questions' }} description={en ? 'Browse and filter every published question.' : '浏览并筛选所有已发布的问题。'}>
+  <nav class="library-mode-switch" aria-label={en ? 'Question library modes' : '题库入口'}>
+    <a href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'Curated sets' : '精选题单'}</a>
+    <a href={pathFor({ type: 'questions' }, locale, base)} aria-current="page">{en ? 'Full library' : '全量题库'}</a>
+  </nav>
   <h1 class="page-title">{en ? 'Question library' : '面试题库'}</h1>
   <p class="intro">{en ? 'Each filter is an independent view of the same questions. Combining filters narrows the list, and the address bar keeps your selection so you can share it.' : '每个筛选项都是同一批题目的独立视角。组合筛选会缩小列表，地址栏会保留你的选择，方便分享。'}</p>
 

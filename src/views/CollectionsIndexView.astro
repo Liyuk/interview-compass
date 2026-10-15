@@ -1,0 +1,41 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Icon from '../components/Icon.astro';
+import { questionCollections } from '../lib/question-collections';
+import { pathFor } from '../lib/routes';
+import { pick, type Locale } from '../lib/taxonomy';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const total = (collection: (typeof questionCollections)[number]) => collection.kind === 'question-set'
+  ? collection.entries.length
+  : collection.sections.reduce((sum, section) => sum + section.prompts.length, 0);
+---
+
+<SiteLayout locale={locale} route={{ type: 'collections' }} description={en ? 'Short, ordered question paths for interview preparation, interviewers, and promotion conversations.' : '为面试准备、面试官和晋升沟通整理的精选问题路径。'}>
+  <header class="collection-index-header">
+    <p class="eyebrow">{en ? 'START WITH A PURPOSE' : '按目的开始'}</p>
+    <h1 class="page-title">{en ? 'Curated question sets' : '精选题单'}</h1>
+    <p class="intro">{en ? 'Each set is a short, ordered path for one task. Questions link back to the full library; candidate due-diligence prompts are kept separate from scored interview questions.' : '每个题单围绕一个目标，控制长度并给出顺序。面试题仍链接回全量题库；候选人的尽调反问与评分题分开呈现。'}</p>
+    <nav class="library-mode-switch" aria-label={en ? 'Question library modes' : '题库入口'}>
+      <a href={pathFor({ type: 'collections' }, locale, base)} aria-current="page">{en ? 'Curated sets' : '精选题单'}</a>
+      <a href={pathFor({ type: 'questions' }, locale, base)}>{en ? 'Full library' : '全量题库'}</a>
+    </nav>
+  </header>
+  <section class="collection-grid" aria-label={en ? 'Available curated sets' : '可用精选题单'}>
+    {questionCollections.map((collection, index) => (
+      <a class="collection-card" href={pathFor({ type: 'collection', id: collection.id }, locale, base)}>
+        <span class="collection-index">{String(index + 1).padStart(2, '0')}</span>
+        <div>
+          <p class="eyebrow">{collection.kind === 'candidate-guide' ? (en ? 'CANDIDATE QUESTIONS' : '候选人反向提问') : (en ? 'QUESTION PATH' : '面试题路径')}</p>
+          <h2>{pick(collection.title, locale)} <Icon name="arrow-up-right" size={17} /></h2>
+          <p>{pick(collection.purpose, locale)}</p>
+          <span class="collection-card-meta">{pick(collection.audience, locale)} · {en ? `${total(collection)} prompts` : `${total(collection)} 个问题`}</span>
+        </div>
+      </a>
+    ))}
+  </section>
+  <p class="collection-index-footnote">{en ? 'A collection is a path, not a ranking. Open the full library when you need broader coverage or a specific topic.' : '题单是路径，不是题目排名。需要更广覆盖或查找具体主题时，继续使用全量题库。'}</p>
+</SiteLayout>

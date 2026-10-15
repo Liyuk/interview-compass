@@ -1,0 +1,8 @@
+---
+import CollectionDetailView from '../../views/CollectionDetailView.astro';
+import { questionCollections } from '../../lib/question-collections';
+const locale = 'zh-CN' as const;
+export function getStaticPaths() { return questionCollections.map((item) => ({ params: { id: item.id } })); }
+const { id } = Astro.params as Record<string, string>;
+---
+<CollectionDetailView locale={locale} id={id} />

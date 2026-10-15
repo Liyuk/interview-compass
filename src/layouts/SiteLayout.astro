@@ -17,6 +17,7 @@ const active = activeNavFor(route);
 const crumbs = breadcrumbsFor(route, locale, base);
 const nav = [
   { key: 'questions', ref: { type: 'questions' } as RouteRef, label: navLabel('questions', locale) },
+  { key: 'framework', ref: { type: 'framework' } as RouteRef, label: navLabel('framework', locale) },
   { key: 'topics', ref: { type: 'topics' } as RouteRef, label: navLabel('topics', locale) },
   { key: 'roles', ref: { type: 'roles' } as RouteRef, label: navLabel('roles', locale) },
   { key: 'scenarios', ref: { type: 'scenarios' } as RouteRef, label: navLabel('scenarios', locale) },
