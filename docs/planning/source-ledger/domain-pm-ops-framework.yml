@@ -1,0 +1,27 @@
+sources:
+  - id: author-pm-ops-leveled-framework
+    title: 作者的分级面试框架（产品与运营方向，以及跨职能协作与联合面试）
+    url: https://github.com/Liyuk/interview-compass
+    status: used
+    questions:
+      - d-decomposition-request-to-prd
+      - c-metrics-causality-underperforming-launch-diagnosis
+      - d-project-management-cut-to-mvp
+      - c-prioritization-roi-matrix-three-demand-types
+      - e-communication-rebuild-trust-after-scrapping
+      - c-investment-choices-advocate-for-tech-time
+      - c-planning-second-curve-market-sizing
+      - f-team-design-org-matches-architecture
+      - c-product-judgment-moat-over-short-term-metrics
+      - d-operations-campaign-budget-roi
+      - e-negotiation-justify-operations-tool
+      - d-incident-campaign-outage-business-fallback
+      - d-operations-two-sided-imbalance
+      - d-operations-manual-to-automated-lifecycle
+      - c-metrics-causality-algorithm-vs-manual-control
+      - d-operations-ecosystem-gray-governance
+      - c-investment-choices-profit-over-gmv
+      - d-operations-wind-down-business
+      - e-conflict-triad-blame-vs-shared-language
+      - f-hiring-cross-functional-joint-interview
+      - e-conflict-halved-resources-crisis
