@@ -1,4 +1,5 @@
 import enContent from '../content/capability-model/en.json';
+import mappingContent from '../content/capability-model/mapping.json';
 import zhContent from '../content/capability-model/zh-CN.json';
 import { hasTaxonomyId, type Locale } from './taxonomy';
 
@@ -49,6 +50,37 @@ interface ModelContent {
   stages: StageProfile[];
 }
 
+export interface CapabilityMappingItem {
+  id: string;
+  name: string;
+  theme: string;
+  detail: string;
+  source: string;
+  url: string;
+  secondarySource?: string;
+  secondaryUrl?: string;
+}
+
+export interface StageResponsibilityComparison {
+  id: string;
+  stages: string;
+  pattern: string;
+  scope: string;
+  source?: string;
+  url?: string;
+}
+
+export interface CapabilityMappingContent {
+  reviewDate: string;
+  intro: string;
+  chinaCompanies: CapabilityMappingItem[];
+  usCompanies: CapabilityMappingItem[];
+  factors: string[];
+  comparisonCaveat: string;
+  stageComparisonIntro: string;
+  stageComparisons: StageResponsibilityComparison[];
+}
+
 export interface DimensionProgression {
   id: CapabilityDimensionId;
   name: string;
@@ -59,6 +91,8 @@ const content: Record<Locale, ModelContent> = {
   'zh-CN': zhContent as ModelContent,
   en: enContent as ModelContent,
 };
+
+const mapping: Record<Locale, CapabilityMappingContent> = mappingContent as Record<Locale, CapabilityMappingContent>;
 
 const expectedTracks: Record<StageId, StageProfile['track']> = {
   'junior-engineer': 'ic',
@@ -167,7 +201,34 @@ export function validateCapabilityModel(): string[] {
     errors.push('Management must branch from senior contribution, not be the next step after staff engineer');
   }
 
+  const mappingIds: Record<Locale, string[]> = { 'zh-CN': [], en: [] };
+  for (const locale of ['zh-CN', 'en'] as const) {
+    const localized = mapping[locale];
+    if (!hasString(localized.reviewDate) || !hasString(localized.intro) || !hasString(localized.comparisonCaveat) || !hasString(localized.stageComparisonIntro)) {
+      errors.push(`${locale}: mapping page is missing introductory content`);
+    }
+    if (localized.factors.length < 3) errors.push(`${locale}: mapping page needs responsibility comparison factors`);
+    for (const group of ['chinaCompanies', 'usCompanies'] as const) {
+      for (const company of localized[group]) {
+        mappingIds[locale].push(`${group}:${company.id}`);
+        if (![company.name, company.theme, company.detail, company.source].every(hasString)) errors.push(`${locale}: ${company.id} has incomplete mapping source text`);
+        if (!/^https:\/\//.test(company.url)) errors.push(`${locale}: ${company.id} source must use HTTPS`);
+        if (company.secondaryUrl && !/^https:\/\//.test(company.secondaryUrl)) errors.push(`${locale}: ${company.id} secondary source must use HTTPS`);
+      }
+    }
+    for (const comparison of localized.stageComparisons) {
+      mappingIds[locale].push(`stage:${comparison.id}`);
+      if (![comparison.stages, comparison.pattern, comparison.scope].every(hasString)) errors.push(`${locale}: ${comparison.id} has incomplete stage comparison text`);
+      if (comparison.source && (!hasString(comparison.url) || !/^https:\/\//.test(comparison.url))) errors.push(`${locale}: ${comparison.id} source link is invalid`);
+    }
+  }
+  if (mappingIds['zh-CN'].join('|') !== mappingIds.en.join('|')) errors.push('Chinese and English mapping content structures differ');
+
   return errors;
+}
+
+export function getCapabilityMapping(locale: Locale): CapabilityMappingContent {
+  return mapping[locale];
 }
 
 export function getStageProfile(id: StageId, locale: Locale): StageProfile {
