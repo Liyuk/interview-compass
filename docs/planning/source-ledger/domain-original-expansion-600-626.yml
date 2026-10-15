@@ -12,7 +12,7 @@ sources:
       - d-ops-playbook-stale-owner
       - d-project-management-recover-dependency-baseline
       - d-reliability-manual-fallback-owner
-      - design-accessibility-workflow-tradeoff
+      - design-accessibility-submit-recovery-priority
       - e-conflict-sponsor-evidence
       - e-feedback-correct-misunderstanding
       - e-feedback-peer-becomes-report

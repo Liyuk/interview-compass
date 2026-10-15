@@ -18,7 +18,6 @@ sources:
       - g-structured-reflection-mistake-lesson-or-gain
       - h-attribution-tech-choice-participation
       - h-attribution-team-vs-personal
-      - h-attribution-team-vs-personal
       - h-attribution-lead-or-manage
       - f-hiring-probe-generic-claims
       - f-hiring-probe-personal-part
@@ -38,14 +37,12 @@ sources:
       - g-structured-reflection-could-it-have-succeeded
       - g-structured-reflection-improvement-executed
       - g-learning-transfer-failure-to-future
-      - g-structured-reflection-mistake-lesson-or-gain
       - d-incident-prevent-personal-error
       - b-data-model-commercial-mapping
       - b-data-model-industry-interop
       - b-commercial-rules-money-and-currency
       - b-business-context-whole-then-part
       - c-investment-choices-leverage-or-fulcrum
-      - c-metrics-causality-business-result-attribution
       - c-metrics-causality-industry-definition-unify
   - id: blog-career-growth-ten-questions-methods
     title: 职场发展问题：晋升与面试前的完整自查清单（追问思路部分）
@@ -61,7 +58,6 @@ sources:
       - a-engineering-systems-dependency-change
       - g-structured-reflection-honest-retrospective
       - h-attribution-without-you
-      - h-attribution-team-vs-personal
       - h-attribution-team-vs-personal
       - f-hiring-probe-generic-claims
       - e-influence-break-constraints

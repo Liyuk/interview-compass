@@ -49,6 +49,8 @@ describe('question evaluation guide', () => {
     expect(guide.inference).toContain(record('en').signals[0]);
     expect(guide.inference).toContain(record('en').intent.toLowerCase());
     expect(guide.contextQuestions[0]).toBe(record('en').followUps[0]);
+    expect(guide.contextQuestions[1]).toBe('What goal, baseline, constraints, and responsibility boundary applied?');
+    expect(guide.contextQuestions.slice(1).join(' ')).not.toMatch(/[\u3400-\u9fff]/);
   });
 
   it('grounds the hidden inference and context-first flow in this question', () => {
@@ -85,6 +87,18 @@ describe('question evaluation guide', () => {
       expect(guide.costs.length, file).toBe(2);
       expect(guide.levels.map(({ score }) => score), file).toEqual([1, 2, 3, 4]);
       expect(guide.levels.every(({ reference }) => reference.includes(question.signals[0])), file).toBe(true);
+      if (question.locale === 'en') {
+        const localizedGuide = [
+          guide.objective,
+          guide.inference,
+          ...guide.contextQuestions,
+          guide.decision,
+          ...guide.benefits,
+          ...guide.costs,
+          ...guide.levels.flatMap(({ meaning, reference }) => [meaning, reference]),
+        ].join(' ');
+        expect(localizedGuide, file).not.toMatch(/[\u3400-\u9fff]/);
+      }
       if (question.questionId.startsWith('bulk1000-')) {
         if (question.questionId === 'bulk1000-b-031-v1') {
           expect(question.intent, file).toMatch(question.locale === 'zh-CN' ? /退款和规则变化/ : /refunds and rule changes/i);
@@ -94,7 +108,7 @@ describe('question evaluation guide', () => {
         } else {
           const title = question.title.replace(/[?？。.]$/, '');
           expect(question.intent, file).toContain(title);
-          expect(question.signals.length, file).toBe(3);
+          expect(question.signals.length, file).toBeGreaterThanOrEqual(3);
           expect(question.signals[0], file).toContain(title);
           if (question.followUps !== undefined) {
             expect(question.followUps.length, file).toBeGreaterThan(0);

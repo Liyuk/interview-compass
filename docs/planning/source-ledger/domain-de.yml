@@ -7,7 +7,7 @@ sources:
     questions:
       - d-decomposition-vague-goal
       - d-incident-first-hour
-      - d-incident-verify-the-fix
+      - bulk-a-incident-recovery-validation
       - e-communication-decision-update
       - e-communication-context-handoff
       - e-influence-without-authority
@@ -53,13 +53,13 @@ sources:
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/05/use-your-own-product-feedback-loop/zh.md
     status: used
     questions:
-      - d-incident-verify-the-fix
+      - bulk-a-incident-recovery-validation
   - id: repo-engineering-decision-skills
     title: Engineering Decision Skills（eng-reporting 方法）
     url: https://github.com/Liyuk/engineering-decision-skills
     status: used
     questions:
-      - d-incident-verify-the-fix
+      - bulk-a-incident-recovery-validation
       - e-communication-decision-update
   - id: blog-information-sync-for-decisions
     title: 信息同步不是抄送

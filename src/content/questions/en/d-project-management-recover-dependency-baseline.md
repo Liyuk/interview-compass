@@ -5,16 +5,17 @@ status: published
 locale: en
 title: How do you rebuild a credible baseline after a dependency date slips?
 question: >-
-  A key vendor has delayed an interface twice, but the project plan still uses the original date. Internal
-  teams are building a temporary adapter in parallel. How would you reset the baseline, account for added
-  work, and show leadership which commitments remain credible?
+  A key vendor has delayed an interface twice, but the project plan still uses the original date. Internal teams are
+  building a temporary adapter in parallel. How would you reset the baseline, account for added work, and show
+  leadership which commitments remain credible?
 intent: >-
-  Assess whether you can rebuild a plan as dependencies change rather than continue reporting an invalid
-  original schedule.
+  Assess whether you can rebuild a plan as dependencies change rather than continue reporting an invalid original
+  schedule.
 signals:
-  - Separates vendor commitments, validation milestones, internal effort, and the actual critical path
-  - Quantifies scope, rework, maintenance, and exit cost introduced by the temporary adapter
-  - Provides scenario plans, commitment confidence, escalation options, and conditions for re-estimation
+  - "Distinguish external commitments, internal estimates, validation milestones, and the true critical path."
+  - "Quantify delay, temporary adapters, rework, and long-term maintenance cost."
+  - "Rebuild commitments from capacity and scenarios, naming who must decide trade-offs or escalation."
+  - "Update affected people on confidence, the next checkpoint, and risks that still need acceptance."
 primaryCapability: delivery.project-management
 topics:
   - planning
@@ -27,20 +28,26 @@ roles:
   - manager
 responsibilityScopes:
   - multiple-teams
+  - team
 careerTracks:
   - team-manager
   - senior-manager
+  - individual-contributor
 scenarios:
   - interview
   - hiring
+  - promotion
 formats:
   - case
 source:
   - attribution: original
     label: Interview Compass 原创题目扩充批次 600–626
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 D
 followUps:
-  - >-
-    If leadership accepts only the original date, what scope alternatives and risk-acceptance choices would
-    you present?
+  - If leadership accepts only the original date, what scope alternatives and risk-acceptance choices would you present?
   - When should the adapter become a supported solution, and when must it be removed?
+  - >-
+    A critical dependency team says it has no capacity this quarter, but the project still marks the interface as on
+    track. How would you update status, options, and communication?
 ---
