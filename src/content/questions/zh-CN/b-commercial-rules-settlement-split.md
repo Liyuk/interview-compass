@@ -14,6 +14,8 @@ signals:
   - 说明佣金规则的生效时间、历史交易沿用或重算边界，以及部分退款跨结算周期时的处理方式。
   - 设计可追溯账本，使人能依据当时的规则重现原结算，并区分事实、推断和后续调整。
   - 用部分退款、规则变更、缺失明细等案例验证对账、幂等和异常解释路径。
+  - 先明确优惠适用顺序、分摊粒度和承担方
+  - 验证部分退款后客户退款额与各方结算额守恒
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization
@@ -30,6 +32,7 @@ roles:
 responsibilityScopes:
   - team
   - multiple-teams
+  - individual
 careerTracks:
   - individual-contributor
   - team-manager
@@ -47,6 +50,7 @@ followUps:
   - 如果退款跨越多个结算周期，你会把冲回放在哪个周期并如何说明？
   - 如果原始分成明细缺失，怎样重建时保留推断与事实的区别？
   - 规则变更后需要重算旧交易时，如何识别适用范围并防止重复冲回？
+  - 一次订单同时使用平台券、会员折扣和渠道补贴，退款可能只退部分商品。你会怎样定义优惠分摊、退款冲回和对账责任？
 relatedQuestions: []
 source:
   - attribution: original
@@ -58,4 +62,6 @@ source:
     label: Interview Compass 原创题目扩充批次 600–626
   - attribution: original
     label: 基于内容架构研究中的分成规则变更边界示例原创编写
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-17 B
 ---

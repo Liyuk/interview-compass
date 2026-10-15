@@ -10,24 +10,32 @@ signals:
   - 比较不同投入水平下的边际获客和成交表现
   - 排查受众扩展、创意变化、销售跟进和转化周期
   - 提出预算阶梯及停止追加的判定信号
+  - 按渠道、用户群和漏斗阶段拆解质量变化
+  - 核对线索定义、转化窗口和后续销售证据
 primaryCapability: delivery.operational-execution
 topics:
   - operations
   - growth-experiments
   - metrics
+  - product-thinking
 roles:
   - marketing
   - operations
   - data
   - product
+  - engineering
 responsibilityScopes:
   - multiple-teams
+  - individual
+  - team
 careerTracks:
   - individual-contributor
   - team-manager
 scenarios:
   - interview
   - operations-review
+  - hiring
+  - promotion
 formats:
   - case
 source:
@@ -36,4 +44,8 @@ source:
     url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
   - attribution: original
     label: 本站原创
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-17 B
+followUps:
+  - 一次投放扩大覆盖并提高点击，但合格商机和最终毛利下降。你会怎样判断问题出在受众、创意、销售承接还是归因窗口？
 ---
