@@ -187,6 +187,9 @@ test('search supports keyboard focus and finds a localized question', async ({ p
   await page.goto('./');
   await page.keyboard.press('Control+k');
   await expect(page.getByRole('searchbox')).toBeFocused();
+  await page.keyboard.press('Escape');
+  await page.keyboard.press('Meta+k');
+  await expect(page.getByRole('searchbox')).toBeFocused();
   await page.getByRole('searchbox').fill('资源只够做两项');
   await expect(page.locator('.search-results')).toBeVisible();
   await expect(page.locator('.search-results')).toContainText('资源只够做两项');
@@ -228,20 +231,42 @@ test('English results are selected before the visible-result limit', async ({ pa
   await page.goto('en/');
   await page.getByRole('searchbox').fill('AI');
   const resultLinks = page.locator('.search-results a');
-  await expect(resultLinks.first()).toBeVisible();
+  await expect(resultLinks).toHaveCount(8);
   const hrefs = await resultLinks.evaluateAll((links) => links.map((link) => (link as HTMLAnchorElement).getAttribute('href')));
   expect(hrefs.length).toBeGreaterThan(0);
   expect(hrefs.every((href) => href?.includes('/interview-compass/en/'))).toBe(true);
 });
 
-test('search treats Pagefind excerpts as text instead of executable markup', async ({ page }) => {
+test('search preserves Pagefind ranking and caps the visible results at eight', async ({ page }) => {
   await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
     contentType: 'application/javascript',
-    body: `export async function search() { return { results: [{ data: async () => ({ url: '/interview-compass/questions/safe/', meta: { title: 'Safe result' }, excerpt: '<img src=x onerror="window.searchXss = true">safe excerpt' }) }] }; }`,
+    body: `export async function search() { return { results: Array.from({ length: 12 }, (_, index) => ({ data: async () => ({ url: '/interview-compass/questions/result-' + index + '/', meta: { title: 'Result ' + index }, excerpt: 'Ranked result' }) })) }; }`,
+  }));
+  await page.goto('./');
+  await page.getByRole('searchbox').fill('ranked');
+  const results = page.locator('.search-results a');
+  await expect(results).toHaveCount(8);
+  await expect(results.first()).toContainText('Result 0');
+  await expect(results.last()).toContainText('Result 7');
+  await expect(page.locator('.search-results')).not.toContainText('Result 8');
+});
+
+test('search renders untrusted metadata as text and discards unsafe destinations', async ({ page }) => {
+  await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: `export async function search() { return { results: [
+      { data: async () => ({ url: '/interview-compass/questions/safe/', meta: { title: '<img src=x onerror="window.searchXss = true">Safe result' }, excerpt: '<img src=x onerror="window.searchXss = true">safe excerpt' }) },
+      { data: async () => ({ url: 'https://example.com/phishing', meta: { title: 'External result' }, excerpt: 'external' }) },
+      { data: async () => ({ url: 'javascript:window.searchXss = true', meta: { title: 'Script result' }, excerpt: 'script' }) },
+      { data: async () => ({ url: 'http://[', meta: { title: 'Malformed result' }, excerpt: 'malformed' }) },
+      { data: async () => ({ url: '/outside/questions/escape/', meta: { title: 'Outside base result' }, excerpt: 'outside base' }) },
+    ] }; }`,
   }));
   await page.goto('./');
   await page.getByRole('searchbox').fill('safe');
   await expect(page.locator('.search-results')).toContainText('safe excerpt');
+  await expect(page.locator('.search-results')).toContainText('<img src=x onerror="window.searchXss = true">Safe result');
+  await expect(page.locator('.search-results a')).toHaveCount(1);
   await expect(page.locator('.search-results img')).toHaveCount(0);
   expect(await page.evaluate(() => (window as Window & { searchXss?: boolean }).searchXss)).toBeUndefined();
 });
@@ -268,6 +293,40 @@ test('Escape hides results and ignores an in-flight response', async ({ page }) 
   await page.keyboard.press('Escape');
   await page.waitForTimeout(350);
   await expect(page.locator('.search-results')).toBeHidden();
+});
+
+test('clearing the query hides and invalidates an in-flight response', async ({ page }) => {
+  await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: `export async function search(query) { window.searchStarted = true; await new Promise(resolve => setTimeout(resolve, 500)); return { results: [{ data: async () => ({ url: '/interview-compass/questions/late/', meta: { title: query }, excerpt: query }) }] }; }`,
+  }));
+  await page.goto('./');
+  const search = page.getByRole('searchbox');
+  const results = page.locator('.search-results');
+  await search.fill('late');
+  await page.waitForFunction(() => Boolean((window as Window & { searchStarted?: boolean }).searchStarted));
+  await search.fill('');
+  await expect(results).toBeHidden();
+  await page.waitForTimeout(550);
+  await expect(results).toBeHidden();
+  await expect(results.locator('a')).toHaveCount(0);
+});
+
+test('a slow result-data lookup cannot replace results for a newer query', async ({ page }) => {
+  await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: `export async function search(query) { return { results: [{ data: async () => { if (query === 'slow') { window.slowDataStarted = true; await new Promise(resolve => setTimeout(resolve, 500)); } return { url: '/interview-compass/questions/' + query + '/', meta: { title: query }, excerpt: query }; } }] }; }`,
+  }));
+  await page.goto('./');
+  const search = page.getByRole('searchbox');
+  const results = page.locator('.search-results');
+  await search.fill('slow');
+  await page.waitForFunction(() => Boolean((window as Window & { slowDataStarted?: boolean }).slowDataStarted));
+  await search.fill('fast');
+  await expect(results).toContainText('fast');
+  await page.waitForTimeout(550);
+  await expect(results).toContainText('fast');
+  await expect(results).not.toContainText('slow');
 });
 
 test('a slower earlier query cannot replace results for the current query', async ({ page }) => {

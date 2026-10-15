@@ -29,7 +29,7 @@
 
 **Files:** `src/lib/search-records.ts`, `src/layouts/SiteLayout.astro`, `tests/catalog-and-routing.test.ts`, `tests/e2e/site.spec.ts`.
 
-**Interface:** Export `filterSearchResultsByLocale<T extends { url: string }>(records, locale): T[]` and `safeSearchResultHref(value, options): string | undefined`; the layout filters before its eight-result display cap and creates result nodes through DOM APIs.
+**Interface:** Let Pagefind apply the active locale filter before ranking and its eight-result display cap; validate each returned URL with `safeSearchResultHref(value, options)` and create result nodes through DOM APIs.
 
 - [x] Write and observe failing tests for locale ordering, safe destinations, unsafe excerpts, and stale responses.
 - [x] Implement request sequencing, localized result filtering, same-origin/base validation, text-only excerpts, and localized error/empty states.
