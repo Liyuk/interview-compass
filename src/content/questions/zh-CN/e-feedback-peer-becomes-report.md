@@ -10,10 +10,13 @@ signals:
   - 引用具体、可核实的行为及其对讨论或团队的影响，不给人贴性格标签
   - 先了解对方对角色变化和行为的看法，再说明新的责任预期
   - 共同约定可观察的改进行动与复查时间，并保持标准一致
+  - 明确“角色转换后的反馈边界与支持责任”涉及的事实、对象和责任边界。
+  - 用可核验的例子说明判断依据、结果影响及必要的复盘。
 primaryCapability: collaboration.feedback
 topics:
   - feedback
   - management
+  - communication
 roles:
   - engineering
   - manager
@@ -21,15 +24,20 @@ responsibilityScopes:
   - team
 careerTracks:
   - team-manager
+  - individual-contributor
 scenarios:
   - interview
   - hiring
+  - promotion
 formats:
   - behavioral
 source:
   - attribution: original
     label: Interview Compass 原创题目扩充批次 600–626
+  - attribution: original
+    label: Interview Compass coverage-led original expansion batch 2026-10-17 C
 followUps:
   - 如果对方认为你是在利用新职权报复过去的分歧，你会怎样回应并核验？
   - 如果同类行为由另一位表现较弱的成员做出，你会用同一标准吗？
+  - 一位过去与你同级的同事刚成为你的下属，第一次出现工作质量问题。你会怎样说明新职责、事实和支持方式？
 ---

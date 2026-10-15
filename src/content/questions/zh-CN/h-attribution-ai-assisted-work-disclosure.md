@@ -10,15 +10,19 @@ signals:
   - 区分自动生成、人工修改、独立验证和最终决策。
   - 说明使用工具的数据边界和风险检查。
   - 不把产出归给自己，也不因工具参与而逃避责任。
+  - 明确“工具辅助下的理解、披露与责任归属”涉及的事实、对象和责任边界。
+  - 用可核验的例子说明判断依据、结果影响及必要的复盘。
 primaryCapability: work-responsibility.attribution
 topics:
   - ethics
   - communication
   - ai-engineering
+  - metrics
 roles:
   - engineering
   - product
   - design
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
@@ -35,7 +39,10 @@ formats:
 followUps:
   - 哪些工作场景需要披露 AI 使用？
   - 如果工具输出有错误，责任如何界定？
+  - 你用 AI 生成了大部分实现并通过测试，评审时发现自己解释不了一个边界条件。你会怎样披露、验证和界定自己的责任？
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 J
+  - attribution: original
+    label: Interview Compass coverage-led original expansion batch 2026-10-17 C
 ---

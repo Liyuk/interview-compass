@@ -10,11 +10,14 @@ signals:
   - 公开说明新负责人的决定范围和保留事项。
   - 把日常请求转回新负责人并提供必要辅导。
   - 监测绕过行为、团队信任和决策质量，再调整支持。
+  - 明确“组织授权的外部信号与升级路径”涉及的事实、对象和责任边界。
+  - 用可核验的例子说明判断依据、结果影响及必要的复盘。
 primaryCapability: people-organization.delegation-succession
 topics:
   - management
   - planning
   - communication
+  - hiring
 roles:
   - manager
   - operations
@@ -34,7 +37,10 @@ formats:
 followUps:
   - 如果新负责人做出高风险错误，何时介入？
   - 如何避免成员认为你只是名义上放权？
+  - 你刚把团队交给新经理，业务负责人仍直接向你求解日常问题，导致新经理失去决策空间。你会如何重新约定接口？
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 F
+  - attribution: original
+    label: Interview Compass coverage-led original expansion batch 2026-10-17 C
 ---
