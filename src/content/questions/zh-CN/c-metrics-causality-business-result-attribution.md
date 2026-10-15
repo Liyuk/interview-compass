@@ -11,12 +11,26 @@ signals:
   - 指出可能的干扰因素，并说明如何排除或承认不确定
   - 区分业务结果和过程指标
 primaryCapability: value-direction.metrics-causality
-topics: [metrics, product-thinking]
-roles: [engineering, product, operations, data]
-responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
-scenarios: [interview, promotion]
-formats: [behavioral, case]
+topics:
+  - metrics
+  - product-thinking
+roles:
+  - engineering
+  - product
+  - operations
+  - data
+responsibilityScopes:
+  - individual
+  - team
+careerTracks:
+  - individual-contributor
+  - team-manager
+scenarios:
+  - interview
+  - promotion
+formats:
+  - behavioral
+  - case
 followUps:
   - 如果没有这个项目，这个指标大概会怎样？
   - 有没有副作用，或者被牺牲的其他指标？
@@ -25,5 +39,9 @@ source:
     label: 作者的面试提问套路：业务结果
   - attribution: derived
     label: 博客《职场发展问题：晋升与面试前的完整自查清单》
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+  - attribution: original
+    label: 作者的面试提问套路：因果推论是否扎实
+relatedQuestions: []
 ---

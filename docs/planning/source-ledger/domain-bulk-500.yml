@@ -27,7 +27,7 @@ sources:
       - bulk-a-backend-rate-limit-distributed
       - bulk-a-backend-schema-compatibility
       - bulk-a-btree-vs-lsm-write-profile
-      - bulk-a-code-bounded-retry-policy
+      - a-coding-abstraction-retry-limiter
       - bulk-a-code-concurrent-expiring-map
       - bulk-a-code-deterministic-task-scheduler
       - bulk-a-framework-dependency-injection-scope
@@ -41,7 +41,7 @@ sources:
     url: https://github.com/donnemartin/system-design-primer/blob/master/README.md
     status: used
     questions:
-      - bulk-a-distributed-clock-ordering
+      - bulk-a-debug-clock-skew
       - bulk-a-framework-module-boundary-cycles
   - id: bulk500-source-004
     title: Front-end Interview Handbook — JavaScript and frontend interview topics
@@ -67,7 +67,7 @@ sources:
       - bulk-a-client-background-work-expiration
       - bulk-a-client-deep-link-auth-boundary
       - bulk-a-client-offline-write-conflict
-      - bulk-a-client-process-death-lifecycle
+      - a-coding-abstraction-mobile-state-restore
       - bulk-a-client-render-thread-jank
   - id: bulk500-source-006
     title: System Design Primer：分布式系统与可靠性设计
@@ -221,7 +221,7 @@ sources:
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
     status: used
     questions:
-      - bulk-a-secret-rotation
+      - a-engineering-systems-credential-rotation
   - id: bulk500-source-032
     title: DevOps Interview Questions：基础设施即代码
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
@@ -284,7 +284,7 @@ sources:
     url: https://github.com/landedjobs/awesome-ai-engineer-interview
     status: used
     questions:
-      - bulk-ai-agent-tool-idempotency
+      - a-ai-engineering-agent-duplicate-side-effect
   - id: bulk500-source-043
     title: Landed AI Engineer Interview：Agent 运行治理
     url: https://github.com/landedjobs/awesome-ai-engineer-interview
@@ -420,7 +420,7 @@ sources:
     url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
     status: used
     questions:
-      - bulk-b-commercial-05
+      - b-commercial-rules-promotion-stacking
   - id: bulk500-source-065
     title: 数据度量工作指南：先定义测量对象再讨论指标
     url: >-
@@ -760,7 +760,7 @@ sources:
     status: used
     questions:
       - bulk-h-expectations-role-incentives
-      - bulk-h-integrity-correct-attribution
+      - h-attribution-team-vs-personal
       - bulk-h-ownership-deliverable-unclaimed
       - bulk-h-ownership-raise-uncertainty-early
   - id: bulk500-source-116

@@ -28,7 +28,7 @@ test('question detail explains intent and signals, links its source, and keeps t
   await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('资源只够做两项');
   await expect(page.getByRole('heading', { name: '考察意图' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: '题面情境中的客观问题' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '需要解决或厘清的客观问题' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '回答还可能说明什么' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '值得观察的信号' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '值得补充询问的上下文' })).toBeVisible();

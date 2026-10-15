@@ -11,14 +11,29 @@ signals:
   - 考虑草稿的版本，避免覆盖更新的数据
   - 说明怎样测试这条恢复路径，包括被回收和弱网的情形
 primaryCapability: professional.coding-abstraction
-topics: [mobile, frameworks]
-roles: [mobile, engineering]
-responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
-scenarios: [interview, campus]
-formats: [coding, case]
+topics:
+  - mobile
+  - frameworks
+roles:
+  - mobile
+  - engineering
+responsibilityScopes:
+  - individual
+careerTracks:
+  - individual-contributor
+scenarios:
+  - interview
+  - campus
+formats:
+  - coding
+  - case
 source:
   - attribution: inspired
     label: 博客《筛选人和面试官到底在看什么》中的编辑器草稿例子
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+  - attribution: inspired
+    label: Android Interview Questions — Android, Kotlin, lifecycle, and architecture topics
+    url: https://github.com/MindorksOpenSource/android-interview-questions/blob/master/README.md
+relatedQuestions: []
 ---

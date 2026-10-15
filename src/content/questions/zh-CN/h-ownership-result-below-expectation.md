@@ -42,5 +42,10 @@ relatedQuestions:
 source:
   - attribution: derived
     label: 一线技术管理的三种产出
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/frontline-engineering-management/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/frontline-engineering-management/zh.md
+  - attribution: derived
+    label: Liyuk 博客：责任、贡献归属与工作边界；题目为本站重新组织
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
 ---

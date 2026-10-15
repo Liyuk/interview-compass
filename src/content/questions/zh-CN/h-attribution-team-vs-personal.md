@@ -39,8 +39,21 @@ followUps:
 source:
   - attribution: derived
     label: 职场发展问题：晋升与面试前的完整自查清单
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
   - attribution: inspired
     label: 'Tech Interview Handbook: behavioral interview rubrics'
-    url: https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
+    url: >-
+      https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
+  - attribution: derived
+    label: Liyuk 博客：责任、贡献归属与工作边界；题目为本站重新组织
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
+  - attribution: derived
+    label: 博客《职场发展问题：晋升与面试前的完整自查清单》
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+  - attribution: original
+    label: 作者的面试提问套路：深挖实际贡献与产出
+relatedQuestions: []
 ---

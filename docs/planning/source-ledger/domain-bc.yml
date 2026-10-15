@@ -79,7 +79,7 @@ sources:
       - b-data-model-late-event-correction
       - b-data-model-safe-backfill
       - b-data-model-contract-evolution
-      - b-feature-model-point-in-time
+      - b-feature-model-time-semantics
       - b-feature-model-freshness-cost
       - b-data-model-ownership-lineage
       - b-data-quality-blocking-threshold

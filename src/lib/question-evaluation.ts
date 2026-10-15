@@ -64,29 +64,29 @@ export function questionEvaluation(record: EvaluationInput) {
     note: en
       ? 'Use these as evidence anchors for this capability, not as an automatic score or an overall judgment of a person. Calibrate expectations to the role, level, and scope. A score of 2 is the usual baseline; excellent evidence in one or two dimensions is meaningful, while exceptional evidence is rare.'
       : '这是针对本题能力的证据锚点，不是自动打分，也不构成对一个人的整体结论。请按岗位、级别和责任范围校准要求。通常以 2 分“通过”为基线；一两个维度达到 3 分“优秀”就有价值，4 分“卓越”应当少见。',
-    objectiveTitle: en ? 'Objective problem in the scenario' : '题面情境中的客观问题',
+    objectiveTitle: en ? 'Objective problem to resolve or clarify' : '需要解决或厘清的客观问题',
     objective: en
-      ? `What needs to be resolved in the situation described is: ${record.question}`
-      : `题面情境中需要解决的客观问题是：${record.question}`,
+      ? `The question asks you to resolve or clarify this objective problem: ${record.question}`
+      : `题目要求解决或厘清的客观问题是：${record.question}`,
     intentTitle: en ? 'What it examines' : '考察意图',
     intent: record.intent,
     inferenceTitle: en ? 'What else the answer may imply' : '回答还可能说明什么',
     inference: en
-      ? `Beyond the immediate response, look for evidence about how the person applies ${capability} across situations. Treat this as a hypothesis to verify with context and follow-up, not a conclusion from one answer.`
-      : `除了直接回答，还可以观察候选人是否能在不同情境中运用“${capability}”。这只是需要用上下文和追问核实的推论，不能凭单道题下整体结论。`,
+      ? `If the response gives concrete evidence of “${firstSignal},” that may support the intent to ${record.intent.toLowerCase()} and suggest how the person applies ${capability} beyond this scenario. Treat that as a hypothesis to verify against ownership, alternatives, and outcome evidence—not as a conclusion from one answer.`
+      : `如果回答能具体体现“${firstSignal}”，这可能支持“${record.intent}”这一考察意图，也可能说明候选人能否把“${capability}”迁移到其他情境。这只是待验证的假设，需要结合责任边界、备选方案和结果证据核实，不能凭单道题下整体结论。`,
     contextTitle: en ? 'Context worth asking for' : '值得补充询问的上下文',
     contextQuestions: en ? [
+      ...(record.followUps ?? []),
       'What goal, baseline, constraints, and responsibility boundary applied?',
       'What options were available, and what evidence or dependencies shaped the choice?',
       'Who was affected, what changed, and over what time window?',
       'How was the result verified, and what alternative explanation or downside was considered?',
-      ...(record.followUps ?? []),
     ] : [
+      ...(record.followUps ?? []),
       '当时的目标、基线、约束和责任边界是什么？',
       '有哪些可选方案？什么证据或依赖影响了选择？',
       '影响了谁，发生了什么变化，观察窗口有多长？',
       '结果如何验证？考虑过哪些其他解释或负面影响？',
-      ...(record.followUps ?? []),
     ],
     decisionTitle: en ? 'Decision after context' : '基于上下文的决策',
     decision: en
@@ -94,19 +94,19 @@ export function questionEvaluation(record: EvaluationInput) {
       : '补足上下文后，再按目标和约束比较选项。说清决策口径、不确定性和可逆步骤，并说明什么证据会验证或改变这个决定。',
     benefitsTitle: en ? 'Benefits created' : '方案收益',
     benefits: en ? [
-      'What objective or user need does the option resolve, and for whom?',
-      'What measurable outcome, learning, or future flexibility could it create?',
+      'Which part of the stated objective does this option resolve, and who benefits?',
+      `What measurable outcome would show progress on “${firstSignal},” over what baseline and time window?`,
     ] : [
-      '这个方案解决了什么客观问题或用户需要，谁会受益？',
-      '它可能带来哪些可度量结果、认知增量或后续灵活性？',
+      '这个方案解决了题目目标中的哪一部分，谁会因此受益？',
+      `用什么基线和观察周期，判断它是否改善了“${firstSignal}”所代表的结果？`,
     ],
     costsTitle: en ? 'Costs and risks' : '方案成本与风险',
     costs: en ? [
       'What direct, ongoing, and opportunity costs does it introduce, and who carries them?',
-      'What could fail or become harder to change, and what evidence would justify accepting that risk?',
+      `What could undermine “${secondSignal ?? firstSignal}” or become harder to change, and what evidence would justify accepting that risk?`,
     ] : [
       '它会产生哪些直接成本、持续成本和机会成本，分别由谁承担？',
-      '哪些事情可能失败或更难改变？什么证据足以支持接受这些风险？',
+      `哪些因素可能损害“${secondSignal ?? firstSignal}”所代表的结果，或让后续调整更困难？什么证据足以支持接受这些风险？`,
     ],
     levels,
   };

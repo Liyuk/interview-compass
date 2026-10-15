@@ -94,7 +94,7 @@ The question record remains the single source for every view and language. The s
 - controlled facet IDs for topics, roles, responsibility scopes, career tracks, use cases, and question formats;
 - optional follow-up prompts, background links, question relationships, and source records.
 
-No answer, sample answer, score, rubric, or hiring recommendation field is allowed. Chinese and English records for a published ID must be paired. Question relationships must resolve in the same locale. The content checker rejects unknown taxonomy IDs, missing translations, duplicate locale records, broken references, and missing required intent/signals.
+Question records do not store answers, sample answers, numeric candidate scores, or hiring recommendations. Each detail page derives a four-level evidence guide from the question's intent and signals: 1 not passing, 2 passing, 3 excellent, and 4 exceptional. This guide is heuristic, calibrated to the role and level, and never auto-scores a person. Chinese and English records for a published ID must be paired. Question relationships must resolve in the same locale. The content checker rejects unknown taxonomy IDs, missing translations, duplicate locale records, broken references, and missing required intent/signals.
 
 Question titles and prompts are editorially distinct from source article prose. Each derived question links to the blog article or research source that motivated it, with a provenance label such as `adapted`, `derived`, or `inspired`. Similar prompts are consolidated, while separate questions are retained when they test different primary evidence.
 

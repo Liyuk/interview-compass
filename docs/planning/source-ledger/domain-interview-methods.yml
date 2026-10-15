@@ -17,8 +17,8 @@ sources:
       - g-structured-reflection-honest-retrospective
       - g-structured-reflection-mistake-lesson-or-gain
       - h-attribution-tech-choice-participation
-      - h-attribution-contribution-evidence
-      - h-attribution-collaborator-view
+      - h-attribution-team-vs-personal
+      - h-attribution-team-vs-personal
       - h-attribution-lead-or-manage
       - f-hiring-probe-generic-claims
       - f-hiring-probe-personal-part
@@ -46,7 +46,7 @@ sources:
       - b-commercial-rules-money-and-currency
       - b-business-context-whole-then-part
       - c-investment-choices-leverage-or-fulcrum
-      - c-metrics-causality-causal-chain-solid
+      - c-metrics-causality-business-result-attribution
       - c-metrics-causality-industry-definition-unify
   - id: blog-career-growth-ten-questions-methods
     title: 职场发展问题：晋升与面试前的完整自查清单（追问思路部分）
@@ -58,12 +58,12 @@ sources:
       - c-metrics-causality-business-result-attribution
       - b-product-project-model-upstream-downstream
       - c-planning-goal-backward-vs-resource-forward
-      - c-product-judgment-external-benchmark
+      - c-product-judgment-three-levels-of-bar
       - a-engineering-systems-dependency-change
       - g-structured-reflection-honest-retrospective
       - h-attribution-without-you
-      - h-attribution-contribution-evidence
-      - h-attribution-collaborator-view
+      - h-attribution-team-vs-personal
+      - h-attribution-team-vs-personal
       - f-hiring-probe-generic-claims
       - e-influence-break-constraints
   - id: blog-top-k-thinking

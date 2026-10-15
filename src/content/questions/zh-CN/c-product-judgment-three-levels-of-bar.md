@@ -11,16 +11,35 @@ signals:
   - 说明自己的方案落在哪一档，以及判断的口径
   - 指出这个判断里最不确定的部分，以及怎样补证据
 primaryCapability: value-direction.product-judgment
-topics: [product-thinking, planning]
-roles: [engineering, product, operations, manager]
-responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
-scenarios: [interview, promotion]
-formats: [case, behavioral]
+topics:
+  - product-thinking
+  - planning
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+responsibilityScopes:
+  - team
+  - multiple-teams
+careerTracks:
+  - individual-contributor
+  - team-manager
+scenarios:
+  - interview
+  - promotion
+formats:
+  - case
+  - behavioral
 followUps:
   - 公司内的水准和行业水准的差距，是资源造成的，还是方法造成的？
   - 你的调研样本有多大？有什么偏差？
 source:
   - attribution: original
     label: 作者的面试提问套路：调研的三层参照
+  - attribution: derived
+    label: 博客《职场发展问题：晋升与面试前的完整自查清单》
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+relatedQuestions: []
 ---
