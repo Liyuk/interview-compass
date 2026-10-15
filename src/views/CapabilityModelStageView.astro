@@ -1,0 +1,23 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { dimensionIds, getStageProfile, stageIds, validateCapabilityModel, type StageId } from '../lib/capability-model';
+import { pathFor, type RouteRef } from '../lib/routes';
+import { splitCapability, type Locale } from '../lib/taxonomy';
+interface Props { locale: Locale; stage: StageId }
+const { locale, stage: stageId } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const errors = validateCapabilityModel();
+if (errors.length) throw new Error(`Invalid capability model: ${errors.join('; ')}`);
+const stage = getStageProfile(stageId, locale);
+const standards = dimensionIds.map((id) => ({ id, name: id, standards: stage.dimensions[id] }));
+const dimensionNames = { 'business-results': en ? 'Business outcomes' : '业务结果', 'domain-expertise': en ? 'Domain expertise' : '专业领域知识', 'team-influence': en ? 'Team influence' : '团队影响力', 'human-competitive-advantage': en ? 'Human competitiveness' : '人的竞争力' };
+const next = stage.nextStageIds.map((id) => getStageProfile(id, locale));
+const route: RouteRef = { type: 'capability-model-stage', stage: stageId };
+---
+<SiteLayout locale={locale} route={route} description={stage.summary}>
+  <header class="model-detail-header"><p class="eyebrow">{en ? 'Stage profile' : '阶段能力画像'} · {stage.track === 'ic' ? (en ? 'Individual contributor' : '专业贡献路径') : (en ? 'Management' : '管理路径')}</p><h1 class="page-title">{stage.name}</h1><p class="intro">{stage.summary}</p></header>
+  <p class="model-note">{en ? 'Read these as observable expectations across repeated work, not as a checklist for a single project. AI use is judged by verified outcomes, sound boundaries, and the quality of decisions.' : '以下是通过多个工作周期观察的行为标准，不是单个项目的打勾清单。AI 使用以结果验证、边界意识和决策质量衡量。'}</p>
+  <div class="standard-sections">{standards.map((dimension) => <section class="standard-section"><div class="standard-heading"><span>{dimensionNames[dimension.id as keyof typeof dimensionNames]}</span><a href={pathFor({ type: 'capability-model-dimension', dimension: dimension.id }, locale, base)}>{en ? 'View progression' : '查看维度变迁'} →</a></div><ol class="standard-list">{dimension.standards.map((standard) => <li><strong>{standard.text}</strong>{standard.evidence && <p><span>{en ? 'Evidence: ' : '观察证据：'}</span>{standard.evidence}</p>}<div class="capability-links"><span>{en ? 'Capability map' : '能力地图'}：</span>{standard.capabilities.map((reference) => { const match = splitCapability(reference.id); return match.domain && match.leaf ? <a href={pathFor({ type: 'leaf', domain: match.domain.id, leaf: match.leaf.id }, locale, base)}>{locale === 'en' ? match.leaf.name.en : match.leaf.name.zh}</a> : null; })}</div></li>)}</ol></section>)}</div>
+  {next.length > 0 && <nav class="stage-next" aria-label={en ? 'Next stages' : '后续阶段'}><span>{en ? 'Possible next stages' : '可能的后续阶段'}</span>{next.map((item) => <a href={pathFor({ type: 'capability-model-stage', stage: item.id }, locale, base)}>{item.name} →</a>)}</nav>}
+</SiteLayout>

@@ -1,0 +1,21 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { getDimensionProgression, validateCapabilityModel, type CapabilityDimensionId } from '../lib/capability-model';
+import { pathFor, type RouteRef } from '../lib/routes';
+import { splitCapability, type Locale } from '../lib/taxonomy';
+interface Props { locale: Locale; dimension: CapabilityDimensionId }
+const { locale, dimension: dimensionId } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const errors = validateCapabilityModel();
+if (errors.length) throw new Error(`Invalid capability model: ${errors.join('; ')}`);
+const progression = getDimensionProgression(dimensionId, locale);
+const icStages = progression.stages.filter(({ stage }) => stage.track === 'ic');
+const managementStages = progression.stages.filter(({ stage }) => stage.track !== 'ic');
+const route: RouteRef = { type: 'capability-model-dimension', dimension: dimensionId };
+---
+<SiteLayout locale={locale} route={route} description={en ? `Stage expectations for ${progression.name}.` : `${progression.name}在六个发展阶段的行为要求。`}>
+  <header class="model-detail-header"><p class="eyebrow">{en ? 'Dimension progression' : '能力维度变迁'}</p><h1 class="page-title">{progression.name}</h1><p class="intro">{en ? 'Expectations change in scope, autonomy, ambiguity, and leverage. A higher stage means a different level of impact, not simply more tasks.' : '要求随责任范围、自主性、问题模糊度与影响杠杆变化。阶段提升意味着影响方式发生变化，不只是承担更多任务。'}</p></header>
+  <section class="progression-track"><h2>{en ? 'Individual contributor path' : '专业贡献路径'}</h2><div class="progression-list">{icStages.map(({ stage, standards }, index) => <section class="progression-stage"><div class="progression-marker"><span>{String(index + 1).padStart(2, '0')}</span></div><div class="progression-content"><div class="progression-title"><h3>{stage.name}</h3><a href={pathFor({ type: 'capability-model-stage', stage: stage.id }, locale, base)}>{en ? 'Full stage profile' : '完整阶段画像'} →</a></div><p class="progression-summary">{stage.summary}</p><ul>{standards.map((standard) => <li><strong>{standard.text}</strong>{standard.evidence && <small>{en ? 'Evidence: ' : '观察证据：'}{standard.evidence}</small>}<div class="capability-links">{standard.capabilities.map((reference) => { const match = splitCapability(reference.id); return match.domain && match.leaf ? <a href={pathFor({ type: 'leaf', domain: match.domain.id, leaf: match.leaf.id }, locale, base)}>{locale === 'en' ? match.leaf.name.en : match.leaf.name.zh}</a> : null; })}</div></li>)}</ul></div></section>)}</div></section>
+  <section class="progression-track management-progression-track"><h2>{en ? 'Management path · branches from senior contribution' : '管理路径 · 从高级专业贡献分流'}</h2><div class="progression-list">{managementStages.map(({ stage, standards }, index) => <section class="progression-stage"><div class="progression-marker"><span>{String(index + 1).padStart(2, '0')}</span></div><div class="progression-content"><div class="progression-title"><h3>{stage.name}</h3><a href={pathFor({ type: 'capability-model-stage', stage: stage.id }, locale, base)}>{en ? 'Full stage profile' : '完整阶段画像'} →</a></div><p class="progression-summary">{stage.summary}</p><ul>{standards.map((standard) => <li><strong>{standard.text}</strong>{standard.evidence && <small>{en ? 'Evidence: ' : '观察证据：'}{standard.evidence}</small>}<div class="capability-links">{standard.capabilities.map((reference) => { const match = splitCapability(reference.id); return match.domain && match.leaf ? <a href={pathFor({ type: 'leaf', domain: match.domain.id, leaf: match.leaf.id }, locale, base)}>{locale === 'en' ? match.leaf.name.en : match.leaf.name.zh}</a> : null; })}</div></li>)}</ul></div></section>)}</div></section>
+</SiteLayout>
