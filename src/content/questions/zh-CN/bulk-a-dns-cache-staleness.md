@@ -10,6 +10,9 @@ signals:
   - 识别不同层级的缓存位置
   - 理解 TTL 不能保证所有客户端立即刷新
   - 提出按解析结果和连接生命周期拆分的验证办法
+  - 识别各层缓存和连接生命周期。
+  - 让新旧区域在迁移窗口内保持兼容。
+  - 依据流量和错误证据逐步排空旧区域。
 primaryCapability: professional.computer-science
 topics:
   - computer-networks

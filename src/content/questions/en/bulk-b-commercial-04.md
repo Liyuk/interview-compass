@@ -4,12 +4,20 @@ kind: question
 status: published
 locale: en
 title: A new plan expands trials but cannibalizes a higher-priced plan. How would you decide whether to launch it?
-question: A new plan makes more users willing to try the product, but some customers who would have bought a higher-priced plan switch to the cheaper option. What commercial model and observation window would you use to judge whether the plan portfolio creates incremental value?
-intent: Assess whether the candidate evaluates a portfolio rather than headline sales, considering conversion, plan migration, margin, and long-term value together.
+question: >-
+  A new plan makes more users willing to try the product, but some customers who would have bought a higher-priced plan
+  switch to the cheaper option. What commercial model and observation window would you use to judge whether the plan
+  portfolio creates incremental value?
+intent: >-
+  Assess whether the candidate evaluates a portfolio rather than headline sales, considering conversion, plan migration,
+  margin, and long-term value together.
 signals:
   - Separates conversion from new users and downgrades among existing customers
   - Compares margin, service cost, and lifecycle contribution across plans
   - Proposes segmentation, a comparison design, or explicit conditions for further investment
+  - Separate new demand from migration between plans.
+  - Analyze margin, retention, service cost, and customer lifetime.
+  - Set segment experiments and stop or adjust thresholds.
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization
@@ -42,7 +50,10 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 B
 followUps:
-  - 【How do you assess lower prices that attract new customers but shift existing ones?】A lower-priced plan attracts new customers, but many existing customers move down from a higher-priced plan. How would you calculate net new value and decide whether to continue?
+  - >-
+    【How do you assess lower prices that attract new customers but shift existing ones?】A lower-priced plan attracts new
+    customers, but many existing customers move down from a higher-priced plan. How would you calculate net new value
+    and decide whether to continue?
   - Can migrated customers still create long-term expansion value?
   - How would you estimate impact if randomized pricing is infeasible?
 ---

@@ -10,6 +10,9 @@ signals:
   - 明确不同费用项的适用对象、周期与计价单位
   - 解释最低消费与用量费用的先后或抵扣关系
   - 考虑价格变更、补单和账单明细的可追溯性
+  - 明确最低消费、折扣和税费的计算顺序。
+  - 让每个账单行可追溯到合同版本和用量。
+  - 用边界案例验证舍入、退款与对账。
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization

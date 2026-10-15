@@ -11,6 +11,9 @@ signals:
   - 避免直接覆盖可能承载重要数据的资源
   - 将确认后的实际状态纳入代码并评估影响
   - 补上审批、检测与紧急变更回写流程
+  - 先比对声明、真实状态和变更记录
+  - 评估直接覆盖漂移是否会造成二次故障
+  - 说明如何导入、修复或有计划地移除偏差
 primaryCapability: professional.engineering-systems
 topics:
   - devops
@@ -19,8 +22,10 @@ topics:
 roles:
   - engineering
   - backend
+  - operations
 responsibilityScopes:
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
@@ -37,5 +42,8 @@ followUps:
 source:
   - attribution: inspired
     label: DNXLabs DevOps 题库的主题覆盖；题面为本站独立编写
+    url: https://github.com/DNXLabs/DevOps-Interview-Questions
+  - attribution: inspired
+    label: DevOps Interview Questions：基础设施即代码
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
 ---

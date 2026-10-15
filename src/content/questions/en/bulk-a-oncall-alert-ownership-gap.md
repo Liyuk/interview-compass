@@ -4,12 +4,24 @@ kind: question
 status: published
 locale: en
 title: An alert fired, but unclear handoff left it unacknowledged. How would you investigate?
-question: During a cross-time-zone handoff, a critical alert was sent. The outgoing on-call engineer assumed the incoming engineer would handle it, while the incoming engineer never acknowledged it; escalation was delayed. How would you reconstruct the ownership chain, fix acknowledgment and handoff, and verify the change?
-intent: Assesses whether the candidate can trace ownership gaps across alert triggering, delivery, acknowledgment, escalation, and handoff, then define verifiable process improvements.
+question: >-
+  During a cross-time-zone handoff, a critical alert was sent. The outgoing on-call engineer assumed the incoming
+  engineer would handle it, while the incoming engineer never acknowledged it; escalation was delayed. How would you
+  reconstruct the ownership chain, fix acknowledgment and handoff, and verify the change?
+intent: >-
+  Assesses whether the candidate can trace ownership gaps across alert triggering, delivery, acknowledgment, escalation,
+  and handoff, then define verifiable process improvements.
 signals:
-  - Checks the timeline for triggering, delivery, acknowledgment, and escalation instead of assuming that a sent alert has an owner
+  - >-
+    Checks the timeline for triggering, delivery, acknowledgment, and escalation instead of assuming that a sent alert
+    has an owner
   - Distinguishes possible causes such as individual oversight, schedule data, routing tools, and handoff agreements
-  - Defines acknowledgment deadlines, timeout escalation, and handoff acceptance, then validates them through drills or incident data
+  - >-
+    Defines acknowledgment deadlines, timeout escalation, and handoff acceptance, then validates them through drills or
+    incident data
+  - Define states for open alerts, investigations, and mitigations.
+  - Assign handoff acknowledgments and timeout escalation.
+  - Exercise cross-shift handoffs and track information loss.
 primaryCapability: professional.debugging
 topics:
   - debugging
@@ -38,7 +50,10 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 A
 followUps:
-  - 【What if critical alert context is lost during on-call handoff?】An alert fires before shift change but does not meet escalation criteria. The next responder lacks earlier investigation context and the incident grows. How would you design handoff?
+  - >-
+    【What if critical alert context is lost during on-call handoff?】An alert fires before shift change but does not meet
+    escalation criteria. The next responder lacks earlier investigation context and the incident grows. How would you
+    design handoff?
   - Which facts should machine-generated context preserve?
   - Who remains accountable if the next responder has not acknowledged?
 ---

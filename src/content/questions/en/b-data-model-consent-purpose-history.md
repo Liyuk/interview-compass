@@ -4,12 +4,17 @@ kind: question
 status: published
 locale: en
 title: After consent is withdrawn, how do you prove data is used only for permitted purposes?
-question: A user consented to product analytics, then withdrew consent. Derived metrics already reached reports, experiments, and model-training data. How would you model consent state, purpose scope, and propagation?
+question: >-
+  A user consented to product analytics, then withdrew consent. Derived metrics already reached reports, experiments,
+  and model-training data. How would you model consent state, purpose scope, and propagation?
 intent: Assess whether you treat consent as a time- and purpose-scoped domain fact and track responsibility for derived data.
 signals:
   - Distinguish the user, consent object, purpose, effective time, and withdrawal time.
   - Track lineage from source records to derived features, reports, and training sets.
   - Define deletion, recomputation, isolation, and escalation when data cannot be recalled.
+  - Represent consent by subject, purpose, legal basis, and effective time.
+  - Prevent new processing and trigger compensating deletion for delayed pipelines.
+  - Track downstream consumers and verify withdrawal completion.
 primaryCapability: domain-modeling.data-model
 topics:
   - data-modeling
@@ -35,7 +40,10 @@ formats:
 followUps:
   - How do you distinguish anonymous aggregates from derived data still linkable to a person?
   - How can you prove downstream systems completed disposition after withdrawal?
-  - 【How should consent state vary by purpose and time?】A user permits product analytics but rejects ad targeting, then later withdraws consent. Several data pipelines sync with delay. How would you model consent and constrain downstream use?
+  - >-
+    【How should consent state vary by purpose and time?】A user permits product analytics but rejects ad targeting, then
+    later withdraws consent. Several data pipelines sync with delay. How would you model consent and constrain
+    downstream use?
   - How should aggregates created before withdrawal be handled?
   - How does the system distinguish unknown from explicit denial?
 source:

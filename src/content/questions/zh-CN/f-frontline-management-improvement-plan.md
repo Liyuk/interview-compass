@@ -11,6 +11,9 @@ signals:
   - 设计具体、可衡量、有时限的目标，并让对方参与讨论
   - 说明会提供什么支持，以及定期检查和记录的方式
   - 保持过程真诚，让改进有真实的可能，同时按公司制度和与人力资源的配合保证合规
+  - 区分事实、影响和解释。
+  - 描述明确标准、时间窗口和资源支持。
+  - 安排定期检查并提前说明结果选项。
 primaryCapability: people-organization.frontline-management
 topics:
   - management

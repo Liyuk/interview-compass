@@ -7,18 +7,30 @@ title: 一个长时间运行的进程内存持续增长，但没人能指出明�
 question: 一个长时间运行的进程内存持续增长，但没人能指出明显的泄漏。你怎样区分真正的泄漏、正常的缓存增长和内存碎片？
 intent: 了解你对内存管理的理解，以及能否用观察而不是猜测来区分几种解释。
 signals:
-  - "对照堆、原生分配、映射页和 RSS 随时间及负载的变化。"
-  - "用增长上界、释放后回落和重启表现区分泄漏、缓存与碎片。"
-  - "先提出可区分的假设，再选择低风险采样或剖析方式缩小范围。"
-  - "说明限制影响和验证修复的指标。"
+  - 对照堆、原生分配、映射页和 RSS 随时间及负载的变化。
+  - 用增长上界、释放后回落和重启表现区分泄漏、缓存与碎片。
+  - 先提出可区分的假设，再选择低风险采样或剖析方式缩小范围。
+  - 说明限制影响和验证修复的指标。
+  - 从输入、机制和故障表现中提出可验证的技术假设
+  - 比较实现路径及其正确性、性能、安全或维护代价
+  - 说明覆盖边界场景的测试或运行指标
+  - 比较堆、非堆、缓存和进程总内存的时间曲线
+  - 提出能区分保留引用与正常缓存淘汰的实验
+  - 说明采样、转储和复现对线上风险的影响
 primaryCapability: professional.computer-science
 topics:
   - operating-systems
   - debugging
+  - reliability
+  - operations
+  - backend
 roles:
   - backend
   - mobile
   - engineering
+  - frontend
+  - data
+  - operations
 responsibilityScopes:
   - individual
   - team
@@ -30,9 +42,11 @@ scenarios:
   - interview
   - hiring
   - promotion
+  - campus
 formats:
   - debugging
   - knowledge
+  - case
 source:
   - attribution: original
     label: 本站原创

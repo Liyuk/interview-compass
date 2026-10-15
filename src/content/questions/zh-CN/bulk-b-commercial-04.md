@@ -10,6 +10,9 @@ signals:
   - 区分新增用户转化与存量客户降档迁移
   - 比较各套餐的毛利、服务成本和生命周期贡献
   - 提出分群观察、对照或继续投入的判定条件
+  - 区分新增需求与套餐间迁移。
+  - 分析毛利、留存、服务成本和客户生命周期。
+  - 设置分群实验与停止或调整阈值。
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization

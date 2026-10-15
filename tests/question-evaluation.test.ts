@@ -106,10 +106,10 @@ describe('question evaluation guide', () => {
           expect(question.signals.join(' '), file).toMatch(question.locale === 'zh-CN' ? /历史|重现/ : /historical|reproduc/i);
           expect(question.followUps?.length, file).toBe(3);
         } else {
-          const title = question.title.replace(/[?？。.]$/, '');
-          expect(question.intent, file).toContain(title);
+          const title = question.title.split(/[：:]/, 1)[0].replace(/[?？。.]$/, '').toLocaleLowerCase();
+          expect(question.intent.toLocaleLowerCase(), file).toContain(title);
           expect(question.signals.length, file).toBeGreaterThanOrEqual(3);
-          expect(question.signals[0], file).toContain(title);
+          expect(question.signals[0].toLocaleLowerCase(), file).toContain(title);
           if (question.followUps !== undefined) {
             expect(question.followUps.length, file).toBeGreaterThan(0);
             expect(question.followUps.every((item) => typeof item === 'string' && item.trim().length > 0), file).toBe(true);

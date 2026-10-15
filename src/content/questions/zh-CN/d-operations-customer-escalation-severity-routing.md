@@ -10,6 +10,9 @@ signals:
   - 建立严重度、受影响客户和业务阻断的客观定义。
   - 区分响应时限、解决目标和状态更新时间。
   - 指定分级权、升级路径和误报复盘机制。
+  - 区分客户身份、合同等级和实际影响严重度。
+  - 定义升级入口、证据要求和容量上限。
+  - 持续复核升级是否改善结果或仅改变顺序。
 primaryCapability: delivery.operational-execution
 topics:
   - operations

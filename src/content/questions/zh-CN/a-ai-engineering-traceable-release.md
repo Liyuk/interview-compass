@@ -11,17 +11,22 @@ signals:
   - 对输入、输出和检索内容按敏感度脱敏
   - 提供关联请求的追踪 ID 与错误分类
   - 说明日志访问权限和保留周期
+  - 选择请求 ID、模型版本、检索统计和错误类别等最小字段
+  - 说明脱敏、抽样、保留期限和受控临时采集的条件
+  - 验证遥测仍能区分检索、模型和工具链路退化
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering
   - engineering-systems
   - reliability
+  - security
 roles:
   - ai-engineer
   - backend
   - engineering
 responsibilityScopes:
   - team
+  - organization
 careerTracks:
   - individual-contributor
   - team-manager

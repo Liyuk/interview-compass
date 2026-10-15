@@ -5,23 +5,28 @@ status: published
 locale: en
 title: Tenant rate limiting across instances and regions
 question: >-
-  An API runs across multiple instances and regions and needs shared per-tenant quotas while tolerating brief
-  network partitions. How would you design limits based on windows, burst tolerance, precision, latency, and
-  availability, and where would you keep state?
+  An API runs across multiple instances and regions and needs shared per-tenant quotas while tolerating brief network
+  partitions. How would you design limits based on windows, burst tolerance, precision, latency, and availability, and
+  where would you keep state?
 intent: >-
-  Examines distributed rate-limiting algorithms, tenant quotas, cross-region coordination, and the trade-off
-  between precision and availability during failures.
+  Examines distributed rate-limiting algorithms, tenant quotas, cross-region coordination, and the trade-off between
+  precision and availability during failures.
 signals:
   - Clarifies tenant and endpoint scope, time windows, bursts, and acceptable cross-region error
   - Compares token buckets, sliding windows, and centralized, hierarchical, or approximate local state
   - Defines limiting, quota recovery, and audit behavior during partitions or state-store failures
   - Explains choices across precision, latency, cost, and availability
+  - Clarifies quota windows, bursts, and tolerated cross-region error
+  - Compares failure behavior of local tokens, central coordination, or hierarchical quotas
+  - Explains how quota state is recovered, audited, and adjusted
 primaryCapability: professional.system-design
 topics:
   - backend
   - distributed-systems
+  - system-design
 roles:
   - backend
+  - engineering
 responsibilityScopes:
   - individual
   - team
@@ -42,8 +47,8 @@ source:
     url: https://github.com/donnemartin/system-design-primer
 followUps:
   - >-
-    During a partition, would you allow limited overage, reject requests, or degrade within each region, and
-    where is the boundary?
+    During a partition, would you allow limited overage, reject requests, or degrade within each region, and where is
+    the boundary?
   - How would you keep tenant quotas stable when the number of instances or regions changes?
   - How can quota changes take effect smoothly and remain auditable?
 ---

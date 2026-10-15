@@ -1,47 +1,65 @@
 sources:
   - id: blog-product-overview
     title: 如何写一份产品概览，而不把资料堆成百科
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/09/product-overview-is-a-decision-model/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/09/product-overview-is-a-decision-model/zh.md
     status: used
-    questions: [b-business-context-replacement-paths, b-product-project-model-overview-facts]
+    questions:
+      - b-business-context-replacement-paths
+      - b-product-project-model-overview-facts
   - id: blog-engineer-product-judgment
     title: 工程师为什么需要产品判断
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
     status: used
-    questions: [b-business-context-user-task-chain, b-product-project-model-business-map, c-product-judgment-request-to-obstacle]
+    questions:
+      - b-business-context-user-task-chain
+      - b-product-project-model-business-map
+      - c-product-judgment-request-to-obstacle
   - id: blog-product-judgment-for-engineers
     title: 产品 sense：研发和产品怎么把"这个功能值不值得做"聊清楚
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/03/product-judgment-for-engineers/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/03/product-judgment-for-engineers/zh.md
     status: used
-    questions: [c-product-judgment-settings-switch]
+    questions:
+      - c-product-judgment-settings-switch
   - id: blog-use-own-product
     title: 先用自己的产品：开发者如何建立真实反馈回路
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/05/use-your-own-product-feedback-loop/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/05/use-your-own-product-feedback-loop/zh.md
     status: used
-    questions: [c-product-judgment-use-own-product]
+    questions:
+      - c-product-judgment-use-own-product
   - id: blog-metrics-measurement
     title: 数据度量工作指南（二）：指标争论之前，先定义测量对象
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/03/define-the-measurement-before-arguing-about-metrics/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/03/define-the-measurement-before-arguing-about-metrics/zh.md
     status: used
-    questions: [b-data-model-event-grain, c-metrics-causality-completion-drop]
+    questions:
+      - b-data-model-event-grain
+      - c-metrics-causality-completion-drop
   - id: blog-metric-tiers
     title: 数据度量工作指南（三）：指标分级，让数据先服务最重要的决策
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-tiers-prioritize-decisions/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-tiers-prioritize-decisions/zh.md
     status: used
-    questions: [c-metrics-causality-metric-tiers]
+    questions:
+      - c-metrics-causality-metric-tiers
   - id: blog-metric-dictionary
     title: 数据度量工作指南（四）：指标字典模板，把定义变成可复算的协作接口
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
     status: used
-    questions: [b-feature-model-window-definition]
+    questions:
+      - b-feature-model-window-definition
   - id: blog-top-k
     title: 思维训练（一）：Top K 问题——先找到最重要的事
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
     status: used
-    questions: [c-prioritization-top-three-stop-two]
+    questions:
+      - c-prioritization-top-three-stop-two
   - id: blog-technical-planning
     title: 技术规划，本质上是业务分析与竞品分析
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2025/11/technical-planning-business-and-competitive-analysis/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2025/11/technical-planning-business-and-competitive-analysis/zh.md
     status: used
     questions:
       - c-prioritization-three-p0-dispute
@@ -50,13 +68,16 @@ sources:
       - c-investment-choices-optimization-limit
       - c-investment-choices-shared-platform
   - id: blog-engineering-decision-skills
-    title: "Engineering Decision Skills：评审、排期、复盘时，我想让 AI 多做一步"
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/projects/2026/09/engineering-decision-skills/zh.md
+    title: Engineering Decision Skills：评审、排期、复盘时，我想让 AI 多做一步
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/projects/2026/09/engineering-decision-skills/zh.md
     status: used
-    questions: [c-metrics-causality-bot-resolution]
+    questions:
+      - c-metrics-causality-bot-resolution
   - id: blog-working-under-resource-constraints
     title: 资源不足时，怎样不让团队靠透支运转
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/working-under-resource-constraints/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/working-under-resource-constraints/zh.md
     status: reviewed-not-used
     reason: 主题归属交付域 D（容量与承诺），由负责 D 域的作者处理；在 B/C 域内没有对应的主评价目标。
   - id: original-domain-modeling-boundaries
@@ -68,7 +89,6 @@ sources:
       - b-commercial-rules-settlement-split
       - b-data-model-order-payment-refund
       - b-feature-model-time-semantics
-      - bulk1000-b-031-v1
       - b-model-evolution-concept-split
   - id: gh-dataskew-data-engineering-interview-questions
     title: dataskew-io/data-engineering-interview-questions

@@ -10,11 +10,15 @@ signals:
   - 先确定对比对象，例如对照组或同期的自然趋势
   - 检查参与活动的用户本来就更活跃之类的选择偏差
   - 说明结论的边界，以及还需要补哪些验证
+  - 明确目标用户、目标结果和不应恶化的护栏
+  - 区分行为相关性、因果证据和仍未验证的假设
+  - 给出扩大、调整或停止投入的触发条件
 primaryCapability: value-direction.metrics-causality
 topics:
   - growth-experiments
   - metrics
   - operations
+  - product-discovery
 roles:
   - operations
   - marketing
@@ -22,18 +26,25 @@ roles:
   - data
 responsibilityScopes:
   - team
+  - multiple-teams
+  - organization
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - operations-review
   - promotion
+  - hiring
 formats:
   - case
+  - planning
 source:
   - attribution: original
     label: 本站原创
   - attribution: derived
     label: Liyuk 博客：产品判断、Top-K 与规划方法；题目为本站重新组织
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
+followUps: []
 ---

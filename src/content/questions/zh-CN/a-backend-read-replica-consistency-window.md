@@ -10,6 +10,9 @@ signals:
   - 确定哪些字段或操作要求读己之写。
   - 比较会话粘滞、版本令牌、短暂主库读取等方案。
   - 定义复制延迟监控、过期提示和容量代价。
+  - 把用户可感知的不变量转成读写语义。
+  - 比较主库读取、会话粘性和版本令牌。
+  - 验证复制延迟或故障时的降级行为。
 primaryCapability: professional.system-design
 topics:
   - databases

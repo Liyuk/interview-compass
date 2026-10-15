@@ -11,27 +11,42 @@ signals:
   - 正确处理字符边界、多记录输入与结束输入
   - 对超长单行设置有依据的资源上限和恢复策略
   - 覆盖空块、截断、格式异常及重复调用的确定性测试
+  - 从输入、机制和故障表现中提出可验证的技术假设
+  - 比较实现路径及其正确性、性能、安全或维护代价
+  - 说明覆盖边界场景的测试或运行指标
 primaryCapability: professional.coding-abstraction
 topics:
   - programming-languages
   - compiler-design
+  - backend
+  - frontend
+  - concurrency
+  - data-structures
 roles:
   - engineering
+  - backend
+  - frontend
+  - mobile
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
 scenarios:
   - interview
   - campus
   - hiring
+  - promotion
 formats:
   - coding
 source:
   - attribution: inspired
     label: Coding Interview University — computer science foundations
     url: https://github.com/jwasham/coding-interview-university/blob/main/README.md
+  - attribution: inspired
+    label: GitHub 技术面试与工程体系调研；题目为本站独立编写
+    url: https://github.com/yangshun/tech-interview-handbook
 followUps:
   - 如果输入规模扩大十倍且内存预算不变，你会优先调整哪项假设或设计？
   - 如果旧版本客户端或依赖无法同步升级，你会如何维持兼容并界定退出时间？

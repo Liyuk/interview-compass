@@ -10,11 +10,15 @@ signals:
   - 描述客户影响、范围、时限和延迟成本。
   - 了解对方团队目标与当前承诺，不把问题升级成人际冲突。
   - 提出减少范围、交换资源或阶段交付等可选方案。
+  - 了解对方优先级变化背后的约束和激励。
+  - 提出可交换选项及对双方结果的影响。
+  - 记录承诺并建立必要的决策升级点。
 primaryCapability: collaboration.stakeholder-influence
 topics:
   - communication
   - metrics
   - execution
+  - conflict-resolution
 roles:
   - engineering
   - product

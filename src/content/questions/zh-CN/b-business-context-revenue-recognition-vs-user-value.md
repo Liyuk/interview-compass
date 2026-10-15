@@ -10,6 +10,9 @@ signals:
   - 区分签约金额、已履约金额、现金回收和客户实际使用等概念。
   - 说明各口径服务的决策对象、时间窗口和数据来源。
   - 提出如何防止团队把提前确认收入误读成产品效果或长期留存。
+  - 同时观察收入、回款、使用、支持和续约信号。
+  - 区分会计期间与客户价值观察窗口。
+  - 指出哪些变化需要调整销售承诺或产品体验。
 primaryCapability: domain-modeling.business-context
 topics:
   - commercialization

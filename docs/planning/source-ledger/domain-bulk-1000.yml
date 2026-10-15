@@ -39,7 +39,7 @@ sources:
       - bulk1000-b-028-v1
       - bulk1000-b-029-v1
       - bulk1000-b-030-v1
-      - bulk1000-b-031-v1
+      - b-commercial-rules-settlement-split
       - bulk1000-b-032-v1
       - b-data-model-erasure-audit-history
       - b-feature-model-time-semantics
@@ -84,8 +84,7 @@ sources:
       - bulk1000-d-063-v1
   - id: bulk1000-source-005
     title: Liyuk 博客：项目冲突、协作与沟通；题目为本站重新组织
-    url: >-
-      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
     status: used
     questions:
       - bulk1000-e-064-v1
@@ -129,8 +128,7 @@ sources:
       - bulk1000-g-091-v1
   - id: bulk1000-source-008
     title: Liyuk 博客：责任、贡献归属与工作边界；题目为本站重新组织
-    url: >-
-      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
     status: used
     questions:
       - bulk1000-h-092-v1

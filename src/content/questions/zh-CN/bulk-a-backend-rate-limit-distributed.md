@@ -10,12 +10,17 @@ signals:
   - 澄清按用户/租户/接口的限流维度
   - 比较令牌桶或滑动窗口等语义
   - 说明集中状态、近似本地状态和存储故障的影响
+  - 先明确额度窗口、突发流量和跨区误差容忍度
+  - 比较本地令牌、集中协调或分层额度的失效行为
+  - 说明额度状态如何恢复、审计和调整
 primaryCapability: professional.system-design
 topics:
   - backend
   - distributed-systems
+  - system-design
 roles:
   - backend
+  - engineering
 responsibilityScopes:
   - individual
   - team
@@ -34,4 +39,5 @@ source:
   - attribution: inspired
     label: System Design Primer：扩展与容量权衡
     url: https://github.com/donnemartin/system-design-primer
+followUps: []
 ---

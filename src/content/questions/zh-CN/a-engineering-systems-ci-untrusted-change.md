@@ -11,24 +11,35 @@ signals:
   - 按任务拆分最小权限凭证
   - 避免不可信构建直接访问发布秘密
   - 描述审计、隔离和安全发布的验证方法
+  - 从输入、机制和故障表现中提出可验证的技术假设
+  - 比较实现路径及其正确性、性能、安全或维护代价
+  - 说明覆盖边界场景的测试或运行指标
 primaryCapability: professional.engineering-systems
 topics:
   - devops
   - security
   - engineering-systems
+  - monorepo
+  - micro-frontends
 roles:
   - engineering
   - backend
+  - frontend
+  - operations
 responsibilityScopes:
   - team
+  - individual
 careerTracks:
   - individual-contributor
   - team-manager
 scenarios:
   - interview
   - hiring
+  - campus
+  - promotion
 formats:
   - case
+  - planning
 followUps: []
 source:
   - attribution: inspired

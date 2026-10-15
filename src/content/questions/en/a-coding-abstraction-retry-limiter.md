@@ -5,51 +5,64 @@ status: published
 locale: en
 title: Implement a bounded, cancellable retry wrapper that protects its dependency
 question: >-
-  Implement a retry wrapper that retries by error type, supports a maximum attempt count, backoff, and
-  cancellation, and does not overwhelm the dependency. Define the interface before coding, then explain how to
-  make clocks, waits, and tests deterministic.
+  Implement a retry wrapper that retries by error type, supports a maximum attempt count, backoff, and cancellation, and
+  does not overwhelm the dependency. Define the interface before coding, then explain how to make clocks, waits, and
+  tests deterministic.
 intent: >-
-  Assess how you abstract behavior involving time and failure, define retry bounds, cancellation semantics,
-  and error boundaries, and make the implementation reliably testable.
+  Assess how you abstract behavior involving time and failure, define retry bounds, cancellation semantics, and error
+  boundaries, and make the implementation reliably testable.
 signals:
   - Defines whether the maximum counts retries or total attempts
   - Separates retryable from non-retryable errors and uses bounded backoff
   - Controls waiting through an injectable clock or scheduler to avoid flaky tests
-  - >-
-    Defines cancellation, idempotency, and final-error behavior to prevent infinite retries or repeated side
-    effects
+  - Defines cancellation, idempotency, and final-error behavior to prevent infinite retries or repeated side effects
+  - Forms testable technical hypotheses from inputs, mechanisms, and failure symptoms
+  - Compares implementation paths and their correctness, performance, security, or maintenance cost
+  - Names tests or operational measures that cover edge cases
+  - Defines whether the retry limit includes the initial call
+  - Controls backoff and waits through a replaceable clock or scheduler
+  - Defines clear behavior for cancellation, non-retryable errors, and the final failure
 primaryCapability: professional.coding-abstraction
 topics:
   - programming-languages
   - backend
   - concurrency
+  - frontend
+  - data-structures
 roles:
   - engineering
   - backend
   - ai-engineer
+  - frontend
+  - mobile
 responsibilityScopes:
   - individual
+  - team
 careerTracks:
   - individual-contributor
+  - team-manager
 scenarios:
   - interview
   - hiring
+  - campus
+  - promotion
 formats:
   - coding
 followUps:
-  - >-
-    If the caller cancels during backoff, how should the interface represent cancellation and release
-    resources?
+  - If the caller cancels during backoff, how should the interface represent cancellation and release resources?
   - How would you test the backoff sequence and maximum attempts without real sleep?
 source:
   - attribution: inspired
     label: >-
-      AI-Engineer-Interview-Questions: rate limiter and retry coding task (format inspiration only; the prompt
-      is original)
+      AI-Engineer-Interview-Questions: rate limiter and retry coding task (format inspiration only; the prompt is
+      original)
     url: >-
       https://github.com/ombharatiya/AI-Engineer-Interview-Questions/blob/main/12-coding-challenges/11_rate_limiter_and_retry.py
   - attribution: inspired
     label: JavaGuide — backend, Java, database, concurrency, and distributed systems topics
     url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
+  - attribution: inspired
+    label: GitHub 技术面试与工程体系调研；题目为本站独立编写
+    url: https://github.com/yangshun/tech-interview-handbook
 relatedQuestions: []
 ---

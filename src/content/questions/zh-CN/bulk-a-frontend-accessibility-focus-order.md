@@ -10,6 +10,9 @@ signals:
   - 检查打开后焦点移动与关闭后焦点恢复
   - 考虑焦点陷阱及 Escape 等键盘行为
   - 提出键盘走查与辅助技术验证
+  - 使用合适的实时区域和语义状态。
+  - 决定焦点是否移动及移动到哪里。
+  - 测试键盘顺序、读屏反馈与重复提交。
 primaryCapability: professional.coding-abstraction
 topics:
   - frontend

@@ -11,6 +11,9 @@ signals:
   - 用幂等键、状态查询或人工确认处理不确定结果
   - 按权限、金额或风险设置确认门槛
   - 说明重试、超时和部分成功时的状态恢复
+  - 区分模型再次决策与同一次工具请求的网络重试
+  - 讨论幂等键、操作状态查询和结果确认
+  - 说明无法确认执行结果时怎样暂停或交给人处理
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering

@@ -11,11 +11,18 @@ signals:
   - 采用新旧凭证短暂并行的迁移窗口
   - 验证依赖方完成切换后再撤销旧凭证
   - 准备泄露或切换失败时的紧急处置
+  - 先清点凭据持有者、权限范围和最后使用时间
+  - 讨论双凭据过渡、验证和撤销顺序
+  - 说明泄漏紧急轮换与常规轮换的差异
+  - 制定双密钥接受与单密钥签发的阶段。
+  - 识别未迁移调用方和密钥泄露时的紧急路径。
+  - 通过使用遥测确认旧密钥停止使用后再撤销。
 primaryCapability: professional.engineering-systems
 topics:
   - devops
   - security
   - reliability
+  - engineering-systems
 roles:
   - engineering
   - backend

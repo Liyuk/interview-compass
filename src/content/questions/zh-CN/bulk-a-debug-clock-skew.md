@@ -10,6 +10,9 @@ signals:
   - 核对事件时间、接收时间与处理时间各自来源
   - 寻找时钟同步偏差和跨服务关联标识
   - 说明业务顺序应由何种版本或因果信息表达
+  - 指出物理时钟可能偏移或漂移
+  - 区分时间戳排序与因果关系
+  - 提出逻辑时钟、消息因果标记或追踪上下文等方案
 primaryCapability: professional.debugging
 topics:
   - debugging
@@ -22,13 +25,16 @@ roles:
 responsibilityScopes:
   - team
   - multiple-teams
+  - individual
 careerTracks:
   - individual-contributor
 scenarios:
   - interview
   - hiring
+  - campus
 formats:
   - debugging
+  - case
 source:
   - attribution: inspired
     label: System Design Primer：分布式系统时序问题
@@ -37,4 +43,5 @@ source:
     label: System Design Primer — requirements, constraints, and trade-offs
     url: https://github.com/donnemartin/system-design-primer/blob/master/README.md
 relatedQuestions: []
+followUps: []
 ---

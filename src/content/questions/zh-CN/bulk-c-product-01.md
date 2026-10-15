@@ -10,6 +10,9 @@ signals:
   - 区分功能使用、任务完成质量与用户长期结果
   - 提出能区分学习成本、交互摩擦和用户错配的证据
   - 说明哪些结果会触发保留、修正或撤回改版
+  - 检查不同用户和任务复杂度的分布。
+  - 区分更多人完成与完成体验变差。
+  - 提出按人群、任务或阶段回滚和再验证。
 primaryCapability: value-direction.product-judgment
 topics:
   - product-thinking

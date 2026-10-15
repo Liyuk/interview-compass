@@ -11,18 +11,30 @@ intent: >-
   Assesses whether you can diagnose memory growth with discriminating evidence rather than drawing conclusions from one
   process metric or heap snapshot.
 signals:
-  - "Compare heap, native allocations, mapped pages, and RSS across time and load."
-  - "Use growth bounds, release behavior, and restart behavior to distinguish leaks, caches, and fragmentation."
-  - "Form discriminating hypotheses before choosing low-risk sampling or profiling."
-  - "Explain how to limit impact and verify a fix."
+  - Compare heap, native allocations, mapped pages, and RSS across time and load.
+  - Use growth bounds, release behavior, and restart behavior to distinguish leaks, caches, and fragmentation.
+  - Form discriminating hypotheses before choosing low-risk sampling or profiling.
+  - Explain how to limit impact and verify a fix.
+  - Forms testable technical hypotheses from inputs, mechanisms, and failure symptoms
+  - Compares implementation paths and their correctness, performance, security, or maintenance cost
+  - Names tests or operational measures that cover edge cases
+  - Compares heap, off-heap, cache, and total-process memory over time
+  - Proposes experiments that distinguish retained references from normal cache eviction
+  - Explains the production risk of sampling, dumps, and reproduction
 primaryCapability: professional.computer-science
 topics:
   - operating-systems
   - debugging
+  - reliability
+  - operations
+  - backend
 roles:
   - backend
   - mobile
   - engineering
+  - frontend
+  - data
+  - operations
 responsibilityScopes:
   - individual
   - team
@@ -34,9 +46,11 @@ scenarios:
   - interview
   - hiring
   - promotion
+  - campus
 formats:
   - debugging
   - knowledge
+  - case
 source:
   - attribution: original
     label: Original to this site

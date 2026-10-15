@@ -10,6 +10,9 @@ signals:
   - 区分取消请求与强制终止
   - 追踪父子任务或取消令牌的传播
   - 考虑 finally/清理逻辑与不可取消操作
+  - 说明取消的传递边界与任务所有权。
+  - 为不响应取消的操作设置期限、隔离和清理策略。
+  - 验证取消后没有泄漏或重复副作用。
 primaryCapability: professional.computer-science
 topics:
   - programming-languages

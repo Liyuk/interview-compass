@@ -10,6 +10,9 @@ signals:
   - 判断是别名、合并还是误关联，并保留来源证据。
   - 明确哪些历史事实只做关联展示，哪些可重算或迁移。
   - 逐项定义合同、权限、审批和审计日志的继承边界。
+  - 区分主实体、别名和历史归属关系。
+  - 避免覆盖旧标识或误合并不可逆记录。
+  - 验证跨系统引用、权限和审计查询。
 primaryCapability: domain-modeling.model-evolution
 topics:
   - data-modeling

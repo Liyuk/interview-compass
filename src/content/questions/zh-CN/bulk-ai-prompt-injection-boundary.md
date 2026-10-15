@@ -10,6 +10,9 @@ signals:
   - 区分系统策略、用户请求和检索内容的信任级别
   - 限制工具授权、参数范围和敏感操作的确认要求
   - 设计覆盖间接注入及数据外泄路径的测试
+  - 把工具返回值作为数据而非指令处理。
+  - 限制工具可见信息、参数和副作用范围。
+  - 记录策略决策并测试攻击路径与安全失败。
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering

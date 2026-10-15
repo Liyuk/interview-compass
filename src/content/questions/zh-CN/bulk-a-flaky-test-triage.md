@@ -10,6 +10,9 @@ signals:
   - 关联失败与浏览器、数据、并发和环境状态
   - 定义隔离测试的条件、责任人和期限
   - 衡量重跑对反馈时间及漏检风险的影响
+  - 从输入、机制和故障表现中提出可验证的技术假设
+  - 比较实现路径及其正确性、性能、安全或维护代价
+  - 说明覆盖边界场景的测试或运行指标
 primaryCapability: professional.engineering-systems
 topics:
   - engineering-systems
@@ -17,19 +20,25 @@ topics:
   - reliability
   - debugging
   - concurrency
+  - operations
 roles:
   - engineering
   - frontend
   - backend
+  - data
+  - operations
 responsibilityScopes:
   - team
   - multiple-teams
+  - individual
 careerTracks:
   - individual-contributor
   - team-manager
 scenarios:
   - interview
   - hiring
+  - campus
+  - promotion
 formats:
   - case
   - debugging

@@ -10,22 +10,37 @@ signals:
   - 能区分 major 与 minor fault 的含义
   - 会关联工作集、可用内存和换页活动
   - 提出应用与系统两侧的对照观测
+  - 从输入、机制和故障表现中提出可验证的技术假设
+  - 比较实现路径及其正确性、性能、安全或维护代价
+  - 说明覆盖边界场景的测试或运行指标
 primaryCapability: professional.computer-science
 topics:
   - operating-systems
+  - data-structures
+  - computer-networks
+  - databases
+  - concurrency
+  - distributed-systems
+  - compiler-design
 roles:
   - engineering
+  - backend
+  - mobile
+  - data
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
 scenarios:
   - interview
   - campus
   - hiring
+  - promotion
 formats:
   - case
+  - knowledge
 source:
   - attribution: inspired
     label: Coding Interview University — computer science foundations
@@ -33,4 +48,5 @@ source:
   - attribution: inspired
     label: GitHub 技术面试与工程体系调研；题目为本站独立编写
     url: https://github.com/yangshun/tech-interview-handbook
+followUps: []
 ---
