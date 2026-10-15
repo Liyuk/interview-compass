@@ -378,12 +378,13 @@ test('capability dimension progression separates the IC and management paths', a
   await expect(page.getByRole('heading', { name: '管理路径从高级工程师处分叉', level: 2 })).toBeVisible();
 });
 
-test('planned capability references are labels instead of broken links', async ({ page }) => {
+test('newly populated AI governance capability references link to its question leaf', async ({ page }) => {
   for (const route of ['capability-model/stages/junior-engineer/', 'capability-model/dimensions/domain-expertise/']) {
     await page.goto(route);
-    const planned = page.locator('.planned-capability').filter({ hasText: 'AI 评估与治理' });
-    await expect(planned.first()).toBeVisible();
-    await expect(page.locator('a[href*="ai-evaluation-governance"]')).toHaveCount(0);
+    const reference = page.locator('a.capability-reference[href*="ai-evaluation-governance"]');
+    await expect(reference.first()).toBeVisible();
+    await expect(reference.first()).toContainText('AI 评估与治理');
+    await expect(page.locator('.planned-capability').filter({ hasText: 'AI 评估与治理' })).toHaveCount(0);
   }
 });
 
@@ -419,9 +420,25 @@ test('matrix provides anchored expectations in both locales without page overflo
     const matrix = page.locator('.capability-matrix');
     await expect(matrix.locator('tbody tr')).toHaveCount(6);
     await expect(matrix.locator('tbody td')).toHaveCount(48);
-    await expect(page.locator('.depth-legend > div')).toHaveCount(4);
+    await expect(page.locator('.depth-legend > div')).toHaveCount(6);
+    const firstCell = matrix.locator('tbody tr').first().locator('td').first();
+    await firstCell.getByText(prefix ? 'Details' : '行为锚点').click();
+    await expect(firstCell.locator('details')).toHaveAttribute('open', '');
+    await expect(firstCell.getByRole('link')).toHaveAttribute('href', /capability-model\/stages\/junior-engineer\/#apply-foundations/);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1)).toBe(true);
   }
+});
+
+test('stage profiles explain evaluation lenses, evidence limits, and conditional standards', async ({ page }) => {
+  await page.goto('capability-model/stages/junior-engineer/');
+  await expect(page.getByRole('heading', { name: '四个互补的评价视角' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '面试中需要核验的证据链' })).toBeVisible();
+  await expect(page.getByText('仅当岗位规则允许且任务适合 AI 辅助时观察；不使用 AI 不能单独作为负面判断。')).toBeVisible();
+  await expect(page.getByText('本标准的基础要求').first()).toBeVisible();
+  await page.goto('en/capability-model/stages/engineering-manager/');
+  await expect(page.getByRole('heading', { name: 'Four complementary evaluation lenses' })).toBeVisible();
+  await expect(page.getByText('Understands the team’s business flow, key domain rules, and data definitions')).toBeVisible();
+  await expect(page.getByText(/Assess AI risk only when the team’s products, tools, or workflows involve AI\./)).toBeVisible();
 });
 
 test('native filters share inset Lucide chevrons and keep keyboard filtering', async ({ page }) => {

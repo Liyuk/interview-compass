@@ -33,6 +33,7 @@ export interface CapabilityStandard {
   id: string;
   text: string;
   evidence?: string;
+  applicability?: string;
   capabilities: CapabilityReference[];
 }
 
@@ -158,6 +159,7 @@ export function validateCapabilityModel(): string[] {
         for (const standard of standards) {
           if (!hasString(standard.text)) errors.push(`${localeLabel}: ${stage.id}/${dimensionId}/${standard.id} is missing text`);
           if (standard.evidence !== undefined && !hasString(standard.evidence)) errors.push(`${localeLabel}: ${stage.id}/${dimensionId}/${standard.id} has empty evidence`);
+          if (standard.applicability !== undefined && !hasString(standard.applicability)) errors.push(`${localeLabel}: ${stage.id}/${dimensionId}/${standard.id} has empty applicability guidance`);
           if (!Array.isArray(standard.capabilities) || standard.capabilities.length === 0) {
             errors.push(`${localeLabel}: ${stage.id}/${dimensionId}/${standard.id} needs a capability reference`);
           } else for (const reference of standard.capabilities) {

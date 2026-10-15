@@ -13,7 +13,7 @@
         "mid-level-engineer"
       ],
       "name": "Junior Engineer",
-      "summary": "Delivers bounded work with clear goals and guidance, understands the intended result, verifies outputs, and learns actively.",
+      "summary": "Completes bounded work with clear goals and guidance, understands the user and intended outcome, verifies the output, and communicates promptly.",
       "dimensions": {
         "business-results": [
           {
@@ -48,7 +48,7 @@
           },
           {
             "id": "verify-ai-assisted-work",
-            "text": "Uses AI to accelerate low-risk work and checks facts, code, and references before submitting.",
+            "text": "Uses AI only when permitted and suitable for the task; checks facts, code, and references in proportion to risk before submitting.",
             "capabilities": [
               {
                 "id": "professional.ai-engineering",
@@ -59,7 +59,8 @@
                 "emphasis": "foundational"
               }
             ],
-            "evidence": "Can explain the change and show execution or manual review evidence."
+            "evidence": "Can explain the change and show execution or manual review evidence.",
+            "applicability": "Assess only when policy permits and the task is suitable for AI assistance; choosing not to use AI is not by itself negative evidence."
           },
           {
             "id": "close-task-feedback",
@@ -106,7 +107,7 @@
           },
           {
             "id": "learn-ai-workflow",
-            "text": "Provides useful context to AI and judges whether its output fits the task.",
+            "text": "When AI use is permitted, provides useful context, judges whether the output fits the task, and explains when it should not be used.",
             "capabilities": [
               {
                 "id": "professional.ai-engineering",
@@ -117,7 +118,8 @@
                 "emphasis": "foundational"
               }
             ],
-            "evidence": "Changes include verification; generated content is not assumed correct."
+            "evidence": "Changes include verification; generated content is not assumed correct.",
+            "applicability": "Depends on role policy, task risk, and available tools; sound decisions not to use AI count as valid evidence."
           },
           {
             "id": "explain-local-domain-model",
@@ -271,7 +273,7 @@
         "senior-engineer"
       ],
       "name": "Mid-level Engineer",
-      "summary": "Independently owns a defined feature or component and delivers user and business outcomes with dependable quality.",
+      "summary": "Owns a feature or component end to end, delivers reliably, follows operational feedback, and supports peers when relevant to the role.",
       "dimensions": {
         "business-results": [
           {
@@ -306,7 +308,7 @@
           },
           {
             "id": "use-ai-for-throughput",
-            "text": "Uses AI in controlled parts of the workflow to improve throughput while owning the user outcome.",
+            "text": "Where role policy permits and risk is controlled, compares AI with alternatives on total cost, quality, and risk while owning the user outcome.",
             "capabilities": [
               {
                 "id": "professional.ai-engineering",
@@ -317,7 +319,8 @@
                 "emphasis": "foundational"
               }
             ],
-            "evidence": "Compares workflow time or quality and retains human review points."
+            "evidence": "Compares workflow time or quality and retains human review points.",
+            "applicability": "Do not assess by AI usage frequency or speed; consider task suitability and available validation."
           },
           {
             "id": "plan-feature-milestones",
@@ -364,7 +367,7 @@
           },
           {
             "id": "evaluate-ai-output",
-            "text": "Validates AI-generated or suggested work in proportion to its risk.",
+            "text": "When AI is used, validates generated or suggested work according to impact and risk; escalates or rejects what cannot be explained or verified.",
             "capabilities": [
               {
                 "id": "professional.ai-evaluation-governance",
@@ -375,7 +378,8 @@
                 "emphasis": "foundational"
               }
             ],
-            "evidence": "Evidence includes tests, comparison cases, reference checks, or human approval."
+            "evidence": "Evidence includes tests, comparison cases, reference checks, or human approval.",
+            "applicability": "Assess only when AI is actually used or the role is expected to evaluate AI output."
           },
           {
             "id": "model-component-rules",
@@ -491,7 +495,7 @@
           },
           {
             "id": "use-ai-with-calibrated-judgment",
-            "text": "Knows when AI can assist, when expert review is needed, and when to stop automation.",
+            "text": "Uses task fit, risk, and validation cost to decide when AI may assist, expert review is needed, automation should stop, or AI should not be used.",
             "capabilities": [
               {
                 "id": "professional.ai-evaluation-governance",
@@ -502,7 +506,8 @@
                 "emphasis": "foundational"
               }
             ],
-            "evidence": "Identifies data, access, accuracy, or impact-scope risks."
+            "evidence": "Identifies data, access, accuracy, or impact-scope risks.",
+            "applicability": "Allows a context-based decision not to use AI."
           },
           {
             "id": "investigate-before-answering",
@@ -537,7 +542,7 @@
         "engineering-manager"
       ],
       "name": "Senior Engineer",
-      "summary": "Independently shapes ambiguous problems and owns the user value, quality, and outcome of cross-functional work.",
+      "summary": "Clarifies ambiguous problems, weighs cross-component options, and drives project outcomes while making authority and decision boundaries explicit when proposing plans or pivots.",
       "dimensions": {
         "business-results": [
           {
@@ -587,7 +592,7 @@
           },
           {
             "id": "own-business-planning",
-            "text": "Owns quarterly planning for a project or business subdomain, connecting opportunities, outcomes, investment, and work declined.",
+            "text": "Proposes phased plans within the owned project or domain, connecting opportunities, outcome measures, investment, and work declined; quarterly is one possible review cadence.",
             "capabilities": [
               {
                 "id": "value-direction.planning",
@@ -598,7 +603,7 @@
           },
           {
             "id": "stop-low-value-work",
-            "text": "Reduces, stops, or redirects work when results contradict its premise and explains opportunity cost.",
+            "text": "When results contradict the premise, reduces, stops, or redirects work within authority; beyond that authority, presents evidence and a recommendation to the decision owner.",
             "capabilities": [
               {
                 "id": "value-direction.investment-choices",
@@ -641,7 +646,7 @@
           },
           {
             "id": "set-quality-and-ai-controls",
-            "text": "Defines quality, security, and AI evaluation requirements for high-impact solutions.",
+            "text": "Defines quality and security checks for high-impact solutions; where AI is involved, selects evaluation, human review, or non-use according to risk rather than treating adoption as a goal.",
             "capabilities": [
               {
                 "id": "professional.quality-security-safety",
@@ -652,18 +657,20 @@
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "Shows evaluation cases, monitoring/escalation conditions, privacy/access controls, or human handoff."
+            "evidence": "Shows evaluation cases, monitoring/escalation conditions, privacy/access controls, or human handoff.",
+            "applicability": "The AI portion applies only when the solution or its risks involve AI; assess ordinary quality and security against the actual work."
           },
           {
             "id": "own-technical-roadmap",
-            "text": "Sets a domain technical roadmap balancing architecture, technical debt, AI investment, and staged migration.",
+            "text": "Sets a technical roadmap for the owned domain, balancing architecture, technical debt, and staged migration; includes AI investment only when relevant opportunities, risks, and validation conditions are clear.",
             "capabilities": [
               {
                 "id": "professional.engineering-systems",
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "The roadmap includes dependencies, cost, risk, checkpoints, and exit options."
+            "evidence": "The roadmap includes dependencies, cost, risk, checkpoints, and exit options.",
+            "applicability": "AI investment applies only when the domain has a relevant opportunity or risk; a decision not to adopt based on value, total cost, and risk is valid."
           },
           {
             "id": "evolve-business-models",
@@ -725,7 +732,7 @@
           },
           {
             "id": "plan-team-capability-needs",
-            "text": "Identifies team capability gaps from project direction and agrees development, borrowing, or hiring needs with leaders.",
+            "text": "Identifies capability gaps from project direction and recommends development, collaboration, borrowing, or hiring; authorized owners make staffing and resource decisions.",
             "capabilities": [
               {
                 "id": "people-organization.growth-development",
@@ -811,7 +818,7 @@
       "track": "ic",
       "nextStageIds": [],
       "name": "Experienced Senior Engineer",
-      "summary": "On the senior individual-contributor path, shapes domain or multi-team outcomes, technical direction, and reusable mechanisms.",
+      "summary": "Creates sustained professional value in a critical domain or across teams, scaling impact through reusable practices and collaboration without assuming company-wide governance or formal succession duties.",
       "dimensions": {
         "business-results": [
           {
@@ -835,7 +842,7 @@
           },
           {
             "id": "guide-market-and-portfolio-tradeoffs",
-            "text": "Guides market, business-model, and long-term investment choices across opportunities.",
+            "text": "When carrying relevant domain responsibility, contributes market, business-model, and long-term investment judgment across opportunities; company-wide portfolio authority is not assumed.",
             "capabilities": [
               {
                 "id": "value-direction.market-economic-judgment",
@@ -876,14 +883,15 @@
           },
           {
             "id": "verify-investment-economics",
-            "text": "Evaluates total cost and real adoption of platform, reuse, or AI investments and tests long-term value assumptions.",
+            "text": "Evaluates total cost and actual adoption for platform, reuse, or relevant AI investments, testing long-term value assumptions without treating adoption itself as success.",
             "capabilities": [
               {
                 "id": "value-direction.market-economic-judgment",
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "Compares maintenance, migration, adoption, and alternatives."
+            "evidence": "Compares maintenance, migration, adoption, and alternatives.",
+            "applicability": "Assess the AI portion only when the investment includes AI or AI is an alternative."
           }
         ],
         "domain-expertise": [
@@ -908,7 +916,7 @@
           },
           {
             "id": "build-evaluation-capability",
-            "text": "Builds quality and AI evaluation mechanisms so teams can compare approaches and detect regressions.",
+            "text": "Builds quality evaluation proportionate to product risk; for AI systems, includes representative evaluations and regression monitoring.",
             "capabilities": [
               {
                 "id": "professional.ai-evaluation-governance",
@@ -919,7 +927,8 @@
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "Reusable baselines, production monitoring, and clear human-intervention/rollback conditions exist."
+            "evidence": "Reusable baselines, production monitoring, and clear human-intervention/rollback conditions exist.",
+            "applicability": "AI evaluation applies only to AI systems or risks within the actual responsibility."
           },
           {
             "id": "simplify-professional-practice",
@@ -938,14 +947,15 @@
           },
           {
             "id": "align-technical-portfolio",
-            "text": "Coordinates cross-team technical roadmaps, sequencing architecture, data, platform, and AI evolution with compatibility boundaries.",
+            "text": "Coordinates cross-team technical roadmaps, sequencing architecture, data, platform, and relevant AI work with compatibility boundaries.",
             "capabilities": [
               {
                 "id": "professional.system-design",
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "The roadmap explains cross-team dependencies, migration sequence, and acceptance standards."
+            "evidence": "The roadmap explains cross-team dependencies, migration sequence, and acceptance standards.",
+            "applicability": "Include AI work when relevant to the opportunity or risk; when it is not relevant, explain the technical or product basis."
           },
           {
             "id": "govern-domain-meaning",
@@ -977,7 +987,7 @@
           },
           {
             "id": "grow-senior-capability",
-            "text": "Develops new technical or product leaders and creates succession capacity.",
+            "text": "Helps others take on more complex work through specialist coaching, review, shared assets, or delegation; multiple new owners or formal succession supply are optional evidence contingent on opportunity and authority.",
             "capabilities": [
               {
                 "id": "people-organization.growth-development",
@@ -1007,7 +1017,7 @@
           },
           {
             "id": "plan-capability-supply",
-            "text": "Plans domain capability supply with managers, covering expertise, knowledge diffusion, and single-person dependencies.",
+            "text": "Works with management partners to identify domain capability gaps, knowledge diffusion needs, and key-person risks; headcount, hiring, and succession decisions depend on actual authority.",
             "capabilities": [
               {
                 "id": "people-organization.team-design",
@@ -1106,7 +1116,7 @@
         "manager-of-managers"
       ],
       "name": "Engineering Manager",
-      "summary": "Delivers business outcomes through the team rather than personal rescue, building talent, collaboration, and sustainable engineering quality.",
+      "summary": "Owns first-line management responsibilities for team outcomes, people development, collaboration, and operating mechanisms; understands the business and domain boundaries and uses professional judgment to review and delegate.",
       "dimensions": {
         "business-results": [
           {
@@ -1156,7 +1166,7 @@
           },
           {
             "id": "run-business-planning-cycle",
-            "text": "Runs quarterly business planning and review cycles linking user opportunities, team investment, and outcome validation.",
+            "text": "Plans and reviews with business partners at the cadence the decisions require, linking user opportunities, team investment, and outcome validation; the cadence can change with context.",
             "capabilities": [
               {
                 "id": "value-direction.planning",
@@ -1180,7 +1190,7 @@
         "domain-expertise": [
           {
             "id": "make-sound-domain-decisions",
-            "text": "Uses enough domain expertise to review critical product, technical, quality, and AI-risk decisions.",
+            "text": "Understands the team’s business flow, key domain rules, and data definitions; reviews product, technical, and quality risks, engaging AI experts when relevant, without being measured by personal coding depth.",
             "capabilities": [
               {
                 "id": "professional.system-design",
@@ -1195,11 +1205,12 @@
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "Asks the right questions, involves appropriate experts, and owns the decision."
+            "evidence": "Asks the right questions, involves appropriate experts, and owns the decision.",
+            "applicability": "Assess AI risk only when the team’s products, tools, or workflows involve AI."
           },
           {
             "id": "build-reliable-team-practice",
-            "text": "Builds sustainable team practices for testing, release, incident response, and AI use.",
+            "text": "Builds testing, release, and incident-response practices proportionate to business risk; adds AI verification and human oversight when AI is used.",
             "capabilities": [
               {
                 "id": "professional.engineering-systems",
@@ -1210,7 +1221,8 @@
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "Quality and recovery are measurable without excessive manager approval."
+            "evidence": "Quality and recovery are measurable without excessive manager approval.",
+            "applicability": "Does not require AI adoption; when applicable, assess verification, fallback, and accountability."
           },
           {
             "id": "guide-product-engineering-partnership",
@@ -1229,14 +1241,15 @@
           },
           {
             "id": "sponsor-technical-roadmap",
-            "text": "Builds technical roadmaps with technical leads and allocates capacity and risk checks for debt, architecture, and AI changes.",
+            "text": "Builds technical roadmaps with technical leads, allocating capacity, cost comparison, and risk validation for technical debt, architecture, and relevant AI options.",
             "capabilities": [
               {
                 "id": "professional.engineering-systems",
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "Technical plans align with business cadence and have owners and staged validation."
+            "evidence": "Technical plans align with business cadence and have owners and staged validation.",
+            "applicability": "Include AI options based on business fit, total cost, quality, and risk."
           }
         ],
         "team-influence": [
@@ -1384,12 +1397,12 @@
       "track": "manager-of-managers",
       "nextStageIds": [],
       "name": "Manager of Managers",
-      "summary": "Owns multi-team or organizational outcomes through managers, allocating resources and building long-term organizational capability.",
+      "summary": "Within actual authority, leads managers to deliver across teams and is accountable for resource direction and organizational capability; strategy, budget, and reorganization authority depend on the role mandate.",
       "dimensions": {
         "business-results": [
           {
             "id": "shape-org-outcomes",
-            "text": "Translates business direction into organizational outcomes, portfolio priorities, and adjustable investment plans.",
+            "text": "Within organizational mandate, translates business direction into multi-team outcomes, portfolio priorities, and adjustable investment plans; executive strategy or budget authority is not assumed.",
             "capabilities": [
               {
                 "id": "value-direction.planning",
@@ -1438,7 +1451,7 @@
           },
           {
             "id": "connect-business-planning-horizons",
-            "text": "Connects annual business direction, quarterly portfolios, and monthly reviews with explicit assumptions, resources, and exit conditions.",
+            "text": "Within actual authority, connects annual direction, phased portfolios, and recurring reviews while making assumptions, resource limits, and exit conditions explicit; cadence follows the decision cycle.",
             "capabilities": [
               {
                 "id": "value-direction.planning",
@@ -1462,7 +1475,7 @@
         "domain-expertise": [
           {
             "id": "govern-domain-and-ai-risk",
-            "text": "Ensures clear ownership and controls for critical technical, product, AI, privacy, and security risks.",
+            "text": "Ensures clear ownership and controls for critical technical, product, privacy, and security risks, adding proportionate evaluation and oversight when AI is involved.",
             "capabilities": [
               {
                 "id": "professional.ai-evaluation-governance",
@@ -1473,7 +1486,8 @@
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "Critical risks have decision owners, monitoring, review, and response mechanisms."
+            "evidence": "Critical risks have decision owners, monitoring, review, and response mechanisms.",
+            "applicability": "The AI governance portion applies only where the organization actually uses or provides AI."
           },
           {
             "id": "set-organizational-quality-bar",
@@ -1511,20 +1525,21 @@
           },
           {
             "id": "govern-technical-investment-roadmap",
-            "text": "Governs cross-domain technical roadmaps, connecting platform, architecture, data, and AI investment to business strategy.",
+            "text": "Governs cross-domain technical roadmaps, connecting platform, architecture, and data investment to business direction, and evaluates AI investment and alternatives where relevant.",
             "capabilities": [
               {
                 "id": "professional.engineering-systems",
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "The portfolio has expert review, dependency sequencing, and long-term maintenance ownership."
+            "evidence": "The portfolio has expert review, dependency sequencing, and long-term maintenance ownership.",
+            "applicability": "AI project count or adoption is not a goal; explain the basis for adopting, declining, or deferring it."
           }
         ],
         "team-influence": [
           {
             "id": "develop-managers",
-            "text": "Hires, coaches, and evaluates managers and builds sustainable leadership succession.",
+            "text": "Within actual authority, hires, coaches, and evaluates managers and establishes management calibration and leadership handoff practices; organizational scale and succession outcomes depend on opportunity and mandate.",
             "capabilities": [
               {
                 "id": "people-organization.manager-of-managers",
@@ -1569,7 +1584,7 @@
           },
           {
             "id": "plan-organization-capability",
-            "text": "Sets annual team and organizational capability plans connecting headcount, key roles, management spans, and succession supply.",
+            "text": "Plans organizational capability, key roles, and management spans with relevant decision-makers; headcount, budget, and formal succession decisions depend on actual authority.",
             "capabilities": [
               {
                 "id": "people-organization.team-design",

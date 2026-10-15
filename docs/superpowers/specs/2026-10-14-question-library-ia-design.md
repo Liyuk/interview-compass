@@ -10,7 +10,7 @@ The project already documents an eight-domain capability model, but the site doe
 
 The site should help readers move from a broad preparation need to a useful question through a consistent path. Search remains the fastest entry. Readers who do not know what to search can explore by capability, role, or use case. Each question explains why it is asked and what capability or evidence it may surface; the library does not provide model answers or score people.
 
-The work uses the existing MECE research as its taxonomy source of truth. It does not change the legacy `Interview-Book` repository or the `liyuk.github.io` source repository.
+The work uses the existing MECE research as its taxonomy source of truth. The blog remains an attributed source for original ideas and references.
 
 ## Approach considered
 
@@ -112,7 +112,7 @@ Question production is coverage-driven rather than tied to an arbitrary quota. T
 - Use a single taxonomy module for bilingual labels, hierarchy, ordering, route segments, and descriptions; avoid separate handwritten route lists.
 - Use reusable Astro components for the home, capability, role, scenario, topic, question-list, and question-detail views.
 - Keep search and filter behavior as static/client-side enhancements under the existing Pages base; no server or account system is introduced.
-- Do not modify or publish from the legacy `Interview-Book` repository. Do not edit the blog source repository.
+- Preserve attribution for blog-derived ideas and link to the original public source where appropriate.
 - The current default branch workflow remains the only automatic Pages deployment trigger; this work is reviewed and verified before any later release action.
 
 ## Acceptance criteria

@@ -22,4 +22,4 @@ sources:
     title: 面试题与工程师的成长路径
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2018/04/interview-questions-archive/zh.md
     status: reviewed-not-used
-    reason: 该文只是旧题库的整理缘由和外链索引，没有可提炼的具体题目；旧题库属于另一个仓库，本次不复制。
+    reason: 该文主要记录题库整理缘由和外链索引，没有可直接拆解的具体题目；不把链接目录当作原题内容来源。

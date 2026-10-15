@@ -104,13 +104,11 @@ PR 验证可以取消过期运行；生产部署串行，不在上传/发布中�
 
 ## 5. URL、项目路径与迁移
 
-新项目使用个人仓库 `Liyuk/interview-compass`，预期地址为 `https://liyuk.github.io/interview-compass/`。原有 `Mountain-Buzhou/Interview-Book` 及其站点保持独立，不由本仓库覆盖。
+站点部署到 GitHub Pages，地址为 `https://liyuk.github.io/interview-compass/`。
 
 项目 Pages 地址具有仓库名前缀，Astro 配置使用 `site: https://liyuk.github.io` 与 `base: /interview-compass`；所有资产、内部链接、搜索资源都经过同一 URL 规则。构建和浏览器检查必须使用 `/interview-compass/`，不能只在根路径开发。Astro 官方提供 Pages 的 site/base 部署指导。[Astro GitHub 部署](https://docs.astro.build/en/guides/deploy/github/)
 
-保存旧 URL、大小写、标题锚点与图片资产映射；为旧页面保留兼容页、目标链接和必要的旧锚点。静态托管的 Astro 重定向输出可能采用 HTML/meta refresh，不能把它写成服务器 301；SEO 迁移和旧 hash 需要实际检验。[Astro 重定向](https://docs.astro.build/en/guides/routing/#redirects)
-
-旧路径来自站点实际输出/旧链接记录；Markdown 文件位置不等于线上路径。若一篇旧提纲拆成多题，旧 URL 应进入迁移后的专题导航，并保存原来的章节定位。
+使用稳定的题目与能力 ID 构建站内链接；Markdown 文件位置不等于线上路径。静态托管的 Astro 重定向输出可能采用 HTML/meta refresh，不能把它写成服务器 301。[Astro 重定向](https://docs.astro.build/en/guides/routing/#redirects)
 
 ## 6. 什么时候改用其他托管
 
@@ -129,11 +127,11 @@ GitHub Pages 当前限制包括发布站点不超过 1GB、软带宽约 100GB/�
 
 ## 7. 首次切换验收
 
-1. 新站在独立分支或工作区构建，旧站在新站通过验收前可恢复。
+1. 在独立分支或工作区构建，并确认当前站点可从版本控制恢复。
 2. 核实 schema、ID、来源、题目引用、图片和内链；seed/draft 从 HTML、索引和 sitemap 排除。
 3. 浏览器检查首页、岗位/管理专题、责任范围入口、题目详情；筛选状态可分享；键盘、移动端与中文搜索通过。
-4. 用真实项目 base 服务构建产物，直接刷新深层页面；检查搜索脚本、资源路径与旧 URL 样本。
+4. 用真实项目 base 服务构建产物，直接刷新深层页面；检查搜索脚本和资源路径。
 5. 在仓库 Pages 设置确认 Actions；发布通过同一验证的产物，检查最终地址、HTTPS、页面和搜索。
-6. 写下版本、commit、发布记录与回退方法；新旧地址变化单独登记。
+6. 写下版本、commit、发布记录与回退方法。
 
 实现已包含 GitHub Actions Pages 构建/部署工作流和 `npm run ci` 校验链。推送功能分支只验证 PR/手动流程，不会触发 `main` 的生产部署；首次正式发布前仍需在个人仓库设置 Pages source 为 GitHub Actions，并核对部署权限、环境和真实地址。

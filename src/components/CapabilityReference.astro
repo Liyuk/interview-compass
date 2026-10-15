@@ -1,20 +1,25 @@
 ---
 import { pathFor } from '../lib/routes';
 import { isPlannedCapability, splitCapability, type Locale } from '../lib/taxonomy';
+import type { CapabilityEmphasis } from '../lib/capability-model';
 
-interface Props { capability: string; locale: Locale; base: string }
-const { capability, locale, base } = Astro.props;
+interface Props { capability: string; locale: Locale; base: string; emphasis: CapabilityEmphasis }
+const { capability, locale, base, emphasis } = Astro.props;
 const { domain, leaf } = splitCapability(capability);
 const label = leaf ? (locale === 'en' ? leaf.name.en : leaf.name.zh) : capability;
 const planned = isPlannedCapability(capability);
+const emphasisLabel = locale === 'en'
+  ? { foundational: 'Foundational in this standard', differentiating: 'Differentiating here', contextual: 'Relevant when context applies' }[emphasis]
+  : { foundational: '本标准的基础要求', differentiating: '本标准的区分项', contextual: '按情境判断相关性' }[emphasis];
 ---
 {domain && leaf && !planned
-  ? <a href={pathFor({ type: 'leaf', domain: domain.id, leaf: leaf.id }, locale, base)}>{label}</a>
+  ? <a class="capability-reference" href={pathFor({ type: 'leaf', domain: domain.id, leaf: leaf.id }, locale, base)}><span>{label}</span><small>{emphasisLabel}</small></a>
   : planned
-    ? <span class="planned-capability" title={locale === 'en' ? 'This question leaf is planned but not yet populated.' : '该能力叶子仍在规划中，题库尚未收录。'}>{label}<small>{locale === 'en' ? 'Planned' : '规划中'}</small></span>
-    : <span>{label}</span>}
+    ? <span class="planned-capability" title={locale === 'en' ? 'This question leaf is planned but not yet populated.' : '该能力叶子仍在规划中，题库尚未收录。'}><span>{label}</span><small>{emphasisLabel} · {locale === 'en' ? 'Planned' : '规划中'}</small></span>
+    : <span class="capability-reference"><span>{label}</span><small>{emphasisLabel}</small></span>}
 
 <style>
-  .planned-capability { display: inline-flex; align-items: baseline; gap: 0.35rem; color: var(--sl-color-gray-2); }
-  .planned-capability small { color: var(--sl-color-gray-3); font-size: 0.75em; }
+  .capability-reference, .planned-capability { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 0.1rem; }
+  .capability-reference small, .planned-capability small { color: var(--sl-color-gray-3); font-size: 0.72em; font-weight: 400; }
+  .planned-capability { color: var(--sl-color-gray-2); }
 </style>

@@ -13,7 +13,7 @@
         "mid-level-engineer"
       ],
       "name": "初级工程师",
-      "summary": "在清晰目标和指导下完成有边界的工作，理解结果、验证产出，并主动学习。",
+      "summary": "在清晰目标和指导下完成有边界的工作，理解服务对象与结果，验证产出并及时反馈。",
       "dimensions": {
         "business-results": [
           {
@@ -48,7 +48,7 @@
           },
           {
             "id": "verify-ai-assisted-work",
-            "text": "使用 AI 加快低风险工作时，能检查事实、代码和引用再提交。",
+            "text": "在岗位允许并且任务适合时使用 AI；提交前按任务风险检查事实、代码和引用。",
             "capabilities": [
               {
                 "id": "professional.ai-engineering",
@@ -59,7 +59,8 @@
                 "emphasis": "foundational"
               }
             ],
-            "evidence": "能指出改动依据，并展示运行或人工核查结果。"
+            "evidence": "能指出改动依据，并展示运行或人工核查结果。",
+            "applicability": "仅当岗位规则允许且任务适合 AI 辅助时观察；不使用 AI 不能单独作为负面判断。"
           },
           {
             "id": "close-task-feedback",
@@ -106,7 +107,7 @@
           },
           {
             "id": "learn-ai-workflow",
-            "text": "能为 AI 提供必要上下文，并判断输出是否适用于当前任务。",
+            "text": "岗位允许使用 AI 时，提供必要上下文并判断输出是否适用于当前任务；也能说明何时不应使用。",
             "capabilities": [
               {
                 "id": "professional.ai-engineering",
@@ -117,7 +118,8 @@
                 "emphasis": "foundational"
               }
             ],
-            "evidence": "修改有验证步骤，不把生成内容直接当作正确答案。"
+            "evidence": "修改有验证步骤，不把生成内容直接当作正确答案。",
+            "applicability": "依岗位规则、任务风险和可用工具判断；应允许“不采用”的合理证据。"
           },
           {
             "id": "explain-local-domain-model",
@@ -271,7 +273,7 @@
         "senior-engineer"
       ],
       "name": "中级工程师",
-      "summary": "能独立负责明确范围内的功能或模块，以稳定质量交付可验证的用户和业务结果。",
+      "summary": "独立负责功能或模块的完整闭环，稳定交付并跟踪运行反馈；岗位适用时支持同伴成长。",
       "dimensions": {
         "business-results": [
           {
@@ -306,7 +308,7 @@
           },
           {
             "id": "use-ai-for-throughput",
-            "text": "把 AI 用于可控环节提升效率，并对最终用户结果负责。",
+            "text": "在岗位规则允许且风险可控时，比较 AI 与替代方法的总成本、质量和风险；对最终用户结果负责。",
             "capabilities": [
               {
                 "id": "professional.ai-engineering",
@@ -317,7 +319,8 @@
                 "emphasis": "foundational"
               }
             ],
-            "evidence": "比较流程前后耗时或质量，保留人工复核点。"
+            "evidence": "比较流程前后耗时或质量，保留人工复核点。",
+            "applicability": "不以使用 AI 的频率或速度评价；需结合任务适配性及验证条件。"
           },
           {
             "id": "plan-feature-milestones",
@@ -364,7 +367,7 @@
           },
           {
             "id": "evaluate-ai-output",
-            "text": "对 AI 生成或建议的内容做适合风险级别的验证。",
+            "text": "任务使用 AI 时，按影响和风险验证生成或建议的内容；不能解释或验证的部分应升级或停止采用。",
             "capabilities": [
               {
                 "id": "professional.ai-evaluation-governance",
@@ -375,7 +378,8 @@
                 "emphasis": "foundational"
               }
             ],
-            "evidence": "有测试、对照样例、引用检查或人工审批记录。"
+            "evidence": "有测试、对照样例、引用检查或人工审批记录。",
+            "applicability": "只在实际使用 AI 或岗位要求评估 AI 输出时观察。"
           },
           {
             "id": "model-component-rules",
@@ -491,7 +495,7 @@
           },
           {
             "id": "use-ai-with-calibrated-judgment",
-            "text": "知道何时让 AI 辅助、何时需要专家复核或停止自动化。",
+            "text": "根据任务、风险和验证成本，判断何时让 AI 辅助、何时需要专家复核、何时停止自动化或不采用。",
             "capabilities": [
               {
                 "id": "professional.ai-evaluation-governance",
@@ -502,7 +506,8 @@
                 "emphasis": "foundational"
               }
             ],
-            "evidence": "能识别数据、权限、准确性或影响范围风险。"
+            "evidence": "能识别数据、权限、准确性或影响范围风险。",
+            "applicability": "允许基于具体情境选择不采用 AI。"
           },
           {
             "id": "investigate-before-answering",
@@ -537,7 +542,7 @@
         "engineering-manager"
       ],
       "name": "高级工程师",
-      "summary": "在模糊问题中独立定义方案，对一项跨职能工作的用户价值、质量和结果负责。",
+      "summary": "澄清模糊问题、权衡跨模块方案并推动项目结果；提出规划和转向建议时明确自身权限与决策边界。",
       "dimensions": {
         "business-results": [
           {
@@ -587,7 +592,7 @@
           },
           {
             "id": "own-business-planning",
-            "text": "负责项目或业务子域的季度规划，连接机会、结果指标、投入与不做清单。",
+            "text": "在负责的项目或领域范围内提出阶段计划，连接机会、结果指标、投入与不做项；季度只是可能的复盘节奏。",
             "capabilities": [
               {
                 "id": "value-direction.planning",
@@ -598,7 +603,7 @@
           },
           {
             "id": "stop-low-value-work",
-            "text": "在结果不支持原假设时主动缩减、停止或转向，并解释机会成本。",
+            "text": "结果不支持原假设时，按权限缩减、停止或转向；超出权限时提出证据和建议，推动有权者决策。",
             "capabilities": [
               {
                 "id": "value-direction.investment-choices",
@@ -641,7 +646,7 @@
           },
           {
             "id": "set-quality-and-ai-controls",
-            "text": "为高影响方案定义质量、安全和 AI 评估要求，确保结果可控。",
+            "text": "为高影响方案定义质量和安全验证；涉及 AI 时，依据风险选择评估、人工复核或不采用，不把 AI 使用当作目标。",
             "capabilities": [
               {
                 "id": "professional.quality-security-safety",
@@ -652,18 +657,20 @@
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "能展示评估集、监控/升级条件、隐私权限控制或人工接管规则。"
+            "evidence": "能展示评估集、监控/升级条件、隐私权限控制或人工接管规则。",
+            "applicability": "AI 部分仅在方案包含 AI 或相关风险时适用；常规质量与安全要求仍按实际工作评估。"
           },
           {
             "id": "own-technical-roadmap",
-            "text": "制定领域内技术规划，平衡架构演进、技术债、AI 投入与分阶段迁移。",
+            "text": "制定负责领域的技术规划，平衡架构演进、技术债和分阶段迁移；只有相关机会、风险和验证条件明确时才纳入 AI 投入。",
             "capabilities": [
               {
                 "id": "professional.engineering-systems",
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "路线图有依赖、成本、风险、验证点和退出方案。"
+            "evidence": "路线图有依赖、成本、风险、验证点和退出方案。",
+            "applicability": "AI 投入仅在领域确有相关机会或风险时适用；允许基于收益、总成本和风险选择不采用。"
           },
           {
             "id": "evolve-business-models",
@@ -725,7 +732,7 @@
           },
           {
             "id": "plan-team-capability-needs",
-            "text": "根据项目方向识别团队能力缺口，与负责人协商培养、借调或招聘需求。",
+            "text": "根据项目方向识别能力缺口，提出培养、协作、借调或招聘建议；人员与资源决定由有权负责人作出。",
             "capabilities": [
               {
                 "id": "people-organization.growth-development",
@@ -811,7 +818,7 @@
       "track": "ic",
       "nextStageIds": [],
       "name": "资深工程师",
-      "summary": "在专业贡献者路径上影响领域或多个团队，塑造长期业务结果、技术方向和可复用机制。",
+      "summary": "在关键领域或跨团队产生持续的专业价值，通过可复用实践和协作扩大影响；不默认承担公司级治理或正式继任责任。",
       "dimensions": {
         "business-results": [
           {
@@ -835,7 +842,7 @@
           },
           {
             "id": "guide-market-and-portfolio-tradeoffs",
-            "text": "在多个机会之间提供市场、商业模式和长期投入判断。",
+            "text": "在承担相应领域责任时，为机会之间的市场、商业模式和长期投入取舍提供专业判断；不默认拥有公司级商业组合决策权。",
             "capabilities": [
               {
                 "id": "value-direction.market-economic-judgment",
@@ -876,14 +883,15 @@
           },
           {
             "id": "verify-investment-economics",
-            "text": "评估平台、复用或 AI 投资的总成本与实际采用，检验长期价值假设。",
+            "text": "评估平台、复用或相关 AI 投资的总成本与实际采用，检验长期价值假设；不把采用率本身当作成功。",
             "capabilities": [
               {
                 "id": "value-direction.market-economic-judgment",
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "包含维护、迁移、使用率与替代方案的比较。"
+            "evidence": "包含维护、迁移、使用率与替代方案的比较。",
+            "applicability": "只有当投资方案包含 AI 或 AI 是替代选项时才评估 AI 部分。"
           }
         ],
         "domain-expertise": [
@@ -908,7 +916,7 @@
           },
           {
             "id": "build-evaluation-capability",
-            "text": "建立质量与 AI 评估机制，使团队能持续比较方案并发现退化。",
+            "text": "建立与实际产品风险相称的质量评估机制；涉及 AI 时，加入代表性评估和退化监测。",
             "capabilities": [
               {
                 "id": "professional.ai-evaluation-governance",
@@ -919,7 +927,8 @@
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "有可复用基准、上线监控和明确的人工介入/回滚条件。"
+            "evidence": "有可复用基准、上线监控和明确的人工介入/回滚条件。",
+            "applicability": "AI 评估仅适用于实际负责的 AI 系统或相关风险。"
           },
           {
             "id": "simplify-professional-practice",
@@ -938,14 +947,15 @@
           },
           {
             "id": "align-technical-portfolio",
-            "text": "组织跨团队技术规划，安排架构、数据、平台与 AI 演进的先后和兼容边界。",
+            "text": "组织跨团队技术规划，安排架构、数据、平台及相关 AI 方案的先后和兼容边界。",
             "capabilities": [
               {
                 "id": "professional.system-design",
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "路线图说明跨团队依赖、迁移顺序和验收标准。"
+            "evidence": "路线图说明跨团队依赖、迁移顺序和验收标准。",
+            "applicability": "AI 方案按相关机会与风险纳入；若不适用，应说明技术或产品依据。"
           },
           {
             "id": "govern-domain-meaning",
@@ -977,7 +987,7 @@
           },
           {
             "id": "grow-senior-capability",
-            "text": "培养新的技术/产品负责人并形成继任供给。",
+            "text": "通过专业辅导、评审、共享资产或授权帮助他人承担更复杂工作；多位新负责人或正式继任供给是可选证据，取决于实际机会与授权。",
             "capabilities": [
               {
                 "id": "people-organization.growth-development",
@@ -1007,7 +1017,7 @@
           },
           {
             "id": "plan-capability-supply",
-            "text": "与管理伙伴制定领域团队能力规划，明确专家供给、知识扩散和单点风险。",
+            "text": "与管理伙伴共同识别领域能力缺口、知识扩散需求和单点风险；编制、招聘和继任决定按实际授权承担。",
             "capabilities": [
               {
                 "id": "people-organization.team-design",
@@ -1106,7 +1116,7 @@
         "manager-of-managers"
       ],
       "name": "工程管理者",
-      "summary": "通过团队而不是个人补位交付业务结果，建设人才、协作机制与可持续工程质量。",
+      "summary": "对团队结果、人员发展、协作和运行机制承担一线管理责任；理解业务与领域边界，并以专业判断做好评审和授权。",
       "dimensions": {
         "business-results": [
           {
@@ -1156,7 +1166,7 @@
           },
           {
             "id": "run-business-planning-cycle",
-            "text": "建立季度业务规划与复盘节奏，连接用户机会、团队投入和结果验证。",
+            "text": "与业务伙伴按实际决策节奏开展规划与复盘，连接用户机会、团队投入和结果验证；周期可按环境调整。",
             "capabilities": [
               {
                 "id": "value-direction.planning",
@@ -1180,7 +1190,7 @@
         "domain-expertise": [
           {
             "id": "make-sound-domain-decisions",
-            "text": "具备足够领域判断，能评审关键产品、技术、质量与 AI 风险决策。",
+            "text": "理解团队服务的业务链路、关键领域规则和数据口径；评审产品、技术与质量风险，涉及 AI 时组织相应专家，不以个人编码深度衡量。",
             "capabilities": [
               {
                 "id": "professional.system-design",
@@ -1195,11 +1205,12 @@
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "能提出关键问题、获得合适专家意见并为决定负责。"
+            "evidence": "能提出关键问题、获得合适专家意见并为决定负责。",
+            "applicability": "AI 风险只在团队产品、工具或工作流涉及 AI 时评估。"
           },
           {
             "id": "build-reliable-team-practice",
-            "text": "为团队建立测试、发布、事故响应和 AI 使用的可持续实践。",
+            "text": "为团队建立与业务风险相称的测试、发布和事故响应实践；实际采用 AI 时再设置验证与人工监督。",
             "capabilities": [
               {
                 "id": "professional.engineering-systems",
@@ -1210,7 +1221,8 @@
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "质量和恢复能力可被度量，流程不过度依赖经理审批。"
+            "evidence": "质量和恢复能力可被度量，流程不过度依赖经理审批。",
+            "applicability": "不要求团队必须使用 AI；适用时评估验证、回退和责任边界。"
           },
           {
             "id": "guide-product-engineering-partnership",
@@ -1229,14 +1241,15 @@
           },
           {
             "id": "sponsor-technical-roadmap",
-            "text": "与技术负责人制定技术规划，为技术债、架构演进与 AI 改造安排容量和风险验证。",
+            "text": "与技术负责人制定技术规划，为技术债、架构演进和适用的 AI 方案安排容量、成本比较与风险验证。",
             "capabilities": [
               {
                 "id": "professional.engineering-systems",
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "技术规划与业务节奏相连，有负责人和分阶段验证。"
+            "evidence": "技术规划与业务节奏相连，有负责人和分阶段验证。",
+            "applicability": "AI 方案按业务适配、总成本、质量和风险决定是否纳入。"
           }
         ],
         "team-influence": [
@@ -1384,12 +1397,12 @@
       "track": "manager-of-managers",
       "nextStageIds": [],
       "name": "管理管理者",
-      "summary": "通过管理者体系对多个团队或组织结果负责，配置资源并建设长期组织能力。",
+      "summary": "在实际授权范围内通过管理者对多个团队的结果、资源方向和组织能力负责；战略、预算与重组权限取决于岗位授权。",
       "dimensions": {
         "business-results": [
           {
             "id": "shape-org-outcomes",
-            "text": "将业务方向转化为组织级结果、组合优先级和可调整的投入计划。",
+            "text": "在组织授权范围内，将业务方向转化为多团队结果、组合优先级和可调整的投入计划；不默认拥有高管级战略或预算权。",
             "capabilities": [
               {
                 "id": "value-direction.planning",
@@ -1438,7 +1451,7 @@
           },
           {
             "id": "connect-business-planning-horizons",
-            "text": "打通年度业务方向、季度组合与月度复盘，明确假设、资源与退出条件。",
+            "text": "在实际授权范围内连接年度方向、阶段组合和定期复盘，显式管理假设、资源约束与退出条件；节奏随决策周期调整。",
             "capabilities": [
               {
                 "id": "value-direction.planning",
@@ -1462,7 +1475,7 @@
         "domain-expertise": [
           {
             "id": "govern-domain-and-ai-risk",
-            "text": "确保组织在关键技术、产品、AI、隐私与安全风险上有明确责任和控制。",
+            "text": "确保组织对关键技术、产品、隐私和安全风险有明确责任与控制；涉及 AI 时补充相称的评估与监督。",
             "capabilities": [
               {
                 "id": "professional.ai-evaluation-governance",
@@ -1473,7 +1486,8 @@
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "关键风险有决策者、监控指标、审查和响应机制。"
+            "evidence": "关键风险有决策者、监控指标、审查和响应机制。",
+            "applicability": "AI 治理部分只适用于组织实际采用或提供 AI 的范围。"
           },
           {
             "id": "set-organizational-quality-bar",
@@ -1511,20 +1525,21 @@
           },
           {
             "id": "govern-technical-investment-roadmap",
-            "text": "治理跨领域技术规划，连接平台、架构、数据和 AI 投资与业务战略。",
+            "text": "治理跨领域技术规划，连接平台、架构和数据投资与业务方向；相关时再评估 AI 投资及替代方案。",
             "capabilities": [
               {
                 "id": "professional.engineering-systems",
                 "emphasis": "differentiating"
               }
             ],
-            "evidence": "投资组合有专家评审、依赖顺序和长期维护责任。"
+            "evidence": "投资组合有专家评审、依赖顺序和长期维护责任。",
+            "applicability": "不以 AI 项目数量或采用为目标；应能说明采用、不采用或延后的依据。"
           }
         ],
         "team-influence": [
           {
             "id": "develop-managers",
-            "text": "招聘、辅导并评估管理者，形成可持续的管理者供给和继任。",
+            "text": "在实际授权范围内招聘、辅导和评估管理者，建立管理质量校准与负责人交接机制；组织规模和继任结果受机会与授权影响。",
             "capabilities": [
               {
                 "id": "people-organization.manager-of-managers",
@@ -1569,7 +1584,7 @@
           },
           {
             "id": "plan-organization-capability",
-            "text": "制定年度团队与组织能力规划，联动编制、关键岗位、管理跨度和继任供给。",
+            "text": "与相关决策者规划组织能力、关键岗位和管理跨度；编制、预算和正式继任决定依实际授权。",
             "capabilities": [
               {
                 "id": "people-organization.team-design",
