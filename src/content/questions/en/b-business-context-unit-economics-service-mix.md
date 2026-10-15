@@ -10,12 +10,13 @@ signals:
   - Break revenue and cost down by service, customer size, and delivery stage.
   - Analyze labor cost, reuse, service capacity, and delivery-cycle changes.
   - Identify risks hidden by stable margin and propose a path to improve.
-primaryCapability: domain-modeling.business-context
+primaryCapability: value-direction.market-economic-judgment
 topics:
   - commercialization
   - metrics
   - data-modeling
   - product-thinking
+  - business-planning
 roles:
   - product
   - data

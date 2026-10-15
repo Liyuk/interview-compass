@@ -11,7 +11,7 @@ signals:
   - "估算再优化一档的边际收益与投入，而不只看技术指标"
   - "区分优化的是性能还是策略，并写出开始之前就定好的停止条件"
 primaryCapability: value-direction.investment-choices
-topics: [planning, prioritization, system-design]
+topics: [planning, prioritization, system-design, technical-planning]
 roles: [engineering, backend, frontend, manager]
 responsibilityScopes: [team, multiple-teams]
 careerTracks: [individual-contributor, team-manager]

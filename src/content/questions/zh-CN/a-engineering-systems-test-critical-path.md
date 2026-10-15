@@ -10,7 +10,7 @@ signals:
   - "先列出风险，再按发生频率与影响排序"
   - "说明什么算关键路径，以及为什么"
   - "不把覆盖率数字本身当作目标"
-primaryCapability: professional.engineering-systems
+primaryCapability: professional.quality-security-safety
 topics: [engineering-systems, reliability]
 roles: [engineering, backend, frontend, mobile]
 responsibilityScopes: [individual, team]

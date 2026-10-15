@@ -11,7 +11,7 @@ signals:
   - "Discusses costs such as build time, permissions, and coupled releases"
   - "Proposes a small pilot and says when to stop"
 primaryCapability: professional.engineering-systems
-topics: [monorepo, engineering-systems, frontend]
+topics: [monorepo, engineering-systems, frontend, technical-planning]
 roles: [engineering, frontend]
 responsibilityScopes: [multiple-teams, organization]
 careerTracks: [individual-contributor, team-manager]

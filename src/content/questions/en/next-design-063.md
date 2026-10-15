@@ -10,7 +10,7 @@ signals:
   - Ask about the most recent concrete task and obstacle.
   - Separate observed behavior, preferences, and proposed solutions.
   - Seek counterexamples and evidence from other contexts.
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - product-thinking

@@ -1,8 +1,10 @@
 ---
+import Icon from '../components/Icon.astro';
+import CapabilityReference from '../components/CapabilityReference.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { dimensionIds, getStageProfile, validateCapabilityModel, type StageId } from '../lib/capability-model';
 import { pathFor, type RouteRef } from '../lib/routes';
-import { splitCapability, type Locale } from '../lib/taxonomy';
+import type { Locale } from '../lib/taxonomy';
 interface Props { locale: Locale; stage: StageId }
 const { locale, stage: stageId } = Astro.props;
 const en = locale === 'en';
@@ -18,6 +20,6 @@ const route: RouteRef = { type: 'capability-model-stage', stage: stageId };
 <SiteLayout locale={locale} route={route} description={stage.summary}>
   <header class="model-detail-header"><p class="eyebrow">{en ? 'Stage profile' : '阶段能力画像'} · {stage.track === 'ic' ? (en ? 'Individual contributor' : '专业贡献路径') : (en ? 'Management' : '管理路径')}</p><h1 class="page-title">{stage.name}</h1><p class="intro">{stage.summary}</p></header>
   <p class="model-note">{en ? 'Read these as observable expectations across repeated work, not as a checklist for a single project. AI use is judged by verified outcomes, sound boundaries, and the quality of decisions.' : '以下是通过多个工作周期观察的行为标准，不是单个项目的打勾清单。AI 使用以结果验证、边界意识和决策质量衡量。'}</p>
-  <div class="standard-sections">{standards.map((dimension) => <section class="standard-section"><div class="standard-heading"><span>{dimensionNames[dimension.id as keyof typeof dimensionNames]}</span><a href={pathFor({ type: 'capability-model-dimension', dimension: dimension.id }, locale, base)}>{en ? 'View progression' : '查看维度变迁'} →</a></div><ol class="standard-list">{dimension.standards.map((standard) => <li><strong>{standard.text}</strong>{standard.evidence && <p><span>{en ? 'Evidence: ' : '观察证据：'}</span>{standard.evidence}</p>}<div class="capability-links"><span>{en ? 'Capability map' : '能力地图'}：</span>{standard.capabilities.map((reference) => { const match = splitCapability(reference.id); return match.domain && match.leaf ? <a href={pathFor({ type: 'leaf', domain: match.domain.id, leaf: match.leaf.id }, locale, base)}>{locale === 'en' ? match.leaf.name.en : match.leaf.name.zh}</a> : null; })}</div></li>)}</ol></section>)}</div>
-  {next.length > 0 && <nav class="stage-next" aria-label={en ? 'Next stages' : '后续阶段'}><span>{en ? 'Possible next stages' : '可能的后续阶段'}</span>{next.map((item) => <a href={pathFor({ type: 'capability-model-stage', stage: item.id }, locale, base)}>{item.name} →</a>)}</nav>}
+  <div class="standard-sections">{standards.map((dimension) => <section class="standard-section"><div class="standard-heading"><span>{dimensionNames[dimension.id as keyof typeof dimensionNames]}</span><a href={pathFor({ type: 'capability-model-dimension', dimension: dimension.id }, locale, base)}>{en ? 'View progression' : '查看维度变迁'} <Icon name="arrow-right" size={16} /></a></div><ol class="standard-list">{dimension.standards.map((standard) => <li><strong>{standard.text}</strong>{standard.evidence && <p><span>{en ? 'Evidence: ' : '观察证据：'}</span>{standard.evidence}</p>}<div class="capability-links"><span>{en ? 'Capability map' : '能力地图'}：</span>{standard.capabilities.map((reference) => <CapabilityReference capability={reference.id} locale={locale} base={base} />)}</div></li>)}</ol></section>)}</div>
+  {next.length > 0 && <nav class="stage-next" aria-label={en ? 'Next stages' : '后续阶段'}><span>{en ? 'Possible next stages' : '可能的后续阶段'}</span>{next.map((item) => <a href={pathFor({ type: 'capability-model-stage', stage: item.id }, locale, base)}>{item.name} <Icon name="arrow-right" size={16} /></a>)}</nav>}
 </SiteLayout>

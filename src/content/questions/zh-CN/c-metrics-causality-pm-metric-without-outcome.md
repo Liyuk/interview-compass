@@ -11,7 +11,7 @@ signals:
   - 能指出指标被优化而结果没变的具体机制，例如口径或行为的改变
   - 说明之后调整了指标、口径还是做法
   - 对自己也承担的责任保持诚实
-primaryCapability: value-direction.metrics-causality
+primaryCapability: value-direction.business-outcomes
 topics: [metrics, product-thinking]
 roles: [product, operations, marketing, data]
 responsibilityScopes: [individual, team]

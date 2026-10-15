@@ -19,7 +19,7 @@ signals:
   - Forms testable technical hypotheses from inputs, mechanisms, and failure symptoms
   - Compares implementation paths and their correctness, performance, security, or maintenance cost
   - Names tests or operational measures that cover edge cases
-primaryCapability: professional.engineering-systems
+primaryCapability: professional.quality-security-safety
 topics:
   - engineering-systems
   - devops

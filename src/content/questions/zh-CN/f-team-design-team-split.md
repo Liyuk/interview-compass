@@ -12,7 +12,7 @@ signals:
   - 对事，说明怎样梳理职责、依赖和遗留问题，并做书面交接
   - 说明调整之后怎样保持两边的协作，以及怎样看待自己角色的变化
 primaryCapability: people-organization.team-design
-topics: [management, communication, planning]
+topics: [management, communication, planning, team-planning]
 roles: [manager]
 responsibilityScopes: [team, multiple-teams]
 careerTracks: [team-manager, senior-manager]

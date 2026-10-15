@@ -10,12 +10,13 @@ signals:
   - 按服务类型、客户规模和交付阶段拆收入与成本。
   - 分析人工成本、复用率、服务容量和交付周期变化。
   - 识别毛利稳定掩盖的风险，并提出改进路径。
-primaryCapability: domain-modeling.business-context
+primaryCapability: value-direction.market-economic-judgment
 topics:
   - commercialization
   - metrics
   - data-modeling
   - product-thinking
+  - business-planning
 roles:
   - product
   - data

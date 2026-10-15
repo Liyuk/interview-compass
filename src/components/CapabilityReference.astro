@@ -1,0 +1,20 @@
+---
+import { pathFor } from '../lib/routes';
+import { isPlannedCapability, splitCapability, type Locale } from '../lib/taxonomy';
+
+interface Props { capability: string; locale: Locale; base: string }
+const { capability, locale, base } = Astro.props;
+const { domain, leaf } = splitCapability(capability);
+const label = leaf ? (locale === 'en' ? leaf.name.en : leaf.name.zh) : capability;
+const planned = isPlannedCapability(capability);
+---
+{domain && leaf && !planned
+  ? <a href={pathFor({ type: 'leaf', domain: domain.id, leaf: leaf.id }, locale, base)}>{label}</a>
+  : planned
+    ? <span class="planned-capability" title={locale === 'en' ? 'This question leaf is planned but not yet populated.' : '该能力叶子仍在规划中，题库尚未收录。'}>{label}<small>{locale === 'en' ? 'Planned' : '规划中'}</small></span>
+    : <span>{label}</span>}
+
+<style>
+  .planned-capability { display: inline-flex; align-items: baseline; gap: 0.35rem; color: var(--sl-color-gray-2); }
+  .planned-capability small { color: var(--sl-color-gray-3); font-size: 0.75em; }
+</style>

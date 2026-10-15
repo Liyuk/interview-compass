@@ -13,7 +13,7 @@ signals:
   - 把工具返回值作为数据而非指令处理。
   - 限制工具可见信息、参数和副作用范围。
   - 记录策略决策并测试攻击路径与安全失败。
-primaryCapability: professional.ai-engineering
+primaryCapability: professional.quality-security-safety
 topics:
   - ai-engineering
   - security

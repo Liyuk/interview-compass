@@ -17,7 +17,7 @@ signals:
   - 制定双密钥接受与单密钥签发的阶段。
   - 识别未迁移调用方和密钥泄露时的紧急路径。
   - 通过使用遥测确认旧密钥停止使用后再撤销。
-primaryCapability: professional.engineering-systems
+primaryCapability: professional.quality-security-safety
 topics:
   - devops
   - security

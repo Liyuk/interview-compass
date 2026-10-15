@@ -10,7 +10,7 @@ signals:
   - 先明确任务、用户和成功标准。
   - 把偏好意见转换成可验证的风险或假设。
   - 保留少量可比较方案并记录决策依据。
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - accessibility

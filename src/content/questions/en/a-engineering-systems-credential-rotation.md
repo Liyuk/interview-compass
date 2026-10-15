@@ -21,7 +21,7 @@ signals:
   - Stage dual-key acceptance and single-key signing.
   - Identify unmigrated callers and emergency response to key exposure.
   - Use telemetry to confirm old-key use has stopped before revocation.
-primaryCapability: professional.engineering-systems
+primaryCapability: professional.quality-security-safety
 topics:
   - devops
   - security

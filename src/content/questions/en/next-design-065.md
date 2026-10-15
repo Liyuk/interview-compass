@@ -10,7 +10,7 @@ signals:
   - Identify primary mobile tasks and decision-critical fields.
   - Avoid hiding required actions or inaccessible information.
   - Validate collapsed layouts with real-device tasks.
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-thinking
   - accessibility

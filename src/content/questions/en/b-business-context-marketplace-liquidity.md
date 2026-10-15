@@ -12,11 +12,12 @@ signals:
   - Break down the matching funnel by region, category, time, and participant side.
   - Separate insufficient volume, geographic mismatch, quality mismatch, and response latency.
   - Compare targeted supply acquisition, demand aggregation, and narrowing the market.
-primaryCapability: domain-modeling.business-context
+primaryCapability: value-direction.market-economic-judgment
 topics:
   - commercialization
   - product-discovery
   - metrics
+  - business-planning
 roles:
   - product
   - operations

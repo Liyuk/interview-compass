@@ -14,6 +14,7 @@ primaryCapability: people-organization.team-design
 topics:
   - management
   - planning
+  - team-planning
 roles:
   - manager
   - engineering

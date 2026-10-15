@@ -11,7 +11,7 @@ signals:
   - Can point to the specific way the metric was optimized without the result changing, such as a change of definition or behavior
   - Says what was adjusted afterwards, whether the metric, its definition, or the practice
   - Stays honest about the part of the responsibility that was theirs
-primaryCapability: value-direction.metrics-causality
+primaryCapability: value-direction.business-outcomes
 topics: [metrics, product-thinking]
 roles: [product, operations, marketing, data]
 responsibilityScopes: [individual, team]

@@ -10,11 +10,12 @@ signals:
   - 按地区、品类、时间和供需双方角色分解匹配漏斗。
   - 区分总量不足、空间错配、质量不匹配和响应时延。
   - 比较定向补供给、聚合需求、缩小市场范围等方案。
-primaryCapability: domain-modeling.business-context
+primaryCapability: value-direction.market-economic-judgment
 topics:
   - commercialization
   - product-discovery
   - metrics
+  - business-planning
 roles:
   - product
   - operations

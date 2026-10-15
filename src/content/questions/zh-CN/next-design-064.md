@@ -10,7 +10,7 @@ signals:
   - 指出错误位置、原因和修复动作。
   - 保留合法输入并管理键盘和辅助技术焦点。
   - 测试服务端失败与多字段错误的恢复。
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - accessibility
   - product-thinking

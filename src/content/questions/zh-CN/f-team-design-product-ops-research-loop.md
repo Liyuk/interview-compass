@@ -15,6 +15,7 @@ topics:
   - management
   - product-discovery
   - operations
+  - team-planning
 roles:
   - product
   - design

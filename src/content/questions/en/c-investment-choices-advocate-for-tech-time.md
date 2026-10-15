@@ -12,7 +12,7 @@ signals:
   - Helps the tech lead prepare material business leaders can decide on, including options and costs
   - Says how it is tracked whether the refactor really sped up iteration
 primaryCapability: value-direction.investment-choices
-topics: [engineering-systems, planning, communication]
+topics: [engineering-systems, planning, communication, technical-planning]
 roles: [product, manager]
 responsibilityScopes: [team, multiple-teams]
 careerTracks: [team-manager, senior-manager]

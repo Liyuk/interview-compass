@@ -11,7 +11,7 @@ signals:
   - "Separates stable shared capability from unstable logic that belongs in the domain"
   - "Names the cost of premature abstraction and how adoption or reuse would validate the choice"
 primaryCapability: value-direction.investment-choices
-topics: [planning, system-design, resource-allocation]
+topics: [planning, system-design, resource-allocation, technical-planning]
 roles: [engineering, backend, manager]
 responsibilityScopes: [multiple-teams, organization]
 careerTracks: [team-manager, senior-manager]

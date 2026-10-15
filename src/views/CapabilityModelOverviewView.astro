@@ -1,4 +1,7 @@
 ---
+import Icon from '../components/Icon.astro';
+import PlanningOverview from '../components/PlanningOverview.astro';
+import CapabilityMatrix from '../components/CapabilityMatrix.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { dimensionIds, getDimensionProgression, getStageProfile, stageIds, validateCapabilityModel } from '../lib/capability-model';
 import { pathFor, type RouteRef } from '../lib/routes';
@@ -26,13 +29,15 @@ const route: RouteRef = { type: 'capability-model' };
   <section class="model-section" aria-labelledby="stage-heading">
     <div class="model-section-heading"><div><p class="eyebrow">{en ? 'Progression' : '阶段变迁'}</p><h2 id="stage-heading">{en ? 'Scope and leverage expand with each stage' : '阶段变化体现为责任范围与影响方式的扩展'}</h2></div><p>{en ? 'The IC and management paths branch from senior contribution.' : '高级工程师之后，资深工程师与工程管理者是不同发展路径；管理管理者通过多个管理者扩大组织结果。'}</p></div>
     <h3 class="track-heading">{en ? 'Individual contributor path' : '专业贡献路径'} <span>{en ? 'Junior → Mid-level → Senior → Staff' : '初级工程师 → 中级工程师 → 高级工程师 → 资深工程师'}</span></h3>
-    <div class="stage-grid stage-grid-four">{icStages.map((stage) => <a class="stage-card" href={pathFor({ type: 'capability-model-stage', stage: stage.id }, locale, base)}><span class="stage-track">{en ? 'Individual contributor' : '专业贡献路径'}</span><strong>{stage.name}</strong><p>{stage.summary}</p><span class="stage-link">{en ? 'View standards →' : '查看阶段标准 →'}</span></a>)}</div>
+    <div class="stage-grid stage-grid-four">{icStages.map((stage) => <a class="stage-card" href={pathFor({ type: 'capability-model-stage', stage: stage.id }, locale, base)}><span class="stage-track">{en ? 'Individual contributor' : '专业贡献路径'}</span><strong>{stage.name}</strong><p>{stage.summary}</p><span class="stage-link">{en ? 'View standards' : '查看阶段标准'} <Icon name="arrow-right" size={16} /></span></a>)}</div>
     <h3 class="track-heading management-track-heading">{en ? 'Management path' : '管理路径'} <span>{en ? 'Branches from senior contribution' : '从高级专业贡献分流'}</span></h3>
-    <div class="stage-grid management-stage-grid">{managementStages.map((stage) => <a class="stage-card" href={pathFor({ type: 'capability-model-stage', stage: stage.id }, locale, base)}><span class="stage-track">{stage.track === 'engineering-management' ? (en ? 'Engineering management' : '工程管理') : (en ? 'Organization leadership' : '组织管理')}</span><strong>{stage.name}</strong><p>{stage.summary}</p><span class="stage-link">{en ? 'View standards →' : '查看阶段标准 →'}</span></a>)}</div>
+    <div class="stage-grid management-stage-grid">{managementStages.map((stage) => <a class="stage-card" href={pathFor({ type: 'capability-model-stage', stage: stage.id }, locale, base)}><span class="stage-track">{stage.track === 'engineering-management' ? (en ? 'Engineering management' : '工程管理') : (en ? 'Organization leadership' : '组织管理')}</span><strong>{stage.name}</strong><p>{stage.summary}</p><span class="stage-link">{en ? 'View standards' : '查看阶段标准'} <Icon name="arrow-right" size={16} /></span></a>)}</div>
   </section>
+  <PlanningOverview locale={locale} />
+  <CapabilityMatrix locale={locale} />
   <section class="model-section" aria-labelledby="dimension-heading">
     <div class="model-section-heading"><div><p class="eyebrow">{en ? 'Capability map' : '能力地图'}</p><h2 id="dimension-heading">{en ? 'Four dimensions, connected to the A–H map' : '四个评价维度，连接站内 A–H 能力地图'}</h2></div><p>{en ? 'Each standard points back to the observable capability leaves it draws on.' : '维度描述阶段期待，A–H 能力叶子描述可发展的具体能力。每条标准都回连到相应能力叶子。'}</p></div>
-    <div class="dimension-grid">{dimensions.map((dimension) => <a class="dimension-card" href={pathFor({ type: 'capability-model-dimension', dimension: dimension.id }, locale, base)}><span>{dimension.stages.reduce((sum, item) => sum + item.standards.length, 0)} {en ? 'stage standards' : '条阶段标准'}</span><strong>{dimension.name}</strong><p>{dimension.stages[0]?.standards[0]?.text}</p><span class="stage-link">{en ? 'Explore progression →' : '查看能力变迁 →'}</span></a>)}</div>
+    <div class="dimension-grid">{dimensions.map((dimension) => <a class="dimension-card" href={pathFor({ type: 'capability-model-dimension', dimension: dimension.id }, locale, base)}><span>{dimension.stages.reduce((sum, item) => sum + item.standards.length, 0)} {en ? 'stage standards' : '条阶段标准'}</span><strong>{dimension.name}</strong><p>{dimension.stages[0]?.standards[0]?.text}</p><span class="stage-link">{en ? 'Explore progression' : '查看能力变迁'} <Icon name="arrow-right" size={16} /></span></a>)}</div>
   </section>
-  <aside class="model-callout"><div><p class="eyebrow">{en ? 'Level mapping' : '职级映射参考'}</p><strong>{en ? 'External level maps are partial clues, not capability standards.' : '外部职级映射只能提供不完整的比较线索，不能当作能力标准。'}</strong></div><a class="button-link" href={pathFor({ type: 'capability-model-mapping' }, locale, base)}>{en ? 'Compare level mapping sources' : '查看职级映射参考'} →</a></aside>
+  <aside class="model-callout"><div><p class="eyebrow">{en ? 'Level mapping' : '职级映射参考'}</p><strong>{en ? 'External level maps are partial clues, not capability standards.' : '外部职级映射只能提供不完整的比较线索，不能当作能力标准。'}</strong></div><a class="button-link" href={pathFor({ type: 'capability-model-mapping' }, locale, base)}>{en ? 'Compare level mapping sources' : '查看职级映射参考'} <Icon name="arrow-right" size={16} /></a></aside>
 </SiteLayout>

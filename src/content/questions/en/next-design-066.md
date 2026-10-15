@@ -10,7 +10,7 @@ signals:
   - Show baseline, magnitude, time range, and segmentation.
   - Separate correlation clues from causal conclusions.
   - Test whether users can identify the next action.
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - accessibility
   - product-thinking

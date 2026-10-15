@@ -12,7 +12,7 @@ signals:
   - Check the causal assumption linking output to user value.
   - Break down exposure, adoption, task completion, and downstream cost.
   - Propose a test that distinguishes implementation issues from a flawed value hypothesis.
-primaryCapability: value-direction.metrics-causality
+primaryCapability: value-direction.business-outcomes
 topics:
   - metrics
   - product-thinking

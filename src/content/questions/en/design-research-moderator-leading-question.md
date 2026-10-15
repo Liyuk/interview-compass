@@ -12,10 +12,11 @@ signals:
   - Separate user opinion, observed action, and task outcome.
   - State how leading prompts limit the evidence.
   - Revise the script and moderation process, then run a neutral validation.
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - communication
+  - questioning
 roles:
   - design
   - product

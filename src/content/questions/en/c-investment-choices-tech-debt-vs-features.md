@@ -11,7 +11,7 @@ signals:
   - Gives a basis for the split, rather than dividing it evenly
   - Says how it is explained to the business side and sets a time to review
 primaryCapability: value-direction.investment-choices
-topics: [planning, prioritization, engineering-systems]
+topics: [planning, prioritization, engineering-systems, technical-planning]
 roles: [engineering, manager, product]
 responsibilityScopes: [team]
 careerTracks: [individual-contributor, team-manager]

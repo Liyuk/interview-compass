@@ -10,7 +10,7 @@ signals:
   - 确认术语是否能由用户语言替代。
   - 为必要概念提供就地解释和示例。
   - 验证理解而不增加过多阅读负担。
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-thinking
   - accessibility

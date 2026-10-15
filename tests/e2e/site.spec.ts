@@ -2,13 +2,78 @@ import { expect, test } from '@playwright/test';
 
 const QUESTION = 'questions/prioritization-limited-resources/';
 
-test('home page offers search, three entry choices, all eight domains and the product path', async ({ page }) => {
+test('home page offers search, task entry choices, all eight domains and curated paths', async ({ page }) => {
   await page.goto('./');
   await expect(page.getByRole('searchbox')).toBeVisible();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('找到问题，也看懂它想了解什么');
   for (const name of ['主题', '能力', '岗位', '场景']) await expect(page.getByRole('link', { name: new RegExp(name) }).first()).toBeVisible();
   for (const letter of ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']) await expect(page.locator('.band .facet-card', { hasText: `${letter} ·` })).toHaveCount(1);
   await expect(page.getByRole('heading', { name: '产品与全链路思维' })).toBeVisible();
+});
+
+test('primary navigation follows task discovery before capability reference', async ({ page }) => {
+  await page.goto('./');
+  await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText([
+    '面试题库', '主题索引', '岗位导航', '使用场景', '能力地图', '阶段能力',
+  ]);
+  await page.getByRole('navigation', { name: '主导航' }).getByRole('link', { name: '主题索引' }).click();
+  await expect(page).toHaveURL(/\/topics\/$/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('主题索引');
+
+  await page.goto('./');
+  const paths = page.locator('.cross-path').first();
+  expect(await paths.evaluate(node => Boolean(node.compareDocumentPosition(document.querySelector('#map-title')!) & Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
+  if (await page.evaluate(() => window.innerWidth <= 760)) {
+    expect(await page.locator('.primary-nav').evaluate(node => getComputedStyle(node).gridTemplateColumns.split(' ').length)).toBe(3);
+  }
+  await page.goto('en/');
+  await expect(page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link')).toHaveText([
+    'Question bank', 'Topics', 'Role paths', 'Use cases', 'Capability map', 'Stage expectations',
+  ]);
+});
+
+test('mobile English navigation labels fit within their grid cells', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 740 });
+  await page.goto('en/');
+  const overflow = await page.locator('.primary-nav').evaluate((nav) => {
+    const links = [...nav.querySelectorAll('a')];
+    return {
+      nav: nav.scrollWidth > nav.clientWidth,
+      labels: links.filter((link) => link.scrollWidth > link.clientWidth).map((link) => link.textContent?.trim()),
+    };
+  });
+  expect(overflow).toEqual({ nav: false, labels: [] });
+});
+
+test('audit paths show tagged questions in Chinese and English without changing primary ownership', async ({ page }) => {
+  const paths = [
+    ['paths/asking-better-questions/', '提问、追问与探询', 'Questioning, probing, and inquiry'],
+    ['paths/business-planning/', '业务规划', 'Business planning'],
+    ['paths/technical-planning/', '技术规划', 'Technical planning'],
+    ['paths/team-planning/', '团队规划', 'Team planning'],
+  ] as const;
+  for (const [path, zhTitle, enTitle] of paths) {
+    await page.goto(path);
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(zhTitle);
+    await expect(page.locator('.question-list li').first()).toBeVisible();
+    await expect(page.locator('.leaf-section').first()).toBeVisible();
+    await page.goto(`en/${path}`);
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(enTitle);
+    await expect(page.locator('.question-list li').first()).toBeVisible();
+  }
+});
+
+test('capability leaves explain their classification boundary in both languages', async ({ page }) => {
+  await page.goto('capabilities/professional/product-discovery-design/');
+  const zhBoundary = page.locator('.leaf-boundary');
+  await expect(zhBoundary.getByRole('heading', { name: '分类边界' })).toBeVisible();
+  await expect(zhBoundary).toContainText('收录');
+  await expect(zhBoundary).toContainText('相邻分类判断');
+  await page.goto('en/capabilities/professional/product-discovery-design/');
+  const enBoundary = page.locator('.leaf-boundary');
+  await expect(enBoundary.getByRole('heading', { name: 'Classification boundary' })).toBeVisible();
+  await expect(enBoundary).toContainText('Include');
+  await expect(enBoundary).toContainText('Choose a neighboring leaf when');
 });
 
 test('capability path: home to domain to leaf to question with a canonical breadcrumb', async ({ page }) => {
@@ -69,7 +134,7 @@ test('role, scenario and topic pages group the same questions by capability', as
     await expect(page.locator('.question-list li').first()).toBeVisible();
   }
   await page.goto('scenarios/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('准备场景');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('使用场景');
   await page.goto('scenarios/promotion/');
   await expect(page.getByRole('heading', { name: '把晋升准备成一组持续证据' })).toBeVisible();
   await expect(page.getByText(/这是共用题库的浏览路径，不是公司职级标准/)).toBeVisible();
@@ -84,7 +149,7 @@ test('role, scenario and topic pages group the same questions by capability', as
   await page.goto('en/scenarios/promotion/');
   await expect(page.getByRole('heading', { name: 'Prepare for promotion as a body of evidence' })).toBeVisible();
   await page.goto('en/roles/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Roles');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Role paths');
 });
 
 test('footer publishes copyright and the separate code and content licenses', async ({ page }) => {
@@ -226,7 +291,9 @@ test('skip link and navigation are keyboard reachable', async ({ page }) => {
   await page.goto('./');
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: '跳到正文' })).toBeFocused();
-  await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText(['面试题库', '能力地图', '能力模型', '岗位导航', '应用场景']);
+  await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText([
+    '面试题库', '主题索引', '岗位导航', '使用场景', '能力地图', '阶段能力',
+  ]);
 });
 
 test('deep links resolve under the Pages base in both languages', async ({ page }) => {
@@ -250,6 +317,15 @@ test('capability dimension progression separates the IC and management paths', a
   await page.goto('capability-model/dimensions/business-results/');
   await expect(page.getByRole('heading', { name: '专业贡献路径', level: 2 })).toBeVisible();
   await expect(page.getByRole('heading', { name: '管理路径从高级工程师处分叉', level: 2 })).toBeVisible();
+});
+
+test('planned capability references are labels instead of broken links', async ({ page }) => {
+  for (const route of ['capability-model/stages/junior-engineer/', 'capability-model/dimensions/domain-expertise/']) {
+    await page.goto(route);
+    const planned = page.locator('.planned-capability').filter({ hasText: 'AI 评估与治理' });
+    await expect(planned.first()).toBeVisible();
+    await expect(page.locator('a[href*="ai-evaluation-governance"]')).toHaveCount(0);
+  }
 });
 
 test('level mapping page distinguishes comparison clues from capability standards', async ({ page }) => {

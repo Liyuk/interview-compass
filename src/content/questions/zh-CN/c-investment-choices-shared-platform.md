@@ -11,7 +11,7 @@ signals:
   - "区分已稳定的共性能力与尚未稳定、应留在领域内的局部逻辑"
   - "指出提前抽象的代价，并说明怎样用采用率或复用结果验证"
 primaryCapability: value-direction.investment-choices
-topics: [planning, system-design, resource-allocation]
+topics: [planning, system-design, resource-allocation, technical-planning]
 roles: [engineering, backend, manager]
 responsibilityScopes: [multiple-teams, organization]
 careerTracks: [team-manager, senior-manager]

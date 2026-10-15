@@ -15,6 +15,7 @@ topics:
   - management
   - resource-allocation
   - execution
+  - team-planning
 roles:
   - engineering
   - manager

@@ -30,4 +30,5 @@ source:
 topics:
   - planning
   - resource-allocation
+  - team-planning
 ---

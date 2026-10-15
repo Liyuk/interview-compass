@@ -14,6 +14,7 @@ primaryCapability: people-organization.hiring
 topics:
   - hiring
   - communication
+  - questioning
 roles:
   - manager
   - engineering

@@ -12,7 +12,7 @@ signals:
   - When they differ, weighs adjusting the team against feeding back upward
   - Says how team members, not only management, come to understand the alignment
 primaryCapability: value-direction.planning
-topics: [planning, communication, product-thinking]
+topics: [planning, communication, product-thinking, business-planning]
 roles: [manager, product, engineering, pmo]
 responsibilityScopes: [team, multiple-teams, organization]
 careerTracks: [team-manager, senior-manager]

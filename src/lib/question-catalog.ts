@@ -46,6 +46,15 @@ export function getQuestions<T extends BrowseRecord>(records: readonly T[], filt
   });
 }
 
+export function getPathQuestions<T extends BrowseRecord>(
+  records: readonly T[],
+  filters: { locale: Locale; domain: string; topics: readonly string[] },
+): T[] {
+  return getQuestions(records, { locale: filters.locale }).filter((record) =>
+    record.primaryCapability.split('.')[0] === filters.domain
+    && filters.topics.some((topic) => record.topics.includes(topic)));
+}
+
 const facetField: Record<FacetKind, 'topics' | 'roles' | 'responsibilityScopes' | 'careerTracks' | 'scenarios' | 'formats'> = {
   topics: 'topics', roles: 'roles', responsibilityScopes: 'responsibilityScopes',
   careerTracks: 'careerTracks', scenarios: 'scenarios', formats: 'formats',

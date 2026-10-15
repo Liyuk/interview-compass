@@ -10,10 +10,11 @@ signals:
   - 区分用户评价、实际操作行为与任务结果。
   - 指出引导式提问造成的证据限制。
   - 调整提纲和主持流程，并补充非引导验证。
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - communication
+  - questioning
 roles:
   - design
   - product

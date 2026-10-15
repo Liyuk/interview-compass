@@ -12,7 +12,7 @@ signals:
   - 必须直接接触一线同学时，说明如何不削弱小组长的权威
   - 说明怎样发现小组长的盲区或信息被过滤
 primaryCapability: people-organization.manager-of-managers
-topics: [management, communication]
+topics: [management, communication, team-planning]
 roles: [manager]
 responsibilityScopes: [multiple-teams]
 careerTracks: [senior-manager]

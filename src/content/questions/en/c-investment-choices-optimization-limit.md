@@ -11,7 +11,7 @@ signals:
   - "Estimates the marginal return and cost of one more step instead of looking only at technical metrics"
   - "Separates optimizing performance from optimizing strategy, and writes the stop condition before starting"
 primaryCapability: value-direction.investment-choices
-topics: [planning, prioritization, system-design]
+topics: [planning, prioritization, system-design, technical-planning]
 roles: [engineering, backend, frontend, manager]
 responsibilityScopes: [team, multiple-teams]
 careerTracks: [individual-contributor, team-manager]

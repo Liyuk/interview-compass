@@ -16,9 +16,9 @@ const counts = capabilityCounts(questions, locale);
 const featured = domains.flatMap((domain) => questions.filter((q) => q.primaryCapability.startsWith(`${domain.id}.`)).slice(0, 1)).slice(0, 8);
 const entries = [
   { number: '01', ref: { type: 'topics' } as const, title: en ? 'Topics' : '主题', text: en ? 'Start with a subject: systems, data, growth, or people.' : '从系统、数据、增长或团队等主题开始。' },
-  { number: '02', ref: { type: 'capabilities' } as const, title: en ? 'Capabilities' : '能力', text: en ? 'See the judgment and craft each question explores.' : '查看每道题想了解的判断与专业能力。' },
-  { number: '03', ref: { type: 'roles' } as const, title: en ? 'Roles' : '岗位', text: en ? 'Browse questions for your role and discipline.' : '按你的岗位与职能浏览问题。' },
-  { number: '04', ref: { type: 'scenarios' } as const, title: en ? 'Scenarios' : '场景', text: en ? 'Prepare, interview, reflect, or discuss promotion.' : '用于求职准备、面试设计、自我复盘或晋升讨论。' },
+  { number: '02', ref: { type: 'roles' } as const, title: en ? 'Roles' : '岗位', text: en ? 'Browse questions for your role and discipline.' : '按你的岗位与职能浏览问题。' },
+  { number: '03', ref: { type: 'scenarios' } as const, title: en ? 'Scenarios' : '场景', text: en ? 'Prepare, interview, reflect, or discuss promotion.' : '用于求职准备、面试设计、自我复盘或晋升讨论。' },
+  { number: '04', ref: { type: 'capabilities' } as const, title: en ? 'Capabilities' : '能力', text: en ? 'See the judgment and craft each question explores.' : '查看每道题想了解的判断与专业能力。' },
 ];
 ---
 <SiteLayout locale={locale} route={{ type: 'home' }} description={en ? 'A bilingual library of interview and promotion questions, organized by the capability each one examines.' : '按能力组织的中英文面试与晋升问题库。'}>
@@ -50,6 +50,14 @@ const entries = [
     </nav>
   </section>
 
+  {crossDomainPaths.map((path) => (
+    <section class="cross-path" aria-labelledby={`path-${path.id}`}>
+      <h2 id={`path-${path.id}`} class="section-title">{pick(path.name, locale)}</h2>
+      <p class="intro">{pick(path.description, locale)}</p>
+      <a class="text-link" href={pathFor({ type: 'path', id: path.id }, locale, base)}>{en ? 'Open this path' : '查看这条路径'} <Icon name="chevron-right" size={16} /></a>
+    </section>
+  ))}
+
   <section aria-labelledby="map-title">
     <h2 id="map-title" class="section-title">{en ? 'Capability map' : '能力地图'}</h2>
     {bands.map((band) => (
@@ -67,14 +75,6 @@ const entries = [
       </div>
     ))}
   </section>
-
-  {crossDomainPaths.map((path) => (
-    <section class="cross-path" aria-labelledby={`path-${path.id}`}>
-      <h2 id={`path-${path.id}`} class="section-title">{pick(path.name, locale)}</h2>
-      <p class="intro">{pick(path.description, locale)}</p>
-      <a class="text-link" href={pathFor({ type: 'path', id: path.id }, locale, base)}>{en ? 'Open this path' : '查看这条路径'} <Icon name="chevron-right" size={16} /></a>
-    </section>
-  ))}
 
   <section aria-labelledby="featured-title">
     <h2 id="featured-title" class="section-title">{en ? 'A few to begin with' : '先从这几道看起'}</h2>

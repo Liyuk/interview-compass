@@ -11,7 +11,7 @@ signals:
   - 区分上线初期的波动和稳定后的结果
   - 说明复盘会改变什么决定，例如继续投入、调整或下线
   - 对没有达到目标的情形坦率说明
-primaryCapability: value-direction.metrics-causality
+primaryCapability: value-direction.business-outcomes
 topics: [metrics, product-thinking]
 roles: [product, operations, data, engineering]
 responsibilityScopes: [individual, team]

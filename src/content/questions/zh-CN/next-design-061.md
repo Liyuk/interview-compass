@@ -10,7 +10,7 @@ signals:
   - 为颜色增加文本、图形或结构线索。
   - 检查屏幕阅读器顺序与表格语义。
   - 用真实辅助技术和用户场景验证。
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - accessibility
   - product-thinking

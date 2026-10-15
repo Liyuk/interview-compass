@@ -11,7 +11,7 @@ signals:
   - 给出投入比例的依据，而不是各打五十大板
   - 说明如何向业务方解释，并设定复核的时间点
 primaryCapability: value-direction.investment-choices
-topics: [planning, prioritization, engineering-systems]
+topics: [planning, prioritization, engineering-systems, technical-planning]
 roles: [engineering, manager, product]
 responsibilityScopes: [team]
 careerTracks: [individual-contributor, team-manager]

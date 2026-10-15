@@ -10,7 +10,7 @@ signals:
   - Clarify task, user, and success criteria first.
   - Translate preferences into testable risks or hypotheses.
   - Keep a small set of comparable options and record rationale.
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - accessibility

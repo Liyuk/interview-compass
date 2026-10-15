@@ -10,7 +10,7 @@ signals:
   - Add text, icons, or structural cues beyond color.
   - Check screen-reader order and table semantics.
   - Validate with real assistive technology and user scenarios.
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - accessibility
   - product-thinking

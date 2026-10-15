@@ -12,11 +12,12 @@ signals:
   - Segment customers, contract status, price elasticity, and churn reasons.
   - Estimate added revenue net of churn, retention discounts, and support cost.
   - Compare legacy pricing, phased increases, and changed entitlements.
-primaryCapability: domain-modeling.business-context
+primaryCapability: value-direction.market-economic-judgment
 topics:
   - commercialization
   - metrics
   - product-thinking
+  - business-planning
 roles:
   - product
   - marketing

@@ -12,7 +12,7 @@ signals:
   - 分阶段安排投入，并说明每阶段的目标、人力和检查点
   - 说明增长不及预期或超出预期时怎样调整
 primaryCapability: professional.system-design
-topics: [system-design, reliability, planning, distributed-systems]
+topics: [system-design, reliability, planning, distributed-systems, technical-planning]
 roles: [engineering, backend, manager]
 responsibilityScopes: [team, multiple-teams]
 careerTracks: [team-manager, senior-manager]
