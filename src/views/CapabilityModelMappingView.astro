@@ -1,0 +1,24 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { getCapabilityMapping, validateCapabilityModel } from '../lib/capability-model';
+import { pathFor, type RouteRef } from '../lib/routes';
+import type { Locale } from '../lib/taxonomy';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const route: RouteRef = { type: 'capability-model-mapping' };
+const errors = validateCapabilityModel();
+if (errors.length) throw new Error(`Invalid capability model: ${errors.join('; ')}`);
+const content = getCapabilityMapping(locale);
+---
+<SiteLayout locale={locale} route={route} description={en ? 'Publicly available company frameworks and cautious China–US role mapping.' : '中美互联网公司公开能力框架与谨慎的岗位责任映射。'}>
+  <p class="eyebrow">{en ? 'Public evidence, not title conversion' : '公开材料 · 责任特征对照'}</p>
+  <h1 class="page-title">{en ? 'China–US capability frameworks' : '中美能力模型：公开内容与映射边界'}</h1>
+  <p class="intro">{content.intro}</p><p class="source-date">{content.reviewDate}</p>
+  <section class="model-section"><div class="model-section-heading"><div><p class="eyebrow">{en ? 'China' : '中国互联网公司'}</p><h2>{en ? 'Public slices vary by company' : '公开切面各不相同，不能互相替代'}</h2></div><p>{en ? 'Values, hiring principles, role postings, manager development, and engineering standards answer different questions.' : '价值观、招聘定级、岗位要求、管理者培养与工程标准回答的是不同问题。'}</p></div><div class="mapping-grid">{content.chinaCompanies.map((item) => <article class="mapping-card"><h3>{item.name}</h3><strong>{item.theme}</strong><p>{item.detail}</p><a href={item.url} target="_blank" rel="noreferrer">{item.source} ↗</a></article>)}</div></section>
+  <section class="model-section"><div class="model-section-heading"><div><p class="eyebrow">{en ? 'United States' : '美国互联网公司'}</p><h2>{en ? 'Some companies publish detailed career frameworks' : '部分公司公开了可逐项阅读的职业框架'}</h2></div><p>{en ? 'These are company-specific examples, not a universal US leveling standard.' : '这些是具体公司的公开实例，不是美国统一职级标准。'}</p></div><div class="mapping-grid mapping-grid-two">{content.usCompanies.map((item) => <article class="mapping-card"><h3>{item.name}</h3><strong>{item.theme}</strong><p>{item.detail}</p><a href={item.url} target="_blank" rel="noreferrer">{item.source} ↗</a>{item.secondarySource && item.secondaryUrl && <p class="mapping-source-extra"><a href={item.secondaryUrl} target="_blank" rel="noreferrer">{item.secondarySource} ↗</a></p>}</article>)}</div></section>
+  <section class="model-section"><h2>{en ? 'Map responsibility, not title' : '对照责任特征，不换算称谓'}</h2><p class="intro">{en ? 'Use these questions when comparing a role in China with one in the US:' : '比较中国与美国岗位时，可以逐项核对这些责任维度：'}</p><div class="mapping-factors">{content.factors.map((item, index) => <div><span>{String(index + 1).padStart(2, '0')}</span><strong>{item}</strong></div>)}</div><p class="mapping-caution">{content.comparisonCaveat}</p></section>
+  <section class="model-section"><div class="model-section-heading"><div><p class="eyebrow">{en ? 'Evidence-bounded comparison' : '基于公开证据的责任范围对照'}</p><h2>{en ? 'Where the available sources allow a comparison' : '现有公开来源能支持到什么程度'}</h2></div><p>{content.stageComparisonIntro}</p></div><div class="stage-mapping-list">{content.stageComparisons.map((item) => <article class="stage-mapping-row"><div><span>{en ? 'Stages in this model' : '本站阶段'}</span><strong>{item.stages}</strong></div><div><span>{en ? 'Public US framework pattern' : '美国公开框架中的参考模式'}</span><strong>{item.pattern}</strong>{item.source && item.url && <a href={item.url} target="_blank" rel="noreferrer">{item.source} ↗</a>}</div><p>{item.scope}</p></article>)}</div></section>
+  <aside class="model-callout"><div><p class="eyebrow">{en ? 'Our model' : '回到本站模型'}</p><strong>{en ? 'One product-and-engineering outcome model, with paths that branch by responsibility.' : '以产品与工程共同创造结果为主线，按责任路径呈现阶段差异。'}</strong></div><a class="button-link" href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Capability model' : '能力模型总览'} →</a></aside>
+</SiteLayout>

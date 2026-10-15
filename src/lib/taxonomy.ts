@@ -30,6 +30,9 @@ export const domains: readonly Domain[] = [
       leaf('system-design', '系统设计', 'System design', '澄清需求与约束，设计组件、权衡容量与故障。', 'Clarifying requirements and constraints, shaping components, weighing capacity and failure.'),
       leaf('engineering-systems', '工程体系', 'Engineering systems', '构建、发布、仓库协作与质量保障等工程基础设施。', 'Build, release, repository workflows, and the quality tooling around them.'),
       leaf('ai-engineering', 'AI 工程', 'AI engineering', '评估、检索、代理与模型应用的工程实现和边界。', 'Evaluation, retrieval, agents, and the engineering limits of model-backed features.'),
+      leaf('product-discovery-design', '产品发现与体验设计', 'Product discovery and experience design', '通过用户研究、原型与体验设计澄清问题并验证方案。', 'Using user research, prototypes, and experience design to clarify problems and validate solutions.'),
+      leaf('quality-security-safety', '质量、安全与防护', 'Quality, security, and safety', '设计质量验证、可靠性、安全、隐私与风险防护。', 'Designing for quality validation, reliability, security, privacy, and risk controls.'),
+      leaf('ai-evaluation-governance', 'AI 评估与治理', 'AI evaluation and governance', '为 AI 系统建立评估、权限、风险监控、人工介入与责任边界。', 'Establishing evaluation, access controls, risk monitoring, human oversight, and accountability for AI systems.'),
     ],
   },
   {
@@ -55,6 +58,8 @@ export const domains: readonly Domain[] = [
       leaf('planning', '规划', 'Planning', '月、季、年规划与不做清单。', 'Monthly, quarterly, and yearly plans, including what not to do.'),
       leaf('metrics-causality', '指标与因果', 'Metrics and causal reasoning', '指标口径、归因与结论边界。', 'Metric definitions, attribution, and the limits of a conclusion.'),
       leaf('investment-choices', '投入选择', 'Investment choices', '能力建设、技术债与机会成本的权衡。', 'Weighing capability building, technical debt, and opportunity cost.'),
+      leaf('market-economic-judgment', '市场与经济判断', 'Market and economic judgment', '分析用户分层、市场变化、商业模式、单位经济与竞争取舍。', 'Analyzing user segments, market shifts, business models, unit economics, and competitive trade-offs.'),
+      leaf('business-outcomes', '业务结果与验证', 'Business outcomes and validation', '把工作连接到用户和经营结果，设定基线、护栏并验证影响。', 'Connecting work to user and business outcomes, setting baselines and guardrails, and validating impact.'),
     ],
   },
   {

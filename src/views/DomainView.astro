@@ -21,6 +21,7 @@ const total = leaves.reduce((sum, entry) => sum + entry.items.length, 0);
   <p class="eyebrow">{en ? `DOMAIN ${domain.letter}` : `能力域 ${domain.letter}`}</p>
   <h1 class="page-title">{pick(domain.name, locale)}</h1>
   <p class="intro">{pick(domain.description, locale)}</p>
+  <p class="model-inline-link">{en ? 'See this capability domain in stage expectations.' : '查看这个能力域如何映射到阶段要求。'} <a href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Open the capability model' : '打开能力模型'} →</a></p>
   <p class="result-count">{en ? `${total} questions across ${leaves.length} capabilities` : `${leaves.length} 项能力，共 ${total} 道问题`}</p>
   {leaves.map(({ leaf, items }) => (
     <section class="leaf-section">

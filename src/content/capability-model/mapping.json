@@ -1,0 +1,46 @@
+{
+  "zh-CN": {
+    "reviewDate": "公开来源核对日期：2026 年 10 月 15 日。阿里前端图为用户提供的历史材料。",
+    "intro": "本页整理公司实际公开了什么，不把职级名称一一换算，也不把有限样本概括成国家差异。公开程度并不相同，未找到公开矩阵不代表公司内部没有使用。",
+    "chinaCompanies": [
+      { "id": "alibaba", "name": "阿里巴巴", "theme": "文化、招聘原则、管理者发展与工程实践", "detail": "公开材料涉及价值观与分层管理者培养。你提供的历史前端图把业务、专业、协作、学习和团队成长放在一张矩阵中，很适合作为历史参考；它不能证明当前集团通用的职级标准。", "source": "官方员工发展材料", "url": "https://home.alibabagroup.com/en-US/esg-employee-development" },
+      { "id": "bytedance", "name": "字节跳动", "theme": "招聘定级原则、文化与新人培养", "detail": "官方公开页面说明招聘理念和新人培养支持，但没有公开完整的全公司逐阶段能力矩阵。", "source": "官方校招 FAQ", "url": "https://jobs.bytedance.com/campus/page-6272Gc" },
+      { "id": "tencent", "name": "腾讯", "theme": "价值观与具体岗位招聘要求", "detail": "公开价值观和招聘岗位可以作为背景材料，但都不能替代完整的内部职级能力框架。", "source": "官方价值观", "url": "https://www.tencent.com/zh-hk/value-for-users-tech-for-good/" },
+      { "id": "baidu", "name": "百度", "theme": "工程实践与标准", "detail": "公开工程白皮书讨论团队工程实践和标准，不是个人晋升等级定义。", "source": "工程标准白皮书", "url": "https://developer.baidu.com/article/detail.html?id=290246" }
+    ],
+    "usCompanies": [
+      { "id": "dropbox", "name": "Dropbox", "theme": "职责、影响与多种高级 IC 贡献形态", "detail": "公开工程框架把范围、业务理解、决策、协作和组织健康等纳入要求，并明确提醒不要把框架当成打勾清单。", "source": "更新后的工程职业框架", "url": "https://dropbox.tech/culture/our-updated-engineering-career-framework" },
+      { "id": "gitlab", "name": "GitLab", "theme": "公开工程、产品、IC 与管理路径", "detail": "不同岗位族的框架把范围、结果以及 IC/管理路径分别写清。产品框架明确包含战略、客户与市场、业务结果。", "source": "工程职业矩阵", "url": "https://handbook.gitlab.com/handbook/engineering/careers/matrix/", "secondarySource": "产品经理职业框架", "secondaryUrl": "https://handbook.gitlab.com/job-description-library/product/product-manager/" }
+    ],
+    "factors": ["业务结果责任及其时间跨度", "影响范围：任务、项目、领域、多团队或组织", "自主性、问题模糊度与决策权", "专业/产品深度与质量责任", "通过专业、协作、管理者或组织产生影响的方式", "专业贡献路径还是人员管理路径"],
+    "comparisonCaveat": "不同公司可能用不同称谓和级别承载相似责任。任何映射都只是待核对的假设，必须结合公司、职能、地域和时期。",
+    "stageComparisonIntro": "这里按宽范围分组。现有公开材料不足以支撑六阶段逐行换算职称。",
+    "stageComparisons": [
+      { "id": "early-contribution", "stages": "初级工程师 · 中级工程师", "pattern": "基于本次公开来源，无法可靠对应到跨公司的统一职称。", "scope": "应在具体公司框架中比较自主性、任务/项目范围和结果责任。" },
+      { "id": "senior-ic", "stages": "高级工程师 · 资深工程师", "pattern": "部分公开框架区分 Senior 与 Staff+ IC 责任范围。", "scope": "GitLab 公开了 Senior 和 Staff+ 工程能力要求。这是责任模式参考，不等同于本站的两个阶段。", "source": "GitLab 工程职业矩阵", "url": "https://handbook.gitlab.com/handbook/engineering/careers/matrix/" },
+      { "id": "management", "stages": "工程管理者 · 管理管理者", "pattern": "按团队与多团队责任范围比较管理路径；称谓因公司而异。", "scope": "GitLab 公开了独立的管理者发展框架。本次来源不足以支持管理管理者的通用称谓换算。", "source": "GitLab 管理职业发展", "url": "https://handbook.gitlab.com/handbook/engineering/careers/management/management-career-development/" }
+    ]
+  },
+  "en": {
+    "reviewDate": "Public sources reviewed October 15, 2026. The Alibaba front-end image is historical material supplied by the user.",
+    "intro": "This comparison summarizes what companies publish. It does not claim a national standard or convert titles one-to-one. Public visibility is uneven, and the sample cannot establish that one country has a single model.",
+    "chinaCompanies": [
+      { "id": "alibaba", "name": "Alibaba", "theme": "Culture, hiring principles, manager development, and engineering practice", "detail": "Public materials include values and tiered manager development. The supplied historical front-end matrix offers a useful example of business, craft, collaboration, learning, and team growth in one model; it is not evidence of a current group-wide rubric.", "source": "Official employee development", "url": "https://home.alibabagroup.com/en-US/esg-employee-development" },
+      { "id": "bytedance", "name": "ByteDance", "theme": "Hiring and leveling principles, culture, and onboarding", "detail": "Official public pages describe hiring principles and new-hire growth support, but do not provide a complete company-wide progression matrix.", "source": "Official campus FAQ", "url": "https://jobs.bytedance.com/campus/page-6272Gc" },
+      { "id": "tencent", "name": "Tencent", "theme": "Values and role-specific hiring requirements", "detail": "Public values and job postings are useful context, but neither should be mistaken for a full internal leveling framework.", "source": "Official values", "url": "https://www.tencent.com/zh-hk/value-for-users-tech-for-good/" },
+      { "id": "baidu", "name": "Baidu", "theme": "Engineering practices and standards", "detail": "The public engineering white paper discusses team engineering practices and standards, rather than individual promotion levels.", "source": "Engineering standards white paper", "url": "https://developer.baidu.com/article/detail.html?id=290246" }
+    ],
+    "usCompanies": [
+      { "id": "dropbox", "name": "Dropbox", "theme": "Responsibilities, impact, and multiple senior IC archetypes", "detail": "Its public engineering framework connects role expectations to scope, business acumen, decisions, collaboration, and organizational health, and warns against checklist use.", "source": "Updated engineering framework", "url": "https://dropbox.tech/culture/our-updated-engineering-career-framework" },
+      { "id": "gitlab", "name": "GitLab", "theme": "Published engineering, product, IC, and management paths", "detail": "Separate job-family frameworks make scope, outcomes, and IC/management paths inspectable. The product framework explicitly covers strategy, customer/market, and outcomes.", "source": "Engineering career matrix", "url": "https://handbook.gitlab.com/handbook/engineering/careers/matrix/", "secondarySource": "Product Manager framework", "secondaryUrl": "https://handbook.gitlab.com/job-description-library/product/product-manager/" }
+    ],
+    "factors": ["Business outcome ownership and time horizon", "Scope: task, project, domain, multi-team, or organization", "Autonomy, ambiguity, and decision authority", "Technical/product depth and quality responsibility", "Influence through craft, peers, managers, or organization", "Individual-contributor or people-management path"],
+    "comparisonCaveat": "Similar responsibility patterns can appear under different titles and levels. Treat any mapping as a contextual hypothesis that must be checked against company, function, geography, and time.",
+    "stageComparisonIntro": "This is intentionally a broad grouping. The sources do not support a six-row title conversion.",
+    "stageComparisons": [
+      { "id": "early-contribution", "stages": "Junior Engineer · Mid-level Engineer", "pattern": "No reliable cross-company title mapping from the sources reviewed.", "scope": "Compare autonomy, task/project scope, and outcome ownership in the specific company framework." },
+      { "id": "senior-ic", "stages": "Senior Engineer · Experienced Senior Engineer", "pattern": "Some public frameworks distinguish Senior from Staff+ IC scope.", "scope": "GitLab publishes senior and Staff+ engineering expectations. These are responsibility patterns, not equivalents to the two stages in this model.", "source": "GitLab engineering career matrix", "url": "https://handbook.gitlab.com/handbook/engineering/careers/matrix/" },
+      { "id": "management", "stages": "Engineering Manager · Manager of Managers", "pattern": "Compare the management path by team vs. multi-team responsibility; titles are company-specific.", "scope": "GitLab publishes a separate management development framework. The reviewed sources do not support a universal title conversion for the manager-of-managers stage.", "source": "GitLab management career development", "url": "https://handbook.gitlab.com/handbook/engineering/careers/management/management-career-development/" }
+    ]
+  }
+}

@@ -1,0 +1,1225 @@
+{
+  "dimensionNames": {
+    "business-results": "Business results",
+    "domain-expertise": "Domain expertise",
+    "team-influence": "Team influence",
+    "human-competitive-advantage": "Human competitive advantage"
+  },
+  "stages": [
+    {
+      "id": "junior-engineer",
+      "track": "ic",
+      "nextStageIds": [
+        "mid-level-engineer"
+      ],
+      "name": "Junior Engineer",
+      "summary": "Delivers bounded work with clear goals and guidance, understands the intended result, verifies outputs, and learns actively.",
+      "dimensions": {
+        "business-results": [
+          {
+            "id": "clarify-local-outcome",
+            "text": "Clarifies the user, goal, and acceptance conditions before starting a task.",
+            "capabilities": [
+              {
+                "id": "domain-modeling.business-context",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "Can restate the user, intended change, and completion conditions."
+          },
+          {
+            "id": "deliver-reliable-task",
+            "text": "Completes agreed work and promptly surfaces deviations that could affect the result.",
+            "capabilities": [
+              {
+                "id": "delivery.decomposition",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "work-responsibility.ownership",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Deliverable meets the agreement; risks or delays are raised early."
+          },
+          {
+            "id": "verify-ai-assisted-work",
+            "text": "Uses AI to accelerate low-risk work and checks facts, code, and references before submitting.",
+            "capabilities": [
+              {
+                "id": "professional.ai-engineering",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Can explain the change and show execution or manual review evidence."
+          }
+        ],
+        "domain-expertise": [
+          {
+            "id": "apply-foundations",
+            "text": "Applies foundational role knowledge to common tasks and asks for help when uncertain.",
+            "capabilities": [
+              {
+                "id": "professional.computer-science",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "professional.coding-abstraction",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Work passes basic checks and key concepts can be explained."
+          },
+          {
+            "id": "follow-quality-practice",
+            "text": "Follows team quality, security, and privacy practices and checks edge cases before submission.",
+            "capabilities": [
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "work-responsibility.boundaries",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Can identify obvious failure paths or sensitive-data risks."
+          },
+          {
+            "id": "learn-ai-workflow",
+            "text": "Provides useful context to AI and judges whether its output fits the task.",
+            "capabilities": [
+              {
+                "id": "professional.ai-engineering",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "professional.debugging",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Changes include verification; generated content is not assumed correct."
+          }
+        ],
+        "team-influence": [
+          {
+            "id": "communicate-status",
+            "text": "Communicates progress, blockers, and needed support clearly.",
+            "capabilities": [
+              {
+                "id": "collaboration.communication",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "work-responsibility.ownership",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Collaborators know the status in time to act."
+          },
+          {
+            "id": "collaborate-on-review",
+            "text": "Uses review feedback to improve the work.",
+            "capabilities": [
+              {
+                "id": "collaboration.feedback",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Can explain why feedback was adopted or discussed."
+          },
+          {
+            "id": "respect-working-boundaries",
+            "text": "Works within role and authorization boundaries and escalates decisions beyond them.",
+            "capabilities": [
+              {
+                "id": "work-responsibility.boundaries",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "collaboration.stakeholder-influence",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "Does not make unauthorized commitments affecting others or users."
+          }
+        ],
+        "human-competitive-advantage": [
+          {
+            "id": "show-learning-transfer",
+            "text": "Turns feedback into a concrete improvement in the next task.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "learning-adaptation.structured-reflection",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Fewer repeat issues or reuse of a new method on a related task."
+          },
+          {
+            "id": "separate-fact-from-assumption",
+            "text": "Separates known facts, hypotheses, and unknowns when describing a problem.",
+            "capabilities": [
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "professional.debugging",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "States what observations support a view and what remains unverified."
+          },
+          {
+            "id": "act-with-integrity",
+            "text": "Represents contributions, mistakes, and risks honestly and closes owned work.",
+            "capabilities": [
+              {
+                "id": "work-responsibility.integrity",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "work-responsibility.attribution",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "work-responsibility.ownership",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Corrects the record promptly and does not conceal issues or overstate results."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mid-level-engineer",
+      "track": "ic",
+      "nextStageIds": [
+        "senior-engineer"
+      ],
+      "name": "Mid-level Engineer",
+      "summary": "Independently owns a defined feature or component and delivers user and business outcomes with dependable quality.",
+      "dimensions": {
+        "business-results": [
+          {
+            "id": "own-feature-outcome",
+            "text": "Owns delivery of a feature and tracks whether it solves the intended user problem.",
+            "capabilities": [
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Reviews adoption, completion, or user feedback after release and adjusts."
+          },
+          {
+            "id": "make-local-tradeoffs",
+            "text": "Makes evidence-based trade-offs among cost, quality, and speed within agreed goals.",
+            "capabilities": [
+              {
+                "id": "value-direction.prioritization",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Explains the choice, alternatives, and conditions that could change the result."
+          },
+          {
+            "id": "use-ai-for-throughput",
+            "text": "Uses AI in controlled parts of the workflow to improve throughput while owning the user outcome.",
+            "capabilities": [
+              {
+                "id": "professional.ai-engineering",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Compares workflow time or quality and retains human review points."
+          }
+        ],
+        "domain-expertise": [
+          {
+            "id": "own-component-design",
+            "text": "Designs a maintainable component solution and identifies interfaces, state, and major failure modes.",
+            "capabilities": [
+              {
+                "id": "professional.system-design",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "domain-modeling.data-model",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Design supports requirements and explains capacity, migration, or rollback."
+          },
+          {
+            "id": "validate-quality-security",
+            "text": "Adds tests, observability, or security checks to important paths to reduce foreseeable failures.",
+            "capabilities": [
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "delivery.reliability-incidents",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Tests or runtime signals demonstrate that key constraints are protected."
+          },
+          {
+            "id": "evaluate-ai-output",
+            "text": "Validates AI-generated or suggested work in proportion to its risk.",
+            "capabilities": [
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "professional.debugging",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Evidence includes tests, comparison cases, reference checks, or human approval."
+          }
+        ],
+        "team-influence": [
+          {
+            "id": "coordinate-feature-delivery",
+            "text": "Aligns dependencies and acceptance with product, design, and partner teams to deliver a feature.",
+            "capabilities": [
+              {
+                "id": "collaboration.communication",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "delivery.capacity-planning",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Decisions, dependencies, and owners are clear; changes are shared promptly."
+          },
+          {
+            "id": "improve-peer-work",
+            "text": "Helps peers avoid repeat problems through reviews, documentation, or sharing.",
+            "capabilities": [
+              {
+                "id": "collaboration.feedback",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "Others reuse the practice; quality issues or handoff costs decline."
+          },
+          {
+            "id": "resolve-working-disagreement",
+            "text": "Resolves collaboration disagreements by clarifying facts and constraints and reaching an actionable decision.",
+            "capabilities": [
+              {
+                "id": "collaboration.conflict-navigation",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "collaboration.negotiation",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "The disagreement ends with a decision, owner, and review point."
+          }
+        ],
+        "human-competitive-advantage": [
+          {
+            "id": "adapt-with-new-evidence",
+            "text": "Changes the plan when evidence invalidates an assumption instead of defending the original approach.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.structured-reflection",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Shows how new evidence changed priority or implementation."
+          },
+          {
+            "id": "build-trust-through-followthrough",
+            "text": "Builds trust by keeping commitments, surfacing bad news early, and aligning expectations.",
+            "capabilities": [
+              {
+                "id": "work-responsibility.ownership",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "collaboration.communication",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Partners can plan around updates and face fewer surprises."
+          },
+          {
+            "id": "use-ai-with-calibrated-judgment",
+            "text": "Knows when AI can assist, when expert review is needed, and when to stop automation.",
+            "capabilities": [
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "work-responsibility.boundaries",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Identifies data, access, accuracy, or impact-scope risks."
+          }
+        ]
+      }
+    },
+    {
+      "id": "senior-engineer",
+      "track": "ic",
+      "nextStageIds": [
+        "staff-engineer",
+        "engineering-manager"
+      ],
+      "name": "Senior Engineer",
+      "summary": "Independently shapes ambiguous problems and owns the user value, quality, and outcome of cross-functional work.",
+      "dimensions": {
+        "business-results": [
+          {
+            "id": "frame-problem-around-outcome",
+            "text": "Turns an ambiguous request into a verifiable user or business outcome with baselines and guardrails.",
+            "capabilities": [
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "The team can explain why, how success is measured, and when to stop or adjust."
+          },
+          {
+            "id": "prioritize-cross-functional-work",
+            "text": "Uses user evidence, market or operational constraints to align cross-functional teams on high-value work.",
+            "capabilities": [
+              {
+                "id": "value-direction.market-economic-judgment",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.prioritization",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Priorities reflect opportunity cost and are revisited against outcomes."
+          },
+          {
+            "id": "attribute-impact-honestly",
+            "text": "Assesses contribution to outcomes and distinguishes causal evidence from correlation.",
+            "capabilities": [
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "work-responsibility.attribution",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Explains metric definitions, observation window, guardrails, and attribution limits."
+          }
+        ],
+        "domain-expertise": [
+          {
+            "id": "design-across-domain-boundaries",
+            "text": "Designs across component boundaries, balancing domain rules, system constraints, evolution cost, and reversibility.",
+            "capabilities": [
+              {
+                "id": "professional.system-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "domain-modeling.model-evolution",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Proposal covers boundaries, trade-offs, migration/rollback, and failure paths."
+          },
+          {
+            "id": "lead-product-discovery",
+            "text": "Validates the problem with users and product partners before choosing an implementation.",
+            "capabilities": [
+              {
+                "id": "professional.product-discovery-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Research, prototypes, experiments, or data narrow or invalidate an approach."
+          },
+          {
+            "id": "set-quality-and-ai-controls",
+            "text": "Defines quality, security, and AI evaluation requirements for high-impact solutions.",
+            "capabilities": [
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Shows evaluation cases, monitoring/escalation conditions, privacy/access controls, or human handoff."
+          }
+        ],
+        "team-influence": [
+          {
+            "id": "align-multiple-partners",
+            "text": "Aligns multiple teams on goals, dependencies, and decision rights without relying on reporting authority.",
+            "capabilities": [
+              {
+                "id": "collaboration.stakeholder-influence",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.negotiation",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Produces an accepted plan, commitments, and escalation path."
+          },
+          {
+            "id": "raise-team-engineering-quality",
+            "text": "Raises team-wide quality through review standards, shared components, or operating mechanisms.",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "delivery.reliability-incidents",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Rework, incidents, or duplicated implementations decline, not just documentation volume."
+          },
+          {
+            "id": "mentor-through-delegation",
+            "text": "Helps peers take on larger problems through delegation with clear boundaries and feedback.",
+            "capabilities": [
+              {
+                "id": "people-organization.growth-development",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "people-organization.delegation-succession",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "Others deliver independently and reliance on personal rescue declines."
+          }
+        ],
+        "human-competitive-advantage": [
+          {
+            "id": "make-decisions-under-uncertainty",
+            "text": "Makes testable judgments under incomplete information and states confidence, risk, and disconfirming evidence.",
+            "capabilities": [
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Decision includes explicit assumptions and signals for reconsideration."
+          },
+          {
+            "id": "build-cross-functional-trust",
+            "text": "Understands partners’ goals and constraints and remains direct, respectful, and trustworthy through conflict.",
+            "capabilities": [
+              {
+                "id": "collaboration.conflict-navigation",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.feedback",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Disagreements are discussable and commitments executable without avoiding hard issues."
+          },
+          {
+            "id": "turn-failure-into-reusable-learning",
+            "text": "Reviews outcomes and personal judgment to create learning that changes later behavior.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.structured-reflection",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "A later project uses the changed mechanism and can explain its effect."
+          }
+        ]
+      }
+    },
+    {
+      "id": "staff-engineer",
+      "track": "ic",
+      "nextStageIds": [],
+      "name": "Experienced Senior Engineer",
+      "summary": "On the senior individual-contributor path, shapes domain or multi-team outcomes, technical direction, and reusable mechanisms.",
+      "dimensions": {
+        "business-results": [
+          {
+            "id": "shape-domain-outcomes",
+            "text": "Translates domain-level business goals into sustainable product, technical, and operational outcomes.",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Roadmap connects business measures, capability investment, and long-term cost."
+          },
+          {
+            "id": "guide-market-and-portfolio-tradeoffs",
+            "text": "Guides market, business-model, and long-term investment choices across opportunities.",
+            "capabilities": [
+              {
+                "id": "value-direction.market-economic-judgment",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Decision states opportunity cost, downside scenarios, and evidence thresholds for further investment."
+          },
+          {
+            "id": "establish-outcome-review",
+            "text": "Establishes cross-team outcome reviews that shape priorities and subsequent investment.",
+            "capabilities": [
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Review shares definitions and attribution limits, assigns actions, and changes resource choices."
+          }
+        ],
+        "domain-expertise": [
+          {
+            "id": "set-domain-technical-direction",
+            "text": "Sets evolvable domain architecture and professional standards while balancing product experience and engineering boundaries.",
+            "capabilities": [
+              {
+                "id": "professional.system-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "domain-modeling.model-evolution",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.product-discovery-design",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "Multiple teams adopt the approach and track quality, cost, and evolution outcomes."
+          },
+          {
+            "id": "build-evaluation-capability",
+            "text": "Builds quality and AI evaluation mechanisms so teams can compare approaches and detect regressions.",
+            "capabilities": [
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Reusable baselines, production monitoring, and clear human-intervention/rollback conditions exist."
+          },
+          {
+            "id": "simplify-professional-practice",
+            "text": "Identifies cross-team complexity or technical debt and makes the overall system simpler and more reliable.",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Consumers repeat less work and incidents, change cost, or complexity decline."
+          }
+        ],
+        "team-influence": [
+          {
+            "id": "influence-without-authority-at-scale",
+            "text": "Aligns and enables multiple teams through clear direction and shared decisions rather than personal approval.",
+            "capabilities": [
+              {
+                "id": "collaboration.stakeholder-influence",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.communication",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Cross-team leads make aligned decisions independently."
+          },
+          {
+            "id": "grow-senior-capability",
+            "text": "Develops new technical or product leaders and creates succession capacity.",
+            "capabilities": [
+              {
+                "id": "people-organization.growth-development",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "people-organization.delegation-succession",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Multiple people can independently own critical areas."
+          },
+          {
+            "id": "shape-org-collaboration",
+            "text": "Improves team boundaries, collaboration, or decision mechanisms to remove recurring systemic blockers.",
+            "capabilities": [
+              {
+                "id": "people-organization.team-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.conflict-navigation",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "Collaboration cycles or dependency risk improve sustainably and multiple teams adopt the mechanism."
+          }
+        ],
+        "human-competitive-advantage": [
+          {
+            "id": "exercise-portfolio-judgment",
+            "text": "Calibrates judgment on long-term uncertainty and knows when to invest, experiment, wait, or stop.",
+            "capabilities": [
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Across decisions, risk is calibrated and views update in time, not only explained after the fact."
+          },
+          {
+            "id": "create-trust-across-differences",
+            "text": "Builds relationships across disciplines, locations, and interests where real disagreement is safe.",
+            "capabilities": [
+              {
+                "id": "collaboration.negotiation",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.feedback",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Partners share bad news early and engage in difficult trade-offs."
+          },
+          {
+            "id": "model-learning-and-intellectual-honesty",
+            "text": "Updates judgments openly, incorporates outside evidence, and helps the organization revise its understanding.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "work-responsibility.integrity",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Decision records preserve original assumptions and updates for later teams to reuse."
+          }
+        ]
+      }
+    },
+    {
+      "id": "engineering-manager",
+      "track": "engineering-management",
+      "nextStageIds": [
+        "manager-of-managers"
+      ],
+      "name": "Engineering Manager",
+      "summary": "Delivers business outcomes through the team rather than personal rescue, building talent, collaboration, and sustainable engineering quality.",
+      "dimensions": {
+        "business-results": [
+          {
+            "id": "set-team-outcomes",
+            "text": "Defines team goals, outcome measures, and quality guardrails with partners and recalibrates priorities.",
+            "capabilities": [
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "The team explains outcomes and trade-offs and adjusts based on evidence."
+          },
+          {
+            "id": "allocate-capacity-for-value",
+            "text": "Allocates capacity across delivery, reliability, talent growth, and technical investment.",
+            "capabilities": [
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "delivery.capacity-planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Allocation reflects business risk and outcomes, with trade-offs recorded."
+          },
+          {
+            "id": "own-team-performance-truthfully",
+            "text": "Owns team outcomes and explains how management decisions contributed and where attribution is limited.",
+            "capabilities": [
+              {
+                "id": "work-responsibility.attribution",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "Distinguishes team delivery, external conditions, and personal contribution without appropriating credit."
+          }
+        ],
+        "domain-expertise": [
+          {
+            "id": "make-sound-domain-decisions",
+            "text": "Uses enough domain expertise to review critical product, technical, quality, and AI-risk decisions.",
+            "capabilities": [
+              {
+                "id": "professional.system-design",
+                "emphasis": "contextual"
+              },
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Asks the right questions, involves appropriate experts, and owns the decision."
+          },
+          {
+            "id": "build-reliable-team-practice",
+            "text": "Builds sustainable team practices for testing, release, incident response, and AI use.",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "delivery.reliability-incidents",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Quality and recovery are measurable without excessive manager approval."
+          },
+          {
+            "id": "guide-product-engineering-partnership",
+            "text": "Enables product, design, and engineering to discover problems and validate outcomes end to end.",
+            "capabilities": [
+              {
+                "id": "professional.product-discovery-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "The team tracks adoption and outcomes, not just on-time releases."
+          }
+        ],
+        "team-influence": [
+          {
+            "id": "hire-and-grow-team",
+            "text": "Builds capabilities for team goals through hiring, feedback, coaching, and performance management.",
+            "capabilities": [
+              {
+                "id": "people-organization.hiring",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "people-organization.growth-development",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Role gaps and growth goals are clear; performance decisions use sustained evidence."
+          },
+          {
+            "id": "design-healthy-team-system",
+            "text": "Designs clear goals, ownership, delegation, and decision mechanisms that reduce recurring friction.",
+            "capabilities": [
+              {
+                "id": "people-organization.team-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "people-organization.delegation-succession",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Issues are resolved at the right level and members have decision space."
+          },
+          {
+            "id": "align-stakeholders-for-team",
+            "text": "Manages cross-team commitments, conflict, and escalation so the team can focus on key outcomes.",
+            "capabilities": [
+              {
+                "id": "collaboration.negotiation",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.stakeholder-influence",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Partners accept priorities and escalation paths; conflicts do not remain unresolved."
+          }
+        ],
+        "human-competitive-advantage": [
+          {
+            "id": "make-people-decisions-with-evidence",
+            "text": "Makes people decisions from sustained, multi-source evidence while checking bias and uncertainty.",
+            "capabilities": [
+              {
+                "id": "people-organization.growth-development",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "work-responsibility.integrity",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Can explain evidence, counterevidence, and follow-up observations."
+          },
+          {
+            "id": "create-trust-and-psychological-safety",
+            "text": "Builds relationships where mistakes, risks, and disagreement can be discussed candidly while maintaining accountability.",
+            "capabilities": [
+              {
+                "id": "collaboration.feedback",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.conflict-navigation",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Issues surface earlier and retrospectives use evidence."
+          },
+          {
+            "id": "learn-and-adjust-management",
+            "text": "Reviews whether management mechanisms produce intended outcomes and adjusts personal behavior.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.structured-reflection",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Feedback and team signals lead to specific management changes and follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "manager-of-managers",
+      "track": "manager-of-managers",
+      "nextStageIds": [],
+      "name": "Manager of Managers",
+      "summary": "Owns multi-team or organizational outcomes through managers, allocating resources and building long-term organizational capability.",
+      "dimensions": {
+        "business-results": [
+          {
+            "id": "shape-org-outcomes",
+            "text": "Translates business direction into organizational outcomes, portfolio priorities, and adjustable investment plans.",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Team goals form a coherent portfolio and outcomes/resources are revisited regularly."
+          },
+          {
+            "id": "balance-growth-and-resilience",
+            "text": "Makes organization-level trade-offs across growth, efficiency, reliability, safety, and long-term capability.",
+            "capabilities": [
+              {
+                "id": "value-direction.market-economic-judgment",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "Names downside scenarios, risk owners, and conditions for changing course."
+          },
+          {
+            "id": "govern-business-impact",
+            "text": "Establishes consistent outcome measurement and review so leaders adjust direction using evidence.",
+            "capabilities": [
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Cross-team measures are interpretable; attribution limits and misses are transparent."
+          }
+        ],
+        "domain-expertise": [
+          {
+            "id": "govern-domain-and-ai-risk",
+            "text": "Ensures clear ownership and controls for critical technical, product, AI, privacy, and security risks.",
+            "capabilities": [
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Critical risks have decision owners, monitoring, review, and response mechanisms."
+          },
+          {
+            "id": "set-organizational-quality-bar",
+            "text": "Sets cross-team quality and operational standards proportionate to business risk.",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "delivery.reliability-incidents",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Standards reduce incidents or regressions without unnecessary process burden."
+          },
+          {
+            "id": "maintain-strategic-domain-judgment",
+            "text": "Engages experts on long-term domain and technical choices and understands business, user, and organizational consequences.",
+            "capabilities": [
+              {
+                "id": "professional.system-design",
+                "emphasis": "contextual"
+              },
+              {
+                "id": "domain-modeling.model-evolution",
+                "emphasis": "contextual"
+              },
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Can compare paths and reversibility without substituting for specialists on details."
+          }
+        ],
+        "team-influence": [
+          {
+            "id": "develop-managers",
+            "text": "Hires, coaches, and evaluates managers and builds sustainable leadership succession.",
+            "capabilities": [
+              {
+                "id": "people-organization.manager-of-managers",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "people-organization.delegation-succession",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Managers independently own team results and grow the next layer of leaders."
+          },
+          {
+            "id": "design-org-for-results",
+            "text": "Adapts organizational boundaries, decision rights, and collaboration to business and architecture changes.",
+            "capabilities": [
+              {
+                "id": "people-organization.team-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "people-organization.delegation-succession",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Reduces structural dependencies and local optimization; ownership and resources match goals."
+          },
+          {
+            "id": "align-leadership-system",
+            "text": "Builds organization-wide mechanisms for strategic communication, conflict resolution, and decisions.",
+            "capabilities": [
+              {
+                "id": "collaboration.stakeholder-influence",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.conflict-navigation",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Key trade-offs have clear decision owners and teams understand shared direction and limits."
+          }
+        ],
+        "human-competitive-advantage": [
+          {
+            "id": "exercise-organizational-judgment",
+            "text": "Makes careful decisions under high uncertainty and competing interests, owning consequences and correction.",
+            "capabilities": [
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "work-responsibility.integrity",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Decisions account for long-term risk, ethics, and counterevidence, not only short-term metrics."
+          },
+          {
+            "id": "build-trust-across-organization",
+            "text": "Builds organizational trust and candor so information travels upward and bad news surfaces early.",
+            "capabilities": [
+              {
+                "id": "collaboration.communication",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.feedback",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Risks from different levels reach decisions and commitments remain transparent."
+          },
+          {
+            "id": "renew-organizational-learning",
+            "text": "Turns reviews and external change into organizational capability renewal rather than one-off action items.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "learning-adaptation.structured-reflection",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Practices evolve with evidence and learning transfers across teams."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # AI-era Capability Model Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Build a bilingual capability-model module that combines a reviewed A–H capability map with six role-stage profiles, four dimensions, AI-era expectations, and a careful China/US comparison.
 
@@ -112,12 +112,12 @@ Stable capability refs use `<domain-id>.<leaf-id>` from `taxonomy.ts`. `foundati
 - Consumes: `Locale`, `Bilingual`, `domains`, `capabilityIds`, and `pick` from `src/lib/taxonomy.ts`.
 - Produces: `StageId`, `CapabilityDimensionId`, `CapabilityStandard`, `StageProfile`, `getStageProfile`, `getDimensionProgression`, and `validateCapabilityModel` as defined above.
 
-- [ ] Review every existing A–H leaf against the report's candidate gaps: user research/experience design, market and commercial judgment, quality/safety/security, AI evaluation/governance, and outcome measurement/experimentation. Add leaves under an existing domain when a distinct observable skill is missing; do not create a new top-level domain unless an existing boundary cannot contain it. Keep `business-results` expectations anchored in outcomes and validated impact.
-- [ ] Define bilingual stage/dimension data with all six stable IDs and exact Chinese labels. Write three to five standards for each of 24 stage-dimension combinations; each standard must include one or more valid A–H capability references and observable action/scope/outcome language.
-- [ ] Mark emphasis only for referenced capabilities using `foundational`, `differentiating`, or `contextual`. Author AI practice as evidence across relevant standards, scaling from individual framing and verification to team workflows, evaluation, governance, and accountability.
-- [ ] Encode the IC sequence and optional management branch with `track` and `nextStageIds`; ensure manager profiles do not require IC technical execution standards that are irrelevant to their role.
-- [ ] Implement `validateCapabilityModel()` to report invalid capability references, missing locale strings, duplicate IDs, invalid stage edges, and any stage dimension with fewer than three or more than five standards. Keep source content in JSON and validation logic in the library module.
-- [ ] Review the Chinese and English content side by side for conceptual parity, natural career language, and absence of internal ByteDance level codes.
+- [x] Review every existing A–H leaf against the report's candidate gaps: user research/experience design, market and commercial judgment, quality/safety/security, AI evaluation/governance, and outcome measurement/experimentation. Add leaves under an existing domain when a distinct observable skill is missing; do not create a new top-level domain unless an existing boundary cannot contain it. Keep `business-results` expectations anchored in outcomes and validated impact.
+- [x] Define bilingual stage/dimension data with all six stable IDs and exact Chinese labels. Write three to five standards for each of 24 stage-dimension combinations; each standard must include one or more valid A–H capability references and observable action/scope/outcome language.
+- [x] Mark emphasis only for referenced capabilities using `foundational`, `differentiating`, or `contextual`. Author AI practice as evidence across relevant standards, scaling from individual framing and verification to team workflows, evaluation, governance, and accountability.
+- [x] Encode the IC sequence and optional management branch with `track` and `nextStageIds`; ensure manager profiles do not require IC technical execution standards that are irrelevant to their role.
+- [x] Implement `validateCapabilityModel()` to report invalid capability references, missing locale strings, duplicate IDs, invalid stage edges, and any stage dimension with fewer than three or more than five standards. Keep source content in JSON and validation logic in the library module.
+- [x] Review the Chinese and English content side by side for conceptual parity, natural career language, and absence of internal ByteDance level codes.
 
 ### Task 2: Add localized module routes and primary navigation
 
@@ -137,10 +137,10 @@ Stable capability refs use `<domain-id>.<leaf-id>` from `taxonomy.ts`. `foundati
 - Consumes: `StageId`, `CapabilityDimensionId`, and model lookups from Task 1.
 - Produces: RouteRefs for `capabilityModel`, `capabilityModelStage`, `capabilityModelDimension`, and `capabilityModelMapping`; localized titles, paths, breadcrumbs, active nav key, and static path generation for stage/dimension pages.
 
-- [ ] Extend `RouteRef`, `NavKey`, `pathFor`, `titleFor`, `parentOf`, and `activeNavFor` for overview, stage, dimension, and mapping routes. Preserve `BASE_URL` handling and locale prefixes.
-- [ ] Add a single bilingual primary-nav entry labeled “能力模型” / “Capability model”; model pages share its active state.
-- [ ] Create static route files that enumerate the four dimensions and six stage profiles using the data exported by Task 1; use stable IDs and do not hard-code a second list of stage names in page templates.
-- [ ] Ensure locale switching keeps the same stable stage/dimension/mapping route in the other locale.
+- [x] Extend `RouteRef`, `NavKey`, `pathFor`, `titleFor`, `parentOf`, and `activeNavFor` for overview, stage, dimension, and mapping routes. Preserve `BASE_URL` handling and locale prefixes.
+- [x] Add a single bilingual primary-nav entry labeled “能力模型” / “Capability model”; model pages share its active state.
+- [x] Create static route files that enumerate the four dimensions and six stage profiles using the data exported by Task 1; use stable IDs and do not hard-code a second list of stage names in page templates.
+- [x] Ensure locale switching keeps the same stable stage/dimension/mapping route in the other locale.
 
 ### Task 3: Build overview, stage profile, and dimension comparison views
 
@@ -155,11 +155,11 @@ Stable capability refs use `<domain-id>.<leaf-id>` from `taxonomy.ts`. `foundati
 - Consumes: Localized model data and `pathFor()` from Tasks 1–2.
 - Produces: Overview entry points, one complete four-dimension stage profile, and one stage-by-stage dimension progression; all pages cross-link among stages, dimensions, the map, and mapping guide.
 
-- [ ] Build the overview around the premise that AI expands execution capacity while judgment and result ownership remain explicit. Show the IC path and management branch visually and textually.
-- [ ] Render each stage profile with four dimension sections and three to five standards each; show concise evidence examples and clickable A–H references without turning emphasis into a score.
-- [ ] Render each dimension progression across all applicable profiles. Make changing scope, autonomy, outcome ownership, time horizon, and influence visible; label management profiles as a different path where comparisons are not linear.
-- [ ] Add reciprocal links between stage and dimension pages plus the mapping page. Use existing breadcrumbs and page layout conventions.
-- [ ] Style responsive cards/tables so the six-stage progression remains readable at narrow widths, keyboard-accessible, and visually consistent with the existing site.
+- [x] Build the overview around the premise that AI expands execution capacity while judgment and result ownership remain explicit. Show the IC path and management branch visually and textually.
+- [x] Render each stage profile with four dimension sections and three to five standards each; show concise evidence examples and clickable A–H references without turning emphasis into a score.
+- [x] Render each dimension progression across all applicable profiles. Make changing scope, autonomy, outcome ownership, time horizon, and influence visible; label management profiles as a different path where comparisons are not linear.
+- [x] Add reciprocal links between stage and dimension pages plus the mapping page. Use existing breadcrumbs and page layout conventions.
+- [x] Style responsive cards/tables so the six-stage progression remains readable at narrow widths, keyboard-accessible, and visually consistent with the existing site.
 
 ### Task 4: Publish the sourced China/US comparison
 
@@ -174,10 +174,10 @@ Stable capability refs use `<domain-id>.<leaf-id>` from `taxonomy.ts`. `foundati
 - Consumes: Bilingual mapping data and public-source report from `docs/research/2026-10-15-cn-us-internet-company-capability-models.md`.
 - Produces: A localized comparison view that distinguishes company-specific observations, public examples, and the site's own analytical mapping.
 
-- [ ] Add sourced examples from the historical Alibaba frontend model and public company frameworks (Dropbox and GitLab; use Monzo only as a clearly labeled non-US English-language reference if retained). For every source, state company, function, source date/version where available, URL, and the comparison dimension it supports.
-- [ ] Compare responsibility patterns—scope, autonomy, business outcomes, influence, expertise, and IC/management track—rather than claim equivalent title or level numbers. Use ranges or explicitly “not directly comparable” where a one-to-one mapping would be misleading.
-- [ ] Label the Alibaba image as user-provided historical material, show only its stated P5–P9 labels if the page needs to discuss the artifact, and do not use those labels as the site's stages.
-- [ ] Keep the China/US conclusion bounded to the published sample; state that observed disclosure differences do not prove national differences in capability philosophy.
+- [x] Add sourced examples from the historical Alibaba frontend model and public company frameworks (Dropbox and GitLab; use Monzo only as a clearly labeled non-US English-language reference if retained). For every source, state company, function, source date/version where available, URL, and the comparison dimension it supports.
+- [x] Compare responsibility patterns—scope, autonomy, business outcomes, influence, expertise, and IC/management track—rather than claim equivalent title or level numbers. Use ranges or explicitly “not directly comparable” where a one-to-one mapping would be misleading.
+- [x] Label the Alibaba image as user-provided historical material, show only its stated P5–P9 labels if the page needs to discuss the artifact, and do not use those labels as the site's stages.
+- [x] Keep the China/US conclusion bounded to the published sample; state that observed disclosure differences do not prove national differences in capability philosophy.
 
 ### Task 5: Integrate the existing capability map and content navigation
 
@@ -191,9 +191,9 @@ Stable capability refs use `<domain-id>.<leaf-id>` from `taxonomy.ts`. `foundati
 - Consumes: Final A–H taxonomy leaf labels and capability references from Task 1.
 - Produces: Reciprocal navigation from capability map/domain/leaf pages into the capability-model overview and relevant stage/dimension profiles without replacing existing question-library routes.
 
-- [ ] Add a clear “如何随阶段发展” / “How expectations change by stage” entry point from the capability map.
-- [ ] On relevant domain/leaf pages, link to associated model dimensions or standards using the capability-reference crosswalk; avoid duplicating stage content on question pages.
-- [ ] Keep existing capability IDs stable unless a leaf addition is required; if renamed, preserve a route-compatible mapping and update all content references in the same task.
+- [x] Add a clear “如何随阶段发展” / “How expectations change by stage” entry point from the capability map.
+- [x] On relevant domain/leaf pages, link to associated model dimensions or standards using the capability-reference crosswalk; avoid duplicating stage content on question pages.
+- [x] Keep existing capability IDs stable unless a leaf addition is required; if renamed, preserve a route-compatible mapping and update all content references in the same task.
 
 ### Task 6: Editorial and release review
 
@@ -201,11 +201,11 @@ Stable capability refs use `<domain-id>.<leaf-id>` from `taxonomy.ts`. `foundati
 - Review: `docs/superpowers/specs/2026-10-15-ai-era-capability-model-design.md`
 - Review: all model content, mapping sources, routes, and views created above
 
-- [ ] Confirm all six Chinese stage labels, four dimensions, and 3–5 standards per stage-dimension are present in both locales.
-- [ ] Confirm business requirements discuss outcomes, measurement, and attribution limits rather than output volume alone.
-- [ ] Confirm AI appears as applied work, verification, evaluation, governance, and accountability at appropriate scopes rather than only as tool familiarity.
-- [ ] Confirm no stage is expected to demonstrate every A–H capability; all references resolve to valid leaves and every new leaf has an observable definition.
-- [ ] Confirm IC/management branching, mapping caveats, public-source citations, locale links, breadcrumbs, and configured Pages base are consistent with the spec.
+- [x] Confirm all six Chinese stage labels, four dimensions, and 3–5 standards per stage-dimension are present in both locales.
+- [x] Confirm business requirements discuss outcomes, measurement, and attribution limits rather than output volume alone.
+- [x] Confirm AI appears as applied work, verification, evaluation, governance, and accountability at appropriate scopes rather than only as tool familiarity.
+- [x] Confirm no stage is expected to demonstrate every A–H capability; all references resolve to valid leaves and every new leaf has an observable definition.
+- [x] Confirm IC/management branching, mapping caveats, public-source citations, locale links, breadcrumbs, and configured Pages base are consistent with the spec.
 
 ## Suggested Commit Boundaries
 

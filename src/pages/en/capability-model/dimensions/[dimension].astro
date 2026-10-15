@@ -1,0 +1,6 @@
+---
+import CapabilityModelDimensionView from '../../../../views/CapabilityModelDimensionView.astro';
+import { dimensionIds, type CapabilityDimensionId } from '../../../../lib/capability-model';
+export function getStaticPaths() { return dimensionIds.map((dimension) => ({ params: { dimension } })); }
+---
+<CapabilityModelDimensionView locale="en" dimension={Astro.params.dimension as CapabilityDimensionId} />

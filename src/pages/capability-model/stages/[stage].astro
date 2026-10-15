@@ -1,0 +1,6 @@
+---
+import CapabilityModelStageView from '../../../views/CapabilityModelStageView.astro';
+import { stageIds, type StageId } from '../../../lib/capability-model';
+export function getStaticPaths() { return stageIds.map((stage) => ({ params: { stage } })); }
+---
+<CapabilityModelStageView locale="zh-CN" stage={Astro.params.stage as StageId} />
