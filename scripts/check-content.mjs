@@ -1,6 +1,7 @@
 import { readFile, glob } from 'node:fs/promises';
 import yaml from 'js-yaml';
 import { crossDomainPaths, domains, taxonomy } from '../src/lib/taxonomy.ts';
+import { questionCollections, validateQuestionCollections } from '../src/lib/question-collections.ts';
 
 const facets = ['topics', 'roles', 'responsibilityScopes', 'careerTracks', 'scenarios', 'formats'];
 const required = ['questionId', 'kind', 'status', 'locale', 'title', 'question', 'intent', 'signals', 'primaryCapability', ...facets, 'source'];
@@ -62,6 +63,7 @@ for (const record of published) {
 }
 
 const publishedIds = new Set(published.map((record) => record.questionId));
+for (const error of validateQuestionCollections(questionCollections, published)) errors.push(`question collections: ${error}`);
 for (const path of crossDomainPaths) {
   const matching = (locale) => published.filter((record) => record.locale === locale
     && path.domains.includes(record.primaryCapability.split('.')[0])

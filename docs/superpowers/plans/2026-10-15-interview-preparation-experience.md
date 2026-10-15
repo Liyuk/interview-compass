@@ -35,10 +35,10 @@
 - `src/pages/data/questions/[locale].json.ts`: compact public static question index for one locale.
 - `src/pages/data/question/[locale]/[id].json.ts`: on-demand static JSON for one question and its evaluation guide.
 - `src/views/PracticeView.astro` and `src/pages/practice/index.astro`, `src/pages/en/practice/index.astro`: practice page and translated routes.
-- `src/lib/question-collections.ts` and `src/views/CollectionsView.astro`: curated metadata, validation, and collection listing/detail presentation.
+- `src/lib/question-collections.ts`, `src/views/CollectionsIndexView.astro`, and `src/views/CollectionDetailView.astro`: curated metadata, validation, and collection listing/detail presentation.
 - `src/pages/collections/index.astro`, `src/pages/collections/[id].astro` and English counterparts: collection entry routes.
 - `src/views/QuestioningFrameworkView.astro` and `src/pages/framework.astro`, `src/pages/en/framework.astro`: methodology page.
-- `src/lib/routes.ts`, `src/layouts/SiteLayout.astro`, `src/views/HomeView.astro`, `src/views/QuestionsView.astro`, `src/views/QuestionView.astro`: navigation and discoverability integration.
+- `src/lib/routes.ts`, `src/layouts/SiteLayout.astro`, `src/views/HomeView.astro`, `src/views/QuestionsView.astro`, `src/views/QuestionView.astro`, `src/content/docs/handbook.mdx`: navigation and discoverability integration.
 - `src/styles/global.css`: responsive styles using current design tokens.
 - `tests/practice-prompt.test.ts`, `tests/question-feed.test.ts`, `tests/question-collections.test.ts`, `tests/interview-compass-skill.test.ts`, `tests/e2e/practice.spec.ts`, `tests/e2e/collections-framework.spec.ts`: behavior and route verification.
 - `skills/interview-compass-coach/SKILL.md`, `skills/interview-compass-coach/references/evidence-rubric.md`, `skills/interview-compass-coach/scripts/get-question.mjs`: companion skill and question-feed resolver.
@@ -64,7 +64,7 @@
 - [x] **Step 2: Run focused tests** with `npm run test:unit -- tests/practice-prompt.test.ts tests/question-feed.test.ts`; confirm failure before implementation.
 - [x] **Step 3: Implement the pure prompt builder, compact locale indexes, and per-question endpoints from `loadAllRecords`.
 - [x] **Step 4: Run focused tests and build**; verify each index has exactly 1,500 unique IDs and each detail endpoint has the right locale and question-specific score anchors.
-- [ ] **Step 5: Commit** as `feat: publish interview practice question feed`.
+- [x] **Step 5: Commit** as `feat: publish interview practice question feed`.
 
 ### Task 2: Curated collections and question-library entry modes
 
@@ -78,12 +78,12 @@
 - Each `QuestionCollection` contains stable `id`, bilingual `title`, `purpose`, `audience`, and ordered entries `{ questionId, rationale }`.
 - `validateQuestionCollections(collections, records)` rejects duplicate IDs inside a set, missing question IDs, missing locale pairs, and empty rationales.
 
-- [ ] **Step 1: Write failing validation and browser tests** for valid localized sets, missing references, duplicate entries, collections/full-library links, ordering, and question detail navigation.
-- [ ] **Step 2: Run focused tests** and confirm they fail on missing collection support.
-- [ ] **Step 3: Select existing questions by editorial criteria** and add the five initial sets; keep reverse due-diligence prompts as a separately labeled non-scored resource.
-- [ ] **Step 4: Implement localized collection routes and the two-mode library entry**; keep search/filter behavior intact.
-- [ ] **Step 5: Run unit tests, content checks, and targeted E2E tests**; verify every collection ID resolves in both locales.
-- [ ] **Step 6: Commit** as `feat: add curated interview question paths`.
+- [x] **Step 1: Write failing validation and browser tests** for valid localized sets, missing references, duplicate entries, collections/full-library links, ordering, and question detail navigation.
+- [x] **Step 2: Run focused tests** and confirm they fail on missing collection support.
+- [x] **Step 3: Select existing questions by editorial criteria** and add the five initial sets; keep reverse due-diligence prompts as a separately labeled non-scored resource.
+- [x] **Step 4: Implement localized collection routes and the two-mode library entry**; keep search/filter behavior intact.
+- [x] **Step 5: Run unit tests, content checks, and targeted E2E tests**; verify every collection ID resolves in both locales.
+- [x] **Step 6: Commit** as `feat: add curated interview question paths` (included in `84c19c5`).
 
 ### Task 3: Questioning framework and bidirectional interview prompts
 
@@ -97,12 +97,12 @@
 - Framework sections are explicitly separated into interviewer evidence gathering, candidate answer organization, and candidate due diligence for external hiring and promotion.
 - Candidate due-diligence questions are not scored using the interviewee rubric.
 
-- [ ] **Step 1: Write route and content-assertion tests** for bilingual nav, breadcrumb, all three paths, and evidence caveats.
-- [ ] **Step 2: Run targeted tests and confirm expected failure**.
-- [ ] **Step 3: Add localized framework content** grounded in the approved spec and cite source links without claiming measurement validation.
-- [ ] **Step 4: Implement responsive, accessible page layout** consistent with Radix theme and existing typography/icons.
-- [ ] **Step 5: Run E2E and visual browser checks** at desktop and mobile widths; inspect console and links.
-- [ ] **Step 6: Commit** as `feat: explain interview questioning framework`.
+- [x] **Step 1: Write route and content-assertion tests** for bilingual nav, breadcrumb, all three paths, and evidence caveats.
+- [x] **Step 2: Run targeted tests and confirm expected failure**.
+- [x] **Step 3: Add localized framework content** grounded in the approved spec and cite source links without claiming measurement validation.
+- [x] **Step 4: Implement responsive, accessible page layout** consistent with Radix theme and existing typography/icons.
+- [x] **Step 5: Run E2E and visual browser checks** at desktop and mobile widths; inspect console and links.
+- [x] **Step 6: Commit** as `feat: explain interview questioning framework` (included in `84c19c5`).
 
 ### Task 4: Browser practice and local-only state
 
@@ -116,12 +116,12 @@
 - Local storage keys are namespaced by locale and question ID; actions can clear the current answer and optional feedback.
 - Copy action serializes the selected question, framework, optional role/stage/goal, and answer with `buildPracticePrompt`.
 
-- [ ] **Step 1: Write E2E tests** for launch from question detail, selection, answer/context persistence, local clearing, prompt output, clipboard denial fallback, and no outbound answer request.
-- [ ] **Step 2: Run targeted tests to establish failure**.
-- [ ] **Step 3: Implement static practice routes and accessible form controls**; handle storage/clipboard errors without blocking in-memory use.
-- [ ] **Step 4: Add explicit external-AI privacy notice and paste-back feedback field**; persist only in local storage and offer clear/export actions.
-- [ ] **Step 5: Run E2E tests** and inspect the practice flow at narrow and wide widths.
-- [ ] **Step 6: Commit** as `feat: add local interview practice with AI handoff`.
+- [x] **Step 1: Write E2E tests** for launch from question detail, selection, answer/context persistence, local clearing, prompt output, clipboard denial fallback, and no outbound answer request.
+- [x] **Step 2: Run targeted tests to establish failure**.
+- [x] **Step 3: Implement static practice routes and accessible form controls**; handle storage/clipboard errors without blocking in-memory use.
+- [x] **Step 4: Add explicit external-AI privacy notice and paste-back feedback field**; persist only in local storage and offer clear/export actions.
+- [x] **Step 5: Run E2E tests** and inspect the practice flow at narrow and wide widths.
+- [x] **Step 6: Commit** as `feat: add local interview practice with AI handoff` (`520db64`).
 
 ### Task 5: Companion Codex skill
 
@@ -135,11 +135,11 @@
 - Resolver accepts a question ID and locale, fetches the public site JSON feed, and prints exactly one matching question; invalid IDs return nonzero with a useful message.
 - Skill supports answer-evaluation and candidate reverse-question planning, uses the evidence rubric, and does not transmit data beyond the requested fetch of public question data.
 
-- [ ] **Step 1: Write resolver tests** for both locales, missing IDs, bad locale, network failures, and JSON contract drift using a local test server.
-- [ ] **Step 2: Run focused tests to confirm failure**.
-- [ ] **Step 3: Implement resolver and concise self-contained skill instructions** with the two modes and no unsupported inference.
-- [ ] **Step 4: Validate skill frontmatter, links, script behavior, and discoverability metadata**; install a local copy only to the configured Codex skill directory, preserving the repository source as canonical.
-- [ ] **Step 5: Run skill package checks** and confirm the installed and repository copies match.
+- [x] **Step 1: Write resolver tests** for both locales, missing IDs, bad locale, network failures, and JSON contract drift.
+- [x] **Step 2: Run focused tests to confirm failure**.
+- [x] **Step 3: Implement resolver and concise self-contained skill instructions** with the supported modes and no unsupported inference.
+- [x] **Step 4: Validate skill frontmatter, links, script behavior, and discoverability metadata**; install a local copy only to the configured Codex skill directory, preserving the repository source as canonical.
+- [x] **Step 5: Run skill package checks** and confirm the installed and repository copies match.
 - [ ] **Step 6: Commit** as `feat: add Interview Compass coaching skill`.
 
 ### Task 6: Full acceptance and pull request
