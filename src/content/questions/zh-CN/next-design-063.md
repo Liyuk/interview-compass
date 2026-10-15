@@ -10,7 +10,7 @@ signals:
   - 要求回忆最近一次具体任务与阻碍。
   - 区分已发生行为、偏好和假设方案。
   - 寻找反例或不同情境下的证据。
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - product-thinking

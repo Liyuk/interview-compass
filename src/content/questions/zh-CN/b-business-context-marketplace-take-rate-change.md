@@ -10,11 +10,12 @@ signals:
   - 分解供给方分层、上架频次、价格和退出行为。
   - 估算平台净收入与成交、留存和供给质量变化。
   - 比较不同费率、服务权益和目标群体的实验方案。
-primaryCapability: domain-modeling.business-context
+primaryCapability: value-direction.market-economic-judgment
 topics:
   - commercialization
   - metrics
   - product-thinking
+  - business-planning
 roles:
   - product
   - marketing

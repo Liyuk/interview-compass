@@ -1,4 +1,5 @@
 ---
+import Icon from '../components/Icon.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { domains, facetDefinitions, facetKinds, facetMeta, pick, type FacetKind, type Locale } from '../lib/taxonomy';
 import { facetCounts } from '../lib/question-catalog';
@@ -20,24 +21,24 @@ const facetOptions = filterKinds.map((kind) => {
 }).filter((group) => group.options.length > 0);
 ---
 <SiteLayout locale={locale} route={{ type: 'questions' }} description={en ? 'Browse and filter every published question.' : '浏览并筛选所有已发布的问题。'}>
-  <h1 class="page-title">{en ? 'Question library' : '问题库'}</h1>
+  <h1 class="page-title">{en ? 'Question library' : '面试题库'}</h1>
   <p class="intro">{en ? 'Each filter is an independent view of the same questions. Combining filters narrows the list, and the address bar keeps your selection so you can share it.' : '每个筛选项都是同一批题目的独立视角。组合筛选会缩小列表，地址栏会保留你的选择，方便分享。'}</p>
 
   <form class="filters" id="filters" aria-label={en ? 'Filter questions' : '筛选问题'}>
     <label>
       <span>{en ? 'Capability' : '能力'}</span>
-      <select name="capability"><option value="">{en ? 'Any' : '全部'}</option>{capabilityOptions.map((o) => <option value={o.id}>{o.label} ({o.count})</option>)}</select>
+      <span class="select-control"><select name="capability"><option value="">{en ? 'Any' : '全部'}</option>{capabilityOptions.map((o) => <option value={o.id}>{o.label} ({o.count})</option>)}</select><Icon name="chevron-down" size={16} /></span>
     </label>
     {facetOptions.map((group) => (
       <label>
         <span>{pick(facetMeta[group.kind].name, locale)}</span>
-        <select name={queryKey[group.kind]}><option value="">{en ? 'Any' : '全部'}</option>{group.options.map((o) => <option value={o.id}>{o.label} ({o.count})</option>)}</select>
+        <span class="select-control"><select name={queryKey[group.kind]}><option value="">{en ? 'Any' : '全部'}</option>{group.options.map((o) => <option value={o.id}>{o.label} ({o.count})</option>)}</select><Icon name="chevron-down" size={16} /></span>
       </label>
     ))}
     <button type="button" id="clear-filters">{en ? 'Clear filters' : '清除筛选'}</button>
   </form>
   <details class="filter-help">
-    <summary>{en ? 'What do these filters mean?' : '这些筛选项是什么意思？'}</summary>
+    <summary class="disclosure-summary"><Icon name="chevron-right" size={16} />{en ? 'What do these filters mean?' : '这些筛选项是什么意思？'}</summary>
     <dl>
       <dt>{en ? 'Capability' : '能力'}</dt><dd>{en ? 'The one thing a question is mainly meant to examine. Each question has exactly one.' : '一道题主要想考察的那一件事。每道题只有一个。'}</dd>
       {facetOptions.map((group) => <><dt>{pick(facetMeta[group.kind].name, locale)}</dt><dd>{pick(facetMeta[group.kind].description, locale)}</dd></>)}

@@ -1,6 +1,6 @@
 import { readFile, glob } from 'node:fs/promises';
 import yaml from 'js-yaml';
-import { taxonomy } from '../src/lib/taxonomy.ts';
+import { crossDomainPaths, domains, taxonomy } from '../src/lib/taxonomy.ts';
 
 const facets = ['topics', 'roles', 'responsibilityScopes', 'careerTracks', 'scenarios', 'formats'];
 const required = ['questionId', 'kind', 'status', 'locale', 'title', 'question', 'intent', 'signals', 'primaryCapability', ...facets, 'source'];
@@ -44,6 +44,10 @@ for (const [id, pair] of grouped) {
     if (matches.length !== 1) errors.push(`${id}: expected exactly one ${locale} translation, found ${matches.length}`);
   }
   if (new Set(pair.map((record) => record.primaryCapability)).size > 1) errors.push(`${id}: primary capability differs between locales`);
+  for (const facet of facets) {
+    const values = pair.map((record) => [...record[facet]].sort().join('|'));
+    if (new Set(values).size > 1) errors.push(`${id}: ${facet} differs between locales`);
+  }
 }
 const wording = new Map();
 for (const record of published) {
@@ -58,6 +62,28 @@ for (const record of published) {
 }
 
 const publishedIds = new Set(published.map((record) => record.questionId));
+for (const path of crossDomainPaths) {
+  const matching = (locale) => published.filter((record) => record.locale === locale
+    && path.domains.includes(record.primaryCapability.split('.')[0])
+    && path.topics.some((topic) => record.topics.includes(topic)));
+  const zh = matching('zh-CN');
+  const en = matching('en');
+  if (!zh.length || !en.length) errors.push(`${path.id}: browse path needs published questions in both languages`);
+  const zhIds = new Set(zh.map((record) => record.questionId));
+  const enIds = new Set(en.map((record) => record.questionId));
+  if (zhIds.size !== enIds.size || [...zhIds].some((id) => !enIds.has(id))) {
+    errors.push(`${path.id}: paired question IDs differ between locales`);
+  }
+}
+
+const usedCapabilities = new Set(published.map((record) => record.primaryCapability));
+for (const domain of domains) for (const leaf of domain.leaves) {
+  const capability = `${domain.id}.${leaf.id}`;
+  if (!usedCapabilities.has(capability) && !leaf.placement.zh.startsWith('规划中：')) {
+    errors.push(`${capability}: empty leaf must be explicitly marked as planned or removed from ordinary navigation`);
+  }
+}
+
 for await (const ledgerPath of glob('docs/planning/source-ledger/*.yml')) {
   try {
     const ledger = yaml.load(await readFile(ledgerPath, 'utf8'));

@@ -2,17 +2,18 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import QuestionList from '../components/QuestionList.astro';
 import { crossDomainPaths, domains, pick, type Locale } from '../lib/taxonomy';
-import { getQuestions } from '../lib/question-catalog';
+import { getPathQuestions } from '../lib/question-catalog';
 import { loadQuestions } from '../lib/site-data';
 
 interface Props { locale: Locale; pathId: string }
 const { locale, pathId } = Astro.props;
 const en = locale === 'en';
-const path = crossDomainPaths.find((item) => item.id === pathId)!;
+const path = crossDomainPaths.find((item) => item.id === pathId);
+if (!path) throw new Error(`Unknown cross-domain path: ${pathId}`);
 const all = await loadQuestions(locale);
-const sections = path.domains.map((domainId) => {
+const sections = path.domains.map((domainId: string) => {
   const domain = domains.find((item) => item.id === domainId)!;
-  return { domain, items: getQuestions(all, { locale, domain: domainId, topic: path.topic }) };
+  return { domain, items: getPathQuestions(all, { locale, domain: domainId, topics: path.topics }) };
 }).filter((section) => section.items.length > 0);
 ---
 <SiteLayout locale={locale} route={{ type: 'path', id: path.id }} description={pick(path.description, locale)}>

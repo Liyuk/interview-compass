@@ -12,7 +12,7 @@ signals:
   - For work, says how responsibilities, dependencies, and leftover issues are listed and handed over in writing
   - Says how collaboration with both sides continues afterwards and how they see their own changed role
 primaryCapability: people-organization.team-design
-topics: [management, communication, planning]
+topics: [management, communication, planning, team-planning]
 roles: [manager]
 responsibilityScopes: [team, multiple-teams]
 careerTracks: [team-manager, senior-manager]

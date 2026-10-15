@@ -60,6 +60,17 @@
               }
             ],
             "evidence": "Can explain the change and show execution or manual review evidence."
+          },
+          {
+            "id": "close-task-feedback",
+            "text": "Checks acceptance and user feedback after delivery and follows up on unresolved issues.",
+            "capabilities": [
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Acceptance records connect feedback to follow-up changes."
           }
         ],
         "domain-expertise": [
@@ -107,6 +118,28 @@
               }
             ],
             "evidence": "Changes include verification; generated content is not assumed correct."
+          },
+          {
+            "id": "explain-local-domain-model",
+            "text": "Explains business objects, states, and data meaning in the task and checks normal and exceptional paths.",
+            "capabilities": [
+              {
+                "id": "domain-modeling.data-model",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Examples explain state transitions and data constraints."
+          },
+          {
+            "id": "debug-with-evidence",
+            "text": "Uses reproduction, logs, and small experiments to diagnose routine problems and brings evidence when seeking help.",
+            "capabilities": [
+              {
+                "id": "professional.debugging",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Provides reproduction steps, eliminated hypotheses, and verification records."
           }
         ],
         "team-influence": [
@@ -205,6 +238,28 @@
               }
             ],
             "evidence": "Corrects the record promptly and does not conceal issues or overstate results."
+          },
+          {
+            "id": "initiate-learning-goal",
+            "text": "Sets small learning goals for current knowledge gaps and checks whether learning improves the work.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.self-direction",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Learning goals connect to visible improvement in later work."
+          },
+          {
+            "id": "recover-with-support",
+            "text": "Describes difficulties after setbacks, seeks timely support, resumes progress, and recognizes unsustainable workload.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.resilience-recovery",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "Explains support sought, recovery actions, and the outcome of another attempt."
           }
         ]
       }
@@ -263,6 +318,17 @@
               }
             ],
             "evidence": "Compares workflow time or quality and retains human review points."
+          },
+          {
+            "id": "plan-feature-milestones",
+            "text": "Breaks feature goals into milestones, acceptance measures, and pause conditions and updates them with feedback.",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Plans include outcome hypotheses, dependencies, and changes."
           }
         ],
         "domain-expertise": [
@@ -310,6 +376,28 @@
               }
             ],
             "evidence": "Evidence includes tests, comparison cases, reference checks, or human approval."
+          },
+          {
+            "id": "model-component-rules",
+            "text": "Maps business rules into component data, states, and interfaces and plans compatibility and migration.",
+            "capabilities": [
+              {
+                "id": "domain-modeling.model-evolution",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "The model explains exceptions, historical data, and migration checks."
+          },
+          {
+            "id": "operate-component-lifecycle",
+            "text": "Tracks a component after release, rolls back or diagnoses failures, and verifies repairs.",
+            "capabilities": [
+              {
+                "id": "delivery.reliability-incidents",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Release monitoring, rollback conditions, and verified repairs form a closed loop."
           }
         ],
         "team-influence": [
@@ -357,6 +445,17 @@
               }
             ],
             "evidence": "The disagreement ends with a decision, owner, and review point."
+          },
+          {
+            "id": "make-handoffs-reusable",
+            "text": "Preserves decision context, operating instructions, and known risks so peers can take over.",
+            "capabilities": [
+              {
+                "id": "collaboration.communication",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "A peer completes a change or diagnosis using the handoff material."
           }
         ],
         "human-competitive-advantage": [
@@ -404,6 +503,28 @@
               }
             ],
             "evidence": "Identifies data, access, accuracy, or impact-scope risks."
+          },
+          {
+            "id": "investigate-before-answering",
+            "text": "Clarifies goals, constraints, and missing facts before choosing how to investigate an ambiguous problem.",
+            "capabilities": [
+              {
+                "id": "professional.debugging",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Clarifying questions change the problem framing or investigation, with explicit limits to inference."
+          },
+          {
+            "id": "sustain-progress-after-setbacks",
+            "text": "Adjusts methods, pace, or support after setbacks and tests improvement rather than repeating effort.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.resilience-recovery",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Explains concrete changes after failure and the next attempt's results."
           }
         ]
       }
@@ -463,6 +584,28 @@
               }
             ],
             "evidence": "Explains metric definitions, observation window, guardrails, and attribution limits."
+          },
+          {
+            "id": "own-business-planning",
+            "text": "Owns quarterly planning for a project or business subdomain, connecting opportunities, outcomes, investment, and work declined.",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "The plan states outcome hypotheses, capacity constraints, and reprioritization triggers."
+          },
+          {
+            "id": "stop-low-value-work",
+            "text": "Reduces, stops, or redirects work when results contradict its premise and explains opportunity cost.",
+            "capabilities": [
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Records include pre-set conditions, evidence, and where released resources went."
           }
         ],
         "domain-expertise": [
@@ -510,6 +653,28 @@
               }
             ],
             "evidence": "Shows evaluation cases, monitoring/escalation conditions, privacy/access controls, or human handoff."
+          },
+          {
+            "id": "own-technical-roadmap",
+            "text": "Sets a domain technical roadmap balancing architecture, technical debt, AI investment, and staged migration.",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "The roadmap includes dependencies, cost, risk, checkpoints, and exit options."
+          },
+          {
+            "id": "evolve-business-models",
+            "text": "Evolves cross-component domain and data models while preserving definitions, compatibility, and historical meaning.",
+            "capabilities": [
+              {
+                "id": "domain-modeling.model-evolution",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Data meaning and migration correctness remain traceable after business-rule changes."
           }
         ],
         "team-influence": [
@@ -557,6 +722,17 @@
               }
             ],
             "evidence": "Others deliver independently and reliance on personal rescue declines."
+          },
+          {
+            "id": "plan-team-capability-needs",
+            "text": "Identifies team capability gaps from project direction and agrees development, borrowing, or hiring needs with leaders.",
+            "capabilities": [
+              {
+                "id": "people-organization.growth-development",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Capability gaps connect to work risks, closing actions, and review periods."
           }
         ],
         "human-competitive-advantage": [
@@ -604,6 +780,28 @@
               }
             ],
             "evidence": "A later project uses the changed mechanism and can explain its effect."
+          },
+          {
+            "id": "ask-discriminating-questions",
+            "text": "Asks questions that distinguish competing hypotheses and prioritizes evidence that could change the decision.",
+            "capabilities": [
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Explains which question ruled out which hypothesis and how the decision changed."
+          },
+          {
+            "id": "sustain-work-under-pressure",
+            "text": "Recognizes systemic overload and capability limits under pressure, resets commitments, and supports team recovery.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.resilience-recovery",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Early risk reporting, scope changes, and recovery outcomes are traceable."
           }
         ]
       }
@@ -664,6 +862,28 @@
               }
             ],
             "evidence": "Review shares definitions and attribution limits, assigns actions, and changes resource choices."
+          },
+          {
+            "id": "connect-long-term-business-plan",
+            "text": "Translates annual direction into domain plans and quarterly checkpoints with dependencies and stop conditions.",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Long-term goals connect to near-term investment through an adjustable plan."
+          },
+          {
+            "id": "verify-investment-economics",
+            "text": "Evaluates total cost and real adoption of platform, reuse, or AI investments and tests long-term value assumptions.",
+            "capabilities": [
+              {
+                "id": "value-direction.market-economic-judgment",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Compares maintenance, migration, adoption, and alternatives."
           }
         ],
         "domain-expertise": [
@@ -715,6 +935,28 @@
               }
             ],
             "evidence": "Consumers repeat less work and incidents, change cost, or complexity decline."
+          },
+          {
+            "id": "align-technical-portfolio",
+            "text": "Coordinates cross-team technical roadmaps, sequencing architecture, data, platform, and AI evolution with compatibility boundaries.",
+            "capabilities": [
+              {
+                "id": "professional.system-design",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "The roadmap explains cross-team dependencies, migration sequence, and acceptance standards."
+          },
+          {
+            "id": "govern-domain-meaning",
+            "text": "Builds shared business semantics and data contracts across teams to prevent inconsistent local models.",
+            "capabilities": [
+              {
+                "id": "domain-modeling.data-model",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Key metrics, entities, and rules have owners and change mechanisms."
           }
         ],
         "team-influence": [
@@ -762,6 +1004,28 @@
               }
             ],
             "evidence": "Collaboration cycles or dependency risk improve sustainably and multiple teams adopt the mechanism."
+          },
+          {
+            "id": "plan-capability-supply",
+            "text": "Plans domain capability supply with managers, covering expertise, knowledge diffusion, and single-person dependencies.",
+            "capabilities": [
+              {
+                "id": "people-organization.team-design",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Team capability plans support the domain roadmap and verify backup coverage."
+          },
+          {
+            "id": "drive-adoption-of-change",
+            "text": "Drives adoption of cross-team practices by addressing migration cost and feedback beyond publishing standards.",
+            "capabilities": [
+              {
+                "id": "collaboration.stakeholder-influence",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Adoption, resistance, and improvement are tracked over time."
           }
         ],
         "human-competitive-advantage": [
@@ -809,6 +1073,28 @@
               }
             ],
             "evidence": "Decision records preserve original assumptions and updates for later teams to reuse."
+          },
+          {
+            "id": "challenge-shared-assumptions",
+            "text": "Uses external changes and cross-domain counterexamples to challenge established organizational assumptions.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Counterexamples lead to testable experiments or changes in direction."
+          },
+          {
+            "id": "hold-risk-boundaries-under-pressure",
+            "text": "Maintains evidence, risk boundaries, and truthful attribution under major delivery pressure and develops sustainable alternatives.",
+            "capabilities": [
+              {
+                "id": "work-responsibility.boundaries",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "High-pressure decisions record boundaries, alternatives, and accountable owners."
           }
         ]
       }
@@ -867,6 +1153,28 @@
               }
             ],
             "evidence": "Distinguishes team delivery, external conditions, and personal contribution without appropriating credit."
+          },
+          {
+            "id": "run-business-planning-cycle",
+            "text": "Runs quarterly business planning and review cycles linking user opportunities, team investment, and outcome validation.",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Plans trace to opportunity evidence, outcome measures, and resource allocation."
+          },
+          {
+            "id": "reset-unviable-commitments",
+            "text": "Renegotiates commitments when goals, capacity, or external conditions change, with clear accountability for scope cuts, deferral, or stopping.",
+            "capabilities": [
+              {
+                "id": "delivery.capacity-planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Business partners acknowledge revised commitments and track their consequences."
           }
         ],
         "domain-expertise": [
@@ -918,6 +1226,17 @@
               }
             ],
             "evidence": "The team tracks adoption and outcomes, not just on-time releases."
+          },
+          {
+            "id": "sponsor-technical-roadmap",
+            "text": "Builds technical roadmaps with technical leads and allocates capacity and risk checks for debt, architecture, and AI changes.",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Technical plans align with business cadence and have owners and staged validation."
           }
         ],
         "team-influence": [
@@ -965,6 +1284,28 @@
               }
             ],
             "evidence": "Partners accept priorities and escalation paths; conflicts do not remain unresolved."
+          },
+          {
+            "id": "plan-team-and-succession",
+            "text": "Plans team roles, capability gaps, hiring and development cadence, capacity, and leadership succession.",
+            "capabilities": [
+              {
+                "id": "people-organization.delegation-succession",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Staffing supports business and technical plans, with succession measures for key roles."
+          },
+          {
+            "id": "address-performance-and-workload",
+            "text": "Addresses performance gaps and sustained overload through clear feedback, support, and review periods.",
+            "capabilities": [
+              {
+                "id": "people-organization.frontline-management",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Distinguishes goals, capability, motivation, and environment, with verified follow-up."
           }
         ],
         "human-competitive-advantage": [
@@ -1012,6 +1353,28 @@
               }
             ],
             "evidence": "Feedback and team signals lead to specific management changes and follow-up."
+          },
+          {
+            "id": "protect-fairness-in-hard-decisions",
+            "text": "Uses explicit standards in promotion, performance, and resource decisions, manages conflicts of interest, and protects factual reporting.",
+            "capabilities": [
+              {
+                "id": "work-responsibility.integrity",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Comparable cases use consistent criteria, with routes for appeal and correction."
+          },
+          {
+            "id": "manage-own-sustainable-leadership",
+            "text": "Recognizes management blind spots and workload limits, seeks support, delegates, and restores judgment after setbacks.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.resilience-recovery",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Support and delegation reduce recurring firefighting, and decision quality recovers."
           }
         ]
       }
@@ -1072,6 +1435,28 @@
               }
             ],
             "evidence": "Cross-team measures are interpretable; attribution limits and misses are transparent."
+          },
+          {
+            "id": "connect-business-planning-horizons",
+            "text": "Connects annual business direction, quarterly portfolios, and monthly reviews with explicit assumptions, resources, and exit conditions.",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Planning horizons are traceable, and cross-team conflicts can trigger portfolio changes."
+          },
+          {
+            "id": "redirect-organizational-investment",
+            "text": "Stops ineffective investments when business direction or portfolio assumptions fail and manages resource shifts and team transitions.",
+            "capabilities": [
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Stopping and redirection include prior evidence, transition cost, and subsequent results."
           }
         ],
         "domain-expertise": [
@@ -1123,6 +1508,17 @@
               }
             ],
             "evidence": "Can compare paths and reversibility without substituting for specialists on details."
+          },
+          {
+            "id": "govern-technical-investment-roadmap",
+            "text": "Governs cross-domain technical roadmaps, connecting platform, architecture, data, and AI investment to business strategy.",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "The portfolio has expert review, dependency sequencing, and long-term maintenance ownership."
           }
         ],
         "team-influence": [
@@ -1170,6 +1566,28 @@
               }
             ],
             "evidence": "Key trade-offs have clear decision owners and teams understand shared direction and limits."
+          },
+          {
+            "id": "plan-organization-capability",
+            "text": "Sets annual team and organizational capability plans connecting headcount, key roles, management spans, and succession supply.",
+            "capabilities": [
+              {
+                "id": "people-organization.team-design",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Organizational plans support the business portfolio and review capability gaps against outcomes."
+          },
+          {
+            "id": "lead-organization-transitions",
+            "text": "Leads reorganizations, leadership handoffs, and resource contraction while maintaining delivery and testing new accountabilities.",
+            "capabilities": [
+              {
+                "id": "people-organization.manager-of-managers",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Transitions include communication, handoffs, risk protection, and organizational review."
           }
         ],
         "human-competitive-advantage": [
@@ -1217,6 +1635,28 @@
               }
             ],
             "evidence": "Practices evolve with evidence and learning transfers across teams."
+          },
+          {
+            "id": "check-leadership-power",
+            "text": "Builds independent feedback and checks on major people and resource decisions to prevent concentrated information and interests.",
+            "capabilities": [
+              {
+                "id": "work-responsibility.boundaries",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Escalation, dissent, and correction mechanisms are demonstrably usable."
+          },
+          {
+            "id": "maintain-judgment-through-crisis",
+            "text": "Maintains truthful information and decision quality through major failure or prolonged crisis and rebuilds organizational recovery capacity.",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.resilience-recovery",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "Crisis reviews explain recovery pacing, support arrangements, and mechanism changes."
           }
         ]
       }

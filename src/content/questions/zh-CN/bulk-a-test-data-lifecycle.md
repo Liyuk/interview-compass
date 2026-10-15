@@ -10,7 +10,7 @@ signals:
   - 区分合成、脱敏和直接生产数据的风险及适用场景
   - 定义访问权限、刷新期限和删除责任
   - 说明如何固定测试快照或记录数据版本以复现问题
-primaryCapability: professional.engineering-systems
+primaryCapability: professional.quality-security-safety
 topics:
   - engineering-systems
   - databases

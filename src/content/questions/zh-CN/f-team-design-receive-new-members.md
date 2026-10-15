@@ -12,7 +12,7 @@ signals:
   - 注意原有成员的不安，例如角色被稀释，并主动沟通
   - 说明怎样检查融合是否真的发生，而不只看形式上的会议
 primaryCapability: people-organization.team-design
-topics: [management, communication]
+topics: [management, communication, team-planning]
 roles: [manager]
 responsibilityScopes: [team, multiple-teams]
 careerTracks: [team-manager, senior-manager]

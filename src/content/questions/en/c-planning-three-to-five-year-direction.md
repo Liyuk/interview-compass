@@ -16,6 +16,7 @@ topics:
   - planning
   - product-thinking
   - execution
+  - technical-planning
 roles:
   - engineering
   - product

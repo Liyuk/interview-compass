@@ -10,7 +10,7 @@ signals:
   - 识别移动场景中的首要任务和决策字段。
   - 避免隐藏必须操作或无障碍可达的信息。
   - 通过真实设备任务测试验证折叠方案。
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-thinking
   - accessibility

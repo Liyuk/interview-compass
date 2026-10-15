@@ -12,7 +12,7 @@ signals:
   - Distinguishes risks and uses of synthetic, de-identified, and direct production data
   - Defines access, refresh windows, and deletion ownership
   - Explains how to pin snapshots or record data versions for reproducing issues
-primaryCapability: professional.engineering-systems
+primaryCapability: professional.quality-security-safety
 topics:
   - engineering-systems
   - databases

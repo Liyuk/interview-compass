@@ -1,4 +1,5 @@
 ---
+import Icon from '../components/Icon.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { getLevelMapping, validateCapabilityModel } from '../lib/capability-model';
 import { pathFor, type RouteRef } from '../lib/routes';
@@ -31,7 +32,7 @@ const route: RouteRef = { type: 'capability-model-mapping' };
         <p>{reference.basis}</p>
         <strong>{en ? 'Limit' : '边界'}</strong>
         <p>{reference.limitation}</p>
-        <a href={reference.url} target="_blank" rel="noreferrer">{reference.source} ↗</a>
+        <a href={reference.url} target="_blank" rel="noreferrer">{reference.source} <Icon name="arrow-up-right" size={16} /></a>
       </article>)}
     </div>
   </section>
@@ -44,6 +45,6 @@ const route: RouteRef = { type: 'capability-model-mapping' };
 
   <aside class="model-callout">
     <div><p class="eyebrow">{en ? 'Capability model' : '能力模型'}</p><strong>{en ? 'Our capability model is an editorial heuristic for organizing questions, not a company level conversion.' : '本站能力模型是整理题库用的启发式草稿，不是公司职级换算表。'}</strong></div>
-    <a class="button-link" href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'View the model' : '查看本站模型'} →</a>
+    <a class="button-link" href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'View the model' : '查看本站模型'} <Icon name="arrow-right" size={16} /></a>
   </aside>
 </SiteLayout>

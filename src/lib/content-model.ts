@@ -6,7 +6,7 @@ export const provenanceKinds = ['adapted', 'derived', 'inspired', 'original'] as
 const sourceSchema = z.object({
   attribution: z.enum(provenanceKinds),
   label: z.string().trim().min(1).optional(),
-  url: z.string().url().optional(),
+  url: z.url().optional(),
 }).strict().superRefine((source, context) => {
   if (source.attribution !== 'original' && !source.url) {
     context.addIssue({ code: 'custom', path: ['url'], message: `A ${source.attribution} source needs a url` });

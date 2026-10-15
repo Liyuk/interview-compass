@@ -19,6 +19,7 @@ topics:
   - engineering-systems
   - planning
   - metrics
+  - technical-planning
 roles:
   - engineering
   - product

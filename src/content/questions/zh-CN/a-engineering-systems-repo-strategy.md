@@ -11,7 +11,7 @@ signals:
   - "讨论构建时间、权限、发布耦合等代价"
   - "提出小范围试点，以及何时停止"
 primaryCapability: professional.engineering-systems
-topics: [monorepo, engineering-systems, frontend]
+topics: [monorepo, engineering-systems, frontend, technical-planning]
 roles: [engineering, frontend]
 responsibilityScopes: [multiple-teams, organization]
 careerTracks: [individual-contributor, team-manager]

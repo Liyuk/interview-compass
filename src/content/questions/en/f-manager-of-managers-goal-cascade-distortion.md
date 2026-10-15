@@ -19,6 +19,7 @@ topics:
   - management
   - planning
   - metrics
+  - team-planning
 roles:
   - manager
   - pmo

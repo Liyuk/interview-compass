@@ -10,7 +10,7 @@ signals:
   - 定义需要覆盖的用户状态和关键任务。
   - 寻找未完成、沉默、流失及有辅助需求的参与者。
   - 分别报告样本覆盖、拒访偏差和发现适用范围。
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - accessibility

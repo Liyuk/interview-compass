@@ -10,7 +10,7 @@ signals:
   - Check whether user language can replace jargon.
   - Provide contextual explanations and examples for necessary terms.
   - Verify comprehension without adding excessive reading burden.
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-thinking
   - accessibility

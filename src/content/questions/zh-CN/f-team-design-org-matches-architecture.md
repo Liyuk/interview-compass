@@ -12,7 +12,7 @@ signals:
   - 把技术和服务器的成本纳入产品决策的度量
   - 说明怎样通过评审和机制让这种取舍公开
 primaryCapability: people-organization.team-design
-topics: [management, system-design, resource-allocation]
+topics: [management, system-design, resource-allocation, team-planning]
 roles: [product, manager, engineering]
 responsibilityScopes: [multiple-teams, organization]
 careerTracks: [senior-manager, executive]

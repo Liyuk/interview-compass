@@ -10,11 +10,12 @@ signals:
   - 先澄清研究对象、任务场景和样本构成，不把偏好直接当成行为证据
   - 说明哪些结论仍不确定，以及这些不确定性对决策的影响
   - 提出能区分竞争性解释的补充验证，而不是无目标地增加访谈数量
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - metrics
   - product-thinking
+  - questioning
 roles:
   - design
   - product

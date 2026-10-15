@@ -60,6 +60,17 @@
               }
             ],
             "evidence": "能指出改动依据，并展示运行或人工核查结果。"
+          },
+          {
+            "id": "close-task-feedback",
+            "text": "交付后确认验收和用户反馈，发现未解决的问题继续跟进。",
+            "capabilities": [
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "验收记录、用户反馈及后续修正可对应。"
           }
         ],
         "domain-expertise": [
@@ -107,6 +118,28 @@
               }
             ],
             "evidence": "修改有验证步骤，不把生成内容直接当作正确答案。"
+          },
+          {
+            "id": "explain-local-domain-model",
+            "text": "说明当前任务的业务对象、状态和数据含义，检查常见与异常路径。",
+            "capabilities": [
+              {
+                "id": "domain-modeling.data-model",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "能用实例解释状态变化与数据约束。"
+          },
+          {
+            "id": "debug-with-evidence",
+            "text": "通过复现、日志和最小实验定位常见问题，求助时带上证据。",
+            "capabilities": [
+              {
+                "id": "professional.debugging",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "提供复现步骤、已排除的假设和验证记录。"
           }
         ],
         "team-influence": [
@@ -205,6 +238,28 @@
               }
             ],
             "evidence": "更正记录及时，不掩盖问题或夸大成果。"
+          },
+          {
+            "id": "initiate-learning-goal",
+            "text": "主动为当前任务的知识缺口设定小目标，验证学习是否改善工作。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.self-direction",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "学习目标对应后续任务中可见的改进。"
+          },
+          {
+            "id": "recover-with-support",
+            "text": "遇到失败能描述困难、及时求助并恢复推进，识别需要调整的负荷。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.resilience-recovery",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "能说明求助、恢复行动与再次尝试的结果。"
           }
         ]
       }
@@ -263,6 +318,17 @@
               }
             ],
             "evidence": "比较流程前后耗时或质量，保留人工复核点。"
+          },
+          {
+            "id": "plan-feature-milestones",
+            "text": "把功能目标拆成里程碑、验收指标与暂停条件，按反馈调整。",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "计划包含结果假设、依赖和调整记录。"
           }
         ],
         "domain-expertise": [
@@ -310,6 +376,28 @@
               }
             ],
             "evidence": "有测试、对照样例、引用检查或人工审批记录。"
+          },
+          {
+            "id": "model-component-rules",
+            "text": "将业务规则映射为模块的数据、状态与接口，制定兼容和迁移方案。",
+            "capabilities": [
+              {
+                "id": "domain-modeling.model-evolution",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "模型解释异常状态、历史数据和迁移后的校验。"
+          },
+          {
+            "id": "operate-component-lifecycle",
+            "text": "独立跟踪模块上线后的运行情况，能回滚、排障并完成修复验证。",
+            "capabilities": [
+              {
+                "id": "delivery.reliability-incidents",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "上线监控、回滚条件与事故修复形成闭环。"
           }
         ],
         "team-influence": [
@@ -357,6 +445,17 @@
               }
             ],
             "evidence": "争议形成决定、负责人和复查时间。"
+          },
+          {
+            "id": "make-handoffs-reusable",
+            "text": "交接时保留决策背景、运行方法与已知风险，使同伴能接续负责。",
+            "capabilities": [
+              {
+                "id": "collaboration.communication",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "同伴能依据交接材料独立完成一次变更或排障。"
           }
         ],
         "human-competitive-advantage": [
@@ -404,6 +503,28 @@
               }
             ],
             "evidence": "能识别数据、权限、准确性或影响范围风险。"
+          },
+          {
+            "id": "investigate-before-answering",
+            "text": "面对含混问题先澄清目标、约束和缺失事实，再选择验证方法。",
+            "capabilities": [
+              {
+                "id": "professional.debugging",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "追问改变了问题定义或验证步骤，保留推论边界。"
+          },
+          {
+            "id": "sustain-progress-after-setbacks",
+            "text": "受挫后调整方法、节奏或支持方式，持续验证改进而非重复投入。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.resilience-recovery",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "能说明失败后的具体变化与下一轮结果。"
           }
         ]
       }
@@ -463,6 +584,28 @@
               }
             ],
             "evidence": "说明指标口径、观察窗口、护栏及归因限制。"
+          },
+          {
+            "id": "own-business-planning",
+            "text": "负责项目或业务子域的季度规划，连接机会、结果指标、投入与不做清单。",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "规划说明结果假设、容量约束与重排触发条件。"
+          },
+          {
+            "id": "stop-low-value-work",
+            "text": "在结果不支持原假设时主动缩减、停止或转向，并解释机会成本。",
+            "capabilities": [
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "有调整前的预设条件、证据和释放资源的去向。"
           }
         ],
         "domain-expertise": [
@@ -510,6 +653,28 @@
               }
             ],
             "evidence": "能展示评估集、监控/升级条件、隐私权限控制或人工接管规则。"
+          },
+          {
+            "id": "own-technical-roadmap",
+            "text": "制定领域内技术规划，平衡架构演进、技术债、AI 投入与分阶段迁移。",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "路线图有依赖、成本、风险、验证点和退出方案。"
+          },
+          {
+            "id": "evolve-business-models",
+            "text": "推动跨模块领域与数据模型演进，处理口径、兼容和历史可解释性。",
+            "capabilities": [
+              {
+                "id": "domain-modeling.model-evolution",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "业务规则变化后仍可追踪数据含义和迁移正确性。"
           }
         ],
         "team-influence": [
@@ -557,6 +722,17 @@
               }
             ],
             "evidence": "他人可以独立交付，依赖个人救火减少。"
+          },
+          {
+            "id": "plan-team-capability-needs",
+            "text": "根据项目方向识别团队能力缺口，与负责人协商培养、借调或招聘需求。",
+            "capabilities": [
+              {
+                "id": "people-organization.growth-development",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "能力缺口对应明确工作风险、补齐动作与检验周期。"
           }
         ],
         "human-competitive-advantage": [
@@ -604,6 +780,28 @@
               }
             ],
             "evidence": "后续项目采用了调整后的机制，且能说明效果。"
+          },
+          {
+            "id": "ask-discriminating-questions",
+            "text": "提出能区分竞争假设的问题，优先获取会改变决策的证据。",
+            "capabilities": [
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "能说明哪个问题排除了什么假设，以及决定如何改变。"
+          },
+          {
+            "id": "sustain-work-under-pressure",
+            "text": "在持续压力下识别系统性负荷与能力边界，调整承诺并支持团队恢复。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.resilience-recovery",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "风险早报、范围调整与恢复后表现可以追踪。"
           }
         ]
       }
@@ -664,6 +862,28 @@
               }
             ],
             "evidence": "复盘有共同口径、归因限制和明确行动，且实际改变资源选择。"
+          },
+          {
+            "id": "connect-long-term-business-plan",
+            "text": "将年度方向拆成领域规划与季度验证点，识别相互依赖和停止条件。",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "长期目标与近期投入形成可调整的链路。"
+          },
+          {
+            "id": "verify-investment-economics",
+            "text": "评估平台、复用或 AI 投资的总成本与实际采用，检验长期价值假设。",
+            "capabilities": [
+              {
+                "id": "value-direction.market-economic-judgment",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "包含维护、迁移、使用率与替代方案的比较。"
           }
         ],
         "domain-expertise": [
@@ -715,6 +935,28 @@
               }
             ],
             "evidence": "使用方减少重复工作，故障、变更成本或复杂度下降。"
+          },
+          {
+            "id": "align-technical-portfolio",
+            "text": "组织跨团队技术规划，安排架构、数据、平台与 AI 演进的先后和兼容边界。",
+            "capabilities": [
+              {
+                "id": "professional.system-design",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "路线图说明跨团队依赖、迁移顺序和验收标准。"
+          },
+          {
+            "id": "govern-domain-meaning",
+            "text": "推动跨团队共享业务语义与数据契约，避免局部模型破坏整体一致性。",
+            "capabilities": [
+              {
+                "id": "domain-modeling.data-model",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "关键指标、实体与规则有负责人和变更机制。"
           }
         ],
         "team-influence": [
@@ -762,6 +1004,28 @@
               }
             ],
             "evidence": "协作周期或依赖风险持续改善，机制被多个团队采用。"
+          },
+          {
+            "id": "plan-capability-supply",
+            "text": "与管理伙伴制定领域团队能力规划，明确专家供给、知识扩散和单点风险。",
+            "capabilities": [
+              {
+                "id": "people-organization.team-design",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "团队规划对应领域路线图，关键能力有替补和验证。"
+          },
+          {
+            "id": "drive-adoption-of-change",
+            "text": "推动跨团队实践被实际采用，处理迁移成本与使用反馈，避免仅发布规范。",
+            "capabilities": [
+              {
+                "id": "collaboration.stakeholder-influence",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "采用情况、阻力和改进效果都有持续观察。"
           }
         ],
         "human-competitive-advantage": [
@@ -809,6 +1073,28 @@
               }
             ],
             "evidence": "决策记录保留原假设和修订依据，后续团队复用。"
+          },
+          {
+            "id": "challenge-shared-assumptions",
+            "text": "从外部变化和不同领域提炼反例，检视组织习以为常的关键假设。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "提出的反例带来了可检验的试验或方向调整。"
+          },
+          {
+            "id": "hold-risk-boundaries-under-pressure",
+            "text": "在重大交付压力下坚持证据、风险边界和真实归因，推动可持续替代路径。",
+            "capabilities": [
+              {
+                "id": "work-responsibility.boundaries",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "高压决策记录说明底线、替代方案和责任人。"
           }
         ]
       }
@@ -867,6 +1153,28 @@
               }
             ],
             "evidence": "区分团队交付、外部条件和个人作用，不挪用团队贡献。"
+          },
+          {
+            "id": "run-business-planning-cycle",
+            "text": "建立季度业务规划与复盘节奏，连接用户机会、团队投入和结果验证。",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "规划可追溯到机会证据、结果指标和资源安排。"
+          },
+          {
+            "id": "reset-unviable-commitments",
+            "text": "目标、容量或外部条件变化时重新协商承诺，明确缩减、延后与停止的责任。",
+            "capabilities": [
+              {
+                "id": "delivery.capacity-planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "承诺调整有业务伙伴确认并追踪后果。"
           }
         ],
         "domain-expertise": [
@@ -918,6 +1226,17 @@
               }
             ],
             "evidence": "团队不仅按期发布，也追踪用户采用和结果。"
+          },
+          {
+            "id": "sponsor-technical-roadmap",
+            "text": "与技术负责人制定技术规划，为技术债、架构演进与 AI 改造安排容量和风险验证。",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "技术规划与业务节奏相连，有负责人和分阶段验证。"
           }
         ],
         "team-influence": [
@@ -965,6 +1284,28 @@
               }
             ],
             "evidence": "依赖方认可优先级和升级机制，冲突不会长期悬置。"
+          },
+          {
+            "id": "plan-team-and-succession",
+            "text": "制定团队规划，明确岗位与能力缺口、招聘培养节奏、容量和负责人继任。",
+            "capabilities": [
+              {
+                "id": "people-organization.delegation-succession",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "人员投入对应业务与技术规划，关键岗位有继任措施。"
+          },
+          {
+            "id": "address-performance-and-workload",
+            "text": "及时处理绩效差距与持续超负荷，通过明确反馈、支持和检验周期纠偏。",
+            "capabilities": [
+              {
+                "id": "people-organization.frontline-management",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "区分目标、能力、意愿与环境因素，行动有后续验证。"
           }
         ],
         "human-competitive-advantage": [
@@ -1012,6 +1353,28 @@
               }
             ],
             "evidence": "反馈和团队信号促成具体管理变化，并跟踪效果。"
+          },
+          {
+            "id": "protect-fairness-in-hard-decisions",
+            "text": "在晋升、绩效和资源分配中公开适用标准，处理利益冲突并保护事实。",
+            "capabilities": [
+              {
+                "id": "work-responsibility.integrity",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "相似案例可按同一口径解释，存在申诉与纠错渠道。"
+          },
+          {
+            "id": "manage-own-sustainable-leadership",
+            "text": "识别自身管理盲点与负荷边界，及时求助、授权并在受挫后恢复判断。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.resilience-recovery",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "支持与授权减少反复救火，恢复后决策质量得到验证。"
           }
         ]
       }
@@ -1072,6 +1435,28 @@
               }
             ],
             "evidence": "跨团队指标可解释，归因限制与未达成原因透明。"
+          },
+          {
+            "id": "connect-business-planning-horizons",
+            "text": "打通年度业务方向、季度组合与月度复盘，明确假设、资源与退出条件。",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "各周期规划可追溯，跨团队冲突能触发组合调整。"
+          },
+          {
+            "id": "redirect-organizational-investment",
+            "text": "在业务转向或组合失效时停止低效投入，安排资源转移与受影响团队的过渡。",
+            "capabilities": [
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "停止与转向有事前证据、过渡成本和后续结果。"
           }
         ],
         "domain-expertise": [
@@ -1123,6 +1508,17 @@
               }
             ],
             "evidence": "能比较多种路线及其可逆性，而非替代专家做细节。"
+          },
+          {
+            "id": "govern-technical-investment-roadmap",
+            "text": "治理跨领域技术规划，连接平台、架构、数据和 AI 投资与业务战略。",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "投资组合有专家评审、依赖顺序和长期维护责任。"
           }
         ],
         "team-influence": [
@@ -1170,6 +1566,28 @@
               }
             ],
             "evidence": "关键取舍有明确决策人，团队理解共同方向和边界。"
+          },
+          {
+            "id": "plan-organization-capability",
+            "text": "制定年度团队与组织能力规划，联动编制、关键岗位、管理跨度和继任供给。",
+            "capabilities": [
+              {
+                "id": "people-organization.team-design",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "组织规划对应业务组合，检视能力缺口与实际产出。"
+          },
+          {
+            "id": "lead-organization-transitions",
+            "text": "推动重组、负责人交接和资源收缩，保持交付连续性并验证新责任结构。",
+            "capabilities": [
+              {
+                "id": "people-organization.manager-of-managers",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "过渡有沟通、交接、风险保护和组织效果复盘。"
           }
         ],
         "human-competitive-advantage": [
@@ -1217,6 +1635,28 @@
               }
             ],
             "evidence": "组织实践随证据迭代，学习可跨团队迁移。"
+          },
+          {
+            "id": "check-leadership-power",
+            "text": "为重大人事与资源决定建立独立反馈和权力约束，防止信息与利益集中。",
+            "capabilities": [
+              {
+                "id": "work-responsibility.boundaries",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "存在可实际使用的升级、异议与纠错机制。"
+          },
+          {
+            "id": "maintain-judgment-through-crisis",
+            "text": "在重大失败或持续危机中维持真实信息与判断质量，重建组织恢复能力。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.resilience-recovery",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "危机复盘能说明恢复节奏、支持安排与机制变化。"
           }
         ]
       }

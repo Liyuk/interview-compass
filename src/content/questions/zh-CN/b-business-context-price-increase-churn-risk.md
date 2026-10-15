@@ -10,11 +10,12 @@ signals:
   - 分解客户分群、合同状态、价格弹性和流失原因。
   - 估算新增收入减去流失、折扣挽回和支持成本。
   - 比较保留旧套餐、分阶段提价或调整权益的方案。
-primaryCapability: domain-modeling.business-context
+primaryCapability: value-direction.market-economic-judgment
 topics:
   - commercialization
   - metrics
   - product-thinking
+  - business-planning
 roles:
   - product
   - marketing

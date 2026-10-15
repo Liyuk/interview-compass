@@ -10,7 +10,7 @@ signals:
   - 标出样本与目标人群在经验和动机上的差异。
   - 区分流程问题与新手认知问题。
   - 补充有针对性的招募或现场研究。
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - metrics

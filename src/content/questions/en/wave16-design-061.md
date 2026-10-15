@@ -10,7 +10,7 @@ signals:
   - Set default information by task frequency and risk.
   - Do not hide required states or audit facts.
   - Validate role switching and learning cost in real workflows.
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-thinking
   - accessibility

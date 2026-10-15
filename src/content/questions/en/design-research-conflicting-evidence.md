@@ -20,11 +20,12 @@ signals:
   - >-
     Proposes targeted validation that distinguishes competing explanations instead of adding
     interviews without a purpose
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - metrics
   - product-thinking
+  - questioning
 roles:
   - design
   - product

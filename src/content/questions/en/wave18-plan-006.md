@@ -30,4 +30,6 @@ source:
 topics:
   - planning
   - resource-allocation
+  - business-planning
+  - team-planning
 ---

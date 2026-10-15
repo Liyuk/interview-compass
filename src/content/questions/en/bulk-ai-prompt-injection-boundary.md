@@ -15,7 +15,7 @@ signals:
   - Treat tool output as data rather than instructions.
   - Limit information exposure, parameters, and side-effect scope.
   - Log policy decisions and test attack paths and safe failure.
-primaryCapability: professional.ai-engineering
+primaryCapability: professional.quality-security-safety
 topics:
   - ai-engineering
   - security

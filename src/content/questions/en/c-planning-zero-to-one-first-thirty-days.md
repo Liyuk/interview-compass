@@ -33,6 +33,7 @@ topics:
   - management
   - product-thinking
   - commercialization
+  - business-planning
 roles:
   - manager
   - engineering

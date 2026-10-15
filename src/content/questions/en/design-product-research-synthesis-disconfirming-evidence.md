@@ -15,7 +15,7 @@ signals:
   - Report sample composition, prompt design, and the overall distribution of feedback.
   - Separate role-specific needs without generalizing minority views.
   - State supported conclusions, remaining questions, and prioritization implications.
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - product-thinking

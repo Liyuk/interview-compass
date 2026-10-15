@@ -10,7 +10,7 @@ signals:
   - 检查交付量和用户价值之间的因果假设。
   - 分解曝光、采用、任务完成和后续成本。
   - 提出能区分实施缺陷与价值假设错误的验证。
-primaryCapability: value-direction.metrics-causality
+primaryCapability: value-direction.business-outcomes
 topics:
   - metrics
   - product-thinking

@@ -1,4 +1,5 @@
 ---
+import Icon from '../components/Icon.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import QuestionList from '../components/QuestionList.astro';
 import { domains, facetLabel, pick, type Locale } from '../lib/taxonomy';
@@ -50,7 +51,7 @@ const promotionQuestionPath = `${pathFor({ type: 'questions' }, locale, base)}?s
     <div class="promotion-lanes">
       {promotionLanes.map((lane) => <a class="promotion-lane" href={`${promotionQuestionPath}${lane.id}`}>
         <span>{en ? 'CAREER PATH' : '发展路径'}</span><strong>{lane.title}</strong><p>{lane.scope}</p>
-        <span class="stage-link">{en ? 'Browse matching questions →' : '浏览相关问题 →'}</span>
+        <span class="stage-link">{en ? 'Browse matching questions' : '浏览相关问题'} <Icon name="arrow-right" size={16} /></span>
       </a>)}
     </div>
     <div class="promotion-evidence">

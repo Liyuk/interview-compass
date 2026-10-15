@@ -10,7 +10,7 @@ signals:
   - 显示基线、变化幅度、时间范围和分群。
   - 区分相关性线索与因果结论。
   - 测试用户能否识别下一步行动。
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - accessibility
   - product-thinking

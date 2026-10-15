@@ -1,0 +1,30 @@
+---
+import { depthAnchors, expectations, stageDepthNotes, validateExpectations } from '../lib/capability-expectations';
+import { getStageProfile, stageIds } from '../lib/capability-model';
+import { domains, pick, type Locale } from '../lib/taxonomy';
+import Icon from './Icon.astro';
+import { pathFor } from '../lib/routes';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const errors = validateExpectations();
+if (errors.length) throw new Error(errors.join('; '));
+---
+<section class="model-section" aria-labelledby="expectations-heading">
+  <div class="model-section-heading"><h2 id="expectations-heading">{en ? 'Stage × A–H responsibility depth' : '阶段 × A–H 能力要求矩阵'}</h2></div>
+  <p class="intro">{en ? 'Editorial starting points for engineering and engineering-management roles. Percentages label responsibility depth; they are not measured mastery, hiring scores, weights, or company level equivalents. Rows do not sum to 100%.' : '这是面向工程与工程管理岗位的建议起点。百分比表示责任深度档位，并非实测掌握率、面试分数、权重或公司职级对标；每行无需合计为 100%。'}</p>
+  <div class="depth-legend">{depthAnchors.map(anchor => <div><strong>{anchor.percent}% · {pick(anchor.name, locale)}</strong><p>{pick(anchor.description, locale)}</p></div>)}</div>
+  <p class="model-note" id="matrix-guidance">{en ? 'Read within a domain and its relevant role-specific leaves, not as mastery of every leaf. Integrity, safety, and truthful attribution are baseline obligations at every stage. These depth anchors are independent of the 1–4 question evaluation rubric.' : '在同一能力域、岗位相关的叶子范围内比较，不表示必须掌握该域所有叶子。诚信、安全与真实归因是所有阶段的共同底线。此处档位与题目的 1–4 分评估标准独立。'}</p>
+  <div class="matrix-scroll" role="region" aria-label={en ? 'Scrollable capability expectations table' : '可横向滚动的能力要求表'} tabindex="0">
+    <table class="capability-matrix" aria-describedby="matrix-guidance">
+      <caption>{en ? 'IC and management paths are separate; 100% means organizational depth, not complete knowledge.' : '专业贡献与管理是不同路径；100% 表示组织或关键领域级责任，不表示知识全知。'}</caption>
+      <thead><tr><th scope="col">{en ? 'Stage / track' : '阶段 / 路径'}</th>{domains.map(domain => <th scope="col"><a href={pathFor({ type: 'domain', domain: domain.id }, locale, base)}>{domain.letter}<span>{pick(domain.name, locale)}</span></a></th>)}</tr></thead>
+      <tbody>{stageIds.map(id => { const stage = getStageProfile(id, locale); return <tr class:list={{ 'matrix-track-break': id === 'engineering-manager' }}>
+        <th scope="row"><a href={pathFor({ type: 'capability-model-stage', stage: id }, locale, base)}>{stage.name}</a><span>{stage.track === 'ic' ? (en ? 'IC' : '专业贡献') : (en ? 'Management' : '管理路径')}</span></th>
+        {domains.map(domain => { const value = expectations[id][domain.id]; const anchor = depthAnchors.find(item => item.percent === value)!; return <td data-depth={value}><span class="depth-value" title={pick(anchor.description, locale)}>{value}%</span><span class="sr-only"> · {pick(anchor.name, locale)}</span></td>; })}
+      </tr>; })}</tbody>
+    </table>
+  </div>
+  <details class="matrix-notes"><summary class="disclosure-summary"><Icon name="chevron-right" size={16} />{en ? 'How to read differences between stages and tracks' : '如何理解各阶段与两条路径的差异'}</summary><dl>{stageIds.map(id => <><dt>{getStageProfile(id, locale).name}</dt><dd>{pick(stageDepthNotes[id], locale)}</dd></>)}</dl></details>
+</section>

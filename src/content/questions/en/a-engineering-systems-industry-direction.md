@@ -12,7 +12,7 @@ signals:
   - Separates trends already proven from ones that are still only expected
   - Says where the judgment comes from and how reliable that source is
 primaryCapability: professional.engineering-systems
-topics: [engineering-systems, system-design, ai-engineering]
+topics: [engineering-systems, system-design, ai-engineering, technical-planning]
 roles: [engineering, backend, frontend, mobile, ai-engineer, manager]
 responsibilityScopes: [team, multiple-teams]
 careerTracks: [individual-contributor, team-manager, senior-manager]

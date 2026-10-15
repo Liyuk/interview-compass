@@ -10,7 +10,7 @@ signals:
   - Map differences in experience and motivation between participants and target users.
   - Separate workflow issues from novice mental-model issues.
   - Add targeted recruitment or field research.
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - metrics

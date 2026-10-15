@@ -45,13 +45,13 @@ describe('route model', () => {
 
   it('gives a question the canonical trail Home > Questions > Domain > Leaf > Question', () => {
     const crumbs = breadcrumbsFor(question, 'en', base);
-    expect(crumbs.map((crumb) => crumb.label)).toEqual(['Home', 'Questions', 'Delivery and ongoing operations', 'Capacity and dependencies', '调整计划']);
+    expect(crumbs.map((crumb) => crumb.label)).toEqual(['Home', 'Question bank', 'Delivery and ongoing operations', 'Capacity and dependencies', '调整计划']);
     expect(crumbs.at(-1)?.href).toBeUndefined();
     expect(crumbs[2].href).toBe('/interview-compass/en/capabilities/delivery/');
   });
 
   it('uses the natural hierarchy for facet and capability pages', () => {
-    expect(breadcrumbsFor({ type: 'role', id: 'product' }, 'zh-CN', base).map((crumb) => crumb.label)).toEqual(['首页', '岗位', '产品']);
+    expect(breadcrumbsFor({ type: 'role', id: 'product' }, 'zh-CN', base).map((crumb) => crumb.label)).toEqual(['首页', '岗位导航', '产品']);
     expect(breadcrumbsFor({ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' }, 'zh-CN', base).map((crumb) => crumb.label))
       .toEqual(['首页', '能力地图', '交付执行与持续运营', '容量与依赖']);
   });
@@ -63,8 +63,11 @@ describe('route model', () => {
 
   it('derives page titles and the active navigation entry from the same route', () => {
     expect(titleFor({ type: 'scenarios' }, 'zh-CN')).toBe('使用场景');
+    expect(titleFor({ type: 'topics' }, 'zh-CN')).toBe('主题索引');
+    expect(titleFor({ type: 'capability-model' }, 'zh-CN')).toBe('阶段能力');
     expect(activeNavFor(question)).toBe('questions');
     expect(activeNavFor({ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' })).toBe('capabilities');
     expect(activeNavFor({ type: 'scenario', id: 'promotion' })).toBe('scenarios');
+    expect(activeNavFor({ type: 'topic', id: 'planning' })).toBe('topics');
   });
 });

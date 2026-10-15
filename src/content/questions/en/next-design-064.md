@@ -10,7 +10,7 @@ signals:
   - Identify the error location, reason, and corrective action.
   - Preserve valid input and manage keyboard and assistive-technology focus.
   - Test recovery from server and multi-field errors.
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - accessibility
   - product-thinking

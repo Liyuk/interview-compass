@@ -13,7 +13,7 @@ signals:
   - 从输入、机制和故障表现中提出可验证的技术假设
   - 比较实现路径及其正确性、性能、安全或维护代价
   - 说明覆盖边界场景的测试或运行指标
-primaryCapability: professional.engineering-systems
+primaryCapability: professional.quality-security-safety
 topics:
   - engineering-systems
   - devops

@@ -10,7 +10,7 @@ signals:
   - 根据任务频率与风险确定默认信息。
   - 避免视图隐藏必要状态或审计事实。
   - 用真实工作流验证角色切换与学习成本。
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-thinking
   - accessibility

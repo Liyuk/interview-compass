@@ -10,7 +10,7 @@ signals:
   - 呈现样本构成、问题设置和整体反馈分布。
   - 区分不同角色的需求，而不把少数意见扩大为全体。
   - 说明哪些结论已支持、哪些仍需验证及其优先级含义。
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - product-thinking

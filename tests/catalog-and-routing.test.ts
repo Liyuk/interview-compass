@@ -1,10 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import {
-  capabilityCounts, facetCounts, getQuestions, listFacetValues, parseFilterQuery, publishedDomains, serializeFilterQuery,
+  capabilityCounts, facetCounts, getPathQuestions, getQuestions, listFacetValues, parseFilterQuery, publishedDomains, serializeFilterQuery,
   type BrowseRecord,
 } from '../src/lib/question-catalog';
 import { addBase, localeSwitchPath } from '../src/lib/locale-paths';
-import { filterLocalizedResults } from '../src/lib/search-records';
+import { filterLocalizedResults, safeSearchResultHref } from '../src/lib/search-records';
+import { crossDomainPaths, domains } from '../src/lib/taxonomy';
 
 const record = (overrides: Partial<BrowseRecord>): BrowseRecord => ({
   questionId: 'q1', locale: 'zh-CN', status: 'published', title: '标题', question: '问题', intent: '意图',
@@ -39,6 +40,16 @@ describe('question discovery', () => {
     expect(getQuestions(records, { locale: 'zh-CN', domain: 'professional' })).toEqual([]);
   });
 
+  it('includes every path topic while retaining primary-domain sections', () => {
+    const pathRecords = [
+      record({ questionId: 'q1', primaryCapability: 'value-direction.planning', topics: ['business-planning'] }),
+      record({ questionId: 'q2', primaryCapability: 'delivery.project-management', topics: ['team-planning'] }),
+      record({ questionId: 'q3', primaryCapability: 'domain-modeling.business-context', topics: ['commercialization'] }),
+    ];
+    expect(getPathQuestions(pathRecords, { locale: 'zh-CN', domain: 'value-direction', topics: ['business-planning', 'team-planning'] }).map((item) => item.questionId)).toEqual(['q1']);
+    expect(getPathQuestions(pathRecords, { locale: 'zh-CN', domain: 'delivery', topics: ['business-planning', 'team-planning'] }).map((item) => item.questionId)).toEqual(['q2']);
+  });
+
   it('counts unique question IDs in the selected language only', () => {
     expect(facetCounts(records, { locale: 'zh-CN', facet: 'roles' }).get('engineering')).toBe(2);
     expect(facetCounts(records, { locale: 'zh-CN', facet: 'roles' }).get('product')).toBe(1);
@@ -62,6 +73,33 @@ describe('question discovery', () => {
   });
 });
 
+describe('taxonomy audit coverage', () => {
+  it('gives every capability leaf a bilingual placement rule', () => {
+    const leaves = domains.flatMap((domain) => domain.leaves);
+    expect(leaves.length).toBeGreaterThan(0);
+    for (const leaf of leaves) {
+      expect(leaf.placement.zh, `${leaf.id} needs a Chinese placement rule`).toMatch(/收录|归入|包括|规划中/);
+      expect(leaf.placement.en, `${leaf.id} needs an English placement rule`).toMatch(/Include|Use this leaf|Assign here|Planned/i);
+      expect(leaf.boundary.zh).toBeTruthy();
+      expect(leaf.boundary.en).toBeTruthy();
+    }
+  });
+
+  it('defines the audit browse paths with distinct, valid topic tags and bilingual copy', () => {
+    const ids = crossDomainPaths.map((path) => path.id);
+    expect(ids).toEqual(expect.arrayContaining([
+      'asking-better-questions', 'business-planning', 'technical-planning', 'team-planning',
+    ]));
+    for (const path of crossDomainPaths) {
+      expect(path.topics.length).toBeGreaterThan(0);
+      expect(path.name.zh).toBeTruthy();
+      expect(path.name.en).toBeTruthy();
+      expect(path.description.zh).toBeTruthy();
+      expect(path.description.en).toBeTruthy();
+    }
+  });
+});
+
 describe('localized routes and search', () => {
   it('applies the GitHub Pages base to root and English routes exactly once', () => {
     expect(addBase('/questions/q1/', '/interview-compass')).toBe('/interview-compass/questions/q1/');
@@ -81,5 +119,13 @@ describe('localized routes and search', () => {
       { url: '/en/questions/q1/', locale: 'en', title: 'Resource planning' },
     ], 'en');
     expect(results.map((item) => item.title)).toEqual(['Resource planning']);
+  });
+
+  it('accepts only same-origin search destinations inside the configured base path', () => {
+    const options = { origin: 'https://liyuk.github.io', basePath: '/interview-compass' };
+    expect(safeSearchResultHref('/interview-compass/en/questions/q1/', options)).toBe('/interview-compass/en/questions/q1/');
+    expect(safeSearchResultHref('https://example.com/phishing', options)).toBeUndefined();
+    expect(safeSearchResultHref('javascript:alert(1)', options)).toBeUndefined();
+    expect(safeSearchResultHref('/outside/questions/q1/', options)).toBeUndefined();
   });
 });

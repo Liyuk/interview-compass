@@ -12,7 +12,7 @@ signals:
   - Arranges investment in stages and says the goal, staffing, and checkpoint of each
   - Says how to adjust when growth falls short of or exceeds expectation
 primaryCapability: professional.system-design
-topics: [system-design, reliability, planning, distributed-systems]
+topics: [system-design, reliability, planning, distributed-systems, technical-planning]
 roles: [engineering, backend, manager]
 responsibilityScopes: [team, multiple-teams]
 careerTracks: [team-manager, senior-manager]

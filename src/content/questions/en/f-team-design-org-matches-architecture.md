@@ -12,7 +12,7 @@ signals:
   - Brings the cost of technology and servers into the measures used in product decisions
   - Says how review and mechanisms make these trade-offs open
 primaryCapability: people-organization.team-design
-topics: [management, system-design, resource-allocation]
+topics: [management, system-design, resource-allocation, team-planning]
 roles: [product, manager, engineering]
 responsibilityScopes: [multiple-teams, organization]
 careerTracks: [senior-manager, executive]

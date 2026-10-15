@@ -12,7 +12,7 @@ signals:
   - 发现不一致时，说明调整团队和向上反馈两种做法的取舍
   - 说明怎样让团队成员也理解这种对齐，而不只是管理层知道
 primaryCapability: value-direction.planning
-topics: [planning, communication, product-thinking]
+topics: [planning, communication, product-thinking, business-planning]
 roles: [manager, product, engineering, pmo]
 responsibilityScopes: [team, multiple-teams, organization]
 careerTracks: [team-manager, senior-manager]

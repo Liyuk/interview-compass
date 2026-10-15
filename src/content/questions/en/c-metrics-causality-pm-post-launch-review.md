@@ -11,7 +11,7 @@ signals:
   - Separates early post-launch fluctuation from the settled result
   - Says what the review would change, such as continuing to invest, adjusting, or retiring the feature
   - Is candid about cases where the goal was not met
-primaryCapability: value-direction.metrics-causality
+primaryCapability: value-direction.business-outcomes
 topics: [metrics, product-thinking]
 roles: [product, operations, data, engineering]
 responsibilityScopes: [individual, team]

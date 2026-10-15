@@ -12,7 +12,7 @@ signals:
   - When direct contact with the people doing the work is necessary, says how it avoids weakening the team lead's authority
   - Says how blind spots or filtered information in team leads are detected
 primaryCapability: people-organization.manager-of-managers
-topics: [management, communication]
+topics: [management, communication, team-planning]
 roles: [manager]
 responsibilityScopes: [multiple-teams]
 careerTracks: [senior-manager]

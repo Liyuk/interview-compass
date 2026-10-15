@@ -12,7 +12,7 @@ signals:
   - 帮助技术负责人准备业务高层能做决定的材料，包括选项和代价
   - 说明怎样跟踪重构是否真的提升了迭代速度
 primaryCapability: value-direction.investment-choices
-topics: [engineering-systems, planning, communication]
+topics: [engineering-systems, planning, communication, technical-planning]
 roles: [product, manager]
 responsibilityScopes: [team, multiple-teams]
 careerTracks: [team-manager, senior-manager]

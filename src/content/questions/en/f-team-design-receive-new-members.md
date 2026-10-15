@@ -12,7 +12,7 @@ signals:
   - Pays attention to existing members' unease, such as a diluted role, and communicates proactively
   - Says how it is checked that integration really happened, not only by meetings held
 primaryCapability: people-organization.team-design
-topics: [management, communication]
+topics: [management, communication, team-planning]
 roles: [manager]
 responsibilityScopes: [team, multiple-teams]
 careerTracks: [team-manager, senior-manager]

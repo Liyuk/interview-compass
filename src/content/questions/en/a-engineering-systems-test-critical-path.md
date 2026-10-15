@@ -10,7 +10,7 @@ signals:
   - "Lists risks first, then ranks them by likelihood and impact"
   - "Explains what counts as the critical path and why"
   - "Does not treat the coverage number itself as the goal"
-primaryCapability: professional.engineering-systems
+primaryCapability: professional.quality-security-safety
 topics: [engineering-systems, reliability]
 roles: [engineering, backend, frontend, mobile]
 responsibilityScopes: [individual, team]

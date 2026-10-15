@@ -15,6 +15,7 @@ topics:
   - management
   - planning
   - resource-allocation
+  - team-planning
 roles:
   - manager
   - pmo

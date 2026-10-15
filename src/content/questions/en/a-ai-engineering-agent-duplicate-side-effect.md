@@ -12,12 +12,10 @@ question: >-
 intent: Assess whether you can separate model decisions from real-world writes and design safe failure semantics.
 signals:
   - Separates read-only tools from side-effecting actions
-  - Distinguishes a new model decision from a network retry of the same tool request
   - Uses idempotency keys, status checks, or human confirmation for uncertain outcomes
   - Sets confirmation thresholds by permission, amount, or risk
   - Explains recovery across retries, timeouts, and partial success
   - Separates a new model decision from a network retry of the same tool request
-  - Discusses idempotency keys, operation-status lookup, and result acknowledgment
   - Explains how to pause or ask for human handling when execution status is unknown
 primaryCapability: professional.ai-engineering
 topics:

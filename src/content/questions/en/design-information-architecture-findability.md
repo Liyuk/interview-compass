@@ -24,7 +24,7 @@ signals:
   - >-
     Identifies overlapping categories, permission differences, and empty-result paths and explains
     how the architecture will evolve
-primaryCapability: domain-modeling.product-project-model
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - product-thinking

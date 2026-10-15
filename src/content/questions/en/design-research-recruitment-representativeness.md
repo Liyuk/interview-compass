@@ -12,7 +12,7 @@ signals:
   - Define user states and critical tasks to cover.
   - Recruit non-completers, silent, churned, and users with accessibility needs.
   - Report sample coverage, nonresponse bias, and where findings apply.
-primaryCapability: value-direction.product-judgment
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - accessibility

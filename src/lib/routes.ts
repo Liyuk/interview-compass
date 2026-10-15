@@ -32,12 +32,12 @@ export type NavKey = 'questions' | 'capabilities' | 'capability-model' | 'roles'
 const text = (zh: string, en: string): Bilingual => ({ zh, en });
 const labels = {
   home: text('首页', 'Home'),
-  questions: text('问题库', 'Questions'),
+  questions: text('面试题库', 'Question bank'),
   capabilities: text('能力地图', 'Capability map'),
-  roles: text('岗位', 'Roles'),
+  roles: text('岗位导航', 'Role paths'),
   scenarios: text('使用场景', 'Use cases'),
-  capabilityModel: text('能力模型', 'Capability model'),
-  topics: text('主题', 'Topics'),
+  capabilityModel: text('阶段能力', 'Stage expectations'),
+  topics: text('主题索引', 'Topics'),
   guide: text('使用说明', 'Guide'),
 };
 

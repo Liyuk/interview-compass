@@ -1,8 +1,10 @@
 ---
+import Icon from '../components/Icon.astro';
+import CapabilityReference from '../components/CapabilityReference.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { getDimensionProgression, validateCapabilityModel, type CapabilityDimensionId } from '../lib/capability-model';
 import { pathFor, type RouteRef } from '../lib/routes';
-import { splitCapability, type Locale } from '../lib/taxonomy';
+import type { Locale } from '../lib/taxonomy';
 interface Props { locale: Locale; dimension: CapabilityDimensionId }
 const { locale, dimension: dimensionId } = Astro.props;
 const en = locale === 'en';
@@ -36,9 +38,9 @@ const route: RouteRef = { type: 'capability-model-dimension', dimension: dimensi
         <article class="progression-stage">
           <div class="progression-marker"><span>{String(index + 1).padStart(2, '0')}</span></div>
           <div class="progression-content">
-            <div class="progression-title"><h3>{stage.name}</h3><a href={pathFor({ type: 'capability-model-stage', stage: stage.id }, locale, base)}>{en ? 'Full stage profile' : '完整阶段画像'} →</a></div>
+            <div class="progression-title"><h3>{stage.name}</h3><a href={pathFor({ type: 'capability-model-stage', stage: stage.id }, locale, base)}>{en ? 'Full stage profile' : '完整阶段画像'} <Icon name="arrow-right" size={16} /></a></div>
             <p class="progression-summary">{stage.summary}</p>
-            <ul>{standards.map((standard) => <li><strong>{standard.text}</strong>{standard.evidence && <small>{en ? 'Evidence: ' : '观察证据：'}{standard.evidence}</small>}<div class="capability-links">{standard.capabilities.map((reference) => { const match = splitCapability(reference.id); return match.domain && match.leaf ? <a href={pathFor({ type: 'leaf', domain: match.domain.id, leaf: match.leaf.id }, locale, base)}>{locale === 'en' ? match.leaf.name.en : match.leaf.name.zh}</a> : null; })}</div></li>)}</ul>
+            <ul>{standards.map((standard) => <li><strong>{standard.text}</strong>{standard.evidence && <small>{en ? 'Evidence: ' : '观察证据：'}{standard.evidence}</small>}<div class="capability-links">{standard.capabilities.map((reference) => <CapabilityReference capability={reference.id} locale={locale} base={base} />)}</div></li>)}</ul>
           </div>
         </article>
       ) )}</div>

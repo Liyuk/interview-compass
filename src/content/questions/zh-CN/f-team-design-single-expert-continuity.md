@@ -15,6 +15,7 @@ topics:
   - management
   - risk-management
   - execution
+  - team-planning
 roles:
   - manager
   - engineering

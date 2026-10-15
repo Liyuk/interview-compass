@@ -10,7 +10,7 @@ signals:
   - 区分用户的查找任务、对象关系和组织内部术语，并明确关键使用情境
   - 通过树测试、任务测试或可用性走查验证标签和层级是否可发现
   - 识别分类重叠、权限差异和无结果路径，并说明如何迭代信息架构
-primaryCapability: domain-modeling.product-project-model
+primaryCapability: professional.product-discovery-design
 topics:
   - product-discovery
   - product-thinking

@@ -12,7 +12,7 @@ signals:
   - 区分已经被验证的趋势和仍然只是预期的趋势
   - 说明判断的信息来源，以及其可靠程度
 primaryCapability: professional.engineering-systems
-topics: [engineering-systems, system-design, ai-engineering]
+topics: [engineering-systems, system-design, ai-engineering, technical-planning]
 roles: [engineering, backend, frontend, mobile, ai-engineer, manager]
 responsibilityScopes: [team, multiple-teams]
 careerTracks: [individual-contributor, team-manager, senior-manager]

@@ -12,11 +12,12 @@ signals:
   - Segment suppliers and measure listing frequency, price, and exit behavior.
   - Estimate net revenue alongside conversion, retention, and supply quality.
   - Compare rate, benefit, and audience options through tests.
-primaryCapability: domain-modeling.business-context
+primaryCapability: value-direction.market-economic-judgment
 topics:
   - commercialization
   - metrics
   - product-thinking
+  - business-planning
 roles:
   - product
   - marketing

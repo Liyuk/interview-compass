@@ -1,0 +1,27 @@
+---
+import { pathFor } from '../lib/routes';
+import type { Locale } from '../lib/taxonomy';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const plans = [
+  { name: en ? 'Business planning' : '业务规划', dimension: 'business-results' as const,
+    question: en ? 'Which outcomes and opportunities justify investment?' : '哪些目标和机会值得投入？',
+    scope: en ? 'Users, opportunity evidence, baseline measures, investment, work declined, and exit conditions.' : '用户与机会证据、结果基线、投入、不做清单与退出条件。',
+    evidence: en ? 'Compare expected and actual outcomes; use findings to reprioritize.' : '比较预期与实际结果，根据证据重排投入。' },
+  { name: en ? 'Technical planning' : '技术规划', dimension: 'domain-expertise' as const,
+    question: en ? 'Which technical capabilities must evolve, and in what order?' : '哪些技术能力需要演进，先后顺序是什么？',
+    scope: en ? 'Architecture, data, technical debt, platform and AI investments, dependencies, migration, and rollback.' : '架构、数据、技术债、平台与 AI 投入、依赖、迁移与回退。',
+    evidence: en ? 'Validate adoption, quality, cost, and migration risk at staged checkpoints.' : '分阶段验证采用情况、质量、成本与迁移风险。' },
+  { name: en ? 'Team planning' : '团队规划', dimension: 'team-influence' as const,
+    question: en ? 'Which capabilities, roles, and capacity make the plan achievable?' : '需要什么能力、岗位与容量，计划才可执行？',
+    scope: en ? 'Capability gaps, responsibility boundaries, capacity, hiring, development, delegation, and succession.' : '能力缺口、责任边界、容量、招聘、培养、授权与继任。',
+    evidence: en ? 'Check independent ownership, capability supply, workload, and delivery continuity.' : '检验独立负责能力、人才供给、负荷和交付连续性。' },
+];
+---
+<section class="model-section" aria-labelledby="planning-heading">
+  <div class="model-section-heading"><h2 id="planning-heading">{en ? 'Three kinds of planning to examine explicitly' : '技术、团队、业务规划，分别检查'}</h2></div>
+  <p class="model-note">{en ? 'These are connected planning responsibilities within the four evaluation dimensions. Earlier stages participate and decompose; senior engineers own a project or domain plan; staff and management roles align longer-term plans across teams through their respective tracks.' : '三类规划相互约束，分别落在四个评价维度中的专业领域、团队影响力和业务结果。初中级侧重参与和拆解，高级负责项目或领域规划；资深与管理者沿各自路径统筹跨团队与长期取舍。'}</p>
+  <dl class="planning-outline">{plans.map(plan => <div><dt><a href={pathFor({ type: 'capability-model-dimension', dimension: plan.dimension }, locale, base)}>{plan.name}</a></dt><dd><strong>{plan.question}</strong><p>{plan.scope}</p><p><span>{en ? 'Evidence: ' : '检验证据：'}</span>{plan.evidence}</p></dd></div>)}</dl>
+</section>
