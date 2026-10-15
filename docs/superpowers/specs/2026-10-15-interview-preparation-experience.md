@@ -96,4 +96,3 @@ Package `interview-compass-coach` as a discoverable Codex skill with two support
 8. The JSON index contains one compact public entry per question in each locale; per-question endpoints return exactly one localized public record and evaluation framework; neither contains private/local practice content; both are accessible under the Pages base path and consumed by the site practice and companion skill.
 9. The skill is self-contained, discoverable, bilingual-aware, tested against the live question-data shape, and includes an explicit fallback when a question cannot be fetched.
 10. `npm run ci` passes, all static routes and JSON feeds are present in `dist`, and the final branch is committed and opened as a PR against `main`.
-

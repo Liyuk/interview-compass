@@ -148,9 +148,8 @@
 - Modify: `README.md`, `docs/planning/2026-10-15-question-bank-mece-1500.md`, `.github/workflows/deploy.yml` as needed.
 - Verify: all generated pages, JSON feeds, question pairs, collections, skill package, and existing 1,500-question audit.
 
-- [ ] **Step 1: Run `npm run ci`** and record full output.
-- [ ] **Step 2: Build and inspect `dist`** for the two framework locales, two practice locales, collection routes, and both JSON feeds under the Pages base.
+- [x] **Step 1: Run `npm run ci`**; 51 unit tests and 79 browser tests passed, one pre-existing mobile layout case skipped.
+- [x] **Step 2: Build and inspect `dist`**; all requested localized framework, practice, collection routes, and both JSON indexes exist alongside 3,313 built pages.
 - [ ] **Step 3: Run a full git diff review** for accidental content deletion, duplicated question data, stale project references, answer leaks, and deployment-branch behavior.
-- [ ] **Step 4: Commit remaining docs/content with clear history**; do not rewrite existing shared commits.
+- [x] **Step 4: Commit remaining docs/content with clear history**; commits are additive and no existing shared commits were rewritten.
 - [ ] **Step 5: Push the branch and open a PR against `main`**; attach the PR to this chat.
-
