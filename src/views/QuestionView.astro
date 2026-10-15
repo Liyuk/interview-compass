@@ -27,6 +27,7 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
 <SiteLayout locale={locale} route={route} description={record.intent}>
   <p class="eyebrow">{domain?.letter} · {domain && pick(domain.name, locale)} <Icon name="chevron-right" size={14} /> {leaf && pick(leaf.name, locale)}</p>
   <h1 class="page-title" data-pagefind-meta="title">{record.question}</h1>
+  <p class="question-practice-link"><a class="button-link" href={`${pathFor({ type: 'practice' }, locale, base)}?question=${encodeURIComponent(record.questionId)}`}>{en ? 'Practice this question' : '开始练习'} <Icon name="arrow-up-right" size={16} /></a></p>
 
   <div data-pagefind-body>
     <section class="detail-block" aria-labelledby="objective-h">

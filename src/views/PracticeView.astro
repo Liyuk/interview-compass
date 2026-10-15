@@ -1,0 +1,171 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import type { Locale } from '../lib/taxonomy';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+---
+
+<SiteLayout locale={locale} route={{ type: 'practice' }} description={en ? 'Practice an interview question locally and create a structured prompt to analyze your answer with an AI tool you choose.' : '在本机练习面试问题，并生成结构化提示词，交由你选择的 AI 工具分析。'}>
+  <header class="practice-header">
+    <p class="eyebrow">{en ? 'PRIVATE PRACTICE' : '本地练习'}</p>
+    <h1 class="page-title">{en ? 'Practice an answer' : '回答练习'}</h1>
+    <p class="intro">{en ? 'Choose a question, write in your own words, and create an analysis prompt when you are ready. Your answer stays in this browser unless you copy it to another tool.' : '选择一道题，用自己的话作答；准备好后再生成分析提示词。回答只保存在当前浏览器，除非你主动复制到其他工具。'}</p>
+  </header>
+
+  <section class="practice-picker" aria-labelledby="practice-picker-heading">
+    <h2 id="practice-picker-heading">{en ? 'Choose a question' : '选择问题'}</h2>
+    <label for="practice-search">{en ? 'Search the published question bank' : '搜索并选择问题'}</label>
+    <input id="practice-search" type="search" autocomplete="off" aria-controls="practice-search-results" placeholder={en ? 'Search by question or topic' : '按问题或主题搜索'} />
+    <div id="practice-search-results" class="practice-search-results" role="listbox" aria-label={en ? 'Matching questions' : '匹配的问题'}></div>
+    <p id="practice-status" role="status" aria-live="polite" class="practice-status"></p>
+  </section>
+
+  <section id="practice-workspace" class="practice-workspace" hidden aria-labelledby="selected-question-title">
+    <div class="practice-question-card"><p class="eyebrow">{en ? 'SELECTED QUESTION' : '当前问题'}</p><h2 id="selected-question-title"></h2><p id="selected-question-intent"></p></div>
+    <div class="practice-context-fields">
+      <label>{en ? 'Target role' : '目标岗位'}<input id="practice-role" type="text" autocomplete="organization-title" /></label>
+      <label>{en ? 'Target stage' : '目标阶段'}<input id="practice-stage" type="text" /></label>
+      <label>{en ? 'Practice goal' : '训练目标'}<input id="practice-goal" type="text" /></label>
+    </div>
+    <label class="practice-field-label" for="practice-answer">{en ? 'Your answer' : '你的回答'}</label>
+    <textarea id="practice-answer" rows="10" placeholder={en ? 'Write what you would say in your own words…' : '用自己的话写下你会怎样回答……'}></textarea>
+    <p id="draft-status" class="practice-status" role="status" aria-live="polite"></p>
+    <div class="practice-actions">
+      <button id="build-practice-prompt" type="button" class="button-link">{en ? 'Create analysis prompt' : '生成分析提示词'}</button>
+      <button id="clear-practice-draft" type="button" class="practice-secondary-button">{en ? 'Clear this draft' : '清除本题草稿'}</button>
+      <button id="export-practice-draft" type="button" class="practice-secondary-button">{en ? 'Export draft' : '导出草稿'}</button>
+    </div>
+    <section class="practice-prompt-panel" aria-labelledby="practice-prompt-heading">
+      <div class="practice-panel-heading"><h2 id="practice-prompt-heading">{en ? 'AI analysis prompt' : '交给外部 AI 的提示词'}</h2><button id="copy-practice-prompt" type="button" class="practice-secondary-button">{en ? 'Copy prompt' : '复制提示词'}</button></div>
+      <p>{en ? 'Nothing is sent automatically. Copy this prompt into the AI tool you choose, then review its analysis critically.' : '本站不会自动发送任何内容。将提示词复制到你选择的 AI 工具，再批判性地检查它的分析。'}</p>
+      <textarea id="practice-prompt" rows="12" readonly aria-label={en ? 'Prompt for an external AI' : '交给外部 AI 的提示词'}></textarea>
+      <p id="copy-status" class="practice-status" role="status" aria-live="polite"></p>
+    </section>
+    <label class="practice-field-label" for="practice-feedback">{en ? 'Optional feedback to keep with this draft' : '可选：记录 AI 反馈或自己的复盘'}</label>
+    <textarea id="practice-feedback" rows="5" placeholder={en ? 'Paste feedback here only if you want to keep it in this browser.' : '如果希望保留反馈，可以粘贴在这里；内容只保存在本机浏览器。'}></textarea>
+    <aside class="practice-privacy"><strong>{en ? 'Privacy and limits' : '隐私与使用边界'}</strong><p>{en ? 'Answers and pasted feedback are stored only in local browser storage. They are not sent to this website. If you copy the prompt elsewhere, that tool’s privacy terms apply. The prompt asks for evidence-based coaching, not a model answer, personality diagnosis, total score, or hiring recommendation.' : '回答和粘贴的反馈只存于本机浏览器，不会发送到本站。复制到其他工具后，适用该工具的隐私规则。提示词要求基于证据辅导，不生成示范答案、人格诊断、总分或录用建议。'}</p></aside>
+  </section>
+
+  <script>
+    import { buildPracticePrompt } from '../lib/practice-prompt';
+    import type { PublicQuestionRecord, QuestionIndexRecord } from '../lib/question-feed';
+
+    const locale = document.documentElement.lang === 'en' ? 'en' : 'zh-CN';
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    const en = locale === 'en';
+    const search = document.querySelector<HTMLInputElement>('#practice-search')!;
+    const results = document.querySelector<HTMLDivElement>('#practice-search-results')!;
+    const status = document.querySelector<HTMLElement>('#practice-status')!;
+    const workspace = document.querySelector<HTMLElement>('#practice-workspace')!;
+    const answer = document.querySelector<HTMLTextAreaElement>('#practice-answer')!;
+    const feedback = document.querySelector<HTMLTextAreaElement>('#practice-feedback')!;
+    const promptField = document.querySelector<HTMLTextAreaElement>('#practice-prompt')!;
+    const draftStatus = document.querySelector<HTMLElement>('#draft-status')!;
+    const copyStatus = document.querySelector<HTMLElement>('#copy-status')!;
+    const role = document.querySelector<HTMLInputElement>('#practice-role')!;
+    const stage = document.querySelector<HTMLInputElement>('#practice-stage')!;
+    const goal = document.querySelector<HTMLInputElement>('#practice-goal')!;
+    type Draft = { answer: string; feedback: string; role: string; stage: string; goal: string };
+    let index: QuestionIndexRecord[] = [];
+    let selected: PublicQuestionRecord | undefined;
+    let saveTimer: number | undefined;
+    let storageAvailable = true;
+    const message = (zh: string, english: string) => en ? english : zh;
+    const keyFor = (id: string) => `interview-compass:practice:${locale}:${id}`;
+    const getDraft = (id: string): Draft => {
+      try {
+        const value = localStorage.getItem(keyFor(id));
+        if (!value) return { answer: '', feedback: '', role: '', stage: '', goal: '' };
+        const parsed = JSON.parse(value) as Partial<Draft>;
+        return { answer: parsed.answer ?? '', feedback: parsed.feedback ?? '', role: parsed.role ?? '', stage: parsed.stage ?? '', goal: parsed.goal ?? '' };
+      } catch { storageAvailable = false; return { answer: '', feedback: '', role: '', stage: '', goal: '' }; }
+    };
+    const saveDraft = () => {
+      if (!selected) return;
+      window.clearTimeout(saveTimer);
+      saveTimer = window.setTimeout(() => {
+        try {
+          localStorage.setItem(keyFor(selected!.questionId), JSON.stringify({ answer: answer.value, feedback: feedback.value, role: role.value, stage: stage.value, goal: goal.value } satisfies Draft));
+          draftStatus.textContent = message('草稿已保存在本机浏览器', 'Draft saved in this browser');
+        } catch { storageAvailable = false; draftStatus.textContent = message('浏览器无法保存，内容暂留在当前页面。', 'Storage is unavailable; your text remains in this page for now.'); }
+      }, 120);
+    };
+    const selectQuestion = async (id: string) => {
+      const item = index.find((question) => question.questionId === id);
+      if (!item) return;
+      status.textContent = message('正在载入问题框架……', 'Loading question framework…');
+      try {
+        const response = await fetch(`${base}/data/question/${locale}/${encodeURIComponent(id)}.json`);
+        if (!response.ok) throw new Error('Question unavailable');
+        selected = await response.json() as PublicQuestionRecord;
+        document.querySelector('#selected-question-title')!.textContent = selected.question;
+        document.querySelector('#selected-question-intent')!.textContent = `${selected.evaluation.intentTitle}：${selected.evaluation.intent}`;
+        const draft = getDraft(id);
+        answer.value = draft.answer; feedback.value = draft.feedback; role.value = draft.role; stage.value = draft.stage; goal.value = draft.goal;
+        workspace.hidden = false;
+        search.value = item.question;
+        results.replaceChildren();
+        status.textContent = '';
+        draftStatus.textContent = storageAvailable ? '' : message('浏览器本机存储不可用，仍可在当前页面练习。', 'Local storage is unavailable; you can still practice in this page.');
+        history.replaceState(null, '', `${location.pathname}?question=${encodeURIComponent(id)}`);
+      } catch {
+        selected = undefined;
+        workspace.hidden = true;
+        status.textContent = message('没有找到这道题，请从题库选择。', 'Question not found. Choose one from the library.');
+      }
+    };
+    const renderResults = () => {
+      const query = search.value.trim().toLocaleLowerCase(locale);
+      results.replaceChildren();
+      if (!query) return;
+      const matches = index.filter((item) => `${item.question} ${item.title} ${item.topics.join(' ')}`.toLocaleLowerCase(locale).includes(query)).slice(0, 10);
+      if (!matches.length) { status.textContent = message('没有找到匹配的问题。', 'No matching questions.'); return; }
+      status.textContent = message(`显示前 ${matches.length} 条匹配问题。`, `Showing ${matches.length} matching questions.`);
+      for (const item of matches) {
+        const button = document.createElement('button');
+        button.type = 'button'; button.className = 'practice-result'; button.setAttribute('role', 'option');
+        const title = document.createElement('strong'); title.textContent = item.question;
+        const meta = document.createElement('span'); meta.textContent = `${item.questionId} · ${item.topics.join(', ')}`;
+        button.append(title, meta);
+        button.addEventListener('click', () => void selectQuestion(item.questionId));
+        results.append(button);
+      }
+    };
+    search.addEventListener('input', renderResults);
+    for (const field of [answer, feedback, role, stage, goal]) field.addEventListener('input', saveDraft);
+    document.querySelector<HTMLButtonElement>('#build-practice-prompt')!.addEventListener('click', () => {
+      if (!selected) return;
+      promptField.value = buildPracticePrompt({ locale, question: selected, evaluation: selected.evaluation, answer: answer.value, role: role.value, stage: stage.value, goal: goal.value });
+      promptField.focus();
+    });
+    document.querySelector<HTMLButtonElement>('#copy-practice-prompt')!.addEventListener('click', async () => {
+      if (!promptField.value) { copyStatus.textContent = message('请先生成提示词。', 'Create the prompt first.'); return; }
+      try { await navigator.clipboard.writeText(promptField.value); copyStatus.textContent = message('已复制。请粘贴到你选择的 AI 工具。', 'Copied. Paste it into the AI tool you choose.'); }
+      catch { promptField.focus(); promptField.select(); copyStatus.textContent = message('自动复制不可用，提示词已选中，可手动复制。', 'Clipboard access is unavailable; the prompt is selected for manual copying.'); }
+    });
+    document.querySelector<HTMLButtonElement>('#clear-practice-draft')!.addEventListener('click', () => {
+      if (!selected) return;
+      window.clearTimeout(saveTimer); answer.value = ''; feedback.value = ''; role.value = ''; stage.value = ''; goal.value = ''; promptField.value = '';
+      try { localStorage.removeItem(keyFor(selected.questionId)); } catch { storageAvailable = false; }
+      draftStatus.textContent = message('已清除本题草稿。', 'This question’s draft was cleared.');
+    });
+    document.querySelector<HTMLButtonElement>('#export-practice-draft')!.addEventListener('click', () => {
+      if (!selected) return;
+      const file = new Blob([JSON.stringify({ questionId: selected.questionId, locale, answer: answer.value, feedback: feedback.value, role: role.value, stage: stage.value, goal: goal.value }, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(file); const link = document.createElement('a'); link.href = url; link.download = `interview-compass-${selected.questionId}.json`; link.click(); URL.revokeObjectURL(url);
+    });
+    void fetch(`${base}/data/questions/${locale}.json`).then(async (response) => {
+      if (!response.ok) throw new Error('Question index unavailable');
+      const data = await response.json() as { questions: QuestionIndexRecord[] };
+      index = data.questions;
+      const requested = new URLSearchParams(location.search).get('question');
+      if (requested) {
+        const item = index.find((question) => question.questionId === requested);
+        if (item) void selectQuestion(item.questionId);
+        else status.textContent = message('没有找到这道题，请从题库选择。', 'Question not found. Choose one from the library.');
+      }
+    }).catch(() => { status.textContent = message('题库暂时无法载入，请稍后重试。', 'The question bank could not be loaded. Please try again.'); });
+  </script>
+</SiteLayout>

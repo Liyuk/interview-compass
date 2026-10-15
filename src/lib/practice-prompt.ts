@@ -6,7 +6,7 @@ type QuestionEvaluation = ReturnType<typeof questionEvaluation>;
 
 export type PracticePromptInput = {
   locale: Locale;
-  question: QuestionRecord;
+  question: Omit<QuestionRecord, 'status'>;
   evaluation: QuestionEvaluation;
   answer: string;
   role?: string;
