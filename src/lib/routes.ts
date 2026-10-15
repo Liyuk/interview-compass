@@ -1,4 +1,5 @@
 import { addBase } from './locale-paths';
+import { getDimensionProgression, getStageProfile, type CapabilityDimensionId, type StageId } from './capability-model';
 import {
   crossDomainPaths, domains, facetLabel, facetMeta, pick, splitCapability,
   type Bilingual, type FacetKind, type Locale,
@@ -20,9 +21,13 @@ export type RouteRef =
   | { type: 'topic'; id: string }
   | { type: 'path'; id: string }
   | { type: 'question'; questionId: string; capability: string; title: string }
+  | { type: 'capability-model' }
+  | { type: 'capability-model-stage'; stage: StageId }
+  | { type: 'capability-model-dimension'; dimension: CapabilityDimensionId }
+  | { type: 'capability-model-mapping' }
   | { type: 'guide' };
 
-export type NavKey = 'questions' | 'capabilities' | 'roles' | 'scenarios' | 'topics' | '';
+export type NavKey = 'questions' | 'capabilities' | 'capability-model' | 'roles' | 'scenarios' | 'topics' | '';
 
 const text = (zh: string, en: string): Bilingual => ({ zh, en });
 const labels = {
@@ -31,6 +36,7 @@ const labels = {
   capabilities: text('能力地图', 'Capability map'),
   roles: text('岗位', 'Roles'),
   scenarios: text('面试与晋升', 'Interview and promotion'),
+  capabilityModel: text('能力模型', 'Capability model'),
   topics: text('主题', 'Topics'),
   guide: text('使用说明', 'Guide'),
 };
@@ -46,6 +52,10 @@ export function pathFor(ref: RouteRef, locale: Locale, base = ''): string {
       case 'home': return `${root}/`;
       case 'questions': return `${root}/questions/`;
       case 'capabilities': return `${root}/capabilities/`;
+      case 'capability-model': return `${root}/capability-model/`;
+      case 'capability-model-stage': return `${root}/capability-model/stages/${ref.stage}/`;
+      case 'capability-model-dimension': return `${root}/capability-model/dimensions/${ref.dimension}/`;
+      case 'capability-model-mapping': return `${root}/capability-model/mapping/`;
       case 'domain': return `${root}/capabilities/${ref.domain}/`;
       case 'leaf': return `${root}/capabilities/${ref.domain}/${ref.leaf}/`;
       case 'roles': return `${root}/roles/`;
@@ -81,6 +91,10 @@ export function titleFor(ref: RouteRef, locale: Locale): string {
     case 'home': return pick(labels.home, locale);
     case 'questions': return pick(labels.questions, locale);
     case 'capabilities': return pick(labels.capabilities, locale);
+    case 'capability-model': return pick(labels.capabilityModel, locale);
+    case 'capability-model-stage': return getStageProfile(ref.stage, locale).name;
+    case 'capability-model-dimension': return getDimensionProgression(ref.dimension, locale).name;
+    case 'capability-model-mapping': return locale === 'en' ? 'China and US comparison' : '中美能力模型对照';
     case 'domain': return domainName(ref.domain, locale);
     case 'leaf': return leafName(ref.domain, ref.leaf, locale);
     case 'roles': return pick(labels.roles, locale);
@@ -99,6 +113,8 @@ export function parentOf(ref: RouteRef): RouteRef | undefined {
   switch (ref.type) {
     case 'home': return undefined;
     case 'questions': case 'capabilities': case 'roles': case 'scenarios': case 'topics': case 'guide': return { type: 'home' };
+    case 'capability-model': return { type: 'home' };
+    case 'capability-model-stage': case 'capability-model-dimension': case 'capability-model-mapping': return { type: 'capability-model' };
     case 'domain': return { type: 'capabilities' };
     case 'leaf': return { type: 'domain', domain: ref.domain };
     case 'role': return { type: 'roles' };
@@ -129,6 +145,7 @@ export function activeNavFor(ref: RouteRef): NavKey {
   switch (ref.type) {
     case 'questions': case 'question': return 'questions';
     case 'capabilities': case 'domain': case 'leaf': return 'capabilities';
+    case 'capability-model': case 'capability-model-stage': case 'capability-model-dimension': case 'capability-model-mapping': return 'capability-model';
     case 'roles': case 'role': return 'roles';
     case 'scenarios': case 'scenario': return 'scenarios';
     case 'topics': case 'topic': return 'topics';

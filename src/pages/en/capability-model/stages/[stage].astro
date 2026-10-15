@@ -1,0 +1,9 @@
+---
+import { getStageProfile, stageIds, type StageId } from '../../../../lib/capability-model';
+export function getStaticPaths() {
+  return stageIds.map((stage) => ({ params: { stage } }));
+}
+const profile = getStageProfile(Astro.params.stage as StageId, 'en');
+---
+<h1>{profile.name}</h1>
+<p>{profile.summary}</p>

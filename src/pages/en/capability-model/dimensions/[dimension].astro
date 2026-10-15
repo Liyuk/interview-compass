@@ -1,0 +1,8 @@
+---
+import { dimensionIds, getDimensionProgression, type CapabilityDimensionId } from '../../../../lib/capability-model';
+export function getStaticPaths() {
+  return dimensionIds.map((dimension) => ({ params: { dimension } }));
+}
+const progression = getDimensionProgression(Astro.params.dimension as CapabilityDimensionId, 'en');
+---
+<h1>{progression.name}</h1>
