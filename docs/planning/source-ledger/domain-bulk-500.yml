@@ -152,7 +152,7 @@ sources:
     url: https://github.com/donnemartin/system-design-primer
     status: used
     questions:
-      - bulk-a-debug-tail-latency
+      - bulk1000-a-010-v1
   - id: bulk500-source-020
     title: System Design Primer：故障模式与重试
     url: https://github.com/donnemartin/system-design-primer

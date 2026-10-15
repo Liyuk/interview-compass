@@ -3,7 +3,7 @@ sources:
     title: Interview Compass 原创扩充批次 600–626；来自本轮博客、来源台账与能力覆盖缺口的独立问题编写
     status: used
     questions:
-      - b-business-context-marginal-customer-cost
+      - b-business-context-unit-economics-service-mix
       - b-data-model-product-entitlement
       - b-model-evolution-eligibility-history
       - bulk-c-product-02

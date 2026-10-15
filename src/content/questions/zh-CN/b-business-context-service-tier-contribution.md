@@ -28,12 +28,20 @@ careerTracks:
 scenarios:
   - interview
   - operations-review
+  - hiring
+  - promotion
 formats:
   - case
+  - behavioral
 source:
   - attribution: original
     label: Interview Compass 原创扩充（2026-10-14）
+  - attribution: original
+    label: Interview Compass 原创扩充批次 2026-10-15 C
 followUps:
   - 如果高成本客户本来就更容易续约，怎样避免把选择效应当成服务效果？
   - 如果支持成本由共享团队承担，怎样分摊才有利于决策而非制造伪精确？
+  - 【高服务档位收入增加但毛利下降，怎样决定是否继续销售？】一个高价服务档位提高了签约金额，但客户成功团队投入的人工时数远超预估，续约并未改善。你会怎样判断它对不同客群是否仍有价值？
+  - 哪些成本应按客户分摊，哪些属于固定能力投入？
+  - 怎样避免短观察窗口把延迟续约价值误判为零？
 ---

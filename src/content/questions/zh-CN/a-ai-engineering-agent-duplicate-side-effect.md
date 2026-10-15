@@ -16,21 +16,27 @@ topics:
   - ai-engineering
   - reliability
   - security
+  - distributed-systems
 roles:
   - ai-engineer
   - backend
 responsibilityScopes:
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
 scenarios:
   - interview
   - hiring
+  - operations-review
 formats:
   - system-design
   - case
-followUps: []
+followUps:
+  - 【Agent 调用外部工具超时后状态未知，怎样安全重试？】Agent 请求合作方创建退款，调用超时后没有收到响应；查询接口也暂时不可用。自动重试可能重复退款，放弃又可能遗漏任务。你会怎样设计状态和恢复？
+  - 如果合作方不支持幂等请求，有哪些安全替代方案？
+  - 怎样让用户知道任务状态而不误报完成？
 source:
   - attribution: inspired
     label: atryx AI 工程题库的主题覆盖；题面为本站独立编写
@@ -38,5 +44,7 @@ source:
   - attribution: inspired
     label: Landed AI Engineer Interview：Agent 工具调用可靠性
     url: https://github.com/landedjobs/awesome-ai-engineer-interview
+  - attribution: original
+    label: Interview Compass 原创扩充批次 2026-10-15 H
 relatedQuestions: []
 ---

@@ -1,0 +1,11 @@
+sources:
+  - id: interview-compass-original-expansion-2026-10-15-d
+    title: Interview Compass 原创扩充批次 2026-10-15 D
+    status: used
+    questions:
+      - c-product-judgment-legacy-feature-retirement
+      - c-metrics-experiment-network-interference
+      - design-accessibility-submit-recovery-priority
+      - bulk-ai-llm-release-canary
+      - d-pmo-correlated-dependency-escalation
+    note: 原创双语题卡，补充低频功能退役、实验干扰、可访问性、AI 评测和组合依赖管理。

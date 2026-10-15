@@ -15,6 +15,8 @@ topics:
   - engineering-systems
   - devops
   - reliability
+  - debugging
+  - concurrency
 roles:
   - engineering
   - frontend
@@ -30,6 +32,7 @@ scenarios:
   - hiring
 formats:
   - case
+  - debugging
 source:
   - attribution: inspired
     label: DevOps Interview Questions：CI 流程与自动化测试
@@ -37,4 +40,10 @@ source:
   - attribution: inspired
     label: GitHub 技术面试与工程体系调研；题目为本站独立编写
     url: https://github.com/yangshun/tech-interview-handbook
+  - attribution: original
+    label: Interview Compass 原创扩充（2026-10-14）
+followUps:
+  - 单个测试稳定通过，整套测试并行运行时偶发失败，而且重跑可能通过。你会怎样查找顺序依赖或共享状态？
+  - 如果失败只发生在 CI，怎样判断是机器负载还是环境配置差异？
+  - 将测试串行化可以暂时止损吗，何时必须修复根因？
 ---

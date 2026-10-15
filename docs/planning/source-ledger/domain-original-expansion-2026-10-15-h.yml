@@ -1,0 +1,16 @@
+sources:
+  - id: interview-compass-original-expansion-2026-10-15-h
+    title: Interview Compass 原创扩充批次 2026-10-15 H
+    status: used
+    questions:
+      - a-ai-engineering-agent-duplicate-side-effect
+      - bulk-a-feature-flag-control-plane
+      - a-distributed-systems-deadline-budget-fanout
+      - a-debugging-stale-read-after-cache-bust
+      - a-database-backfill-lock-contention
+      - b-model-evolution-schema-unknown-enum
+      - bulk1000-b-032-v1
+      - b-business-context-unit-economics-service-mix
+      - e-stakeholder-dissent-record-after-decision
+      - d-ops-playbook-stale-owner
+    note: 原创双语题卡，补充 Agent 副作用、控制面、分布式时限、缓存、数据库变更、契约演进、领域粒度和运维文档。

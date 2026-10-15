@@ -21,6 +21,7 @@ roles:
   - operations
 responsibilityScopes:
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
 scenarios:
@@ -28,10 +29,16 @@ scenarios:
   - hiring
 formats:
   - debugging
+  - system-design
 source:
   - attribution: original
     label: Interview Compass 原创扩充（2026-10-14）
+  - attribution: original
+    label: Interview Compass 原创扩充批次 2026-10-15 G
 followUps:
   - 缓存中只有少量热点键时，是否需要全量预热？
   - 如果回源已过载，哪些请求应降级、排队或明确失败？
+  - 【缓存故障恢复后数据库仍被打满，怎样定位二次拥塞？】缓存节点恢复后，大量请求同时回源，数据库连接池耗尽；扩容后流量仍周期性冲高。你会怎样判断是缓存预热、请求合并、限流还是查询退化问题？
+  - 如何避免预热过程本身造成第二次雪崩？
+  - 哪些缓存数据不适合批量预热？
 ---

@@ -4,17 +4,17 @@ sources:
     status: used
     questions:
       - a-coding-abstraction-streaming-validation
-      - a-computer-networks-http-cache-validator
+      - bulk-a-frontend-bundle-cache-invalidation
       - a-databases-index-write-amplification
       - a-databases-read-replica-stale-read
       - a-debugging-cache-stampede-warmup
-      - a-debugging-concurrent-test-flake-order-dependence
-      - a-distributed-systems-clock-deadline-propagation
+      - bulk-a-flaky-test-triage
+      - a-distributed-systems-deadline-budget-fanout
       - a-distributed-systems-partition-key-hotspot
       - a-programming-languages-ownership-transfer-async
       - a-programming-languages-unicode-normalization-identity
       - a-security-download-url-authorization-lifetime
-      - a-system-design-feature-flag-control-plane-failure
+      - bulk-a-feature-flag-control-plane
       - b-business-context-revenue-recognition-vs-user-value
       - b-business-context-service-tier-contribution
       - b-business-context-support-obligation

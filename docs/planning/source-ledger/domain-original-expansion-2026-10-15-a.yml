@@ -1,0 +1,16 @@
+sources:
+  - id: interview-compass-original-expansion-2026-10-15-a
+    title: Interview Compass 原创扩充批次 2026-10-15 A
+    status: used
+    questions:
+      - b-business-context-renewal-risk-segmentation
+      - bulk1000-b-030-v1
+      - b-data-model-consent-purpose-history
+      - b-feature-model-entitlement-precedence
+      - b-model-evolution-identity-merge-audit
+      - b-business-context-marketplace-liquidity
+      - d-project-management-dependency-buffer-reallocation
+      - d-capacity-planning-interrupt-load-budget
+      - e-communication-risk-update-without-certainty
+      - e-negotiation-scope-fixed-deadline
+    note: 补强商业上下文、计费规则、领域模型、交付容量、沟通与协商。

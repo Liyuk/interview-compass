@@ -15,12 +15,15 @@ topics:
   - security
   - computer-networks
   - risk-management
+  - reliability
+  - distributed-systems
 roles:
   - backend
   - engineering
   - operations
 responsibilityScopes:
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
 scenarios:
@@ -28,10 +31,16 @@ scenarios:
   - hiring
 formats:
   - system-design
+  - debugging
 source:
   - attribution: original
     label: Interview Compass 原创扩充（2026-10-14）
+  - attribution: original
+    label: Interview Compass 原创扩充批次 2026-10-15 G
 followUps:
   - 如果移动端离线下载需要更长时间，如何平衡可用性和泄露风险？
   - 如何防止链接被代理缓存、浏览器历史或分析系统意外保留？
+  - 【短时下载链接发出后权限被撤销，怎样界定仍可访问的窗口？】服务用签名 URL 分享敏感报告，链接有效期为 24 小时。用户被移出组织后，旧链接仍可访问；缩短有效期会增加服务压力。你会如何设计撤销和访问校验？
+  - 如何在 CDN 缓存下执行即时撤销？
+  - 跨组织转发链接时应该如何归属审计责任？
 ---

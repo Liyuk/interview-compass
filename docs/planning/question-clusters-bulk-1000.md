@@ -280,7 +280,7 @@
 - 如果组合特征的计算成本超过线上延迟预算，你会怎样比较预计算、缓存和简化定义？ / If a derived feature exceeds the online latency budget, how would you compare precomputation, caching, and simplifying its definition?
 
 ### 特征口径在模型间漂移 / Feature definition drift across models
-保留：`bulk1000-b-035-v1`；合并：`bulk1000-b-035-v2`、`bulk1000-b-035-v3`、`bulk1000-b-035-v4`、`bulk1000-b-035-v5`
+保留题卡：`bulk-b-feature-02`（原 `bulk1000-b-035-v1`；已与本地题库中的同类题合并）。本组其他候选：`bulk1000-b-035-v2`、`bulk1000-b-035-v3`、`bulk1000-b-035-v4`、`bulk1000-b-035-v5`
 - 如果关键特征的刷新延迟超过实时决策窗口，你会怎样决定使用陈旧值、回退值还是拒绝决策？ / If a critical feature refresh misses the real-time decision window, how would you choose among stale values, fallbacks, or refusing the decision?
 - 如果空值有时表示未知、有时表示不适用、还有时表示尚未发生，你会怎样定义特征契约？ / If null means unknown, not applicable, or not yet occurred depending on the stage, how would you define the feature contract?
 - 如果离线和在线特征代码分开维护并开始产生偏差，你会怎样检测、定位并降低重复定义？ / If offline and online feature code is maintained separately and begins to diverge, how would you detect, locate, and reduce duplicate definitions?
@@ -416,7 +416,7 @@
 - 如果结果看似变好但无法确认机制，你会如何决定扩大投入还是补充验证？ / If outcomes appear better but the mechanism is unclear, how would you choose between scaling investment and further validation?
 
 ### 模糊承诺拆成可验证结果 / Decomposing an ambiguous commitment into verifiable outcomes
-保留：`bulk1000-d-052-v1`；合并：`bulk1000-d-052-v2`、`bulk1000-d-052-v3`、`bulk1000-d-052-v4`、`bulk1000-d-052-v5`
+保留题卡：`d-decomposition-reduce-deploy-failure`（已吸收 `bulk1000-d-052-v1` 的目标拆解场景）。本组其他候选：`bulk1000-d-052-v2`、`bulk1000-d-052-v3`、`bulk1000-d-052-v4`、`bulk1000-d-052-v5`
 - 如果关键依赖延期一个迭代，你会如何重排关键路径、更新承诺并减少等待？ / If a critical dependency slips by one cycle, how would you re-sequence the critical path, reset commitments, and reduce waiting?
 - 如果可用容量减少三成，你会如何保留目标、缩减范围并让被影响方参与取舍？ / If available capacity falls by thirty percent, how would you preserve the goal, reduce scope, and involve affected stakeholders?
 - 如果部分变更不可逆，你会如何重设发布顺序、验收门槛和恢复方案？ / If part of the change cannot be safely reversed, how would you redesign release order, acceptance gates, and recovery?

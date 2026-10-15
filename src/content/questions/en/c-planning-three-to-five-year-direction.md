@@ -12,16 +12,38 @@ signals:
   - Marks what is judgment and what is assumption, and what signal would change the plan
   - Names long-lead capabilities that need early investment, such as talent and infrastructure
 primaryCapability: value-direction.planning
-topics: [planning, product-thinking]
-roles: [engineering, product, manager]
-responsibilityScopes: [multiple-teams, organization]
-careerTracks: [team-manager, senior-manager, executive]
-scenarios: [interview, promotion]
-formats: [planning, case]
+topics:
+  - planning
+  - product-thinking
+  - execution
+roles:
+  - engineering
+  - product
+  - manager
+  - pmo
+responsibilityScopes:
+  - multiple-teams
+  - organization
+  - team
+careerTracks:
+  - team-manager
+  - senior-manager
+  - executive
+scenarios:
+  - interview
+  - promotion
+formats:
+  - planning
+  - case
 followUps:
   - Where are you most afraid of being wrong three years from now?
   - Which things must start now or it will be too late in three years?
+  - 【How do you calibrate a three-to-five-year plan against a half-year plan?】How do you calibrate a three-to-five-year plan against a half-year plan? After six months, what signals tell you whether the direction should change?
+  - If you find after six months that you are far behind, where do you doubt first?
+  - Which half-year results do not actually say whether the long-term direction is right?
 source:
   - attribution: original
-    label: "The author's interview sequence: a three-to-five-year technical plan"
+    label: 'The author''s interview sequence: a three-to-five-year technical plan'
+  - attribution: original
+    label: 'The author''s interview sequence: calibrating a long-term plan against a half-year plan'
 ---

@@ -15,24 +15,36 @@ topics:
   - engineering-systems
   - frontend
   - execution
+  - accessibility
+  - management
 roles:
   - design
   - frontend
   - engineering
+  - manager
 responsibilityScopes:
   - multiple-teams
   - organization
+  - team
 careerTracks:
   - individual-contributor
   - team-manager
 scenarios:
   - interview
   - promotion
+  - hiring
 formats:
   - case
   - planning
+  - behavioral
 source:
   - attribution: inspired
     label: Designer Interview Questions（仅作主题启发；本站独立原创，不复制原问题）
     url: https://github.com/briannhinton/designer-interview-questions
+  - attribution: original
+    label: Interview Compass 原创扩充批次 2026-10-15 E
+followUps:
+  - 【设计系统例外不断增加时，怎样区分必要差异和治理失效？】多个产品团队复制共享组件后加入本地变体，按钮、表单校验和键盘行为逐渐不一致。你会怎样决定哪些例外应进入系统、哪些需要回收？
+  - 何时应拒绝例外以保护跨产品一致性？
+  - 如何让例外贡献团队承担后续维护？
 ---

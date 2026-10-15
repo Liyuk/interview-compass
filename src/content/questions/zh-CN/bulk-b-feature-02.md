@@ -15,6 +15,7 @@ topics:
   - feature-modeling
   - data-modeling
   - ai-engineering
+  - metrics
 roles:
   - data
   - ai-engineer
@@ -28,10 +29,18 @@ careerTracks:
 scenarios:
   - interview
   - operations-review
+  - hiring
+  - promotion
 formats:
   - case
+  - system-design
 source:
   - attribution: inspired
     label: dataskew-io/data-engineering-interview-questions：特征新鲜度与训练服务一致性
     url: https://github.com/dataskew-io/data-engineering-interview-questions
+  - attribution: inspired
+    label: GitHub 数据工程与 AI 工程题目主题调研；题目为本站独立编写
+    url: https://github.com/dataskew-io/data-engineering-interview-questions
+followUps:
+  - 两个模型调用同名特征却得到不同值，原因涉及默认值和缺失数据处理。你会如何建立契约与兼容验证？
 ---

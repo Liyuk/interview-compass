@@ -15,6 +15,8 @@ topics:
   - databases
   - debugging
   - reliability
+  - system-design
+  - metrics
 roles:
   - backend
   - data
@@ -22,6 +24,7 @@ roles:
 responsibilityScopes:
   - individual
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
 scenarios:
@@ -30,10 +33,16 @@ scenarios:
   - hiring
 formats:
   - debugging
+  - system-design
 source:
   - attribution: original
     label: Interview Compass 原创扩充（2026-10-14）
+  - attribution: original
+    label: Interview Compass 原创扩充批次 2026-10-15 G
 followUps:
   - 如果查询只在月末批处理时变慢，是否应为它保留常驻索引？
   - 如何区分索引无效与统计信息、缓存或查询计划变化？
+  - 【读查询变快但写入成本显著增加时，怎样决定索引取舍？】新增复合索引让核心查询耗时下降一半，但写入延迟和存储费用上升，后台批量更新也更容易超时。你会如何判断是否保留该索引？
+  - 索引创建期间怎样评估锁和复制延迟风险？
+  - 何时应修改查询或数据模型而不是继续堆索引？
 ---

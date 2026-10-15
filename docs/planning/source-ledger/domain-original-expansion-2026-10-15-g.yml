@@ -1,0 +1,15 @@
+sources:
+  - id: interview-compass-original-expansion-2026-10-15-g
+    title: Interview Compass 原创扩充批次 2026-10-15 G
+    status: used
+    questions:
+      - a-debugging-cache-stampede-warmup
+      - a-backend-read-replica-consistency-window
+      - bulk-a-frontend-bundle-cache-invalidation
+      - a-mobile-offline-queue-auth-expiry
+      - a-distributed-queue-visibility-vs-processing
+      - a-security-download-url-authorization-lifetime
+      - a-coding-abstraction-streaming-validation
+      - a-databases-index-write-amplification
+      - bulk-a-webhook-delivery
+    note: 原创双语题卡，补强缓存恢复、数据副本、静态资源发布、移动离线、消息投递、安全链接、流式解析与索引取舍。

@@ -43,7 +43,7 @@ sources:
       - bulk1000-b-032-v1
       - bulk1000-b-033-v1
       - b-feature-model-time-semantics
-      - bulk1000-b-035-v1
+      - bulk-b-feature-02
       - bulk1000-b-036-v1
       - bulk1000-b-037-v1
   - id: bulk1000-source-003
@@ -70,7 +70,7 @@ sources:
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
     status: used
     questions:
-      - bulk1000-d-052-v1
+      - d-decomposition-reduce-deploy-failure
       - bulk1000-d-053-v1
       - bulk1000-d-054-v1
       - bulk1000-d-055-v1

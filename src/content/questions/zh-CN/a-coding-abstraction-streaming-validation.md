@@ -33,7 +33,11 @@ formats:
 source:
   - attribution: original
     label: Interview Compass 原创扩充（2026-10-14）
+  - attribution: original
+    label: Interview Compass 原创扩充批次 2026-10-15 H
 followUps:
   - 如果某些规则需要读取前后行，如何避免重新载入全部输入？
   - 调用方在读取中途取消时，底层文件或网络资源由谁关闭？
+  - 如何防止压缩炸弹耗尽 CPU 或磁盘？
+  - 怎样让解析器支持取消、超时和背压？
 ---
