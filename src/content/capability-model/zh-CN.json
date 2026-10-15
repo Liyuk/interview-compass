@@ -1,0 +1,1225 @@
+{
+  "dimensionNames": {
+    "business-results": "业务结果",
+    "domain-expertise": "专业领域知识",
+    "team-influence": "团队影响力",
+    "human-competitive-advantage": "人的竞争力"
+  },
+  "stages": [
+    {
+      "id": "junior-engineer",
+      "track": "ic",
+      "nextStageIds": [
+        "mid-level-engineer"
+      ],
+      "name": "初级工程师",
+      "summary": "在清晰目标和指导下完成有边界的工作，理解结果、验证产出，并主动学习。",
+      "dimensions": {
+        "business-results": [
+          {
+            "id": "clarify-local-outcome",
+            "text": "开始前确认任务服务的用户、目标和验收方式。",
+            "capabilities": [
+              {
+                "id": "domain-modeling.business-context",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "能复述需求对象、预期变化和完成条件。"
+          },
+          {
+            "id": "deliver-reliable-task",
+            "text": "按约定完成任务，及时暴露会影响结果的偏差。",
+            "capabilities": [
+              {
+                "id": "delivery.decomposition",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "work-responsibility.ownership",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "交付内容符合约定，风险或延期提前说明。"
+          },
+          {
+            "id": "verify-ai-assisted-work",
+            "text": "使用 AI 加快低风险工作时，能检查事实、代码和引用再提交。",
+            "capabilities": [
+              {
+                "id": "professional.ai-engineering",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "能指出改动依据，并展示运行或人工核查结果。"
+          }
+        ],
+        "domain-expertise": [
+          {
+            "id": "apply-foundations",
+            "text": "运用岗位基础知识完成常见问题，遇到不确定处及时求助。",
+            "capabilities": [
+              {
+                "id": "professional.computer-science",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "professional.coding-abstraction",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "实现能通过基本检查，并能说明关键概念。"
+          },
+          {
+            "id": "follow-quality-practice",
+            "text": "遵循团队质量、安全和隐私规范，提交前检查边界情况。",
+            "capabilities": [
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "work-responsibility.boundaries",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "能发现明显失败路径或敏感数据风险。"
+          },
+          {
+            "id": "learn-ai-workflow",
+            "text": "能为 AI 提供必要上下文，并判断输出是否适用于当前任务。",
+            "capabilities": [
+              {
+                "id": "professional.ai-engineering",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "professional.debugging",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "修改有验证步骤，不把生成内容直接当作正确答案。"
+          }
+        ],
+        "team-influence": [
+          {
+            "id": "communicate-status",
+            "text": "清楚同步进展、阻塞和需要的支持。",
+            "capabilities": [
+              {
+                "id": "collaboration.communication",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "work-responsibility.ownership",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "相关协作者能及时知道状态并采取行动。"
+          },
+          {
+            "id": "collaborate-on-review",
+            "text": "接受评审意见并据此修正工作。",
+            "capabilities": [
+              {
+                "id": "collaboration.feedback",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "能说明采纳或讨论建议的理由。"
+          },
+          {
+            "id": "respect-working-boundaries",
+            "text": "遵循职责和授权边界，遇到超出权限的决定及时升级。",
+            "capabilities": [
+              {
+                "id": "work-responsibility.boundaries",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "collaboration.stakeholder-influence",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "没有擅自作出影响他人或用户的承诺。"
+          }
+        ],
+        "human-competitive-advantage": [
+          {
+            "id": "show-learning-transfer",
+            "text": "能把反馈转化为下一次任务中的具体改进。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "learning-adaptation.structured-reflection",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "同类问题减少，或能复用新方法解决相近任务。"
+          },
+          {
+            "id": "separate-fact-from-assumption",
+            "text": "表达问题时区分已知事实、推测和未知。",
+            "capabilities": [
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "professional.debugging",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "说明判断来自何种观察，哪些仍需确认。"
+          },
+          {
+            "id": "act-with-integrity",
+            "text": "如实说明贡献、错误和风险，对自己负责的部分闭环。",
+            "capabilities": [
+              {
+                "id": "work-responsibility.integrity",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "work-responsibility.attribution",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "work-responsibility.ownership",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "更正记录及时，不掩盖问题或夸大成果。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mid-level-engineer",
+      "track": "ic",
+      "nextStageIds": [
+        "senior-engineer"
+      ],
+      "name": "中级工程师",
+      "summary": "能独立负责明确范围内的功能或模块，以稳定质量交付可验证的用户和业务结果。",
+      "dimensions": {
+        "business-results": [
+          {
+            "id": "own-feature-outcome",
+            "text": "独立负责一项功能的交付，并跟踪其是否解决目标用户问题。",
+            "capabilities": [
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "上线后查看采用、完成率或问题反馈，并据此修正。"
+          },
+          {
+            "id": "make-local-tradeoffs",
+            "text": "在既定目标内比较成本、质量和时效，提出有依据的取舍。",
+            "capabilities": [
+              {
+                "id": "value-direction.prioritization",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "说明选择、未选方案及影响结果的条件。"
+          },
+          {
+            "id": "use-ai-for-throughput",
+            "text": "把 AI 用于可控环节提升效率，并对最终用户结果负责。",
+            "capabilities": [
+              {
+                "id": "professional.ai-engineering",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "比较流程前后耗时或质量，保留人工复核点。"
+          }
+        ],
+        "domain-expertise": [
+          {
+            "id": "own-component-design",
+            "text": "为一个模块设计可维护的方案，识别接口、状态和主要失败模式。",
+            "capabilities": [
+              {
+                "id": "professional.system-design",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "domain-modeling.data-model",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "设计能支撑需求并给出容量、迁移或回退说明。"
+          },
+          {
+            "id": "validate-quality-security",
+            "text": "为重要路径补充测试、观测或安全检查，减少可预见故障。",
+            "capabilities": [
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "delivery.reliability-incidents",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "能通过测试或运行信号证明关键约束得到保护。"
+          },
+          {
+            "id": "evaluate-ai-output",
+            "text": "对 AI 生成或建议的内容做适合风险级别的验证。",
+            "capabilities": [
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "professional.debugging",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "有测试、对照样例、引用检查或人工审批记录。"
+          }
+        ],
+        "team-influence": [
+          {
+            "id": "coordinate-feature-delivery",
+            "text": "与产品、设计或上下游伙伴对齐依赖和验收，推动功能按约定落地。",
+            "capabilities": [
+              {
+                "id": "collaboration.communication",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "delivery.capacity-planning",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "决策、依赖和责任人清晰，变更及时同步。"
+          },
+          {
+            "id": "improve-peer-work",
+            "text": "通过评审、文档或分享帮助同伴减少重复问题。",
+            "capabilities": [
+              {
+                "id": "collaboration.feedback",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "实践被他人复用，质量问题或交接成本下降。"
+          },
+          {
+            "id": "resolve-working-disagreement",
+            "text": "面对协作分歧，澄清事实和约束并促成可执行决定。",
+            "capabilities": [
+              {
+                "id": "collaboration.conflict-navigation",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "collaboration.negotiation",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "争议形成决定、负责人和复查时间。"
+          }
+        ],
+        "human-competitive-advantage": [
+          {
+            "id": "adapt-with-new-evidence",
+            "text": "发现原假设不成立时及时调整计划，而不是维护原方案。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.structured-reflection",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "记录新证据如何改变优先级或实现。"
+          },
+          {
+            "id": "build-trust-through-followthrough",
+            "text": "持续兑现承诺，主动暴露坏消息并帮助协作者形成共同预期。",
+            "capabilities": [
+              {
+                "id": "work-responsibility.ownership",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "collaboration.communication",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "依赖方能据此安排工作，意外减少。"
+          },
+          {
+            "id": "use-ai-with-calibrated-judgment",
+            "text": "知道何时让 AI 辅助、何时需要专家复核或停止自动化。",
+            "capabilities": [
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "foundational"
+              },
+              {
+                "id": "work-responsibility.boundaries",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "能识别数据、权限、准确性或影响范围风险。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "senior-engineer",
+      "track": "ic",
+      "nextStageIds": [
+        "staff-engineer",
+        "engineering-manager"
+      ],
+      "name": "高级工程师",
+      "summary": "在模糊问题中独立定义方案，对一项跨职能工作的用户价值、质量和结果负责。",
+      "dimensions": {
+        "business-results": [
+          {
+            "id": "frame-problem-around-outcome",
+            "text": "把模糊需求转化为可验证的用户/经营结果，明确基线和护栏。",
+            "capabilities": [
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "团队能解释为何做、成功如何衡量、何时停止或调整。"
+          },
+          {
+            "id": "prioritize-cross-functional-work",
+            "text": "结合用户证据、市场或运营约束，推动跨职能团队选择高价值工作。",
+            "capabilities": [
+              {
+                "id": "value-direction.market-economic-judgment",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.prioritization",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "优先级决定体现机会成本，并对后续结果复盘。"
+          },
+          {
+            "id": "attribute-impact-honestly",
+            "text": "评估交付对结果的贡献，区分因果证据与相关变化。",
+            "capabilities": [
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "work-responsibility.attribution",
+                "emphasis": "foundational"
+              }
+            ],
+            "evidence": "说明指标口径、观察窗口、护栏及归因限制。"
+          }
+        ],
+        "domain-expertise": [
+          {
+            "id": "design-across-domain-boundaries",
+            "text": "设计跨模块方案，平衡领域规则、系统约束、演进成本与可逆性。",
+            "capabilities": [
+              {
+                "id": "professional.system-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "domain-modeling.model-evolution",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "方案包含边界、取舍、迁移/回滚与故障路径。"
+          },
+          {
+            "id": "lead-product-discovery",
+            "text": "与用户和产品伙伴验证问题本身，再选择实现路径。",
+            "capabilities": [
+              {
+                "id": "professional.product-discovery-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "访谈、原型、实验或数据导致方案收敛或被放弃。"
+          },
+          {
+            "id": "set-quality-and-ai-controls",
+            "text": "为高影响方案定义质量、安全和 AI 评估要求，确保结果可控。",
+            "capabilities": [
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "能展示评估集、监控/升级条件、隐私权限控制或人工接管规则。"
+          }
+        ],
+        "team-influence": [
+          {
+            "id": "align-multiple-partners",
+            "text": "在没有直接汇报关系时，促成多团队对目标、依赖和决策权达成一致。",
+            "capabilities": [
+              {
+                "id": "collaboration.stakeholder-influence",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.negotiation",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "形成各方接受的方案、承诺和升级路径。"
+          },
+          {
+            "id": "raise-team-engineering-quality",
+            "text": "通过评审标准、共享组件或运营机制提升团队整体质量。",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "delivery.reliability-incidents",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "可见返工、故障或重复实现减少，而非仅增加文档。"
+          },
+          {
+            "id": "mentor-through-delegation",
+            "text": "指导同伴承担更大问题，同时保留清晰边界和反馈。",
+            "capabilities": [
+              {
+                "id": "people-organization.growth-development",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "people-organization.delegation-succession",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "他人可以独立交付，依赖个人救火减少。"
+          }
+        ],
+        "human-competitive-advantage": [
+          {
+            "id": "make-decisions-under-uncertainty",
+            "text": "在信息不完备时给出可检验的判断，说明信心、风险与反证条件。",
+            "capabilities": [
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "决定有明确假设和触发复查的信号。"
+          },
+          {
+            "id": "build-cross-functional-trust",
+            "text": "理解不同伙伴的目标与约束，在冲突中仍保持直接、尊重和可信。",
+            "capabilities": [
+              {
+                "id": "collaboration.conflict-navigation",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.feedback",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "分歧能被讨论，承诺可执行，关系不依赖回避问题。"
+          },
+          {
+            "id": "turn-failure-into-reusable-learning",
+            "text": "复盘结果与自己的判断，形成能改变后续行为的学习。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.structured-reflection",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "后续项目采用了调整后的机制，且能说明效果。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "staff-engineer",
+      "track": "ic",
+      "nextStageIds": [],
+      "name": "资深工程师",
+      "summary": "在专业贡献者路径上影响领域或多个团队，塑造长期业务结果、技术方向和可复用机制。",
+      "dimensions": {
+        "business-results": [
+          {
+            "id": "shape-domain-outcomes",
+            "text": "把领域级业务目标拆成可持续的产品、技术和运营结果。",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "路线图连接业务指标、能力建设和长期成本。"
+          },
+          {
+            "id": "guide-market-and-portfolio-tradeoffs",
+            "text": "在多个机会之间提供市场、商业模式和长期投入判断。",
+            "capabilities": [
+              {
+                "id": "value-direction.market-economic-judgment",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "决策说明机会成本、下行情景和继续投入的证据门槛。"
+          },
+          {
+            "id": "establish-outcome-review",
+            "text": "建立跨团队结果复盘，让发现影响优先级和后续投入。",
+            "capabilities": [
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "复盘有共同口径、归因限制和明确行动，且实际改变资源选择。"
+          }
+        ],
+        "domain-expertise": [
+          {
+            "id": "set-domain-technical-direction",
+            "text": "定义可演进的领域架构与专业标准，兼顾产品体验和工程边界。",
+            "capabilities": [
+              {
+                "id": "professional.system-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "domain-modeling.model-evolution",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.product-discovery-design",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "多个团队采用方案，且可追踪质量、成本和演进效果。"
+          },
+          {
+            "id": "build-evaluation-capability",
+            "text": "建立质量与 AI 评估机制，使团队能持续比较方案并发现退化。",
+            "capabilities": [
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "有可复用基准、上线监控和明确的人工介入/回滚条件。"
+          },
+          {
+            "id": "simplify-professional-practice",
+            "text": "识别跨团队的复杂性或技术债，推动整体方案变简单且更可靠。",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "使用方减少重复工作，故障、变更成本或复杂度下降。"
+          }
+        ],
+        "team-influence": [
+          {
+            "id": "influence-without-authority-at-scale",
+            "text": "通过方向说明、共同决策和赋能带动多个团队，而非依赖个人审批。",
+            "capabilities": [
+              {
+                "id": "collaboration.stakeholder-influence",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.communication",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "跨团队负责人能自主沿同一方向作出一致决定。"
+          },
+          {
+            "id": "grow-senior-capability",
+            "text": "培养新的技术/产品负责人并形成继任供给。",
+            "capabilities": [
+              {
+                "id": "people-organization.growth-development",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "people-organization.delegation-succession",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "关键领域出现多位可独立承担责任的负责人。"
+          },
+          {
+            "id": "shape-org-collaboration",
+            "text": "改进团队边界、协作方式或决策机制，解决反复出现的系统性阻塞。",
+            "capabilities": [
+              {
+                "id": "people-organization.team-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.conflict-navigation",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "协作周期或依赖风险持续改善，机制被多个团队采用。"
+          }
+        ],
+        "human-competitive-advantage": [
+          {
+            "id": "exercise-portfolio-judgment",
+            "text": "对长期不确定问题保持判断校准，知道何时继续、试验、等待或停止。",
+            "capabilities": [
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "多个决策展现风险校准和及时更新，而非只事后解释。"
+          },
+          {
+            "id": "create-trust-across-differences",
+            "text": "连接不同专业、地域或组织利益，建立能容纳真实分歧的关系。",
+            "capabilities": [
+              {
+                "id": "collaboration.negotiation",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.feedback",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "相关方愿意提前分享坏消息，并参与困难取舍。"
+          },
+          {
+            "id": "model-learning-and-intellectual-honesty",
+            "text": "公开修正判断，吸收外部证据，并帮助组织持续更新认知。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "work-responsibility.integrity",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "决策记录保留原假设和修订依据，后续团队复用。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "engineering-manager",
+      "track": "engineering-management",
+      "nextStageIds": [
+        "manager-of-managers"
+      ],
+      "name": "工程管理者",
+      "summary": "通过团队而不是个人补位交付业务结果，建设人才、协作机制与可持续工程质量。",
+      "dimensions": {
+        "business-results": [
+          {
+            "id": "set-team-outcomes",
+            "text": "与伙伴共同定义团队目标、结果指标和质量护栏，并持续校准优先级。",
+            "capabilities": [
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "团队能解释结果目标与选择，定期根据证据调整。"
+          },
+          {
+            "id": "allocate-capacity-for-value",
+            "text": "在交付、可靠性、人才成长和技术投资间配置团队容量。",
+            "capabilities": [
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "delivery.capacity-planning",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "配置与业务风险和结果相关，取舍有记录。"
+          },
+          {
+            "id": "own-team-performance-truthfully",
+            "text": "对团队结果负责，解释自身管理决策对结果的作用与限制。",
+            "capabilities": [
+              {
+                "id": "work-responsibility.attribution",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "区分团队交付、外部条件和个人作用，不挪用团队贡献。"
+          }
+        ],
+        "domain-expertise": [
+          {
+            "id": "make-sound-domain-decisions",
+            "text": "具备足够领域判断，能评审关键产品、技术、质量与 AI 风险决策。",
+            "capabilities": [
+              {
+                "id": "professional.system-design",
+                "emphasis": "contextual"
+              },
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "能提出关键问题、获得合适专家意见并为决定负责。"
+          },
+          {
+            "id": "build-reliable-team-practice",
+            "text": "为团队建立测试、发布、事故响应和 AI 使用的可持续实践。",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "delivery.reliability-incidents",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "质量和恢复能力可被度量，流程不过度依赖经理审批。"
+          },
+          {
+            "id": "guide-product-engineering-partnership",
+            "text": "促进产品、设计与工程共同发现问题并端到端验证结果。",
+            "capabilities": [
+              {
+                "id": "professional.product-discovery-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "团队不仅按期发布，也追踪用户采用和结果。"
+          }
+        ],
+        "team-influence": [
+          {
+            "id": "hire-and-grow-team",
+            "text": "根据目标建设团队能力，招聘、反馈、辅导并处理绩效问题。",
+            "capabilities": [
+              {
+                "id": "people-organization.hiring",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "people-organization.growth-development",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "岗位缺口和发展目标清晰，绩效判断基于持续证据。"
+          },
+          {
+            "id": "design-healthy-team-system",
+            "text": "设计清晰目标、责任边界、授权和决策机制，减少长期摩擦。",
+            "capabilities": [
+              {
+                "id": "people-organization.team-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "people-organization.delegation-succession",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "团队问题能在合适层级解决，成员具有决策空间。"
+          },
+          {
+            "id": "align-stakeholders-for-team",
+            "text": "管理跨团队承诺、冲突与升级，使团队能专注于关键结果。",
+            "capabilities": [
+              {
+                "id": "collaboration.negotiation",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.stakeholder-influence",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "依赖方认可优先级和升级机制，冲突不会长期悬置。"
+          }
+        ],
+        "human-competitive-advantage": [
+          {
+            "id": "make-people-decisions-with-evidence",
+            "text": "基于持续观察和多源证据作人事判断，检查偏见和不确定性。",
+            "capabilities": [
+              {
+                "id": "people-organization.growth-development",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "work-responsibility.integrity",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "能说明判断依据、反证和后续观察方式。"
+          },
+          {
+            "id": "create-trust-and-psychological-safety",
+            "text": "建立能坦诚讨论错误、风险和分歧的团队关系，同时保持责任要求。",
+            "capabilities": [
+              {
+                "id": "collaboration.feedback",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.conflict-navigation",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "问题更早暴露，团队能进行有事实依据的复盘。"
+          },
+          {
+            "id": "learn-and-adjust-management",
+            "text": "定期检视管理机制是否带来预期结果，愿意调整自己的管理行为。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.structured-reflection",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "反馈和团队信号促成具体管理变化，并跟踪效果。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "manager-of-managers",
+      "track": "manager-of-managers",
+      "nextStageIds": [],
+      "name": "管理管理者",
+      "summary": "通过管理者体系对多个团队或组织结果负责，配置资源并建设长期组织能力。",
+      "dimensions": {
+        "business-results": [
+          {
+            "id": "shape-org-outcomes",
+            "text": "将业务方向转化为组织级结果、组合优先级和可调整的投入计划。",
+            "capabilities": [
+              {
+                "id": "value-direction.planning",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.investment-choices",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "多个团队目标形成一致组合，结果和资源定期重新评估。"
+          },
+          {
+            "id": "balance-growth-and-resilience",
+            "text": "在增长、效率、可靠性、安全和长期能力之间作组织级权衡。",
+            "capabilities": [
+              {
+                "id": "value-direction.market-economic-judgment",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "contextual"
+              }
+            ],
+            "evidence": "明确最坏情境、风险承担者和转向条件。"
+          },
+          {
+            "id": "govern-business-impact",
+            "text": "建立一致的结果度量与复盘机制，帮助领导层基于事实调整方向。",
+            "capabilities": [
+              {
+                "id": "value-direction.metrics-causality",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "value-direction.business-outcomes",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "跨团队指标可解释，归因限制与未达成原因透明。"
+          }
+        ],
+        "domain-expertise": [
+          {
+            "id": "govern-domain-and-ai-risk",
+            "text": "确保组织在关键技术、产品、AI、隐私与安全风险上有明确责任和控制。",
+            "capabilities": [
+              {
+                "id": "professional.ai-evaluation-governance",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "professional.quality-security-safety",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "关键风险有决策者、监控指标、审查和响应机制。"
+          },
+          {
+            "id": "set-organizational-quality-bar",
+            "text": "定义跨团队质量与运行标准，并确保其适配业务风险而非形式化执行。",
+            "capabilities": [
+              {
+                "id": "professional.engineering-systems",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "delivery.reliability-incidents",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "标准减少事故或退化，同时避免无效流程负担。"
+          },
+          {
+            "id": "maintain-strategic-domain-judgment",
+            "text": "能与专家讨论长期领域和技术选择，理解其商业、用户和组织后果。",
+            "capabilities": [
+              {
+                "id": "professional.system-design",
+                "emphasis": "contextual"
+              },
+              {
+                "id": "domain-modeling.model-evolution",
+                "emphasis": "contextual"
+              },
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "能比较多种路线及其可逆性，而非替代专家做细节。"
+          }
+        ],
+        "team-influence": [
+          {
+            "id": "develop-managers",
+            "text": "招聘、辅导并评估管理者，形成可持续的管理者供给和继任。",
+            "capabilities": [
+              {
+                "id": "people-organization.manager-of-managers",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "people-organization.delegation-succession",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "管理者能独立负责团队结果，并培养下一层负责人。"
+          },
+          {
+            "id": "design-org-for-results",
+            "text": "根据业务与架构演进调整组织边界、决策权和协作关系。",
+            "capabilities": [
+              {
+                "id": "people-organization.team-design",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "people-organization.delegation-succession",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "减少结构性依赖与局部最优，责任和资源匹配目标。"
+          },
+          {
+            "id": "align-leadership-system",
+            "text": "建立跨组织的战略沟通、冲突处理和决策机制。",
+            "capabilities": [
+              {
+                "id": "collaboration.stakeholder-influence",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.conflict-navigation",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "关键取舍有明确决策人，团队理解共同方向和边界。"
+          }
+        ],
+        "human-competitive-advantage": [
+          {
+            "id": "exercise-organizational-judgment",
+            "text": "在高不确定性和多方利益下作审慎决定，并为后果和纠偏负责。",
+            "capabilities": [
+              {
+                "id": "value-direction.product-judgment",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "work-responsibility.integrity",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "决策体现长期风险、伦理边界和反证，而非只追短期指标。"
+          },
+          {
+            "id": "build-trust-across-organization",
+            "text": "建立跨团队的信任与坦诚沟通，允许信息向上流动和坏消息早报。",
+            "capabilities": [
+              {
+                "id": "collaboration.communication",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "collaboration.feedback",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "来自不同层级的风险能进入决策，承诺透明。"
+          },
+          {
+            "id": "renew-organizational-learning",
+            "text": "将复盘和外部变化转化为组织能力更新，而非一次性行动项。",
+            "capabilities": [
+              {
+                "id": "learning-adaptation.learning-transfer",
+                "emphasis": "differentiating"
+              },
+              {
+                "id": "learning-adaptation.structured-reflection",
+                "emphasis": "differentiating"
+              }
+            ],
+            "evidence": "组织实践随证据迭代，学习可跨团队迁移。"
+          }
+        ]
+      }
+    }
+  ]
+}
