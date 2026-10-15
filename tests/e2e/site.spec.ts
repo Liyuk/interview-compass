@@ -17,9 +17,11 @@ test('capability path: home to domain to leaf to question with a canonical bread
   await expect(page).toHaveURL(/\/interview-compass\/capabilities\/delivery\/$/);
   await page.getByRole('link', { name: '容量与依赖' }).first().click();
   await expect(page).toHaveURL(/\/capabilities\/delivery\/capacity-planning\/$/);
-  await page.getByRole('link', { name: /调整计划/ }).first().click();
+  const targetBatch = page.locator('.reading-batch').filter({ has: page.getByRole('link', { name: /调整计划/, includeHidden: true }) }).first();
+  if (!await targetBatch.getAttribute('open').then(value => value !== null)) await targetBatch.locator('summary').click();
+  await targetBatch.getByRole('link', { name: /调整计划/ }).first().click();
   const crumbs = page.getByRole('navigation', { name: '面包屑' });
-  await expect(crumbs.locator('li')).toHaveText(['首页', '问题库', '交付执行与持续运营', '容量与依赖', /调整计划/]);
+  await expect(crumbs.locator('li')).toHaveText(['首页', '面试题库', '交付执行与持续运营', '容量与依赖', /调整计划/]);
   await expect(crumbs.locator('[aria-current="page"]')).toContainText('调整计划');
 });
 
@@ -135,11 +137,96 @@ test('English search stays within the English index', async ({ page }) => {
   await expect(page.locator('.search-results')).not.toContainText('资源只够做两项');
 });
 
+test('search shows a localized empty state and hides it when the query is cleared', async ({ page }) => {
+  await page.goto('./');
+  const search = page.getByRole('searchbox');
+  const results = page.locator('.search-results');
+  await search.fill('zxqvplm49372');
+  await expect(results).toContainText('没有找到匹配的问题。');
+  await search.fill('');
+  await expect(results).toBeHidden();
+});
+
+test('search submits by Enter and opens a result under the Pages base path', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('searchbox').fill('资源只够做两项');
+  await page.getByRole('searchbox').press('Enter');
+  const result = page.locator('.search-results a').filter({ hasText: '资源只够做两项' }).first();
+  await expect(result).toBeVisible();
+  await expect(result).toHaveAttribute('href', /^\/interview-compass\/questions\//);
+  await result.click();
+  await expect(page).toHaveURL(/\/interview-compass\/questions\//);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('资源只够做两项');
+});
+
+test('English results are selected before the visible-result limit', async ({ page }) => {
+  await page.goto('en/');
+  await page.getByRole('searchbox').fill('AI');
+  const resultLinks = page.locator('.search-results a');
+  await expect(resultLinks.first()).toBeVisible();
+  const hrefs = await resultLinks.evaluateAll((links) => links.map((link) => (link as HTMLAnchorElement).getAttribute('href')));
+  expect(hrefs.length).toBeGreaterThan(0);
+  expect(hrefs.every((href) => href?.includes('/interview-compass/en/'))).toBe(true);
+});
+
+test('search treats Pagefind excerpts as text instead of executable markup', async ({ page }) => {
+  await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: `export async function search() { return { results: [{ data: async () => ({ url: '/interview-compass/questions/safe/', meta: { title: 'Safe result' }, excerpt: '<img src=x onerror="window.searchXss = true">safe excerpt' }) }] }; }`,
+  }));
+  await page.goto('./');
+  await page.getByRole('searchbox').fill('safe');
+  await expect(page.locator('.search-results')).toContainText('safe excerpt');
+  await expect(page.locator('.search-results img')).toHaveCount(0);
+  expect(await page.evaluate(() => (window as Window & { searchXss?: boolean }).searchXss)).toBeUndefined();
+});
+
+test('search reports an index failure in the active language', async ({ page }) => {
+  await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: `export async function search() { throw new Error('index unavailable'); }`,
+  }));
+  await page.goto('en/');
+  await page.getByRole('searchbox').fill('failure');
+  await expect(page.locator('.search-results')).toContainText('Search is unavailable. Try again.');
+});
+
+test('Escape hides results and ignores an in-flight response', async ({ page }) => {
+  await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: `export async function search(query) { await new Promise(resolve => setTimeout(resolve, 450)); return { results: [{ data: async () => ({ url: '/interview-compass/questions/late/', meta: { title: query }, excerpt: query }) }] }; }`,
+  }));
+  await page.goto('./');
+  const search = page.getByRole('searchbox');
+  await search.fill('late');
+  await page.waitForTimeout(220);
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(350);
+  await expect(page.locator('.search-results')).toBeHidden();
+});
+
+test('a slower earlier query cannot replace results for the current query', async ({ page }) => {
+  await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: `export async function search(query) { await new Promise(resolve => setTimeout(resolve, query === 'slow' ? 700 : 20)); return { results: [{ data: async () => ({ url: '/interview-compass/questions/' + query + '/', meta: { title: query }, excerpt: query }) }] }; }`,
+  }));
+  await page.goto('./');
+  const search = page.getByRole('searchbox');
+  await search.fill('slow');
+  await page.waitForTimeout(250);
+  await search.fill('fast');
+  const results = page.locator('.search-results');
+  await expect(results).toContainText('fast');
+  await page.waitForTimeout(800);
+  await expect(results).toContainText('fast');
+  await expect(results).not.toContainText('slow');
+});
+
 test('skip link and navigation are keyboard reachable', async ({ page }) => {
   await page.goto('./');
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: '跳到正文' })).toBeFocused();
-  await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText(['问题库', '能力地图', '能力模型', '岗位', '使用场景']);
+  await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText(['面试题库', '能力地图', '能力模型', '岗位导航', '应用场景']);
 });
 
 test('deep links resolve under the Pages base in both languages', async ({ page }) => {
@@ -189,4 +276,39 @@ test('mobile layout keeps the main content within the viewport', async ({ page, 
     expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.client + 1);
   }
   await expect(page.getByRole('searchbox')).toBeVisible();
+});
+
+test('matrix provides anchored expectations in both locales without page overflow', async ({ page }) => {
+  for (const prefix of ['', 'en/']) {
+    await page.goto(`${prefix}capability-model/`);
+    const matrix = page.locator('.capability-matrix');
+    await expect(matrix.locator('tbody tr')).toHaveCount(6);
+    await expect(matrix.locator('tbody td')).toHaveCount(48);
+    await expect(page.locator('.depth-legend > div')).toHaveCount(4);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1)).toBe(true);
+  }
+});
+
+test('native filters share inset Lucide chevrons and keep keyboard filtering', async ({ page }) => {
+  await page.goto('questions/');
+  const control = page.locator('.select-control').first();
+  await expect(control.locator('svg')).toHaveAttribute('stroke-width', '1.75');
+  expect(await control.evaluate(el => {
+    const icon = el.querySelector('svg')!.getBoundingClientRect();
+    return Math.round(el.getBoundingClientRect().right - icon.right);
+  })).toBe(12);
+  await control.locator('select').selectOption('delivery.capacity-planning');
+  await expect(page).toHaveURL(/capability=delivery/);
+  await expect(page.locator('#question-list > li:visible').first()).toBeVisible();
+});
+
+test('capability leaf reveals questions in bounded reading batches', async ({ page }) => {
+  await page.goto('capabilities/delivery/capacity-planning/');
+  await expect(page.locator('.reading-batch[open]')).toHaveCount(1);
+  expect(await page.locator('.reading-batch[open] .question-list > li').count()).toBeLessThanOrEqual(8);
+  const collapsed = page.locator('.reading-batch').nth(1);
+  await collapsed.locator('summary').focus();
+  await page.keyboard.press('Enter');
+  await expect(collapsed).toHaveAttribute('open', '');
+  expect(await collapsed.locator('.question-list > li').count()).toBeLessThanOrEqual(8);
 });

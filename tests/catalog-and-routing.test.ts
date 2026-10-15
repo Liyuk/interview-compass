@@ -4,7 +4,7 @@ import {
   type BrowseRecord,
 } from '../src/lib/question-catalog';
 import { addBase, localeSwitchPath } from '../src/lib/locale-paths';
-import { filterLocalizedResults } from '../src/lib/search-records';
+import { filterLocalizedResults, safeSearchResultHref } from '../src/lib/search-records';
 
 const record = (overrides: Partial<BrowseRecord>): BrowseRecord => ({
   questionId: 'q1', locale: 'zh-CN', status: 'published', title: '标题', question: '问题', intent: '意图',
@@ -81,5 +81,13 @@ describe('localized routes and search', () => {
       { url: '/en/questions/q1/', locale: 'en', title: 'Resource planning' },
     ], 'en');
     expect(results.map((item) => item.title)).toEqual(['Resource planning']);
+  });
+
+  it('accepts only same-origin search destinations inside the configured base path', () => {
+    const options = { origin: 'https://liyuk.github.io', basePath: '/interview-compass' };
+    expect(safeSearchResultHref('/interview-compass/en/questions/q1/', options)).toBe('/interview-compass/en/questions/q1/');
+    expect(safeSearchResultHref('https://example.com/phishing', options)).toBeUndefined();
+    expect(safeSearchResultHref('javascript:alert(1)', options)).toBeUndefined();
+    expect(safeSearchResultHref('/outside/questions/q1/', options)).toBeUndefined();
   });
 });
