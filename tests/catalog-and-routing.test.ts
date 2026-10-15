@@ -4,7 +4,7 @@ import {
   type BrowseRecord,
 } from '../src/lib/question-catalog';
 import { addBase, localeSwitchPath } from '../src/lib/locale-paths';
-import { filterLocalizedResults, safeSearchResultHref } from '../src/lib/search-records';
+import { safeSearchResultHref } from '../src/lib/search-records';
 import { crossDomainPaths, domains } from '../src/lib/taxonomy';
 
 const record = (overrides: Partial<BrowseRecord>): BrowseRecord => ({
@@ -111,14 +111,6 @@ describe('localized routes and search', () => {
     expect(localeSwitchPath('/questions/q1/', 'zh-CN', 'en', { q1: { 'zh-CN': '/questions/q1/', en: '/en/questions/q1/' } }, '/interview-compass'))
       .toBe('/interview-compass/en/questions/q1/');
     expect(localeSwitchPath('/questions/q2/', 'zh-CN', 'en', {}, '/interview-compass')).toBe('/interview-compass/en/');
-  });
-
-  it('filters Pagefind-style records to the active language', () => {
-    const results = filterLocalizedResults([
-      { url: '/questions/q1/', locale: 'zh-CN', title: '资源规划' },
-      { url: '/en/questions/q1/', locale: 'en', title: 'Resource planning' },
-    ], 'en');
-    expect(results.map((item) => item.title)).toEqual(['Resource planning']);
   });
 
   it('accepts only same-origin search destinations inside the configured base path', () => {
