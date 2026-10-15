@@ -1,77 +1,49 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { getStageProfile, stageIds, validateCapabilityModel, type StageId } from '../lib/capability-model';
+import { getLevelMapping, validateCapabilityModel } from '../lib/capability-model';
 import { pathFor, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
-const route: RouteRef = { type: 'capability-model-mapping' };
+const mapping = getLevelMapping(locale);
 const errors = validateCapabilityModel();
 if (errors.length) throw new Error(`Invalid capability model: ${errors.join('; ')}`);
-const responsibilityPatterns: Record<StageId, { pattern: string; sources: Array<{ label: string; url: string }> }> = en ? {
-  'junior-engineer': { pattern: 'Task → project/feature scope. This is a shared early-IC responsibility range, not a named company level.', sources: [{ label: 'Monzo progression framework', url: 'https://monzo.com/documents/engineering-progression-framework-v4-1.pdf' }] },
-  'mid-level-engineer': { pattern: 'Task → project/feature scope. This is a shared early-IC responsibility range, not a named company level.', sources: [{ label: 'Monzo progression framework', url: 'https://monzo.com/documents/engineering-progression-framework-v4-1.pdf' }] },
-  'senior-engineer': { pattern: 'Complex project → collective/discipline influence. Public frameworks describe a responsibility range, not a one-to-one stage match.', sources: [{ label: 'Monzo progression framework', url: 'https://monzo.com/documents/engineering-progression-framework-v4-1.pdf' }] },
-  'staff-engineer': { pattern: 'Complex project → collective/discipline influence, with company-specific senior IC archetypes.', sources: [
-    { label: 'Monzo progression framework', url: 'https://monzo.com/documents/engineering-progression-framework-v4-1.pdf' },
-    { label: 'GitLab IC leadership', url: 'https://handbook.gitlab.com/handbook/engineering/careers/ic-leadership/' },
-  ] },
-  'engineering-manager': { pattern: 'Team → multi-team management responsibility. Compare outcomes, people development, and operating mechanisms within a distinct job family.', sources: [{ label: 'GitLab management career development', url: 'https://handbook.gitlab.com/handbook/engineering/careers/management/management-career-development/' }] },
-  'manager-of-managers': { pattern: 'Team → multi-team management responsibility. Compare outcomes through managers; public sources do not establish a matching level.', sources: [{ label: 'GitLab management career development', url: 'https://handbook.gitlab.com/handbook/engineering/careers/management/management-career-development/' }] },
-} : {
-  'junior-engineer': { pattern: '任务 → 项目/功能范围：作为早期专业贡献者的共同责任区间参考，不对应某个公司的具体职级。', sources: [{ label: 'Monzo 工程成长框架', url: 'https://monzo.com/documents/engineering-progression-framework-v4-1.pdf' }] },
-  'mid-level-engineer': { pattern: '任务 → 项目/功能范围：作为早期专业贡献者的共同责任区间参考，不对应某个公司的具体职级。', sources: [{ label: 'Monzo 工程成长框架', url: 'https://monzo.com/documents/engineering-progression-framework-v4-1.pdf' }] },
-  'senior-engineer': { pattern: '复杂项目 → 集体/专业领域影响：公开框架呈现的是连续责任范围，不是一对一阶段对应。', sources: [{ label: 'Monzo 工程成长框架', url: 'https://monzo.com/documents/engineering-progression-framework-v4-1.pdf' }] },
-  'staff-engineer': { pattern: '复杂项目 → 集体/专业领域影响；不同公司可能定义不同的高级 IC 贡献形态。', sources: [
-    { label: 'Monzo 工程成长框架', url: 'https://monzo.com/documents/engineering-progression-framework-v4-1.pdf' },
-    { label: 'GitLab IC Leadership', url: 'https://handbook.gitlab.com/handbook/engineering/careers/ic-leadership/' },
-  ] },
-  'engineering-manager': { pattern: '团队 → 多团队管理责任：按团队结果、人才发展与运行机制对照独立的管理岗位族。', sources: [{ label: 'GitLab 管理职业发展', url: 'https://handbook.gitlab.com/handbook/engineering/careers/management/management-career-development/' }] },
-  'manager-of-managers': { pattern: '团队 → 多团队管理责任：按通过管理者承担的结果范围对照；公开材料没有给出可对应的统一级别。', sources: [{ label: 'GitLab 管理职业发展', url: 'https://handbook.gitlab.com/handbook/engineering/careers/management/management-career-development/' }] },
-};
-const stageRows = stageIds.map((id) => ({ stage: getStageProfile(id, locale), ...responsibilityPatterns[id] }));
-const cn = en ? [
-  { name: 'Alibaba', theme: 'Culture, hiring principles, manager development, and engineering practice', detail: 'Public materials include values and tiered manager development. The supplied historical front-end matrix offers a useful example of business, craft, collaboration, learning, and team growth in one model; it is not evidence of a current group-wide rubric.', link: 'https://home.alibabagroup.com/en-US/esg-employee-development', label: 'Official employee development' },
-  { name: 'ByteDance', theme: 'Hiring and leveling principles, culture, and onboarding', detail: 'Official public pages describe hiring principles and new-hire growth support, but do not provide a complete company-wide progression matrix.', link: 'https://jobs.bytedance.com/campus/page-6272Gc', label: 'Official campus FAQ' },
-  { name: 'Tencent', theme: 'Values and role-specific hiring requirements', detail: 'Public values and job postings are useful context, but neither should be mistaken for a full internal leveling framework.', link: 'https://www.tencent.com/zh-hk/value-for-users-tech-for-good/', label: 'Official values' },
-  { name: 'Baidu', theme: 'Engineering practices and standards', detail: 'The public engineering white paper discusses team engineering practices and standards, rather than individual promotion levels.', link: 'https://developer.baidu.com/article/detail.html?id=290246', label: 'Engineering standards white paper' },
-] : [
-  { name: '阿里巴巴', theme: '文化、招聘原则、管理者发展与工程实践', detail: '公开材料涉及价值观与分层管理者培养。你提供的历史前端图把业务、专业、协作、学习和团队成长放在一张矩阵中，很适合作为历史参考；它不能证明当前集团通用的职级标准。', link: 'https://home.alibabagroup.com/en-US/esg-employee-development', label: '官方员工发展材料' },
-  { name: '字节跳动', theme: '招聘定级原则、文化与新人培养', detail: '官方公开页面说明招聘理念和新人培养支持，但没有公开完整的全公司逐阶段能力矩阵。', link: 'https://jobs.bytedance.com/campus/page-6272Gc', label: '官方校招 FAQ' },
-  { name: '腾讯', theme: '价值观与具体岗位招聘要求', detail: '公开价值观和招聘岗位可以作为背景材料，但都不能替代完整的内部职级能力框架。', link: 'https://www.tencent.com/zh-hk/value-for-users-tech-for-good/', label: '官方价值观' },
-  { name: '百度', theme: '工程实践与标准', detail: '公开工程白皮书讨论团队工程实践和标准，不是个人晋升等级定义。', link: 'https://developer.baidu.com/article/detail.html?id=290246', label: '工程标准白皮书' },
-];
-const us = en ? [
-  { name: 'Dropbox', theme: 'Responsibilities, impact, and multiple senior IC archetypes', detail: 'Its public engineering framework connects role expectations to scope, business acumen, decisions, collaboration, and organizational health, and warns against checklist use.', link: 'https://dropbox.tech/culture/our-updated-engineering-career-framework', label: 'Updated engineering framework' },
-  { name: 'GitLab', theme: 'Published engineering, product, IC, and management paths', detail: 'Separate job-family frameworks make scope, outcomes, and IC/management paths inspectable. The product framework explicitly covers strategy, customer/market, and outcomes.', link: 'https://handbook.gitlab.com/handbook/engineering/careers/matrix/', label: 'Engineering career matrix' },
-] : [
-  { name: 'Dropbox', theme: '职责、影响与多种高级 IC 贡献形态', detail: '公开工程框架把范围、业务理解、决策、协作和组织健康等纳入要求，并明确提醒不要把框架当成打勾清单。', link: 'https://dropbox.tech/culture/our-updated-engineering-career-framework', label: '更新后的工程职业框架' },
-  { name: 'GitLab', theme: '公开工程、产品、IC 与管理路径', detail: '不同岗位族的框架把范围、结果以及 IC/管理路径分别写清。产品框架明确包含战略、客户与市场、业务结果。', link: 'https://handbook.gitlab.com/handbook/engineering/careers/matrix/', label: '工程职业矩阵' },
-];
+const route: RouteRef = { type: 'capability-model-mapping' };
 ---
-<SiteLayout locale={locale} route={route} description={en ? 'Publicly available company frameworks and cautious China–US role mapping.' : '中美互联网公司公开能力框架与谨慎的岗位责任映射。'}>
-  <p class="eyebrow">{en ? 'Public evidence, not title conversion' : '公开材料 · 责任特征对照'}</p>
-  <h1 class="page-title">{en ? 'China–US capability frameworks' : '中美能力模型：公开内容与映射边界'}</h1>
-  <p class="intro">{en ? 'This comparison summarizes what companies publish. It does not claim a national standard or convert titles one-to-one. Public visibility is uneven, and the sample cannot establish that one country has a single model.' : '本页整理公司实际公开了什么，不把职级名称一一换算，也不把有限样本概括成国家差异。公开程度并不相同，未找到公开矩阵不代表公司内部没有使用。'}</p>
-  <section class="model-section"><div class="model-section-heading"><div><p class="eyebrow">{en ? 'China' : '中国互联网公司'}</p><h2>{en ? 'Public slices vary by company' : '公开切面各不相同，不能互相替代'}</h2></div><p>{en ? 'Values, hiring principles, role postings, manager development, and engineering standards answer different questions.' : '价值观、招聘定级、岗位要求、管理者培养与工程标准回答的是不同问题。'}</p></div><div class="mapping-grid">{cn.map((item) => <article class="mapping-card"><h3>{item.name}</h3><strong>{item.theme}</strong><p>{item.detail}</p><a href={item.link} target="_blank" rel="noreferrer">{item.label} ↗</a></article>)}</div></section>
-  <section class="model-section"><div class="model-section-heading"><div><p class="eyebrow">{en ? 'United States' : '美国互联网公司'}</p><h2>{en ? 'Some companies publish detailed career frameworks' : '部分公司公开了可逐项阅读的职业框架'}</h2></div><p>{en ? 'These are company-specific examples, not a universal US leveling standard.' : '这些是具体公司的公开实例，不是美国统一职级标准。'}</p></div><div class="mapping-grid mapping-grid-two">{us.map((item) => <article class="mapping-card"><h3>{item.name}</h3><strong>{item.theme}</strong><p>{item.detail}</p><a href={item.link} target="_blank" rel="noreferrer">{item.label} ↗</a></article>)}</div></section>
-  <section class="model-section" aria-labelledby="mapping-results-heading">
-    <h2 id="mapping-results-heading">{en ? 'Stage responsibility-range comparison' : '阶段责任范围映射结果'}</h2>
-    <p class="intro">{en ? 'These responsibility ranges are discussion anchors from the cited public frameworks. They are not title or level equivalencies.' : '以下责任范围来自所引公开框架，可作为对照讨论的锚点，不代表称谓或职级等价。'}</p>
-    <div class="table-scroll"><table class="comparison mapping-table">
-      <thead><tr><th>{en ? 'Interview Compass stage' : '本站阶段'}</th><th>{en ? 'Public responsibility range to compare' : '可对照的公开责任范围'}</th><th>{en ? 'Chinese company-level match' : '中国公司职级对应'}</th></tr></thead>
-      <tbody>{stageRows.map(({ stage, pattern, sources }) => (
-        <tr class="mapping-stage-row">
-          <td><strong>{stage.name}</strong><small>{stage.track === 'ic' ? (en ? 'IC path' : '专业贡献路径') : (en ? 'Management path' : '管理路径')}</small></td>
-          <td>{pattern}<small>{sources.map((source, index) => <>{index > 0 ? ' · ' : ''}<a href={source.url} target="_blank" rel="noreferrer">{source.label}</a></>)}</small></td>
-          <td>{en ? 'No verifiable company-stage correspondence in the reviewed sources.' : '现有调研来源中暂无可核验的中国公司职级对应。'}</td>
-        </tr>
-      ))}</tbody>
-    </table></div>
-    <p class="mapping-caution">{en ? 'The reviewed China sample includes a historical Alibaba front-end matrix and public material on values, hiring, and engineering practices, but no comparable current company-wide stage set. Those stages therefore remain explicitly unmatched. The responsibility patterns above can guide questions for comparison; they do not establish equivalent levels.' : '本次中国样本包括一份历史阿里前端矩阵，以及价值观、招聘和工程实践等公开材料，没有可比的现行公司级阶段体系。因此六个阶段均明确保留为未匹配。上表的责任范围只能帮助提出对照问题，不能据此认定职级等价。'}</p>
+<SiteLayout locale={locale} route={route} description={en ? 'A cautious guide to partial cross-company level mapping.' : '了解跨公司职级映射可以比较什么，以及它的边界。'}>
+  <p class="eyebrow">{en ? 'PARTIAL COMPARISON · NOT A RUBRIC' : '部分对照 · 不是晋升标准'}</p>
+  <h1 class="page-title">{en ? 'Cross-company level mapping' : '跨公司职级映射：可比范围与边界'}</h1>
+  <p class="source-date">{mapping.reviewDate}</p>
+  <p class="intro">{mapping.intro}</p>
+
+  <section class="model-section" aria-labelledby="mapping-sources-heading">
+    <div class="model-section-heading">
+      <div><p class="eyebrow">{en ? 'External references' : '外部参考'}</p><h2 id="mapping-sources-heading">{en ? 'What these sources can tell you' : '两个来源各自能提供什么'}</h2></div>
+      <p>{en ? 'Use them as discovery and comparison aids. Neither publishes a complete, authoritative promotion rubric for every role.' : '它们适合用来发现职级名称和对照线索；都不能代表每个岗位完整、权威的晋升能力标准。'}</p>
+    </div>
+    <div class="mapping-grid mapping-grid-two">
+      {mapping.references.map((reference) => <article class="mapping-card">
+        <h3>{reference.name}</h3>
+        <p>{reference.summary}</p>
+        <strong>{en ? 'Comparison basis' : '可用的比较线索'}</strong>
+        <p>{reference.basis}</p>
+        <strong>{en ? 'Limit' : '边界'}</strong>
+        <p>{reference.limitation}</p>
+        <a href={reference.url} target="_blank" rel="noreferrer">{reference.source} ↗</a>
+      </article>)}
+    </div>
   </section>
-  <section class="model-section"><h2>{en ? 'Map responsibility, not title' : '对照责任特征，不换算称谓'}</h2><p class="intro">{en ? 'Use these questions when comparing a role in China with one in the US:' : '比较中国与美国岗位时，可以逐项核对这些责任维度：'}</p><div class="mapping-factors">{(en ? ['Business outcome ownership and time horizon', 'Scope: task, project, domain, multi-team, or organization', 'Autonomy, ambiguity, and decision authority', 'Technical/product depth and quality responsibility', 'Influence through craft, peers, managers, or organization', 'Individual-contributor or people-management path'] : ['业务结果责任及其时间跨度', '影响范围：任务、项目、领域、多团队或组织', '自主性、问题模糊度与决策权', '专业/产品深度与质量责任', '通过专业、协作、管理者或组织产生影响的方式', '专业贡献路径还是人员管理路径']).map((item, index) => <div><span>{String(index + 1).padStart(2, '0')}</span><strong>{item}</strong></div>)}</div><p class="mapping-caution">{en ? 'Similar responsibility patterns can appear under different titles and levels. Treat any mapping as a contextual hypothesis that must be checked against company, function, geography, and time.' : '不同公司可能用不同称谓和级别承载相似责任。任何映射都只是待核对的假设，必须结合公司、职能、地域和时期。'}</p></section>
-  <aside class="model-callout"><div><p class="eyebrow">{en ? 'Our model' : '回到本站模型'}</p><strong>{en ? 'One product-and-engineering outcome model, with paths that branch by responsibility.' : '以产品与工程共同创造结果为主线，按责任路径呈现阶段差异。'}</strong></div><a class="button-link" href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Capability model' : '能力模型总览'} →</a></aside>
+
+  <section class="model-section">
+    <h2>{en ? 'A cautious comparison checklist' : '做职级对照时，至少核对这些条件'}</h2>
+    <div class="mapping-factors">{mapping.factors.map((factor, index) => <div><span>{String(index + 1).padStart(2, '0')}</span><strong>{factor}</strong></div>)}</div>
+    <div class="mapping-caution"><ul>{mapping.caveats.map((caveat) => <li>{caveat}</li>)}</ul></div>
+  </section>
+
+  <aside class="model-callout">
+    <div><p class="eyebrow">{en ? 'Capability model' : '能力模型'}</p><strong>{en ? 'Our capability model is an editorial heuristic for organizing questions, not a company level conversion.' : '本站能力模型是整理题库用的启发式草稿，不是公司职级换算表。'}</strong></div>
+    <a class="button-link" href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'View the model' : '查看本站模型'} →</a>
+  </aside>
 </SiteLayout>

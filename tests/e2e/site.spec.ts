@@ -165,11 +165,20 @@ test('capability dimension progression separates the IC and management paths', a
   await expect(page.getByRole('heading', { name: '管理路径从高级工程师处分叉', level: 2 })).toBeVisible();
 });
 
-test('mapping page records stage-level matches and leaves unsupported stages unmatched', async ({ page }) => {
+test('level mapping page distinguishes comparison clues from capability standards', async ({ page }) => {
   await page.goto('capability-model/mapping/');
-  await expect(page.getByRole('heading', { name: '阶段责任范围映射结果', level: 2 })).toBeVisible();
-  await expect(page.locator('.mapping-stage-row')).toHaveCount(6);
-  await expect(page.locator('.mapping-stage-row').first()).toContainText('现有调研来源中暂无可核验的中国公司职级对应');
+  await expect(page.getByRole('heading', { name: '跨公司职级映射：可比范围与边界', level: 1 })).toBeVisible();
+  await expect(page.getByRole('heading', { name: '两个来源各自能提供什么', level: 2 })).toBeVisible();
+  await expect(page.locator('.mapping-card')).toHaveCount(2);
+  await expect(page.locator('.mapping-card').nth(0)).toContainText('社区补充或调整');
+  await expect(page.locator('.mapping-card').nth(1)).toContainText('粗略参考');
+  await expect(page.getByText('本站不提供固定等价换算')).toBeVisible();
+  await expect(page.getByText(/薪酬/)).toHaveCount(0);
+  await page.goto('en/capability-model/mapping/');
+  await expect(page.getByRole('heading', { name: 'Cross-company level mapping', level: 1 })).toBeVisible();
+  await expect(page.getByText('These references do not define capability standards.')).toBeVisible();
+  await page.goto('capability-model/');
+  await expect(page.getByText('这是为组织本站题库而整理的通用启发式草稿')).toBeVisible();
 });
 
 test('mobile layout keeps the main content within the viewport', async ({ page, isMobile }) => {

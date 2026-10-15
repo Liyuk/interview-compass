@@ -15,11 +15,11 @@ const managementStages = stages.filter((stage) => stage.track !== 'ic');
 const dimensions = dimensionIds.map((id) => getDimensionProgression(id, locale));
 const route: RouteRef = { type: 'capability-model' };
 ---
-<SiteLayout locale={locale} route={route} description={en ? 'A bilingual AI-era capability framework for product and engineering.' : '面向 AI 时代、产品与工程合一的双语能力模型。'}>
+<SiteLayout locale={locale} route={route} description={en ? 'An editorial capability heuristic for organizing interview questions.' : '用于组织面试问题的启发式能力模型草稿。'}>
   <section class="model-hero">
-    <p class="eyebrow">{en ? 'AI-era capability framework' : 'AI 时代 · 产品与工程合一'}</p>
+    <p class="eyebrow">{en ? 'INTERVIEW COMPASS EDITORIAL DRAFT' : 'INTERVIEW COMPASS · 启发式草稿'}</p>
     <h1 class="page-title">{en ? 'Build outcomes. Exercise judgment. Grow capability.' : '创造业务结果，建设判断力与人的竞争力'}</h1>
-    <p class="intro">{en ? 'A stage model for product and engineering work in which AI expands execution capacity, while human judgment, ownership, and relationships determine where that capacity creates lasting value.' : '这套模型面向产品与工程融合的工作方式：AI 扩大执行能力，而人的判断、责任和关系建设决定这些能力能否转化为持续的业务结果。能力要求随阶段变化，不是所有阶段都要求同等深度。'}</p>
+    <p class="intro">{en ? 'A working heuristic synthesized to organize this question library. It is not an externally validated standard or a substitute for your organization’s promotion rubric. AI expands execution capacity, while human judgment, ownership, and relationships shape how that capacity creates outcomes.' : '这是为组织本站题库而整理的通用启发式草稿，未经过外部标准验证，也不能替代所在组织的晋升能力模型。AI 扩大执行能力，而人的判断、责任和关系建设影响这些能力如何转化为结果。'}</p>
     <div class="model-principles"><span>{en ? 'Business outcomes' : '业务结果'}</span><span>{en ? 'Domain expertise' : '专业领域知识'}</span><span>{en ? 'Team influence' : '团队影响力'}</span><span>{en ? 'Human competitiveness' : '人的竞争力'}</span></div>
     <p class="model-note">{en ? 'AI capability is embedded across all four dimensions; it is not a separate maturity ladder.' : 'AI 能力贯穿四个维度，不单独形成一条工具熟练度阶梯。人的竞争力通过学习方式、思考质量、判断力与关系处理来观察。'}</p>
   </section>
@@ -34,5 +34,5 @@ const route: RouteRef = { type: 'capability-model' };
     <div class="model-section-heading"><div><p class="eyebrow">{en ? 'Capability map' : '能力地图'}</p><h2 id="dimension-heading">{en ? 'Four dimensions, connected to the A–H map' : '四个评价维度，连接站内 A–H 能力地图'}</h2></div><p>{en ? 'Each standard points back to the observable capability leaves it draws on.' : '维度描述阶段期待，A–H 能力叶子描述可发展的具体能力。每条标准都回连到相应能力叶子。'}</p></div>
     <div class="dimension-grid">{dimensions.map((dimension) => <a class="dimension-card" href={pathFor({ type: 'capability-model-dimension', dimension: dimension.id }, locale, base)}><span>{dimension.stages.reduce((sum, item) => sum + item.standards.length, 0)} {en ? 'stage standards' : '条阶段标准'}</span><strong>{dimension.name}</strong><p>{dimension.stages[0]?.standards[0]?.text}</p><span class="stage-link">{en ? 'Explore progression →' : '查看能力变迁 →'}</span></a>)}</div>
   </section>
-  <aside class="model-callout"><div><p class="eyebrow">{en ? 'Cross-market references' : '公开框架参考'}</p><strong>{en ? 'Compare principles without treating titles as equivalents.' : '比较公开框架的设计原则，不把中美职级名称当作等价关系。'}</strong></div><a class="button-link" href={pathFor({ type: 'capability-model-mapping' }, locale, base)}>{en ? 'China–US mapping' : '查看中美映射'} →</a></aside>
+  <aside class="model-callout"><div><p class="eyebrow">{en ? 'Level mapping' : '职级映射参考'}</p><strong>{en ? 'External level maps are partial clues, not capability standards.' : '外部职级映射只能提供不完整的比较线索，不能当作能力标准。'}</strong></div><a class="button-link" href={pathFor({ type: 'capability-model-mapping' }, locale, base)}>{en ? 'Compare level mapping sources' : '查看职级映射参考'} →</a></aside>
 </SiteLayout>

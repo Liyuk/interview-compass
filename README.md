@@ -13,7 +13,7 @@ npm ci
 npm run dev
 ```
 
-The site has Chinese and English routes for the home page, a filterable question library, a capability map (eight domains and their leaves), role, scenario and topic views, a cross-domain product path, and question pages that explain intent and observable signals. The capability-model guide adds six role-stage profiles, four capability dimensions, and a sourced comparison of public frameworks. Search uses Pagefind per language. The Pages base path is `/interview-compass/`; the Chinese site is at `/interview-compass/` and English at `/interview-compass/en/` after deployment.
+The site has Chinese and English routes for the home page, a filterable question library, a capability map (eight domains and their leaves), role, scenario and topic views, a cross-domain product path, and question pages that explain intent and observable signals. The capability-model guide contains a heuristic editorial draft for organizing questions and a separate, explicitly partial page about cross-company level mapping. Search uses Pagefind per language. The Pages base path is `/interview-compass/`; the Chinese site is at `/interview-compass/` and English at `/interview-compass/en/`.
 
 ## Checks
 
@@ -37,4 +37,4 @@ Question records live under `src/content/questions/zh-CN/` and `src/content/ques
 
 ## Deployment
 
-`.github/workflows/deploy.yml` checks pull requests and builds every pushed branch, but deploys Pages only from the repository's configured default branch. The site is configured for `https://liyuk.github.io/interview-compass/`. GitHub Pages must be configured to use GitHub Actions before the first production deployment.
+`.github/workflows/deploy.yml` checks pull requests and builds every pushed branch, but deploys Pages only from the repository's configured default branch (`main`). The published site is at [liyuk.github.io/interview-compass](https://liyuk.github.io/interview-compass/), using GitHub Actions.
