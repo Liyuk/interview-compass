@@ -2,7 +2,7 @@
   "name": "interview-compass",
   "version": "1.0.0",
   "private": true,
-  "author": "Li Yu (Liyuk)",
+  "author": "Liyuk",
   "description": "A bilingual, question-first library for external interviews and internal promotion preparation.",
   "type": "module",
   "scripts": {

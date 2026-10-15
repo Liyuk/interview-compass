@@ -155,7 +155,7 @@ test('role, scenario and topic pages group the same questions by capability', as
 test('footer publishes copyright and the separate code and content licenses', async ({ page }) => {
   await page.goto('./');
   const footer = page.locator('.site-footer');
-  await expect(footer).toContainText('© 2026 Li Yu');
+  await expect(footer).toContainText('© 2026 Liyuk');
   await expect(footer.getByRole('link', { name: '代码许可 · MIT' })).toHaveAttribute('href', '/interview-compass/LICENSE');
   await expect(footer.getByRole('link', { name: '内容许可 · CC BY-NC-SA 4.0' })).toHaveAttribute('href', '/interview-compass/CONTENT-LICENSE.md');
   for (const file of ['LICENSE', 'CONTENT-LICENSE.md']) {
