@@ -94,7 +94,7 @@ export function titleFor(ref: RouteRef, locale: Locale): string {
     case 'capability-model': return pick(labels.capabilityModel, locale);
     case 'capability-model-stage': return getStageProfile(ref.stage, locale).name;
     case 'capability-model-dimension': return getDimensionProgression(ref.dimension, locale).name;
-    case 'capability-model-mapping': return locale === 'en' ? 'China and US comparison' : '中美能力模型对照';
+    case 'capability-model-mapping': return locale === 'en' ? 'Cross-company level mapping' : '跨公司职级映射';
     case 'domain': return domainName(ref.domain, locale);
     case 'leaf': return leafName(ref.domain, ref.leaf, locale);
     case 'roles': return pick(labels.roles, locale);
