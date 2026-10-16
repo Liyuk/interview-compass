@@ -13,11 +13,17 @@ signals:
 primaryCapability: collaboration.feedback
 roles:
   - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
 careerTracks:
-  - individual-contributor
   - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios:
   - interview
   - hiring

@@ -13,9 +13,20 @@ signals:
   - Says how the uncertainty and the staged checkpoints are presented when asking upward
 primaryCapability: delivery.capacity-planning
 topics: [planning, resource-allocation, risk-management]
-roles: [manager, pmo, engineering, product]
+roles:
+  - manager
+  - pmo
+  - engineering
+  - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, promotion]
 formats: [planning, case]
 followUps:

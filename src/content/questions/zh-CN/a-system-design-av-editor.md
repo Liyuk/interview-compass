@@ -13,9 +13,17 @@ signals:
   - 说明导出任务的排队、进度和失败恢复
 primaryCapability: professional.system-design
 topics: [system-design, frontend, backend]
-roles: [engineering, frontend, backend, mobile]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

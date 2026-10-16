@@ -23,6 +23,7 @@ roles:
   - frontend
   - engineering
   - manager
+  - mobile
 responsibilityScopes:
   - multiple-teams
   - organization
@@ -30,6 +31,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - promotion

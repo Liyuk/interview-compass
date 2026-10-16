@@ -13,9 +13,19 @@ signals:
   - Says what is kept after stopping, such as lessons, reusable parts, and an account to the team
 primaryCapability: value-direction.investment-choices
 topics: [prioritization, risk-management, planning]
-roles: [manager, product, engineering]
+roles:
+  - manager
+  - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

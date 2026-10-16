@@ -7,13 +7,11 @@ title: 移动端事件可能离线数天后才上传，报表又需要按事件�
 question: 移动端事件可能离线数天后才上传，报表又需要按事件发生时间统计。你会怎样建模和处理迟到、更正及重复事件？
 intent: 考察你是否分开事件时间与处理时间，并把重放（重新处理历史消息或任务）、去重和历史修正纳入管道语义。
 signals:
-  - 明确事件 ID、事件时间和入库时间
-  - 解释迟到窗口、幂等（重复请求不会重复执行）写入及重算范围
-  - 讨论更正事件如何替代或冲销原记录
-  - 说明报表何时稳定以及如何标记修订
-  - 分别记录客户端发生时间、服务端接收时间和可信度来源。
-  - 为离线队列中的顺序、重复提交和设备身份定义稳定标识。
-  - 明确权限变更前后离线操作的接受、拒绝或待审规则。
+  - 分别记录客户端发生时间、服务端接收时间、稳定事件标识及时间可信度。
+  - 说明离线队列的重复、乱序和设备身份变化怎样影响去重与关联。
+  - 定义迟到窗口、更正事件、冲销或替代关系以及受影响的重算范围。
+  - 比较允许修订和冻结报表的条件，标明结果版本及何时稳定。
+  - 用跨天上传、重复发送和更正样例核对事件事实与报表结果。
 primaryCapability: domain-modeling.data-model
 topics:
   - data-modeling
@@ -21,11 +19,16 @@ topics:
 roles:
   - data
   - backend
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -9,12 +9,14 @@ question: >-
   differently. How would you decide which conclusions the experiment still supports?
 intent: Assesses intervention integrity, external changes, and limits of causal interpretation.
 signals:
-  - Map intervention timing and differential group exposure.
-  - Check randomization, contamination, and attrition.
-  - Limit the estimand and add sensitivity analysis.
-  - Checks whether the randomization unit matches exposure, account merging, and cross-device behavior.
-  - Looks for imbalance or contamination across channels, regions, and time.
-  - States when adjustment, stratification, or a new experiment is needed and limits conclusions accordingly.
+  - Record policy and experiment timing, assignment, and exposure, identifying differential effects.
+  - >-
+    Check allocation, contamination, attrition, and comparability without selecting convenient samples
+    after results appear.
+  - >-
+    Compare stratification, sensitivity checks, longer observation, or a new experiment, stating each
+    limit.
+  - Bound current conclusions and decision risk and record the evidence still needed.
 primaryCapability: value-direction.metrics-causality
 topics:
   - metrics
@@ -22,12 +24,18 @@ topics:
 roles:
   - product
   - data
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

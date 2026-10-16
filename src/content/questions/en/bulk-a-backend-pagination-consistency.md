@@ -21,6 +21,11 @@ topics:
   - data-modeling
 roles:
   - backend
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes:
   - individual
   - team
@@ -28,6 +33,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

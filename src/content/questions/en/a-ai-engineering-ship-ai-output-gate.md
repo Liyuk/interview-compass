@@ -12,9 +12,18 @@ signals:
   - "Does not treat a few good demos as grounds for release"
 primaryCapability: professional.ai-engineering
 topics: [ai-engineering, security, engineering-systems]
-roles: [engineering, ai-engineer, backend]
+roles:
+  - engineering
+  - ai-engineer
+  - backend
+  - frontend
+  - mobile
+  - data
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, campus]
 formats: [case]
 relatedQuestions:

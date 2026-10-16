@@ -12,13 +12,10 @@ intent: >-
   Assesses whether you can build enough traceability and reproduction evidence while applying data minimization,
   redaction, controlled access, and retention limits.
 signals:
-  - Records reproducible details such as model, prompt template, index, tool versions, and correlated request IDs
-  - Uses retrieval statistics, error classes, and safe summaries instead of defaulting to raw prompts
-  - Defines redaction, sampling, access, retention, and approval for temporary capture
-  - Verifies telemetry can still distinguish retrieval, model, and tool regressions without exposing sensitive content
-  - Selects minimal fields such as request IDs, model versions, retrieval statistics, and error classes
-  - Defines redaction, sampling, retention, and conditions for controlled temporary capture
-  - Verifies telemetry can still distinguish retrieval, model, and tool-chain regressions
+  - Reconstructs requests through correlation IDs and model, prompt, index, tool, and parameter versions.
+  - Derives minimum evidence from actual errors rather than retaining all raw content.
+  - Compares redaction, sampling, statistics, and controlled temporary capture for value and exposure.
+  - Defines access, purpose, retention, and deletion and tests diagnostic usefulness.
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering
@@ -29,12 +26,16 @@ roles:
   - ai-engineer
   - backend
   - engineering
+  - frontend
+  - mobile
+  - data
 responsibilityScopes:
   - team
   - organization
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -7,11 +7,16 @@ title: How do you judge promotion lift when orders rise but margin falls?
 question: Orders rise 30% during a discount campaign, but many come from existing customers who would have bought anyway, and product mix changes. How would you estimate incremental gross margin?
 intent: Assess whether you separate order growth, demand pull-forward, customer switching, and true incremental contribution.
 signals:
-  - Define a no-promotion counterfactual, customer segments, and net revenue.
-  - Account for discounts, returns, fulfillment cost, and product-mix changes.
-  - Compare short-term lift with post-campaign demand decline and repeat purchase.
-  - Identifies the stakeholders, constraints, and risks relevant to cross-period user behavior and campaign incrementality.
-  - Proposes evidence or a review point that could confirm or change the decision.
+  - Define a comparable no-promotion setting, segments, and margin scope, checking control credibility.
+  - >-
+    Account for discounts, returns, fulfillment, mix, and purchases that would occur anyway rather than
+    attributing all order growth to lift.
+  - >-
+    Observe pull-forward, channel or segment shifts, and later decline, stating windows and attribution
+    limits.
+  - >-
+    Use net contribution, user impact, and opportunity cost for subsequent investment while retaining
+    uncertainty.
 primaryCapability: value-direction.metrics-causality
 topics:
   - growth-experiments
@@ -28,6 +33,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

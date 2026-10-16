@@ -12,9 +12,20 @@ signals:
   - "修复后回到原任务验证，而不是只看提交数量"
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, execution]
-roles: [product, engineering, operations, design]
+roles:
+  - product
+  - engineering
+  - operations
+  - design
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, operations-review]
 formats: [planning, case]
 followUps:

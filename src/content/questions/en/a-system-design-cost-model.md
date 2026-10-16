@@ -13,9 +13,19 @@ signals:
   - Names what cutting cost may cost in return, such as latency or reliability
 primaryCapability: professional.system-design
 topics: [system-design, resource-allocation, engineering-systems]
-roles: [engineering, backend, data, manager]
+roles:
+  - engineering
+  - backend
+  - data
+  - manager
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, system-design]
 followUps:

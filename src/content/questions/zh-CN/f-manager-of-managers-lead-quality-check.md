@@ -13,9 +13,17 @@ signals:
   - 说明发现问题后怎样给小组长反馈，而不是直接接手
 primaryCapability: people-organization.manager-of-managers
 topics: [management, feedback]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

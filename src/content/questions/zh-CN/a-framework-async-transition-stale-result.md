@@ -9,9 +9,13 @@ intent: "考察能否区分并发渲染与请求竞态，并防止较早的异�
 signals: ["关联每次用户意图与请求的稳定标识","决定取消旧任务还是忽略过期响应","区分待处理、失败和当前有效结果","测试快速连续输入、切换和返回场景"]
 primaryCapability: "professional.coding-abstraction"
 topics: ["frameworks","frontend","debugging"]
-roles: ["frontend","engineering"]
+roles:
+  - frontend
+  - engineering
+  - mobile
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["取消操作不可靠时，如何确保旧响应不会提交？","界面应如何表示新旧结果的过渡状态？"]

@@ -9,9 +9,18 @@ intent: "了解你如何把数据血缘、责任归属、隐私访问和现有�
 signals: ["从高价值或高风险数据集分批盘点", "记录上游来源、下游用途和责任人", "标注敏感字段与可访问角色", "安排发现问题后的分级修复和沟通"]
 primaryCapability: "domain-modeling.data-model"
 topics: ["data-modeling", "security", "operations"]
-roles: ["data", "operations", "product"]
+roles:
+  - data
+  - operations
+  - product
+  - engineering
+  - backend
+  - ai-engineer
 responsibilityScopes: ["multiple-teams"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case", "planning"]
 followUps: []

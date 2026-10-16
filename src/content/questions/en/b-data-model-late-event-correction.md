@@ -13,15 +13,11 @@ intent: >-
   Assess whether you distinguish event time from processing time and account for replay, deduplication, and
   historical correction.
 signals:
-  - Defines event ID, event time, and ingestion time
-  - Explains lateness windows, idempotent writes, and recomputation scope
-  - Handles corrections by replacing or reversing prior records
-  - States when reports stabilize and how revisions are marked
-  - Records client occurrence time, server receipt time, and the trust source for each.
-  - Assigns stable identity for offline ordering, duplicate submission, and device provenance.
-  - >-
-    Defines whether offline actions before or after an authorization change are accepted, rejected, or
-    reviewed.
+  - Records client event time, receipt time, stable IDs, and timestamp confidence separately.
+  - Explains deduplication and linkage under offline repetition, reordering, and device changes.
+  - Defines late windows, corrections, reversals or replacements, and recalculation scope.
+  - Compares revised and frozen reports, marking versions and stability conditions.
+  - Reconciles multi-day uploads, duplicates, and corrections against reported results.
 primaryCapability: domain-modeling.data-model
 topics:
   - data-modeling
@@ -29,11 +25,16 @@ topics:
 roles:
   - data
   - backend
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

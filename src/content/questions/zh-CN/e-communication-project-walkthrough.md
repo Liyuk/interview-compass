@@ -13,9 +13,18 @@ signals:
   - 结果部分说明怎样验证，并坦率给出复盘
 primaryCapability: collaboration.communication
 topics: [communication]
-roles: [engineering, frontend, backend, mobile, product]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - product
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [behavioral]
 source:

@@ -17,12 +17,16 @@ topics:
   - operations
 roles:
   - backend
-  - operations
+  - engineering
+  - ai-engineer
+  - data
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

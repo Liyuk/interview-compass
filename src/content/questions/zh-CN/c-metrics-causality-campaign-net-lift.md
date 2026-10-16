@@ -7,12 +7,10 @@ title: 活动期间次日留存上升了。你怎样判断这是活动带来的�
 question: 活动期间次日留存上升了。你怎样判断这是活动带来的净增量，而不是原本就会发生的变化？
 intent: 了解你如何为一个增长结果找到合理的对照，并说明结论能支持到哪里。
 signals:
-  - 先确定对比对象，例如对照组或同期的自然趋势
-  - 检查参与活动的用户本来就更活跃之类的选择偏差
-  - 说明结论的边界，以及还需要补哪些验证
-  - 明确目标用户、目标结果和不应恶化的护栏
-  - 区分行为相关性、因果证据和仍未验证的假设
-  - 给出扩大、调整或停止投入的触发条件
+  - 确认次日留存的事件、用户群与统计周期，比较对照或同期自然趋势是否可比。
+  - 检查参与者选择、曝光、同期改动和活动干扰，不把同期上升直接当净增量。
+  - 说明结论依赖的假设、置信范围及无法排除的其他解释。
+  - 提出后续观察、补充验证和扩量或停止条件，并关注成本与用户影响。
 primaryCapability: value-direction.metrics-causality
 topics:
   - growth-experiments
@@ -24,6 +22,11 @@ roles:
   - marketing
   - product
   - data
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams

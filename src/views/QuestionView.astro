@@ -1,6 +1,8 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Icon from '../components/Icon.astro';
+import { tokensForQuestion, engineeringLensForQuestion } from '../lib/question-profile-data';
+import QuestionStageGuidance from '../components/QuestionStageGuidance.astro';
 import { capabilityLabel, facetLabel, facetMeta, pick, splitCapability, type FacetKind, type Locale } from '../lib/taxonomy';
 import { facetRoute, pathFor } from '../lib/routes';
 import { facetValuesOf } from '../lib/question-catalog';
@@ -11,11 +13,12 @@ import { loadAllRecords } from '../lib/site-data';
 interface Props { locale: Locale; id: string }
 const { locale, id } = Astro.props;
 const en = locale === 'en';
+const engineeringLens = engineeringLensForQuestion(id);
 const base = import.meta.env.BASE_URL;
 const all = await loadAllRecords();
 const record = all.find((item) => item.questionId === id && item.locale === locale && item.status === 'published')!;
 const evaluation = questionEvaluation(record);
-const analysisPrompt = buildQuestionAnalysisPrompt({ locale, question: record, evaluation });
+const analysisPrompt = buildQuestionAnalysisPrompt({ locale, question: record, evaluation, engineeringContext: engineeringLens?.[en ? 'en' : 'zh'] });
 const { domain, leaf } = splitCapability(record.primaryCapability);
 const route = { type: 'question', questionId: record.questionId, capability: record.primaryCapability, title: record.question } as const;
 const related = (record.relatedQuestions ?? []).flatMap((relation) => {
@@ -30,6 +33,9 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
   <a class="reading-return" data-reading-return hidden href={pathFor({ type: 'questions' }, locale, base)}><Icon name="arrow-left" size={16} /> {en ? 'Back to your results or question set' : '返回本次结果或题单'}</a>
   <p class="eyebrow">{domain?.letter} · {domain && pick(domain.name, locale)} <Icon name="chevron-right" size={14} /> {leaf && pick(leaf.name, locale)}</p>
   <h1 class="page-title" data-pagefind-meta="title">{record.question}</h1>
+  {tokensForQuestion(record.questionId).map(token => <span hidden data-pagefind-filter="profile[data-profile-token]" data-profile-token={token} />)}
+  <aside class="target-mismatch" data-question-detail-profiles={tokensForQuestion(record.questionId).join(' ')} hidden data-pagefind-ignore><p>{en ? 'This question is outside your current target. The direct link stays readable.' : '此题不在当前目标范围内，直接链接仍可完整阅读。'}</p><button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button><button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button></aside>
+  {engineeringLens && <aside class="engineering-context" data-engineering-context data-pagefind-ignore><strong>{en ? 'Engineering business context' : '工程师的业务理解视角'}</strong><p>{engineeringLens[en ? 'en' : 'zh']}</p></aside>}
   <div class="question-fit" aria-label={en ? 'Question relevance' : '适用范围'}>
     {context.filter((group) => ['roles', 'responsibilityScopes', 'careerTracks'].includes(group.kind)).map((group) => <p><strong>{pick(facetMeta[group.kind].name, locale)}</strong><span>{group.ids.map((id) => facetLabel(group.kind, id, locale)).join(en ? ' · ' : '、')}</span></p>)}
     <p class="band-text">{en ? 'Select questions for the responsibility you actually hold or seek. These labels are not universal stage requirements.' : '按目标岗位和实际责任选题；这些标签不表示所有阶段都必须掌握。'} <a href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Stage expectations' : '查看阶段要求'}</a></p>
@@ -42,6 +48,7 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
     }))}
     <a href={pathFor({ type: 'leaf', domain: domain!.id, leaf: leaf!.id }, locale, base)}>{en ? 'More in this capability' : '同类能力问题'}</a>
   </nav>
+  <QuestionStageGuidance question={record} locale={locale} />
   <section class="question-analysis-prompt" aria-label={en ? 'Optional external AI analysis' : '可选的外部 AI 分析'}>
     <p>{en ? 'Want deeper feedback? Generate a prompt with this question’s evidence framework, then choose an AI tool yourself.' : '需要进一步分析时，可以生成包含本题证据框架的 Prompt，再自行选择 AI 工具使用。本站不会发送你的回答。'}</p>
     <button class="button-link" type="button" data-generate-analysis>{en ? 'Generate AI analysis prompt' : '生成 AI 分析 Prompt'} <Icon name="arrow-up-right" size={16} /></button>
@@ -138,13 +145,13 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
     ) : null}
 
     {related.length > 0 && (
-      <section class="detail-block" aria-labelledby="related-h">
+      <section class="detail-block" aria-labelledby="related-h" data-related-section>
         <h2 id="related-h">{en ? 'Related questions' : '相近的问题'}</h2>
         <table class="comparison">
           <thead><tr><th>{en ? 'Question' : '问题'}</th><th>{en ? 'Relation' : '关系'}</th><th>{en ? 'What changes' : '观察差异'}</th></tr></thead>
           <tbody>
             {related.map(({ target, relation, contrast }) => (
-              <tr>
+              <tr data-question-profiles={tokensForQuestion(target.questionId).join(' ')}>
                 <td><a href={pathFor({ type: 'question', questionId: target.questionId, capability: target.primaryCapability, title: target.question }, locale, base)}>{target.question}</a></td>
                 <td>{relation}</td>
                 <td>{contrast}</td>
@@ -201,8 +208,16 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
   const copy = document.querySelector<HTMLButtonElement>('[data-copy-analysis]');
   const status = document.querySelector<HTMLElement>('[data-copy-status]');
   const en = document.documentElement.lang === 'en';
+  const basePrompt = textarea?.value ?? '';
+  function syncStagePrompt() {
+    const addition = document.querySelector<HTMLElement>('[data-question-stage]')?.dataset.stagePrompt;
+    if (textarea) textarea.value = addition ? `${basePrompt}\n\n${addition}` : basePrompt;
+  }
+  document.addEventListener('question-stage-change', syncStagePrompt);
+  syncStagePrompt();
 
   generate?.addEventListener('click', () => {
+    syncStagePrompt();
     if (panel) panel.hidden = false;
     textarea?.focus();
   });

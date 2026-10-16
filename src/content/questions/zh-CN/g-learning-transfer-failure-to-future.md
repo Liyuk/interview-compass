@@ -13,9 +13,21 @@ signals:
   - 说明经验是怎样被检验或修正的
 primaryCapability: learning-adaptation.learning-transfer
 topics: [learning]
-roles: [engineering, product, operations, pmo, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - pmo
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral]
 followUps:

@@ -9,13 +9,24 @@ intent: 了解你如何向上表达不同意见，既坚持事实和判断，又
 signals:
   - 先弄清上司的目标和约束，再用事实和选项表达自己的不同判断
   - 区分"我不同意这个决定"和"我拒绝执行"，并说明界线
-  - 决策被维持后，说明如何执行并记录自己的保留意见
+  - 决策维持后，在实际权限内推进并保留风险记录；触及不可接受风险或未授权操作时使用适当升级渠道。
   - 说明什么情况下会升级，以及怎样避免个人对立
 primaryCapability: collaboration.conflict-navigation
 topics: [conflict-resolution, communication]
-roles: [engineering, product, operations, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

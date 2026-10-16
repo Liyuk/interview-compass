@@ -12,13 +12,14 @@ intent: >-
   Examines how you distinguish product defects, unstable environments, and test races while controlling feedback time
   and the risk of hiding failures.
 signals:
-  - Correlates failures with browser, test data, concurrency, clocks, execution order, and environment state
-  - Uses unit, serial-versus-parallel comparisons, and failure traces to form testable hypotheses
-  - Defines criteria, ownership, time limits, and exit conditions for quarantining a test
-  - Measures rerun effects on feedback time and the risk of masking product issues
-  - Forms testable technical hypotheses from inputs, mechanisms, and failure symptoms
-  - Compares implementation paths and their correctness, performance, security, or maintenance cost
-  - Names tests or operational measures that cover edge cases
+  - >-
+    Preserves failures and correlates browser, data, concurrency, and environment to test competing
+    hypotheses.
+  - Compares minimal reproductions, controlled scheduling, and environmental controls.
+  - >-
+    Bounds quarantine with alternative protection, owners, and deadlines instead of hiding failures
+    through retries.
+  - Tracks failures, feedback time, and missed defects to verify fixes beyond more reruns.
 primaryCapability: professional.quality-security-safety
 topics:
   - engineering-systems
@@ -32,7 +33,8 @@ roles:
   - frontend
   - backend
   - data
-  - operations
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
@@ -40,6 +42,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

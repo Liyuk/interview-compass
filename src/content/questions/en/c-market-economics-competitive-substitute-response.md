@@ -9,9 +9,20 @@ intent: "Assesses whether you can analyze effects on choice, perceived value, an
 signals: ["Identify affected segments, reasons for churn, and actual switching costs","Compare long-term economics of discounting, differentiation, packaging changes, or no response","Check whether changed negotiation behavior translates into migration or retention risk","Set leading signals and a time window that would trigger a change"]
 primaryCapability: "value-direction.market-economic-judgment"
 topics: ["commercialization","product-thinking","business-planning"]
-roles: ["product","marketing","manager"]
+roles:
+  - product
+  - marketing
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["How would you respond when customers ask to match a competitor price but are not ready to switch?","What evidence would make you accept a proactive price reduction?"]

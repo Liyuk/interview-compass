@@ -15,11 +15,16 @@ topics:
   - operating-systems
 roles:
   - engineering
+  - backend
+  - ai-engineer
+  - data
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

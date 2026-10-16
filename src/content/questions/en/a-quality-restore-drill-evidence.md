@@ -13,14 +13,12 @@ intent: >-
   Assesses whether you can turn backups into tested recovery capability against acceptable business
   objectives.
 signals:
-  - Agree recovery-point and recovery-time objectives with the business
-  - Cover keys, dependencies, permissions, and data consistency
-  - Run isolated drills and measure actual recovery
-  - Track failures, owners, and retest closure criteria
-  - "A drill exposes weak recovery capability: define explicit business recovery objectives."
-  - Verify that data, keys, configuration, dependencies, and people can be restored within target time.
-  - Compare cold standby, warm standby, tiered recovery, and manual degradation by cost and coverage.
-  - Repeat exercises to prove RTO/RPO and track owners for any remaining gaps.
+  - Verifies recovery points, times, task order, and acceptable loss by data class.
+  - >-
+    Inventories data, keys, configurations, dependencies, access, and people, comparing cost and
+    coverage.
+  - Measures integrity and recovery time in isolated drills rather than trusting backup success.
+  - Tracks failures, owners, and retests including dependency and unsafe-overwrite risks.
 primaryCapability: professional.quality-security-safety
 topics:
   - reliability
@@ -30,11 +28,14 @@ roles:
   - backend
   - data
   - operations
+  - engineering
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

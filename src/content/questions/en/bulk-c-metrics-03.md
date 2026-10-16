@@ -11,12 +11,18 @@ intent: >-
   Understand whether the candidate evaluates primary, guardrail, and delayed negative outcomes within one
   decision framework.
 signals:
-  - Separates immediate conversion benefit from later experience, trust, and refund outcomes
-  - Checks samples, segments, effect size, and uncertainty in negative metrics
-  - States conditions and observation windows for continuing, changing, or stopping the experiment
-  - Segment by issue type, complexity, and agent.
-  - Check first-contact resolution, rework, and customer wait.
-  - Set observation windows and rollback or iteration triggers.
+  - >-
+    Verify payment, complaint, and refund definitions, segments, and windows, separating immediate gains
+    from delayed harm.
+  - >-
+    Check samples, allocation, amounts, and task severity, comparing counts and rates rather than
+    treating concurrent change as causation.
+  - >-
+    Examine mechanisms and alternatives for gains, refunds, and trust losses, stating which outcomes
+    remain immature.
+  - >-
+    Use guardrails and risk to continue, limit, pause, or adjust, with follow-up windows and decision
+    authority.
 primaryCapability: value-direction.metrics-causality
 topics:
   - metrics
@@ -27,11 +33,17 @@ roles:
   - data
   - operations
   - marketing
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - operations-review

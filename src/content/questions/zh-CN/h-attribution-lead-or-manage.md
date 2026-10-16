@@ -3,18 +3,30 @@ questionId: h-attribution-lead-or-manage
 kind: question
 status: published
 locale: zh-CN
-title: 在这个项目里，你是主导者，还是项目管理者？
-question: 在这个项目里，你是主导者，还是项目管理者？你带来的是一个业务结果，还是只解决了一个具体问题？
-intent: 了解你如何界定自己的角色和价值，并分清"推动事情完成"和"定义要做什么事"。
+title: 项目中的角色、行动与结果如何区分？
+question: 在这个项目里，你主要承担方向判断、专业实现，还是项目协调？这些行动分别怎样影响具体问题的解决和业务结果？
+intent: 考察能否区分方向判断、专业实现与交付协调，并用证据说明不同贡献如何作用于项目和业务结果。
 signals:
   - 说明谁定义了问题和目标，谁负责推进和协调，自己属于哪一类
   - 区分业务结果与被解决的具体问题，并给出各自的证据
   - 对角色的界定不夸大，也不回避自己承担的判断
 primaryCapability: work-responsibility.attribution
 topics: [ethics, promotion]
-roles: [engineering, product, operations, manager, pmo]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral]
 followUps:

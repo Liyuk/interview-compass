@@ -12,9 +12,20 @@ signals:
   - "说明新诉求翻案时需要改变哪条已知假设、替换哪项投入"
 primaryCapability: value-direction.planning
 topics: [planning, prioritization, communication]
-roles: [manager, product, engineering, pmo]
+roles:
+  - manager
+  - product
+  - engineering
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, promotion, self-reflection]
 formats: [planning, behavioral]
 followUps:

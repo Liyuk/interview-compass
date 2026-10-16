@@ -7,16 +7,10 @@ title: 一个长期凭证被多个服务共享，安全要求尽快轮换，但�
 question: 一个长期凭证被多个服务共享，安全要求尽快轮换，但无法一次性停掉所有依赖方。你会怎样推进？
 intent: 了解你是否会先盘点依赖，再设计重叠过渡、验证和撤销机制。
 signals:
-  - 找出凭证使用者和调用路径
-  - 采用新旧凭证短暂并行的迁移窗口
-  - 验证依赖方完成切换后再撤销旧凭证
-  - 准备泄露或切换失败时的紧急处置
-  - 先清点凭据持有者、权限范围和最后使用时间
-  - 讨论双凭据过渡、验证和撤销顺序
-  - 说明泄漏紧急轮换与常规轮换的差异
-  - 制定双密钥接受与单密钥签发的阶段。
-  - 识别未迁移调用方和密钥泄露时的紧急路径。
-  - 通过使用遥测确认旧密钥停止使用后再撤销。
+  - 盘点持有者、权限、调用路径和使用记录，区分常规轮换与疑似泄露。
+  - 比较短暂双凭证、分批切换或立即撤销的条件，说明重叠窗口的风险与业务代价。
+  - 明确签发、接受、切换和撤销的顺序，用使用证据确认迁移而非只看通知已发送。
+  - 验证未迁移调用方、紧急封禁和切换失败的恢复，不让回退重新启用已泄露凭证。
 primaryCapability: professional.quality-security-safety
 topics:
   - devops
@@ -26,12 +20,15 @@ topics:
 roles:
   - engineering
   - backend
+  - ai-engineer
+  - data
 responsibilityScopes:
   - multiple-teams
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

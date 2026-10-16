@@ -9,9 +9,15 @@ intent: "Assesses whether you can define event ownership, versioning, semantics,
 signals: ["Specify the business fact, identifier, and timing represented by an event","Distinguish notification from the authoritative data source","Define version compatibility, duplicate delivery, and subscriber cleanup","Monitor event backlog and consumer errors"]
 primaryCapability: "professional.engineering-systems"
 topics: ["micro-frontends","frontend","engineering-systems","system-design"]
-roles: ["frontend","engineering","design"]
+roles:
+  - frontend
+  - engineering
+  - backend
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["How should a page recover consistency if an app misses an event?","When should a shared API be used instead of an event?"]

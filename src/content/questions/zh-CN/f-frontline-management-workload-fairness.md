@@ -13,9 +13,17 @@ signals:
   - 无论结论如何，给出具体的下一步，例如调整优先级、增加支持或明确预期
 primaryCapability: people-organization.frontline-management
 topics: [management, feedback, resource-allocation]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

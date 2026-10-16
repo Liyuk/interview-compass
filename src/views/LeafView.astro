@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import TargetCount from '../components/TargetCount.astro';
 import Icon from '../components/Icon.astro';
 import QuestionReading from '../components/QuestionReading.astro';
 import { domains, pick, type Locale } from '../lib/taxonomy';
@@ -25,7 +26,7 @@ const questions = getQuestions(await loadQuestions(locale), { locale, capability
     <p><strong>{en ? 'Choose a neighboring leaf when' : '相邻分类判断'}:</strong> {pick(leaf.boundary, locale)}</p>
   </section>
   <p class="model-inline-link">{en ? 'This capability may appear in standards across different stages.' : '这项能力可能会在不同阶段标准中以不同深度出现。'} <a href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Explore stage expectations' : '查看阶段要求'} <Icon name="arrow-right" size={16} /></a></p>
-  <p class="result-count">{en ? `${questions.length} questions` : `${questions.length} 道问题`}</p>
+  <p class="result-count"><TargetCount questions={questions} locale={locale} unit /></p>
   <QuestionReading questions={questions} locale={locale} />
   <p class="band-text"><a class="text-link" href={pathFor({ type: 'domain', domain: domain.id }, locale, base)}>{en ? 'Back to the whole domain' : '回到整个能力域'} <Icon name="chevron-right" size={16} /></a></p>
 </SiteLayout>

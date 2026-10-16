@@ -7,13 +7,10 @@ title: 候选人总说"我们做了……"。你怎样追问出他本人的部�
 question: 候选人讲项目时总说"我们做了……"。你怎样追问出他本人真正承担的部分，尤其是技术选型里他参与的程度？
 intent: 了解你作为面试官，能否在不让对方感到被审问的前提下，分清个人贡献和团队成果。
 signals:
-  - 把"提出、评估、实现、拍板"拆开问，而不是追问一句"你具体做了什么"
-  - 用细节验证，例如某个具体决定背后的原因和替代方案
-  - 对没有参与的部分给予坦率回答的空间，不因此扣分
-  - 把观察到的参与程度和候选人所处的责任范围对照
-  - 把提出、评估、实现和拍板分开说明各自是谁，而不是笼统地说"我们"
-  - 对自己参与的部分能讲出具体的判断和依据
-  - 对没有参与的部分坦率承认，并说明自己了解到什么程度
+  - 追问本人参与的具体问题、判断、实现、验证或协调记录。
+  - 区分提出方案、参与讨论、作出决定与负责执行，不把参与等同主导。
+  - 允许候选人明确哪些部分没有参与或只了解背景，不据此否定其真实职责内的贡献。
+  - 通过产物、前后过程和协作者证据核验本人作用，细节不足时继续追问而不直接推断造假。
 primaryCapability: people-organization.hiring
 topics:
   - hiring
@@ -21,11 +18,16 @@ topics:
 roles:
   - manager
   - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
   - team-manager
   - senior-manager
+  - individual-contributor
 scenarios:
   - hiring
 formats:

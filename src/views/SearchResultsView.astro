@@ -31,12 +31,14 @@ const base = import.meta.env.BASE_URL;
   <noscript><p class="empty-state">{en ? 'Search requires JavaScript. You can browse the full question library instead.' : '搜索需要启用 JavaScript；也可以直接浏览全量题库。'}</p></noscript>
 
   <script>
+    import { pagefindFilters, withLinkPreference } from '../lib/target-preferences';
+    import { getTargetContext, subscribeTarget } from '../lib/target-state';
     import { getPageWindow } from '../lib/search-pagination';
     import { safeSearchResultHref } from '../lib/search-records';
 
     type SearchData = { url: string; meta?: { title?: string }; excerpt?: string };
     type SearchResult = { url: string; data: () => Promise<SearchData> };
-    type PagefindIndex = { search: (query: string, options: { filters: { locale: string } }) => Promise<{ results: SearchResult[] }> };
+    type PagefindIndex = { search: (query: string, options: { filters: Record<string, string> }) => Promise<{ results: SearchResult[] }> };
 
     const status = document.querySelector<HTMLElement>('#search-page-status')!;
     const list = document.querySelector<HTMLOListElement>('#search-page-results')!;
@@ -72,10 +74,10 @@ const base = import.meta.env.BASE_URL;
         return;
       }
 
-      status.textContent = en ? 'Searching all indexed pages…' : '正在检索全部索引内容…';
+      status.textContent = getTargetContext().preference.mode === 'target' ? (en ? 'Searching your target questions…' : '正在检索当前目标内的问题…') : (en ? 'Searching all indexed pages…' : '正在检索全部索引内容…');
       try {
         pagefind ??= await import(/* @vite-ignore */ `${base}/pagefind/pagefind.js`) as PagefindIndex;
-        const response = await pagefind.search(query, { filters: { locale } });
+        const response = await pagefind.search(query, { filters: pagefindFilters(locale, getTargetContext()) });
         if (currentRequest !== request) return;
         const window = getPageWindow(response.results.length, requestedPage, pageSize);
         if (window.page !== requestedPage && Number.isFinite(requestedPage)) {
@@ -93,7 +95,9 @@ const base = import.meta.env.BASE_URL;
           const row = document.createElement('li');
           row.className = 'search-page-result';
           const link = document.createElement('a');
-          link.href = href;
+          const linkUrl = new URL(href, location.origin);
+          if (getTargetContext().hasLink) linkUrl.search = withLinkPreference(linkUrl.searchParams, getTargetContext().preference).toString();
+          link.href = `${linkUrl.pathname}${linkUrl.search}${linkUrl.hash}`;
           link.className = 'search-page-result-title';
           link.textContent = item.meta?.title || item.url;
           const excerpt = document.createElement('p');
@@ -138,12 +142,12 @@ const base = import.meta.env.BASE_URL;
       const query = input?.value.trim();
       if (!query) return;
       const url = new URL(location.href);
-      url.search = '';
+      url.searchParams.delete('page');
       url.searchParams.set('q', query);
       history.pushState(null, '', `${url.pathname}${url.search}`);
       void render();
       list.scrollIntoView({ block: 'start' });
     });
-    void render();
+    subscribeTarget(() => void render());
   </script>
 </SiteLayout>

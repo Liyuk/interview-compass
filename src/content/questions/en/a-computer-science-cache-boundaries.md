@@ -12,9 +12,17 @@ signals:
   - "Mentions observing hit rate and stale reads instead of waiting for user feedback"
 primaryCapability: professional.computer-science
 topics: [databases, backend, distributed-systems]
-roles: [engineering, backend]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [knowledge]
 followUps:

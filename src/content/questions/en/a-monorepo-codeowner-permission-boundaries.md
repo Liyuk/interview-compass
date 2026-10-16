@@ -9,9 +9,18 @@ intent: "Assesses whether repository permissions, critical-path review, automati
 signals: ["List read, write, approval, and deployment privileges for people and automation","Identify critical config, release workflows, and protected branches","Check temporary access, credential rotation, and audit trails","Design minimal emergency exceptions and retrospective review"]
 primaryCapability: "professional.engineering-systems"
 topics: ["monorepo","engineering-systems","devops"]
-roles: ["engineering","frontend","backend"]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["How would you avoid slowing maintainers with approval requirements on every change?","How would you verify bot credentials have only necessary scope?"]

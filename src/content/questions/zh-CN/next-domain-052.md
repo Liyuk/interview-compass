@@ -16,12 +16,15 @@ topics:
 roles:
   - product
   - operations
+  - engineering
+  - backend
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -9,9 +9,18 @@ intent: "Assesses whether you can turn technical risk, dependencies, time-to-ben
 signals: ["Establish baselines for risk, business impact, and maintenance cost","Identify dependencies and timing windows","Compare staged benefits, delay costs, and team capacity","Set quarterly review signals and triggers for reordering"]
 primaryCapability: "value-direction.planning"
 topics: ["technical-planning","planning","resource-allocation"]
-roles: ["engineering","manager"]
+roles:
+  - engineering
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["planning","case"]
 followUps: ["How would you compare investment in foundational work without immediate business benefits?","How would you avoid commitments beyond the ability to validate?"]

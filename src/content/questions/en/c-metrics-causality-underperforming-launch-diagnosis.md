@@ -13,9 +13,20 @@ signals:
   - Says what decision followed the investigation and how it was verified
 primaryCapability: value-direction.metrics-causality
 topics: [metrics, product-thinking]
-roles: [product, operations, data]
+roles:
+  - product
+  - operations
+  - data
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, promotion]
 formats: [behavioral, case]
 followUps:

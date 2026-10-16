@@ -7,12 +7,10 @@ title: 写入后读副本短暂返回旧数据时，接口接口约定该如何�
 question: 用户更新账户设置后立即刷新，服务从只读副本读取到旧值。切主读会增加数据库负载，等待同步又可能超时。你会怎样设计一致性体验？
 intent: 考察能否根据业务读写语义选择一致性窗口、路由和退化策略。
 signals:
-  - 确定哪些字段或操作要求读己之写。
-  - 比较会话粘滞、版本令牌、短暂主库读取等方案。
-  - 定义复制延迟监控、过期提示和容量代价。
-  - 把用户可感知的不变量转成读写语义。
-  - 比较主库读取、会话粘性和版本令牌。
-  - 验证复制延迟或故障时的降级（关闭非核心功能以保住核心服务）行为。
+  - 从具体字段和用户动作定义读己之写、单调读取或可容忍陈旧窗口。
+  - 比较会话粘滞、版本令牌、短暂主读或明确等待的容量、延迟和复杂度。
+  - 让用户能理解未同步或失败状态，避免成功提示后静默展示旧值。
+  - 用复制滞后、主库故障和跨端访问测试验证语义与保护指标。
 primaryCapability: professional.system-design
 topics:
   - databases
@@ -21,12 +19,17 @@ topics:
 roles:
   - backend
   - data
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

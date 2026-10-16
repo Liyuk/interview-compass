@@ -13,9 +13,21 @@ signals:
   - Stays honest about the part of the responsibility that was theirs
 primaryCapability: value-direction.business-outcomes
 topics: [metrics, product-thinking]
-roles: [product, operations, marketing, data]
+roles:
+  - product
+  - operations
+  - marketing
+  - data
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, operations-review]
 formats: [behavioral, case]
 followUps:

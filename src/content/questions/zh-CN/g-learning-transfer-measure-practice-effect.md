@@ -7,13 +7,11 @@ title: 培训完成率很高但工作错误未减少时，怎样判断学习是�
 question: 团队完成了新的安全培训，考试通过率接近 100%，但敏感配置错误仍持续发生。你会如何检查培训是否迁移到实际操作并决定改进方式？
 intent: 考察能否区分知识测试表现与工作行为、环境防护和真实风险结果。
 signals:
-  - 检查错误发生时的任务、工具、提示和流程负荷。
-  - 对照培训内容与实际错误机制及岗位场景。
-  - 使用行为观察、模拟练习和错误趋势验证学习迁移。
-  - 比较训练任务与真实工作中的判断情境
-  - 设置观察行为、反馈来源和持续时间
-  - 定义培训对应的任务和期望行为。
-  - 通过独立完成率、错误趋势或知识共享验证变化。
+  - 核对培训考查的知识与实际敏感配置任务、错误机制是否对应。
+  - 检查工具提示、防护、权限和流程负荷，区分能力缺口与环境诱因。
+  - 通过贴近真实任务的模拟练习和独立操作记录观察行为迁移。
+  - 明确错误率的口径、任务暴露量、观察窗口及风险护栏。
+  - 根据证据比较补充训练、改进工具或调整流程，而不是只提高考试通过率。
 primaryCapability: learning-adaptation.learning-transfer
 topics:
   - learning
@@ -23,12 +21,17 @@ roles:
   - manager
   - engineering
   - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
-  - individual-contributor
   - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios:
   - interview
   - hiring

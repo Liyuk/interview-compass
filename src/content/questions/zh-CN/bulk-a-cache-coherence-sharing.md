@@ -15,6 +15,9 @@ topics:
   - concurrency
 roles:
   - engineering
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team

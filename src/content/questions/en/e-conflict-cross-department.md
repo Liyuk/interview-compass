@@ -13,9 +13,21 @@ signals:
   - Says when escalation is needed and how options are presented to higher levels
 primaryCapability: collaboration.conflict-navigation
 topics: [conflict-resolution, negotiation, communication]
-roles: [manager, product, engineering, operations, pmo]
+roles:
+  - manager
+  - product
+  - engineering
+  - operations
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

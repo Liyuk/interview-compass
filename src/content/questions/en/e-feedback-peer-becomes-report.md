@@ -19,11 +19,15 @@ topics:
 roles:
   - engineering
   - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
   - team-manager
-  - individual-contributor
+  - senior-manager
 scenarios:
   - interview
   - hiring

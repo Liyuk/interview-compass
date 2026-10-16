@@ -13,9 +13,17 @@ signals:
   - 明确传达自己的角色、期待和做事方式，同时尊重已有的贡献
 primaryCapability: people-organization.team-design
 topics: [management, communication, learning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

@@ -9,9 +9,18 @@ intent: "Assesses whether package boundaries, maintenance ownership, change noti
 signals: ["Inventory package consumers, key APIs, and blast radius","Assign maintainers and change-acceptance owners","Define versioning, deprecation windows, and change logs","Cover representative consumers with compatibility tests"]
 primaryCapability: "professional.engineering-systems"
 topics: ["monorepo","engineering-systems","devops"]
-roles: ["engineering","frontend","backend"]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["How would you assign or retire a package nobody wants to maintain?","How would you handle consumers that cannot upgrade in sync?"]

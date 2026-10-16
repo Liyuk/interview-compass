@@ -25,11 +25,13 @@ roles:
   - product
   - operations
   - engineering
+  - backend
 responsibilityScopes:
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - operations-review

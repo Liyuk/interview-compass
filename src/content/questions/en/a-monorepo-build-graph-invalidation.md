@@ -9,9 +9,18 @@ intent: "Assesses whether you can establish understandable dependency tracking t
 signals: ["Explain how source, generated files, toolchains, and environment affect outputs","Check implicit dependencies, dynamic config, and cross-package generation","Validate affected-task selection with change samples","Compare cache hit rate with risks from incorrect reuse"]
 primaryCapability: "professional.engineering-systems"
 topics: ["monorepo","engineering-systems","devops"]
-roles: ["engineering","frontend","backend"]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["How would you prevent cache poisoning from untrusted changes in a remote cache?","How would you prove it is safe to skip a task?"]

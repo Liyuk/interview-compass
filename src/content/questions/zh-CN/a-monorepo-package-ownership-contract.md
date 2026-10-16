@@ -9,9 +9,18 @@ intent: "考察能否让包边界、维护责任、变更预告和消费者验�
 signals: ["盘点包的消费者、关键 API 和影响范围","指定维护者与接受变更的责任人","规定语义化版本、弃用周期和变更记录","让兼容性测试覆盖代表性消费者"]
 primaryCapability: "professional.engineering-systems"
 topics: ["monorepo","engineering-systems","devops"]
-roles: ["engineering","frontend","backend"]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["公共包没人愿意维护时，怎样决定归属或下线？","如何处理无法同步升级的消费者？"]

@@ -12,12 +12,14 @@ intent: >-
   Assess whether the candidate distinguishes attribution allocation from causal incrementality and chooses
   evidence suited to the decision.
 signals:
-  - Explains why last-click attribution cannot answer the incrementality question
-  - Considers audience overlap, exposure order, brand spillover, and channel-selection bias
-  - Proposes a feasible experiment, geographic comparison, or robustness check
-  - Clarifies whether the decision concerns budget allocation, channel contribution, or incremental impact.
-  - Identifies user journeys, attribution windows, and overlap among channels.
-  - Explains how observed attribution differs from what a randomized lift test can establish.
+  - >-
+    Clarify whether the decision allocates credit, evaluates budgets, or estimates incrementality;
+    attribution allocation is not causal contribution.
+  - Check audience overlap, exposure order, windows, spillovers, and selection bias.
+  - >-
+    Compare feasible controls, experiments, or robustness checks by cost and limits without assuming one
+    method always identifies the truth.
+  - State uncertainty, unidentified effects, and evidence that would change the budget recommendation.
 primaryCapability: value-direction.metrics-causality
 topics:
   - metrics
@@ -34,6 +36,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - operations-review

@@ -12,15 +12,16 @@ intent: >-
   Assess whether you distinguish entity resolution, business keys, historical facts, and permission
   inheritance.
 signals:
-  - Determine whether this is an alias, merge, or false match, preserving evidence.
-  - Specify which historical facts are linked for display and which may be recomputed or moved.
-  - Define inheritance boundaries for contracts, permissions, approvals, and audit logs.
-  - Separate canonical entities, aliases, and historical memberships.
-  - Avoid overwriting old identifiers or irreversibly merging records.
-  - Validate references, permissions, and audit queries across systems.
-  - Distinguishes identity, channel identifiers, match candidates, and a manually confirmed canonical profile.
-  - Defines child-record migration, historical references, and rollback after a mistaken merge.
-  - Records match evidence, decision ownership, and merge or split events for audit.
+  - >-
+    Verifies alias, genuine merge, or false match evidence, separating entities, source IDs, and
+    candidates.
+  - >-
+    Decides link-only versus migration for contracts, approvals, permissions, and facts without automatic
+    access inheritance.
+  - >-
+    Preserves IDs, decision owners, grounds, times, and merge-split events rather than irreversibly
+    overwriting history.
+  - Tests references, reporting, and access, including containment and recovery from mistaken merges.
 primaryCapability: domain-modeling.model-evolution
 topics:
   - data-modeling
@@ -30,12 +31,17 @@ roles:
   - data
   - backend
   - product
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

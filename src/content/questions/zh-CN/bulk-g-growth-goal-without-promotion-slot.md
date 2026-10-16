@@ -17,13 +17,15 @@ topics:
   - planning
 roles:
   - engineering
-  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
-  - team-manager
 scenarios:
   - promotion
   - self-reflection

@@ -20,6 +20,11 @@ roles:
   - operations
   - data
   - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams

@@ -13,9 +13,17 @@ signals:
   - Openly rewards early surfacing of problems and keeps it from counting against performance
 primaryCapability: people-organization.manager-of-managers
 topics: [management, communication, ethics]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - senior-manager
+  - executive
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

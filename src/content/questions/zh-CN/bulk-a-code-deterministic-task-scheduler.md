@@ -18,13 +18,16 @@ topics:
   - programming-languages
 roles:
   - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
-  - team-manager
 scenarios:
   - interview
   - campus

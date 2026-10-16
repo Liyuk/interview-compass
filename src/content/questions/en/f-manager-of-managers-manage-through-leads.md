@@ -13,9 +13,17 @@ signals:
   - Says how blind spots or filtered information in team leads are detected
 primaryCapability: people-organization.manager-of-managers
 topics: [management, communication, team-planning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

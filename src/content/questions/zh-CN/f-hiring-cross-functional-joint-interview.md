@@ -13,9 +13,20 @@ signals:
   - 设定公平的规则，避免让善于表演的人占便宜，并记录观察到的行为
 primaryCapability: people-organization.hiring
 topics: [hiring, conflict-resolution, communication]
-roles: [manager, product, engineering, operations]
+roles:
+  - manager
+  - product
+  - engineering
+  - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [hiring]
 formats: [case, behavioral]
 followUps:

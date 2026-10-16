@@ -9,9 +9,12 @@ intent: >-
   See whether notification semantics, traffic shape, preference changes, and provider limits are
   handled at the right layers.
 signals:
-  - Separates mandatory transactional notices from suppressible marketing messages
-  - Explains when preference changes take effect for already queued messages
-  - Considers fanout delay, channel quotas, bounces, and per-user deduplication
+  - >-
+    Distinguishes transactional necessity, optional marketing, consent, and priority without assuming
+    guaranteed delivery.
+  - Defines queued-message preference changes, cancellation, and user-level deduplication.
+  - Compares fanout, provider quotas, retries, and isolation by timing and cost.
+  - Verifies receipts, bounces, and user outcomes with alternatives for nondelivery.
 primaryCapability: professional.system-design
 topics:
   - system-design
@@ -21,11 +24,17 @@ roles:
   - backend
   - engineering
   - operations
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

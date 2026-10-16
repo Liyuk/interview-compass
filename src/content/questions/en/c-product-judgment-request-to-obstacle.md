@@ -12,9 +12,18 @@ signals:
   - "Considers that the real need may be missing filtering or reconciliation features"
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, product-discovery]
-roles: [engineering, backend, frontend, product]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - product
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, self-reflection]
 formats: [case]
 followUps:

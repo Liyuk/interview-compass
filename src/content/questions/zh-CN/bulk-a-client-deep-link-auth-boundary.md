@@ -16,11 +16,16 @@ topics:
   - security
 roles:
   - mobile
+  - engineering
+  - frontend
+  - backend
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

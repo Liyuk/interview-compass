@@ -20,6 +20,11 @@ roles:
   - manager
   - pmo
   - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
   - organization

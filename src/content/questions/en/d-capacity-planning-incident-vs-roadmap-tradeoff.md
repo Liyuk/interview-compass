@@ -11,15 +11,18 @@ intent: >-
   Assess whether you measure incident load and make explicit trade-offs between reliability investment and
   commitments.
 signals:
-  - Quantify incident frequency, recovery time, recurrence, and opportunity cost.
-  - Separate response, recurrence prevention, and deferrable feature work.
-  - Propose capacity, stop conditions, and verifiable reliability outcomes.
-  - Uses historical data to separate planned work, support load, and unexpected interruptions.
-  - Reserves explicit capacity or a rotation and explains its cost.
-  - Rebalances scope, dates, or service levels against remaining capacity instead of hiding overtime.
-  - Uses historical evidence to estimate frequency and impact of unplanned work categories.
-  - Separates committed capacity, buffer, and adjustable candidate work.
-  - Defines escalation, scope replacement, and recommitment when demand exceeds the buffer.
+  - >-
+    Verify incidents, interruptions, recovery effort, and recurrence by category and period, including
+    them in actual capacity.
+  - >-
+    Compare response, recurrence prevention, and feature work, explaining ongoing costs and displaced
+    outcomes.
+  - >-
+    Use historical distributions and service commitments to propose reserves, rotations, or reliability
+    investment, stating uncertainty in capacity ratios.
+  - >-
+    Have authorized owners confirm scope, date, or service-level trade-offs with overload escalation and
+    review conditions instead of hidden overtime.
 primaryCapability: delivery.capacity-planning
 topics:
   - resource-allocation
@@ -29,12 +32,17 @@ roles:
   - engineering
   - operations
   - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

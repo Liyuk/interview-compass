@@ -4,18 +4,29 @@ kind: question
 status: published
 locale: en
 title: How do you design a product organization to match the technical architecture while keeping teams from chasing their own metrics at the expense of underlying cost?
-question: How do you design a product organization so that it matches the technical architecture, for example by applying Conway's law? How do you keep product teams from chasing their own department's metrics, such as acquiring users at any cost, and putting heavy cost pressure on the underlying technology and servers?
+question: Product organization and technical architecture boundaries differ, cross-team changes keep waiting, and local acquisition targets shift costs to shared technology. How would you compare changes to organization, system interfaces, collaboration, or shared measures and validate their effects?
 intent: See how you use organization and metric design to align local goals with overall efficiency rather than relying on goodwill.
 signals:
-  - Explains how organizational boundaries should correspond to system boundaries and what goes wrong when they do not
-  - Points out how local metrics shift cost onto shared technology and gives remedies, such as cost allocation or shared metrics
-  - Brings the cost of technology and servers into the measures used in product decisions
-  - Says how review and mechanisms make these trade-offs open
+  - Trace actual dependencies, waiting, decision rights, and cost transfers without assuming organization and systems must map one to one.
+  - Compare organization changes, interface evolution, collaboration rules, and shared metrics, including benefits, migration costs, and risks.
+  - Clarify who can authorize organizational, system, and resource changes and define transition and review conditions.
+  - Validate outcomes, waiting, costs, and team independence rather than the neatness of an organization chart.
 primaryCapability: people-organization.team-design
 topics: [management, system-design, resource-allocation, team-planning]
-roles: [product, manager, engineering]
+roles:
+  - product
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [interview, hiring, promotion]
 formats: [case, planning]
 followUps:

@@ -13,9 +13,20 @@ signals:
   - 约定检查点和调整的触发条件，而不是一次决定后不再复核
 primaryCapability: collaboration.conflict-navigation
 topics: [conflict-resolution, resource-allocation, communication]
-roles: [product, engineering, operations, manager]
+roles:
+  - product
+  - engineering
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion]
 formats: [case, behavioral]
 followUps:

@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import TargetCount from '../components/TargetCount.astro';
 import Icon from '../components/Icon.astro';
 import { questionCollections } from '../lib/question-collections';
 import { pathFor } from '../lib/routes';
@@ -32,7 +33,7 @@ const total = (collection: (typeof questionCollections)[number]) => collection.k
           <p class="eyebrow">{collection.kind === 'candidate-guide' ? (en ? 'CANDIDATE QUESTIONS' : '候选人反向提问') : (en ? 'QUESTION PATH' : '面试题路径')}</p>
           <h2>{pick(collection.title, locale)} <Icon name="arrow-up-right" size={17} /></h2>
           <p>{pick(collection.purpose, locale)}</p>
-          <span class="collection-card-meta">{pick(collection.audience, locale)} · {en ? `${total(collection)} prompts` : `${total(collection)} 个问题`}</span>
+          <span class="collection-card-meta">{pick(collection.audience, locale)} · {collection.kind === 'question-set' ? <TargetCount ids={collection.entries.map(entry => entry.questionId)} locale={locale} unit /> : (en ? `${total(collection)} prompts` : `${total(collection)} 个反问`)}</span>
         </div>
       </a>
     ))}

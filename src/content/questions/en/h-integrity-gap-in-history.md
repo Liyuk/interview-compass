@@ -7,15 +7,27 @@ title: Your history includes a gap, a layoff, or a part that does not look good.
 question: Your history includes a gap, a layoff, or a part that does not look good. How do you explain it truthfully, without avoiding it and without over-explaining?
 intent: See whether you are frank about facts that count against you and can say clearly what happened and what changed afterwards.
 signals:
-  - States the facts directly instead of dodging or blurring the timeline
-  - Separates external causes from their own responsibility, neither deflecting nor over-blaming
-  - Says what was done after that period and what concretely changed
-  - Stays consistent under follow-up and does not change the story when pressed
+  - State facts directly without obscuring the timeline.
+  - Distinguish external causes from personal responsibility without blame shifting or excessive self-blame.
+  - Explain specific actions and changes after the experience.
+  - State memory or record limits for uncertain details and correct errors proactively; inconsistency alone does not prove fabrication.
 primaryCapability: work-responsibility.integrity
 topics: [ethics, communication]
-roles: [engineering, product, operations, manager, design]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - design
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, self-reflection]
 formats: [behavioral]
 followUps:

@@ -13,9 +13,16 @@ signals:
   - Says how the strategy is judged with metrics such as start-up time and stall rate
 primaryCapability: professional.system-design
 topics: [system-design, frontend, mobile, computer-networks]
-roles: [engineering, frontend, mobile, backend]
+roles:
+  - engineering
+  - frontend
+  - mobile
+  - backend
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

@@ -26,22 +26,17 @@ intent: >-
   Assesses whether you can contain model uncertainty within least-privilege boundaries and control
   authorization, execution, and accountability.
 signals:
-  - Classify read, write, and external-send operations by risk and authority
-  - Use task-scoped grants, least privilege, explicit confirmation, or dual approval
-  - Validate parameters and target resources instead of treating model text as commands
-  - Log the actor, intent, parameters, result, and revocation path
   - >-
-    Identify the key mechanisms, state boundaries, and failure conditions in “Tool permissions that vary with
-    context,” including missing assumptions.
-  - Compare feasible approaches across correctness, performance, compatibility, cost, and recoverability.
+    Distinguishes read, write, and external-send actions and proposing, authorizing, and executing
+    actors.
+  - Scopes permission to tasks, resources, recipients, parameters, and time with runtime verification.
+  - Compares previews, confirmation, dual approval, and refusal by risk and interaction cost.
   - >-
-    Design tests, runtime evidence, or rollback criteria that validate the diagnosis and cover boundary
-    failures.
-  - Scopes authorization to a task, object, recipient, and time window.
-  - Sets preview, confirmation, or rejection requirements based on risk and reversibility.
+    Records intent, versions, authorization, results, and uncertainty with bounded reversal or
+    remediation.
   - >-
-    Records model suggestions and user authorization and provides execution status, remediation, and audit
-    trails.
+    Tests unauthorized access, permission changes, duplicates, and timeouts for least privilege and safe
+    pause.
 topics:
   - ai-engineering
   - security
@@ -50,12 +45,17 @@ roles:
   - ai-engineer
   - backend
   - product
+  - engineering
+  - frontend
+  - mobile
+  - data
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 formats:
   - system-design
   - case

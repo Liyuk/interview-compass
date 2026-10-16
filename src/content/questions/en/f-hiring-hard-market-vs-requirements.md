@@ -13,9 +13,17 @@ signals:
   - Says who owns the final trade-off, and what not hiring or delaying will cost and who absorbs it
 primaryCapability: people-organization.hiring
 topics: [hiring, resource-allocation, negotiation]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

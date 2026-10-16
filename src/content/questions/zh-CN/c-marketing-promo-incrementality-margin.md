@@ -7,11 +7,10 @@ title: 促销拉高订单量却压低毛利时，怎样判断活动净增量？
 question: 折扣活动期间订单量增长 30%，但大量订单来自原本会购买的老客，折扣还改变了商品组合。你会怎样判断活动创造了多少增量毛利？
 intent: 考察能否区分订单增长、需求提前、客户迁移与真实增量贡献。
 signals:
-  - 定义未促销反事实、客户分层和净收入定义。
-  - 计算折扣、退货、履约成本和商品组合变化。
-  - 比较短期增量与活动后需求回落或复购。
-  - 识别“跨周期用户行为与活动净增量”涉及的对象、约束和风险。
-  - 提出能够验证或改变决定的证据与复核节点。
+  - 定义未促销的可比情境、用户群和毛利计算范围，检查对照是否可信。
+  - 核算折扣、退货、履约、商品组合与原本会发生的购买，不把订单增长全部归为增量。
+  - 观察提前购买、渠道或客群迁移与活动后的回落，说明时间窗口和归因边界。
+  - 用净贡献、用户影响和机会成本决定下一阶段投入，并保留不确定性。
 primaryCapability: value-direction.metrics-causality
 topics:
   - growth-experiments
@@ -28,6 +27,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

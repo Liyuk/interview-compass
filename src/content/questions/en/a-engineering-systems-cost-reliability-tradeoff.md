@@ -9,9 +9,20 @@ intent: "Assess whether you can connect costs to services and business value, an
 signals: ["Breaks costs down by service, environment, and usage pattern", "Separates waste from spare capacity and reliability redundancy", "Assesses peak capacity and recovery-time impacts", "Defines owners, validation metrics, and rollback conditions"]
 primaryCapability: "professional.engineering-systems"
 topics: ["devops", "resource-allocation", "reliability"]
-roles: ["engineering", "operations", "manager"]
+roles:
+  - engineering
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["multiple-teams"]
-careerTracks: ["team-manager", "senior-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case", "planning"]
 followUps: []

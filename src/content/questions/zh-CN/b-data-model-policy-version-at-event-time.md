@@ -18,12 +18,14 @@ roles:
   - data
   - backend
   - product
+  - engineering
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

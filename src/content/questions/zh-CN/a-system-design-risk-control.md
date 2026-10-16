@@ -22,11 +22,15 @@ roles:
   - backend
   - data
   - ai-engineer
+  - product
+  - operations
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

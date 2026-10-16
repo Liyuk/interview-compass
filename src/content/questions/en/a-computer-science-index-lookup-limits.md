@@ -12,9 +12,16 @@ signals:
   - Proposes evidence such as an execution plan to check the guess rather than relying on impressions
 primaryCapability: professional.computer-science
 topics: [databases, backend]
-roles: [backend, data]
+roles:
+  - backend
+  - data
+  - engineering
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [knowledge, case]
 source:

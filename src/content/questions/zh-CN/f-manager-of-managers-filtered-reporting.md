@@ -13,9 +13,17 @@ signals:
   - 公开奖励及早暴露问题的行为，并让它不被当成绩效的扣分项
 primaryCapability: people-organization.manager-of-managers
 topics: [management, communication, ethics]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - senior-manager
+  - executive
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

@@ -10,7 +10,7 @@ signals:
   - 识别真实重复成本、使用者和可替代方案。
   - 设定采用证据、复用门槛和停止条件。
   - 比较投资顺序及延迟其他工作造成的代价。
-  - 区分硬约束、可延后目标和不可逆（可以安全撤回）风险
+  - 区分硬约束、可延后目标和不可逆风险
 primaryCapability: value-direction.investment-choices
 topics:
   - resource-allocation
@@ -18,12 +18,17 @@ topics:
 roles:
   - product
   - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

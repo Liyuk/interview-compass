@@ -11,14 +11,10 @@ intent: >-
   Assess whether you explain the role, opportunities, and uncertainty honestly so both sides can choose
   knowingly.
 signals:
-  - Describe current work mix, rate of change, and responsibility scope.
-  - Ask how the candidate has grown through stable work in the past.
-  - Separate promised development from opportunities dependent on organizational change.
-  - Breaks words such as “fast” and “flexible” into decision cadence and risk examples.
-  - Asks how success and failure are handled in practice.
-  - States personal conditions and flexibility without reducing fit to personality similarity.
-  - Asks when design joins decisions and what validation resources exist.
-  - Discusses how speed-quality trade-offs are decided and what can change.
+  - Verify the mature system’s daily work, change frequency, reliability goals, and current responsibility scope.
+  - Ask how the candidate previously discovered problems, developed capability, and verified growth in stable work.
+  - Compare development goals with the real practice opportunities available in this role.
+  - Separate arrangements that can be promised from possibilities dependent on organizational change and agree when to recalibrate.
 primaryCapability: work-responsibility.expectations-fit
 topics:
   - learning
@@ -28,12 +24,17 @@ roles:
   - engineering
   - product
   - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

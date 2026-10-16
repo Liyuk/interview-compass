@@ -12,9 +12,16 @@ signals:
   - 测试覆盖边界情形，如容量为一、重复写入、读取后顺序发生变化
 primaryCapability: professional.coding-abstraction
 topics: [data-structures, programming-languages]
-roles: [engineering, backend, frontend, mobile]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
 scenarios: [interview, campus]
 formats: [coding]
 source:

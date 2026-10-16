@@ -12,9 +12,17 @@ signals:
   - "区分止血措施与根因修复，并说明先后理由"
 primaryCapability: professional.debugging
 topics: [debugging, reliability, backend]
-roles: [engineering, backend, frontend, mobile]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [debugging, case]
 followUps:

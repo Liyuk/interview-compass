@@ -13,9 +13,19 @@ signals:
   - 说明不把指标用于个人评价的理由，或这样做的风险
 primaryCapability: delivery.project-management
 topics: [metrics, engineering-systems, execution]
-roles: [engineering, manager, pmo]
+roles:
+  - engineering
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, operations-review]
 formats: [case, behavioral]
 followUps:

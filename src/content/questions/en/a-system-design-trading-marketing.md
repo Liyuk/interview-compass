@@ -13,9 +13,19 @@ signals:
   - Says how reconciliation lets every discount be traced
 primaryCapability: professional.system-design
 topics: [system-design, commercialization, concurrency, backend]
-roles: [engineering, backend, product]
+roles:
+  - engineering
+  - backend
+  - product
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

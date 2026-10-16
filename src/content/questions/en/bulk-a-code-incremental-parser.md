@@ -10,13 +10,12 @@ question: >-
   limits, then implement repeatable core logic.
 intent: Examines incremental parsing, state modeling, error recovery, and resource-boundary design.
 signals:
-  - Defines parser state retained across chunks and handling for reordered fields
-  - Correctly handles character boundaries, multiple records, and end-of-input
-  - Sets justified resource limits and a recovery strategy for oversized lines
-  - Covers empty chunks, truncation, malformed input, and repeated calls with deterministic tests
-  - Forms testable technical hypotheses from inputs, mechanisms, and failure symptoms
-  - Compares implementation paths and their correctness, performance, security, or maintenance cost
-  - Names tests or operational measures that cover edge cases
+  - Defines cross-block state, field order, character decoding, and record-end contracts.
+  - Handles split multibyte characters, multiple records, empty chunks, and end-of-input.
+  - Compares termination and recovery with bounded long-line and buffer costs.
+  - >-
+    Tests chunk variations, truncation, malformed records, and repeated calls for consistent results and
+    locations.
 primaryCapability: professional.coding-abstraction
 topics:
   - programming-languages
@@ -30,12 +29,12 @@ roles:
   - backend
   - frontend
   - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
-  - team-manager
 scenarios:
   - interview
   - campus

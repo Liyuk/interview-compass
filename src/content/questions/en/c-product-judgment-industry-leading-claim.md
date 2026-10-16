@@ -12,9 +12,20 @@ signals:
   - Names where the claim is most likely to be challenged and how you would respond
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, ethics]
-roles: [engineering, product, operations, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

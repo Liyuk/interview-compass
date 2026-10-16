@@ -9,9 +9,14 @@ intent: "Assesses whether you can analyze cold-start bottlenecks by device tier 
 signals: ["Define cold-start phases and user-perceived readiness","Locate added cost by device, network, and version","Separate critical dependencies from deferred or unnecessary initialization","Set budgets, regression gates, and low-end-device fallbacks"]
 primaryCapability: "professional.system-design"
 topics: ["mobile","engineering-systems","reliability"]
-roles: ["mobile","engineering"]
+roles:
+  - mobile
+  - engineering
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["How would you rebalance if lazy loading causes jank after first interaction?","How would you avoid optimizing average devices while missing the long tail?"]

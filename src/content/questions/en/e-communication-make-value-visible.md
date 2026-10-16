@@ -13,9 +13,20 @@ signals:
   - When they still do not take it seriously, says how the framing changes rather than repeating the same pitch
 primaryCapability: collaboration.communication
 topics: [communication, prioritization]
-roles: [engineering, product, operations, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

@@ -7,13 +7,10 @@ title: 知识问答引用了正确文档但内容已过期，怎样定义新鲜�
 question: 知识问答助手引用了内部文档，但文档所属团队已更新流程，新版本还没有进入检索范围。你会怎样确定内容更新时限、更新流程，以及更新完成前该怎样回答？
 intent: 考察能否把数据更新、索引一致性、引用时效和业务责任纳入检索系统契约。
 signals:
-  - 定义文档权威来源、版本、生效时间、废止时间和责任人。
-  - 设定变更、删除和权限更新传播到索引的时限并可观测。
-  - 区分相关性与当前有效性，处理过期或互相冲突的材料。
-  - 按风险决定提示、降级（关闭非核心功能以保住核心服务）、人工确认或拒答。
-  - 定义源文档版本、索引版本和回答引用之间的可追溯关系。
-  - 为索引延迟、缓存失效和重试建立可测量的新鲜度目标。
-  - 识别过期高风险内容并设置暂时隐藏、标注或人工复核路径。
+  - 明确文档权威来源、负责人、版本、生效与废止时间。
+  - 关联源版本、索引与引用，测量变更、撤权、缓存和重试的传播时限。
+  - 区分相关性和当前有效性，按错误风险比较标注、暂时隐藏、澄清或人工确认。
+  - 定义更新失败、冲突和恢复的责任及验证条件，不用索引任务成功代替内容生效。
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering
@@ -23,12 +20,18 @@ roles:
   - ai-engineer
   - data
   - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - operations
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

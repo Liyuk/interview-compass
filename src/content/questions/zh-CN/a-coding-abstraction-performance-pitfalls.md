@@ -13,9 +13,17 @@ signals:
   - 知道什么时候不该过早优化，并能说明依据
 primaryCapability: professional.coding-abstraction
 topics: [backend, databases, programming-languages]
-roles: [backend, engineering]
+roles:
+  - backend
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [behavioral, case]
 followUps:

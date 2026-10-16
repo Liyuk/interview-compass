@@ -13,9 +13,17 @@ signals:
   - 说明怎样验证自己的理解是否正确
 primaryCapability: people-organization.manager-of-managers
 topics: [management, communication, planning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

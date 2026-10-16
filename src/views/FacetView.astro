@@ -1,6 +1,7 @@
 ---
 import Icon from '../components/Icon.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
+import TargetCount from '../components/TargetCount.astro';
 import QuestionList from '../components/QuestionList.astro';
 import { domains, facetLabel, pick, type Locale } from '../lib/taxonomy';
 import { getQuestions } from '../lib/question-catalog';
@@ -42,6 +43,7 @@ const promotionQuestionPath = `${pathFor({ type: 'questions' }, locale, base)}?s
 <SiteLayout locale={locale} route={route} description={en ? `Questions for ${label}, grouped by the capability each one examines.` : `${label}相关的问题，按主要能力分组。`}>
   <p class="eyebrow">{eyebrow}</p>
   <h1 class="page-title">{label}</h1>
+  {kind === 'roles' && <p class="model-note"><a href={pathFor({ type: 'role-stage-model', role: id }, locale, base)}>{en ? 'Compare this role’s stage expectations →' : '查看本岗位各阶段的责任与证据要求 →'}</a></p>}
   {kind === 'scenarios' && id === 'promotion' && <section class="promotion-guide" aria-labelledby="promotion-guide-heading">
     <div class="promotion-guide-intro">
       <div><p class="eyebrow">{en ? 'INTERNAL GROWTH' : '内部发展'}</p><h2 id="promotion-guide-heading">{en ? 'Prepare for promotion as a body of evidence' : '把晋升准备成一组持续证据'}</h2></div>
@@ -65,10 +67,10 @@ const promotionQuestionPath = `${pathFor({ type: 'questions' }, locale, base)}?s
     </div>
   </section>}
   <p class="intro">{en ? 'These are the same questions found in the library, grouped here by the capability each one mainly examines.' : '这些题与问题库里的是同一批，这里按各自主要考察的能力分组。'}</p>
-  <p class="result-count">{en ? `${questions.length} questions` : `${questions.length} 道问题`}</p>
+  <p class="result-count"><TargetCount questions={questions} locale={locale} unit /></p>
   {groups.map(({ domain, items }) => (
     <section class="leaf-section">
-      <h2>{domain.letter} · {pick(domain.name, locale)}<span class="count">{items.length}</span></h2>
+      <h2>{domain.letter} · {pick(domain.name, locale)}<TargetCount class="count" questions={items} /></h2>
       <QuestionList questions={items} locale={locale} />
     </section>
   ))}

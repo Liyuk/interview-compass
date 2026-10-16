@@ -12,9 +12,18 @@ signals:
   - "指出旧数据映射时无法确定归属的情形，并说明怎样处理"
 primaryCapability: domain-modeling.model-evolution
 topics: [data-modeling, databases]
-roles: [backend, engineering, data]
+roles:
+  - backend
+  - engineering
+  - data
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case]
 followUps:

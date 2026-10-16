@@ -13,9 +13,17 @@ signals:
   - Says how the effect on the team is limited while they are not yet ready
 primaryCapability: people-organization.growth-development
 topics: [management, feedback, learning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

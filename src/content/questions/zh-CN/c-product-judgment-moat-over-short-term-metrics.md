@@ -13,9 +13,20 @@ signals:
   - 说明哪些新证据会让你停止、调整或重新评估决定。
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, planning, ethics]
-roles: [product, manager]
+roles:
+  - product
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

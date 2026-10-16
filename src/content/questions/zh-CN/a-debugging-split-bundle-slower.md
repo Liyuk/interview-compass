@@ -12,9 +12,14 @@ signals:
   - 说明用什么观察来验证，例如网络瀑布图和不同网络环境
 primaryCapability: professional.debugging
 topics: [frontend, debugging, engineering-systems]
-roles: [frontend, engineering]
+roles:
+  - frontend
+  - engineering
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [debugging, case]
 source:

@@ -9,9 +9,18 @@ intent: "Assesses whether you can evaluate change coupling, business capability 
 signals: ["Measure cross-service changes and coordinated releases","Trace shared data models and implicit runtime dependencies","Compare migration cost of splitting, merging, or changing ownership","Validate a reversible pilot against reduced coordination"]
 primaryCapability: "professional.system-design"
 topics: ["microservices","distributed-systems","system-design"]
-roles: ["backend","engineering","ai-engineer"]
+roles:
+  - backend
+  - engineering
+  - ai-engineer
+  - frontend
+  - mobile
+  - data
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["What evidence would show the problem is organizational rather than structural?","How would you avoid a large-bang rewrite?"]

@@ -13,9 +13,15 @@ signals:
   - 说明怎样观测播放质量，例如首帧时间和卡顿率
 primaryCapability: professional.computer-science
 topics: [system-design, frontend, mobile]
-roles: [engineering, frontend, mobile]
+roles:
+  - engineering
+  - frontend
+  - mobile
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, hiring]
 formats: [knowledge, debugging]
 followUps:

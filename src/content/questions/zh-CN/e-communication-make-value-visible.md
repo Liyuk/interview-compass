@@ -13,9 +13,20 @@ signals:
   - 对方仍不重视时，说明怎样调整表达，而不是一再重复同一套说法
 primaryCapability: collaboration.communication
 topics: [communication, prioritization]
-roles: [engineering, product, operations, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

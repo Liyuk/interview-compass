@@ -13,9 +13,17 @@ signals:
   - 说明什么情况下需要明确预期和后果，并如何跟进
 primaryCapability: people-organization.growth-development
 topics: [management, feedback, learning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

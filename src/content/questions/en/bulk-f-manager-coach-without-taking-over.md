@@ -13,17 +13,14 @@ intent: >-
   every decision after one failure.
 signals:
   - >-
-    Distinguishes skill gaps, missing information, unclear goals, insufficient resources, and unclear
-    authority
-  - Adds temporary review based on impact and reversibility instead of re-approving every decision
-  - Defines improvement ownership, coaching actions, evidence, and a review date
-  - States what evidence would relax guardrails or require a change in scope or organization
-  - States observable behavior and outcomes for the role or responsibility scope
-  - Distinguishes causes such as skill, motivation, resources, and goal clarity
-  - Designs coaching, delegation, or organizational changes with review evidence
+    Reconstruct information, risks, and authority in the two migration decisions, separating capability
+    gaps, missing context, and unclear boundaries.
   - >-
-    Clarifies the facts, stakeholders, and ownership boundaries involved in decision quality and dynamic
-    calibration of delegated scope.
+    Set time-bound review and support for high-impact decisions while retaining genuine authority within
+    low-risk boundaries.
+  - >-
+    Specify evidence for relaxing, retaining, or tightening safeguards and examine risk, waiting, and the
+    leader’s independence.
 primaryCapability: people-organization.frontline-management
 topics:
   - management
@@ -35,6 +32,10 @@ roles:
   - manager
   - engineering
   - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams

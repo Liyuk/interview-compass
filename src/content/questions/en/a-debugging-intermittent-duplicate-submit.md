@@ -12,9 +12,17 @@ signals:
   - "Separates the stopgap from the root-cause fix and gives a reason for the order"
 primaryCapability: professional.debugging
 topics: [debugging, reliability, backend]
-roles: [engineering, backend, frontend, mobile]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [debugging, case]
 followUps:

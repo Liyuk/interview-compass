@@ -12,12 +12,12 @@ intent: >-
   Understand how the candidate turns multiple pricing terms into commercial rules that can be explained and
   reconciled.
 signals:
-  - Defines the scope, period, and unit for each charge
-  - Explains how minimum spend relates to usage charges and credits
-  - Considers traceability through price changes, adjustments, and invoice details
-  - Define the order of minimums, discounts, and taxes.
-  - Trace each invoice line to contract version and usage.
-  - Test edge cases for rounding, refunds, and reconciliation.
+  - Defines entities, units, and periods for subscription, overage, and minimum spend.
+  - >-
+    Explains calculation or offset order for minimums, usage fees, discounts, and taxes, testing
+    boundaries.
+  - Traces bill lines to contract versions, usage facts, and effective prices.
+  - Tests price changes, late entries, refunds, and rounding for explanation and reconciliation.
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization
@@ -28,12 +28,15 @@ roles:
   - engineering
   - data
   - operations
+  - backend
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - promotion

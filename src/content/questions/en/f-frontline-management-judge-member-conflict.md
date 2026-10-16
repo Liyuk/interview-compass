@@ -13,9 +13,17 @@ signals:
   - Follows up afterwards on whether the relationship recovered, rather than stopping once things calm down
 primaryCapability: people-organization.frontline-management
 topics: [management, conflict-resolution]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

@@ -9,9 +9,19 @@ intent: "Assesses whether you can translate acceptable business freshness into a
 signals: ["Clarify how status affects user decisions and tolerated delay","Trace event creation, delivery, consumption, and projection updates","Choose synchronous reads, a read model, or a status cue and explain the cost","Monitor latency distribution, lost events, and reconciliation"]
 primaryCapability: "professional.system-design"
 topics: ["microservices","distributed-systems","system-design"]
-roles: ["backend","engineering","ai-engineer"]
+roles:
+  - backend
+  - engineering
+  - ai-engineer
+  - frontend
+  - mobile
+  - data
+  - product
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["Which states require strong consistency and which may be eventual?","How would you show processing instead of stale success to users?"]

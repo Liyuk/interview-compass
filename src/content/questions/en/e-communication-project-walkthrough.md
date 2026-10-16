@@ -13,9 +13,18 @@ signals:
   - Explains how the result was verified and gives a candid retrospective
 primaryCapability: collaboration.communication
 topics: [communication]
-roles: [engineering, frontend, backend, mobile, product]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - product
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [behavioral]
 source:

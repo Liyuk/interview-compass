@@ -12,13 +12,14 @@ intent: >-
   Assesses whether you can separate untrusted code, protected credentials, caches, and release environments, then verify
   that the isolation works.
 signals:
-  - Identifies execution risks from forks, dependency scripts, and build steps
-  - Scopes credentials to the minimum task and keeps release secrets from untrusted workflows
-  - Isolates or validates caches and artifacts reused across trust boundaries
-  - Describes audit, release gates, and adversarial tests that verify the controls
-  - Forms testable technical hypotheses from inputs, mechanisms, and failure symptoms
-  - Compares implementation paths and their correctness, performance, security, or maintenance cost
-  - Names tests or operational measures that cover edge cases
+  - >-
+    Traces fork code, dependencies, and build execution privileges, separating checks from trusted
+    release.
+  - >-
+    Compares isolation, limited credentials, and separate publishing without production authority for
+    untrusted artifacts.
+  - Verifies cache, artifact, and cross-job effects on protected workflows with provenance and approval.
+  - Tests malicious changes and denied permissions for secret isolation, release control, and audit.
 primaryCapability: professional.engineering-systems
 topics:
   - devops
@@ -30,13 +31,16 @@ roles:
   - engineering
   - backend
   - frontend
-  - operations
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes:
   - team
   - individual
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

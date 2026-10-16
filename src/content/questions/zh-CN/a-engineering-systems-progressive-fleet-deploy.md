@@ -9,9 +9,16 @@ intent: "考察你是否能将大规模发布的风险控制落实到分组、�
 signals: ["按故障域或风险特征划分发布批次", "验证新旧版本兼容与节点健康", "用明确指标触发暂停或自动回退", "处理离线节点和部分成功后的收敛"]
 primaryCapability: "professional.engineering-systems"
 topics: ["devops", "reliability", "risk-management"]
-roles: ["engineering", "backend"]
+roles:
+  - engineering
+  - backend
+  - ai-engineer
+  - data
 responsibilityScopes: ["multiple-teams"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["system-design", "case"]
 followUps: []

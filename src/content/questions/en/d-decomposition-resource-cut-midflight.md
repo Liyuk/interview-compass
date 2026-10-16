@@ -9,9 +9,20 @@ intent: "See whether you propagate a capacity change into scope, risk, dependenc
 signals: ["Identifies critical paths and non-negotiable constraints", "Separates the minimum useful outcome from deferrable work", "Quantifies impacts of different trade-offs", "Secures an explicit scope or date decision early"]
 primaryCapability: "delivery.decomposition"
 topics: ["execution", "resource-allocation", "planning"]
-roles: ["engineering", "product", "pmo", "manager"]
+roles:
+  - engineering
+  - product
+  - pmo
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team", "multiple-teams"]
-careerTracks: ["team-manager", "senior-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["planning", "case"]
 followUps: []

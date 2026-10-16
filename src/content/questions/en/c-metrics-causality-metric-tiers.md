@@ -12,9 +12,20 @@ signals:
   - "Says who does what when a metric moves, and demotes any that cannot say so to watch or on-demand"
 primaryCapability: value-direction.metrics-causality
 topics: [metrics, product-thinking, operations]
-roles: [product, data, operations, engineering]
+roles:
+  - product
+  - data
+  - operations
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, operations-review, hiring]
 formats: [case, artifact-review]
 followUps:

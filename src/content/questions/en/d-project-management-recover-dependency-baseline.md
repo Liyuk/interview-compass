@@ -12,16 +12,18 @@ intent: >-
   Assess whether you can rebuild a plan as dependencies change rather than continue reporting an invalid
   original schedule.
 signals:
-  - Distinguish external commitments, internal estimates, validation milestones, and the true critical path.
-  - Quantify delay, temporary adapters, rework, and long-term maintenance cost.
-  - Rebuild commitments from capacity and scenarios, naming who must decide trade-offs or escalation.
-  - Update affected people on confidence, the next checkpoint, and risks that still need acceptance.
-  - Validates the delay, delivery conditions, and credibility of the vendor’s recovery plan.
-  - Identifies mock, contract, data, or test preparation that can happen earlier.
-  - Compares waiting, alternatives, and scope changes with clear escalation ownership.
-  - Makes dependency delivery, acceptance, and ownership conditions explicit.
-  - Separates independently executable work from blocked or low-value waiting.
-  - Updates forecasts using scenarios and confidence and changes scope or commitments promptly.
+  - >-
+    Verify vendor delays, delivery conditions, and recovery credibility, separating external promises,
+    internal estimates, and validation points.
+  - >-
+    Include adapters, rework, testing, and ongoing maintenance in real capacity, distinguishing
+    independent work from blocked work.
+  - >-
+    Compare waiting, alternate interfaces, resequencing, and scope scenarios with confidence ranges
+    rather than stale dates.
+  - >-
+    Have authorized owners confirm commitment changes and communicate costs, residual risks, and the next
+    checkpoint.
 primaryCapability: delivery.project-management
 topics:
   - planning
@@ -32,13 +34,17 @@ roles:
   - engineering
   - product
   - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
   - team
 careerTracks:
+  - individual-contributor
   - team-manager
   - senior-manager
-  - individual-contributor
 scenarios:
   - interview
   - hiring

@@ -9,26 +9,12 @@ intent: >-
   Assess whether you set automation boundaries based on evidence quality and error cost while managing review
   quality, user impact, and human capacity.
 signals:
+  - Separates confidence, evidence, severity, impact, and recoverability.
+  - Compares automation, clarification, approval, sampling, later review, and blocking by task risk.
   - >-
-    Separates model confidence, evidence sufficiency, task risk, and error severity instead of using one
-    confidence threshold for auto-submission.
-  - Routes work to automation, sampling, human review, or blocking based on user impact and error cost.
-  - >-
-    Tracks queue volume, waiting time, reviewer agreement, misses, and available capacity, with explicit
-    thresholds for adjustment.
-  - >-
-    Considers reducing repeated review, improving upstream quality, or using review outcomes to recalibrate
-    rules, then verifies that both quality and response time remain sustainable.
-  - Distinguishes model confidence, evidence sufficiency, and task risk
-  - Designs review paths by error cost and user impact
-  - Considers reviewer capacity and how review outcomes feed back into the system
-  - Tiers by impact, reversibility, and uncertainty instead of applying one review rule to every output.
-  - Distinguishes sampling, pre-approval, retrospective review, and automatic blocking by use case.
-  - Monitors queue delay, bypass rates, and miss risk and assigns risk-acceptance ownership.
-  - Define escalation conditions using risk, confidence evidence, user impact, and reversibility
-  - Distinguish blocking, confirmation, and post-hoc sampling interventions
-  - Estimate volume, service time, expertise, and degraded behavior during backlogs
-  - Record reviewer rationale and use outcomes to recalibrate thresholds
+    Estimates arrivals, specialist capacity, and deadlines while tracking backlog and missed or excessive
+    intervention.
+  - Defines overload limits, risk owners, and feedback from review evidence to upstream quality.
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering
@@ -39,12 +25,17 @@ roles:
   - ai-engineer
   - operations
   - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

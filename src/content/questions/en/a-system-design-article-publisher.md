@@ -13,9 +13,19 @@ signals:
   - Says how edits and withdrawals after publication affect content already distributed
 primaryCapability: professional.system-design
 topics: [system-design, backend, frontend]
-roles: [engineering, backend, frontend, product]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - product
+  - mobile
+  - ai-engineer
+  - operations
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

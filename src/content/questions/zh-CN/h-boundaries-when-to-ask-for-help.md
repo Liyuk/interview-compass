@@ -13,9 +13,17 @@ signals:
   - 求助之后会跟进学到的东西，避免同一类问题反复求助
 primaryCapability: work-responsibility.boundaries
 topics: [learning, communication]
-roles: [engineering, product, operations]
+roles:
+  - engineering
+  - product
+  - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
 scenarios: [interview, campus]
 formats: [behavioral]
 followUps:

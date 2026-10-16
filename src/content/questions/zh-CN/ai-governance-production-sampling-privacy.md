@@ -27,12 +27,16 @@ roles:
   - ai-engineer
   - data
   - operations
+  - engineering
+  - backend
+  - product
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 formats:
   - planning
   - case

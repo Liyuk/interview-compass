@@ -9,9 +9,18 @@ intent: "考察能否管理技术退役的依赖迁移、业务连续性和停�
 signals: ["盘点依赖方、关键路径、风险和替代方案成熟度","区分停止新接入、限制变更和最终下线阶段","提供迁移工具、支持窗口和例外审批","用使用量、风险和完成率决定退役节点"]
 primaryCapability: "value-direction.planning"
 topics: ["technical-planning","risk-management","execution"]
-roles: ["engineering","manager"]
+roles:
+  - engineering
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["planning","case"]
 followUps: ["最后一个依赖方无法迁移时如何作风险决策？","怎样避免临时例外变成永久支持？"]

@@ -13,9 +13,20 @@ signals:
   - 区分靠投入能达成的部分，和需要产品判断才能改变的部分
 primaryCapability: value-direction.metrics-causality
 topics: [metrics, product-thinking, execution]
-roles: [product, operations, marketing]
+roles:
+  - product
+  - operations
+  - marketing
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, operations-review]
 formats: [case, planning]
 followUps:

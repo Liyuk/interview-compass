@@ -9,9 +9,16 @@ intent: "考察能否识别源代码与二进制兼容差异，并分阶段迁�
 signals: ["识别布局、符号、调用约定和运行时假设的变化","盘点插件构建版本与运行环境","选择 ABI 版本标识、适配层或双版本过渡","用兼容矩阵和真实插件验证切换与回退"]
 primaryCapability: "professional.computer-science"
 topics: ["compiler-design","programming-languages","engineering-systems"]
-roles: ["engineering","backend"]
+roles:
+  - engineering
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["无法升级的插件如何隔离运行风险？","什么时候应结束旧 ABI 支持？"]

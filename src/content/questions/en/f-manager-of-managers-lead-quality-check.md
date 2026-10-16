@@ -13,9 +13,17 @@ signals:
   - Says how feedback is given to the lead once a problem is found, rather than taking over
 primaryCapability: people-organization.manager-of-managers
 topics: [management, feedback]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

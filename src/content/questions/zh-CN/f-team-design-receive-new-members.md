@@ -13,9 +13,17 @@ signals:
   - 说明怎样检查融合是否真的发生，而不只看形式上的会议
 primaryCapability: people-organization.team-design
 topics: [management, communication, team-planning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

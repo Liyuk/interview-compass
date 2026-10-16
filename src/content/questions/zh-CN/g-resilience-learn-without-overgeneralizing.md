@@ -9,9 +9,19 @@ intent: "考察能否在模糊挫折中主动寻求可操作反馈，同时避�
 signals: ["追问评审者具体的风险、证据缺口和决策标准","区分方案不足、时机不合与当前不值得投入","提出小范围验证或替代路径","设置复审条件并决定何时停止投入"]
 primaryCapability: "learning-adaptation.resilience-recovery"
 topics: ["resilience","learning","communication"]
-roles: ["engineering","product","manager"]
+roles:
+  - engineering
+  - product
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["individual","team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["如果关键评审者无法提供更多信息，怎样获得独立校准？","什么证据会让你停止为原方案辩护？"]

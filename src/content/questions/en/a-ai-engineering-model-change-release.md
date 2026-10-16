@@ -9,9 +9,19 @@ intent: "See whether you can detect segment risks hidden by averages and manage 
 signals: ["Identifies affected users and business-critical slices", "Considers quality, cost, latency, and safety guardrails together", "Plans a staged rollout with pause, routing, and rollback", "Clarifies risk ownership and required evidence"]
 primaryCapability: "professional.ai-engineering"
 topics: ["ai-engineering", "engineering-systems", "reliability"]
-roles: ["ai-engineer", "backend", "engineering"]
+roles:
+  - ai-engineer
+  - backend
+  - engineering
+  - frontend
+  - mobile
+  - data
+  - product
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["planning", "case"]
 followUps: []

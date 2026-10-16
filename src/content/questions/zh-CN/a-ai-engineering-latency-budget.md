@@ -9,9 +9,19 @@ intent: "考察你是否能把质量、响应时间和成本拆成可测的系�
 signals: ["先定义端到端时延和成本的统计规则", "将排队、检索、生成、工具调用分别计时", "区分平均值与尾延迟以及不同请求类型", "提出优化后仍能保护质量的对照验证"]
 primaryCapability: "professional.ai-engineering"
 topics: ["ai-engineering", "resource-allocation", "system-design"]
-roles: ["ai-engineer", "backend", "product"]
+roles:
+  - ai-engineer
+  - backend
+  - product
+  - engineering
+  - frontend
+  - mobile
+  - data
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case", "system-design"]
 followUps: []

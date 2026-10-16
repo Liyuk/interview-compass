@@ -9,9 +9,17 @@ intent: "Assesses whether you can find missing build-graph dependencies and veri
 signals: ["Check whether dependencies, generated files, and compiler flags enter the build graph","Compare clean and incremental outputs","Use a minimal reproduction to find missing dependencies","Add dependency checks and cache-invalidation tests"]
 primaryCapability: "professional.computer-science"
 topics: ["compiler-design","programming-languages","engineering-systems"]
-roles: ["engineering","backend"]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["How would you prove the fix did not turn incremental builds into full rebuilds?","How can remote build caches affect reproducibility?"]

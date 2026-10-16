@@ -13,9 +13,20 @@ signals:
   - Holds this cooperation in place through joint reviews and decision mechanisms rather than one conversation
 primaryCapability: collaboration.conflict-navigation
 topics: [conflict-resolution, communication, management]
-roles: [product, engineering, operations, manager]
+roles:
+  - product
+  - engineering
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion]
 formats: [behavioral, case]
 followUps:

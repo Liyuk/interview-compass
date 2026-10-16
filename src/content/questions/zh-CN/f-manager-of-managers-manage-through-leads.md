@@ -13,9 +13,17 @@ signals:
   - 说明怎样发现小组长的盲区或信息被过滤
 primaryCapability: people-organization.manager-of-managers
 topics: [management, communication, team-planning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

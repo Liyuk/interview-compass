@@ -11,9 +11,18 @@ question: "After replacing a foundation model, overall metrics remain similar bu
 intent: "Assesses whether you can connect model changes to specific user tasks, output behaviors, and downstream outcomes."
 signals: ["Track versions of the model, prompts, retrieval corpus, tools, and parameters","Compare important error types by task and user segment, not only overall scores","Use fixed regression sets and production sampling to find the mechanism of change","Propose staged migration, parallel observation, rollback, and change communication"]
 topics: ["ai-engineering","reliability","metrics"]
-roles: ["ai-engineer","backend","data"]
+roles:
+  - ai-engineer
+  - backend
+  - data
+  - engineering
+  - frontend
+  - mobile
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 formats: ["debugging","case"]
 followUps: ["How would you detect and trace a silent model update by a provider?","Which changes require renewed approval rather than routine regression tests?"]
 ---

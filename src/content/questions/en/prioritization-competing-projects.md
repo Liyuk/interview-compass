@@ -12,9 +12,21 @@ signals:
   - Explains how the ordering is communicated to the teams that lose out
 primaryCapability: value-direction.prioritization
 topics: [planning, prioritization, resource-allocation, conflict-resolution]
-roles: [engineering, product, manager, pmo]
+roles:
+  - engineering
+  - product
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [team-manager, senior-manager, executive]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [interview, promotion, operations-review]
 formats: [case, planning]
 source:

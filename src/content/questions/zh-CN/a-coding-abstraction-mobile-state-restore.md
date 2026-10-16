@@ -7,12 +7,10 @@ title: 用户正在编辑内容时，App 被系统在后台回收。用户回来
 question: 用户正在编辑内容时，App 被系统在后台回收。用户回来后，你怎样保证内容和页面状态不丢，又不会恢复出过期数据？
 intent: 了解你能否区分需要持久化和可以重建的状态，并为恢复路径设计清晰的边界和验证。
 signals:
-  - 区分必须持久化的状态和可以重建的状态
-  - 考虑草稿的版本，避免覆盖更新的数据
-  - 说明怎样测试这条恢复路径，包括被回收和弱网的情形
-  - 区分短暂 UI 状态与持久业务状态
-  - 考虑系统回收时保存机会有限
-  - 明确恢复后如何校验服务端数据与过期状态
+  - 区分短暂界面状态、必须持久化的草稿与可从服务端重建的事实。
+  - 说明系统回收前保存机会有限时，何时保存、如何控制写入成本。
+  - 用版本或时间依据处理草稿与新服务端事实冲突，避免恢复覆盖新数据。
+  - 验证回收、重启、弱网和过期授权下的恢复及用户可见结果。
 primaryCapability: professional.coding-abstraction
 topics:
   - mobile
@@ -24,6 +22,8 @@ responsibilityScopes:
   - individual
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

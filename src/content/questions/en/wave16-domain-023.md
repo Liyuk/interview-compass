@@ -16,12 +16,17 @@ topics:
   - product-thinking
 roles:
   - product
+  - engineering
+  - frontend
+  - mobile
+  - backend
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

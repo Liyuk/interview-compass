@@ -12,13 +12,14 @@ intent: >-
   Examines how you compare live production settings with their declared configuration and understand why they differ while
   avoiding a second failure during recovery.
 signals:
-  - Separates intentional changes, emergency fixes, and unexplained configuration differences
-  - Avoids blindly overwriting resources that may hold important data
-  - Reconciles verified state into code and assesses impact
-  - Improves approval, detection, and emergency change capture
-  - Compares declared state, live state, and change records
-  - Assesses whether overwriting drift could cause a second outage
-  - Explains how to import, repair, or deliberately remove discrepancies
+  - >-
+    Compares declarations, actual state, and history to distinguish expected, emergency, and unknown
+    changes.
+  - Assesses overwrite effects on data and service before defining risk and stop conditions.
+  - Compares import, correction, and gradual removal with costs and rollback evidence.
+  - >-
+    Verifies resource and service results and assigns detection, approval, and emergency write-back
+    duties.
 primaryCapability: professional.engineering-systems
 topics:
   - devops
@@ -27,13 +28,15 @@ topics:
 roles:
   - engineering
   - backend
-  - operations
+  - ai-engineer
+  - data
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

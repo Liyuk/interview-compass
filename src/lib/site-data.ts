@@ -1,10 +1,10 @@
 import { getCollection } from 'astro:content';
 import type { QuestionRecord } from './content-model';
 import { facetValuesOf, getQuestions } from './question-catalog';
-import { crossDomainPaths, domains, facetDefinitions, type FacetKind, type Locale } from './taxonomy';
+import { crossDomainPaths, domains, facetDefinitions, audienceRoles, type FacetKind, type Locale } from './taxonomy';
 
 export async function loadAllRecords(): Promise<QuestionRecord[]> {
-  return (await getCollection('questions')).map((entry) => entry.data);
+  return (await getCollection('questions')).map((entry) => ({ ...entry.data, roles: entry.data.roles.filter(id => audienceRoles.some(role => role.id === id)) }));
 }
 
 export async function loadQuestions(locale: Locale): Promise<QuestionRecord[]> {
@@ -13,7 +13,7 @@ export async function loadQuestions(locale: Locale): Promise<QuestionRecord[]> {
 
 export async function facetStaticPaths(kind: FacetKind, locale: Locale) {
   const used = new Set((await loadQuestions(locale)).flatMap((record) => facetValuesOf(record, kind)));
-  return facetDefinitions[kind].filter((entry) => used.has(entry.id)).map((entry) => ({ params: { id: entry.id } }));
+  return (kind === 'roles' ? audienceRoles : facetDefinitions[kind]).filter((entry) => used.has(entry.id)).map((entry) => ({ params: { id: entry.id } }));
 }
 
 export async function domainStaticPaths(locale: Locale) {

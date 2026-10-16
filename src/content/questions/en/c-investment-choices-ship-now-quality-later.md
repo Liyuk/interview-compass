@@ -13,9 +13,18 @@ signals:
   - Says how it is checked that the debt is really repaid
 primaryCapability: value-direction.investment-choices
 topics: [planning, engineering-systems, communication]
-roles: [engineering, manager]
+roles:
+  - engineering
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [behavioral, case]
 followUps:

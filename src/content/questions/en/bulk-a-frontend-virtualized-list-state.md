@@ -19,6 +19,8 @@ topics:
   - data-structures
 roles:
   - frontend
+  - engineering
+  - mobile
 responsibilityScopes:
   - individual
   - team

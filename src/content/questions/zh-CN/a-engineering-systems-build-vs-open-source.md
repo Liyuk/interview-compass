@@ -13,9 +13,19 @@ signals:
   - 说明什么情况下会改变选择，例如从开源转自研，并给出迁移的退路
 primaryCapability: professional.engineering-systems
 topics: [engineering-systems, system-design, planning]
-roles: [engineering, backend, frontend, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - manager
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [case, behavioral]
 followUps:

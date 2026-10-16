@@ -13,9 +13,19 @@ signals:
   - 坦率交代留下的已知风险和遗憾，而不是只讲成功
 primaryCapability: professional.engineering-systems
 topics: [engineering-systems, system-design, risk-management]
-roles: [engineering, backend, frontend, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - manager
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [behavioral, case, system-design]
 followUps:

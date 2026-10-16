@@ -9,9 +9,19 @@ intent: "Assesses whether you can handle baseline drift, preserve the original c
 signals: ["Separate effect changes from shifts in traffic mix, seasonality, or policy","Keep the original target and definition instead of rewriting success after the fact","Use stratification, contemporaneous controls, or reweighting as secondary comparisons and state limits","Update the forecast, decision, and next validation date accordingly"]
 primaryCapability: "value-direction.business-outcomes"
 topics: ["metrics","planning","execution"]
-roles: ["product","data","engineering"]
+roles:
+  - product
+  - data
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["How would you present the result if old and new definitions imply opposite conclusions?","When should a goal be reset, and when should the original goal remain the evaluation basis?"]

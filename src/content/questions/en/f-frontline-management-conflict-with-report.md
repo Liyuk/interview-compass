@@ -13,9 +13,17 @@ signals:
   - Repairs the relationship afterwards and checks whether the conflict exposed a management problem
 primaryCapability: people-organization.frontline-management
 topics: [management, conflict-resolution, feedback]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

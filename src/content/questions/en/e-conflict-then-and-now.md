@@ -13,9 +13,21 @@ signals:
   - Separates insufficient information at the time from poor handling
 primaryCapability: collaboration.conflict-navigation
 topics: [conflict-resolution, communication]
-roles: [engineering, product, operations, manager, pmo]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral]
 followUps:

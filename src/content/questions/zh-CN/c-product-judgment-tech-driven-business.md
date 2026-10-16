@@ -13,9 +13,19 @@ signals:
   - 承认哪些技术投入最终没有带来业务价值
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, system-design]
-roles: [engineering, manager, product]
+roles:
+  - engineering
+  - manager
+  - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams, organization]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

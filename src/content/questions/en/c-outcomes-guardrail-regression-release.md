@@ -9,9 +9,19 @@ intent: "Assesses whether you can judge a result using the target metric togethe
 signals: ["Confirm whether the target change is real, its magnitude, and its coverage","Locate the source and severity of guardrail deterioration by segment and workflow","Estimate benefits, harm, remediation, and operating cost rather than simply netting them","Set conditions for pausing, narrowing scope, fixing and continuing, or accepting residual impact."]
 primaryCapability: "value-direction.business-outcomes"
 topics: ["metrics","product-thinking","risk-management"]
-roles: ["product","engineering","data"]
+roles:
+  - product
+  - engineering
+  - data
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["If a guardrail worsens while the core outcome rises materially, what evidence would support continuing?","How would you prevent a team from making metrics look better by shifting costs elsewhere?"]

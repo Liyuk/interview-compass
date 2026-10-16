@@ -7,17 +7,11 @@ title: Represent team outcomes accurately in promotion evidence
 question: You are writing the summary of a high-impact project, but its result came from several teams and a key decision was not yours. How would you represent your contribution, others’ contributions, and the responsibility you carried?
 intent: Examines attribution, integrity, and evidence-based self-description.
 signals:
-  - Separates proposal, decision, execution, and outcome attribution.
-  - Provides concrete evidence for personal claims.
-  - Names shared outcomes and any parts that remain contested.
-  - Separates personal work, shared output, inference, and unknowns
-  - Clarifies risk, ownership boundaries, and decisions that require escalation
-  - Proposes corrective or protective action and preserves an accurate record
-  - Name personal decisions and deliverables precisely.
-  - Acknowledge key dependencies and contributors.
-  - Connect personal work to shared outcomes with clear boundaries.
-  - Separates what they proposed, decided, executed, and coordinated
-  - Supports team outcome and personally attributable impact with distinct evidence
+  - Identify who framed the problem, proposed the solution, decided, implemented, and coordinated.
+  - Support personal judgments and actions with records or artifacts.
+  - Acknowledge that another person proposed the key decision; authoring the summary does not mean leading the project.
+  - Recognize cross-team dependencies, shared outcomes, and external conditions.
+  - Mark disputed or insufficiently evidenced contribution claims and arrange verification.
 primaryCapability: work-responsibility.attribution
 topics:
   - ethics
@@ -29,6 +23,10 @@ roles:
   - engineering
   - manager
   - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team

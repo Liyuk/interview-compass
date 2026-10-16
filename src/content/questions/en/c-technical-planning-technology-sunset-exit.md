@@ -9,9 +9,18 @@ intent: "Assesses whether you can manage dependency migration, business continui
 signals: ["Inventory consumers, critical paths, risks, and replacement maturity","Separate no-new-adoption, restricted-change, and final-shutdown phases","Provide migration tools, support windows, and exception approval","Use usage, risk, and completion evidence to set retirement dates"]
 primaryCapability: "value-direction.planning"
 topics: ["technical-planning","risk-management","execution"]
-roles: ["engineering","manager"]
+roles:
+  - engineering
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["planning","case"]
 followUps: ["How would you make a risk decision if the final consumer cannot migrate?","How would you stop a temporary exception from becoming permanent support?"]

@@ -9,9 +9,18 @@ intent: "考察你是否理解 schema 变化也是跨团队契约变化，而不
 signals: ["找出直接和间接依赖及其重要性", "区分兼容变化与语义破坏性变化", "提出并行兼容、迁移窗口和弃用机制", "设置验收、通知与最终下线条件"]
 primaryCapability: "domain-modeling.model-evolution"
 topics: ["data-modeling", "engineering-systems", "communication"]
-roles: ["data", "backend", "engineering"]
+roles:
+  - data
+  - backend
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["multiple-teams"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case", "planning"]
 followUps: []

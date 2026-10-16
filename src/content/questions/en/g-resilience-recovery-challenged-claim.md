@@ -13,9 +13,20 @@ signals:
   - Does not attack the questioner and does not reverse the facts just because they were challenged
 primaryCapability: learning-adaptation.resilience-recovery
 topics: [communication, feedback, ethics]
-roles: [engineering, product, operations, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, promotion]
 formats: [behavioral]
 followUps:

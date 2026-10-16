@@ -16,6 +16,9 @@ topics:
 roles:
   - backend
   - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team

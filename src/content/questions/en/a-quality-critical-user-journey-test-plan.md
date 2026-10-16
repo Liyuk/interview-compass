@@ -9,9 +9,19 @@ intent: "Assesses whether you can build a layered test strategy from user impact
 signals: ["Define critical user tasks, success conditions, and failure consequences","Place rules, interfaces, and end-to-end paths at appropriate test layers","Prioritize high-risk changes and historical failure points","Explain maintenance cost, runtime, and response to test failures"]
 primaryCapability: "professional.quality-security-safety"
 topics: ["accessibility","reliability","engineering-systems"]
-roles: ["engineering","product","design"]
+roles:
+  - engineering
+  - product
+  - design
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["If end-to-end tests are flaky, how would you retain critical coverage while reducing false alarms?","How would you adapt a strategy when coverage rises but real failures are missed?"]

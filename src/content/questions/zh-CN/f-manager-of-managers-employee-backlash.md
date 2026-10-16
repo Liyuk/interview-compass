@@ -13,9 +13,17 @@ signals:
   - 不诋毁、不对员工采取报复，并如实向 CEO 呈现情况和选项
 primaryCapability: people-organization.manager-of-managers
 topics: [management, communication, conflict-resolution, ethics]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - senior-manager
+  - executive
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

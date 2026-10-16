@@ -7,12 +7,10 @@ title: 事故现场多个负责人都在下指令时，怎样恢复统一指挥�
 question: 生产事故中，技术负责人要求关闭功能，业务负责人要求继续接单，客服团队又承诺了恢复时间。现场成员收到相互冲突的指令。你会如何组织响应？
 intent: 考察能否快速明确事故指挥权、事实来源、风险接受者和信息发布节奏。
 signals:
-  - 指定单一事件指挥者和技术执行负责人。
-  - 区分恢复操作、业务风险接受与客户沟通职责。
-  - 建立统一状态记录、决策日志和下一次更新时间。
-  - 区分指挥流程权和技术风险判断。
-  - 定义紧急决策、异议记录和升级时限。
-  - 确保采取的动作有回退或补偿路径。
+  - 按已有应急授权确认单一事故协调者和技术执行负责人；角色不清时迅速升级确认。
+  - 区分技术恢复判断、业务风险接受与客户沟通责任，不让相互矛盾的口头要求直接变成操作。
+  - 使用统一事实记录、决策日志与更新时间，保留异议和需要有权者决定的问题。
+  - 核验缓解动作之间的冲突、回退或补偿路径，并明确哪些风险不能擅自接受。
 primaryCapability: delivery.reliability-incidents
 topics:
   - reliability
@@ -22,12 +20,17 @@ roles:
   - operations
   - engineering
   - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

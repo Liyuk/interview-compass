@@ -9,9 +9,17 @@ intent: "考察你能否按数据用途和错误影响设计阻断、告警与�
 signals: ["区分关键完整性约束与软性异常", "按下游影响设置阈值和处置级别", "明确人工放行的授权和留痕", "跟踪误报率、漏报和下游损失以调整规则"]
 primaryCapability: "domain-modeling.data-model"
 topics: ["data-modeling", "reliability", "operations"]
-roles: ["data", "engineering", "operations"]
+roles:
+  - data
+  - engineering
+  - operations
+  - backend
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: []

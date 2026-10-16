@@ -13,9 +13,20 @@ signals:
   - 说明在工具上线之前怎样降低对研发的依赖
 primaryCapability: collaboration.negotiation
 topics: [operations, negotiation, communication]
-roles: [operations, marketing, product]
+roles:
+  - operations
+  - marketing
+  - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [behavioral, case]
 followUps:

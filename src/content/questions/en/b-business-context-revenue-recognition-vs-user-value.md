@@ -4,21 +4,26 @@ kind: question
 status: published
 locale: en
 title: >-
-  Contract revenue is recognized at signing, but the customer will not use the product for months. How should the team
-  describe both financial progress and customer value?
+  Contract value grows before customers use the product. How should the team describe financial progress
+  and customer value?
 question: >-
-  Contract revenue is recognized at signing, but the customer will not use the product for months. How should the team
-  describe both financial progress and customer value?
+  Sales reports growth using signed contract value, but customers will not use the product for months.
+  How would you distinguish contracting, fulfillment, revenue recognition, and customer value, and
+  explain what the team should observe?
 intent: >-
   Assess whether you recognize the timing gap between transaction, fulfillment, revenue recognition, and value received,
   avoiding decisions driven by one metric.
 signals:
-  - Separates contract value, delivered value, cash collection, and actual customer usage.
-  - Explains which decision each measure supports, its time window, and its source of truth.
-  - Shows how to prevent early revenue recognition from being misread as product impact or long-term retention.
-  - Review revenue, cash collection, usage, support, and renewal signals together.
-  - Separate accounting periods from customer-value windows.
-  - Identify changes that warrant revising sales promises or product experience.
+  - >-
+    Distinguishes signed value, fulfillment, cash collection, recognized revenue, and usage without
+    assuming signing recognizes all revenue.
+  - >-
+    Verifies contract obligations and applicable recognition rules, then states each metric’s purpose,
+    window, and source.
+  - >-
+    Uses adoption, support, and renewal evidence to examine timing gaps between reported progress and
+    customer value.
+  - Explains possible incentive or promise distortions and what evidence would trigger changes.
 primaryCapability: domain-modeling.business-context
 topics:
   - commercialization
@@ -28,12 +33,16 @@ roles:
   - product
   - data
   - operations
+  - engineering
+  - backend
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - operations-review

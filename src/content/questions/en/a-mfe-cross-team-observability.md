@@ -9,9 +9,14 @@ intent: "Assesses whether you can connect user journeys with shell and child-app
 signals: ["Define correlation IDs and key stages across navigation","Record shell, child-app, asset-loading, and route versions","Distinguish user-visible failures from component-health signals","Create cross-team incident views and a common escalation path"]
 primaryCapability: "professional.engineering-systems"
 topics: ["micro-frontends","frontend","engineering-systems","system-design"]
-roles: ["frontend","engineering","design"]
+roles:
+  - frontend
+  - engineering
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["How would you connect journeys while minimizing personal data?","Who should maintain cross-team dashboards?"]

@@ -13,9 +13,21 @@ signals:
   - Distills scattered information into a layered plan, giving the whole picture first and then workable detail
 primaryCapability: delivery.decomposition
 topics: [planning, communication, execution]
-roles: [engineering, product, operations, manager, pmo]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, behavioral]
 followUps:

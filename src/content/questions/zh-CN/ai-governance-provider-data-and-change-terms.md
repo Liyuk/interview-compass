@@ -27,10 +27,14 @@ roles:
   - ai-engineer
   - backend
   - manager
+  - engineering
+  - data
+  - product
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
+  - individual-contributor
   - team-manager
   - senior-manager
 formats:

@@ -13,9 +13,17 @@ signals:
   - 说明怎样验证并发下的正确性，例如随机操作回放
 primaryCapability: professional.system-design
 topics: [system-design, distributed-systems, frontend]
-roles: [engineering, frontend, backend]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

@@ -13,9 +13,15 @@ signals:
   - Says how playback quality is observed, such as time to first frame and stall rate
 primaryCapability: professional.computer-science
 topics: [system-design, frontend, mobile]
-roles: [engineering, frontend, mobile]
+roles:
+  - engineering
+  - frontend
+  - mobile
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, hiring]
 formats: [knowledge, debugging]
 followUps:

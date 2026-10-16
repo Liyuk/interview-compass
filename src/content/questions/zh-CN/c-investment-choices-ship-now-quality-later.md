@@ -13,9 +13,18 @@ signals:
   - 说明怎样检查债是否真的被偿还
 primaryCapability: value-direction.investment-choices
 topics: [planning, engineering-systems, communication]
-roles: [engineering, manager]
+roles:
+  - engineering
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [behavioral, case]
 followUps:

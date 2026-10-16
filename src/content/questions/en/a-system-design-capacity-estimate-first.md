@@ -12,9 +12,18 @@ signals:
   - "Admits the estimate is imprecise and says what evidence would correct it"
 primaryCapability: professional.system-design
 topics: [system-design, distributed-systems, databases]
-roles: [engineering, backend, data]
+roles:
+  - engineering
+  - backend
+  - data
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design, knowledge]
 source:

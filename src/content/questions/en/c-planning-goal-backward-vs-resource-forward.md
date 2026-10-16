@@ -12,9 +12,20 @@ signals:
   - Says how the gap becomes a resource request or a scope change
 primaryCapability: value-direction.planning
 topics: [planning, resource-allocation]
-roles: [engineering, product, manager, pmo]
+roles:
+  - engineering
+  - product
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [planning, case]
 followUps:

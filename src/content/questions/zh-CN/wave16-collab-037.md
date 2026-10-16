@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: zh-CN
 title: 两组团队对同一质量事故互相归责怎么办？
-question: 事故根因涉及接口接口约定和调用方处理，两组团队都认为责任在另一侧。你会如何带领复盘并形成共同修复？
+question: 事故根因涉及接口契约和调用方处理，两组团队都认为责任在另一侧。你会如何带领复盘并形成共同修复？
 intent: 考察跨团队事实重建、责任共担和系统性改进。
 signals:
   - 用时间线和证据重建真实交互。
@@ -18,12 +18,17 @@ topics:
   - communication
 roles:
   - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

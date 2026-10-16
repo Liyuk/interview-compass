@@ -9,9 +9,19 @@ intent: "Assesses whether you can extract useful facts from delivery style, main
 signals: ["Separate verifiable facts from speculative judgments","Regulate emotions before clarifying what is unclear","Respond to actionable points and agree on collaboration norms","Address disrespect when needed without avoiding the work issue"]
 primaryCapability: "learning-adaptation.resilience-recovery"
 topics: ["resilience","learning","communication"]
-roles: ["engineering","product","manager"]
+roles:
+  - engineering
+  - product
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["individual","team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["If the criticism is factually wrong but forcefully delivered, how would you address delivery first and clarify afterward?","When should a third party get involved?"]

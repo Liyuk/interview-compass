@@ -18,11 +18,14 @@ topics:
   - reliability
 roles:
   - mobile
+  - engineering
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

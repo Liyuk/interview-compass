@@ -13,9 +13,20 @@ signals:
   - Validates on a small scale first and wins larger resources with results rather than opinion
 primaryCapability: collaboration.stakeholder-influence
 topics: [communication, planning, negotiation]
-roles: [engineering, product, manager, pmo]
+roles:
+  - engineering
+  - product
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams, organization]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

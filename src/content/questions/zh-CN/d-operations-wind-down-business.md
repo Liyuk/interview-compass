@@ -13,9 +13,22 @@ signals:
   - 保留需要的数据和关系，并说明清退之后的跟进
 primaryCapability: delivery.operational-execution
 topics: [operations, risk-management, communication, ethics]
-roles: [operations, manager, product]
+roles:
+  - operations
+  - manager
+  - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [interview, promotion, operations-review]
 formats: [case, behavioral]
 followUps:

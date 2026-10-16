@@ -7,15 +7,17 @@ title: How would you express a tiered revenue-share rule so product, engineering
 question: The revenue share between a platform and its creators changes in tiers with monthly volume. How would you express this settlement rule so product, engineering, and finance can each verify it independently?
 intent: Understand whether you can turn a commercial mechanism into clear concepts, boundaries, and rules, rather than leaving it as a verbal agreement or logic hidden in code.
 signals:
-  - Pins down what is billed, the boundary values of each tier, and the time window that applies
-  - Separates the rule itself from the result of applying it, and both can be recomputed
-  - Raises edge cases unprompted, such as an amount exactly on a tier boundary or a refund that lands after month end
-  - Defines stable links, amount grain, and state changes for the original order, refund event, split, and reversal.
-  - States the effective time of a commission rule, the boundary between carrying forward or recomputing historical transactions, and handling refunds across settlement periods.
-  - Designs a traceable ledger that reproduces the original settlement under the rule then in effect and separates facts, inferences, and later adjustments.
-  - Uses partial refunds, rule changes, and missing details to test reconciliation, idempotency, and exception explanations.
-  - Clarifies discount order, allocation grain, and responsible party
-  - Verifies that customer refunds and settlement amounts remain balanced after partial refunds
+  - Defines split bases, tier boundaries, periods, discount responsibility, and rounding.
+  - >-
+    Separates rule definitions from execution records and links orders, splits, settlement, refunds, and
+    reversals.
+  - Explains when cross-period refunds or rule changes retain old terms or require recalculation.
+  - >-
+    Lets parties reproduce results from original inputs and versions, checking balanced amounts rather
+    than one percentage.
+  - >-
+    Tests tier boundaries, partial refunds, duplicate events, and missing details for reconciliation and
+    escalation.
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization
@@ -36,6 +38,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -12,9 +12,14 @@ signals:
   - Says what observation verifies it, such as a network waterfall and different network conditions
 primaryCapability: professional.debugging
 topics: [frontend, debugging, engineering-systems]
-roles: [frontend, engineering]
+roles:
+  - frontend
+  - engineering
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [debugging, case]
 source:

@@ -13,9 +13,21 @@ signals:
   - 成功标准冲突时，用共同目标和事实来取舍，而不是靠职位
 primaryCapability: delivery.project-management
 topics: [execution, communication]
-roles: [product, pmo, design, operations, engineering]
+roles:
+  - product
+  - pmo
+  - design
+  - operations
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

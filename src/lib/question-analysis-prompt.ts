@@ -1,12 +1,15 @@
 import type { QuestionRecord } from './content-model';
 import type { Locale } from './taxonomy';
+import { questionStageGuidance, stageGuidancePrompt } from './question-stage-guidance';
 
 type Evaluation = ReturnType<typeof import('./question-evaluation').questionEvaluation>;
 
-export function buildQuestionAnalysisPrompt({ locale, question, evaluation }: {
+export function buildQuestionAnalysisPrompt({ locale, question, evaluation, target, engineeringContext }: {
   locale: Locale;
   question: QuestionRecord;
   evaluation: Evaluation;
+  engineeringContext?: string;
+  target?: { roleId: string; stageId: string };
 }) {
   const en = locale === 'en';
   const lines = en ? [
@@ -82,5 +85,7 @@ export function buildQuestionAnalysisPrompt({ locale, question, evaluation }: {
     '回答尚未提供时，请先请候选人粘贴回答；不要仅凭题目分析或评分。',
     '不要编写示范答案。',
   ];
-  return lines.join('\n');
+  const context = engineeringContext ? `${en ? 'Engineering business context' : '工程师的业务理解视角'}: ${engineeringContext}\n\n` : '';
+  const prompt = context + lines.join('\n');
+  return target ? `${prompt}\n\n${stageGuidancePrompt(questionStageGuidance(question, target.roleId, target.stageId, locale), locale)}` : prompt;
 }

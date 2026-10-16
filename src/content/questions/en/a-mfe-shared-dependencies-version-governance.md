@@ -9,9 +9,14 @@ intent: "Assesses whether compatibility ranges, release cadence, and fault isola
 signals: ["Inventory bundle size, versions, reuse, and conflict impact","Separate stable platform dependencies from rapidly changing team dependencies","Set compatibility windows, upgrade policy, and exceptions","Measure loading gains and verify rollback"]
 primaryCapability: "professional.engineering-systems"
 topics: ["micro-frontends","frontend","engineering-systems","system-design"]
-roles: ["frontend","engineering","design"]
+roles:
+  - frontend
+  - engineering
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["How would you contain an incident if a shared dependency upgrade breaks one app?","How would you keep the shared platform from becoming a release bottleneck?"]

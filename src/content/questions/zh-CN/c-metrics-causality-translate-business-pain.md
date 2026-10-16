@@ -13,9 +13,19 @@ signals:
   - 承认哪些业务问题不是技术能解决的，并坦率地说出来
 primaryCapability: value-direction.metrics-causality
 topics: [metrics, product-thinking, planning]
-roles: [engineering, manager, product]
+roles:
+  - engineering
+  - manager
+  - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, behavioral]
 followUps:

@@ -7,15 +7,31 @@ title: When accumulated engineering problems slow product work, how do you secur
 question: "In the past year, how much team capacity did you secure to address technical debt (accumulated maintenance and rework) or improve engineering infrastructure such as builds and releases? When these problems slow product work, how do you explain their impact and risk to business leaders and secure time to refactor?"
 intent: See whether you have secured resources to address real engineering problems and can explain their impact on product delivery.
 signals:
-  - Use concrete numbers to explain how much team time you secured and what it was used to fix, rather than only expressing support.
-  - Explain how maintenance problems or infrastructure affect iteration speed, risk, and business opportunities.
-  - Prepare options and costs that business leaders can compare to make an investment decision.
-  - Explain how you would check whether the refactor actually sped up product work.
+  - >-
+    Describe the engineering problem, participation, and checkable records; qualify estimates rather than
+    inventing effort ratios.
+  - >-
+    Verify effects on iteration, risk, and opportunities, separating present facts from benefit
+    hypotheses.
+  - Compare local fixes, refactoring, tools, and scope, distinguishing resource requests from approval.
+  - >-
+    Validate later delivery, quality, maintenance burden, and timing rather than treating approved effort
+    as realized benefit.
 primaryCapability: value-direction.investment-choices
 topics: [engineering-systems, planning, communication, technical-planning]
-roles: [product, manager]
+roles:
+  - product
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

@@ -13,9 +13,19 @@ signals:
   - Explains the intent to the candidate at the end and leaves room to clarify
 primaryCapability: people-organization.hiring
 topics: [hiring, ethics]
-roles: [manager, engineering, product]
+roles:
+  - manager
+  - engineering
+  - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [hiring]
 formats: [behavioral, case]
 followUps:

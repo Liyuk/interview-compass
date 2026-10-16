@@ -11,13 +11,18 @@ intent: >-
   See whether you design a clear ramp-up path, real problems, and steady feedback for newcomers, and know when
   to step back.
 signals:
-  - Gives a clear ramp-up path with stage goals instead of leaving the newcomer to feel their way
-  - Assigns real problems rather than only exercises, and says how difficulty rises step by step
-  - Says how often and in what way feedback is given, and how the newcomer is helped to voice difficulties
-  - Uses concrete evidence to judge when to let go and says how it is checked afterwards
-  - Check whether rules, permissions, and escalation criteria are visible.
-  - Review learning materials, peer networks, and feedback latency.
-  - Increase real decision ownership gradually and review outcomes.
+  - >-
+    Define ramp-up goals from role tasks and prior experience rather than treating three months as a
+    universal capability deadline.
+  - >-
+    Assign real tasks with increasing judgment responsibility, materials, peer support, permissions, and
+    risk escalation criteria.
+  - >-
+    Agree timely two-way feedback and verify personal actions, judgments, and help-seeking rather than
+    task counts alone.
+  - >-
+    Use evidence of independent handling of routine work and exceptions to set autonomy, follow-up
+    checks, and formal management authority.
 primaryCapability: people-organization.growth-development
 topics:
   - management
@@ -27,11 +32,17 @@ roles:
   - manager
   - engineering
   - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios:
   - interview
   - hiring

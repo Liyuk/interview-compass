@@ -9,9 +9,19 @@ intent: "See whether you can move from a solution request to the user task, deci
 signals: ["Asks for a concrete recent workflow where the problem occurred", "Clarifies who needs to act, and when", "Compares a real-time dashboard with simpler alerts or reconciliation", "Uses a small validation before expanding the solution"]
 primaryCapability: "delivery.decomposition"
 topics: ["product-thinking", "communication", "operations"]
-roles: ["product", "engineering", "operations"]
+roles:
+  - product
+  - engineering
+  - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: []

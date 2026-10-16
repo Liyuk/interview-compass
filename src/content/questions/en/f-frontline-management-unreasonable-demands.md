@@ -13,9 +13,18 @@ signals:
   - Says where they stand between protecting the team and supporting the business and how it is explained to the team
 primaryCapability: people-organization.frontline-management
 topics: [management, resource-allocation, negotiation]
-roles: [manager, pmo]
+roles:
+  - manager
+  - pmo
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

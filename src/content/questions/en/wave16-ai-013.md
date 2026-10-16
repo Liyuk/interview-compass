@@ -16,12 +16,19 @@ topics:
   - operations
 roles:
   - ai-engineer
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - data
+  - product
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

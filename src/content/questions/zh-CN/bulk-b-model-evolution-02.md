@@ -7,12 +7,9 @@ title: 供应商把“已交付”状态重新拆成“已发出”和“已签�
 question: 供应商 API 将过去单一的“已交付”状态拆为“已发出”和“已签收”，但历史数据没有区分依据。你会如何更新领域模型、对外接口约定和相关报表？
 intent: 考察候选人是否区分新增信息与可从旧数据推导的信息，并清楚呈现历史数据的证据边界。
 signals:
-  - 避免为历史记录伪造无法观察到的状态细节
-  - 设计兼容的状态转换和下游消费者升级路径
-  - 标示新旧数据的可比性边界及报表解释方式
-  - 明确“状态模型迁移中的历史解释”涉及的业务对象、粒度、状态与时间定义。
-  - 追溯事实来源、规则负责人、历史变更与异常路径，避免概念或责任混淆。
-  - 说明如何通过样例、对账、回算或审计记录验证模型保持业务含义。
+  - 分别定义新状态与旧状态的证据含义，不为历史数据伪造发出或签收细节。
+  - 盘点接口报表消费方，比较未知状态、兼容映射和新旧并行的条件。
+  - 标明新旧数据的可比性与负责人，用历史样例和消费者确认验证迁移。
 primaryCapability: domain-modeling.model-evolution
 topics:
   - data-modeling
@@ -23,11 +20,16 @@ roles:
   - data
   - engineering
   - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - promotion

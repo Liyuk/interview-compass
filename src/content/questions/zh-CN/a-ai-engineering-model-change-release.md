@@ -9,9 +9,19 @@ intent: "了解你能否识别总体均值掩盖的用户分层风险，并把�
 signals: ["识别受影响用户和业务关键切片", "把质量、成本、延迟和安全护栏一起看", "设计可暂停、分流和回滚的渐进发布", "明确谁能接受风险以及需要什么证据"]
 primaryCapability: "professional.ai-engineering"
 topics: ["ai-engineering", "engineering-systems", "reliability"]
-roles: ["ai-engineer", "backend", "engineering"]
+roles:
+  - ai-engineer
+  - backend
+  - engineering
+  - frontend
+  - mobile
+  - data
+  - product
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["planning", "case"]
 followUps: []

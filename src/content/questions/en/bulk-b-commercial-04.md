@@ -12,16 +12,10 @@ intent: >-
   Assess whether the candidate evaluates a portfolio rather than headline sales, considering conversion, plan
   migration, margin, and long-term value together.
 signals:
-  - Separates conversion from new users and downgrades among existing customers
-  - Compares margin, service cost, and lifecycle contribution across plans
-  - Proposes segmentation, a comparison design, or explicit conditions for further investment
-  - Separate new demand from migration between plans.
-  - Analyze margin, retention, service cost, and customer lifetime.
-  - Set segment experiments and stop or adjust thresholds.
-  - Compare conversion, average order value, margin, and renewal before and after launch
-  - Identify incremental purchases versus migration from higher-priced plans
-  - Check whether plans clarify value fit across needs and segments
-  - State the observation period and conditions for repricing or withdrawal
+  - Distinguishes new purchases, downgrades, and pulled-forward demand with supporting evidence.
+  - Compares portfolio margin, service cost, retention, and lifetime contribution by segment.
+  - Uses comparable baselines or segment experiments with explicit windows and immature outcomes.
+  - Defines investment, repricing, or exit conditions and effects on customers and existing products.
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization
@@ -33,13 +27,19 @@ roles:
   - marketing
   - operations
   - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes:
   - multiple-teams
   - team
 careerTracks:
+  - individual-contributor
   - team-manager
   - senior-manager
-  - individual-contributor
 scenarios:
   - interview
   - promotion

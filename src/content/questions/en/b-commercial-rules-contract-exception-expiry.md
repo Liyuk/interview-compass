@@ -13,12 +13,14 @@ intent: >-
   Assess whether you model the scope, effective period, approval, and expiry of commercial exceptions in the
   operating process.
 signals:
-  - Identifies which customers, products, transactions, and time periods the exception covers.
-  - Creates traceable ownership and notification for approval, changes, renewal, and expiry.
-  - Defines automatic fallback, manual review, and detection of misapplied exceptions after expiry.
-  - Distinguishes general rules from time-bounded contract exceptions.
-  - Records rationale, eligible customer or product, owner, and effective and expiry dates.
-  - Provides renewal reminders, evidence for extension, and a path back to default behavior after expiry.
+  - Distinguishes default rates and exceptions by customer, product, transaction, and validity.
+  - Preserves approval grounds, owners, versions, and notices, including renewal treatment.
+  - >-
+    Compares default reversion, pause, and manual review rather than assuming automatic fallback is
+    always correct.
+  - >-
+    Tests expiry and renewal cases for misuse detection, customer explanation, and historical
+    reconciliation.
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization
@@ -28,11 +30,13 @@ roles:
   - product
   - operations
   - engineering
+  - backend
 responsibilityScopes:
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

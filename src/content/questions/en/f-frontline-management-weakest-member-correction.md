@@ -13,9 +13,17 @@ signals:
   - Also has specific feedback and growth arrangements for the strong, not only attention on the weak
 primaryCapability: people-organization.frontline-management
 topics: [management, feedback]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral]
 followUps:

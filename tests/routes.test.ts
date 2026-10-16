@@ -43,6 +43,9 @@ describe('route model', () => {
     expect(pathFor({ type: 'collection', id: 'general-interview' }, 'en', base)).toBe('/interview-compass/en/collections/general-interview/');
     expect(pathFor({ type: 'framework' }, 'zh-CN', base)).toBe('/interview-compass/framework/');
     expect(pathFor({ type: 'guide' }, 'zh-CN', base)).toBe('/interview-compass/handbook/');
+    expect(pathFor({ type: 'role-stage-model', role: 'product' }, 'en', base)).toBe('/interview-compass/en/capability-model/roles/product/');
+    expect(activeNavFor({ type: 'role-stage-model', role: 'product' })).toBe('capability-model');
+    expect(breadcrumbsFor({ type: 'role-stage-model', role: 'product' }, 'zh-CN', base).map(c => c.label)).toEqual(['首页', '阶段能力', '产品 · 阶段能力']);
   });
 
   it('switches language to the same route in the other locale', () => {

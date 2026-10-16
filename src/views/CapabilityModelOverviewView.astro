@@ -2,6 +2,7 @@
 import Icon from '../components/Icon.astro';
 import PlanningOverview from '../components/PlanningOverview.astro';
 import CapabilityMatrix from '../components/CapabilityMatrix.astro';
+import RoleStageExplorer from '../components/RoleStageExplorer.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { dimensionIds, getDimensionProgression, getStageProfile, stageIds, validateCapabilityModel } from '../lib/capability-model';
 import { pathFor, type RouteRef } from '../lib/routes';
@@ -26,6 +27,8 @@ const route: RouteRef = { type: 'capability-model' };
     <div class="model-principles"><span>{en ? 'Business outcomes' : '业务结果'}</span><span>{en ? 'Domain expertise' : '专业领域知识'}</span><span>{en ? 'Team influence' : '团队影响力'}</span><span>{en ? 'Human competitiveness' : '人的竞争力'}</span></div>
     <p class="model-note">{en ? 'AI capability is embedded across all four dimensions; it is not a separate maturity ladder.' : 'AI 能力贯穿四个维度，不单独形成一条工具熟练度阶梯。人的竞争力通过学习方式、思考质量、判断力与关系处理来观察。'}</p>
   </section>
+  <RoleStageExplorer locale={locale} />
+  <p class="model-note">{en ? 'The detailed six-stage profiles and A–H matrix below currently describe engineering roles. Use the specialization entries above for engineering-specific evidence. Product, operations, and design are business-understanding and collaboration perspectives.' : '下面的六阶段详细画像和 A–H 矩阵描述工程岗位；不同工程方向可从上方入口查看；产品、运营和设计内容用于业务理解与协作，不另设职能晋升路径。'}</p>
   <section class="model-section" aria-labelledby="stage-heading">
     <div class="model-section-heading"><div><p class="eyebrow">{en ? 'Progression' : '阶段变迁'}</p><h2 id="stage-heading">{en ? 'Scope and leverage expand with each stage' : '阶段变化体现为责任范围与影响方式的扩展'}</h2></div><p>{en ? 'The IC and management paths branch from senior contribution.' : '高级工程师之后，资深工程师与工程管理者是不同发展路径；管理管理者通过多个管理者扩大组织结果。'}</p></div>
     <h3 class="track-heading">{en ? 'Individual contributor path' : '专业贡献路径'} <span>{en ? 'Junior → Mid-level → Senior → Staff' : '初级工程师 → 中级工程师 → 高级工程师 → 资深工程师'}</span></h3>

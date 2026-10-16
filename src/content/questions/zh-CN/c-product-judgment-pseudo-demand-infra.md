@@ -13,9 +13,18 @@ signals:
   - 坦率交代项目成本和自己承担的责任。
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, engineering-systems, metrics]
-roles: [engineering, backend, frontend, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - manager
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

@@ -16,12 +16,17 @@ topics:
   - data-modeling
 roles:
   - ai-engineer
+  - engineering
+  - backend
+  - data
+  - product
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

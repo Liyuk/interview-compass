@@ -1,0 +1,7 @@
+---
+import { countsForQuestionIds } from '../lib/question-profile-data';
+interface Props { questions?: readonly { questionId: string }[]; ids?: readonly string[]; locale?: string; unit?: boolean; class?: string }
+const { questions = [], ids = questions.map(q => q.questionId), locale = 'zh-CN', unit = false, class: className } = Astro.props;
+const counts = countsForQuestionIds(ids);
+---
+<span class={className} data-target-content data-profile-counts={JSON.stringify(counts.profiles)} data-total-count={counts.total} data-count-unit={unit ? locale : undefined}>{counts.total}{unit ? (locale === 'en' ? ' questions' : ' 道问题') : ''}</span>

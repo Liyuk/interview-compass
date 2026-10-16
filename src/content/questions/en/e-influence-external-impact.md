@@ -12,9 +12,20 @@ signals:
   - Says whether sharing it outside in turn improved the solution itself
 primaryCapability: collaboration.stakeholder-influence
 topics: [communication, promotion]
-roles: [engineering, product, operations, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams, organization]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral]
 followUps:

@@ -12,9 +12,19 @@ signals:
   - Names the signal that would confirm the long-term benefit and the condition under which it fails
 primaryCapability: value-direction.investment-choices
 topics: [planning, prioritization]
-roles: [engineering, product, manager]
+roles:
+  - engineering
+  - product
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, behavioral]
 followUps:

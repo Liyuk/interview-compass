@@ -2,6 +2,7 @@ import enContent from '../content/capability-model/en.json';
 import mappingContent from '../content/capability-model/mapping.json';
 import zhContent from '../content/capability-model/zh-CN.json';
 import { hasTaxonomyId, type Locale } from './taxonomy';
+import { engineeringStageIds } from '../content/role-stages/registry';
 
 export const dimensionIds = [
   'business-results',
@@ -12,14 +13,7 @@ export const dimensionIds = [
 
 export type CapabilityDimensionId = (typeof dimensionIds)[number];
 
-export const stageIds = [
-  'junior-engineer',
-  'mid-level-engineer',
-  'senior-engineer',
-  'staff-engineer',
-  'engineering-manager',
-  'manager-of-managers',
-] as const;
+export const stageIds = engineeringStageIds;
 
 export type StageId = (typeof stageIds)[number];
 export type CapabilityEmphasis = 'foundational' | 'differentiating' | 'contextual';

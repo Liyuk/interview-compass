@@ -13,9 +13,17 @@ signals:
   - 说明调整之后怎样保持两边的协作，以及怎样看待自己角色的变化
 primaryCapability: people-organization.team-design
 topics: [management, communication, planning, team-planning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

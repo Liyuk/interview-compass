@@ -12,9 +12,20 @@ signals:
   - "最终给出一条可被反驳的陈述，并说明用什么复现或小范围验证来确认"
 primaryCapability: value-direction.metrics-causality
 topics: [metrics, debugging, operations]
-roles: [data, product, engineering, operations]
+roles:
+  - data
+  - product
+  - engineering
+  - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, operations-review]
 formats: [case]
 followUps:

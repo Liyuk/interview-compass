@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './all-questions-fixture';
 
 test('question page generates the platform analysis prompt without collecting an answer', async ({ page }) => {
   await page.goto('questions/a-coding-abstraction-defensive-edge-cases/');

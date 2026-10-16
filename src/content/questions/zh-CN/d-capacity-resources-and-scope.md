@@ -12,9 +12,21 @@ signals:
   - 区分资源限制造成的结果和判断造成的结果
 primaryCapability: delivery.capacity-planning
 topics: [resource-allocation, planning]
-roles: [engineering, product, operations, manager, pmo]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

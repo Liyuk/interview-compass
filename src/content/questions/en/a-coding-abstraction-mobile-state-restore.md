@@ -12,13 +12,10 @@ intent: >-
   Assess whether you distinguish transient UI state, business state that must be persisted, and data that can
   be rebuilt, then define recovery boundaries for process death and data freshness.
 signals:
-  - Separates transient UI state, durable business state, and reconstructible data
-  - Accounts for limited save opportunities and draft-version conflicts during process death
-  - Checks server freshness after recovery to avoid overwriting newer data
-  - Explains deterministic tests for process death, weak networks, and failed recovery
-  - Separates transient UI state from durable business state
-  - Accounts for limited opportunities to save during process termination
-  - Defines how restored state is reconciled with server data and staleness
+  - Separates transient UI, durable drafts, and server-reconstructible facts.
+  - Explains save timing and cost when process reclamation allows little warning.
+  - Uses versions or timing to resolve draft-server conflicts without overwriting newer facts.
+  - Tests reclaim, restart, weak networks, and expired authorization for user-visible recovery.
 primaryCapability: professional.coding-abstraction
 topics:
   - mobile
@@ -30,6 +27,8 @@ responsibilityScopes:
   - individual
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

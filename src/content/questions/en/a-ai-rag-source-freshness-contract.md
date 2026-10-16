@@ -11,13 +11,10 @@ intent: >-
   Assess whether you include data updates, index consistency, citation freshness, and business ownership in
   the retrieval contract.
 signals:
-  - Define the authoritative source, version, effective and expiry times, and owner.
-  - Set and observe propagation targets for edits, deletions, and permission changes.
-  - Distinguish relevance from current validity and handle stale or conflicting material.
-  - Choose warnings, degraded behavior, human confirmation, or refusal according to risk.
-  - Defines traceability among source-document, index, and answer-citation versions.
-  - Sets measurable freshness objectives for indexing delay, cache invalidation, and retries.
-  - Identifies high-risk stale content and provides temporary suppression, labeling, or human review.
+  - Defines authoritative sources, owners, versions, and effective or retired times.
+  - Links source, index, and citation versions and measures change and revocation propagation.
+  - Distinguishes relevance from validity, comparing labeling, hiding, clarification, and review by risk.
+  - Defines update-failure, conflict, and recovery evidence beyond indexing-job success.
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering
@@ -27,12 +24,18 @@ roles:
   - ai-engineer
   - data
   - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - operations
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

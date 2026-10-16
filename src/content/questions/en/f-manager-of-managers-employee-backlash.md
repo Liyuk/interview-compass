@@ -13,9 +13,17 @@ signals:
   - Does not denigrate or retaliate against employees and gives the CEO the real situation and options
 primaryCapability: people-organization.manager-of-managers
 topics: [management, communication, conflict-resolution, ethics]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - senior-manager
+  - executive
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

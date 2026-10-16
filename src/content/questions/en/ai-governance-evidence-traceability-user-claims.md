@@ -11,9 +11,19 @@ question: "The product wants confident AI conclusions, but evidence supports onl
 intent: "Assesses whether you can translate model limits into understandable confidence, evidence provenance, and correction paths."
 signals: ["Distinguish generated content, retrieved evidence, and business-rule results","Match claim strength to evidence quality and show when the system cannot answer","Retain necessary source, version, and decision-path details for review","Offer user correction, appeal, or human escalation paths"]
 topics: ["ai-engineering","product-thinking","ethics"]
-roles: ["ai-engineer","product","design"]
+roles:
+  - ai-engineer
+  - product
+  - design
+  - engineering
+  - frontend
+  - backend
+  - mobile
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 formats: ["case","artifact-review"]
 followUps: ["How could you make a result verifiable without exposing internal information?","How would you detect users interpreting cautious wording as a definite promise?"]
 ---

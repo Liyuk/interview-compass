@@ -12,9 +12,17 @@ signals:
   - "把任务结果、质量与审查负担分开看"
 primaryCapability: professional.ai-engineering
 topics: [ai-engineering, metrics]
-roles: [ai-engineer, data, engineering]
+roles:
+  - ai-engineer
+  - data
+  - engineering
+  - product
+  - operations
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, planning]
 relatedQuestions:

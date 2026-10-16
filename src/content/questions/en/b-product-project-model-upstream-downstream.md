@@ -12,9 +12,20 @@ signals:
   - Explains how the project's value connects to a larger business goal
 primaryCapability: domain-modeling.product-project-model
 topics: [product-thinking, system-design]
-roles: [engineering, product, operations, pmo]
+roles:
+  - engineering
+  - product
+  - operations
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [behavioral, case]
 followUps:

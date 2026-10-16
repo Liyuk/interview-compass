@@ -13,9 +13,15 @@ signals:
   - 比较不同类型编辑器在模型上的差异，例如文本流与自由画布
 primaryCapability: professional.system-design
 topics: [system-design, frontend]
-roles: [engineering, frontend]
+roles:
+  - engineering
+  - frontend
+  - mobile
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

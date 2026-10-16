@@ -18,6 +18,11 @@ topics:
   - data-structures
 roles:
   - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes:
   - individual
   - team

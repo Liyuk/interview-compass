@@ -20,10 +20,14 @@ roles:
   - frontend
   - backend
   - mobile
+  - ai-engineer
+  - data
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
 formats:

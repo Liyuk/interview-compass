@@ -13,9 +13,18 @@ signals:
   - 设置试行期和复核的指标，用结果判断制度是否有效
 primaryCapability: people-organization.frontline-management
 topics: [management, communication, feedback]
-roles: [manager, pmo]
+roles:
+  - manager
+  - pmo
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

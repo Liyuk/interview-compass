@@ -13,9 +13,18 @@ signals:
   - 让没有被选中的人知道怎样获得反馈和下一次机会，而不是被默认为"不适合"
 primaryCapability: people-organization.delegation-succession
 topics: [management, promotion, hiring]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [interview, hiring, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

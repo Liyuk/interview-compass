@@ -11,14 +11,10 @@ question: >-
   include accessibility in release gates?
 intent: Assesses whether you can make accessibility a verifiable quality requirement covering real user journeys.
 signals:
-  - Identify affected tasks and blocker severity
-  - Combine automated checks, keyboard walkthroughs, and assistive-technology testing
-  - Define gates for severe defects and evidence for exceptions
-  - Assign remediation, regression verification, and user feedback
-  - Check whether users can complete the core task across abilities, devices, and workflow stages.
-  - Assess failure impact, recoverability, and which users the evidence represents.
-  - Compare a fix, staged release, or goal change, and state who bears any remaining exclusion risk.
-  - Define release blockers, alternate paths, and retest criteria.
+  - Locates task barriers by device and assistive technology, assessing severity and recovery costs.
+  - Combines automated checks, keyboard review, and assistive technology while stating coverage.
+  - Compares fixes, restricted release, alternatives, and goal changes with explicit risk owners.
+  - Defines verifiable gates, exception limits, owners, and retest standards with user feedback.
 primaryCapability: professional.quality-security-safety
 topics:
   - accessibility
@@ -28,11 +24,14 @@ roles:
   - frontend
   - design
   - product
+  - engineering
+  - mobile
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

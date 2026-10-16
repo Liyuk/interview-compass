@@ -16,12 +16,15 @@ topics:
   - commercialization
 roles:
   - product
+  - engineering
+  - backend
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

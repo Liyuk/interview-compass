@@ -12,9 +12,20 @@ signals:
   - 指出学到了什么，以及之后会怎样避免
 primaryCapability: value-direction.prioritization
 topics: [prioritization, planning, execution]
-roles: [engineering, product, operations, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral]
 followUps:

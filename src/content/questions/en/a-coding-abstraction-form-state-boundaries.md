@@ -12,9 +12,16 @@ signals:
   - "Explains which tests cover the critical paths"
 primaryCapability: professional.coding-abstraction
 topics: [frontend, frameworks]
-roles: [engineering, frontend, mobile]
+roles:
+  - engineering
+  - frontend
+  - mobile
+  - backend
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, promotion]
 formats: [coding, case]
 followUps:

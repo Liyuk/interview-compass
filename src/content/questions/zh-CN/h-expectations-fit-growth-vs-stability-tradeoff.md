@@ -7,14 +7,10 @@ title: 候选人想快速成长但岗位当前高度稳定，怎样讨论预期�
 question: 候选人希望在一年内承担新领域和更大范围，但岗位主要负责成熟系统的可靠运行。你会如何判断双方是否匹配，并说明可能的成长路径？
 intent: 考察能否诚实说明岗位现实、成长机会和不确定性，让双方做出知情选择。
 signals:
-  - 说明岗位当前工作结构、变化频率和责任范围。
-  - 询问候选人过去如何在稳定任务中成长。
-  - 区分可承诺的发展机会与依赖组织变化的可能性。
-  - 把“快”“灵活”等词拆成决策节奏和风险承担实例。
-  - 询问成功案例与失败时的处理方式。
-  - 表达自身条件与可调整范围，不把适配归结为性格相似。
-  - 询问设计参与决策的阶段和验证资源。
-  - 讨论速度与质量冲突时的决策方式和可调整空间。
+  - 核实成熟系统的日常任务、变更频率、可靠性目标和当前责任范围。
+  - 询问候选人过去在稳定任务中如何发现问题、扩大能力并验证成长。
+  - 比较候选人的发展诉求与岗位可提供的真实实践机会。
+  - 区分可以承诺的安排与依赖未来组织变化的可能性，约定重新校准的时间。
 primaryCapability: work-responsibility.expectations-fit
 topics:
   - learning
@@ -24,12 +20,17 @@ roles:
   - engineering
   - product
   - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

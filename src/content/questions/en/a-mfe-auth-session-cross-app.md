@@ -9,9 +9,16 @@ intent: "Assesses whether you can define a protocol balancing consistent identit
 signals: ["Separate identity, session, and resource-authorization responsibilities","Define which identity data shell and child apps may read","Avoid sharing privileged credentials through unsafe browser storage","Cover logout, renewal, permission changes, and multi-tab behavior"]
 primaryCapability: "professional.engineering-systems"
 topics: ["micro-frontends","frontend","engineering-systems","system-design"]
-roles: ["frontend","engineering","design"]
+roles:
+  - frontend
+  - engineering
+  - design
+  - backend
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["How can apps on different origins share sign-in safely?","How should revoked permissions propagate promptly?"]

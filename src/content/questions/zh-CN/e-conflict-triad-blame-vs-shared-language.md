@@ -13,9 +13,20 @@ signals:
   - 通过共同的复盘和决策机制，而不是一次谈话来固化这种协作
 primaryCapability: collaboration.conflict-navigation
 topics: [conflict-resolution, communication, management]
-roles: [product, engineering, operations, manager]
+roles:
+  - product
+  - engineering
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion]
 formats: [behavioral, case]
 followUps:

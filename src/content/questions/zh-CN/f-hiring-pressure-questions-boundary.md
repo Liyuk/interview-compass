@@ -13,9 +13,19 @@ signals:
   - 结束时向候选人说明意图，并留出让对方澄清的机会
 primaryCapability: people-organization.hiring
 topics: [hiring, ethics]
-roles: [manager, engineering, product]
+roles:
+  - manager
+  - engineering
+  - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [hiring]
 formats: [behavioral, case]
 followUps:

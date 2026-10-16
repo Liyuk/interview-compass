@@ -13,9 +13,18 @@ signals:
   - 说明怎样与研发和测试一起检查需求是否有遗漏
 primaryCapability: delivery.decomposition
 topics: [product-thinking, execution]
-roles: [product, engineering]
+roles:
+  - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, promotion]
 formats: [behavioral, case]
 followUps:

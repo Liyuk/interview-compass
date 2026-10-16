@@ -9,9 +9,20 @@ intent: "Assess whether you can separate factual disputes, definition difference
 signals: ["Locates differences in definitions, sources, and collection paths", "Identifies unknowns that could change the decision", "Runs the smallest check that resolves critical uncertainty", "Explains the basis for continuing, changing, or pausing"]
 primaryCapability: "delivery.decomposition"
 topics: ["product-thinking", "data-modeling", "communication"]
-roles: ["product", "data", "operations"]
+roles:
+  - product
+  - data
+  - operations
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team", "multiple-teams"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: []

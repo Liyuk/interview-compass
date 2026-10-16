@@ -13,9 +13,20 @@ signals:
   - Says how team members, not only management, come to understand the alignment
 primaryCapability: value-direction.planning
 topics: [planning, communication, product-thinking, business-planning]
-roles: [manager, product, engineering, pmo]
+roles:
+  - manager
+  - product
+  - engineering
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, promotion]
 formats: [planning, case]
 followUps:

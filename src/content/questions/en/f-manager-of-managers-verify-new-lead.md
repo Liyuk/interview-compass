@@ -13,9 +13,16 @@ signals:
   - Attends to team members during the change, saying what changes, what stays for now, how to raise problems, and who absorbs the extra work
 primaryCapability: people-organization.manager-of-managers
 topics: [management, hiring, feedback]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [senior-manager]
+careerTracks:
+  - senior-manager
 scenarios: [interview, hiring, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

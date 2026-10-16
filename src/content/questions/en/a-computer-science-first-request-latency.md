@@ -12,9 +12,17 @@ signals:
   - Looks at data that can be measured directly before deciding to change anything
 primaryCapability: professional.computer-science
 topics: [computer-networks, frontend, backend]
-roles: [frontend, backend, mobile]
+roles:
+  - frontend
+  - backend
+  - mobile
+  - engineering
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [knowledge, debugging]
 source:

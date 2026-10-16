@@ -13,9 +13,22 @@ signals:
   - Separates benefits attributed directly from those that arrive indirectly
 primaryCapability: value-direction.investment-choices
 topics: [metrics, product-thinking, resource-allocation]
-roles: [product, manager, operations, marketing]
+roles:
+  - product
+  - manager
+  - operations
+  - marketing
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case]
 followUps:

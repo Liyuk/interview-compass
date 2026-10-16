@@ -13,9 +13,17 @@ signals:
   - Says how changes in morale are noticed and how key people are kept
 primaryCapability: people-organization.frontline-management
 topics: [management, communication, planning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

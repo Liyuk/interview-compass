@@ -13,9 +13,22 @@ signals:
   - Keeps the data and relationships needed and says how it follows up after the wind-down
 primaryCapability: delivery.operational-execution
 topics: [operations, risk-management, communication, ethics]
-roles: [operations, manager, product]
+roles:
+  - operations
+  - manager
+  - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [interview, promotion, operations-review]
 formats: [case, behavioral]
 followUps:

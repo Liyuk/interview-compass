@@ -13,9 +13,16 @@ signals:
   - Explains how the model copes with historical data after rules change
 primaryCapability: domain-modeling.data-model
 topics: [commercialization, data-modeling, databases]
-roles: [backend, data, product, engineering]
+roles:
+  - backend
+  - data
+  - product
+  - engineering
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [knowledge, case]
 followUps:

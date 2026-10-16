@@ -7,13 +7,10 @@ title: 增量解析器与长日志流的边界设计
 question: 实现一个逐块接收 UTF-8 数据的增量日志解析器：输入块可能截断多字节字符、字段顺序变化，也可能包含多条记录或超长单行。请定义解析状态、错误恢复策略和内存上限，并实现可重复解析的核心逻辑。
 intent: 考察增量解析、状态建模、错误恢复与资源边界设计。
 signals:
-  - 明确跨块保留的解析状态及字段顺序处理方式
-  - 正确处理字符边界、多记录输入与结束输入
-  - 对超长单行设置有依据的资源上限和恢复策略
-  - 覆盖空块、截断、格式异常及重复调用的确定性测试
-  - 从输入、机制和故障表现中提出可验证的技术假设
-  - 比较实现路径及其正确性、性能、安全或维护代价
-  - 说明覆盖边界场景的测试或运行指标
+  - 明确跨块状态、字段顺序、字符解码与记录结束的接口约定。
+  - 正确处理多字节字符被切断、多条记录、空块及结束输入。
+  - 比较错误终止或恢复策略，限定超长单行和缓存的内存成本。
+  - 通过不同分块方式、截断、异常格式和重复调用验证结果及错误位置一致。
 primaryCapability: professional.coding-abstraction
 topics:
   - programming-languages
@@ -27,12 +24,12 @@ roles:
   - backend
   - frontend
   - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
-  - team-manager
 scenarios:
   - interview
   - campus

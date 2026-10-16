@@ -21,6 +21,10 @@ roles:
   - engineering
   - operations
   - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
 careerTracks:

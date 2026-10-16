@@ -1,6 +1,7 @@
 ---
 import Icon from '../components/Icon.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
+import TargetCount from '../components/TargetCount.astro';
 import { bands, pick, type Locale } from '../lib/taxonomy';
 import { pathFor } from '../lib/routes';
 import { publishedDomains } from '../lib/question-catalog';
@@ -10,7 +11,8 @@ interface Props { locale: Locale }
 const { locale } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
-const overview = publishedDomains(await loadQuestions(locale), locale);
+const questions = await loadQuestions(locale);
+const overview = publishedDomains(questions, locale);
 ---
 <SiteLayout locale={locale} route={{ type: 'capabilities' }} description={en ? 'Eight capability domains and their leaf capabilities.' : '八个能力域及其下的具体能力。'}>
   <h1 class="page-title">{en ? 'Capability map' : '能力地图'}</h1>
@@ -26,13 +28,13 @@ const overview = publishedDomains(await loadQuestions(locale), locale);
             {entry.count > 0
               ? <a href={pathFor({ type: 'domain', domain: entry.domain.id }, locale, base)}>{entry.domain.letter} · {pick(entry.domain.name, locale)}</a>
               : <span>{entry.domain.letter} · {pick(entry.domain.name, locale)}</span>}
-            <span class="count">{en ? `${entry.count} questions` : `${entry.count} 道问题`}</span>
+            <TargetCount class="count" questions={questions.filter(q => q.primaryCapability.startsWith(`${entry.domain.id}.`))} locale={locale} unit />
           </h3>
           <p>{pick(entry.domain.description, locale)}</p>
           {entry.leaves.length > 0 && (
             <ul class="leaf-list">
-              {entry.leaves.map(({ leaf, count }) => (
-                <li><a href={pathFor({ type: 'leaf', domain: entry.domain.id, leaf: leaf.id }, locale, base)}>{pick(leaf.name, locale)}</a><span class="count">{count}</span></li>
+              {entry.leaves.map(({ leaf }) => (
+                <li><a href={pathFor({ type: 'leaf', domain: entry.domain.id, leaf: leaf.id }, locale, base)}>{pick(leaf.name, locale)}</a><TargetCount class="count" questions={questions.filter(q => q.primaryCapability === `${entry.domain.id}.${leaf.id}`)} /></li>
               ))}
             </ul>
           )}

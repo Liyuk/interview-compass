@@ -14,11 +14,16 @@ primaryCapability: delivery.capacity-planning
 roles:
   - engineering
   - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

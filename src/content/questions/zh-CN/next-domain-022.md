@@ -17,12 +17,15 @@ topics:
 roles:
   - product
   - data
+  - engineering
+  - backend
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

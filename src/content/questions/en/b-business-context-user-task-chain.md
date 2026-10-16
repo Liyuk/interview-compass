@@ -12,9 +12,18 @@ signals:
   - "Separates existing evidence from assumptions that still need validation"
 primaryCapability: domain-modeling.business-context
 topics: [product-thinking]
-roles: [engineering, backend, product]
+roles:
+  - engineering
+  - backend
+  - product
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [case]
 followUps:

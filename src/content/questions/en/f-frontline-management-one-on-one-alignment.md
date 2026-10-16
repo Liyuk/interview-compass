@@ -22,10 +22,15 @@ roles:
   - engineering
   - product
   - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - self-reflection

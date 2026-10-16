@@ -13,9 +13,20 @@ signals:
   - Sets fair rules so showmanship does not win out and records the behavior observed
 primaryCapability: people-organization.hiring
 topics: [hiring, conflict-resolution, communication]
-roles: [manager, product, engineering, operations]
+roles:
+  - manager
+  - product
+  - engineering
+  - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [hiring]
 formats: [case, behavioral]
 followUps:

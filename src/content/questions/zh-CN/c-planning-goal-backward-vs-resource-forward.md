@@ -12,9 +12,20 @@ signals:
   - 说明差距如何转化为资源申请或范围调整
 primaryCapability: value-direction.planning
 topics: [planning, resource-allocation]
-roles: [engineering, product, manager, pmo]
+roles:
+  - engineering
+  - product
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [planning, case]
 followUps:

@@ -9,7 +9,7 @@ intent: 考察对异步取消、任务所有权和资源清理边界的理解。
 signals:
   - 区分超时、取消和任务自然完成。
   - 说明取消信号如何跨父子任务和服务调用传播。
-  - 识别共享任务、不可中断操作和已经产生副作用（重复执行、越权等额外影响）的边界。
+  - 识别共享任务、不可中断操作和已经产生副作用（改变外部状态的操作影响）的边界。
   - 说明如何清理资源并验证取消后没有任务泄漏或重复副作用。
 primaryCapability: professional.computer-science
 topics:
@@ -20,6 +20,9 @@ roles:
   - engineering
   - backend
   - mobile
+  - frontend
+  - ai-engineer
+  - data
 responsibilityScopes:
   - individual
   - team
@@ -27,6 +30,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

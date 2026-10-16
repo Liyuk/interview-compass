@@ -21,11 +21,15 @@ topics:
 roles:
   - ai-engineer
   - data
+  - engineering
+  - product
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

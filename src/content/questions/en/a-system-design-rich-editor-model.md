@@ -13,9 +13,15 @@ signals:
   - Compares how the model differs between kinds of editor, such as text flow versus free canvas
 primaryCapability: professional.system-design
 topics: [system-design, frontend]
-roles: [engineering, frontend]
+roles:
+  - engineering
+  - frontend
+  - mobile
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

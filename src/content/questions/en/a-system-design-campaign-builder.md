@@ -13,9 +13,20 @@ signals:
   - Considers permissions, audit, and the effect of configuration changes on production stability
 primaryCapability: professional.system-design
 topics: [system-design, operations, feature-modeling, commercialization]
-roles: [engineering, backend, product, operations]
+roles:
+  - engineering
+  - backend
+  - product
+  - operations
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion]
 formats: [system-design]
 followUps:

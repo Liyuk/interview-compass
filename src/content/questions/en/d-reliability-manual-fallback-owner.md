@@ -12,12 +12,18 @@ intent: >-
   Assess whether you can keep emergency handling bounded while managing risk, service recovery, and retirement
   of the temporary mechanism.
 signals:
-  - Quantifies manual capacity, error, access, and audit risks and defines scope
-  - Names the automation recovery owner, dependencies, checkpoints, and escalation conditions
-  - Sets reconciliation, migration, and closure criteria and verifies no work is stranded afterward
-  - Collects frequency, impact, triggers, risk, and handling variation.
-  - Clarifies the business rule and authorization boundary behind each exception.
-  - Compares standardization, system changes, and human review by benefit and misclassification risk.
+  - >-
+    Define the temporary manual scope, capacity limits, permissions, and record ownership against current
+    user impact.
+  - >-
+    Confirm technical recovery owners, dependencies, checkpoints, and escalation so the workaround does
+    not become indefinite.
+  - >-
+    Reconcile temporary data, duplicate handling, and pending tasks, comparing automation recovery with
+    continued manual work.
+  - >-
+    Close the workaround only after data migration, access removal, task takeover, and user validation
+    leave no orphaned work.
 primaryCapability: delivery.operational-execution
 topics:
   - operations
@@ -27,10 +33,15 @@ roles:
   - operations
   - engineering
   - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
+  - individual-contributor
   - team-manager
   - senior-manager
 scenarios:

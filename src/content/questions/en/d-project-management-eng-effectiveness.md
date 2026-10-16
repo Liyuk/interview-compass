@@ -13,9 +13,19 @@ signals:
   - Explains why metrics are not used for individual evaluation, or the risk of doing so
 primaryCapability: delivery.project-management
 topics: [metrics, engineering-systems, execution]
-roles: [engineering, manager, pmo]
+roles:
+  - engineering
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, operations-review]
 formats: [case, behavioral]
 followUps:

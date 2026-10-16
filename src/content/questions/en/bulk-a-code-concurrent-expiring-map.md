@@ -9,12 +9,12 @@ question: >-
   define expiration semantics, synchronization boundaries, and deterministic tests?
 intent: Tests concurrent data structures, time abstraction, and testability.
 signals:
-  - Defines visibility when reading an expired entry
-  - Prevents races between the shared map and cleanup worker
-  - Uses an injected clock for tests without real-time waiting
-  - Forms testable technical hypotheses from inputs, mechanisms, and failure symptoms
-  - Compares implementation paths and their correctness, performance, security, or maintenance cost
-  - Names tests or operational measures that cover edge cases
+  - Defines expiry, read visibility, and ordering among updates and cleanup.
+  - >-
+    Compares synchronization or partitioning by correctness, throughput, and maintenance with explicit
+    invariants.
+  - Uses controlled clocks and scheduling to test expiry-update and cleanup races.
+  - Checks reclamation, shutdown, and actual memory bounds.
 primaryCapability: professional.coding-abstraction
 topics:
   - concurrency
@@ -27,12 +27,12 @@ roles:
   - backend
   - frontend
   - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
-  - team-manager
 scenarios:
   - interview
   - campus

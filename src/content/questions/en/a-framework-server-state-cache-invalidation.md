@@ -9,9 +9,13 @@ intent: "Assesses whether you can define correct data keys and invalidation sema
 signals: ["Specify identity, permission, tenant, and query parameters in cache keys","Define freshness, invalidation, revalidation, and optimistic updates","Handle concurrent requests, cancellation, and account switching","Verify cache is never reused across permission contexts"]
 primaryCapability: "professional.coding-abstraction"
 topics: ["frameworks","frontend","security"]
-roles: ["frontend","engineering"]
+roles:
+  - frontend
+  - engineering
+  - mobile
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["Which data should not use framework-level caching?","How would you handle requests still in flight at sign-out?"]

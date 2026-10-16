@@ -10,13 +10,14 @@ question: >-
   choose trustworthy diagnostic evidence?
 intent: Explore how physical time, processing time, and business order are distinguished and diagnosed.
 signals:
-  - Checks the source and offset of event, receive, and processing times
-  - Distinguishes timestamp order from causality and identifies clock drift and asynchronous delay
-  - Chooses logical clocks, message causality markers, trace context, or business versions to represent order
-  - Explains how correlation IDs and cross-region evidence would validate the diagnosis
-  - Notes that physical clocks can be offset or drift
-  - Distinguishes timestamp order from causality
-  - Suggests logical clocks, causal message metadata, or tracing context
+  - Verifies event, receipt, and processing timestamps and the order business actually needs.
+  - >-
+    Uses cross-service IDs, synchronization, and latency distributions to distinguish skew, drift, delay,
+    and business order.
+  - >-
+    Compares versions, causal markers, and logical clocks without treating timestamp order as causal
+    proof.
+  - Tests regional differences, reordering, and replay, stating remaining uncertainty.
 primaryCapability: professional.debugging
 topics:
   - debugging
@@ -26,12 +27,15 @@ roles:
   - backend
   - data
   - engineering
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
   - individual
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

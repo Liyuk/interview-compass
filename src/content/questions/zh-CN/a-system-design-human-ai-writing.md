@@ -13,9 +13,19 @@ signals:
   - 考虑上下文范围、隐私，以及怎样评估建议的质量
 primaryCapability: professional.system-design
 topics: [system-design, ai-engineering, frontend]
-roles: [engineering, ai-engineer, frontend, product]
+roles:
+  - engineering
+  - ai-engineer
+  - frontend
+  - product
+  - backend
+  - mobile
+  - design
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

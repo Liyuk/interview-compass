@@ -12,13 +12,14 @@ intent: >-
   Examines how you separate correlation from causal impact when several changes occur at once, choose a credible
   comparison, and calibrate the strength of growth evidence.
 signals:
-  - Defines target users, outcome measures, observation window, and guardrails
-  - Identifies confounders such as a concurrent product change, selection bias, and natural trends
-  - Compares an experiment, quasi-experiment, or other credible comparison and states assumptions and limits
-  - Sets evidence-based triggers to continue, adjust, expand, or stop investment
-  - Clarifies target users, intended outcomes, and guardrails that must not worsen
-  - Separates behavioral correlation, causal evidence, and untested assumptions
-  - Defines triggers for scaling, changing, or stopping investment
+  - >-
+    Confirm retention events, segments, and timing, checking the comparability of controls or natural
+    trends.
+  - >-
+    Check participation selection, exposure, concurrent changes, and interference rather than equating
+    concurrent gains with lift.
+  - State assumptions, uncertainty, and alternative explanations that remain.
+  - Propose follow-up, validation, and scale or stop conditions with cost and user impact.
 primaryCapability: value-direction.metrics-causality
 topics:
   - growth-experiments
@@ -30,6 +31,11 @@ roles:
   - marketing
   - product
   - data
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams

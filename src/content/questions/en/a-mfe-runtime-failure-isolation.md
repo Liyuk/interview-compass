@@ -9,9 +9,15 @@ intent: "Assesses whether you can limit the blast radius of one module and prese
 signals: ["Distinguish load failures, runtime exceptions, and shell failures","Use timeouts, error boundaries, and independent retries for child apps","Preserve navigation and available modules with a recovery path","Validate isolation and alerts with fault injection"]
 primaryCapability: "professional.engineering-systems"
 topics: ["micro-frontends","frontend","engineering-systems","system-design"]
-roles: ["frontend","engineering","design"]
+roles:
+  - frontend
+  - engineering
+  - design
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["If shell failure cannot be isolated, what is the minimum viable entry point?","How would you keep automatic retries from amplifying downstream failures?"]

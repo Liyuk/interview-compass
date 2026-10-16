@@ -12,19 +12,24 @@ intent: >-
   delegation.
 signals:
   - Clarifies decision rights, required inputs, and escalation boundaries
-  - Builds capability through shared rules, review, and staged delegation
+  - Build judgment through shared decision rules, reviews, and explicit input expectations; formal delegation is confirmed by the responsible owners.
 primaryCapability: collaboration.stakeholder-influence
 topics:
   - communication
   - negotiation
 roles:
   - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

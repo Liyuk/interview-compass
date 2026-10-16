@@ -13,9 +13,19 @@ signals:
   - 回头检验收益是否兑现，并坦率说明没兑现的部分
 primaryCapability: professional.engineering-systems
 topics: [engineering-systems, system-design, risk-management]
-roles: [engineering, backend, frontend, mobile, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - manager
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [behavioral, case]
 followUps:

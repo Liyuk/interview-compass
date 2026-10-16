@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { facetDefinitions, facetMeta, pick, type Locale } from '../lib/taxonomy';
+import TargetCount from '../components/TargetCount.astro';
+import { audienceRoles, facetDefinitions, facetMeta, pick, type Locale } from '../lib/taxonomy';
 import { facetCounts } from '../lib/question-catalog';
 import { navLabel, pathFor } from '../lib/routes';
 import { loadQuestions } from '../lib/site-data';
@@ -8,10 +9,10 @@ import { loadQuestions } from '../lib/site-data';
 type Kind = 'roles' | 'scenarios' | 'topics';
 interface Props { locale: Locale; kind: Kind }
 const { locale, kind } = Astro.props;
-const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
-const counts = facetCounts(await loadQuestions(locale), { locale, facet: kind });
-const entries = facetDefinitions[kind].filter((entry) => counts.has(entry.id));
+const questions = await loadQuestions(locale);
+const counts = facetCounts(questions, { locale, facet: kind });
+const entries = (kind === 'roles' ? audienceRoles : facetDefinitions[kind]).filter((entry) => counts.has(entry.id));
 const route = { roles: { type: 'roles' }, scenarios: { type: 'scenarios' }, topics: { type: 'topics' } }[kind] as { type: Kind };
 const heading = navLabel(kind, locale);
 const itemRoute = (id: string) => ({ type: kind === 'roles' ? 'role' : kind === 'scenarios' ? 'scenario' : 'topic', id }) as const;
@@ -23,7 +24,7 @@ const itemRoute = (id: string) => ({ type: kind === 'roles' ? 'role' : kind === 
     {entries.map((entry) => (
       <a class="facet-card" href={pathFor(itemRoute(entry.id), locale, base)}>
         <strong>{pick(entry.name, locale)}</strong>
-        <span class="count">{en ? `${counts.get(entry.id)} questions` : `${counts.get(entry.id)} 道问题`}</span>
+        <TargetCount class="count" questions={questions.filter(q => (kind === 'roles' ? q.roles : kind === 'topics' ? q.topics : q.scenarios).includes(entry.id))} locale={locale} unit />
       </a>
     ))}
   </div>

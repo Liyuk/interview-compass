@@ -13,9 +13,19 @@ signals:
   - 说明止损之后保留了什么，例如经验、可复用的部分和对团队的交代
 primaryCapability: value-direction.investment-choices
 topics: [prioritization, risk-management, planning]
-roles: [manager, product, engineering]
+roles:
+  - manager
+  - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

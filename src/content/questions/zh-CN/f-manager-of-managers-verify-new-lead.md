@@ -13,9 +13,16 @@ signals:
   - 照顾团队成员在变化期的需要，说明哪些会变、哪些暂时不变、怎样提出问题、额外工作由谁承担
 primaryCapability: people-organization.manager-of-managers
 topics: [management, hiring, feedback]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [senior-manager]
+careerTracks:
+  - senior-manager
 scenarios: [interview, hiring, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

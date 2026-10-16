@@ -7,14 +7,10 @@ title: 备份任务显示成功，但团队从未验证过恢复后的数据完�
 question: 备份任务显示成功，但团队从未验证过恢复后的数据完整性和恢复时间，你会怎样建立可证明的恢复能力？
 intent: 考察能否将备份存在转化为经过演练的恢复能力，并验证业务可接受的恢复目标。
 signals:
-  - 与业务共同确定恢复点和恢复时间目标
-  - 覆盖密钥、依赖、权限及数据一致性的恢复步骤
-  - 定期执行隔离环境演练并测量结果
-  - 记录失败项、责任人和复测关闭条件
-  - 把“事故演练发现恢复能力不足”转成明确的业务恢复目标。
-  - 验证数据、密钥、配置、依赖和人员能否在目标时间内恢复。
-  - 比较冷备、温备、分层恢复与手动降级（关闭非核心功能以保住核心服务）的成本和覆盖范围。
-  - 用重复演练证明 RTO/RPO 达标，并跟踪未达标项的负责人。
+  - 与业务核实恢复点、恢复时间和关键任务顺序，说明不同数据的可接受损失。
+  - 盘点数据、密钥、配置、依赖、权限和人员，比较恢复方案的成本与覆盖。
+  - 在隔离演练中测量完整性和实际恢复时长，不把备份任务成功当恢复成功。
+  - 记录失败项、责任人和复测证据，检查跨依赖恢复及不安全覆盖的风险。
 primaryCapability: professional.quality-security-safety
 topics:
   - reliability
@@ -24,11 +20,14 @@ roles:
   - backend
   - data
   - operations
+  - engineering
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

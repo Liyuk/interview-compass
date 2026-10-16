@@ -13,9 +13,18 @@ signals:
   - If the alternative is not adopted, says how it is carried out and how their own view is kept on record
 primaryCapability: collaboration.negotiation
 topics: [negotiation, product-thinking, communication]
-roles: [engineering, backend, frontend, product]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - product
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral]
 followUps:

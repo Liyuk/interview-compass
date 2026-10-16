@@ -25,6 +25,10 @@ roles:
   - engineering
   - operations
   - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams

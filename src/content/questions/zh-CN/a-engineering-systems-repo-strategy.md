@@ -12,9 +12,15 @@ signals:
   - "提出小范围试点，以及何时停止"
 primaryCapability: professional.engineering-systems
 topics: [monorepo, engineering-systems, frontend, technical-planning]
-roles: [engineering, frontend]
+roles:
+  - engineering
+  - frontend
+  - mobile
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [case, planning]
 source:

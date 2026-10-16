@@ -9,13 +9,24 @@ intent: See how you voice disagreement upward, holding to facts and judgment whi
 signals:
   - First works out the manager's goals and constraints, then voices a different judgment with facts and options
   - Separates "I disagree with this decision" from "I refuse to carry it out" and says where the line is
-  - After the decision stands, says how it is executed and how reservations are recorded
+  - If the decision stands, explain execution within actual authority, retain risk records, and use appropriate escalation for unacceptable or unauthorized action.
   - Says when it would be escalated and how personal opposition is avoided
 primaryCapability: collaboration.conflict-navigation
 topics: [conflict-resolution, communication]
-roles: [engineering, product, operations, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

@@ -12,9 +12,18 @@ signals:
   - "Separates optimizing performance from optimizing strategy, and writes the stop condition before starting"
 primaryCapability: value-direction.investment-choices
 topics: [planning, prioritization, system-design, technical-planning]
-roles: [engineering, backend, frontend, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - manager
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [case, planning]
 followUps:

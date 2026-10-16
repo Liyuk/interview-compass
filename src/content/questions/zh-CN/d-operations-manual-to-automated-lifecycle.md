@@ -13,9 +13,21 @@ signals:
   - 用对照说明自动化策略的实际效果和成本
 primaryCapability: delivery.operational-execution
 topics: [operations, metrics, growth-experiments]
-roles: [operations, marketing, product, data]
+roles:
+  - operations
+  - marketing
+  - product
+  - data
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

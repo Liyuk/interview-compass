@@ -13,9 +13,19 @@ signals:
   - 用离线与线上指标评估效果，并知道它们各自的局限
 primaryCapability: professional.system-design
 topics: [system-design, ai-engineering, feature-modeling, databases]
-roles: [engineering, backend, data, ai-engineer]
+roles:
+  - engineering
+  - backend
+  - data
+  - ai-engineer
+  - frontend
+  - mobile
+  - product
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

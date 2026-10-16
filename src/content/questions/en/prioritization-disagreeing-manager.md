@@ -12,9 +12,19 @@ signals:
   - Commits to the decision once made and says how the team is brought along
 primaryCapability: collaboration.conflict-navigation
 topics: [prioritization, conflict-resolution, communication]
-roles: [engineering, product, manager]
+roles:
+  - engineering
+  - product
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 source:

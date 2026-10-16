@@ -9,9 +9,20 @@ intent: "考察你能否拆开事实争议、定义差异和行动选择，并�
 signals: ["定位数据定义、来源和采集链的差异", "识别哪些未知会改变方案决策", "安排最小验证来解除关键不确定性", "公开说明继续、调整或暂停的依据"]
 primaryCapability: "delivery.decomposition"
 topics: ["product-thinking", "data-modeling", "communication"]
-roles: ["product", "data", "operations"]
+roles:
+  - product
+  - data
+  - operations
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team", "multiple-teams"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: []

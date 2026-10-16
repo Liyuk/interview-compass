@@ -13,9 +13,16 @@ signals:
   - Says how a cost optimization is verified by experiment not to have hurt the experience
 primaryCapability: professional.system-design
 topics: [system-design, ai-engineering, resource-allocation]
-roles: [ai-engineer, backend, data, engineering]
+roles:
+  - ai-engineer
+  - backend
+  - data
+  - engineering
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, system-design]
 followUps:

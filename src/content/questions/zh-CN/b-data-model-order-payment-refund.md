@@ -4,12 +4,13 @@ kind: question
 status: published
 locale: zh-CN
 title: 订单、支付和退款为什么要分开建模？
-question: 订单、支付和退款经常被放进同一张表。请说明为什么应当把它们建成不同的实体，它们之间的基数和身份关系是什么。
+question: 订单、支付和退款经常被放进同一张表。你会怎样区分它们的业务身份、生命周期和数量关系？比较将它们分别建模与合并存储的条件、代价及验证方式。
 intent: 了解你能否从业务语义而不是表结构出发，说明实体的身份、数量关系和规则差异。
 signals:
-  - 说明了一笔订单可对应多次支付、多次部分退款，并解释这对统计规则的影响
-  - 区分了实体的身份与状态，而不是把状态当作新实体
-  - 把业务规则与存储实现分开讨论，例如幂等（重复请求不会重复执行）键和唯一约束放在哪里
+  - 用多次支付、部分退款和失败尝试说明数量关系，不把某种物理表结构预设为唯一正确。
+  - 区分实体身份、状态与事件，并说明合并表示会产生哪些歧义或约束。
+  - 比较查询、审计、一致性和演化成本，把逻辑模型与存储选择分开论证。
+  - 用唯一标识、关联及边界样例验证不会重复计数或丢失合法交易。
 primaryCapability: domain-modeling.data-model
 topics:
   - data-modeling
@@ -23,6 +24,8 @@ responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

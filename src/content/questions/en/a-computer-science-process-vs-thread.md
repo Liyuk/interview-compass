@@ -12,9 +12,17 @@ signals:
   - States the assumptions the judgment depends on, such as whether state must be shared
 primaryCapability: professional.computer-science
 topics: [operating-systems, concurrency, backend]
-roles: [backend, engineering]
+roles:
+  - backend
+  - engineering
+  - ai-engineer
+  - data
+  - mobile
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [knowledge, case]
 source:

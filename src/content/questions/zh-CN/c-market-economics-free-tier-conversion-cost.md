@@ -9,7 +9,7 @@ intent: 考察能否从转化、获客、留存和服务成本角度评估免费
 signals:
   - 明确免费层承担获客、体验、网络效应或转化中的哪种作用
   - 拆解不同用户群带来的成本、付费转化和留存贡献
-  - 考虑使用限额、能力分层或目标客群限制等机制及其副作用（重复执行、越权等额外影响）
+  - 考虑使用限额、能力分层或目标客群限制等机制及其对用户体验、服务负荷和转化的影响
   - 提出衡量免费层增量价值的对照方法
   - 区分直接收入、获客、生态供给和品牌等价值来源。
   - 衡量免费用户带来的边际服务成本与长期转化/网络效应。
@@ -23,11 +23,17 @@ roles:
   - product
   - marketing
   - data
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -7,14 +7,24 @@ title: When two transactions modify the same data at once, what anomalies can oc
 question: When two transactions modify the same data at once, what anomalies can occur? What does each isolation level prevent, and what does it cost?
 intent: See whether you can match each isolation level to the anomalies it prevents and understand what higher isolation costs.
 signals:
-  - Explains dirty reads, non-repeatable reads, and phantom reads with concrete scenarios
-  - Matches each isolation level to the anomalies it prevents
-  - Describes what a higher isolation level costs in concurrency and performance
+  - Uses concurrent timelines to explain dirty, nonrepeatable, phantom, and related business anomalies.
+  - >-
+    Compares guarantees under an explicit database implementation rather than assuming identical level
+    names.
+  - Weighs locks, snapshots, and conflict detection against throughput, waiting, and retries.
+  - Tests business invariants with repeatable concurrency and states remaining limits.
 primaryCapability: professional.computer-science
 topics: [databases, concurrency]
-roles: [backend, engineering, data]
+roles:
+  - backend
+  - engineering
+  - data
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [knowledge]
 followUps:

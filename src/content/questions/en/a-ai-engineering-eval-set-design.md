@@ -12,9 +12,17 @@ signals:
   - "Looks at task outcome, quality, and review burden separately"
 primaryCapability: professional.ai-engineering
 topics: [ai-engineering, metrics]
-roles: [ai-engineer, data, engineering]
+roles:
+  - ai-engineer
+  - data
+  - engineering
+  - product
+  - operations
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, planning]
 relatedQuestions:

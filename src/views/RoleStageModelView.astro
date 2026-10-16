@@ -1,0 +1,56 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import RoleCapabilityMatrix from '../components/RoleCapabilityMatrix.astro';
+import { getRoleStages, validateRoleStageModels } from '../lib/role-stage-model';
+import { audienceRoles, facetLabel, capabilityLabel, type Locale } from '../lib/taxonomy';
+import { pathFor } from '../lib/routes';
+interface Props { roleId: string; locale: Locale }
+const { roleId, locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const errors = validateRoleStageModels();
+if (errors.length) throw new Error(errors.join('; '));
+const stages = getRoleStages(roleId, locale);
+const dimensions = { 'business-results': en ? 'Business outcomes' : '业务结果', 'domain-expertise': en ? 'Domain expertise' : '专业领域', 'team-influence': en ? 'Team influence' : '团队影响', 'human-competitive-advantage': en ? 'Learning, initiative, thinking, and resilience' : '学习、自驱、思维与韧性' };
+---
+<SiteLayout locale={locale} route={{ type: 'role-stage-model', role: roleId }}>
+  <p class="eyebrow">{en ? 'ROLE AND RESPONSIBILITY' : '岗位与责任'}</p>
+  <h1 class="page-title">{facetLabel('roles', roleId, locale)} · {en ? 'Stage expectations' : '阶段能力'}</h1>
+  <p class="intro">{en ? 'Use target responsibility to interpret evidence. These editorial profiles are not company levels or years-of-experience rules. Professional contribution and engineering management are separate paths, determined by actual authority and accountability.' : '按目标责任理解证据。这是本站的编辑性参照，不是公司职级或工作年限规则。专业贡献与工程管理是两条路径，由实际权限和责任决定；不要求工程师兼任产品、运营或设计岗位。'}</p>
+  <nav class="role-switch-links" aria-label={en ? 'Compare roles' : '切换岗位'}>{audienceRoles.map(role => <a aria-current={role.id === roleId ? 'page' : undefined} href={pathFor({ type: 'role-stage-model', role: role.id }, locale, base)}>{facetLabel('roles', role.id, locale)}</a>)}</nav>
+  <p class="model-note">{en ? 'The same question can reveal different evidence at different stages. The 1–4 score is calibrated within the target role and responsibility; a larger project or higher title does not automatically earn a higher score. ICs need not have direct reports.' : '同题在不同阶段要看不同证据。1–4 分应在目标岗位与责任要求下校准；项目更大或头衔更高不会自动得高分。专业贡献者不必拥有直属下属。'}</p>
+  <nav class="stage-jump" aria-label={en ? 'Jump to a stage' : '定位目标阶段'}>{stages.map(stage => <a href={`#${stage.id}`}>{stage.name}</a>)}</nav>
+  {stages.map(stage => <details class="role-stage-detail" id={stage.id} name="role-stage">
+    <summary><span><strong>{stage.name}</strong><small>{stage.tier === 'manager' || stage.tier === 'organization' ? (en ? 'Management path' : '管理路径') : (en ? 'Individual-contributor path' : '专业贡献路径')}</small></span><span>{stage.summary}</span></summary>
+    <div class="role-stage-content">
+      <h2>{en ? 'Professional evidence to inspect' : '岗位专业证据'}</h2><ul>{stage.professionalEvidence.map(item => <li>{item}</li>)}</ul>
+      {Object.entries(stage.dimensions).map(([dim, standards]) => <section><h3>{dimensions[dim as keyof typeof dimensions]}</h3><ol>{standards.map(standard => <li><strong>{standard.text}</strong><p>{en ? 'Evidence: ' : '观察证据：'}{standard.evidence}</p><p class="capability-labels">{standard.capabilities.map(id => capabilityLabel(id, locale)).join(' · ')}</p></li>)}</ol></section>)}
+      <a class="button-link" href={`${pathFor({ type: 'questions' }, locale, base)}?profileRole=${roleId}&profileStage=${stage.id}`}>{en ? 'Browse this stage’s matching questions' : '浏览本阶段匹配题目'}</a>
+      <p class="model-note">{en ? 'This link uses the reviewed role–stage combinations without changing your saved default. The same question may appear at several stages with different evidence expectations.' : '此链接按已审核的岗位—阶段组合筛题，不改变已保存的默认目标。同题可在多个阶段出现，但要核验的责任和证据不同。'}</p>
+    </div>
+  </details>)}
+  <RoleCapabilityMatrix roleId={roleId} locale={locale} />
+</SiteLayout>
+<style>
+  .role-switch-links, .stage-jump { display:flex; flex-wrap:wrap; gap:.5rem 1rem; margin:1.5rem 0; }
+  .role-switch-links a[aria-current] { color:var(--ink, #242322); font-weight:700; text-decoration:underline; text-decoration-color:var(--accent, #b92f2d); text-underline-offset:6px; }
+  .role-stage-detail { border-block-start:1px solid var(--line, #d8d5d0); scroll-margin-top:7rem; }
+  summary { padding:1.25rem .3rem; cursor:pointer; }
+  summary > span:first-child { display:inline-flex; flex-wrap:wrap; gap:.5rem 1rem; margin-right:1.25rem; }
+  summary > span:last-child { display:block; margin-top:.5rem; color:var(--muted, #65615b); }
+  summary small { font-size:.8rem; font-weight:400; }
+  .role-stage-content { padding:0 .75rem 2rem; max-width:58rem; }
+  .role-stage-content section { margin-block:1.75rem; }
+  .role-stage-content li { margin-block:1rem; }
+  .role-stage-content li p { margin:.35rem 0; }
+  .capability-labels { font-size:.8rem; color:var(--muted, #65615b); }
+</style>
+<script>
+  function revealStage() {
+    const id = window.location.hash.slice(1);
+    const target = document.getElementById(id);
+    if (target instanceof HTMLDetailsElement) target.open = true;
+  }
+  revealStage();
+  window.addEventListener('hashchange', revealStage);
+</script>

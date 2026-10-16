@@ -13,9 +13,19 @@ signals:
   - Says when the choice would change, such as moving from open source to in-house, with a way back out
 primaryCapability: professional.engineering-systems
 topics: [engineering-systems, system-design, planning]
-roles: [engineering, backend, frontend, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - manager
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [case, behavioral]
 followUps:

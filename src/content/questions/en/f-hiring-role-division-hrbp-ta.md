@@ -13,9 +13,17 @@ signals:
   - Gives an example of turning a disagreement between roles into concrete questions rather than papering over it with talk of collaboration
 primaryCapability: people-organization.hiring
 topics: [hiring, management, communication]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - senior-manager
+  - executive
 scenarios: [interview, hiring, promotion]
 formats: [behavioral, case]
 followUps:

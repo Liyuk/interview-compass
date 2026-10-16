@@ -9,7 +9,7 @@ intent: 了解你能否把“慢”拆成可观察的环节，沿因果链定位
 signals:
   - 先追问慢在首屏、交互还是接口，再谈方案
   - 能说出怎样观察：网络瀑布、性能指标、弱网复现
-  - 对预加载、压缩、缓存等手段，说得出副作用（重复执行、越权等额外影响）或不适用的条件
+  - 对预加载、压缩、缓存等手段，说明带宽、内存、解码或维护成本，以及不适用的条件
 primaryCapability: professional.computer-science
 topics:
   - computer-networks
@@ -17,10 +17,13 @@ topics:
 roles:
   - engineering
   - frontend
+  - mobile
 responsibilityScopes:
   - individual
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

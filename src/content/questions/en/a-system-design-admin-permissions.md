@@ -13,9 +13,19 @@ signals:
   - Considers the performance and consistency of permission checks and how over-reach is investigated
 primaryCapability: professional.system-design
 topics: [system-design, security, backend]
-roles: [engineering, backend, frontend, product]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - product
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

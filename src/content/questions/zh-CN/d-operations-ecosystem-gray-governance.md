@@ -13,9 +13,20 @@ signals:
   - 说明怎样发现对手的新手法并快速迭代，同时保持规则的可预期
 primaryCapability: delivery.operational-execution
 topics: [operations, security, ethics, risk-management]
-roles: [operations, product, manager, data]
+roles:
+  - operations
+  - product
+  - manager
+  - data
+  - engineering
+  - backend
+  - ai-engineer
 responsibilityScopes: [organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [interview, promotion, operations-review]
 formats: [case, behavioral]
 followUps:

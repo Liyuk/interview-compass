@@ -13,9 +13,16 @@ signals:
   - 指出会在对账时暴露的具体问题，并说明怎样提前验证
 primaryCapability: domain-modeling.commercial-rules
 topics: [commercialization, data-modeling, databases]
-roles: [backend, data, engineering, product]
+roles:
+  - backend
+  - data
+  - engineering
+  - product
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, hiring]
 formats: [knowledge, case]
 followUps:

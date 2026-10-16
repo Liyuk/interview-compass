@@ -9,13 +9,12 @@ intent: >-
   Examines distributed rate-limiting algorithms, tenant quotas, cross-region coordination, and the trade-off between
   precision and availability during failures.
 signals:
-  - Clarifies tenant and endpoint scope, time windows, bursts, and acceptable cross-region error
-  - Compares token buckets, sliding windows, and centralized, hierarchical, or approximate local state
-  - Defines limiting, quota recovery, and audit behavior during partitions or state-store failures
-  - Explains choices across precision, latency, cost, and availability
-  - Clarifies quota windows, bursts, and tolerated cross-region error
-  - Compares failure behavior of local tokens, central coordination, or hierarchical quotas
-  - Explains how quota state is recovered, audited, and adjusted
+  - >-
+    Defines users, tenants, endpoints, windows, bursts, and regional error, distinguishing rate from
+    concurrency.
+  - Compares token, sliding-window, and layered quotas by precision, latency, and storage.
+  - Specifies centralized or approximate-state failure and recovery behavior.
+  - Tests multi-instance bursts, partitions, and recovery for fairness, rejection, and audit.
 primaryCapability: professional.system-design
 topics:
   - backend
@@ -24,11 +23,15 @@ topics:
 roles:
   - backend
   - engineering
+  - ai-engineer
+  - data
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

@@ -13,9 +13,20 @@ signals:
   - 说明怎样定期复核，避免短期变现长期压过其他两类
 primaryCapability: value-direction.prioritization
 topics: [prioritization, planning, resource-allocation]
-roles: [product, manager, engineering, pmo]
+roles:
+  - product
+  - manager
+  - engineering
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring, operations-review]
 formats: [case, planning]
 followUps:

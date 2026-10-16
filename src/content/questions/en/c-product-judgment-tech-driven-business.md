@@ -13,9 +13,19 @@ signals:
   - Admits which technical investments in the end brought no business value
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, system-design]
-roles: [engineering, manager, product]
+roles:
+  - engineering
+  - manager
+  - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams, organization]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

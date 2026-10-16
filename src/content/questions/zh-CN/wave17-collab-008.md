@@ -8,19 +8,24 @@ question: 一个依赖团队每次遇到取舍都要求你先给结论，导致�
 intent: 考察能否提供支持但不替对方接管责任，并设计可逐步放权的决策机制。
 signals:
   - 明确决策权、输入要求和必须升级的边界
-  - 用共同决策规则、复盘和逐步授权建立能力
+  - 通过共同决策规则、复盘和明确输入要求帮助对方形成判断；正式授权由各自有权负责人确认。
 primaryCapability: collaboration.stakeholder-influence
 topics:
   - communication
   - negotiation
 roles:
   - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

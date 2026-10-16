@@ -7,13 +7,10 @@ title: "生产环境配置偏离代码声明时，怎样安全恢复？"
 question: 生产环境中的部分资源与代码声明不一致，其中一些差异来自未记录的紧急手工修复。你会怎样区分有意变更与无法解释的配置差异，评估覆盖风险，恢复可信状态并减少复发？
 intent: 考察如何重新连接实际状态、配置来源、变更原因与生产责任，同时避免恢复操作引发二次故障。
 signals:
-  - 先区分有意变更、紧急修复和无法解释的配置差异
-  - 避免直接覆盖可能承载重要数据的资源
-  - 将确认后的实际状态纳入代码并评估影响
-  - 补上审批、检测与紧急变更回写流程
-  - 先比对声明、真实状态和变更记录
-  - 评估直接覆盖漂移是否会造成二次故障
-  - 说明如何导入、修复或有计划地移除偏差
+  - 对照声明、实际状态和变更记录，区分预期差异、应急修复与未知改动。
+  - 先评估直接覆盖对数据和服务的影响，明确风险接受与停止条件。
+  - 比较导入真实状态、修正配置和渐进移除偏差的成本，并保留回退证据。
+  - 验证恢复后的资源与服务结果，补检测、批准和紧急变更回写责任。
 primaryCapability: professional.engineering-systems
 topics:
   - devops
@@ -22,13 +19,15 @@ topics:
 roles:
   - engineering
   - backend
-  - operations
+  - ai-engineer
+  - data
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

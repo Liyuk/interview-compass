@@ -12,9 +12,19 @@ signals:
   - "Distinguishes a deduplication key from a join key and explains the role of a task or session ID"
 primaryCapability: domain-modeling.data-model
 topics: [data-modeling, databases, metrics]
-roles: [data, backend, product]
+roles:
+  - data
+  - backend
+  - product
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [knowledge, case]
 followUps:

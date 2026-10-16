@@ -3,9 +3,9 @@ questionId: d-operations-campaign-budget-roi
 kind: question
 status: published
 locale: en
-title: Tell me about a re-engagement or viral campaign you ran end to end. What was the budget, and how did you maximize the return?
-question: Tell me about a user re-engagement or viral campaign you ran end to end. What was the budget for subsidies or prizes, which specific operating methods (community, push, content recommendation) did you use to maximize the return, and how did you know it really worked?
-intent: See whether you have a clear grip on a campaign's budget, methods, and results and can separate the increment it truly produced.
+title: "How can an engineer explain personal contribution and business increment in a growth campaign?"
+question: "Describe a re-engagement or referral campaign you contributed to as an engineer. Which systems, data, or delivery work did you own, how did you clarify budget and key user behavior with operations, and how did you verify incremental impact and your actual contribution?"
+intent: "Examine whether an engineer connects technical work to operating workflows, costs, and outcomes while distinguishing personal contribution, shared results, and uncertain attribution."
 signals:
   - States the concrete budget, target audience, and how cost was defined
   - Explains how the operating methods divided the work and what each achieved, not a vague "multi-channel"
@@ -13,9 +13,20 @@ signals:
   - In the review, names which spending was wasted and what would change next time
 primaryCapability: delivery.operational-execution
 topics: [operations, growth-experiments, metrics]
-roles: [operations, marketing]
+roles:
+  - operations
+  - marketing
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, operations-review]
 formats: [behavioral, case]
 followUps:

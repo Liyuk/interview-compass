@@ -12,9 +12,17 @@ signals:
   - Says which practices changed afterward
 primaryCapability: people-organization.growth-development
 topics: [management, feedback]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral]
 followUps:

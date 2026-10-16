@@ -12,7 +12,7 @@ Astro + Starlight, with bilingual Chinese-default/English routes, Pagefind searc
 
 ## Users
 
-People preparing for interviews, interviewers exploring questions, and people reflecting on promotion or growth. The site should support free exploration across roles without choosing one primary audience.
+Engineers preparing for interviews and promotion, interviewing other engineers, and growing into technical leadership. Public targets are general software engineering, frontend, backend, mobile, AI engineering, and data engineering. Product, operations, design, commercial, and project-management material develops engineers’ business understanding and collaboration; these are not independent target jobs.
 
 ## Product Purpose
 
@@ -24,7 +24,7 @@ The core unit is a question with its purpose, organized through both shared capa
 
 ## Operating Context
 
-The main entry paths are direct question search and topic browsing. A task-first path helps candidates, interviewers, promotion candidates and reviewers, people practicing, and teams reviewing projects. Role exploration is open-ended; the home page must not privilege a single role. The library includes technical, product, operations, engineering, and management contexts.
+The main entry paths are direct question search and topic browsing. A task-first path helps candidates, interviewers, promotion candidates and reviewers, people practicing, and teams reviewing projects. Exploration stays within engineering specializations and professional/engineering-management stages. Cross-functional cases remain available as engineering expansion capabilities, with explicit contribution and authority boundaries. No cross-functional source material is discarded merely because the audience is narrower.
 
 ## Capabilities and Constraints
 

@@ -13,9 +13,17 @@ signals:
   - 处理之后跟进关系是否恢复，而不是当场平息就结束
 primaryCapability: people-organization.frontline-management
 topics: [management, conflict-resolution]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

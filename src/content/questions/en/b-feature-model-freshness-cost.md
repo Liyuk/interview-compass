@@ -9,9 +9,17 @@ intent: "Assess whether you can connect feature freshness to decision value, lat
 signals: ["Confirms the freshness the business actually needs", "Quantifies staleness impact and real-time operating cost", "Compares batch refresh, caching, and on-demand computation", "Defines a value threshold for keeping real-time processing"]
 primaryCapability: "domain-modeling.feature-model"
 topics: ["feature-modeling", "resource-allocation", "ai-engineering"]
-roles: ["data", "ai-engineer", "product"]
+roles:
+  - data
+  - ai-engineer
+  - product
+  - engineering
+  - backend
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: []

@@ -9,9 +9,15 @@ intent: "Assesses whether you can preserve accurate source mapping through macro
 signals: ["Distinguish original, generated, and macro-expansion locations","Preserve source-map accuracy through transformations","Point to editable source with context","Provide fallback when mappings are missing or ambiguous"]
 primaryCapability: "professional.computer-science"
 topics: ["compiler-design","programming-languages","debugging"]
-roles: ["engineering","backend"]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["How would you avoid exposing sensitive generated-code paths in diagnostics?","How would you verify source maps remain accurate after optimization?"]

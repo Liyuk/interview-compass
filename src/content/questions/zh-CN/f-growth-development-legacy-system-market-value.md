@@ -13,9 +13,18 @@ signals:
   - 与员工坦诚沟通其成长路径，而不是用"业务需要"回避
 primaryCapability: people-organization.growth-development
 topics: [management, engineering-systems, learning]
-roles: [manager, engineering]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

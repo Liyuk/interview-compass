@@ -11,12 +11,16 @@ intent: >-
   Assess whether you treat consent as a time- and purpose-scoped domain fact and track responsibility for
   derived data.
 signals:
-  - Distinguish the user, consent object, purpose, effective time, and withdrawal time.
-  - Track lineage from source records to derived features, reports, and training sets.
-  - Define deletion, recomputation, isolation, and escalation when data cannot be recalled.
-  - Represent consent by subject, purpose, legal basis, and effective time.
-  - Prevent new processing and trigger compensating deletion for delayed pipelines.
-  - Track downstream consumers and verify withdrawal completion.
+  - >-
+    Models subjects, purposes, grounds, validity, and withdrawal rather than permanent all-purpose
+    consent.
+  - Traces raw records to reports, features, training sets, and consumers.
+  - >-
+    Applies verified policies to stopping processing, deletion, recalculation, or isolation, with owners
+    and escalation.
+  - >-
+    Verifies execution through downstream queries, logs, and consumer confirmation, stating unrecoverable
+    limits.
 primaryCapability: domain-modeling.data-model
 topics:
   - data-modeling
@@ -26,12 +30,17 @@ roles:
   - data
   - backend
   - product
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -9,9 +9,18 @@ intent: "考察能否让仓库权限、关键路径审查、自动化凭证和�
 signals: ["列出人类和自动化主体的读写、审批与部署权限","识别关键配置、发布工作流和受保护分支","检查临时授权、凭证轮换和审计记录","设计紧急变更的最小例外和事后复核"]
 primaryCapability: "professional.engineering-systems"
 topics: ["monorepo","engineering-systems","devops"]
-roles: ["engineering","frontend","backend"]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["如何避免维护团队被所有变更审批拖慢？","怎样验证机器人凭证只具有必要范围？"]
