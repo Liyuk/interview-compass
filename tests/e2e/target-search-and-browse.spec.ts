@@ -45,7 +45,7 @@ test('curated sets retain selection order, filter counts, and never fill gaps wi
 
 test('an invalid link is explained without overriding a saved target', async ({ page }) => {
   await page.addInitScript(() => { localStorage.setItem('interview-compass.target.v1', JSON.stringify({ version: 1, mode: 'target', target: { roleId: 'backend', stageId: 'mid-level-engineer' } })); });
-  await page.goto('questions/?profileRole=product&profileStage=senior-engineer');
+  await page.goto('questions/?profileRole=data&profileStage=senior-engineer');
   await expect(page.locator('[data-target-summary]')).toContainText('链接中的目标无效');
   await expect(page.locator('[data-profile-trigger]')).toContainText('全部题目');
   await expect(page.getByRole('dialog')).not.toBeVisible();
@@ -54,12 +54,12 @@ test('an invalid link is explained without overriding a saved target', async ({ 
 });
 
 test('stage model links select the exact role-stage temporarily and leave model comparison readable', async ({ page }) => {
-  await page.goto('capability-model/roles/product/?profile=all#product-independent');
-  const stage = page.locator('#product-independent');
+  await page.goto('capability-model/roles/data/?profile=all#data-independent');
+  const stage = page.locator('#data-independent');
   await expect(stage).toHaveAttribute('open', '');
   await stage.getByRole('link', { name: '浏览本阶段匹配题目' }).click();
-  await expect(page).toHaveURL(/profileRole=product&profileStage=product-independent/);
-  await expect(page.locator('[data-profile-trigger]')).toContainText('产品');
+  await expect(page).toHaveURL(/profileRole=data&profileStage=data-independent/);
+  await expect(page.locator('[data-profile-trigger]')).toContainText('数据工程');
   expect(await page.evaluate(() => localStorage.getItem('interview-compass.target.v1'))).toBeNull();
 });
 

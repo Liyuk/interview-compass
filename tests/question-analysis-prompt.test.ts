@@ -24,6 +24,10 @@ const question: QuestionRecord = {
 };
 
 describe('question analysis prompt', () => {
+  it('carries engineering business context without requiring another function’s authority', () => {
+    const prompt = buildQuestionAnalysisPrompt({ locale: 'zh-CN', question, evaluation: questionEvaluation(question), engineeringContext: '从工程师视角理解业务，不要求定价批准权。' });
+    expect(prompt).toContain('从工程师视角理解业务，不要求定价批准权。');
+  });
   it('carries a chosen responsibility stage without replacing question-specific scoring evidence', () => {
     const prompt = buildQuestionAnalysisPrompt({ locale: 'zh-CN', question, evaluation: questionEvaluation(question), target: { roleId: 'ai-engineer', stageId: 'senior-engineer' } });
     expect(prompt).toContain('目标岗位与责任阶段');

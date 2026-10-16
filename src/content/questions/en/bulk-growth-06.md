@@ -27,6 +27,12 @@ roles:
   - marketing
   - product
   - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes:
   - multiple-teams
 careerTracks:

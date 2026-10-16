@@ -4,6 +4,7 @@ import type { Locale } from './taxonomy';
 
 export type PublicQuestionRecord = Omit<QuestionRecord, 'status'> & {
   evaluation: ReturnType<typeof questionEvaluation>;
+  engineeringContext?: string;
 };
 
 export type QuestionIndexRecord = Pick<QuestionRecord,
@@ -18,7 +19,7 @@ export function buildQuestionIndex(records: readonly QuestionRecord[], locale: L
     .sort((a, b) => a.questionId.localeCompare(b.questionId));
 }
 
-export function buildPublicQuestion(record: QuestionRecord): PublicQuestionRecord {
+export function buildPublicQuestion(record: QuestionRecord, engineeringContext?: string): PublicQuestionRecord {
   const { status: _status, ...publicRecord } = record;
-  return { ...publicRecord, evaluation: questionEvaluation(record) };
+  return { ...publicRecord, evaluation: questionEvaluation(record), ...(engineeringContext ? { engineeringContext } : {}) };
 }

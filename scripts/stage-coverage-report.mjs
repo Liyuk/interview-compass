@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'node:fs/promises';
-import { domains, facetDefinitions } from '../src/lib/taxonomy.ts';
+import { domains, audienceRoles } from '../src/lib/taxonomy.ts';
 import { roleStageIds } from '../src/content/role-stages/registry.ts';
 import { matchesTarget, validateApplicability } from '../src/lib/question-applicability.ts';
 import { loadApplicabilityQuestions } from './stage-applicability-data.mjs';
@@ -13,20 +13,22 @@ const byId = new Map(entries.map(entry => [entry.questionId, entry]));
 const reviewed = entries.filter(entry => entry.reviewStatus === 'reviewed');
 const pending = entries.filter(entry => entry.reviewStatus === 'pending');
 const allOnly = entries.filter(entry => entry.reviewStatus === 'all-only');
-const rows = facetDefinitions.roles.flatMap(role => roleStageIds(role.id).map(stageId => {
+const rows = audienceRoles.flatMap(role => roleStageIds(role.id).map(stageId => {
   const questions = records.filter(record => matchesTarget(byId.get(record.questionId), { roleId: role.id, stageId }));
   return { roleId: role.id, stageId, count: questions.length, domains: domains.map(domain => questions.filter(q => q.primaryCapability.startsWith(`${domain.id}.`)).length) };
 }));
 const zero = rows.filter(row => row.count === 0);
 const low = rows.filter(row => row.count > 0 && row.count < 10);
 const shared = reviewed.filter(entry => entry.profiles.some(profile => profile.stageIds.length > 1)).length;
-const ready = !pending.length && !zero.length;
+const withoutAudience = reviewed.filter(entry => !entry.profiles.some(profile => audienceRoles.some(role => role.id === profile.roleId)));
+const ready = !pending.length && !zero.length && !withoutAudience.length;
 const lines = [
   '# 岗位阶段题库适用性覆盖报告', '',
   '此报告由 `npm run report:stage-coverage` 从当前双语内容与已审核适用性数据生成。候选映射不计入覆盖；0 不等于题库没有相关题，也可能表示尚未审阅。', '',
   `- 已发布题：${records.length}（中英文共用题目 ID）。`,
   `- 已审核适用：${reviewed.length}；待审核：${pending.length}；限定全部浏览：${allOnly.length}。`,
   `- 可比较的岗位—阶段组合：${rows.length}；已审核零题组合：${zero.length}；不足 10 题组合：${low.length}。`,
+  `- 无工程师适用组合：${withoutAudience.length}；非工程岗位保留为来源词汇和研究材料，不开放为准备目标。`,
   `- 已审核题中 ${shared} 道保留同一岗位的多个阶段。`,
   `- 全站个性化上线条件：${ready ? '适用性覆盖通过；仍需完成界面与运行验收。' : '未满足；不得开启首次弹窗或把候选映射作为正式筛选。'}`, '',
   '覆盖门槛只验证记录完整和组合非空，不证明标签已经准确、岗位模型已获行业校准或界面已经可用；发布还需内容复核与全站运行验收。', '',

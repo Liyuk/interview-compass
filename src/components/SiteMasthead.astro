@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Icon from './Icon.astro';
 import { navLabel, pathFor, switchLocaleRoute, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
-import { facetDefinitions, pick } from '../lib/taxonomy';
+import { audienceRoles, pick } from '../lib/taxonomy';
 import { getRoleStages } from '../lib/role-stage-model';
 import { loadQuestions } from '../lib/site-data';
 import TargetSelector from './TargetSelector';
@@ -14,7 +14,7 @@ const { locale, active = '', route = { type: 'home' } } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const other: Locale = en ? 'zh-CN' : 'en';
-const targetRoles = facetDefinitions.roles.map(role => ({ id: role.id, name: pick(role.name, locale), path: pathFor({ type: 'role-stage-model', role: role.id }, locale, base), stages: getRoleStages(role.id, locale).map(({ id, name, summary, tier }) => ({ id, name, summary, tier })) }));
+const targetRoles = audienceRoles.map(role => ({ id: role.id, name: pick(role.name, locale), path: pathFor({ type: 'role-stage-model', role: role.id }, locale, base), stages: getRoleStages(role.id, locale).map(({ id, name, summary, tier }) => ({ id, name, summary, tier })) }));
 const questions = await loadQuestions(locale);
 const nav = [
   { key: 'scenarios', ref: { type: 'scenarios' } as RouteRef, label: navLabel('scenarios', locale) },
@@ -57,9 +57,12 @@ const nav = [
   <div class="search-results" aria-live="polite" hidden></div>
 </div></div>
 <aside class="target-summary" data-target-summary hidden data-pagefind-ignore>
-  <p><span data-target-description></span> · <TargetCount questions={questions} locale={locale} unit /></p>
-  <p data-target-storage-warning hidden>{en ? 'Could not save this preference. Your choice applies only to this page.' : '未能保存此选择，仅在当前页有效。'}</p>
-  <div><button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button><button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button><button type="button" data-adopt-target hidden>{en ? 'Save as my default' : '设为我的默认'}</button><button type="button" data-remove-link-target hidden>{en ? 'Remove link target' : '移除链接目标'}</button><a data-target-model hidden>{en ? 'View stage expectations' : '查看阶段要求'}</a></div>
+  <div class="target-summary-inner">
+    <div class="target-summary-copy"><p class="target-summary-current"><span data-target-description></span><span class="target-summary-count"><TargetCount questions={questions} locale={locale} unit /></span></p>
+      <p data-target-storage-warning hidden>{en ? 'Could not save this preference. Your choice applies only to this page.' : '未能保存此选择，仅在当前页有效。'}</p>
+    </div>
+    <div class="target-summary-actions"><button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button><button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button><button type="button" data-adopt-target hidden>{en ? 'Save as my default' : '设为我的默认'}</button><button type="button" data-remove-link-target hidden>{en ? 'Remove link target' : '移除链接目标'}</button><a data-target-model hidden>{en ? 'Stage expectations' : '阶段要求'}<Icon name="arrow-up-right" size={14} /></a></div>
+  </div>
 </aside>
 
 <script>

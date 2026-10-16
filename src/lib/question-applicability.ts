@@ -8,6 +8,7 @@ export interface ApplicabilityEntry {
   fingerprint: string;
   rationale: { zh: string; en: string };
   profiles: ApplicabilityProfile[];
+  engineeringLens?: { zh: string; en: string };
 }
 
 export function profileToken(target: TargetProfile): string | undefined {
@@ -59,6 +60,7 @@ export function validateApplicability(entries: readonly ApplicabilityEntry[], fi
     else if (entry.fingerprint !== fingerprints.get(entry.questionId)) fail('stale content fingerprint; review applicability again');
     if (!['pending', 'reviewed', 'all-only'].includes(entry.reviewStatus)) fail('invalid review status');
     if (requireComplete && entry.reviewStatus === 'pending') fail('pending review');
+    if (entry.engineeringLens && (!entry.engineeringLens.zh?.trim() || !entry.engineeringLens.en?.trim())) fail('missing bilingual engineering context');
     if (!entry.rationale?.zh?.trim() || !entry.rationale?.en?.trim()) fail('missing bilingual rationale');
     if (entry.reviewStatus === 'all-only' && entry.profiles.length) fail('all-only cannot have profiles');
     if (entry.reviewStatus === 'reviewed' && !entry.profiles.length) fail('reviewed entry needs profiles');

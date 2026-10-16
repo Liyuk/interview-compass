@@ -1,3 +1,7 @@
+// Public preparation targets. Other role families remain research vocabulary only.
+export const audienceRoleIds = ['engineering', 'frontend', 'backend', 'mobile', 'ai-engineer', 'data'] as const;
+export function isAudienceRole(roleId: string): boolean { return (audienceRoleIds as readonly string[]).includes(roleId); }
+
 export const engineeringStageIds = ['junior-engineer', 'mid-level-engineer', 'senior-engineer', 'staff-engineer', 'engineering-manager', 'manager-of-managers'] as const;
 export const tiers = ['entry', 'independent', 'senior', 'expert', 'manager', 'organization'] as const;
 export type ResponsibilityTier = typeof tiers[number];

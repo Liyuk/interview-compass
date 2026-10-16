@@ -52,18 +52,18 @@ test('target changes reset pagination, role changes clear incompatible stages, a
   await expect(page.locator('#page-status')).toContainText('第 2 /');
   await page.locator('[data-profile-trigger]').click();
   const dialog = page.getByRole('dialog');
-  await dialog.getByLabel('岗位类型', { exact: true }).selectOption('product');
+  await dialog.getByLabel('岗位类型', { exact: true }).selectOption('data');
   await expect(dialog.getByLabel('目标阶段', { exact: true })).toHaveValue('');
   await expect(dialog.getByRole('button', { name: '按此目标浏览' })).toBeDisabled();
-  await dialog.getByLabel('目标阶段', { exact: true }).selectOption('product-independent');
+  await dialog.getByLabel('目标阶段', { exact: true }).selectOption('data-independent');
   await dialog.getByRole('button', { name: '按此目标浏览' }).click();
   await expect(page.locator('#page-status')).toContainText('第 1 /');
   await expect(page).not.toHaveURL(/page=2|profileRole/);
   await page.getByRole('button', { name: '查看全部题目', exact: true }).first().click();
   await expect(page.locator('[data-profile-trigger]')).toContainText('全部题目');
   await page.locator('[data-profile-trigger]').click();
-  await expect(dialog.getByLabel('岗位类型', { exact: true })).toHaveValue('product');
-  await expect(dialog.getByLabel('目标阶段', { exact: true })).toHaveValue('product-independent');
+  await expect(dialog.getByLabel('岗位类型', { exact: true })).toHaveValue('data');
+  await expect(dialog.getByLabel('目标阶段', { exact: true })).toHaveValue('data-independent');
 });
 
 test('sharing includes the effective target and page filters while adopting a link is explicit', async ({ page }) => {

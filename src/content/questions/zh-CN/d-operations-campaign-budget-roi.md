@@ -3,9 +3,9 @@ questionId: d-operations-campaign-budget-roi
 kind: question
 status: published
 locale: zh-CN
-title: 说一次你从头到尾操盘的促活或裂变活动。预算是多少，你怎样把投入产出比做到最大？
-question: 说一次你从头到尾操盘的用户促活或裂变活动。当时的预算（补贴或奖品）是多少，你用哪些具体的运营手段（社群、推送、内容推荐）把投入产出比做到最大，怎样知道它真的有效？
-intent: 了解你对一次活动的预算、手段和结果是否有清楚的掌握，并能区分活动真正带来的增量。
+title: "工程师如何说明一次增长活动中的本人贡献与业务增量？"
+question: "说一次你以工程师身份参与的用户促活或裂变活动。你负责哪些系统、数据或交付工作，如何与运营确认预算及关键用户行为，并核验活动的增量和自己的实际贡献？"
+intent: "考察工程师能否将技术工作与运营工作流、成本和业务结果连接，区分本人贡献、协作结果与无法确认的归因。"
 signals:
   - 说出具体的预算、目标人群和成本的计算方式
   - 说明各运营手段的分工和各自的效果，而不是笼统地说"多渠道"
@@ -16,6 +16,12 @@ topics: [operations, growth-experiments, metrics]
 roles:
   - operations
   - marketing
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [individual, team]
 careerTracks:
   - individual-contributor

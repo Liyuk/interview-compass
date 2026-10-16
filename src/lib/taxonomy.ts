@@ -1,3 +1,4 @@
+import { isAudienceRole } from '../content/role-stages/registry.ts';
 export type Locale = 'zh-CN' | 'en';
 
 export type Bilingual = { zh: string; en: string };
@@ -203,8 +204,8 @@ export const facetDefinitions = {
     f('accessibility', '无障碍', 'Accessibility'), f('ethics', '职业伦理', 'Professional ethics'),
   ],
   roles: [
-    f('engineering', '工程', 'Engineering'), f('frontend', '前端', 'Frontend'), f('backend', '后端', 'Backend'), f('mobile', '客户端', 'Mobile'),
-    f('ai-engineer', 'AI 工程', 'AI engineering'), f('data', '数据', 'Data'), f('product', '产品', 'Product'), f('operations', '运营', 'Operations'),
+    f('engineering', '通用工程', 'General software engineering'), f('frontend', '前端', 'Frontend'), f('backend', '后端', 'Backend'), f('mobile', '客户端', 'Mobile'),
+    f('ai-engineer', 'AI 工程', 'AI engineering'), f('data', '数据工程', 'Data engineering'), f('product', '产品', 'Product'), f('operations', '运营', 'Operations'),
     f('marketing', '市场与增长', 'Marketing and growth'), f('design', '设计', 'Design'), f('manager', '管理', 'Management'), f('pmo', '项目管理', 'Project management'),
   ],
   responsibilityScopes: [
@@ -231,7 +232,7 @@ export const facetKinds = Object.keys(facetDefinitions) as FacetKind[];
 
 export const facetMeta: Record<FacetKind, { name: Bilingual; description: Bilingual }> = {
   topics: { name: { zh: '知识或方法主题', en: 'Topic' }, description: { zh: '题目用到的知识或方法，如数据库、增长实验。它不决定题目考察什么能力。', en: 'The knowledge or method a question touches, such as databases or growth experiments. It does not decide which capability is examined.' } },
-  roles: { name: { zh: '岗位', en: 'Role' }, description: { zh: '谁需要这类证据。岗位只是入口，不直接决定职级。', en: 'Who needs this kind of evidence. A role is an entry point, not a level.' } },
+  roles: { name: { zh: '岗位', en: 'Role' }, description: { zh: '按通用工程、前端、后端、客户端、AI 与数据工程方向选题。产品、运营与设计内容作为工程师的拓展能力。', en: 'Choose a software engineering specialization. Product, operations, and design are expansion capabilities for engineers.' } },
   responsibilityScopes: { name: { zh: '责任范围', en: 'Responsibility scope' }, description: { zh: '为多大范围负责。范围大不等于表现好。', en: 'How wide the responsibility reaches. A wider scope does not mean better performance.' } },
   careerTracks: { name: { zh: '职业轨道', en: 'Career track' }, description: { zh: '专业贡献者、团队管理者或管理管理者。管理不是所有人的下一步。', en: 'Individual contributor, team manager, or senior manager. Management is not everyone’s next step.' } },
   scenarios: { name: { zh: '使用场景', en: 'Use case' }, description: { zh: '按外部求职面试、校招、面试官设计、内部晋升或复盘进入同一题库。', en: 'Browse the same question library by external interviews, campus hiring, interviewer design, internal promotion, or reflection.' } },
@@ -310,3 +311,6 @@ export const crossDomainPaths = [
     topics: ['team-planning'],
   },
 ] as const;
+
+// Public role navigation is narrower than the source/attribution vocabulary.
+export const audienceRoles = facetDefinitions.roles.filter(role => isAudienceRole(role.id));

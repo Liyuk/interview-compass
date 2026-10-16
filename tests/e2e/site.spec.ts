@@ -119,8 +119,8 @@ test('question detail explains intent and signals, links its source, and keeps t
   await expect(page.locator('.analysis-review-status')).toContainText('通用追问提示');
   for (const level of ['1 · 不通过', '2 · 通过', '3 · 优秀', '4 · 卓越']) await expect(page.getByRole('heading', { name: level, exact: true })).toBeVisible();
   await expect(page.getByText('本站原创')).toBeVisible();
-  const href = await page.locator('.metadata-block a', { hasText: '产品' }).first().getAttribute('href');
-  expect(href).toMatch(/^\/interview-compass\/roles\/product\/$/);
+  const href = await page.locator('.metadata-block a', { hasText: '通用工程' }).first().getAttribute('href');
+  expect(href).toMatch(/^\/interview-compass\/roles\/engineering\/$/);
   await page.getByRole('link', { name: 'EN' }).click();
   await expect(page).toHaveURL(/\/interview-compass\/en\/questions\/prioritization-limited-resources\/$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
@@ -153,7 +153,7 @@ test('reviewed question analyses expose question-specific comparisons in both la
 });
 
 test('role, scenario and topic pages group the same questions by capability', async ({ page }) => {
-  for (const [path, heading] of [['roles/product/', '产品'], ['scenarios/promotion/', '晋升准备'], ['topics/planning/', '规划']] as const) {
+  for (const [path, heading] of [['roles/frontend/', '前端'], ['scenarios/promotion/', '晋升准备'], ['topics/planning/', '规划']] as const) {
     await page.goto(path);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(heading);
     await expect(page.locator('.question-list li').first()).toBeVisible();
@@ -200,17 +200,17 @@ test('use cases present six goal-based paths and connect them to the right tools
   const interviewer = page.locator('.scenario-path').filter({ hasText: '招聘面试官' });
   await interviewer.locator('summary').click();
   await expect(interviewer.getByText('把证据分配到面试轮次')).toBeVisible();
-  const productQuestions = interviewer.getByRole('link', { name: '产品岗位问题' });
-  await expect(productQuestions).toHaveAttribute('href', /scenario=hiring.*role=product.*format=case/);
+  const productQuestions = interviewer.getByRole('link', { name: '产品判断能力' });
+  await expect(productQuestions).toHaveAttribute('href', /scenario=hiring.*topic=product-thinking.*format=case/);
   await productQuestions.click();
   await expect(page.locator('select[name="scenario"]')).toHaveValue('hiring');
-  await expect(page.locator('select[name="role"]')).toHaveValue('product');
+  await expect(page.locator('select[name="topic"]')).toHaveValue('product-thinking');
   await expect(page.locator('#question-list > li:visible').first()).toBeVisible();
   await page.goto('scenarios/');
   const hiringPath = page.locator('.scenario-path').filter({ hasText: '招聘面试官' });
   await hiringPath.locator('summary').click();
-  await hiringPath.getByRole('link', { name: '运营岗位问题' }).click();
-  await expect(page.locator('select[name="role"]')).toHaveValue('operations');
+  await hiringPath.getByRole('link', { name: '运营工作流理解' }).click();
+  await expect(page.locator('select[name="topic"]')).toHaveValue('operations');
   await expect(page.locator('#question-list > li:visible').first()).toBeVisible();
   await page.goto('scenarios/');
   const promotionCandidate = page.locator('.scenario-path').filter({ hasText: '晋升候选人' });
@@ -256,15 +256,15 @@ test('question library filters combine, update the shareable URL, and clear', as
   const total = Number((await page.locator('#result-count').innerText()).match(/^\d+/)?.[0]);
   expect(total).toBeGreaterThan(10);
   await page.locator('select[name="scenario"]').selectOption('promotion');
-  await page.locator('select[name="role"]').selectOption('product');
+  await page.locator('select[name="role"]').selectOption('frontend');
   await expect(page).toHaveURL(/scenario=promotion/);
-  await expect(page).toHaveURL(/role=product/);
+  await expect(page).toHaveURL(/role=frontend/);
   const filtered = Number((await page.locator('#result-count').innerText()).match(/^\d+/)?.[0]);
   expect(filtered).toBeGreaterThan(0);
   expect(filtered).toBeLessThan(total);
   await expect(page.locator('#result-count')).toContainText(String(filtered));
   await page.reload();
-  await expect(page.locator('select[name="role"]')).toHaveValue('product');
+  await expect(page.locator('select[name="role"]')).toHaveValue('frontend');
   expect(await page.locator('#question-list > li:visible').count()).toBe(Math.min(20, filtered));
   await page.getByRole('button', { name: '清除筛选' }).click();
   expect(await page.locator('#question-list > li:visible').count()).toBe(Math.min(20, total));

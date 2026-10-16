@@ -16527,10 +16527,10 @@
   {
     "questionId": "bulk-b-commercial-02",
     "reviewStatus": "reviewed",
-    "fingerprint": "71276bfc80d2defc53c33936ac539305f2a07c75acde5c9a57139a39ecb87f8a",
+    "fingerprint": "44bba826c5dd0eaa0014fbca249b5bd269dc19a7d7050172e8bcf77fee0e63f5",
     "rationale": {
-      "zh": "促销亏损分析保留市场产品运营及管理参考；独立阶段提供分层证据，授权者决策补贴。",
-      "en": "Promotion losses remain business-role reference; independent contributors evidence segments and authorized owners decide subsidies."
+      "zh": "促销亏损分析保留市场产品运营及管理参考；独立阶段提供分层证据，授权者决策补贴。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Promotion losses remain business-role reference; independent contributors evidence segments and authorized owners decide subsidies. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -16569,8 +16569,72 @@
           "manager-manager",
           "manager-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从业务规则、成本及客户行为的理解出发，解释这些变化会怎样影响技术投入与验证；不要求拥有定价、财务确认或促销预算的批准权。",
+      "en": "Read this as an engineer understanding business rules, costs, and customer behavior, and their effects on technical investment and validation. Pricing, accounting, and promotion-budget authority are not required."
+    }
   },
   {
     "questionId": "bulk-b-commercial-03",
@@ -16636,10 +16700,10 @@
   {
     "questionId": "bulk-b-commercial-04",
     "reviewStatus": "reviewed",
-    "fingerprint": "b87426e0e3c40d74901c1d7629a0d46ece038e7c12080858c0ac963965351fa7",
+    "fingerprint": "756c769779f4d1f65726c134d8a37aa7b9d7e919fd2c1715c4527c3c411a3771",
     "rationale": {
-      "zh": "套餐组合价值保留商业职能参考；独立阶段比较迁移与增量，组织阶段决定组合投入。",
-      "en": "Package value remains commercial reference with independent comparison and increasing investment ownership."
+      "zh": "套餐组合价值保留商业职能参考；独立阶段比较迁移与增量，组织阶段决定组合投入。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Package value remains commercial reference with independent comparison and increasing investment ownership. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -16678,8 +16742,72 @@
           "manager-manager",
           "manager-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从业务规则、成本及客户行为的理解出发，解释这些变化会怎样影响技术投入与验证；不要求拥有定价、财务确认或促销预算的批准权。",
+      "en": "Read this as an engineer understanding business rules, costs, and customer behavior, and their effects on technical investment and validation. Pricing, accounting, and promotion-budget authority are not required."
+    }
   },
   {
     "questionId": "bulk-b-context-01",
@@ -21555,10 +21683,10 @@
   {
     "questionId": "bulk-growth-06",
     "reviewStatus": "reviewed",
-    "fingerprint": "2ccc80c7d45436429b275b60f19c7ae1c15c9aba87663d83823a3117fc33e600",
+    "fingerprint": "4910f70b5843d478b6145ad13f9e3be387d8e5757d82d8f6a2d1342ae4b25909",
     "rationale": {
-      "zh": "渠道投放授权冲突需要相关业务角色核验事实与升级；保留市场运营产品和管理，不要求技术人代签品牌或合同承诺。",
-      "en": "Channel authorization conflicts require relevant business roles to verify and escalate. Retain marketing, operations, product, and management rather than engineering ownership of brand or contract commitments."
+      "zh": "渠道投放授权冲突需要相关业务角色核验事实与升级；保留市场运营产品和管理，不要求技术人代签品牌或合同承诺。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Channel authorization conflicts require relevant business roles to verify and escalate. Retain marketing, operations, product, and management rather than engineering ownership of brand or contract commitments. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -21597,8 +21725,72 @@
           "manager-manager",
           "manager-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从跨团队接口与授权边界理解业务协作，明确本人提供的规则、状态、数据或风险证据；合同、合规和对外承诺由实际授权者决定。",
+      "en": "An engineer examines cross-team interfaces and authority boundaries, identifying personal rule, state, data, or risk evidence. Contracts, compliance decisions, and external commitments belong to their authorized owners."
+    }
   },
   {
     "questionId": "bulk-growth-07",
@@ -23851,10 +24043,10 @@
   {
     "questionId": "bulk1000-c-045-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "7a6d1b86aa12f60b44311d02413ae82b8db22be00c84095a4ef13b84a2a69d48",
+    "fingerprint": "840437434ed17dd0bc1e6c021d98a8c4e0b4753135b92d2816de809a76a25ec4",
     "rationale": {
-      "zh": "年度渠道假设与转化承诺主要面向产品、项目和管理参照；区分分析与预算批准，不将渠道规划当所有工程岗位必备职责。",
-      "en": "Annual channel assumptions and conversion commitments chiefly fit product, project, and management reference, separating analysis from budget approval rather than making channel planning universal engineering work."
+      "zh": "年度渠道假设与转化承诺主要面向产品、项目和管理参照；区分分析与预算批准，不将渠道规划当所有工程岗位必备职责。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Annual channel assumptions and conversion commitments chiefly fit product, project, and management reference, separating analysis from budget approval rather than making channel planning universal engineering work. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -23881,8 +24073,72 @@
           "pmo-manager",
           "pmo-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师借此理解业务假设与阶段承诺，说明自己如何提供技术可行性、依赖与验证证据；不把公司市场进入或资金审批当作个人权限。",
+      "en": "An engineer uses this to understand business assumptions and staged commitments, contributing feasibility, dependency, and validation evidence without claiming authority over market entry or funding."
+    }
   },
   {
     "questionId": "bulk1000-c-046-v1",
@@ -24740,10 +24996,10 @@
   {
     "questionId": "bulk1000-d-059-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "7e9b4d3352f2be1250fd677d526ac3eecc8e4bb8a0ba07ea4014839ff0202741",
+    "fingerprint": "f3ac33e3e3276dcbdfe55a17076699c7d516cb4012409aeee7498a17a445de82",
     "rationale": {
-      "zh": "活动后客服审核与触达容量是产品运营承接责任；阶段变化在流程与团队机制，不把增长活动操盘要求给所有技术岗位。",
-      "en": "Post-campaign support, moderation, and follow-up capacity concern product-operations ownership. Stages vary in workflow and team mechanisms rather than requiring all engineers to run campaigns."
+      "zh": "活动后客服审核与触达容量是产品运营承接责任；阶段变化在流程与团队机制，不把增长活动操盘要求给所有技术岗位。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Post-campaign support, moderation, and follow-up capacity concern product-operations ownership. Stages vary in workflow and team mechanisms rather than requiring all engineers to run campaigns. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -24775,8 +25031,72 @@
           "product-manager",
           "product-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师借此理解运营工作流及服务承诺，区分本人负责的系统、数据或交接工作与运营负责人作出的业务决定；不要求兼任完整运营岗位。",
+      "en": "An engineer examines operating workflows and service commitments, separating personal system, data, or handoff work from business decisions owned by operations. A full operations role is not required."
+    }
   },
   {
     "questionId": "bulk1000-d-060-v1",
@@ -27200,10 +27520,10 @@
   {
     "questionId": "c-investment-choices-community-section",
     "reviewStatus": "reviewed",
-    "fingerprint": "cc703c48d8e90e28ca3ec0a03e6a864f925de29696285a5d4d87fbbedb1ad81b",
+    "fingerprint": "5b064f7388b359e92e1a79e788a6629e42bed71886d128be40086069e255aef3",
     "rationale": {
-      "zh": "社区板块投入保留产品运营参照；按实际用户价值判断，不作为通用技术岗位社区经营要求。",
-      "en": "Community investment remains product-operations reference, not a universal engineering community-management duty."
+      "zh": "社区板块投入保留产品运营参照；按实际用户价值判断，不作为通用技术岗位社区经营要求。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Community investment remains product-operations reference, not a universal engineering community-management duty. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -27225,8 +27545,72 @@
           "product-manager",
           "product-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师借此理解业务假设与阶段承诺，说明自己如何提供技术可行性、依赖与验证证据；不把公司市场进入或资金审批当作个人权限。",
+      "en": "An engineer uses this to understand business assumptions and staged commitments, contributing feasibility, dependency, and validation evidence without claiming authority over market entry or funding."
+    }
   },
   {
     "questionId": "c-investment-choices-leverage-or-fulcrum",
@@ -27466,10 +27850,10 @@
   {
     "questionId": "c-investment-choices-profit-over-gmv",
     "reviewStatus": "reviewed",
-    "fingerprint": "1ba8e7d4e436e440b3147525bcf9443e05cb75d0df5f80a82bfbc83a4878859c",
+    "fingerprint": "b0dd749a8191043d14540814a227bfbcaa764add072329bdd27bf14d118e140a",
     "rationale": {
-      "zh": "抽成和供应链利润调整保留商业职能管理参照，不以技术专业身份默认掌握平台定价权。",
-      "en": "Take-rate and supply-chain profit changes remain business-management reference, not implied pricing authority for technical roles."
+      "zh": "抽成和供应链利润调整保留商业职能管理参照，不以技术专业身份默认掌握平台定价权。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Take-rate and supply-chain profit changes remain business-management reference, not implied pricing authority for technical roles. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -27505,8 +27889,66 @@
           "marketing-manager",
           "marketing-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从业务规则、成本及客户行为的理解出发，解释这些变化会怎样影响技术投入与验证；不要求拥有定价、财务确认或促销预算的批准权。",
+      "en": "Read this as an engineer understanding business rules, costs, and customer behavior, and their effects on technical investment and validation. Pricing, accounting, and promotion-budget authority are not required."
+    }
   },
   {
     "questionId": "c-investment-choices-research-capacity-allocation",
@@ -27576,10 +28018,10 @@
   {
     "questionId": "c-investment-choices-roi-arr",
     "reviewStatus": "reviewed",
-    "fingerprint": "b0836579b7536fce3e88fac0d63085ca8a57b30ff50eaf3a6e112a4d7f35bb9f",
+    "fingerprint": "ac50148d446d2a0cf1d186a77640cd249526b9316a75c3bf6ffd6aef83e90d43",
     "rationale": {
-      "zh": "ARR及经营投入核算保留产品运营市场管理参照，不把商业预算职责当所有工程师的分级门槛。",
-      "en": "ARR and business investment accounting remain product, operations, marketing, and management reference, not universal engineering budget duties."
+      "zh": "ARR及经营投入核算保留产品运营市场管理参照，不把商业预算职责当所有工程师的分级门槛。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "ARR and business investment accounting remain product, operations, marketing, and management reference, not universal engineering budget duties. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -27618,8 +28060,72 @@
           "marketing-manager",
           "marketing-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从业务规则、成本及客户行为的理解出发，解释这些变化会怎样影响技术投入与验证；不要求拥有定价、财务确认或促销预算的批准权。",
+      "en": "Read this as an engineer understanding business rules, costs, and customer behavior, and their effects on technical investment and validation. Pricing, accounting, and promotion-budget authority are not required."
+    }
   },
   {
     "questionId": "c-investment-choices-shared-platform",
@@ -34477,10 +34983,10 @@
   {
     "questionId": "d-incident-campaign-outage-business-fallback",
     "reviewStatus": "reviewed",
-    "fingerprint": "3578d0c4461b8e9539e21ee0fc3863edf5b9c52f5f45561a3bf5dc72c584d4f9",
+    "fingerprint": "de51216ae16900ab8ef08651f1b2f6ff1e857b2549c83834e8aa1be06cb79090",
     "rationale": {
-      "zh": "题面明确一线运营在技术修复期间保护用户，保留运营、市场和产品参照，不把业务补偿与活动暂停权要求给全部工程岗位。",
-      "en": "The scenario explicitly concerns frontline operations protecting users during technical recovery. Keep operations, marketing, and product reference scope rather than requiring all engineers to own compensation and campaign stops."
+      "zh": "题面明确一线运营在技术修复期间保护用户，保留运营、市场和产品参照，不把业务补偿与活动暂停权要求给全部工程岗位。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "The scenario explicitly concerns frontline operations protecting users during technical recovery. Keep operations, marketing, and product reference scope rather than requiring all engineers to own compensation and campaign stops. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -34512,8 +35018,72 @@
           "product-manager",
           "product-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师借此理解运营工作流及服务承诺，区分本人负责的系统、数据或交接工作与运营负责人作出的业务决定；不要求兼任完整运营岗位。",
+      "en": "An engineer examines operating workflows and service commitments, separating personal system, data, or handoff work from business decisions owned by operations. A full operations role is not required."
+    }
   },
   {
     "questionId": "d-incident-chronic-instability",
@@ -34834,10 +35404,10 @@
   {
     "questionId": "d-operations-campaign-budget-roi",
     "reviewStatus": "reviewed",
-    "fingerprint": "cac120a8040ae86c7b32ea56406ea533afbab182dfec8259c4b4ddcf59695cf6",
+    "fingerprint": "e86debf688a1c7a16f03dc795cfea0f740d8f26f277dc270132c287cea6c81af",
     "rationale": {
-      "zh": "亲历活动预算、运营手段与增量验证面向运营市场参照；阶段扩展投入和持续影响，不把投放经验当工程门槛。",
-      "en": "Experienced campaign budgeting, operating methods, and incrementality fit operations and marketing reference, not an engineering hiring threshold."
+      "zh": "亲历活动预算、运营手段与增量验证面向运营市场参照；阶段扩展投入和持续影响，不把投放经验当工程门槛。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Experienced campaign budgeting, operating methods, and incrementality fit operations and marketing reference, not an engineering hiring threshold. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -34859,16 +35429,80 @@
           "marketing-manager",
           "marketing-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从指标定义、数据链路与实验可信度理解业务判断，核验自己能提供的证据及其局限；不要求亲自购买流量或承担品牌投放职责。",
+      "en": "An engineer examines business judgment through metric definitions, data flows, and credible experiments, identifying personal evidence and its limits without needing to buy traffic or own brand campaigns."
+    }
   },
   {
     "questionId": "d-operations-campaign-landing",
     "reviewStatus": "reviewed",
-    "fingerprint": "247c9ac97828a7eacd1888ef96cff095d372617d59887e4511de9ac46a704162",
+    "fingerprint": "7d2a7dc3570cc69eb40a8c1904e022864b6c97e071bf037ac02dcbf02df1b299",
     "rationale": {
-      "zh": "既定策略下的执行检查可由初级在指导下完成；独立和高级阶段增加跨方准备，仍保留运营市场产品专业范围。",
-      "en": "Execution checks under an agreed strategy fit juniors with guidance. Higher stages add cross-party readiness within operations, marketing, and product scope."
+      "zh": "既定策略下的执行检查可由初级在指导下完成；独立和高级阶段增加跨方准备，仍保留运营市场产品专业范围。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Execution checks under an agreed strategy fit juniors with guidance. Higher stages add cross-party readiness within operations, marketing, and product scope. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -34903,8 +35537,72 @@
           "product-manager",
           "product-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师借此理解运营工作流及服务承诺，区分本人负责的系统、数据或交接工作与运营负责人作出的业务决定；不要求兼任完整运营岗位。",
+      "en": "An engineer examines operating workflows and service commitments, separating personal system, data, or handoff work from business decisions owned by operations. A full operations role is not required."
+    }
   },
   {
     "questionId": "d-operations-customer-escalation-severity-routing",
@@ -35374,10 +36072,10 @@
   {
     "questionId": "d-operations-wind-down-business",
     "reviewStatus": "reviewed",
-    "fingerprint": "e4137faa3ab522a095e9d524b3a953b5278e30f2f54e5c7cec3d883d6131f4e7",
+    "fingerprint": "d1a75a86186ba3991b394075419e76a4778138814e518726eef0c4716392d543",
     "rationale": {
-      "zh": "大规模业务清退需领域或组织责任与明确授权；保留产品运营管理参照，法律合同与补偿决定应由有权者确认。",
-      "en": "Large-scale business wind-down requires domain or organizational responsibility and explicit mandate. Keep product, operations, and management reference with authorized contract and compensation decisions."
+      "zh": "大规模业务清退需领域或组织责任与明确授权；保留产品运营管理参照，法律合同与补偿决定应由有权者确认。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Large-scale business wind-down requires domain or organizational responsibility and explicit mandate. Keep product, operations, and management reference with authorized contract and compensation decisions. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -35402,8 +36100,66 @@
           "product-manager",
           "product-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从跨团队接口与授权边界理解业务协作，明确本人提供的规则、状态、数据或风险证据；合同、合规和对外承诺由实际授权者决定。",
+      "en": "An engineer examines cross-team interfaces and authority boundaries, identifying personal rule, state, data, or risk evidence. Contracts, compliance decisions, and external commitments belong to their authorized owners."
+    }
   },
   {
     "questionId": "d-ops-playbook-stale-owner",
@@ -45146,10 +45902,10 @@
   {
     "questionId": "exp1500-b-019",
     "reviewStatus": "reviewed",
-    "fingerprint": "92f7c1e21e51af1ebf47f2e0d800690f1c90787d4987f90b82d5f2f9cd7ef448",
+    "fingerprint": "607aeeab6b023b683d176510c247249ee82a57566f42b430209f642ed571f82b",
     "rationale": {
-      "zh": "订阅促销长期价值保留产品市场运营参考；独立阶段做分层分析，高阶段调整商业机制。",
-      "en": "Subscription-promotion value remains product, marketing, and operations reference with growing commercial ownership."
+      "zh": "订阅促销长期价值保留产品市场运营参考；独立阶段做分层分析，高阶段调整商业机制。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Subscription-promotion value remains product, marketing, and operations reference with growing commercial ownership. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -45181,8 +45937,72 @@
           "operations-manager",
           "operations-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从业务规则、成本及客户行为的理解出发，解释这些变化会怎样影响技术投入与验证；不要求拥有定价、财务确认或促销预算的批准权。",
+      "en": "Read this as an engineer understanding business rules, costs, and customer behavior, and their effects on technical investment and validation. Pricing, accounting, and promotion-budget authority are not required."
+    }
   },
   {
     "questionId": "exp1500-b-020",
@@ -49596,10 +50416,10 @@
   {
     "questionId": "exp1500-c-018",
     "reviewStatus": "reviewed",
-    "fingerprint": "31035101f0a12f8c3d006bf88fc5f236e55c270552ef48fa964eca6c85e9f114",
+    "fingerprint": "0a551daf57696b419c53e41eb84d79aa095aaa6d289cadda04ecc43ffd900403",
     "rationale": {
-      "zh": "新市场年度预算与采购假设保留产品市场项目管理参照；阶段区分计划证据和资金授权，不强行作为每个技术方向标准。",
-      "en": "New-market budgets and procurement assumptions remain product, marketing, project, and management reference, differentiated by evidence and funding authority rather than universal technical requirements."
+      "zh": "新市场年度预算与采购假设保留产品市场项目管理参照；阶段区分计划证据和资金授权，不强行作为每个技术方向标准。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "New-market budgets and procurement assumptions remain product, marketing, project, and management reference, differentiated by evidence and funding authority rather than universal technical requirements. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -49635,16 +50455,74 @@
           "pmo-manager",
           "pmo-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师借此理解业务假设与阶段承诺，说明自己如何提供技术可行性、依赖与验证证据；不把公司市场进入或资金审批当作个人权限。",
+      "en": "An engineer uses this to understand business assumptions and staged commitments, contributing feasibility, dependency, and validation evidence without claiming authority over market entry or funding."
+    }
   },
   {
     "questionId": "exp1500-c-021",
     "reviewStatus": "reviewed",
-    "fingerprint": "5fcb1cf21b00d665c7b7a340ae77de3c16f83210e6fdb49b718791349032e967",
+    "fingerprint": "6c33c12a128a7481129e4237b2842444f96990057d490440da32646e59dfb04e",
     "rationale": {
-      "zh": "城市服务试点与销售扩张承诺主要面向产品市场运营；高级阶段核验规模化条件，管理阶段负责正式对外承诺。",
-      "en": "City-service pilots and expansion promises chiefly fit product, marketing, and operations. Senior scope validates scaling; management owns formal commitments."
+      "zh": "城市服务试点与销售扩张承诺主要面向产品市场运营；高级阶段核验规模化条件，管理阶段负责正式对外承诺。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "City-service pilots and expansion promises chiefly fit product, marketing, and operations. Senior scope validates scaling; management owns formal commitments. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -49673,8 +50551,66 @@
           "operations-manager",
           "operations-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师借此理解业务假设与阶段承诺，说明自己如何提供技术可行性、依赖与验证证据；不把公司市场进入或资金审批当作个人权限。",
+      "en": "An engineer uses this to understand business assumptions and staged commitments, contributing feasibility, dependency, and validation evidence without claiming authority over market entry or funding."
+    }
   },
   {
     "questionId": "exp1500-c-022",
@@ -51222,10 +52158,10 @@
   {
     "questionId": "exp1500-c-044",
     "reviewStatus": "reviewed",
-    "fingerprint": "c2441c7cd47411037a5a80c8988feaf62b00adec8eb0a5888c5f3a89edc36b09",
+    "fingerprint": "7e0307a835be52d0490da2f3094ee48f644b06ed3441b06a05bb27cea34d13fd",
     "rationale": {
-      "zh": "新地区供需补贴学习是商业投资参照；不要求每个技术岗位决定资金释放与补贴。",
-      "en": "New-region subsidy learning remains business-investment reference, not funding and subsidy authority for every technical role."
+      "zh": "新地区供需补贴学习是商业投资参照；不要求每个技术岗位决定资金释放与补贴。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "New-region subsidy learning remains business-investment reference, not funding and subsidy authority for every technical role. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -51252,8 +52188,66 @@
           "manager-manager",
           "manager-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师借此理解业务假设与阶段承诺，说明自己如何提供技术可行性、依赖与验证证据；不把公司市场进入或资金审批当作个人权限。",
+      "en": "An engineer uses this to understand business assumptions and staged commitments, contributing feasibility, dependency, and validation evidence without claiming authority over market entry or funding."
+    }
   },
   {
     "questionId": "exp1500-c-045",
@@ -51339,10 +52333,10 @@
   {
     "questionId": "exp1500-c-046",
     "reviewStatus": "reviewed",
-    "fingerprint": "2a8ae9fa29bc5d46e16061222000d3625b6e6b6111a2bec20fb3f31cbe1220af",
+    "fingerprint": "bb48b2ce16fe9ecb0e26ca14a846efb475c8ddfb66273aedaa6c8053b7fdea54",
     "rationale": {
-      "zh": "地区进入成本和商业条件保留产品市场运营参照；不因技术主线要求每个岗位选择市场。",
-      "en": "Regional entry economics remain product, marketing, and operations reference, not a universal technical market-selection duty."
+      "zh": "地区进入成本和商业条件保留产品市场运营参照；不因技术主线要求每个岗位选择市场。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Regional entry economics remain product, marketing, and operations reference, not a universal technical market-selection duty. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -51371,16 +52365,74 @@
           "operations-manager",
           "operations-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师借此理解业务假设与阶段承诺，说明自己如何提供技术可行性、依赖与验证证据；不把公司市场进入或资金审批当作个人权限。",
+      "en": "An engineer uses this to understand business assumptions and staged commitments, contributing feasibility, dependency, and validation evidence without claiming authority over market entry or funding."
+    }
   },
   {
     "questionId": "exp1500-c-047",
     "reviewStatus": "reviewed",
-    "fingerprint": "bab2fc6b66171f31aa1218d499d53db991cc2487d0355b12e4c0c904505f4611",
+    "fingerprint": "0e9ab08fb07767feb9019f1658baa0e2d5dcdbb34052de88b587db9aa34f4f1d",
     "rationale": {
-      "zh": "分群定价与支付意愿是商业参考；阶段扩展决策范围，不默认技术个人拥有合同和折扣权。",
-      "en": "Segment pricing and willingness to pay are business reference with explicit contract and discount authority."
+      "zh": "分群定价与支付意愿是商业参考；阶段扩展决策范围，不默认技术个人拥有合同和折扣权。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Segment pricing and willingness to pay are business reference with explicit contract and discount authority. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -51412,8 +52464,72 @@
           "operations-manager",
           "operations-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从业务规则、成本及客户行为的理解出发，解释这些变化会怎样影响技术投入与验证；不要求拥有定价、财务确认或促销预算的批准权。",
+      "en": "Read this as an engineer understanding business rules, costs, and customer behavior, and their effects on technical investment and validation. Pricing, accounting, and promotion-budget authority are not required."
+    }
   },
   {
     "questionId": "exp1500-c-048",
@@ -51542,10 +52658,10 @@
   {
     "questionId": "exp1500-c-051",
     "reviewStatus": "reviewed",
-    "fingerprint": "f5642bef018f2df1244e76a90df7703aa40b45e5b6c99c4676c756af9068c8b5",
+    "fingerprint": "637058d92be07fde5b7b975dafbcc126fb4483ab6b21ff1fd8239754437bc20e",
     "rationale": {
-      "zh": "促销亏损与资本边界保留商业管理参照；不把平台补贴经营责任强加技术角色。",
-      "en": "Promotional losses and capital limits remain business-management reference rather than imposed engineering operating responsibility."
+      "zh": "促销亏损与资本边界保留商业管理参照；不把平台补贴经营责任强加技术角色。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Promotional losses and capital limits remain business-management reference rather than imposed engineering operating responsibility. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -51572,8 +52688,66 @@
           "manager-manager",
           "manager-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从业务规则、成本及客户行为的理解出发，解释这些变化会怎样影响技术投入与验证；不要求拥有定价、财务确认或促销预算的批准权。",
+      "en": "Read this as an engineer understanding business rules, costs, and customer behavior, and their effects on technical investment and validation. Pricing, accounting, and promotion-budget authority are not required."
+    }
   },
   {
     "questionId": "exp1500-c-052",
@@ -51760,10 +52934,10 @@
   {
     "questionId": "exp1500-c-055",
     "reviewStatus": "reviewed",
-    "fingerprint": "a6782e97fa8bbc92e7c5d22de353d25c6ec0f19ffa35b27e1532d57b314bbb7a",
+    "fingerprint": "4e31fa5e5a6f28322df56cad45ab4449087779898bf07359503f621943b2e48e",
     "rationale": {
-      "zh": "账面收入与回款风险保留商业职能和管理参照；不把财务核算与销售激励权限要求给全部工程岗位。",
-      "en": "Revenue and cash-collection risk remain business and management reference, not universal engineering accounting or sales-incentive authority."
+      "zh": "账面收入与回款风险保留商业职能和管理参照；不把财务核算与销售激励权限要求给全部工程岗位。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Revenue and cash-collection risk remain business and management reference, not universal engineering accounting or sales-incentive authority. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -51799,8 +52973,72 @@
           "manager-manager",
           "manager-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从业务规则、成本及客户行为的理解出发，解释这些变化会怎样影响技术投入与验证；不要求拥有定价、财务确认或促销预算的批准权。",
+      "en": "Read this as an engineer understanding business rules, costs, and customer behavior, and their effects on technical investment and validation. Pricing, accounting, and promotion-budget authority are not required."
+    }
   },
   {
     "questionId": "exp1500-d-002",
@@ -52706,10 +53944,10 @@
   {
     "questionId": "exp1500-d-016",
     "reviewStatus": "reviewed",
-    "fingerprint": "30c018704ead4aa00600b2b81cf680053b3314fa00da64b212c50c28e9314d02",
+    "fingerprint": "b12a32c84c040fe0acff410fbfe2e58992776ced72f026f80673ff374d653aa6",
     "rationale": {
-      "zh": "多地区人工审核策略与培训质检主要是运营产品市场职责；高级阶段协调一致性，管理阶段支持执行，不凭可能用AI就扩展AI岗。",
-      "en": "Multi-region manual-review strategy, training, and quality chiefly concern operations, product, and marketing; possible AI use alone does not make this an AI engineering requirement."
+      "zh": "多地区人工审核策略与培训质检主要是运营产品市场职责；高级阶段协调一致性，管理阶段支持执行，不凭可能用AI就扩展AI岗。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Multi-region manual-review strategy, training, and quality chiefly concern operations, product, and marketing; possible AI use alone does not make this an AI engineering requirement. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -52738,16 +53976,80 @@
           "marketing-manager",
           "marketing-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师借此理解运营工作流及服务承诺，区分本人负责的系统、数据或交接工作与运营负责人作出的业务决定；不要求兼任完整运营岗位。",
+      "en": "An engineer examines operating workflows and service commitments, separating personal system, data, or handoff work from business decisions owned by operations. A full operations role is not required."
+    }
   },
   {
     "questionId": "exp1500-d-017",
     "reviewStatus": "reviewed",
-    "fingerprint": "211a6a558ee5474ead86b783f7d7d14e6b5ebf739301bc66c7ba37943d273ffd",
+    "fingerprint": "05095f8c0de2c996e1492989ce4ac3592760cc171496b2c23952a8060783029d",
     "rationale": {
-      "zh": "高峰客服审核供应值班的安排主要面向运营、项目和产品负责人；不将这些正式人力安排要求给全部工程岗位。",
-      "en": "Peak support, moderation, supply, and staffing chiefly concern operations, project, and product leads, not formal staffing duties for every engineering role."
+      "zh": "高峰客服审核供应值班的安排主要面向运营、项目和产品负责人；不将这些正式人力安排要求给全部工程岗位。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Peak support, moderation, supply, and staffing chiefly concern operations, project, and product leads, not formal staffing duties for every engineering role. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -52776,8 +54078,72 @@
           "pmo-manager",
           "pmo-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师借此理解运营工作流及服务承诺，区分本人负责的系统、数据或交接工作与运营负责人作出的业务决定；不要求兼任完整运营岗位。",
+      "en": "An engineer examines operating workflows and service commitments, separating personal system, data, or handoff work from business decisions owned by operations. A full operations role is not required."
+    }
   },
   {
     "questionId": "exp1500-d-018",
@@ -53965,10 +55331,10 @@
   {
     "questionId": "exp1500-d-034",
     "reviewStatus": "reviewed",
-    "fingerprint": "caf7b43bb1fa1622c4feeb791b18e3f0d3c2e8f05c7c99415d7407e0dab3da2a",
+    "fingerprint": "59a9fef4c00cd7150eea6ab77c4094f67cd0de1da608387accd7ec5f65b8cd24",
     "rationale": {
-      "zh": "渠道执行偏差和保留对照属于运营市场产品参照；按实际实验责任区分阶段，不把促销投放自动归到工程岗。",
-      "en": "Channel execution deviations and controls remain operations, marketing, and product reference, differentiated by experiment responsibility rather than automatically assigned to engineers."
+      "zh": "渠道执行偏差和保留对照属于运营市场产品参照；按实际实验责任区分阶段，不把促销投放自动归到工程岗。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Channel execution deviations and controls remain operations, marketing, and product reference, differentiated by experiment responsibility rather than automatically assigned to engineers. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -54000,8 +55366,72 @@
           "product-manager",
           "product-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从指标定义、数据链路与实验可信度理解业务判断，核验自己能提供的证据及其局限；不要求亲自购买流量或承担品牌投放职责。",
+      "en": "An engineer examines business judgment through metric definitions, data flows, and credible experiments, identifying personal evidence and its limits without needing to buy traffic or own brand campaigns."
+    }
   },
   {
     "questionId": "exp1500-d-035",
@@ -80607,10 +82037,10 @@
   {
     "questionId": "next-product-057",
     "reviewStatus": "reviewed",
-    "fingerprint": "06d372a4c18571a490418072837a08ac30bf253b2f129b1554e2a80bbb674d2f",
+    "fingerprint": "32523856ea130d7df0f99b06241d3dec966b24c9ad6ccb2c1b4897de10b0fdb2",
     "rationale": {
-      "zh": "品牌曝光与长销售周期是产品市场参照；技术读者可全部浏览，不以媒体投入经验作为技术阶段标准。",
-      "en": "Brand exposure and long sales cycles remain product-marketing reference, not a technical-stage media-investment requirement."
+      "zh": "品牌曝光与长销售周期是产品市场参照；技术读者可全部浏览，不以媒体投入经验作为技术阶段标准。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Brand exposure and long sales cycles remain product-marketing reference, not a technical-stage media-investment requirement. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -80632,8 +82062,72 @@
           "marketing-manager",
           "marketing-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从指标定义、数据链路与实验可信度理解业务判断，核验自己能提供的证据及其局限；不要求亲自购买流量或承担品牌投放职责。",
+      "en": "An engineer examines business judgment through metric definitions, data flows, and credible experiments, identifying personal evidence and its limits without needing to buy traffic or own brand campaigns."
+    }
   },
   {
     "questionId": "next-product-058",
@@ -91676,10 +93170,10 @@
   {
     "questionId": "wave18-market-001",
     "reviewStatus": "reviewed",
-    "fingerprint": "c9be13651bc8ab95adfa8814dbc0c91e49d26e52b6e394f4223532c64924f1d2",
+    "fingerprint": "7cd8a887368ecff98368912a37d4f530abcd2ead550440d2ddd5c670856e47fc",
     "rationale": {
-      "zh": "行为差异化报价保留市场产品参考；独立阶段提出验证与披露，高阶段承担政策和风险决策。",
-      "en": "Behavioral pricing remains marketing-product reference with growing disclosure and policy ownership."
+      "zh": "行为差异化报价保留市场产品参考；独立阶段提出验证与披露，高阶段承担政策和风险决策。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Behavioral pricing remains marketing-product reference with growing disclosure and policy ownership. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -91701,16 +93195,80 @@
           "product-manager",
           "product-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从跨团队接口与授权边界理解业务协作，明确本人提供的规则、状态、数据或风险证据；合同、合规和对外承诺由实际授权者决定。",
+      "en": "An engineer examines cross-team interfaces and authority boundaries, identifying personal rule, state, data, or risk evidence. Contracts, compliance decisions, and external commitments belong to their authorized owners."
+    }
   },
   {
     "questionId": "wave18-market-003",
     "reviewStatus": "reviewed",
-    "fingerprint": "8a0935a0f1bc815b59a8325d6059714ebc69aad9cc4b2bac8270c655160165fe",
+    "fingerprint": "f714eea0648dc537a8a82e629ee42162c918434da41a0c4d662ff0e36deae43f",
     "rationale": {
-      "zh": "品牌合作难归因渠道保留市场和产品参照；技术读者可全部浏览，但不把媒体领先指标作为所有工程岗位分级要求。",
-      "en": "Hard-to-attribute brand channels remain marketing and product reference. Engineers may consult all browsing without media indicators becoming universal role requirements."
+      "zh": "品牌合作难归因渠道保留市场和产品参照；技术读者可全部浏览，但不把媒体领先指标作为所有工程岗位分级要求。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Hard-to-attribute brand channels remain marketing and product reference. Engineers may consult all browsing without media indicators becoming universal role requirements. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -91732,16 +93290,80 @@
           "product-manager",
           "product-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从指标定义、数据链路与实验可信度理解业务判断，核验自己能提供的证据及其局限；不要求亲自购买流量或承担品牌投放职责。",
+      "en": "An engineer examines business judgment through metric definitions, data flows, and credible experiments, identifying personal evidence and its limits without needing to buy traffic or own brand campaigns."
+    }
   },
   {
     "questionId": "wave18-market-004",
     "reviewStatus": "reviewed",
-    "fingerprint": "d213df85b4881629a63fda2885a751e616d6f026a4a96b33958de785fe37189b",
+    "fingerprint": "f7ad8dab90dc95648b741fd3921c88f41f6d4c7a5c88a54011dc17c4f47929c6",
     "rationale": {
-      "zh": "商机结算接口保留市场产品参考，独立阶段澄清定义与回传；改商业契约需授权。",
-      "en": "Lead-settlement interfaces remain marketing-product reference; contributors clarify definitions and authorized owners amend contracts."
+      "zh": "商机结算接口保留市场产品参考，独立阶段澄清定义与回传；改商业契约需授权。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "Lead-settlement interfaces remain marketing-product reference; contributors clarify definitions and authorized owners amend contracts. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -91763,16 +93385,80 @@
           "product-manager",
           "product-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-independent",
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师从跨团队接口与授权边界理解业务协作，明确本人提供的规则、状态、数据或风险证据；合同、合规和对外承诺由实际授权者决定。",
+      "en": "An engineer examines cross-team interfaces and authority boundaries, identifying personal rule, state, data, or risk evidence. Contracts, compliance decisions, and external commitments belong to their authorized owners."
+    }
   },
   {
     "questionId": "wave18-market-005",
     "reviewStatus": "reviewed",
-    "fingerprint": "0a22bdefee563a255555ab7761f71595ea3690fb33fbe859840c8714f29a6ffe",
+    "fingerprint": "32791b44793f42ec296a21e1bbd9b7ce5eddfdb88c83c40b94106d0d4f91ff9d",
     "rationale": {
-      "zh": "这是市场渠道组合的投入与探索问题，保留市场专业及管理责任参照；不因技术主线而强行扩展到所有工程岗位。",
-      "en": "This is a marketing-channel investment and exploration question. Retain marketing and management reference scope without extending it to every engineering role."
+      "zh": "这是市场渠道组合的投入与探索问题，保留市场专业及管理责任参照；不因技术主线而强行扩展到所有工程岗位。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
+      "en": "This is a marketing-channel investment and exploration question. Retain marketing and management reference scope without extending it to every engineering role. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
     },
     "profiles": [
       {
@@ -91791,8 +93477,66 @@
           "manager-manager",
           "manager-organization"
         ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager",
+          "manager-of-managers"
+        ]
+      },
+      {
+        "roleId": "data",
+        "stageIds": [
+          "data-senior",
+          "data-expert",
+          "data-manager",
+          "data-organization"
+        ]
       }
-    ]
+    ],
+    "engineeringLens": {
+      "zh": "工程师借此理解业务假设与阶段承诺，说明自己如何提供技术可行性、依赖与验证证据；不把公司市场进入或资金审批当作个人权限。",
+      "en": "An engineer uses this to understand business assumptions and staged commitments, contributing feasibility, dependency, and validation evidence without claiming authority over market entry or funding."
+    }
   },
   {
     "questionId": "wave18-plan-001",

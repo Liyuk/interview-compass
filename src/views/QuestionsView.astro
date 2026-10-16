@@ -2,7 +2,7 @@
 import Icon from '../components/Icon.astro';
 import { tokensForQuestion, countsForQuestionIds } from '../lib/question-profile-data';
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { domains, facetDefinitions, facetKinds, facetMeta, pick, type FacetKind, type Locale } from '../lib/taxonomy';
+import { domains, audienceRoles, facetDefinitions, facetKinds, facetMeta, pick, type FacetKind, type Locale } from '../lib/taxonomy';
 import { facetCounts } from '../lib/question-catalog';
 import { capabilityLabel } from '../lib/taxonomy';
 import { pathFor } from '../lib/routes';
@@ -20,7 +20,7 @@ const queryKey: Record<FacetKind, string> = { topics: 'topic', roles: 'role', re
 const capabilityOptions = domains.flatMap((domain) => domain.leaves.map((leaf) => ({ id: `${domain.id}.${leaf.id}`, label: `${domain.letter} · ${pick(leaf.name, locale)}`, count: questions.filter((q) => q.primaryCapability === `${domain.id}.${leaf.id}`).length }))).filter((option) => option.count > 0);
 const facetOptions = filterKinds.map((kind) => {
   const counts = facetCounts(questions, { locale, facet: kind });
-  return { kind, options: facetDefinitions[kind].filter((entry) => counts.has(entry.id)).map((entry) => ({ id: entry.id, label: pick(entry.name, locale), count: counts.get(entry.id) ?? 0 })) };
+  return { kind, options: (kind === 'roles' ? audienceRoles : facetDefinitions[kind]).filter((entry) => counts.has(entry.id)).map((entry) => ({ id: entry.id, label: pick(entry.name, locale), count: counts.get(entry.id) ?? 0 })) };
 }).filter((group) => group.options.length > 0);
 ---
 <SiteLayout locale={locale} route={{ type: 'questions' }} description={en ? 'Browse and filter every published question.' : '浏览并筛选所有已发布的问题。'}>

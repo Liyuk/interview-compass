@@ -1,5 +1,5 @@
 ---
-import { facetDefinitions, pick, type Locale } from '../lib/taxonomy';
+import { audienceRoles, pick, type Locale } from '../lib/taxonomy';
 import { pathFor } from '../lib/routes';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -8,7 +8,7 @@ const en = locale === 'en';
 <section class="model-section" aria-labelledby="role-stage-heading">
   <h2 id="role-stage-heading">{en ? 'Start with your role and target responsibility' : '先选岗位，再看目标阶段的责任'}</h2>
   <p>{en ? 'One question can serve several stages. Compare the expected judgment, actions, and results—not a difficulty label. Stage and the 1–4 response score are separate dimensions.' : '同一道题可以服务多个阶段。变化的是要核验的判断、行动和结果，不是给题目换一个难度标签。阶段与回答的 1–4 分是两个维度。'}</p>
-  <div class="role-model-links">{facetDefinitions.roles.map(role => <a href={pathFor({ type: 'role-stage-model', role: role.id }, locale, import.meta.env.BASE_URL)}>{pick(role.name, locale)}<span>{en ? 'View stages →' : '查看阶段 →'}</span></a>)}</div>
+  <div class="role-model-links">{audienceRoles.map(role => <a href={pathFor({ type: 'role-stage-model', role: role.id }, locale, import.meta.env.BASE_URL)}>{pick(role.name, locale)}<span>{en ? 'View stages →' : '查看阶段 →'}</span></a>)}</div>
 </section>
 <style>
   .role-model-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: .65rem; margin-top: 1.25rem; }

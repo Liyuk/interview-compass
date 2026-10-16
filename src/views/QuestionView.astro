@@ -1,7 +1,7 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Icon from '../components/Icon.astro';
-import { tokensForQuestion } from '../lib/question-profile-data';
+import { tokensForQuestion, engineeringLensForQuestion } from '../lib/question-profile-data';
 import QuestionStageGuidance from '../components/QuestionStageGuidance.astro';
 import { capabilityLabel, facetLabel, facetMeta, pick, splitCapability, type FacetKind, type Locale } from '../lib/taxonomy';
 import { facetRoute, pathFor } from '../lib/routes';
@@ -13,11 +13,12 @@ import { loadAllRecords } from '../lib/site-data';
 interface Props { locale: Locale; id: string }
 const { locale, id } = Astro.props;
 const en = locale === 'en';
+const engineeringLens = engineeringLensForQuestion(id);
 const base = import.meta.env.BASE_URL;
 const all = await loadAllRecords();
 const record = all.find((item) => item.questionId === id && item.locale === locale && item.status === 'published')!;
 const evaluation = questionEvaluation(record);
-const analysisPrompt = buildQuestionAnalysisPrompt({ locale, question: record, evaluation });
+const analysisPrompt = buildQuestionAnalysisPrompt({ locale, question: record, evaluation, engineeringContext: engineeringLens?.[en ? 'en' : 'zh'] });
 const { domain, leaf } = splitCapability(record.primaryCapability);
 const route = { type: 'question', questionId: record.questionId, capability: record.primaryCapability, title: record.question } as const;
 const related = (record.relatedQuestions ?? []).flatMap((relation) => {
@@ -34,6 +35,7 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
   <h1 class="page-title" data-pagefind-meta="title">{record.question}</h1>
   {tokensForQuestion(record.questionId).map(token => <span hidden data-pagefind-filter="profile[data-profile-token]" data-profile-token={token} />)}
   <aside class="target-mismatch" data-question-detail-profiles={tokensForQuestion(record.questionId).join(' ')} hidden data-pagefind-ignore><p>{en ? 'This question is outside your current target. The direct link stays readable.' : '此题不在当前目标范围内，直接链接仍可完整阅读。'}</p><button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button><button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button></aside>
+  {engineeringLens && <aside class="engineering-context" data-engineering-context data-pagefind-ignore><strong>{en ? 'Engineering business context' : '工程师的业务理解视角'}</strong><p>{engineeringLens[en ? 'en' : 'zh']}</p></aside>}
   <div class="question-fit" aria-label={en ? 'Question relevance' : '适用范围'}>
     {context.filter((group) => ['roles', 'responsibilityScopes', 'careerTracks'].includes(group.kind)).map((group) => <p><strong>{pick(facetMeta[group.kind].name, locale)}</strong><span>{group.ids.map((id) => facetLabel(group.kind, id, locale)).join(en ? ' · ' : '、')}</span></p>)}
     <p class="band-text">{en ? 'Select questions for the responsibility you actually hold or seek. These labels are not universal stage requirements.' : '按目标岗位和实际责任选题；这些标签不表示所有阶段都必须掌握。'} <a href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Stage expectations' : '查看阶段要求'}</a></p>

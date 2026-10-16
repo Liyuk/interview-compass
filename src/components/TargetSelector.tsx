@@ -21,8 +21,7 @@ export default function TargetSelector({ roles, locale }: Props) {
   const target = context?.preference.mode === 'target' ? context.preference.target : undefined;
   const currentRole = roles.find(role => role.id === target?.roleId);
   const currentStage = currentRole?.stages.find(stage => stage.id === target?.stageId);
-  const technical = roles.filter(role => ['engineering', 'frontend', 'backend', 'mobile', 'ai-engineer', 'data'].includes(role.id));
-  const reference = roles.filter(role => !technical.includes(role));
+
 
   function edit() {
     const remembered = rememberedTarget(getTargetContext().preference) ?? rememberedTarget(getStoredPreference());
@@ -46,12 +45,11 @@ export default function TargetSelector({ roles, locale }: Props) {
     </button></Dialog.Trigger>
     <Dialog.Portal><Dialog.Overlay className="profile-overlay" /><Dialog.Content className="profile-dialog">
       <Dialog.Title>{en ? 'Choose your preparation target' : '选择你的准备目标'}</Dialog.Title>
-      <Dialog.Description>{en ? 'Choose a role and the responsibility you are preparing for. Questions and search will show only reviewed matches. You can switch or explore everything at any time.' : '选择岗位和准备承担的责任阶段。题目与搜索将只显示已审核的匹配内容，随时可以切换或查看全部。'}</Dialog.Description>
+      <Dialog.Description>{en ? 'For engineers: choose your specialization and target responsibility. Questions and search will show only reviewed matches. You can switch or explore everything at any time.' : '面向工程师，选择专业方向和准备承担的责任阶段。题目与搜索将只显示已审核的匹配内容，随时可以切换或查看全部。'}</Dialog.Description>
       <label htmlFor="profile-role">{en ? 'Role type' : '岗位类型'}</label>
       <span className="select-control"><select id="profile-role" value={roleId} onChange={event => { setRole(event.target.value); setStage(''); }}>
         <option value="">{en ? 'Choose a role' : '选择岗位'}</option>
-        <optgroup label={en ? 'Technical roles' : '技术岗位'}>{technical.map(role => <option key={role.id} value={role.id}>{role.name}</option>)}</optgroup>
-        <optgroup label={en ? 'Parallel reference and general management' : '并行参考与通用管理'}>{reference.map(role => <option key={role.id} value={role.id}>{role.name}</option>)}</optgroup>
+        <optgroup label={en ? 'Engineering roles' : '工程师方向'}>{roles.map(role => <option key={role.id} value={role.id}>{role.name}</option>)}</optgroup>
       </select><Chevron /></span>
       <label htmlFor="profile-stage">{en ? 'Target stage' : '目标阶段'}</label>
       <span className="select-control"><select id="profile-stage" value={stageId} disabled={!selectedRole} onChange={event => setStage(event.target.value)}>

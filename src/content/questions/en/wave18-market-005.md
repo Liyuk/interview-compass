@@ -16,6 +16,12 @@ topics:
 roles:
   - marketing
   - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes:
   - team
   - multiple-teams

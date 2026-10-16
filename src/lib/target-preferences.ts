@@ -1,3 +1,4 @@
+import { isAudienceRole } from '../content/role-stages/registry';
 import { profileToken, type TargetProfile } from './question-applicability';
 export { matchesProfileTokens } from './question-applicability';
 
@@ -22,7 +23,7 @@ function isTarget(value: unknown): value is TargetProfile {
   if (typeof value !== 'object' || value === null) return false;
   const candidate = value as Record<string, unknown>;
   if (typeof candidate.roleId !== 'string' || typeof candidate.stageId !== 'string') return false;
-  return profileToken({ roleId: candidate.roleId, stageId: candidate.stageId }) !== undefined;
+  return isAudienceRole(candidate.roleId) && profileToken({ roleId: candidate.roleId, stageId: candidate.stageId }) !== undefined;
 }
 
 export function targetPreference(target: TargetProfile): BrowsePreference {

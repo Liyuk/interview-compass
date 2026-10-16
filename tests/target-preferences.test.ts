@@ -6,7 +6,7 @@ import {
 } from '../src/lib/target-preferences';
 
 const frontend = { roleId: 'frontend', stageId: 'senior-engineer' };
-const product = { roleId: 'product', stageId: 'product-independent' };
+const data = { roleId: 'data', stageId: 'data-independent' };
 
 describe('target browsing preferences', () => {
   it('accepts valid shared IDs and keeps the last target when switching to all questions', () => {
@@ -20,7 +20,7 @@ describe('target browsing preferences', () => {
 
   it('rejects corrupt, retired, future-version, and cross-role stored targets', () => {
     for (const raw of [null, '', '{', 'null', '[]', 'true', '{"version":2,"mode":"all"}',
-      '{"version":1,"mode":"target","target":{"roleId":"product","stageId":"senior-engineer"}}',
+      '{"version":1,"mode":"target","target":{"roleId":"data","stageId":"senior-engineer"}}',
       '{"version":1,"mode":"target","target":{"roleId":"constructor","stageId":"senior-engineer"}}',
       '{"version":1,"mode":"target","target":{"roleId":"frontend","stageId":"retired"}}']) {
       expect(parsePreference(raw)).toBeUndefined();
@@ -32,9 +32,9 @@ describe('target browsing preferences', () => {
   it('uses a versioned storage key and survives blocked storage', () => {
     const values = new Map<string, string>();
     const storage = { getItem: (key: string) => values.get(key) ?? null, setItem: (key: string, value: string) => { values.set(key, value); } };
-    expect(writePreference(storage, targetPreference(product))).toBe(true);
+    expect(writePreference(storage, targetPreference(data))).toBe(true);
     expect(values.has(preferenceStorageKey)).toBe(true);
-    expect(readPreference(storage)).toEqual(targetPreference(product));
+    expect(readPreference(storage)).toEqual(targetPreference(data));
     const blocked = { getItem: () => { throw new Error('blocked'); }, setItem: () => { throw new Error('blocked'); } };
     expect(readPreference(blocked)).toBeUndefined();
     expect(writePreference(blocked, allPreference())).toBe(false);
@@ -45,9 +45,9 @@ describe('target browsing preferences', () => {
   it('gives an explicit link target precedence without changing the stored preference', () => {
     const stored = targetPreference(frontend);
     const before = JSON.stringify(stored);
-    const context = resolvePreference(new URLSearchParams('profileRole=product&profileStage=product-independent&role=backend'), stored);
+    const context = resolvePreference(new URLSearchParams('profileRole=data&profileStage=data-independent&role=backend'), stored);
     expect(context.source).toBe('link');
-    expect(context.preference).toEqual(targetPreference(product));
+    expect(context.preference).toEqual(targetPreference(data));
     expect(JSON.stringify(stored)).toBe(before);
     expect(context.invalidLink).toBe(false);
   });
@@ -61,7 +61,7 @@ describe('target browsing preferences', () => {
   });
 
   it('exposes an invalid link and uses all mode instead of silently applying another target', () => {
-    for (const query of ['profileRole=product', 'profileStage=product-entry', 'profileRole=product&profileStage=senior-engineer',
+    for (const query of ['profileRole=data', 'profileStage=data-entry', 'profileRole=data&profileStage=senior-engineer',
       'profile=nope', 'profile=all&profileRole=frontend&profileStage=senior-engineer']) {
       const context = resolvePreference(new URLSearchParams(query), targetPreference(frontend));
       expect(context.preference.mode).toBe('all');
@@ -73,7 +73,7 @@ describe('target browsing preferences', () => {
 
   it('keeps question-stage comparisons independent from the site browsing target', () => {
     const stored = targetPreference(frontend);
-    const context = resolvePreference(new URLSearchParams('targetRole=product&targetStage=product-independent'), stored);
+    const context = resolvePreference(new URLSearchParams('targetRole=data&targetStage=data-independent'), stored);
     expect(context.preference).toEqual(stored);
     expect(context.source).toBe('local');
     expect(context.hasLink).toBe(false);
@@ -106,11 +106,11 @@ describe('target browsing preferences', () => {
   });
 
   it('matches complete profile tokens and keeps all-mode archival entries readable', () => {
-    const tokens = ['frontend:senior-engineer', 'product:product-independent'];
+    const tokens = ['frontend:senior-engineer', 'data:data-independent'];
     expect(matchesProfileTokens(tokens, frontend)).toBe(true);
-    expect(matchesProfileTokens(tokens.join(' '), product)).toBe(true);
+    expect(matchesProfileTokens(tokens.join(' '), data)).toBe(true);
     expect(matchesProfileTokens(tokens, { roleId: 'frontend', stageId: 'junior-engineer' })).toBe(false);
-    expect(matchesProfileTokens(tokens, { roleId: 'product', stageId: 'senior-engineer' })).toBe(false);
+    expect(matchesProfileTokens(tokens, { roleId: 'data', stageId: 'senior-engineer' })).toBe(false);
     expect(matchesProfileTokens(['frontend:senior-engineer-extra'], frontend)).toBe(false);
     expect(matchesProfileTokens([], frontend)).toBe(false);
     expect(matchesProfileTokens([], undefined)).toBe(true);

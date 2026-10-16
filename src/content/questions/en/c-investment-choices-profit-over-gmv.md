@@ -18,6 +18,12 @@ roles:
   - product
   - manager
   - marketing
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [organization]
 careerTracks:
   - individual-contributor

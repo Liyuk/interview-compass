@@ -15,6 +15,12 @@ topics: [operations, prioritization]
 roles:
   - operations
   - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team]
 careerTracks:
   - individual-contributor
