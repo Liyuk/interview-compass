@@ -1,0 +1,7 @@
+---
+import RoleStageModelView from '../../../views/RoleStageModelView.astro';
+import { facetDefinitions } from '../../../lib/taxonomy';
+export function getStaticPaths() { return facetDefinitions.roles.map(role => ({ params: { role: role.id } })); }
+const roleId = Astro.params.role!;
+---
+<RoleStageModelView roleId={roleId} locale="zh-CN" />

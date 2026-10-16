@@ -24,6 +24,14 @@ const question: QuestionRecord = {
 };
 
 describe('question analysis prompt', () => {
+  it('carries a chosen responsibility stage without replacing question-specific scoring evidence', () => {
+    const prompt = buildQuestionAnalysisPrompt({ locale: 'zh-CN', question, evaluation: questionEvaluation(question), target: { roleId: 'ai-engineer', stageId: 'senior-engineer' } });
+    expect(prompt).toContain('目标岗位与责任阶段');
+    expect(prompt).toContain('高级工程师');
+    expect(prompt).toContain('初级岗位也可以优秀');
+    expect(prompt).toContain('幂等键');
+    expect(prompt).toContain('不得编造亲历');
+  });
   it('includes the bilingual question framework without an answer, self-check, or local context', () => {
     const prompt = buildQuestionAnalysisPrompt({ locale: 'zh-CN', question, evaluation: questionEvaluation(question) });
     expect(prompt).toContain(question.question);

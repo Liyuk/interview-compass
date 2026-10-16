@@ -1,0 +1,124 @@
+---
+import type { QuestionRecord } from '../lib/content-model';
+import Icon from './Icon.astro';
+import { facetLabel, type Locale } from '../lib/taxonomy';
+import { pathFor } from '../lib/routes';
+interface Props { question: QuestionRecord; locale: Locale }
+const { question, locale } = Astro.props;
+const en = locale === 'en';
+const roles = [...new Set(question.roles)];
+const modelPaths = Object.fromEntries(roles.map(role => [role, pathFor({ type: 'role-stage-model', role }, locale, import.meta.env.BASE_URL)]));
+const data = { questionId: question.questionId, roles, primaryCapability: question.primaryCapability, signals: question.signals, formats: question.formats, modelPaths };
+---
+<section class="question-stage-guidance detail-block" aria-labelledby="question-stage-heading" data-question-stage data-pagefind-ignore>
+  <h2 id="question-stage-heading">{en ? 'Same question, different stage expectations' : '同一道题，不同阶段看什么？'}</h2>
+  <p>{en ? 'The question stays the same. Choose a target to compare responsibility, reasoning, and evidence. This changes the reading framework, not the question’s difficulty or your score.' : '题目不变，选择目标后比较责任、推理与证据要求。这会调整阅读框架，不给题目定难度，也不替你打分。'}</p>
+  <div class="stage-controls">
+    <label for="question-target-role">{en ? 'Target role' : '目标岗位'}<span class="select-control"><select id="question-target-role" data-stage-role>{roles.map(role => <option value={role}>{facetLabel('roles', role, locale)}</option>)}</select><Icon name="chevron-down" size={16} /></span></label>
+    <label for="question-target-stage">{en ? 'Target responsibility' : '目标阶段'}<span class="select-control"><select id="question-target-stage" data-stage-select><option value="">{en ? 'Choose a stage' : '选择一个阶段'}</option></select><Icon name="chevron-down" size={16} /></span></label>
+  </div>
+  <p class="model-note">{en ? 'These are rule-based reading prompts, not separately reviewed stage-specific answers or a verdict that this question applies to every stage. Use your actual role and authority.' : '以下是规则生成的阶段阅读提示，不是逐题复核的分阶段答案，也不表示这道题适用于所有阶段。请结合实际岗位和权限。'}</p>
+  <p><a data-stage-model href={modelPaths[roles[0]]}>{en ? 'View the full role and stage model →' : '查看本岗位的完整阶段模型 →'}</a></p>
+  <div data-stage-detail hidden>
+    <p class="stage-status" role="status" aria-live="polite" data-stage-status></p>
+    <dl class="stage-evidence-grid">
+      <div><dt>{en ? 'Responsibility' : '责任范围'}</dt><dd data-stage-field="scope"></dd></div>
+      <div><dt>{en ? 'Comparison and judgment' : '比较与判断'}</dt><dd data-stage-field="process"></dd></div>
+      <div><dt>{en ? 'Results and verification' : '结果与验证'}</dt><dd data-stage-field="result"></dd></div>
+      <div><dt>{en ? 'Authority and boundaries' : '权限与边界'}</dt><dd data-stage-field="boundary"></dd></div>
+    </dl>
+    <p class="intent-callout" data-stage-field="answerMode"></p>
+    <p data-stage-field="attribution"></p>
+    <details><summary>{en ? 'Connect this question’s signals to stage evidence' : '结合本题信号，检查阶段证据'}</summary><ul data-stage-signals></ul><ul data-stage-evidence></ul></details>
+    <details><summary>{en ? 'How to calibrate the 1–4 anchors' : '如何按目标阶段校准 1–4 分'}</summary><p data-stage-field="scoreNote"></p><ol data-stage-scores></ol></details>
+  </div>
+  <details class="stage-compare"><summary>{en ? 'Compare expectations across stages' : '展开对比各阶段要求'}</summary><p>{en ? 'This table compares responsibility lenses, not mandatory question coverage or a ranking of people.' : '这里对比责任视角，不表示各阶段必考范围，也不是对人的排名。'}</p><div class="stage-table-scroll"><table><thead><tr><th>{en ? 'Stage' : '阶段'}</th><th>{en ? 'Responsibility' : '责任要求'}</th><th>{en ? 'Result evidence' : '结果证据'}</th></tr></thead><tbody data-stage-compare></tbody></table></div></details>
+  <noscript><p>{en ? 'Enable JavaScript for the stage comparison. Role models and question evidence remain available.' : '阶段对比需要 JavaScript；岗位模型及本题证据仍可直接阅读。'}</p></noscript>
+  <script type="application/json" data-stage-question set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
+</section>
+<style>
+  .stage-controls { display:flex; flex-wrap:wrap; gap:1rem; margin-block:1rem; }
+  .stage-controls label { display:grid; gap:.35rem; min-width:12rem; max-width:100%; flex:1; }
+  .stage-controls select { width:100%; min-height:44px; }
+  .stage-evidence-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem 1.5rem; }
+  .stage-evidence-grid dt { font-weight:700; margin-bottom:.35rem; }
+  .stage-evidence-grid dd { margin:0; }
+  .stage-status { font-weight:700; }
+  .stage-compare { margin-block:1rem; }
+  summary { cursor:pointer; padding-block:.5rem; }
+  .stage-table-scroll { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; }
+  th, td { text-align:start; vertical-align:top; padding:.75rem; border-bottom:1px solid var(--line,#d8d5d0); }
+  th:first-child, td:first-child { min-width:8rem; }
+  @media(max-width:600px) { .stage-evidence-grid { grid-template-columns:1fr; } }
+</style>
+<script>
+  import { getRoleStages } from '../lib/role-stage-model';
+  import { questionStageGuidance, stageGuidancePrompt, type StageQuestion } from '../lib/question-stage-guidance';
+  import type { Locale } from '../lib/taxonomy';
+  const root = document.querySelector<HTMLElement>('[data-question-stage]');
+  if (root) {
+    const locale: Locale = document.documentElement.lang === 'en' ? 'en' : 'zh-CN';
+    const en = locale === 'en';
+    const data = JSON.parse(root.querySelector('[data-stage-question]')!.textContent!) as StageQuestion & { modelPaths: Record<string, string> };
+    const role = root.querySelector<HTMLSelectElement>('[data-stage-role]')!;
+    const stage = root.querySelector<HTMLSelectElement>('[data-stage-select]')!;
+    const detail = root.querySelector<HTMLElement>('[data-stage-detail]')!;
+    function list(selector: string, items: string[]) {
+      root!.querySelector(selector)?.replaceChildren(...items.map(item => { const li = document.createElement('li'); li.textContent = item; return li; }));
+    }
+    function chooseRole(stageId = '') {
+      const profiles = getRoleStages(role.value, locale);
+      stage.replaceChildren(new Option(en ? 'Choose a stage' : '选择一个阶段', ''), ...profiles.map(item => new Option(item.name, item.id)));
+      if (profiles.some(item => item.id === stageId)) stage.value = stageId;
+      root!.querySelector('[data-stage-compare]')?.replaceChildren(...profiles.map(item => {
+        const g = questionStageGuidance(data, role.value, item.id, locale);
+        const row = document.createElement('tr');
+        for (const text of [g.stageName, g.scope, g.result]) { const cell = document.createElement('td'); cell.textContent = text; row.append(cell); }
+        return row;
+      }));
+    }
+    function update(writeUrl: boolean) {
+      detail.hidden = !stage.value;
+      root!.querySelector<HTMLAnchorElement>('[data-stage-model]')!.href = `${data.modelPaths[role.value]}${stage.value ? `#${stage.value}` : ''}`;
+      let prompt = '';
+      if (stage.value) {
+        const g = questionStageGuidance(data, role.value, stage.value, locale);
+        root!.querySelector('[data-stage-status]')!.textContent = `${g.roleName} · ${g.stageName}`;
+        for (const field of ['scope', 'process', 'result', 'boundary', 'answerMode', 'attribution', 'scoreNote'] as const) root!.querySelector(`[data-stage-field="${field}"]`)!.textContent = g[field];
+        list('[data-stage-signals]', g.signals);
+        list('[data-stage-evidence]', [...g.evidence.map(item => `${item.text} ${en ? 'Evidence: ' : '观察证据：'}${item.evidence}`), ...g.professionalEvidence]);
+        list('[data-stage-scores]', g.scoreAnchors.map(item => item.text));
+        prompt = stageGuidancePrompt(g, locale);
+      }
+      if (writeUrl) {
+        const url = new URL(window.location.href);
+        if (stage.value) { url.searchParams.set('targetRole', role.value); url.searchParams.set('targetStage', stage.value); }
+        else { url.searchParams.delete('targetRole'); url.searchParams.delete('targetStage'); }
+        window.history.replaceState(null, '', url);
+        const language = document.querySelector<HTMLAnchorElement>('.language-switch a');
+        if (language) {
+          const target = new URL(language.href);
+          for (const key of ['targetRole', 'targetStage']) { const value = url.searchParams.get(key); if (value) target.searchParams.set(key, value); else target.searchParams.delete(key); }
+          language.href = target.href;
+        }
+      }
+      document.dispatchEvent(new CustomEvent('question-stage-change', { detail: { prompt } }));
+      // Also keep the latest selection available if the prompt controller initializes later.
+      root!.dataset.stagePrompt = prompt;
+    }
+    const params = new URL(window.location.href).searchParams;
+    const initialRole = params.get('targetRole');
+    if (initialRole && data.roles.includes(initialRole)) role.value = initialRole;
+    chooseRole(params.get('targetStage') ?? '');
+    update(false);
+    role.addEventListener('change', () => { chooseRole(); update(true); });
+    stage.addEventListener('change', () => update(true));
+    window.addEventListener('popstate', () => {
+      const params = new URL(window.location.href).searchParams;
+      const nextRole = params.get('targetRole');
+      role.value = nextRole && data.roles.includes(nextRole) ? nextRole : data.roles[0];
+      chooseRole(params.get('targetStage') ?? ''); update(false);
+    });
+  }
+</script>

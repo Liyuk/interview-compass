@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Icon from '../components/Icon.astro';
+import QuestionStageGuidance from '../components/QuestionStageGuidance.astro';
 import { capabilityLabel, facetLabel, facetMeta, pick, splitCapability, type FacetKind, type Locale } from '../lib/taxonomy';
 import { facetRoute, pathFor } from '../lib/routes';
 import { facetValuesOf } from '../lib/question-catalog';
@@ -42,6 +43,7 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
     }))}
     <a href={pathFor({ type: 'leaf', domain: domain!.id, leaf: leaf!.id }, locale, base)}>{en ? 'More in this capability' : '同类能力问题'}</a>
   </nav>
+  <QuestionStageGuidance question={record} locale={locale} />
   <section class="question-analysis-prompt" aria-label={en ? 'Optional external AI analysis' : '可选的外部 AI 分析'}>
     <p>{en ? 'Want deeper feedback? Generate a prompt with this question’s evidence framework, then choose an AI tool yourself.' : '需要进一步分析时，可以生成包含本题证据框架的 Prompt，再自行选择 AI 工具使用。本站不会发送你的回答。'}</p>
     <button class="button-link" type="button" data-generate-analysis>{en ? 'Generate AI analysis prompt' : '生成 AI 分析 Prompt'} <Icon name="arrow-up-right" size={16} /></button>
@@ -201,8 +203,16 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
   const copy = document.querySelector<HTMLButtonElement>('[data-copy-analysis]');
   const status = document.querySelector<HTMLElement>('[data-copy-status]');
   const en = document.documentElement.lang === 'en';
+  const basePrompt = textarea?.value ?? '';
+  function syncStagePrompt() {
+    const addition = document.querySelector<HTMLElement>('[data-question-stage]')?.dataset.stagePrompt;
+    if (textarea) textarea.value = addition ? `${basePrompt}\n\n${addition}` : basePrompt;
+  }
+  document.addEventListener('question-stage-change', syncStagePrompt);
+  syncStagePrompt();
 
   generate?.addEventListener('click', () => {
+    syncStagePrompt();
     if (panel) panel.hidden = false;
     textarea?.focus();
   });

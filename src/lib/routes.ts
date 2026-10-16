@@ -28,6 +28,7 @@ export type RouteRef =
   | { type: 'path'; id: string }
   | { type: 'question'; questionId: string; capability: string; title: string }
   | { type: 'capability-model' }
+  | { type: 'role-stage-model'; role: string }
   | { type: 'capability-model-stage'; stage: StageId }
   | { type: 'capability-model-dimension'; dimension: CapabilityDimensionId }
   | { type: 'capability-model-mapping' }
@@ -67,6 +68,7 @@ export function pathFor(ref: RouteRef, locale: Locale, base = ''): string {
       case 'framework': return `${root}/framework/`;
       case 'capabilities': return `${root}/capabilities/`;
       case 'capability-model': return `${root}/capability-model/`;
+      case 'role-stage-model': return `${root}/capability-model/roles/${ref.role}/`;
       case 'capability-model-stage': return `${root}/capability-model/stages/${ref.stage}/`;
       case 'capability-model-dimension': return `${root}/capability-model/dimensions/${ref.dimension}/`;
       case 'capability-model-mapping': return `${root}/capability-model/mapping/`;
@@ -114,6 +116,7 @@ export function titleFor(ref: RouteRef, locale: Locale): string {
     case 'framework': return pick(labels.framework, locale);
     case 'capabilities': return pick(labels.capabilities, locale);
     case 'capability-model': return pick(labels.capabilityModel, locale);
+    case 'role-stage-model': return `${facetLabel('roles', ref.role, locale)} · ${pick(labels.capabilityModel, locale)}`;
     case 'capability-model-stage': return getStageProfile(ref.stage, locale).name;
     case 'capability-model-dimension': return getDimensionProgression(ref.dimension, locale).name;
     case 'capability-model-mapping': return locale === 'en' ? 'Cross-company level mapping' : '跨公司职级映射';
@@ -139,7 +142,7 @@ export function parentOf(ref: RouteRef): RouteRef | undefined {
     case 'collections': return { type: 'questions' };
     case 'collection': return { type: 'collections' };
     case 'capability-model': return { type: 'home' };
-    case 'capability-model-stage': case 'capability-model-dimension': case 'capability-model-mapping': return { type: 'capability-model' };
+    case 'role-stage-model': case 'capability-model-stage': case 'capability-model-dimension': case 'capability-model-mapping': return { type: 'capability-model' };
     case 'domain': return { type: 'capabilities' };
     case 'leaf': return { type: 'domain', domain: ref.domain };
     case 'role': return { type: 'roles' };
@@ -173,7 +176,7 @@ export function activeNavFor(ref: RouteRef): NavKey {
     case 'framework': return 'framework';
     case 'guide': return 'guide';
     case 'capabilities': case 'domain': case 'leaf': return 'capabilities';
-    case 'capability-model': case 'capability-model-stage': case 'capability-model-dimension': case 'capability-model-mapping': return 'capability-model';
+    case 'role-stage-model': case 'capability-model': case 'capability-model-stage': case 'capability-model-dimension': case 'capability-model-mapping': return 'capability-model';
     case 'roles': case 'role': return 'roles';
     case 'scenarios': case 'scenario': return 'scenarios';
     case 'topics': case 'topic': return 'topics';
