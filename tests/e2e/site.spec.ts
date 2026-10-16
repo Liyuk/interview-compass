@@ -265,9 +265,9 @@ test('question library filters combine, update the shareable URL, and clear', as
   await expect(page.locator('#result-count')).toContainText(String(filtered));
   await page.reload();
   await expect(page.locator('select[name="role"]')).toHaveValue('frontend');
-  expect(await page.locator('#question-list > li:visible').count()).toBe(Math.min(20, filtered));
+  expect(await page.locator('#question-list > li:visible').count()).toBe(Math.min(50, filtered));
   await page.getByRole('button', { name: '清除筛选' }).click();
-  expect(await page.locator('#question-list > li:visible').count()).toBe(Math.min(20, total));
+  expect(await page.locator('#question-list > li:visible').count()).toBe(Math.min(50, total));
 });
 
 test('question library keeps common filters visible and reveals advanced filters on demand', async ({ page }) => {

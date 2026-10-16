@@ -86,10 +86,14 @@ test('sharing includes the effective target and page filters while adopting a li
 test('capability counts agree with the target library and previews filter before their limit', async ({ page }) => {
   await page.goto('questions/?profileRole=frontend&profileStage=junior-engineer');
   await expect(page.locator('#question-list > li:visible').first()).toBeVisible();
-  const expected = await page.locator('#question-list > li').evaluateAll(rows => {
+  const expected = await page.evaluate(async () => {
+    const payload = await (await fetch('/interview-compass/data/questions/zh-CN.json')).json() as { questions: { primaryCapability: string; profiles: string[] }[] };
     const counts: Record<string, number> = {};
-    for (const row of rows) if ((row.getAttribute('data-question-profiles') ?? '').split(' ').includes('frontend:junior-engineer')) {
-      const domain = row.getAttribute('data-capability')!.split('.')[0]; counts[domain] = (counts[domain] ?? 0) + 1;
+    for (const row of payload.questions) {
+      if (row.profiles.includes('frontend:junior-engineer')) {
+        const domain = row.primaryCapability.split('.')[0];
+        counts[domain] = (counts[domain] ?? 0) + 1;
+      }
     }
     return counts;
   });

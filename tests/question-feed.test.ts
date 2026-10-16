@@ -22,7 +22,9 @@ describe('buildQuestionFeed', () => {
 
     expect(index).toHaveLength(2);
     expect(index.map((item) => item.questionId)).toEqual(['measure-outcome', 'second-question']);
-    expect(index[0]).toMatchObject({ locale: 'zh-CN', question: '你会如何衡量结果？' });
+    expect(index[0]).toMatchObject({ question: '你会如何衡量结果？', primaryCapability: 'value-judgment.business-outcomes', profiles: [] });
+    expect(index[0]).not.toHaveProperty('title');
+    expect(index[0]).not.toHaveProperty('locale');
     expect(index[0]).not.toHaveProperty('evaluation');
   });
 

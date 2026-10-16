@@ -7,18 +7,21 @@ import { domains, facetLabel, pick, type Locale } from '../lib/taxonomy';
 import { getQuestions } from '../lib/question-catalog';
 import { loadQuestions } from '../lib/site-data';
 import { pathFor } from '../lib/routes';
+import { CATALOG_PAGE_SIZE, getPageWindow } from '../lib/search-pagination';
 
 type Kind = 'roles' | 'scenarios' | 'topics';
-interface Props { locale: Locale; kind: Kind; id: string }
-const { locale, kind, id } = Astro.props;
+interface Props { locale: Locale; kind: Kind; id: string; page?: number }
+const { locale, kind, id, page: requestedPage = 1 } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const filterKey = { roles: 'role', scenarios: 'scenario', topics: 'topic' }[kind] as 'role' | 'scenario' | 'topic';
 const questions = getQuestions(await loadQuestions(locale), { locale, [filterKey]: id });
+const pageWindow = getPageWindow(questions.length, requestedPage, CATALOG_PAGE_SIZE);
+const pageQuestions = questions.slice(pageWindow.start, pageWindow.end);
 const route = ({ roles: { type: 'role', id }, scenarios: { type: 'scenario', id }, topics: { type: 'topic', id } } as const)[kind];
 const label = facetLabel(kind, id, locale);
 const groups = domains
-  .map((domain) => ({ domain, items: questions.filter((q) => q.primaryCapability.startsWith(`${domain.id}.`)) }))
+  .map((domain) => ({ domain, items: pageQuestions.filter((q) => q.primaryCapability.startsWith(`${domain.id}.`)) }))
   .filter((group) => group.items.length > 0);
 const eyebrow = { roles: en ? 'ROLE' : '岗位', scenarios: en ? 'USE CASE' : '使用场景', topics: en ? 'TOPIC' : '主题' }[kind];
 const promotionLanes = [
@@ -39,12 +42,14 @@ const promotionLanes = [
   },
 ];
 const promotionQuestionPath = `${pathFor({ type: 'questions' }, locale, base)}?scenario=promotion&track=`;
+const listPath = pathFor(route, locale, base);
+const pageHref = (pageNumber: number) => pageNumber <= 1 ? listPath : `${listPath}page/${pageNumber}/`;
 ---
 <SiteLayout locale={locale} route={route} description={en ? `Questions for ${label}, grouped by the capability each one examines.` : `${label}相关的问题，按主要能力分组。`}>
   <p class="eyebrow">{eyebrow}</p>
   <h1 class="page-title">{label}</h1>
   {kind === 'roles' && <p class="model-note"><a href={pathFor({ type: 'role-stage-model', role: id }, locale, base)}>{en ? 'Compare this role’s stage expectations →' : '查看本岗位各阶段的责任与证据要求 →'}</a></p>}
-  {kind === 'scenarios' && id === 'promotion' && <section class="promotion-guide" aria-labelledby="promotion-guide-heading">
+  {kind === 'scenarios' && id === 'promotion' && pageWindow.page === 1 && <section class="promotion-guide" aria-labelledby="promotion-guide-heading">
     <div class="promotion-guide-intro">
       <div><p class="eyebrow">{en ? 'INTERNAL GROWTH' : '内部发展'}</p><h2 id="promotion-guide-heading">{en ? 'Prepare for promotion as a body of evidence' : '把晋升准备成一组持续证据'}</h2></div>
       <p>{en ? 'A promotion case asks whether you have sustained the next scope of responsibility and produced verifiable results over time. It is different from a one-off external interview.' : '晋升评审要判断你是否已持续承担下一范围的责任，并在一段时间内取得可核验的结果；它不同于一次外部求职面试。'}</p>
@@ -68,10 +73,16 @@ const promotionQuestionPath = `${pathFor({ type: 'questions' }, locale, base)}?s
   </section>}
   <p class="intro">{en ? 'These are the same questions found in the library, grouped here by the capability each one mainly examines.' : '这些题与问题库里的是同一批，这里按各自主要考察的能力分组。'}</p>
   <p class="result-count"><TargetCount questions={questions} locale={locale} unit /></p>
+  {pageWindow.pageCount > 1 && <p class="band-text">{en ? `Questions ${pageWindow.start + 1}–${pageWindow.end} of ${questions.length} on this page.` : `本页为第 ${pageWindow.start + 1}–${pageWindow.end} 题，共 ${questions.length} 题。`}</p>}
   {groups.map(({ domain, items }) => (
     <section class="leaf-section">
       <h2>{domain.letter} · {pick(domain.name, locale)}<TargetCount class="count" questions={items} /></h2>
       <QuestionList questions={items} locale={locale} />
     </section>
   ))}
+  {pageWindow.pageCount > 1 && <nav class="library-pagination" aria-label={en ? 'Question pages' : '问题分页'}>
+    {pageWindow.page > 1 ? <a href={pageHref(pageWindow.page - 1)} rel="prev">{en ? 'Previous page' : '上一页'}</a> : <span></span>}
+    <span>{en ? `Page ${pageWindow.page} of ${pageWindow.pageCount}` : `第 ${pageWindow.page} / ${pageWindow.pageCount} 页`}</span>
+    {pageWindow.page < pageWindow.pageCount ? <a href={pageHref(pageWindow.page + 1)} rel="next">{en ? 'Next page' : '下一页'}</a> : <span></span>}
+  </nav>}
 </SiteLayout>
