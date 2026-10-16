@@ -10,8 +10,23 @@ export interface ApplicabilityEntry {
   profiles: ApplicabilityProfile[];
 }
 
+export function profileToken(target: TargetProfile): string | undefined {
+  try {
+    return roleStageIds(target.roleId).includes(target.stageId) ? `${target.roleId}:${target.stageId}` : undefined;
+  } catch { return undefined; }
+}
+
+// Build-time combinations and browser-side tokens share this exact matcher.
+export function matchesProfileTokens(tokens: readonly string[] | string, target?: TargetProfile): boolean {
+  if (!target) return true;
+  const token = profileToken(target);
+  if (!token) return false;
+  const values = typeof tokens === 'string' ? tokens.split(/\s+/) : tokens;
+  return values.includes(token);
+}
+
 export function matchesTarget(entry: ApplicabilityEntry | undefined, target: TargetProfile): boolean {
-  return entry?.reviewStatus === 'reviewed' && entry.profiles.some(profile => profile.roleId === target.roleId && profile.stageIds.includes(target.stageId));
+  return entry?.reviewStatus === 'reviewed' && matchesProfileTokens(applicabilityTokens(entry), target);
 }
 
 export function applicabilityTokens(entry: ApplicabilityEntry): string[] {
