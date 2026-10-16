@@ -3,12 +3,19 @@ import '../styles/global.css';
 import Icon from './Icon.astro';
 import { navLabel, pathFor, switchLocaleRoute, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
+import { facetDefinitions, pick } from '../lib/taxonomy';
+import { getRoleStages } from '../lib/role-stage-model';
+import { loadQuestions } from '../lib/site-data';
+import TargetSelector from './TargetSelector';
+import TargetCount from './TargetCount.astro';
 
 interface Props { locale: Locale; active?: string; route?: RouteRef }
 const { locale, active = '', route = { type: 'home' } } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const other: Locale = en ? 'zh-CN' : 'en';
+const targetRoles = facetDefinitions.roles.map(role => ({ id: role.id, name: pick(role.name, locale), path: pathFor({ type: 'role-stage-model', role: role.id }, locale, base), stages: getRoleStages(role.id, locale).map(({ id, name, summary, tier }) => ({ id, name, summary, tier })) }));
+const questions = await loadQuestions(locale);
 const nav = [
   { key: 'scenarios', ref: { type: 'scenarios' } as RouteRef, label: navLabel('scenarios', locale) },
   { key: 'questions', ref: { type: 'questions' } as RouteRef, label: navLabel('questions', locale) },
@@ -18,6 +25,12 @@ const nav = [
   { key: 'capability-model', ref: { type: 'capability-model' } as RouteRef, label: navLabel('capabilityModel', locale) },
 ];
 ---
+<script is:inline>
+  document.documentElement.dataset.targetPending = 'true';
+  document.documentElement.dataset.targetEnabled = 'true';
+  setTimeout(() => { delete document.documentElement.dataset.targetPending; document.querySelectorAll('[data-library-pending]').forEach(element => element.removeAttribute('data-library-pending')); }, 2500);
+</script>
+<script type="application/json" data-target-options set:html={JSON.stringify(targetRoles).replace(/</g, '\\u003c')} />
 
 <header class="site-header">
   <a class="wordmark" href={pathFor({ type: 'home' }, locale, base)}>
@@ -28,6 +41,7 @@ const nav = [
   <nav id="primary-navigation" class="primary-nav" aria-label={en ? 'Main navigation' : '主导航'}>
     {nav.map((item) => <a href={pathFor(item.ref, locale, base)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
   </nav>
+  <TargetSelector roles={targetRoles} locale={locale} client:load />
   <div class="language-switch" role="group" aria-label={en ? 'Language' : '语言'}>
     <span aria-current="true">{en ? 'EN' : '中文'}</span><span aria-hidden="true"> / </span>
     <a href={switchLocaleRoute(route, other, base)} lang={other} hreflang={other}>{en ? '中文' : 'EN'}</a>
@@ -42,8 +56,16 @@ const nav = [
   </form>
   <div class="search-results" aria-live="polite" hidden></div>
 </div></div>
+<aside class="target-summary" data-target-summary hidden data-pagefind-ignore>
+  <p><span data-target-description></span> · <TargetCount questions={questions} locale={locale} unit /></p>
+  <p data-target-storage-warning hidden>{en ? 'Could not save this preference. Your choice applies only to this page.' : '未能保存此选择，仅在当前页有效。'}</p>
+  <div><button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button><button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button><button type="button" data-adopt-target hidden>{en ? 'Save as my default' : '设为我的默认'}</button><button type="button" data-remove-link-target hidden>{en ? 'Remove link target' : '移除链接目标'}</button><a data-target-model hidden>{en ? 'View stage expectations' : '查看阶段要求'}</a></div>
+</aside>
 
 <script>
+  import '../lib/target-dom';
+  import { pagefindFilters, withLinkPreference } from '../lib/target-preferences';
+  import { getTargetContext, subscribeTarget } from '../lib/target-state';
   import { safeSearchResultHref } from '../lib/search-records';
 
   document.body.dataset.navigationReady = 'true';
@@ -74,7 +96,7 @@ const nav = [
   const errorText = lang === 'en' ? 'Search is unavailable. Try again.' : '搜索暂时不可用，请重试。';
   const languageLink = document.querySelector<HTMLAnchorElement>('.language-switch a');
   if (languageLink) {
-    const transferableParams = ['q', 'role', 'scope', 'track', 'scenario', 'topic', 'format', 'capability', 'page', 'targetRole', 'targetStage'];
+    const transferableParams = ['q', 'role', 'scope', 'track', 'scenario', 'topic', 'format', 'capability', 'page', 'targetRole', 'targetStage', 'profile', 'profileRole', 'profileStage'];
     const current = new URL(window.location.href);
     const target = new URL(languageLink.href, current);
     for (const key of transferableParams) {
@@ -86,7 +108,7 @@ const nav = [
   }
   type SearchData = { url: string; meta?: { title?: string }; excerpt?: string };
   type SearchResult = { url: string; data: () => Promise<SearchData> };
-  type PagefindIndex = { search: (query: string, options: { filters: { locale: string } }) => Promise<{ results: SearchResult[] }> };
+  type PagefindIndex = { search: (query: string, options: { filters: Record<string, string> }) => Promise<{ results: SearchResult[] }> };
   let pagefind: PagefindIndex | undefined;
   let timer: number | undefined;
   let activeSearch = 0;
@@ -110,7 +132,7 @@ const nav = [
     }
     try {
       pagefind ??= await import(/* @vite-ignore */ `${base}/pagefind/pagefind.js`) as PagefindIndex;
-      const response = await pagefind.search(normalizedQuery, { filters: { locale: lang } });
+      const response = await pagefind.search(normalizedQuery, { filters: pagefindFilters(lang, getTargetContext()) });
       if (request !== activeSearch) return;
       const rankedResults = response.results.slice(0, 8);
       const items = await Promise.all(rankedResults.map((item) => item.data()));
@@ -120,7 +142,9 @@ const nav = [
         if (!href) return [];
         const link = document.createElement('a');
         link.className = 'search-result';
-        link.href = href;
+        const linkUrl = new URL(href, location.origin);
+        if (getTargetContext().hasLink) linkUrl.search = withLinkPreference(linkUrl.searchParams, getTargetContext().preference).toString();
+        link.href = `${linkUrl.pathname}${linkUrl.search}${linkUrl.hash}`;
         const title = document.createElement('strong');
         title.textContent = item.meta?.title || item.url;
         const excerpt = document.createElement('span');
@@ -131,7 +155,9 @@ const nav = [
       if (links.length) {
         const allLink = document.createElement('a');
         allLink.className = 'search-all';
-        allLink.href = `${form?.action ?? `${base}/search/`}?q=${encodeURIComponent(normalizedQuery)}`;
+        const allUrl = new URL(form?.action ?? `${base}/search/`, location.origin); allUrl.searchParams.set('q', normalizedQuery);
+        if (getTargetContext().hasLink) allUrl.search = withLinkPreference(allUrl.searchParams, getTargetContext().preference).toString();
+        allLink.href = allUrl.href;
         allLink.textContent = lang === 'en' ? 'View all matches' : '查看全部匹配';
         results.replaceChildren(...links, allLink);
         results.hidden = false;
@@ -141,9 +167,16 @@ const nav = [
     }
   }
 
+  form?.addEventListener('submit', () => {
+    form.querySelectorAll('[data-profile-form-value]').forEach(item => item.remove());
+    if (!getTargetContext().hasLink) return;
+    const params = withLinkPreference(new URLSearchParams(), getTargetContext().preference);
+    for (const [name, value] of params) { const hidden = document.createElement('input'); hidden.type = 'hidden'; hidden.name = name; hidden.value = value; hidden.dataset.profileFormValue = ''; form.append(hidden); }
+  });
   const initialQuery = new URLSearchParams(location.search).get('q');
   const isSearchPage = document.body.dataset.routeType === 'search' || location.pathname.startsWith(`${base}/search/`);
   if (input && initialQuery) { input.value = initialQuery; if (!isSearchPage) void search(initialQuery); }
+  subscribeTarget((_context, reset) => { if (reset) { activeSearch++; if (results) { results.replaceChildren(); results.hidden = true; } if (input?.value.trim()) void search(input.value); } });
   input?.addEventListener('input', () => {
     window.clearTimeout(timer);
     if (!input.value.trim()) { void search(''); return; }

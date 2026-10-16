@@ -61,11 +61,11 @@ Files: `src/content/question-applicability.json`, `src/lib/question-applicabilit
 
 Files: shared preference/filter modules, SiteMasthead, SiteLayout, question-list views, search views, Pagefind metadata, related tests.
 
-- [ ] RED：严格组合、局部筛选交集、URL 优先、存储异常、全部模式、分页。
-- [ ] GREEN：统一匹配函数、版本化 localStorage、瞬时与完整搜索 token；列表与计数一致。
-- [ ] 复用 Radix Dialog 实现首次选择、右上角目标、切换与全部浏览；中英文、键盘焦点及移动端。
-- [ ] 详情直接访问、使用说明正文、模型比较保持可读；检查所有页面集合。
-- [ ] 完整 CI、覆盖审计、浏览器验收与自审；提交交付，不自动合并或发布。
+- [x] RED：严格组合、局部筛选交集、URL 优先、存储异常、全部模式、分页。
+- [x] GREEN：统一匹配函数、版本化 localStorage、瞬时与完整搜索 token；列表与计数一致。
+- [x] 复用 Radix Dialog 实现首次选择、右上角目标、切换与全部浏览；中英文、键盘焦点及移动端。
+- [x] 详情直接访问、使用说明正文、模型比较保持可读；检查所有页面集合。
+- [x] 完整 CI、覆盖审计、浏览器验收与自审；提交交付，不自动合并或发布。
 
 ## Execution ledger
 
@@ -127,3 +127,6 @@ Files: shared preference/filter modules, SiteMasthead, SiteLayout, question-list
 
 - Task 4 基础模块：新增版本化偏好、存储失败回退、全部模式记忆、URL优先与无效链接提示状态；Pagefind过滤与DOM token使用同一组合匹配函数。11项基础测试从缺少实现到通过；全量95单测、145文件类型零错误零警告、内容与覆盖门槛通过。当前模块尚未接入页面，未以此宣称首次弹窗或过滤可用。
 - Ruling：全站分享目标使用 profileRole/profileStage，明确全量链接使用 profile=all；既有 targetRole/targetStage 继续仅作为单题阶段比较。理由是读者比较另一阶段不应悄悄改变全站目标；代价是两类URL参数需分别保留、说明和测试。普通链接不自动携带个人偏好，复制分享时才显式加入。
+
+- Task 4 最终交付：首次 Radix 选择、右上角入口、版本化本地偏好、URL 临时覆盖、全部模式与跨标签同步完成。题库、计数、预览、叶子阅读、精选集和相关题按显式组合严格过滤；真实 Pagefind 检索先过滤再分页。详情与说明／模型保持可读，单题阶段比较不改全站目标。
+- 最终 CI：155 文件类型零错误零警告零提示、2668 条内容、严格覆盖门槛、96 单测、构建／搜索、137 E2E 通过、1 项既有跳过；git diff --check 通过。桌面与移动实机浏览器检查通过。详细行为、URL传递裁定、失败修复与编辑性限制见实施审阅的最终验收节。按用户要求交付新 PR 至 main，不自动合并或部署。

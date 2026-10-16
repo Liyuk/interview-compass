@@ -1,6 +1,7 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './all-questions-fixture';
 
 const QUESTION = 'questions/prioritization-limited-resources/';
+
 
 test('home starts with goals and keeps category and curated entry points', async ({ page }) => {
   await page.goto('./');

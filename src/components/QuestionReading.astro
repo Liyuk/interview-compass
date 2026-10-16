@@ -1,6 +1,7 @@
 ---
 import QuestionList from './QuestionList.astro';
 import Icon from './Icon.astro';
+import TargetCount from './TargetCount.astro';
 import { groupForReading } from '../lib/question-reading';
 import { pick, type Locale } from '../lib/taxonomy';
 import type { BrowseRecord } from '../lib/question-catalog';
@@ -9,14 +10,18 @@ const { questions, locale } = Astro.props;
 const en = locale === 'en';
 const groups = groupForReading(questions);
 ---
+<div data-reading-root data-target-content>
 {groups.length > 0 ? <>
   <p class="reading-note">{en ? 'Choose a group based on the evidence you need. Groups follow existing question formats, not difficulty or mandatory prerequisites. Each batch has up to eight questions.' : '按需要了解的证据选择分组。分组依据现有题型，不代表难度或必经顺序。每批最多八题。'}</p>
-  {groups.map((group, groupIndex) => <section class="reading-group">
-    <h2>{pick(group.name, locale)}<span class="count">{group.questions.length}</span></h2>
+  {groups.map((group, groupIndex) => <section class="reading-group" data-reading-group>
+    <h2>{pick(group.name, locale)}<TargetCount class="count" questions={group.questions} /></h2>
     <p class="band-text">{pick(group.purpose, locale)}</p>
     {group.batches.map((batch, index) => <details class="reading-batch" open={groupIndex === 0 && index === 0}>
-      <summary><span>{en ? `Questions ${index * 8 + 1}–${index * 8 + batch.length}` : `第 ${index * 8 + 1}–${index * 8 + batch.length} 题`}</span><Icon name="chevron-down" size={16} /></summary>
+      <summary><span data-batch-label>{en ? `Questions ${index * 8 + 1}–${index * 8 + batch.length}` : `第 ${index * 8 + 1}–${index * 8 + batch.length} 题`}</span><Icon name="chevron-down" size={16} /></summary>
       <QuestionList questions={batch} locale={locale} showCapability={false} />
     </details>)}
   </section>)}
 </> : <p class="empty-state">{en ? 'No questions here yet.' : '这里暂时还没有问题。'}</p>}
+
+<p class="target-empty" data-reading-empty hidden>{en ? 'No questions in this capability match your target.' : '当前目标在这项能力中暂无匹配题。'} <button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button> · <button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button></p>
+</div>

@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import TargetCount from '../components/TargetCount.astro';
 import QuestionList from '../components/QuestionList.astro';
 import { crossDomainPaths, domains, pick, type Locale } from '../lib/taxonomy';
 import { getPathQuestions } from '../lib/question-catalog';
@@ -23,7 +24,7 @@ const sections = path.domains.map((domainId: string) => {
   <p class="intro">{en ? 'Each question below still belongs to one capability. The path only gathers them in reading order.' : '下面每道题仍然只属于一个能力，这条路径只是把它们按阅读顺序放在一起。'}</p>
   {sections.map(({ domain, items }, index) => (
     <section class="leaf-section">
-      <h2>{index + 1}. {domain.letter} · {pick(domain.name, locale)}<span class="count">{items.length}</span></h2>
+      <h2>{index + 1}. {domain.letter} · {pick(domain.name, locale)}<TargetCount class="count" questions={items} /></h2>
       <QuestionList questions={items} locale={locale} />
     </section>
   ))}

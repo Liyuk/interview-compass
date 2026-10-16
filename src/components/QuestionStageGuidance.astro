@@ -53,6 +53,8 @@ const data = { questionId: question.questionId, roles, primaryCapability: questi
   @media(max-width:600px) { .stage-evidence-grid { grid-template-columns:1fr; } }
 </style>
 <script>
+  import { withLinkPreference } from '../lib/target-preferences';
+  import { getTargetContext, subscribeTarget } from '../lib/target-state';
   import { getRoleStages } from '../lib/role-stage-model';
   import { questionStageGuidance, stageGuidancePrompt, type StageQuestion } from '../lib/question-stage-guidance';
   import type { Locale } from '../lib/taxonomy';
@@ -80,7 +82,9 @@ const data = { questionId: question.questionId, roles, primaryCapability: questi
     }
     function update(writeUrl: boolean) {
       detail.hidden = !stage.value;
-      root!.querySelector<HTMLAnchorElement>('[data-stage-model]')!.href = `${data.modelPaths[role.value]}${stage.value ? `#${stage.value}` : ''}`;
+      const modelUrl = new URL(`${data.modelPaths[role.value]}${stage.value ? `#${stage.value}` : ''}`, location.origin);
+      if (getTargetContext().hasLink) modelUrl.search = withLinkPreference(modelUrl.searchParams, getTargetContext().preference).toString();
+      root!.querySelector<HTMLAnchorElement>('[data-stage-model]')!.href = modelUrl.href;
       let prompt = '';
       if (stage.value) {
         const g = questionStageGuidance(data, role.value, stage.value, locale);
@@ -112,6 +116,14 @@ const data = { questionId: question.questionId, roles, primaryCapability: questi
     if (initialRole && data.roles.includes(initialRole)) role.value = initialRole;
     chooseRole(params.get('targetStage') ?? '');
     update(false);
+    subscribeTarget(() => {
+      const explicit = new URLSearchParams(location.search);
+      if (explicit.has('targetRole') || explicit.has('targetStage')) return;
+      const preference = getTargetContext().preference;
+      if (preference.mode === 'target' && data.roles.includes(preference.target.roleId)) {
+        role.value = preference.target.roleId; chooseRole(preference.target.stageId); update(false);
+      }
+    });
     role.addEventListener('change', () => { chooseRole(); update(true); });
     stage.addEventListener('change', () => update(true));
     window.addEventListener('popstate', () => {

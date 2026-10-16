@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Icon from '../components/Icon.astro';
+import { tokensForQuestion } from '../lib/question-profile-data';
 import QuestionStageGuidance from '../components/QuestionStageGuidance.astro';
 import { capabilityLabel, facetLabel, facetMeta, pick, splitCapability, type FacetKind, type Locale } from '../lib/taxonomy';
 import { facetRoute, pathFor } from '../lib/routes';
@@ -31,6 +32,8 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
   <a class="reading-return" data-reading-return hidden href={pathFor({ type: 'questions' }, locale, base)}><Icon name="arrow-left" size={16} /> {en ? 'Back to your results or question set' : '返回本次结果或题单'}</a>
   <p class="eyebrow">{domain?.letter} · {domain && pick(domain.name, locale)} <Icon name="chevron-right" size={14} /> {leaf && pick(leaf.name, locale)}</p>
   <h1 class="page-title" data-pagefind-meta="title">{record.question}</h1>
+  {tokensForQuestion(record.questionId).map(token => <span hidden data-pagefind-filter="profile[data-profile-token]" data-profile-token={token} />)}
+  <aside class="target-mismatch" data-question-detail-profiles={tokensForQuestion(record.questionId).join(' ')} hidden data-pagefind-ignore><p>{en ? 'This question is outside your current target. The direct link stays readable.' : '此题不在当前目标范围内，直接链接仍可完整阅读。'}</p><button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button><button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button></aside>
   <div class="question-fit" aria-label={en ? 'Question relevance' : '适用范围'}>
     {context.filter((group) => ['roles', 'responsibilityScopes', 'careerTracks'].includes(group.kind)).map((group) => <p><strong>{pick(facetMeta[group.kind].name, locale)}</strong><span>{group.ids.map((id) => facetLabel(group.kind, id, locale)).join(en ? ' · ' : '、')}</span></p>)}
     <p class="band-text">{en ? 'Select questions for the responsibility you actually hold or seek. These labels are not universal stage requirements.' : '按目标岗位和实际责任选题；这些标签不表示所有阶段都必须掌握。'} <a href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Stage expectations' : '查看阶段要求'}</a></p>
@@ -140,13 +143,13 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
     ) : null}
 
     {related.length > 0 && (
-      <section class="detail-block" aria-labelledby="related-h">
+      <section class="detail-block" aria-labelledby="related-h" data-related-section>
         <h2 id="related-h">{en ? 'Related questions' : '相近的问题'}</h2>
         <table class="comparison">
           <thead><tr><th>{en ? 'Question' : '问题'}</th><th>{en ? 'Relation' : '关系'}</th><th>{en ? 'What changes' : '观察差异'}</th></tr></thead>
           <tbody>
             {related.map(({ target, relation, contrast }) => (
-              <tr>
+              <tr data-question-profiles={tokensForQuestion(target.questionId).join(' ')}>
                 <td><a href={pathFor({ type: 'question', questionId: target.questionId, capability: target.primaryCapability, title: target.question }, locale, base)}>{target.question}</a></td>
                 <td>{relation}</td>
                 <td>{contrast}</td>

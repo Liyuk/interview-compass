@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './all-questions-fixture';
 
 test('question library offers curated collections and a full-library path', async ({ page }) => {
   await page.goto('questions/');

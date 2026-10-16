@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './all-questions-fixture';
 
 test('role models distinguish product IC responsibility and leadership', async ({ page }) => {
   await page.goto('capability-model/');

@@ -1,6 +1,7 @@
 ---
 import Icon from '../components/Icon.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
+import TargetCount from '../components/TargetCount.astro';
 import QuestionList from '../components/QuestionList.astro';
 import { domains, facetLabel, pick, type Locale } from '../lib/taxonomy';
 import { getQuestions } from '../lib/question-catalog';
@@ -66,10 +67,10 @@ const promotionQuestionPath = `${pathFor({ type: 'questions' }, locale, base)}?s
     </div>
   </section>}
   <p class="intro">{en ? 'These are the same questions found in the library, grouped here by the capability each one mainly examines.' : '这些题与问题库里的是同一批，这里按各自主要考察的能力分组。'}</p>
-  <p class="result-count">{en ? `${questions.length} questions` : `${questions.length} 道问题`}</p>
+  <p class="result-count"><TargetCount questions={questions} locale={locale} unit /></p>
   {groups.map(({ domain, items }) => (
     <section class="leaf-section">
-      <h2>{domain.letter} · {pick(domain.name, locale)}<span class="count">{items.length}</span></h2>
+      <h2>{domain.letter} · {pick(domain.name, locale)}<TargetCount class="count" questions={items} /></h2>
       <QuestionList questions={items} locale={locale} />
     </section>
   ))}
