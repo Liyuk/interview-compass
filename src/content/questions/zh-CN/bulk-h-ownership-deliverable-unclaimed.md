@@ -8,7 +8,7 @@ question: 你负责的接口按期交付了，但下游团队没有接入，最�
 intent: 考察担当是否关注最终结果，同时保持责任边界清楚。
 signals:
   - 区分自己承诺的结果、依赖方责任和共同目标。
-  - 主动暴露未闭环影响并提出可协商支持。
+  - 主动说明仍未解决的用户影响，并提出授权范围内可提供的支持。
   - 避免替他人承诺或长期无授权补位。
 primaryCapability: work-responsibility.ownership
 topics:

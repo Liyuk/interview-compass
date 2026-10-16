@@ -4,10 +4,7 @@ kind: question
 status: published
 locale: en
 title: How do you resolve a launch dispute when the sponsor wants to ship but guardrails fail?
-question: >-
-  A business sponsor insists on the original launch date, but rollout data shows both refunds and support
-  tickets above their guardrails. Product says the sample is too small; security asks to pause. How would you
-  turn this dispute into a decision?
+question: "The business sponsor insists on the original release date, but a limited rollout shows refund rates and support tickets exceeding agreed bounds. Product thinks the sample is too small, while security wants to pause. How would you turn the dispute into a decision?"
 intent: >-
   Assess whether you can keep disagreement focused on evidence quality, who carries the risk, and decision
   authority rather than personal conflict.

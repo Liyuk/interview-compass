@@ -3,14 +3,14 @@ questionId: c-product-judgment-pseudo-demand-infra
 kind: question
 status: published
 locale: en
-title: Tell me about a large infrastructure or refactoring project of yours that brought almost no business value after launch. How were you misled?
-question: Tell me about a large infrastructure or refactoring project of yours that brought almost no business value after launch, with very low usage. Which metrics or judgments misled you at the time, and what safeguard did the failure lead you to build afterwards?
-intent: See how you recognize a "pseudo-demand" for technology and turn the failure into a reusable judgment mechanism rather than only a lesson.
+title: "A major technology-platform project saw little use and little business value. What did you misjudge?"
+question: "Describe a technology-platform project you worked on that few teams used and that produced little visible business value after launch. What evidence or assumptions justified the investment at the time? Which assumptions did later evidence disprove, and what validation did you add?"
+intent: See whether you can determine if a platform project solved a real problem and turn a failed investment into a reusable decision process.
 signals:
-  - States which metrics or claims it rested on and why they were misleading
-  - Separates problems with the demand itself, with insufficient validation, and with their own judgment
-  - Describes the mechanism built afterwards, such as finding real users first, validating on a small scale, and setting stop conditions
-  - Is candid about the cost of the failure and the responsibility they bore
+  - State which evidence or claims made the project seem worthwhile and what later evidence showed was wrong.
+  - Separate an invalid need from weak validation and mistakes in your own judgment.
+  - Describe what you changed afterwards, such as finding real user teams, running a small trial, and setting stop conditions.
+  - Be candid about the project cost and your responsibility.
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, engineering-systems, metrics]
 roles: [engineering, backend, frontend, manager]

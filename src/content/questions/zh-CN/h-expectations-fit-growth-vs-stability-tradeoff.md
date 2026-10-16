@@ -10,6 +10,11 @@ signals:
   - 说明岗位当前工作结构、变化频率和责任范围。
   - 询问候选人过去如何在稳定任务中成长。
   - 区分可承诺的发展机会与依赖组织变化的可能性。
+  - 把“快”“灵活”等词拆成决策节奏和风险承担实例。
+  - 询问成功案例与失败时的处理方式。
+  - 表达自身条件与可调整范围，不把适配归结为性格相似。
+  - 询问设计参与决策的阶段和验证资源。
+  - 讨论速度与质量冲突时的决策方式和可调整空间。
 primaryCapability: work-responsibility.expectations-fit
 topics:
   - learning
@@ -38,4 +43,11 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 L
+  - attribution: derived
+    label: 职场发展问题：晋升与面试前的完整自查清单
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch G/H
+relatedQuestions: []
 ---

@@ -5,16 +5,16 @@ status: published
 locale: en
 title: Raise a material concern in a public review
 question: >-
-  In a cross-functional review, you notice the lead’s proposal omits a migration step that would
-  change metric definitions. The meeting is ending and an external partner is present. How would you
-  intervene and follow up?
-intent: >-
-  Examines the balance between risk transparency, respectful communication, and factual
-  documentation.
+  In a cross-functional review, you notice the lead’s proposal omits a migration step that would change metric
+  definitions. The meeting is ending and an external partner is present. How would you intervene and follow
+  up?
+intent: Examines the balance between risk transparency, respectful communication, and factual documentation.
 signals:
   - States the potential impact and current evidence without shaming language.
   - Chooses an in-meeting flag or immediate follow-up based on urgency.
   - Ensures the risk has an owner, conclusion, and appropriate audience.
+  - Adds reproducible evidence and impact scope.
+  - Asks an accountable owner to accept, mitigate, or block release.
 primaryCapability: collaboration.conflict-navigation
 topics:
   - conflict-resolution
@@ -40,4 +40,7 @@ source:
     label: Sourcegraph engineering leadership interview themes
     url: >-
       https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch G/H
+relatedQuestions: []
 ---

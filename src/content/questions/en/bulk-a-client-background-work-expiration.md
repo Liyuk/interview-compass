@@ -5,8 +5,8 @@ status: published
 locale: en
 title: Background Work With Expiration
 question: >-
-  A client must upload a large file, but the operating system may pause or terminate background work
-  at any time. How would you chunk the task, persist progress, and make rescheduling safe?
+  A client must upload a large file, but the operating system may pause or terminate background work at any
+  time. How would you chunk the task, persist progress, and make rescheduling safe?
 intent: Tests mobile background-execution constraints and recoverable task design.
 signals:
   - Breaks work into checkpointable units

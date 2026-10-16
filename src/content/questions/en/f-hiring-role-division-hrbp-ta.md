@@ -3,8 +3,8 @@ questionId: f-hiring-role-division-hrbp-ta
 kind: question
 status: published
 locale: en
-title: When hiring a lead for several teams, what should you, the hiring lead, HRBP and TA each judge? What would you not hand to anyone else?
-question: When hiring a lead who will run several teams, what should you, the hiring lead, HRBP and TA each judge? What would you not hand to anyone else, and what should you not decide for them? Where does final approval sit?
+title: "When hiring a leader, what should you, the hiring manager, the HR business partner, and recruiting each judge?"
+question: "When hiring a leader for several teams, what should you, the hiring manager, the HR business partner, and recruiting each assess? What should you own, what should you leave to others, and who has final approval?"
 intent: See whether you can tell shared participation from shared decision rights, so each role connects at the points that matter instead of replacing one another.
 signals:
   - Owns multi-team goals, role trade-offs, and lead capability building, and leaves the real work of the role and professional fit to the hiring lead

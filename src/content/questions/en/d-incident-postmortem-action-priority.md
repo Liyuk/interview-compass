@@ -5,8 +5,8 @@ status: published
 locale: en
 title: How do you prioritize postmortem actions when nobody has capacity for all of them?
 question: >-
-  A major incident produces 18 actions across architecture, monitoring, training, and process, but teams already
-  have quarterly commitments. How would you select actions that reduce recurrence risk?
+  A major incident produces 18 actions across architecture, monitoring, training, and process, but teams
+  already have quarterly commitments. How would you select actions that reduce recurrence risk?
 intent: >-
   Assess whether you prioritize controls by risk reduction, dependencies, and capacity while tracking residual
   exposure.

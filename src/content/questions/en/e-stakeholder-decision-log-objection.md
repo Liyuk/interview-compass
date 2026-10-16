@@ -3,10 +3,8 @@ questionId: e-stakeholder-decision-log-objection
 kind: question
 status: published
 locale: en
-title: How do you prevent false alignment when a key objection remains after a decision?
-question: >-
-  A cross-functional decision record is published, but one affected team says it cannot deliver by
-  the date. How would you determine whether the decision is settled and what the record still needs?
+title: How do you confirm acceptance when a key objection remains unresolved?
+question: "A cross-department meeting records a decision, but an affected team says it cannot deliver on time. How would you confirm who accepted the decision, which objections remain, and who owns the next step?"
 intent: >-
   Assess whether you distinguish being informed, agreeing, and being able to commit, then turn
   unresolved objections into ownership or escalation.

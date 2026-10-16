@@ -3,8 +3,8 @@ questionId: bulk-a-webhook-delivery
 kind: question
 status: published
 locale: en
-title: External webhook delivery
-question: A multi-tenant platform must deliver event webhooks to customer systems. How would you design the delivery path and handle a customer endpoint that remains unavailable?
+title: "How do you reliably send event notifications to customer systems?"
+question: "A multi-tenant platform must send event notifications (webhooks) to customer systems. How would you design delivery and retries when a client is unavailable for a long time?"
 intent: Explore how delivery reliability, tenant isolation, duplicate events, and operational visibility fit into one design.
 signals:
   - Separates event creation, queuing, delivery, and acknowledgment

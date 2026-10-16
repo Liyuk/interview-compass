@@ -10,6 +10,8 @@ signals:
   - 明确任务要求与学习目标，而非依据个人亲疏。
   - 让候选人说明准备计划并提供必要支持。
   - 回看过去机会的分布和反馈，必要时轮换或拆分机会。
+  - 明确机会对应的能力目标、风险和可用支持。
+  - 说明分配依据并提供不同但有价值的成长路径。
 primaryCapability: people-organization.frontline-management
 topics:
   - management
@@ -31,4 +33,7 @@ source:
     label: 一线技术管理的三种产出
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/frontline-engineering-management/zh.md
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch E/F
+relatedQuestions: []
 ---

@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you turn tacit knowledge into a durable team capability?
 question: You own a complex process where critical judgments live only in your experience. How would you identify transferable knowledge and verify others can handle exceptions independently?
-intent: Assess whether the response clarifies goals and constraints around identifying, transferring, and validating tacit knowledge, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response identifies critical knowledge held by one person and verifies that others can handle routine work and exceptions independently."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in identifying, transferring, and validating tacit knowledge.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "List judgments that depend on personal experience, how often they occur, and the impact if the knowledge is lost."
+  - "Transfer key steps and exception handling through documentation, rehearsal, pairing, or case review."
+  - "Have a successor complete a real task independently, record errors and questions, and use them to improve the process."
 primaryCapability: people-organization.delegation-succession
 roles:
   - manager

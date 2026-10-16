@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you renegotiate two commitments that claim the same capacity?
 question: Two business units promised customers the same delivery window, but shared capacity can support only one. How would you present scope, timing, quality, and customer-risk choices?
-intent: Assess whether the response clarifies goals and constraints around renegotiating commitments and presenting options under resource conflict, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response leads a renegotiation of competing commitments and shows decision-makers the available choices and consequences."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in renegotiating commitments and presenting options under resource conflict.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Verify each project’s promised scope, date, resources, and consequences of missing the commitment."
+  - "Offer combinations that change scope, timing, quality, or resources instead of reducing the issue to which project goes first."
+  - "Confirm the decision owner, when clients or teams will be informed, and what evidence could reopen the choice."
 primaryCapability: delivery.capacity-planning
 roles:
   - pmo

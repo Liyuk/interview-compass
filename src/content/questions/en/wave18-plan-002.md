@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you build a layered plan when quarterly metrics conflict?
 question: The annual goals are retention and margin, but teams pursue them through deeper discounts and reduced service investment. How would you turn the direction into comparable assumptions, constraints, and quarterly decision points?
-intent: Assess whether the response clarifies goals and constraints around alignment between long-term goals and short-term metrics, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response translates annual direction into compatible quarterly goals and recognizes when short-term measures harm long-term outcomes."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in alignment between long-term goals and short-term metrics.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Explain the relationship between retention and margin and the possible side effects of discounts or reduced service."
+  - "Align metric scope, time period, and target users so teams are not comparing incompatible numbers."
+  - "Offer quarterly choices consistent with the long-term direction and state when to adjust based on results."
 primaryCapability: value-direction.planning
 roles:
   - manager

@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you balance a flagship project against accumulating risks elsewhere?
 question: A strategic project has consumed senior engineers for two quarters, delaying maintenance and security work. How would you show opportunity cost and present capacity options?
-intent: Assess whether the response clarifies goals and constraints around strategic concentration and organizational risk debt, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response weighs the benefit of concentrating senior engineers on a strategic project against maintenance and security risks elsewhere."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in strategic concentration and organizational risk debt.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "State the expected result and duration of senior engineers’ strategic-project work."
+  - "Quantify delayed maintenance and security work and identify affected teams and users."
+  - "Offer options such as shared staffing, more buffer, smaller scope, or paused work with review conditions."
 primaryCapability: delivery.capacity-planning
 roles:
   - pmo

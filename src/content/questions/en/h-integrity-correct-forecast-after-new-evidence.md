@@ -12,6 +12,8 @@ signals:
   - Preserve the original forecast, experiment design, and known limitations.
   - Explain what the new evidence changes and which decisions are affected.
   - Notify affected people and state the basis for stopping, rolling back, or testing further.
+  - Separates the original judgment, new evidence, and changed conclusion
+  - Revises actions, affected decisions, and follow-up verification
 primaryCapability: work-responsibility.integrity
 topics:
   - ethics
@@ -40,4 +42,7 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 C
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-17 B
+relatedQuestions: []
 ---

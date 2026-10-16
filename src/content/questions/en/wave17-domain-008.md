@@ -4,9 +4,7 @@ kind: question
 status: published
 locale: en
 title: When the same business metric differs in weekly and financial reports, what should be unified first?
-question: >-
-  Operations counts gross bookings by order time, while finance recognizes revenue after fulfillment and refunds. A
-  leader wants one number. How would you explain the difference and design a shared metric model?
+question: "Operations counts revenue when an order is placed, while finance recognizes it after fulfillment and refunds. A leader wants one number. How would you explain the two measurement methods and design shared measures for decisions?"
 intent: >-
   Assesses whether the candidate creates reusable facts and clear definitions without erasing genuine business
   differences.

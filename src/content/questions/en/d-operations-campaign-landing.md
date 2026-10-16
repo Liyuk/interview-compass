@@ -3,8 +3,8 @@ questionId: d-operations-campaign-landing
 kind: question
 status: published
 locale: en
-title: Landing an already-decided campaign strategy
-question: The strategy for a promotion is set and you own landing it. What do you confirm before it goes live?
+title: "What should you confirm before launching a planned campaign?"
+question: "The promotion strategy is set and you are responsible for execution. What goals, rules, resources, risks, and acceptance criteria would you confirm before launch?"
 intent: See how you turn strategy into an execution checklist covering goals, audience, resources, impact on existing users, and how it will be verified.
 signals:
   - Confirms the target metric and how success is judged

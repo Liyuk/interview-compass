@@ -3,8 +3,8 @@ questionId: bulk-e-stakeholder-changing-expectations
 kind: question
 status: published
 locale: zh-CN
-title: 关键干系人频繁改变成功定义时怎样对齐
-question: 项目发起人先后把成功定义为上线、采用率和成本下降，每次定义变化都影响不同团队。你如何让目标变更显性，并保护团队免于反复返工？
+title: "关键负责人频繁改变成功标准，怎样减少反复返工？"
+question: "项目发起人先后把成功定义为上线、采用率和成本下降，每次定义变化都影响不同团队。你如何明确目标变更，并避免团队因此反复返工？"
 intent: 考察目标澄清、变更影响表达及治理协商。
 signals:
   - 追问每个结果的优先关系及证据窗口。

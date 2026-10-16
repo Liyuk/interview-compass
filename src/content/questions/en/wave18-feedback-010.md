@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How do you decide whether to delay feedback during a partner team’s crisis?
 question: A partner lead is under pressure from layoffs but repeatedly bypasses agreed workflows, affecting your team. How would you choose timing, support, and escalation?
-intent: Assess whether the response clarifies goals and constraints around feedback timing, empathy, and risk escalation, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response considers the partner’s circumstances while judging whether delayed feedback would leave the team exposed to continued harm."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in feedback timing, empathy, and risk escalation.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Verify the impact, frequency, affected people, and current risk caused by bypassing the process."
+  - "Compare the timing and consequences of private support, a time-bound correction, and formal escalation."
+  - "State the boundary that cannot continue, when feedback will happen, and when to escalate if the risk persists."
 primaryCapability: collaboration.feedback
 roles:
   - manager

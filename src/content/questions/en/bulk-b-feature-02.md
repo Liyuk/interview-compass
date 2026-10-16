@@ -3,13 +3,19 @@ questionId: bulk-b-feature-02
 kind: question
 status: published
 locale: en
-title: A feature has very different missingness offline and online. How would you locate semantic drift?
-question: A user-risk feature has sharply different missing rates and value distributions in online serving versus training data, and model performance fluctuates. How would you determine whether the cause is collection coverage, computation windows, defaults, or inconsistent offline and online implementations?
-intent: Assess whether the candidate diagnoses consistency from feature definition through its generation pipeline instead of focusing only on model metrics.
+title: Why does a feature differ between training and live serving?
+question: >-
+  A risk value is usually present in training data, but live serving often substitutes a default and model
+  performance fluctuates. How would you find whether the cause is data collection, timing, missing-value
+  handling, or implementation differences?
+intent: >-
+  Assess whether you can trace data sources, time windows, and computations to explain why training and live
+  serving use different values.
 signals:
-  - Checks definition differences across source, filters, joins, windows, and defaults
-  - Compares data availability and statistical distributions between training and serving
-  - Proposes validation that separates semantic mismatch from operational failure
+  - Compares training and serving sources, filters, joins, calculation windows, and versions.
+  - Separates a real zero from missing data and from collection or computation failures.
+  - Checks default rates and their impact across user groups and model outcomes.
+  - Proposes repeatable sample comparisons, monitoring, and release validation.
 primaryCapability: domain-modeling.feature-model
 topics:
   - feature-modeling
@@ -41,6 +47,15 @@ source:
   - attribution: inspired
     label: GitHub 数据工程与 AI 工程题目主题调研；题目为本站独立编写
     url: https://github.com/dataskew-io/data-engineering-interview-questions
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch A/B
 followUps:
-  - Two models call a feature with the same name but receive different values due to defaults and missing-data handling. How would you establish a contract and compatibility checks?
+  - >-
+    If a missing online feature is set to zero and denial rates suddenly change, what data would you check
+    first?
+  - How would you verify that training data does not use information unavailable at prediction time?
+  - >-
+    If training and serving cannot share the same computation code, how would you keep their results
+    consistent?
+relatedQuestions: []
 ---

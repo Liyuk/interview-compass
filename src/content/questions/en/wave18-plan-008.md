@@ -5,10 +5,11 @@ status: published
 locale: en
 title: When should a successful pilot enter the committed roadmap?
 question: A small pilot met its target, but expansion across regions adds compliance, training, and support costs. What evidence should be required before committing it to the roadmap?
-intent: Assess whether the response clarifies goals and constraints around evidence gates from pilot to scaled roadmap, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response separates success in a small pilot from feasibility at scale and sets evidence gates for the roadmap."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in evidence gates from pilot to scaled roadmap.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "State the pilot population, region, duration, success measures, and untested conditions."
+  - "Estimate added compliance, training, support, and operating costs at broader scale."
+  - "Propose validation before expansion, stop conditions, and when the roadmap decision will be made."
 primaryCapability: value-direction.planning
 roles:
   - product

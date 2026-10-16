@@ -6,11 +6,7 @@ locale: en
 title: >-
   How would you design information architecture for a large set of content with different retrieval
   needs?
-question: >-
-  A workspace contains hundreds of objects. Users sometimes look them up by customer, and other
-  times by status, owner, or date, while the current navigation mirrors the company's org chart. How
-  would you shape the information architecture, verify that users can find what they need, and
-  handle unclear categories or permission boundaries?
+question: "A workspace contains hundreds of items that people find by customer, status, owner, or date. Its navigation follows the company org chart, so users struggle to find things. How would you reorganize it and test findability?"
 intent: >-
   Assesses whether the candidate can organize complex information around user tasks and domain
   objects instead of exposing internal org or database structures directly.

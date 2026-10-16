@@ -3,7 +3,7 @@ questionId: f-frontline-management-team-charter-reset
 kind: question
 status: published
 locale: en
-title: How do you reset team agreements when goals and responsibilities drift?
+title: "After a team grows, how do you clarify goals and responsibilities?"
 question: >-
   After growing from six to fourteen people, the team still uses its old division of work. Members disagree on
   architecture decisions, operations support, and quality ownership. How would you reset the team agreement?

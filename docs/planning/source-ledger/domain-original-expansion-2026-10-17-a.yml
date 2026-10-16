@@ -9,31 +9,30 @@ sources:
       - b-data-model-erasure-audit-history
       - b-model-evolution-schema-unknown-enum
       - a-engineering-systems-credential-rotation
-      - next-cs-010
-      - bulk-ai-prompt-injection-boundary
+      - bulk-a-backend-connection-pool-exhaustion
+      - exp1500-a-040
       - b-data-model-consent-purpose-history
       - bulk-b-commercial-01
       - next-domain-027
       - b-model-evolution-identity-merge-audit
       - b-business-context-revenue-recognition-vs-user-value
-      - bulk-c-product-01
-      - bulk1000-c-038-v1
+      - bulk1000-c-039-v1
+      - exp1500-c-006
       - bulk-a-oncall-alert-ownership-gap
       - bulk-b-commercial-04
-      - next-domain-052
-      - next-product-057
+      - wave18-market-003
       - bulk-a-frontend-accessibility-focus-order
-      - next-design-069
+      - design-system-adoption-exceptions
       - f-frontline-management-improvement-plan
-      - next-people-077
+      - exp1500-f-022
       - next-people-078
       - bulk1000-g-085-v1
       - next-delivery-092
       - d-operations-customer-escalation-severity-routing
       - e-influence-peer-team-evidence-of-impact
       - bulk-a-backend-rate-limit-distributed
-      - bulk-a-object-storage-uploads
-      - bulk-a-debug-tail-latency
+      - exp1500-a-047
+      - bulk-a-gc-pause-latency
       - a-computer-science-memory-growth-vs-leak
       - a-engineering-systems-infrastructure-drift
       - a-ai-engineering-source-deletion-propagation
@@ -41,19 +40,19 @@ sources:
       - a-ai-engineering-human-review-capacity
       - a-ai-engineering-traceable-release
       - bulk-h-integrity-correct-attribution
-      - bulk-b-commercial-05
+      - b-commercial-rules-promotion-stacking
       - bulk-b-feature-01
-      - bulk-a-debug-clock-skew
-      - bulk-a-client-process-death-lifecycle
+      - wave16-c-010
+      - a-coding-abstraction-mobile-state-restore
       - a-coding-abstraction-retry-limiter
       - bulk-a-page-fault-working-set
       - bulk-a-code-incremental-parser
       - bulk-a-code-concurrent-expiring-map
-      - bulk-a-code-merge-interval-stream
+      - exp1500-a-021
       - bulk-a-flaky-test-triage
       - a-engineering-systems-ci-untrusted-change
       - bulk1000-b-033-v1
-      - bulk1000-b-034-v1
+      - b-feature-model-time-semantics
       - bulk1000-b-035-v1
       - bulk-c-product-02
       - c-metrics-causality-campaign-net-lift

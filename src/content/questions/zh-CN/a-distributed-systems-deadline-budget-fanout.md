@@ -9,7 +9,7 @@ intent: 考察能否将端到端时限分解到排队、重试和下游调用，
 signals:
   - 区分端到端 deadline 与单次调用 timeout。
   - 为网络、排队、下游和响应预留预算。
-  - 在预算不足时停止、降级或返回部分结果。
+  - 在预算不足时停止、降级（关闭非核心功能以保住核心服务）或返回部分结果。
 primaryCapability: professional.system-design
 topics:
   - distributed-systems

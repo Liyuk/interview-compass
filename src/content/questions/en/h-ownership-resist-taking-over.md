@@ -3,11 +3,11 @@ questionId: h-ownership-resist-taking-over
 kind: question
 status: published
 locale: en
-title: How do you stop becoming the permanent fallback because you are fastest?
+title: After repeatedly taking over another team’s work, how do you return ownership to the right people?
 question: >-
-  During a critical delivery, another team fell behind, so you personally covered the gap and prevented a
-  delay. This has happened three times, and people now assume you will rescue it. How would you protect the
-  current outcome while restoring clear ownership and sustainable collaboration?
+  A critical delivery is falling behind on work owned by another team, so you step in and prevent a delay. This
+  has happened three times, and people now assume you will handle it. How would you protect the current result
+  while clarifying future owners and ways of working?
 intent: >-
   Assess whether you can distinguish a one-time action that protects an outcome from permanently taking over
   another team’s responsibility.

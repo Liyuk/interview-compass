@@ -3,11 +3,8 @@ questionId: bulk-a-backend-rate-limit-distributed
 kind: question
 status: published
 locale: en
-title: Tenant rate limiting across instances and regions
-question: >-
-  An API runs across multiple instances and regions and needs shared per-tenant quotas while tolerating brief network
-  partitions. How would you design limits based on windows, burst tolerance, precision, latency, and availability, and
-  where would you keep state?
+title: "How can multiple service instances share an API request limit?"
+question: "An API runs across multiple instances, and a local request limiter makes the total allowance grow with each instance. How would you design request-rate controls for bursts, accuracy, and failures, and where would you keep their state?"
 intent: >-
   Examines distributed rate-limiting algorithms, tenant quotas, cross-region coordination, and the trade-off between
   precision and availability during failures.

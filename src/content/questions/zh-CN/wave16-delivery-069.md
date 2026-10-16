@@ -5,10 +5,10 @@ status: published
 locale: zh-CN
 title: 外部故障已恢复但客户数据可能仍不完整怎么办？
 question: 第三方服务已经恢复，但故障期间的回调可能丢失。客户看到的状态与平台记录不一致。你会如何确认影响并沟通？
-intent: 考察依赖恢复、数据补偿和客户沟通闭环。
+intent: 考察第三方服务恢复后能否补齐数据、通知客户并确认状态一致。
 signals:
   - 对照双方事件标识和时间范围。
-  - 建立重放、对账和人工确认路径。
+  - 建立重放（重新处理历史消息或任务）、对账和人工确认路径。
   - 明确受影响客户、恢复进度和剩余不确定性。
 primaryCapability: delivery.reliability-incidents
 topics:

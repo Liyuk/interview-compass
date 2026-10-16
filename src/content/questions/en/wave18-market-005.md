@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: en
 title: How would you allocate a reduced budget across channels at different maturity levels?
-question: Five channels have different maturity and short-term ROI is not directly comparable. How would you balance baseline investment, exploration budget, and review gates?
+question: "Five channels have different levels of maturity, so their short-term returns are not directly comparable. How would you allocate baseline funding, exploration budget, and review dates?"
 intent: Assess how the response evaluates maturity, risk, and learning budget in a portfolio, makes constraints explicit, and uses evidence to justify a decision.
 signals:
   - Identifies the stakeholders, constraints, and risks relevant to maturity, risk, and learning budget in a portfolio.

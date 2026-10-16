@@ -13,6 +13,7 @@ signals:
   - 说明岗位或责任范围对应的可观察行为和结果
   - 区分能力、动机、资源、目标清晰度等不同成因
   - 设计辅导、授权或组织调整，并约定复查证据
+  - 明确“决策质量与授权范围的动态校准”涉及的事实、对象和责任边界。
 primaryCapability: people-organization.frontline-management
 topics:
   - management
@@ -48,5 +49,8 @@ source:
   - attribution: inspired
     label: GitHub Monzo progression framework 与组织面试主题；题目为本站独立编写
     url: https://github.com/monzo/progression-framework
+  - attribution: original
+    label: Interview Compass coverage-led original expansion batch 2026-10-17 C
 followUps: []
+relatedQuestions: []
 ---

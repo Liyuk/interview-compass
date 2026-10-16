@@ -5,17 +5,23 @@ status: published
 locale: en
 title: How do you rebuild a credible baseline after a dependency date slips?
 question: >-
-  A key vendor has delayed an interface twice, but the project plan still uses the original date. Internal teams are
-  building a temporary adapter in parallel. How would you reset the baseline, account for added work, and show
-  leadership which commitments remain credible?
+  A key vendor has delayed an interface twice, but the project plan still uses the original date. Internal
+  teams are building a temporary adapter in parallel. How would you reset the baseline, account for added
+  work, and show leadership which commitments remain credible?
 intent: >-
-  Assess whether you can rebuild a plan as dependencies change rather than continue reporting an invalid original
-  schedule.
+  Assess whether you can rebuild a plan as dependencies change rather than continue reporting an invalid
+  original schedule.
 signals:
-  - "Distinguish external commitments, internal estimates, validation milestones, and the true critical path."
-  - "Quantify delay, temporary adapters, rework, and long-term maintenance cost."
-  - "Rebuild commitments from capacity and scenarios, naming who must decide trade-offs or escalation."
-  - "Update affected people on confidence, the next checkpoint, and risks that still need acceptance."
+  - Distinguish external commitments, internal estimates, validation milestones, and the true critical path.
+  - Quantify delay, temporary adapters, rework, and long-term maintenance cost.
+  - Rebuild commitments from capacity and scenarios, naming who must decide trade-offs or escalation.
+  - Update affected people on confidence, the next checkpoint, and risks that still need acceptance.
+  - Validates the delay, delivery conditions, and credibility of the vendor’s recovery plan.
+  - Identifies mock, contract, data, or test preparation that can happen earlier.
+  - Compares waiting, alternatives, and scope changes with clear escalation ownership.
+  - Makes dependency delivery, acceptance, and ownership conditions explicit.
+  - Separates independently executable work from blocked or low-value waiting.
+  - Updates forecasts using scenarios and confidence and changes scope or commitments promptly.
 primaryCapability: delivery.project-management
 topics:
   - planning
@@ -44,10 +50,19 @@ source:
     label: Interview Compass 原创题目扩充批次 600–626
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 D
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch C/D
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch C
 followUps:
-  - If leadership accepts only the original date, what scope alternatives and risk-acceptance choices would you present?
+  - >-
+    If leadership accepts only the original date, what scope alternatives and risk-acceptance choices would
+    you present?
   - When should the adapter become a supported solution, and when must it be removed?
   - >-
-    A critical dependency team says it has no capacity this quarter, but the project still marks the interface as on
-    track. How would you update status, options, and communication?
+    A critical dependency team says it has no capacity this quarter, but the project still marks the interface
+    as on track. How would you update status, options, and communication?
+  - How would you prevent “parallel development” from concealing final integration risk?
+  - When should the supplier issue be escalated, and when should the approach change?
+relatedQuestions: []
 ---

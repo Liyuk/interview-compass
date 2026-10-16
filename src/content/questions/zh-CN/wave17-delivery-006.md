@@ -9,6 +9,8 @@ intent: 考察能否把容量变化映射到范围、质量、时间和风险的
 signals:
   - 提供不同范围与时间组合及其结果影响
   - 指出持续加班、质量压缩和风险转移的成本
+  - 动手调整前，先重新说清目标、范围与容量之间的新约束
+  - 尽早告诉相关方改了什么、他们该预期什么
 primaryCapability: delivery.capacity-planning
 topics:
   - resource-allocation
@@ -31,4 +33,10 @@ formats:
 source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-17 B
+  - attribution: original
+    label: 本站原创
+relatedQuestions:
+  - questionId: prioritization-limited-resources
+    relation: 规划条件变化
+    contrast: 从目标不变时重新调整计划，转为规划开始前主动选择最重要的工作。
 ---

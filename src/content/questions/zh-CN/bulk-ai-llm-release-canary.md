@@ -3,8 +3,8 @@ questionId: bulk-ai-llm-release-canary
 kind: question
 status: published
 locale: zh-CN
-title: LLM 版本灰度发布
-question: 新模型离线评测提升，但少数高价值用户的回答质量可能下降。你会怎样安排灰度、观测和扩大流量的条件？
+title: 新模型怎样小范围发布并逐步扩大使用？
+question: 新模型离线评测提升，但少数高价值用户的回答质量可能下降。你会怎样安排小范围发布、观察结果，并判断何时扩大使用？
 intent: 观察是否把离线结果、分群线上表现、成本和回退机制结合起来。
 signals:
   - 选择能代表高风险任务和用户分群的灰度切片

@@ -9,7 +9,7 @@ intent: 了解你是否把留人当成持续的管理工作，并同时降低对
 signals:
   - 说明如何提前发现不满或想走的信号，而不是等对方提离职
   - 理解对方真正在意的是成长、认可、报酬还是工作内容，并给出针对性的做法
-  - 同时降低对单个人的依赖，例如知识沉淀和备份
+  - 同时降低对单个人的依赖，例如记录关键知识并安排备份人员
   - 对留不住的情形能坦率交代，并说明怎样好好交接
 primaryCapability: people-organization.frontline-management
 topics: [management, feedback]

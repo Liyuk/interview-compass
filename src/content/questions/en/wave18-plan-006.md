@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you align channel, product, and sales plans around growth?
 question: Marketing channels, product activation, and sales follow-up each set conversion goals with different denominators and time windows. How would you align planning interfaces and expose dependencies?
-intent: Assess whether the response clarifies goals and constraints around metrics and handoffs in cross-functional growth plans, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response aligns channel, product, and sales teams around compatible measures and handoffs for a shared growth goal."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in metrics and handoffs in cross-functional growth plans.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Compare the denominator, observation period, and target users behind each team’s conversion measure."
+  - "Map the handoffs and data sources from channel contact to product activation and sales follow-up."
+  - "Define the shared outcome, each team’s responsibility, and how metric or plan conflicts will be resolved."
 primaryCapability: value-direction.planning
 roles:
   - product

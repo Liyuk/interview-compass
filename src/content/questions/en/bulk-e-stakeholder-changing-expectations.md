@@ -3,11 +3,8 @@ questionId: bulk-e-stakeholder-changing-expectations
 kind: question
 status: published
 locale: en
-title: Align a stakeholder who keeps changing the definition of success
-question: >-
-  A project sponsor has successively defined success as launch, adoption, and cost reduction, each
-  change affecting different teams. How would you make goal changes explicit and protect teams from
-  repeated rework?
+title: "How do you reduce rework when a key stakeholder keeps changing the success criteria?"
+question: "A project sponsor changes success from launch, to adoption, to cost reduction, affecting different teams each time. How would you make changes explicit and protect teams from repeated rework?"
 intent: Examines goal clarification, change-impact communication, and governance negotiation.
 signals:
   - Clarifies the priority among outcomes and their evidence windows.

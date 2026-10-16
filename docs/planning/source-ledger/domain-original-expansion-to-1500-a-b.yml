@@ -3,8 +3,8 @@ sources:
     title: Interview Compass 原创扩充至 1,500 题：A 专业问题解决与实现 + B 业务理解与领域建模
     status: used
     questions:
-      - exp1500-a-001
-      - exp1500-a-002
+      - bulk-a-language-async-cancellation
+      - bulk-a-dns-cache-staleness
       - exp1500-a-003
       - exp1500-a-004
       - exp1500-a-005
@@ -15,12 +15,12 @@ sources:
       - exp1500-a-010
       - exp1500-a-011
       - exp1500-a-012
-      - exp1500-a-013
-      - exp1500-a-014
+      - a-quality-error-budget-release-policy
+      - a-quality-data-retention-deletion-proof
       - exp1500-a-015
       - exp1500-a-016
       - exp1500-a-017
-      - exp1500-a-018
+      - a-ai-rag-source-freshness-contract
       - exp1500-a-019
       - exp1500-a-020
       - exp1500-a-021
@@ -32,100 +32,94 @@ sources:
       - exp1500-a-027
       - exp1500-a-028
       - exp1500-a-029
-      - exp1500-a-030
+      - a-monorepo-selective-ci-change-detection
       - exp1500-a-031
       - exp1500-a-032
       - exp1500-a-033
       - exp1500-a-034
       - exp1500-a-035
-      - exp1500-a-036
+      - bulk-ai-rag-retrieval-diagnosis
       - exp1500-a-037
       - exp1500-a-038
-      - exp1500-a-039
+      - b-model-evolution-schema-unknown-enum
       - exp1500-a-040
       - exp1500-a-041
-      - exp1500-a-042
+      - ai-governance-tool-permission-boundaries
       - exp1500-a-043
       - exp1500-a-044
-      - exp1500-a-045
+      - bulk-c-product-03
       - exp1500-a-046
       - exp1500-a-047
-      - exp1500-a-048
-      - exp1500-a-049
+      - a-ai-engineering-human-review-capacity
+      - ai-governance-production-sampling-privacy
       - exp1500-b-001
       - exp1500-b-002
       - exp1500-b-003
       - exp1500-b-004
-      - exp1500-b-005
-      - exp1500-b-006
-      - exp1500-b-007
+      - b-data-model-effective-dated-ownership
+      - b-data-model-late-event-correction
+      - bulk-b-feature-02
       - exp1500-b-008
       - exp1500-b-009
       - exp1500-b-010
       - exp1500-b-011
-      - exp1500-b-012
+      - b-data-model-product-entitlement
       - exp1500-b-013
       - exp1500-b-014
-      - exp1500-b-015
+      - b-commercial-rules-promotion-stacking
       - exp1500-b-016
-      - exp1500-b-017
+      - b-model-evolution-identity-merge-audit
       - exp1500-b-018
       - exp1500-b-019
       - exp1500-b-020
       - exp1500-b-021
-      - exp1500-b-022
+      - exp1500-b-044
       - exp1500-b-023
       - exp1500-b-024
       - exp1500-b-025
-      - exp1500-b-026
+      - b-commercial-rules-contract-exception-expiry
       - exp1500-b-027
       - exp1500-b-028
       - exp1500-b-029
       - exp1500-b-030
-      - exp1500-b-031
+      - b-feature-model-time-semantics
       - exp1500-b-032
       - exp1500-b-033
       - exp1500-b-034
       - exp1500-b-035
       - exp1500-b-036
       - exp1500-b-037
-      - exp1500-b-038
-      - exp1500-b-039
+      - b-business-context-unit-economics-service-mix
       - exp1500-b-040
-      - exp1500-b-041
+      - bulk-growth-12
       - exp1500-b-042
       - exp1500-b-043
-      - exp1500-b-044
       - exp1500-b-045
       - exp1500-b-046
       - exp1500-b-047
       - exp1500-b-048
       - exp1500-b-049
-      - exp1500-b-050
+      - b-data-model-consent-purpose-history
       - exp1500-b-051
       - exp1500-b-052
       - exp1500-b-053
       - exp1500-b-054
-      - exp1500-b-055
       - exp1500-b-056
-      - exp1500-b-057
-      - exp1500-b-058
+      - b-model-evolution-retroactive-correction-boundary
       - exp1500-b-059
       - exp1500-b-060
       - exp1500-b-061
-      - exp1500-b-062
+      - b-feature-model-entitlement-precedence
       - exp1500-b-063
       - exp1500-b-064
-      - exp1500-b-065
-      - exp1500-b-066
-      - exp1500-b-067
+      - b-data-model-erasure-audit-history
+      - bulk-b-feature-01
       - exp1500-b-068
       - exp1500-b-069
       - exp1500-b-070
       - exp1500-b-071
       - exp1500-b-072
-      - exp1500-b-073
-      - exp1500-b-074
+      - bulk1000-a-016-v1
       - exp1500-b-075
       - exp1500-b-076
       - exp1500-b-077

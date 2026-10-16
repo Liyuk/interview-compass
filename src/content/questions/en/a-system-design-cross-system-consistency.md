@@ -3,8 +3,8 @@ questionId: a-system-design-cross-system-consistency
 kind: question
 status: published
 locale: en
-title: After updating the local database you must also sync a cache or message downstream. How do you keep both sides consistent, and what is the fallback if one step fails?
-question: In one task, after updating the local database you must also sync a cache or send a message downstream. How do you ensure the two operations end up consistent, and how do you fall back and compensate when network jitter makes one step fail?
+title: "How do you handle partial failure when syncing a database with a cache or message consumer?"
+question: "The local database has updated, but syncing the cache or sending a downstream message fails. How would you make the systems converge and handle retries, compensation, or manual recovery?"
 intent: See how you actually handle cross-system consistency and whether you can state the preconditions and costs of each approach rather than reciting names.
 signals:
   - Explains the chosen approach and its preconditions, such as write-then-publish order, transactional messages, or a local message table

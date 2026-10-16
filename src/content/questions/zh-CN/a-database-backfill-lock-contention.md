@@ -3,8 +3,8 @@ questionId: a-database-backfill-lock-contention
 kind: question
 status: published
 locale: zh-CN
-title: 大规模回填引发线上锁等待时，怎样制定安全执行计划？
-question: 新字段需要为数亿行数据回填，首轮脚本运行后线上锁等待和复制延迟都上升。你会怎样决定暂停、分批、限速或改用在线迁移？
+title: 大规模补算历史数据引发线上锁等待，怎样安全执行？
+question: 新字段需要补算数亿行历史数据，首轮脚本运行后线上锁等待和复制延迟都上升。你会怎样决定暂停、分批、限速或改用在线迁移？
 intent: 考察能否把数据库迁移、服务目标、停止条件和恢复计划作为一个运维变更管理。
 signals:
   - 测量锁等待、复制滞后、查询负载和单批耗时。

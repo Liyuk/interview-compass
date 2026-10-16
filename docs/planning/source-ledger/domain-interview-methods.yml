@@ -5,7 +5,7 @@ sources:
     status: used
     questions:
       - a-system-design-tech-choice-tradeoffs
-      - c-prioritization-three-things-worth-it
+      - c-prioritization-top-three-stop-two
       - c-prioritization-hindsight-not-worth
       - g-structured-reflection-redo-project
       - d-project-management-biggest-challenge
@@ -16,11 +16,10 @@ sources:
       - c-planning-goal-backward-vs-resource-forward
       - g-structured-reflection-honest-retrospective
       - g-structured-reflection-mistake-lesson-or-gain
-      - h-attribution-tech-choice-participation
+      - f-hiring-probe-personal-part
       - h-attribution-team-vs-personal
       - h-attribution-lead-or-manage
       - f-hiring-probe-generic-claims
-      - f-hiring-probe-personal-part
       - c-product-judgment-three-levels-of-bar
       - d-capacity-resources-and-scope
       - e-influence-break-constraints
@@ -46,7 +45,8 @@ sources:
       - c-metrics-causality-industry-definition-unify
   - id: blog-career-growth-ten-questions-methods
     title: 职场发展问题：晋升与面试前的完整自查清单（追问思路部分）
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
     status: used
     questions:
       - c-prioritization-hindsight-not-worth
@@ -66,16 +66,18 @@ sources:
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
     status: used
     questions:
-      - c-prioritization-three-things-worth-it
+      - c-prioritization-top-three-stop-two
   - id: tih-behavioral-rubrics
     title: Tech Interview Handbook 行为面试评价
-    url: https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
+    url: >-
+      https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
     status: used
     questions:
       - h-ownership-proudest-work
   - id: sourcegraph-engineering-leadership
     title: Sourcegraph 工程领导力面试题
-    url: https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
+    url: >-
+      https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
     status: used
     questions:
       - f-growth-development-underperformer

@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you ask questions that narrow an unexplained data anomaly?
 question: Refunds rose in one region just after a payment change. Which questions would help distinguish plausible causes?
-intent: Assess whether the response clarifies goals and constraints around using discriminating questions to narrow diagnostic hypotheses, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response asks questions that distinguish plausible causes and narrow the investigation into the refund-rate increase."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in using discriminating questions to narrow diagnostic hypotheses.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Confirm how the refund rate is calculated, how much it changed, which regions are affected, and when it began."
+  - "Compare payment methods before and after the change, including regions or groups unaffected by it."
+  - "Propose the next check that could distinguish payment issues, customer-mix changes, and delayed data."
 primaryCapability: collaboration.communication
 roles:
   - product

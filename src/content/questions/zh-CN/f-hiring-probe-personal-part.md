@@ -11,17 +11,35 @@ signals:
   - 用细节验证，例如某个具体决定背后的原因和替代方案
   - 对没有参与的部分给予坦率回答的空间，不因此扣分
   - 把观察到的参与程度和候选人所处的责任范围对照
+  - 把提出、评估、实现和拍板分开说明各自是谁，而不是笼统地说"我们"
+  - 对自己参与的部分能讲出具体的判断和依据
+  - 对没有参与的部分坦率承认，并说明自己了解到什么程度
 primaryCapability: people-organization.hiring
-topics: [hiring, system-design]
-roles: [manager, engineering]
-responsibilityScopes: [team]
-careerTracks: [team-manager, senior-manager]
-scenarios: [hiring]
-formats: [case, behavioral]
+topics:
+  - hiring
+  - system-design
+roles:
+  - manager
+  - engineering
+responsibilityScopes:
+  - team
+careerTracks:
+  - team-manager
+  - senior-manager
+scenarios:
+  - hiring
+formats:
+  - case
+  - behavioral
 followUps:
   - 对一个初级工程师和一个资深工程师，你的期待有什么不同？
   - 候选人只参与了实现、没有参与选型，你怎么评价？
+  - 如果当时是你来拍板，你会选一样的吗？
+  - 实现阶段遇到的哪个问题，是选型时就该看到的？
 source:
   - attribution: original
     label: 作者的面试提问套路：追问个人在项目与选型中的真实参与
+  - attribution: original
+    label: 作者的面试提问套路：深挖个人在选型中的实际参与
+relatedQuestions: []
 ---

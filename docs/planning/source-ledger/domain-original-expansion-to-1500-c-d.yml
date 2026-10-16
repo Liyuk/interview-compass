@@ -3,14 +3,14 @@ sources:
     title: Interview Compass 原创扩充至 1,500 题：C 价值判断与方向规划 + D 交付执行与持续运营
     status: used
     questions:
-      - exp1500-c-001
-      - exp1500-c-002
+      - bulk1000-c-039-v1
+      - bulk-c-product-02
       - exp1500-c-003
       - exp1500-c-004
       - exp1500-c-005
       - exp1500-c-006
       - exp1500-c-007
-      - exp1500-c-008
+      - bulk-c-product-06
       - exp1500-c-009
       - exp1500-c-010
       - exp1500-c-011
@@ -21,17 +21,17 @@ sources:
       - exp1500-c-016
       - exp1500-c-017
       - exp1500-c-018
-      - exp1500-c-019
-      - exp1500-c-020
+      - bulk1000-c-051-v1
+      - d-capacity-planning-incident-vs-roadmap-tradeoff
       - exp1500-c-021
       - exp1500-c-022
       - exp1500-c-023
-      - exp1500-c-024
+      - d-project-management-recover-dependency-baseline
       - exp1500-c-025
       - exp1500-c-026
-      - exp1500-c-027
+      - bulk-c-metrics-02
       - exp1500-c-028
-      - exp1500-c-029
+      - next-product-038
       - exp1500-c-030
       - exp1500-c-031
       - exp1500-c-032
@@ -39,7 +39,7 @@ sources:
       - exp1500-c-034
       - exp1500-c-035
       - exp1500-c-036
-      - exp1500-c-037
+      - design-postlaunch-outcome-attribution
       - exp1500-c-038
       - exp1500-c-039
       - exp1500-c-040
@@ -51,14 +51,13 @@ sources:
       - exp1500-c-046
       - exp1500-c-047
       - exp1500-c-048
-      - exp1500-c-049
+      - c-market-economics-free-tier-conversion-cost
       - exp1500-c-050
       - exp1500-c-051
       - exp1500-c-052
       - exp1500-c-053
-      - exp1500-c-054
       - exp1500-c-055
-      - exp1500-d-001
+      - bulk1000-d-052-v1
       - exp1500-d-002
       - exp1500-d-003
       - exp1500-d-004
@@ -69,9 +68,9 @@ sources:
       - exp1500-d-009
       - exp1500-d-010
       - exp1500-d-011
-      - exp1500-d-012
-      - exp1500-d-013
-      - exp1500-d-014
+      - bulk1000-d-057-v1
+      - d-pmo-correlated-dependency-escalation
+      - exp1500-d-048
       - exp1500-d-015
       - exp1500-d-016
       - exp1500-d-017
@@ -88,35 +87,27 @@ sources:
       - exp1500-d-028
       - exp1500-d-029
       - exp1500-d-030
-      - exp1500-d-031
+      - exp1500-d-051
       - exp1500-d-032
-      - exp1500-d-033
+      - exp1500-d-057
       - exp1500-d-034
       - exp1500-d-035
       - exp1500-d-036
       - exp1500-d-037
-      - exp1500-d-038
+      - e-communication-risk-update-without-certainty
       - exp1500-d-039
       - exp1500-d-040
       - exp1500-d-041
-      - exp1500-d-042
       - exp1500-d-043
       - exp1500-d-044
-      - exp1500-d-045
       - exp1500-d-046
-      - exp1500-d-047
-      - exp1500-d-048
-      - exp1500-d-049
-      - exp1500-d-050
-      - exp1500-d-051
       - exp1500-d-052
       - exp1500-d-053
       - exp1500-d-054
       - exp1500-d-055
       - exp1500-d-056
-      - exp1500-d-057
       - exp1500-d-058
-      - exp1500-d-059
+      - d-reliability-manual-fallback-owner
       - exp1500-d-060
       - exp1500-d-061
       - exp1500-d-062

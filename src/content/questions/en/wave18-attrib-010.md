@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you describe your contribution when you inherited a successful system?
 question: You inherited a mature process and results improved further. How would you separate the foundation you received, your new decisions, and the natural trend?
-intent: Assess whether the response clarifies goals and constraints around inherited results, incremental contribution, and external trends, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response distinguishes inherited results, the candidate’s additional work, and changes that may have happened anyway."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in inherited results, incremental contribution, and external trends.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Describe the process and measures when the candidate took over and who established the existing mechanism."
+  - "Identify the new judgment or changes they introduced and why they chose them."
+  - "Use timing, comparison, or other evidence to show which later improvements can be attributed to their incremental work."
 primaryCapability: work-responsibility.attribution
 roles:
   - manager

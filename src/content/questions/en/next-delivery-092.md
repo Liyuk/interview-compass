@@ -4,8 +4,8 @@ kind: question
 status: published
 title: What if vendor capacity is below the business forecast?
 question: >-
-  A vendor’s committed throughput is below peak-season forecast, and migration to an alternative takes two months. How
-  would you plan capacity and business constraints?
+  A vendor’s committed throughput is below peak-season forecast, and migration to an alternative takes two
+  months. How would you plan capacity and business constraints?
 intent: Assesses external dependency capacity, buffers, and demand management.
 signals:
   - Compare vendor limits, observed throughput, and peak duration.
@@ -36,4 +36,5 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 B
 locale: en
+relatedQuestions: []
 ---

@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you redistribute work after a critical role becomes vacant?
 question: After a key operations lead leaves, the team wants to spread the work evenly. Some tasks require specific access and experience. How would you route, pause, and escalate the work?
-intent: Assess whether the response clarifies goals and constraints around work routing and risk control during a vacancy, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response protects essential work during a key vacancy and reasonably assigns, pauses, or escalates the rest."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in work routing and risk control during a vacancy.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Classify work by user impact, permission needs, and experience into continue, pause, or escalate."
+  - "Check assignees’ skills, available time, and added workload instead of treating equal distribution as fair."
+  - "State service risks, interim ownership, and conditions for hiring or restoring the original plan."
 primaryCapability: delivery.capacity-planning
 roles:
   - pmo

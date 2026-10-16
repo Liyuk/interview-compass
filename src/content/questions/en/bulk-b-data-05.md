@@ -11,7 +11,6 @@ signals:
   - Identifies same-name/different-meaning and different-name/same-meaning cases
   - Proposes governance for a shared core definition alongside business-specific derivatives
   - Clarifies the facts, stakeholders, and ownership boundaries involved in shared semantics and use-case boundaries across systems.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
 primaryCapability: domain-modeling.data-model
 topics:
   - data-modeling

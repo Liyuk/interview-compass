@@ -13,6 +13,10 @@ signals:
   - 区分新增需求与套餐间迁移。
   - 分析毛利、留存、服务成本和客户生命周期。
   - 设置分群实验与停止或调整阈值。
+  - 比较套餐推出前后的购买率、客单价、毛利与续费表现
+  - 识别新增购买和从高价方案迁移的比例
+  - 按使用需求和客群检查套餐是否让价值匹配更清晰
+  - 说明需要观察的周期及重新定价或下线条件
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization
@@ -44,8 +48,13 @@ source:
     url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 B
+  - attribution: original
+    label: Interview Compass 原创扩充批次 2026-10-15 B
 followUps:
   - 【降价带来新客户却让老客户迁移，如何评估？】新套餐价格更低，新增客户增加，但不少老客户从高价套餐迁移。你会怎样计算净新增价值并决定是否继续？
   - 迁移客户是否仍能创造长期扩张价值？
   - 若随机定价不可行，如何估计影响？
+  - 当新套餐帮助低预算用户但造成收入蚕食时，怎样设定取舍？
+  - 如何区分套餐替代与原有需求自然变化？
+relatedQuestions: []
 ---

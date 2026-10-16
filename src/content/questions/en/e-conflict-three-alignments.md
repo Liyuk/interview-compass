@@ -3,8 +3,8 @@ questionId: e-conflict-three-alignments
 kind: question
 status: published
 locale: en
-title: Two teams each say the other is uncooperative
-question: Two teams each say the other will not cooperate, and the project is stuck. What do you align first?
+title: "When two teams blame each other, which facts and agreements do you check first?"
+question: "Both teams say the other is not cooperating and the project is stuck. Would you first clarify shared goals, responsibility boundaries, and delivery commitments? What else would you verify?"
 intent: See how you restate “uncooperative” as goals, facts, and decision rights, which can actually be discussed.
 signals:
   - Separates the shared goal from each side’s own goal

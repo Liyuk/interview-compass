@@ -66,7 +66,7 @@ describe('route model', () => {
   });
 
   it('derives page titles and the active navigation entry from the same route', () => {
-    expect(titleFor({ type: 'scenarios' }, 'zh-CN')).toBe('使用场景');
+    expect(titleFor({ type: 'scenarios' }, 'zh-CN')).toBe('目标路径');
     expect(titleFor({ type: 'topics' }, 'zh-CN')).toBe('主题索引');
     expect(titleFor({ type: 'capability-model' }, 'zh-CN')).toBe('阶段能力');
     expect(titleFor({ type: 'collection', id: 'general-interview' }, 'zh-CN')).toBe('通用面试');

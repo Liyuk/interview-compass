@@ -5,11 +5,12 @@ status: published
 locale: en
 title: How much capacity should a team reserve for unplanned support?
 question: >-
-  For several quarters, production support, customer escalations, and cross-team requests have displaced roadmap
-  work. Someone proposes a universal 20% reserve, though interruption rates vary. How would you set the reserve?
+  For several quarters, production support, customer escalations, and cross-team requests have displaced
+  roadmap work. Someone proposes a universal 20% reserve, though interruption rates vary. How would you set
+  the reserve?
 intent: >-
-  Assess whether you estimate capacity from historical interruptions, service commitments, and upstream patterns,
-  then recalibrate.
+  Assess whether you estimate capacity from historical interruptions, service commitments, and upstream
+  patterns, then recalibrate.
 signals:
   - Measure frequency, duration, urgency, and source for interruption categories.
   - Separate random variation, predictable peaks, and recurring work removable through product changes.

@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you make annual plans conditional after a hiring freeze?
 question: A hiring freeze leaves only 60% of planned capacity, but leadership resists changing goals. How would you distinguish baseline commitments, conditional commitments, and scope choices?
-intent: Assess whether the response clarifies goals and constraints around commitment boundaries and assumptions under reduced capacity, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response clarifies which outcomes are conditional and which commitments cannot be met when resources shrink but goals remain unchanged."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in commitment boundaries and assumptions under reduced capacity.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Verify remaining capacity after the freeze, existing commitments, and costs that cannot be recovered."
+  - "Separate work that is feasible, work dependent on additional conditions, and choices for leadership."
+  - "State risks if goals or budget remain unchanged, who must decide, and when renegotiation is required."
 primaryCapability: value-direction.planning
 roles:
   - manager

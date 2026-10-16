@@ -11,7 +11,7 @@ sources:
       - bulk1000-a-005-v1
       - bulk-a-code-incremental-parser
       - bulk-a-code-concurrent-expiring-map
-      - bulk-a-code-merge-interval-stream
+      - exp1500-a-021
       - a-coding-abstraction-retry-limiter
       - bulk1000-a-010-v1
       - a-computer-science-memory-growth-vs-leak
@@ -26,15 +26,15 @@ sources:
       - a-engineering-systems-ci-untrusted-change
       - bulk1000-a-021-v1
       - b-data-model-erasure-audit-history
-      - bulk1000-a-023-v1
+      - ai-governance-tool-permission-boundaries
       - bulk1000-a-024-v1
-      - bulk1000-a-025-v1
+      - ai-governance-uncertainty-safe-fallback
   - id: bulk1000-source-002
     title: GitHub 数据工程与 AI 工程题目主题调研；题目为本站独立编写
     url: https://github.com/dataskew-io/data-engineering-interview-questions
     status: used
     questions:
-      - bulk1000-b-026-v1
+      - exp1500-c-055
       - bulk1000-b-027-v1
       - bulk1000-b-028-v1
       - bulk1000-b-029-v1
@@ -44,57 +44,58 @@ sources:
       - b-data-model-erasure-audit-history
       - b-feature-model-time-semantics
       - bulk-b-feature-02
-      - bulk1000-b-036-v1
-      - bulk1000-b-037-v1
+      - bulk-b-model-evolution-02
+      - exp1500-b-035
   - id: bulk1000-source-003
     title: Liyuk 博客：产品判断、Top-K 与规划方法；题目为本站重新组织
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
     status: used
     questions:
-      - bulk1000-c-038-v1
+      - exp1500-c-006
       - bulk1000-c-039-v1
       - bulk-c-product-02
-      - bulk1000-c-041-v1
-      - bulk1000-c-042-v1
+      - c-prioritization-roi-matrix-three-demand-types
+      - exp1500-d-007
       - bulk1000-c-043-v1
-      - bulk1000-c-044-v1
+      - exp1500-c-018
       - bulk1000-c-045-v1
       - bulk1000-c-046-v1
       - bulk1000-c-047-v1
       - c-metrics-causality-campaign-net-lift
       - bulk1000-c-049-v1
-      - bulk1000-c-050-v1
+      - exp1500-c-040
       - bulk1000-c-051-v1
   - id: bulk1000-source-004
     title: GitHub DevOps 与项目交付题目主题调研；题目为本站独立编写
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
     status: used
     questions:
-      - d-decomposition-reduce-deploy-failure
+      - bulk1000-d-052-v1
       - bulk1000-d-053-v1
-      - bulk1000-d-054-v1
+      - exp1500-d-006
       - bulk1000-d-055-v1
       - bulk1000-d-056-v1
       - bulk1000-d-057-v1
       - bulk1000-d-058-v1
       - bulk1000-d-059-v1
       - bulk1000-d-060-v1
-      - bulk1000-d-061-v1
+      - exp1500-d-058
       - bulk1000-d-062-v1
-      - bulk1000-d-063-v1
+      - a-quality-restore-drill-evidence
   - id: bulk1000-source-005
     title: Liyuk 博客：项目冲突、协作与沟通；题目为本站重新组织
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
     status: used
     questions:
-      - bulk1000-e-064-v1
+      - wave17-collab-007
       - bulk1000-e-065-v1
-      - bulk1000-e-066-v1
+      - exp1500-e-047
       - bulk1000-e-067-v1
       - bulk1000-e-068-v1
       - bulk1000-e-069-v1
       - bulk1000-e-070-v1
-      - bulk1000-e-071-v1
+      - exp1500-e-059
   - id: bulk1000-source-006
     title: GitHub Monzo progression framework 与组织面试主题；题目为本站独立编写
     url: https://github.com/monzo/progression-framework
@@ -107,7 +108,7 @@ sources:
       - bulk1000-f-076-v1
       - bulk1000-f-077-v1
       - bulk1000-f-078-v1
-      - bulk1000-f-079-v1
+      - exp1500-f-022
       - bulk1000-f-080-v1
       - bulk1000-f-081-v1
       - bulk1000-f-082-v1
@@ -118,17 +119,18 @@ sources:
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/structured-thinking-practice/zh.md
     status: used
     questions:
-      - bulk1000-g-084-v1
+      - g-learning-transfer-new-domain-practice-loop
       - bulk1000-g-085-v1
       - bulk1000-g-086-v1
-      - bulk1000-g-087-v1
-      - bulk1000-g-088-v1
-      - bulk1000-g-089-v1
+      - exp1500-d-020
+      - g-resilience-rebuild-after-strategy-reversal
+      - exp1500-g-041
       - bulk1000-g-090-v1
       - bulk1000-g-091-v1
   - id: bulk1000-source-008
     title: Liyuk 博客：责任、贡献归属与工作边界；题目为本站重新组织
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
     status: used
     questions:
       - bulk1000-h-092-v1

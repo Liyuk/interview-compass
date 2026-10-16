@@ -4,11 +4,11 @@ kind: question
 status: published
 locale: zh-CN
 title: 聚合结果逐渐偏离明细
-question: 月度汇总与明细报表最初一致，几周后差异逐渐扩大。你会如何把问题缩小到口径变更、迟到数据、重复处理或历史回补？
+question: 月度汇总与明细报表最初一致，几周后差异逐渐扩大。你会如何把问题缩小到规则变更、迟到数据、重复处理或历史回补？
 intent: 考察能否从可复算的样本与数据血缘定位差异，而不是先改汇总结果。
 signals:
   - 固定一批差异样本并追踪源事件到聚合结果
-  - 比较处理水位、去重键和口径版本
+  - 比较处理水位、去重键和规则版本
   - 说明如何补数并验证影响范围没有扩大
 primaryCapability: professional.debugging
 topics:

@@ -5,9 +5,9 @@ status: published
 locale: en
 title: Out-of-order cross-service events
 question: >-
-  A reconciliation shows timestamps from two data centers placing event A before B, while the message trace shows B
-  triggered A. How would you distinguish clock skew, processing delay, and business causality, and choose trustworthy
-  diagnostic evidence?
+  A reconciliation shows timestamps from two data centers placing event A before B, while the message trace
+  shows B triggered A. How would you distinguish clock skew, processing delay, and business causality, and
+  choose trustworthy diagnostic evidence?
 intent: Explore how physical time, processing time, and business order are distinguished and diagnosed.
 signals:
   - Checks the source and offset of event, receive, and processing times

@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you plan delivery around a team with fragmented availability?
 question: A migration needs two weeks of platform support, but that team can offer only half a day each week. How would you compare waiting, parallel work, interface freezes, and scope reduction?
-intent: Assess whether the response clarifies goals and constraints around work decomposition under fragmented dependency capacity, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response replans tasks and commitments when a critical dependency team has only fragmented availability."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in work decomposition under fragmented dependency capacity.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Identify tasks requiring continuous collaboration and those that can be prepared or completed independently."
+  - "Compare waiting, parallel work, interface freeze, and scope reduction by risk and rework cost."
+  - "State the partner team’s available time, handoff approach, and triggers for changing the plan."
 primaryCapability: delivery.capacity-planning
 roles:
   - engineering

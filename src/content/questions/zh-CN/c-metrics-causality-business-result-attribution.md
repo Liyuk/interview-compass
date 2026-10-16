@@ -5,9 +5,9 @@ status: published
 locale: zh-CN
 title: 你的项目带来了什么业务结果？
 question: 你的项目带来了什么业务结果？你怎样确认这个结果是这个项目带来的，而不是别的因素？
-intent: 了解你如何定义结果、选择对比对象，并诚实地对待归因的不确定性。
+intent: 了解你如何定义结果、选择对比对象，并诚实地对待归因（判断结果由什么因素造成）的不确定性。
 signals:
-  - 说明结果的口径和对比对象
+  - 说明结果的定义和对比对象
   - 指出可能的干扰因素，并说明如何排除或承认不确定
   - 区分业务结果和过程指标
 primaryCapability: value-direction.metrics-causality
@@ -33,7 +33,7 @@ formats:
   - case
 followUps:
   - 如果没有这个项目，这个指标大概会怎样？
-  - 有没有副作用，或者被牺牲的其他指标？
+  - 有没有副作用（重复执行、越权等额外影响），或者被牺牲的其他指标？
 source:
   - attribution: original
     label: 作者的面试提问套路：业务结果

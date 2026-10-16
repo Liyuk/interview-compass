@@ -3,7 +3,7 @@ questionId: wave16-ai-017
 kind: question
 status: published
 locale: en
-title: How do you detect behavior drift after a provider changes model versions?
+title: "How do you check output changes after a model provider upgrades a version?"
 question: A hosted model upgrades without notice. Standard health checks pass, but classification boundaries and output length shift. How would you build safeguards?
 intent: Assesses external-model dependency governance, behavioral baselines, and emergency controls.
 signals:

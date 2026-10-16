@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you check fairness after noticing different feedback standards?
 question: Two team members made similar mistakes, but you were harsher with one because they are more senior. How would you check expectations and correct the response?
-intent: Assess whether the response clarifies goals and constraints around consistency of feedback standards across people, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response identifies inconsistent standards across people and makes a fair, explainable correction."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in consistency of feedback standards across people.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Compare the impact, expectations, and handling of the two similar mistakes."
+  - "Check whether seniority or personal relationships affected evidence gathering, feedback intensity, or later opportunities."
+  - "Explain how to correct the current handling and apply the same standard in future reviews."
 primaryCapability: collaboration.feedback
 roles:
   - manager

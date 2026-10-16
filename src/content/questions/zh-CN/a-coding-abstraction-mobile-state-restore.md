@@ -10,6 +10,9 @@ signals:
   - 区分必须持久化的状态和可以重建的状态
   - 考虑草稿的版本，避免覆盖更新的数据
   - 说明怎样测试这条恢复路径，包括被回收和弱网的情形
+  - 区分短暂 UI 状态与持久业务状态
+  - 考虑系统回收时保存机会有限
+  - 明确恢复后如何校验服务端数据与过期状态
 primaryCapability: professional.coding-abstraction
 topics:
   - mobile

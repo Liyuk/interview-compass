@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you assign ownership when a product capability spans teams?
 question: A customer-facing capability spans identity, billing, notifications, and data teams. Each team can explain its local behavior, but no one owns the end-to-end promise. How would you define interfaces, owners, and acceptance boundaries?
-intent: Assess whether the response clarifies goals and constraints around end-to-end accountability for a cross-team product capability, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response defines interfaces, end-to-end service ownership, and acceptance boundaries for a capability built across teams."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in end-to-end accountability for a cross-team product capability.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "State the inputs, outputs, and failure responsibilities of identity, billing, notification, and data teams."
+  - "Name who owns the complete customer-visible outcome, not only whether each module works."
+  - "Define handoffs, escalation, and acceptance criteria and verify them with an end-to-end scenario."
 primaryCapability: domain-modeling.product-project-model
 roles:
   - product

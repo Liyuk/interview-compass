@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you document a choice between two strategic investments?
 question: One option improves retention for existing customers; another opens a new market. Leadership is split. How would you document assumptions, opportunity cost, and conditions for reopening the decision?
-intent: Assess whether the response clarifies goals and constraints around comparison criteria and reopening conditions for strategic choices, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response compares two strategically aligned investments and records both the choice rationale and conditions for review."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in comparison criteria and reopening conditions for strategic choices.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Compare target users, expected outcomes, evidence, and resource needs for existing customers and a new market."
+  - "Explain what choosing one option gives up and which costs or decisions are hard to reverse."
+  - "Record key assumptions, measures, and evidence that would justify reopening the choice."
 primaryCapability: value-direction.planning
 roles:
   - product

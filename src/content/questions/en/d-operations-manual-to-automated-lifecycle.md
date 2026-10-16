@@ -3,8 +3,8 @@ questionId: d-operations-manual-to-automated-lifecycle
 kind: question
 status: published
 locale: en
-title: How do you upgrade manual campaign operations into automated, strategy-driven user lifecycle management?
-question: How do you move from simply running campaigns and recruiting users to building automated, strategy-driven user lifecycle management? Tell me about a case where you used tracking data and algorithms to turn formerly manual operations into an automated strategy.
+title: "How do you move from manual campaigns to automated lifecycle operations?"
+question: "How would you move from one-off campaigns and acquisition toward automated, data-informed lifecycle operations? Describe a case where data tracking and algorithms turned manual work into repeatable rules."
 intent: See whether you can turn experience into reusable strategy and systems and show with data that it beats manual work.
 signals:
   - Explains how users are divided into stages and what goal and metric each stage has

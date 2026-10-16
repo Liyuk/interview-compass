@@ -5,9 +5,8 @@ status: published
 locale: en
 title: Scope and Lifetime of Idempotency Keys
 question: >-
-  A payment-creation API must support safe client retries. How would you define the idempotency-key
-  scope, retention period, and conflict behavior to avoid duplicate charges without suppressing
-  valid requests?
+  A payment-creation API must support safe client retries. How would you define the idempotency-key scope,
+  retention period, and conflict behavior to avoid duplicate charges without suppressing valid requests?
 intent: Tests boundary design for API idempotency semantics.
 signals:
   - Defines the key scope across callers and business operations

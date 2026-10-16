@@ -4,8 +4,8 @@ kind: question
 status: published
 title: How do you decide when to extend a rigid design-system component?
 question: >-
-  Several product teams override shared component styles with CSS, causing frequent regressions after upgrades. How
-  would you choose between adding configuration, splitting the component, or keeping exceptions?
+  Several product teams override shared component styles with CSS, causing frequent regressions after
+  upgrades. How would you choose between adding configuration, splitting the component, or keeping exceptions?
 intent: Assesses shared-abstraction boundaries, usage evidence, and maintenance cost.
 signals:
   - Count real variants and common reasons for overrides.

@@ -10,6 +10,8 @@ signals:
   - 列出未验证假设和外部决策依赖。
   - 表达可承诺的验证阶段而非虚假发布日期。
   - 设置更新频率和无法满足时的替代路径。
+  - 说明当前事实、未知项和决策流程。
+  - 给出可承诺的验证或反馈时间点，而非保证结果。
 primaryCapability: value-direction.product-judgment
 topics:
   - product-thinking
@@ -34,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 C
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch G/H
+relatedQuestions: []
 ---

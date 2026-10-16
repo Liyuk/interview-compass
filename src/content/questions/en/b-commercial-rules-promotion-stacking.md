@@ -3,48 +3,62 @@ questionId: b-commercial-rules-promotion-stacking
 kind: question
 status: published
 locale: en
-title: How do you keep rules, settlement, and customer expectations aligned when promotions stack?
+title: How would you define rules for stacking promotions?
 question: >-
-  An order may qualify for a membership discount, channel offer, coupon, and threshold discount, while teams
-  disagree about eligible items, calculation order, and stacking. How would you define priority, exclusions,
-  and rounding so operations can configure it, engineering can implement it, finance can reconcile it, and
-  customers can understand it?
+  An order may use a membership discount, channel offer, and coupon, with exceptions by product, contract, or
+  region. How would you define eligibility and calculation order so customers see a consistent amount and
+  finance can reconcile refunds?
 intent: >-
-  Assess whether you can express interacting promotion rules as an unambiguous, enumerable, testable, and
-  explainable commercial contract, including rule changes and transaction history.
+  Assess whether you can express promotion eligibility, stacking order, funding ownership, and settlement
+  details as consistent, testable rules that can be explained to customers.
 signals:
-  - Defines eligible objects, calculation order, stacking and exclusion conditions, and rounding
-  - Uses concrete order examples to reconcile the displayed amount with final settlement
-  - Gives operations, engineering, support, and finance a shared representation of the rules
-  - Handles rule changes, effective times, and traceable explanations of past transactions
+  - Defines eligible products and customers, and distinguishes stackable from mutually exclusive offers.
+  - Specifies calculation order, ties between rules, and rounding behavior.
+  - Gives operations, engineering, support, and finance a shared way to configure and explain an order.
+  - Records each offer’s source, funding owner, and calculation details for historical review and refunds.
+  - >-
+    Explains how to detect conflicting rules before release and validate product, contract, and regional
+    exceptions.
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization
   - data-modeling
+  - risk-management
 roles:
   - product
   - operations
   - backend
+  - data
+  - engineering
+  - marketing
 responsibilityScopes:
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
+  - team-manager
 scenarios:
   - interview
   - hiring
+  - operations-review
+  - promotion
 formats:
   - case
 followUps:
+  - How should the system detect and handle rules with equal priority or conflicting settings?
+  - For a partial refund, how would you calculate the amount returned for each discount and subsidy?
   - >-
-    If two rules have equal priority or an operations configuration creates a cycle, how should the system
-    reject, explain, or resolve it?
-  - After a rule changes, how would you reproduce and explain the calculation on an earlier order?
-  - What records should support use to explain a disputed amount to a customer?
+    If a customer disputes the amount, how would you reconstruct the calculation using the rules that were
+    active at the time?
+  - How could conflicting campaign settings be detected before release?
+  - For a partial refund, how would you determine the amount reversed for each discount and subsidy?
 source:
   - attribution: original
     label: Written from common e-commerce promotion rule scenarios
   - attribution: inspired
     label: 品牌与增长面试工具：促销、定价与商业结果主题
     url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch B
 relatedQuestions: []
 ---

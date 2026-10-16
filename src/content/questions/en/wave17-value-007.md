@@ -5,8 +5,8 @@ status: published
 locale: en
 title: Automation saves labor but can widen error impact. Which step should be automated first?
 question: >-
-  An operations workflow includes repeated data entry, approvals, and customer notices. Automation saves time but may
-  spread a single error to more customers. How would you sequence automation?
+  An operations workflow includes repeated data entry, approvals, and customer notices. Automation saves time
+  but may spread a single error to more customers. How would you sequence automation?
 intent: Assesses whether the candidate weighs labor savings against error cost, reversibility, and monitoring.
 signals:
   - Separates frequent low-risk steps from infrequent high-impact judgments

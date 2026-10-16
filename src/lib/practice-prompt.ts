@@ -1,6 +1,7 @@
 import type { QuestionRecord } from './content-model';
 import type { questionEvaluation } from './question-evaluation';
 import type { Locale } from './taxonomy';
+import type { SelfCheckValue } from './practice-guide';
 
 type QuestionEvaluation = ReturnType<typeof questionEvaluation>;
 
@@ -9,6 +10,8 @@ export type PracticePromptInput = {
   question: Omit<QuestionRecord, 'status'>;
   evaluation: QuestionEvaluation;
   answer: string;
+  understanding?: string;
+  selfAssessment?: readonly SelfCheckValue[];
   role?: string;
   stage?: string;
   goal?: string;
@@ -26,6 +29,13 @@ export function buildPracticePrompt(input: PracticePromptInput): string {
     optionalContext(en ? 'Target stage' : '目标阶段', input.stage),
     optionalContext(en ? 'Practice goal' : '训练目标', input.goal),
   ].filter(Boolean);
+  const selfAssessment = question.signals.map((signal, index) => {
+    const status = input.selfAssessment?.[index] ?? 'unreviewed';
+    const label = en
+      ? status === 'supported' ? 'Evidence identified' : status === 'missing' ? 'Needs more evidence' : 'Not reviewed'
+      : status === 'supported' ? '有具体事实' : status === 'missing' ? '还需补充' : '尚未自查';
+    return `- ${signal} — ${en ? 'Self-check' : '自查'}: ${label}`;
+  });
 
   if (en) {
     return [
@@ -38,9 +48,11 @@ export function buildPracticePrompt(input: PracticePromptInput): string {
       `Assessment intent: ${evaluation.intent}`,
       `Possible inference (a hypothesis to verify): ${evaluation.inference}`,
       ...(context.length ? ['Context:', ...context] : []),
+      ...(input.understanding?.trim() ? [`Trainee’s understanding: ${input.understanding.trim()}`] : []),
       '',
       '## Evidence framework',
       `Observable signals: ${question.signals.map((signal) => `- ${signal}`).join('\n')}`,
+      `Trainee self-check (a reflection, not a score):\n${selfAssessment.join('\n')}`,
       `Useful follow-ups: ${evaluation.contextQuestions.map((item) => `- ${item}`).join('\n')}`,
       `Decision considerations: ${evaluation.decision}`,
       `Benefits to examine: ${evaluation.benefits.map((item) => `- ${item}`).join('\n')}`,
@@ -71,9 +83,11 @@ export function buildPracticePrompt(input: PracticePromptInput): string {
     `考察意图：${evaluation.intent}`,
     `可能的推论（需要核实的假设）：${evaluation.inference}`,
     ...(context.length ? ['补充背景：', ...context] : []),
+    ...(input.understanding?.trim() ? [`练习者对题意的复述：${input.understanding.trim()}`] : []),
     '',
     '## 证据框架',
     `观察信号：\n${question.signals.map((signal) => `- ${signal}`).join('\n')}`,
+    `练习者自查（仅供复盘，不是评分）：\n${selfAssessment.join('\n')}`,
     `值得追问的上下文：\n${evaluation.contextQuestions.map((item) => `- ${item}`).join('\n')}`,
     `决策考察：${evaluation.decision}`,
     `需要分析的收益：\n${evaluation.benefits.map((item) => `- ${item}`).join('\n')}`,

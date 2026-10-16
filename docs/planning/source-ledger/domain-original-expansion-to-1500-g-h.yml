@@ -7,17 +7,12 @@ sources:
       - exp1500-g-002
       - exp1500-g-003
       - exp1500-g-004
-      - exp1500-g-005
       - exp1500-g-006
-      - exp1500-g-007
-      - exp1500-g-008
+      - wave16-growth-046
       - exp1500-g-009
-      - exp1500-g-010
       - exp1500-g-011
-      - exp1500-g-012
-      - exp1500-g-013
+      - design-interaction-system-state-coverage
       - exp1500-g-014
-      - exp1500-g-015
       - exp1500-g-016
       - exp1500-g-017
       - exp1500-g-018
@@ -26,13 +21,11 @@ sources:
       - exp1500-g-021
       - exp1500-g-022
       - exp1500-g-023
-      - exp1500-g-024
       - exp1500-g-025
       - exp1500-g-026
       - exp1500-g-027
       - exp1500-g-028
       - exp1500-g-029
-      - exp1500-g-030
       - exp1500-g-031
       - exp1500-g-032
       - exp1500-g-033
@@ -40,7 +33,7 @@ sources:
       - exp1500-g-035
       - exp1500-g-036
       - exp1500-g-037
-      - exp1500-g-038
+      - bulk1000-h-092-v1
       - exp1500-g-039
       - exp1500-g-040
       - exp1500-g-041
@@ -50,24 +43,22 @@ sources:
       - exp1500-g-045
       - exp1500-g-046
       - exp1500-g-047
-      - exp1500-h-001
+      - exp1500-d-019
       - exp1500-h-002
-      - exp1500-h-003
-      - exp1500-h-004
+      - wave17-collab-002
+      - h-integrity-early-bad-news
       - exp1500-h-005
       - exp1500-h-006
-      - exp1500-h-007
+      - bulk-e-disagree-publicly-with-lead
       - exp1500-h-008
-      - exp1500-h-009
       - exp1500-h-010
       - exp1500-h-011
       - exp1500-h-012
-      - exp1500-h-013
+      - wave17-integrity-008
       - exp1500-h-014
       - exp1500-h-015
       - exp1500-h-016
-      - exp1500-h-017
-      - exp1500-h-018
+      - wave18-attrib-005
       - exp1500-h-019
       - exp1500-h-020
       - exp1500-h-021
@@ -80,7 +71,7 @@ sources:
       - exp1500-h-028
       - exp1500-h-029
       - exp1500-h-030
-      - exp1500-h-031
+      - h-expectations-fit-growth-vs-stability-tradeoff
       - exp1500-h-032
       - exp1500-h-033
     note: 按 MECE 叶子配额串行创作的 80 道双语原创题。岗位按真实适用范围标注；本轮只校验逐字重复，语义近似项合并留待扩充到 1,500 后。

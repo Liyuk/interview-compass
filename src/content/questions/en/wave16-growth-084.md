@@ -4,7 +4,9 @@ kind: question
 status: published
 locale: en
 title: What if temporary delegated access remains active after the assignment?
-question: A teammate temporarily approves requests for an absent lead, but access remains after the leave ends. How would you design expiry and audit for temporary delegation?
+question: >-
+  A teammate temporarily approves requests for an absent lead, but access remains after the leave ends. How
+  would you design expiry and audit for temporary delegation?
 intent: Assesses authorization lifecycle, least privilege, and return of responsibility.
 signals:
   - Define scope, duration, and revocation criteria.

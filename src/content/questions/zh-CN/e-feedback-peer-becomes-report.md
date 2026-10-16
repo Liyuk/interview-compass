@@ -11,7 +11,6 @@ signals:
   - 先了解对方对角色变化和行为的看法，再说明新的责任预期
   - 共同约定可观察的改进行动与复查时间，并保持标准一致
   - 明确“角色转换后的反馈边界与支持责任”涉及的事实、对象和责任边界。
-  - 用可核验的例子说明判断依据、结果影响及必要的复盘。
 primaryCapability: collaboration.feedback
 topics:
   - feedback

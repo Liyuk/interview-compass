@@ -11,7 +11,6 @@ signals:
   - Explain data boundaries and risk checks for tool use.
   - Do not claim generated output as solely yours or use the tool to evade responsibility.
   - Clarifies the facts, stakeholders, and ownership boundaries involved in understanding, disclosure, and accountability for tool-assisted work.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
 primaryCapability: work-responsibility.attribution
 topics:
   - ethics

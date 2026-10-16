@@ -29,7 +29,7 @@ scenarios:
 formats:
   - case
 followUps:
-  - 什么信息应直接触达高层？
+  - 哪些风险应该直接上报给高层，达到什么条件时必须上报？
   - 如何识别持续乐观偏差而不鼓励恐慌？
 source:
   - attribution: original

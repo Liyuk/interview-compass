@@ -6,7 +6,7 @@ sources:
     questions:
       - bulk-a-cache-coherence-sharing
       - bulk-a-code-incremental-parser
-      - bulk-a-code-merge-interval-stream
+      - exp1500-a-021
       - bulk-a-context-switch-cost
       - bulk-a-dns-cache-staleness
       - bulk-a-language-compiler-optimization-observable
@@ -21,11 +21,11 @@ sources:
       - bulk-a-atomic-memory-ordering
       - bulk-a-backend-backpressure-queue-growth
       - bulk-a-backend-connection-pool-exhaustion
-      - bulk-a-backend-idempotency-key-scope
+      - exp1500-b-073
       - bulk-a-backend-outbox-ordering
       - bulk-a-backend-pagination-consistency
       - bulk-a-backend-rate-limit-distributed
-      - bulk-a-backend-schema-compatibility
+      - a-engineering-systems-schema-deploy-rollback
       - bulk-a-btree-vs-lsm-write-profile
       - a-coding-abstraction-retry-limiter
       - bulk-a-code-concurrent-expiring-map
@@ -36,13 +36,14 @@ sources:
       - bulk-a-language-async-cancellation
       - bulk-a-language-equality-hash-contract
       - bulk-a-language-type-erasure-api
+      - bulk-a-backend-idempotency-key-scope
   - id: bulk500-source-003
     title: System Design Primer — requirements, constraints, and trade-offs
     url: https://github.com/donnemartin/system-design-primer/blob/master/README.md
     status: used
     questions:
       - bulk-a-debug-clock-skew
-      - bulk-a-framework-module-boundary-cycles
+      - a-monorepo-cyclic-dependency-boundary
   - id: bulk500-source-004
     title: Front-end Interview Handbook — JavaScript and frontend interview topics
     url: https://github.com/yangshun/front-end-interview-handbook/blob/main/README.md
@@ -66,7 +67,7 @@ sources:
     questions:
       - bulk-a-client-background-work-expiration
       - bulk-a-client-deep-link-auth-boundary
-      - bulk-a-client-offline-write-conflict
+      - exp1500-a-008
       - a-coding-abstraction-mobile-state-restore
       - bulk-a-client-render-thread-jank
   - id: bulk500-source-006
@@ -153,6 +154,7 @@ sources:
     status: used
     questions:
       - bulk1000-a-010-v1
+      - bulk-a-debug-tail-latency
   - id: bulk500-source-020
     title: System Design Primer：故障模式与重试
     url: https://github.com/donnemartin/system-design-primer
@@ -209,7 +211,7 @@ sources:
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
     status: used
     questions:
-      - bulk-a-build-provenance
+      - exp1500-a-034
   - id: bulk500-source-030
     title: DevOps Interview Questions：CI 流程与自动化测试
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
@@ -238,7 +240,7 @@ sources:
     title: 原创：紧急修复的发布控制
     status: used
     questions:
-      - bulk-a-release-policy-for-emergency-fix
+      - exp1500-d-039
   - id: bulk500-source-035
     title: DevOps Interview Questions：CI/CD 系统与迁移
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
@@ -290,13 +292,13 @@ sources:
     url: https://github.com/landedjobs/awesome-ai-engineer-interview
     status: used
     questions:
-      - bulk-ai-agent-budget-and-loop
+      - exp1500-a-011
   - id: bulk500-source-044
     title: Landed AI Engineer Interview：提示注入与工具安全
     url: https://github.com/landedjobs/awesome-ai-engineer-interview
     status: used
     questions:
-      - bulk-ai-prompt-injection-boundary
+      - exp1500-a-040
   - id: bulk500-source-045
     title: Landed AI Engineer Interview：推理服务与模型路由
     url: https://github.com/landedjobs/awesome-ai-engineer-interview
@@ -334,10 +336,11 @@ sources:
       - a-ai-engineering-traceable-release
   - id: bulk500-source-051
     title: 工程师为什么需要产品判断：从用户任务理解价值
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
     status: used
     questions:
-      - bulk-c-product-01
+      - bulk1000-c-039-v1
   - id: bulk500-source-052
     title: 产品 sense：把功能诉求还原为用户障碍
     url: >-
@@ -366,7 +369,8 @@ sources:
       - bulk-c-product-05
   - id: bulk500-source-056
     title: 工程师为什么需要产品判断：外部实践需结合本业务条件
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
     status: used
     questions:
       - bulk-c-product-06
@@ -386,7 +390,8 @@ sources:
       - bulk-b-context-02
   - id: bulk500-source-059
     title: 产品判断：将跨职能流程画成可讨论的模型
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
     status: used
     questions:
       - bulk-b-context-03
@@ -430,7 +435,8 @@ sources:
       - bulk-b-data-01
   - id: bulk500-source-066
     title: 指标字典模板：把定义变成可复算的协作接口
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
     status: used
     questions:
       - bulk-b-data-02
@@ -445,10 +451,11 @@ sources:
     url: https://github.com/dataskew-io/data-engineering-interview-questions
     status: used
     questions:
-      - bulk-b-data-04
+      - b-model-evolution-retroactive-correction-boundary
   - id: bulk500-source-069
     title: 数据度量工作指南：指标定义需要可复算
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
     status: used
     questions:
       - bulk-b-data-05
@@ -457,7 +464,7 @@ sources:
     url: https://github.com/dataskew-io/data-engineering-interview-questions
     status: used
     questions:
-      - b-feature-model-window-definition
+      - bulk-b-feature-01
   - id: bulk500-source-071
     title: dataskew-io/data-engineering-interview-questions：特征新鲜度与训练服务一致性
     url: https://github.com/dataskew-io/data-engineering-interview-questions
@@ -478,7 +485,8 @@ sources:
       - bulk-b-feature-04
   - id: bulk500-source-074
     title: Interview Compass 领域建模研究：概念演进与历史可解释性
-    url: https://github.com/Liyuk/interview-compass/blob/main/docs/planning/2026-10-14-content-architecture-mece.md
+    url: >-
+      https://github.com/Liyuk/interview-compass/blob/main/docs/planning/2026-10-14-content-architecture-mece.md
     status: used
     questions:
       - bulk-b-model-evolution-01
@@ -510,7 +518,8 @@ sources:
       - bulk-c-metrics-03
   - id: bulk500-source-079
     title: 指标字典模板：使指标能复算并支持共同决策
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
     status: used
     questions:
       - bulk-c-metrics-04
@@ -522,7 +531,8 @@ sources:
       - bulk-c-metrics-05
   - id: bulk500-source-081
     title: 工程师为什么需要产品判断：技术作用需连接业务结果
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
     status: used
     questions:
       - bulk-c-metrics-06
@@ -607,6 +617,7 @@ sources:
       - bulk-d-portfolio-dependency-release
       - bulk-d-resource-commitment-overlap
       - bulk-e-negotiate-fair-workload
+      - bulk1000-d-055-v1
   - id: bulk500-source-095
     title: 'The Product Manager Interview Project: prioritization and decision cards'
     url: https://github.com/deanpeters/The-Product-Manager-Interview-Project
@@ -615,7 +626,8 @@ sources:
       - bulk-d-critical-path-uncertain-estimates
   - id: bulk500-source-096
     title: 管理复盘：从执行到系统的八个判断
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
     status: used
     questions:
       - bulk-d-pmo-status-integrity
@@ -623,12 +635,14 @@ sources:
       - bulk-e-conflict-repair-after-escalation
   - id: bulk500-source-097
     title: 项目合作发生冲突时，先对齐哪三件事
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
     status: used
     questions:
       - bulk-d-scope-change-after-contract
-      - bulk-e-conflict-disputed-acceptance
+      - wave17-collab-015
       - bulk-e-cross-team-decision-deadlock
+      - bulk1000-d-055-v1
   - id: bulk500-source-098
     title: Sourcegraph engineering leadership interview themes
     url: >-
@@ -650,7 +664,7 @@ sources:
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/consulting/2026/09/product-engineer-without-boundaries/zh.md
     status: used
     questions:
-      - bulk-d-dependency-ownership-boundary
+      - wave17-delivery-010
   - id: bulk500-source-101
     title: 'Engineering Decision Skills: tech-planning and management-retro'
     url: https://github.com/Liyuk/engineering-decision-skills
@@ -672,6 +686,7 @@ sources:
     status: used
     questions:
       - bulk-e-feedback-defensive-peer
+      - f-frontline-management-one-on-one-alignment
   - id: bulk500-source-104
     title: 'Engineering Decision Skills: eng-reporting'
     url: https://github.com/Liyuk/engineering-decision-skills
@@ -731,7 +746,8 @@ sources:
       - bulk-f-early-performance-mismatch
   - id: bulk500-source-112
     title: 成长里程碑：把“我想成长”聊成具体的样子
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/08/specific-growth-milestones/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/08/specific-growth-milestones/zh.md
     status: used
     questions:
       - bulk-g-growth-goal-without-promotion-slot
@@ -756,10 +772,11 @@ sources:
       - bulk-g-recovery-sustainable-boundary
   - id: bulk500-source-115
     title: 职场发展问题：晋升与面试前的完整自查清单
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
     status: used
     questions:
-      - bulk-h-expectations-role-incentives
+      - h-expectations-fit-growth-vs-stability-tradeoff
       - h-attribution-team-vs-personal
       - bulk-h-ownership-deliverable-unclaimed
       - bulk-h-ownership-raise-uncertainty-early
@@ -778,7 +795,7 @@ sources:
       - design-engineering-handoff-behavior-contract
       - design-information-architecture-findability
       - design-interaction-system-state-coverage
-      - design-portfolio-evidence-walkthrough
+      - wave18-attrib-005
       - design-postlaunch-outcome-attribution
       - design-research-conflicting-evidence
       - design-system-adoption-exceptions

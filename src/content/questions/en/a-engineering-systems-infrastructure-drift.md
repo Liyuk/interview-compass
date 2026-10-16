@@ -3,16 +3,16 @@ questionId: a-engineering-systems-infrastructure-drift
 kind: question
 status: published
 locale: en
-title: Investigating and safely recovering from infrastructure drift
+title: "How do you safely restore production when live configuration differs from code?"
 question: >-
   Some production resources differ from their declared configuration, including undocumented emergency fixes. How would
-  you distinguish intentional changes from unknown drift, assess the risk of overwriting state, restore trust, and
+  you distinguish intentional changes from unexplained differences, assess the risk of overwriting state, restore trust, and
   prevent recurrence?
 intent: >-
-  Examines how you reconnect live state, configuration sources, change rationale, and operational ownership while
+  Examines how you compare live production settings with their declared configuration and understand why they differ while
   avoiding a second failure during recovery.
 signals:
-  - Separates intentional changes, emergency fixes, and unknown drift
+  - Separates intentional changes, emergency fixes, and unexplained configuration differences
   - Avoids blindly overwriting resources that may hold important data
   - Reconciles verified state into code and assesses impact
   - Improves approval, detection, and emergency change capture

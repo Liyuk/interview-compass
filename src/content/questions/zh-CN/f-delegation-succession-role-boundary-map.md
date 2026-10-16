@@ -11,7 +11,8 @@ signals:
   - 把日常请求转回新负责人并提供必要辅导。
   - 监测绕过行为、团队信任和决策质量，再调整支持。
   - 明确“组织授权的外部信号与升级路径”涉及的事实、对象和责任边界。
-  - 用可核验的例子说明判断依据、结果影响及必要的复盘。
+  - 公开说明新的责任与升级边界。
+  - 原负责人转为定期辅导或仅在预设条件下介入。
 primaryCapability: people-organization.delegation-succession
 topics:
   - management
@@ -43,4 +44,7 @@ source:
     label: Interview Compass 原创扩充批次 2026-10-15 F
   - attribution: original
     label: Interview Compass coverage-led original expansion batch 2026-10-17 C
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch E/F
+relatedQuestions: []
 ---

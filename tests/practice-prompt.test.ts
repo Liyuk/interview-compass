@@ -30,6 +30,8 @@ describe('buildPracticePrompt', () => {
     const prompt = buildPracticePrompt({
       locale: 'zh-CN', question, evaluation,
       answer: '我先核对了发布窗口和故障回退方案。',
+      understanding: '这题要我解释怎么在交付和可靠性之间作判断。',
+      selfAssessment: ['supported', 'missing'],
       role: '高级工程师', stage: '资深', goal: '练习说明风险取舍',
     });
 
@@ -45,6 +47,9 @@ describe('buildPracticePrompt', () => {
     expect(prompt).toContain('高级工程师');
     expect(prompt).toContain('资深');
     expect(prompt).toContain('我先核对了发布窗口和故障回退方案。');
+    expect(prompt).toContain('这题要我解释怎么在交付和可靠性之间作判断。');
+    expect(prompt).toContain('— 自查: 有具体事实');
+    expect(prompt).toContain('— 自查: 还需补充');
   });
 
   it('omits blank optional context and preserves multilingual answer text without trimming', () => {

@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you assess a specialist’s interest in a management path?
 question: A high-performing specialist is considered for management but enjoys deep technical work. How would you separate organizational need, personal motivation, and growth paths?
-intent: Assess whether the response clarifies goals and constraints around individual career preference and organizational succession needs, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response distinguishes an organizational management vacancy from personal career interest instead of equating promotion with becoming a manager."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in individual career preference and organizational succession needs.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Ask directly whether the person wants people management, coordination, and long-term organizational responsibility."
+  - "Compare the actual work in an expert path, broader professional scope, and management."
+  - "Offer a low-risk trial and a later choice without deciding the person’s career for the organization’s convenience."
 primaryCapability: people-organization.delegation-succession
 roles:
   - manager

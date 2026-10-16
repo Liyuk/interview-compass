@@ -8,8 +8,8 @@ question: 你的漏斗是怎么搭起来的？每一步为什么这样划分，�
 intent: 了解你如何把一个业务过程拆成可以度量的环节，并保证每一环的定义是可靠的。
 signals:
   - 说明每一步的划分依据和进入、完成的判定条件
-  - 指出流失最集中的环节，并区分真实流失和统计口径造成的流失
-  - 检查步骤之间是否重叠、遗漏，以及事件是否按相同口径记录
+  - 指出流失最集中的环节，并区分真实流失和统计规则造成的流失
+  - 检查步骤之间是否重叠、遗漏，以及事件是否按相同定义记录
   - 说明漏斗的粒度是用户、会话还是请求，以及为什么
 primaryCapability: value-direction.metrics-causality
 topics: [metrics, product-thinking, growth-experiments]

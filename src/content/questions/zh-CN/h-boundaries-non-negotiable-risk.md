@@ -3,8 +3,8 @@ questionId: h-boundaries-non-negotiable-risk
 kind: question
 status: published
 locale: zh-CN
-title: 客户很急，有人要求你跳过一项回滚验证就上线，而出错可能造成用户数据不可逆的损坏。你怎样判断这是不是不能拿来交换的底线，又怎样升级？
-question: 客户很急，有人要求你跳过一项回滚验证就上线，而出错可能造成用户数据不可逆的损坏。你怎样判断这是不是不能拿来交换的底线，又怎样升级？
+title: 出错可能损坏用户数据且难以恢复时，怎样判断是否必须暂停？
+question: 客户很急，有人要求你跳过一项回滚验证就上线，而出错可能造成用户数据损坏且难以恢复。你怎样判断这是不是不能拿来交换的底线，又怎样升级？
 intent: 了解你如何区分可以权衡的风险和不能以结果交换的安全、合规与数据底线，并通过合适的渠道让它被看见。
 signals:
   - 说明判断标准，如影响范围、可逆性和暴露时间
@@ -40,5 +40,6 @@ followUps:
 source:
   - attribution: derived
     label: 二线管理的治理底线：安全、公平与权力如何被约束
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/governance-boundaries-for-managers/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/governance-boundaries-for-managers/zh.md
 ---

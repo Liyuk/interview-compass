@@ -5,12 +5,11 @@ status: published
 locale: en
 title: A new regulation changes a business workflow. How would you map the affected value chain?
 question: >-
-  A new industry or regulatory requirement forces a product workflow change. How would you trace
-  from the requirement to affected participants, value-chain steps, business commitments, and
-  internal systems?
+  A new industry or regulatory requirement forces a product workflow change. How would you trace from the
+  requirement to affected participants, value-chain steps, business commitments, and internal systems?
 intent: >-
-  Assess whether the candidate can map an external change onto business processes and product
-  boundaries, locating where decisions and collaboration are actually needed.
+  Assess whether the candidate can map an external change onto business processes and product boundaries,
+  locating where decisions and collaboration are actually needed.
 signals:
   - Clarifies the rule’s scope, timing, and affected business objects
   - Traces impact across participants, process steps, commitments, and system dependencies

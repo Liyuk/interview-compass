@@ -4,7 +4,9 @@ kind: question
 status: published
 locale: en
 title: What evidence is needed when model output automatically rejects a user request?
-question: A model labels some accounts high-risk and automatically denies service, affecting customer rights. How would you set validation, appeals, and human review?
+question: >-
+  A model labels some accounts high-risk and automatically denies service, affecting customer rights. How
+  would you set validation, appeals, and human review?
 intent: Assesses explainability, appeal rights, and accountability in high-impact automation.
 signals:
   - Assess false-positive impact and error rates across groups.

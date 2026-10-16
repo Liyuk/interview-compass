@@ -8,7 +8,7 @@ question: 你负责的模块上线后，结果明显低于预期。你怎样描�
 intent: 了解你面对不及预期的结果时，是否既说清自己的判断与疏漏，又不把原因全部推给外部。
 signals:
   - 区分当时合理的前提与被忽略的信号
-  - 不只归因于外部条件，也不过度自责
+  - 不只归因（判断结果由什么因素造成）于外部条件，也不过度自责
   - 说明下一次会提前验证什么
 primaryCapability: work-responsibility.ownership
 topics:

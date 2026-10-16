@@ -3,8 +3,8 @@ questionId: d-decomposition-ambiguous-information-sources
 kind: question
 status: published
 locale: en
-title: You are handed a very vague problem. How do you find enough sources of information and break it down?
-question: You are handed a very vague problem. How do you find enough sources of information and break it down? How do you find the right people, cross-check what they say, and form a plan that is both high-level and workable?
+title: "How do you gather and verify information when a problem is vague?"
+question: "A business partner brings you a problem that is not clearly defined. What sources would you check, whom would you consult, and how would you separate confirmed facts from assumptions? How would you turn the findings into an actionable plan?"
 intent: See your method for vague problems, namely how you gather information, verify it, and organize it into structured judgment.
 signals:
   - First sets the boundary and goal of the problem, then lists the questions to be answered

@@ -40,7 +40,7 @@ const labels = {
   questions: text('面试题库', 'Question bank'),
   capabilities: text('能力地图', 'Capability map'),
   roles: text('岗位导航', 'Role paths'),
-  scenarios: text('使用场景', 'Use cases'),
+  scenarios: text('目标路径', 'Goal paths'),
   capabilityModel: text('阶段能力', 'Stage expectations'),
   topics: text('主题索引', 'Topics'),
   guide: text('使用说明', 'Guide'),

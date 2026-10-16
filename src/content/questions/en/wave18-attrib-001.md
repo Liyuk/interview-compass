@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you describe your contribution when you disagreed with a key decision?
 question: You present a successful project to a review committee. A senior leader made a key decision; you executed it and identified risks. How would you describe the team outcome and your responsibility?
-intent: Assess whether the response clarifies goals and constraints around team outcomes, personal actions, and responsibility when dissenting, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response honestly distinguishes the team outcome, the senior leader’s decision, the candidate’s execution and risk escalation, and personal accountability."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in team outcomes, personal actions, and responsibility when dissenting.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Distinguish who made the key decision, what the candidate executed, and which risks they raised."
+  - "Explain the scope they could influence and what they could not change, including how they reduced known risks."
+  - "Use project evidence to describe the team result without claiming the entire outcome as an individual contribution."
 primaryCapability: work-responsibility.attribution
 roles:
   - product

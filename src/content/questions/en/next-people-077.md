@@ -4,8 +4,8 @@ kind: question
 status: published
 title: What if referred and non-referred candidates face different evidence standards?
 question: >-
-  Interviewers give referred candidates more benefit of the doubt for vague answers and score others strictly. How would
-  you reduce this bias?
+  Interviewers give referred candidates more benefit of the doubt for vague answers and score others strictly.
+  How would you reduce this bias?
 intent: Assesses structured interviewing, fairness, and consistent evidence.
 signals:
   - Use the same questions and behavioral anchors.

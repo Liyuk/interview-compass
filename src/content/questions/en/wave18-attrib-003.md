@@ -4,11 +4,14 @@ kind: question
 status: published
 locale: en
 title: How would you assess individual contribution to cross-functional growth?
-question: Revenue targets were met while channel budgets, product experience, and sales processes all changed. How would you separate contributions and explain causal limits?
-intent: Assess whether the response clarifies goals and constraints around attribution methods and uncertainty in cross-functional growth, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+question: >-
+  Revenue targets were met while channel budgets, product experience, and sales processes all changed. How
+  would you separate contributions and explain causal limits?
+intent: "Assess whether the response explains attributable contribution amid concurrent growth initiatives while acknowledging limits to causal claims."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in attribution methods and uncertainty in cross-functional growth.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "List what changed in channels, product, and sales and when each change occurred."
+  - "Identify comparison groups, periods, or funnel steps that could help distinguish the effects."
+  - "Name the judgment or action the candidate drove and separate supported effects from those that cannot be attributed alone."
 primaryCapability: work-responsibility.attribution
 roles:
   - product

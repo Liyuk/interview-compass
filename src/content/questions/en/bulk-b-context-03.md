@@ -3,16 +3,14 @@ questionId: bulk-b-context-03
 kind: question
 status: published
 locale: en
-title: >-
-  Operations, product, and finance interpret a promotion’s status differently. How would you align
-  the model?
+title: Operations, product, and finance interpret a promotion’s status differently. How would you align the model?
 question: >-
-  After a promotion ends, operations considers the campaign complete, product sees orders still
-  being fulfilled, and finance says settlement is not yet possible. How would you define each
-  party’s objects, states, and state transitions?
+  After a promotion ends, operations considers the campaign complete, product sees orders still being
+  fulfilled, and finance says settlement is not yet possible. How would you define each party’s objects,
+  states, and state transitions?
 intent: >-
-  See how the candidate separates a shared business process into concepts with clear meaning and
-  boundaries that support collaboration.
+  See how the candidate separates a shared business process into concepts with clear meaning and boundaries
+  that support collaboration.
 signals:
   - Recognizes campaigns, orders, fulfillment, and settlement as related but distinct objects
   - Defines state semantics and valid transitions for each object

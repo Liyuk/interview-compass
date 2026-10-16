@@ -7,11 +7,10 @@ const { locale } = Astro.props;
 const en = locale === 'en';
 ---
 
-<SiteLayout locale={locale} route={{ type: 'practice' }} description={en ? 'Practice an interview question locally and create a structured prompt to analyze your answer with an AI tool you choose.' : '在本机练习面试问题，并生成结构化提示词，交由你选择的 AI 工具分析。'}>
+<SiteLayout locale={locale} route={{ type: 'practice' }} description={en ? 'Practice an interview answer through three steps: understand the question, organize your response, and review evidence.' : '按读懂题目、组织回答、复盘反馈三个步骤完成练习；草稿保存在当前浏览器。'}>
   <header class="practice-header">
-    <p class="eyebrow">{en ? 'PRIVATE PRACTICE' : '本地练习'}</p>
-    <h1 class="page-title">{en ? 'Practice an answer' : '回答练习'}</h1>
-    <p class="intro">{en ? 'Choose a question, write in your own words, and create an analysis prompt when you are ready. Your answer stays in this browser unless you copy it to another tool.' : '选择一道题，用自己的话作答；准备好后再生成分析提示词。回答只保存在当前浏览器，除非你主动复制到其他工具。'}</p>
+    <h1 class="page-title">{en ? 'Answer practice' : '回答练习'}</h1>
+    <p class="intro">{en ? 'Work through one question at a time. Start by understanding what it asks, then organize your response and review the evidence.' : '一次练习一道题：先弄清题目在问什么，再组织回答，最后检查回答里有哪些事实依据。'}</p>
   </header>
 
   <section class="practice-picker" aria-labelledby="practice-picker-heading">
@@ -23,33 +22,94 @@ const en = locale === 'en';
   </section>
 
   <section id="practice-workspace" class="practice-workspace" hidden aria-labelledby="selected-question-title">
-    <div class="practice-question-card"><p class="eyebrow">{en ? 'SELECTED QUESTION' : '当前问题'}</p><h2 id="selected-question-title"></h2><p id="selected-question-intent"></p></div>
-    <div class="practice-context-fields">
-      <label>{en ? 'Target role' : '目标岗位'}<input id="practice-role" type="text" autocomplete="organization-title" /></label>
-      <label>{en ? 'Target stage' : '目标阶段'}<input id="practice-stage" type="text" /></label>
-      <label>{en ? 'Practice goal' : '训练目标'}<input id="practice-goal" type="text" /></label>
-    </div>
-    <label class="practice-field-label" for="practice-answer">{en ? 'Your answer' : '你的回答'}</label>
-    <textarea id="practice-answer" rows="10" placeholder={en ? 'Write what you would say in your own words…' : '用自己的话写下你会怎样回答……'}></textarea>
-    <p id="draft-status" class="practice-status" role="status" aria-live="polite"></p>
-    <div class="practice-actions">
-      <button id="build-practice-prompt" type="button" class="button-link">{en ? 'Create analysis prompt' : '生成分析提示词'}</button>
-      <button id="clear-practice-draft" type="button" class="practice-secondary-button">{en ? 'Clear this draft' : '清除本题草稿'}</button>
-      <button id="export-practice-draft" type="button" class="practice-secondary-button">{en ? 'Export draft' : '导出草稿'}</button>
-    </div>
-    <section class="practice-prompt-panel" aria-labelledby="practice-prompt-heading">
-      <div class="practice-panel-heading"><h2 id="practice-prompt-heading">{en ? 'AI analysis prompt' : '交给外部 AI 的提示词'}</h2><button id="copy-practice-prompt" type="button" class="practice-secondary-button">{en ? 'Copy prompt' : '复制提示词'}</button></div>
-      <p>{en ? 'Nothing is sent automatically. Copy this prompt into the AI tool you choose, then review its analysis critically.' : '本站不会自动发送任何内容。将提示词复制到你选择的 AI 工具，再批判性地检查它的分析。'}</p>
-      <textarea id="practice-prompt" rows="12" readonly aria-label={en ? 'Prompt for an external AI' : '交给外部 AI 的提示词'}></textarea>
-      <p id="copy-status" class="practice-status" role="status" aria-live="polite"></p>
+    <nav class="practice-stepper" aria-label={en ? 'Practice steps' : '练习步骤'}>
+      <ol>
+        <li><button type="button" data-practice-step="0" aria-current="step">{en ? '1. Understand' : '1. 读懂题目'}</button></li>
+        <li><button type="button" data-practice-step="1">{en ? '2. Organize' : '2. 组织回答'}</button></li>
+        <li><button type="button" data-practice-step="2">{en ? '3. Review' : '3. 复盘与反馈'}</button></li>
+      </ol>
+    </nav>
+    <p id="draft-status" class="practice-status practice-draft-status" role="status" aria-live="polite"></p>
+
+    <section class="practice-step-panel" data-practice-panel="0" aria-labelledby="understand-heading">
+      <h2 id="understand-heading">{en ? 'Understand the question' : '读懂题目'}</h2>
+      <article class="practice-question-card">
+        <p class="practice-card-label">{en ? 'THE QUESTION' : '面试问题'}</p>
+        <h3 id="selected-question-title"></h3>
+      </article>
+      <section class="practice-plain-reading" aria-labelledby="plain-reading-heading">
+        <h3 id="plain-reading-heading">{en ? 'What is it trying to understand?' : '这道题想了解什么？'}</h3>
+        <p id="selected-question-intent"></p>
+      </section>
+      <label class="practice-field-label" for="practice-understanding">{en ? 'Put the question in your own words (optional)' : '试着用自己的话复述题意（可选）'}</label>
+      <textarea id="practice-understanding" rows="3" placeholder={en ? 'I think this question is asking me to explain…' : '我理解这题主要想让我说明……'}></textarea>
+      <section class="practice-signal-preview" aria-labelledby="signal-preview-heading">
+        <h3 id="signal-preview-heading">{en ? 'Signals to notice' : '回答时可以留意这些信号'}</h3>
+        <ul id="practice-signal-preview"></ul>
+      </section>
+      <div class="practice-step-actions">
+        <span></span>
+        <button id="start-answer" type="button" class="button-link">{en ? 'Organize my answer' : '开始组织回答'} <span aria-hidden="true">→</span></button>
+      </div>
     </section>
-    <label class="practice-field-label" for="practice-feedback">{en ? 'Optional feedback to keep with this draft' : '可选：记录 AI 反馈或自己的复盘'}</label>
-    <textarea id="practice-feedback" rows="5" placeholder={en ? 'Paste feedback here only if you want to keep it in this browser.' : '如果希望保留反馈，可以粘贴在这里；内容只保存在本机浏览器。'}></textarea>
-    <aside class="practice-privacy"><strong>{en ? 'Privacy and limits' : '隐私与使用边界'}</strong><p>{en ? 'Answers and pasted feedback are stored only in local browser storage. They are not sent to this website. If you copy the prompt elsewhere, that tool’s privacy terms apply. The prompt asks for evidence-based coaching, not a model answer, personality diagnosis, total score, or hiring recommendation.' : '回答和粘贴的反馈只存于本机浏览器，不会发送到本站。复制到其他工具后，适用该工具的隐私规则。提示词要求基于证据辅导，不生成示范答案、人格诊断、总分或录用建议。'}</p></aside>
+
+    <section class="practice-step-panel" data-practice-panel="1" aria-labelledby="answer-heading" hidden>
+      <h2 id="answer-heading">{en ? 'Organize your answer' : '组织回答'}</h2>
+      <section class="practice-answer-guide" aria-labelledby="answer-guide-title">
+        <div><h3 id="answer-guide-title"></h3><p id="answer-guide-note"></p></div>
+        <ol id="answer-guide-steps"></ol>
+      </section>
+      <label class="practice-field-label" for="practice-answer">{en ? 'Write freely in your own words' : '用自己的话自由作答'}</label>
+      <p class="practice-field-hint">{en ? 'The outline is optional. Use only the parts that help you explain your reasoning and evidence.' : '提纲只是辅助，可以按题目需要取舍；重点是讲清推理、行动和证据。'}</p>
+      <textarea id="practice-answer" rows="12" placeholder={en ? 'Write what you would say in your own words…' : '写下你会怎样回答……'}></textarea>
+      <div class="practice-step-actions">
+        <button type="button" data-practice-step="0" class="practice-secondary-button">{en ? 'Back to the question' : '返回读题'}</button>
+        <button id="go-to-review" type="button" class="button-link">{en ? 'Review evidence' : '复盘与反馈'} <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <section class="practice-step-panel" data-practice-panel="2" aria-labelledby="review-heading" hidden>
+      <h2 id="review-heading">{en ? 'Review evidence and feedback' : '复盘与反馈'}</h2>
+      <p class="practice-review-intro">{en ? 'For each signal, mark whether you can support it with a concrete fact. This is a reflection aid, not an automatic score.' : '逐项检查自己能否用具体事实支撑观察信号。这是复盘辅助，不会自动给回答打分。'}</p>
+      <div id="practice-self-check" class="practice-self-check"></div>
+      <p id="self-check-status" class="practice-self-check-status" role="status" aria-live="polite"></p>
+
+      <details class="practice-optional-context">
+        <summary>{en ? 'Practice context (optional)' : '练习背景（可选）'}</summary>
+        <div class="practice-context-fields">
+          <label>{en ? 'Target role' : '目标岗位'}<input id="practice-role" type="text" autocomplete="organization-title" /></label>
+          <label>{en ? 'Target stage' : '目标阶段'}<input id="practice-stage" type="text" /></label>
+          <label>{en ? 'Practice goal' : '训练目标'}<input id="practice-goal" type="text" /></label>
+        </div>
+      </details>
+
+      <div class="practice-review-actions">
+        <button id="build-practice-prompt" type="button" class="button-link">{en ? 'Create external analysis request' : '生成外部分析请求'}</button>
+        <button id="clear-practice-draft" type="button" class="practice-secondary-button">{en ? 'Clear this draft' : '清除本题草稿'}</button>
+        <button id="export-practice-draft" type="button" class="practice-secondary-button">{en ? 'Export draft' : '导出草稿'}</button>
+      </div>
+      <section id="practice-prompt-panel" class="practice-prompt-panel" aria-labelledby="practice-prompt-heading" hidden>
+        <div class="practice-panel-heading"><h3 id="practice-prompt-heading">{en ? 'Optional external AI analysis' : '可选：交给外部 AI 分析'}</h3><button id="copy-practice-prompt" type="button" class="practice-secondary-button">{en ? 'Copy request' : '复制分析请求'}</button></div>
+        <p>{en ? 'Nothing is sent automatically. Copy this request into an AI tool you choose.' : '本站不会自动发送任何内容。你可以复制后，自行粘贴到选择的 AI 工具。'}</p>
+        <textarea id="practice-prompt" rows="14" readonly aria-label={en ? 'External AI analysis request' : '外部 AI 分析请求'}></textarea>
+        <p id="copy-status" class="practice-status" role="status" aria-live="polite"></p>
+      </section>
+      <details class="practice-feedback-notes">
+        <summary>{en ? 'Keep feedback or reflection notes (optional)' : '记录反馈或自己的复盘（可选）'}</summary>
+        <label class="practice-field-label" for="practice-feedback">{en ? 'Feedback notes' : '复盘记录'}</label>
+        <textarea id="practice-feedback" rows="5" placeholder={en ? 'Paste feedback or record what you want to practice next.' : '可以粘贴外部反馈，或写下下一步想练习的内容。'}></textarea>
+      </details>
+      <aside class="practice-privacy"><strong>{en ? 'Privacy and limits' : '隐私与使用边界'}</strong><p>{en ? 'Your interpretation, answer, context, self-check, and notes stay in this browser. They are not sent to this website. If you copy the request elsewhere, that tool’s privacy terms apply. The request asks for evidence-based feedback, not a model answer, personality diagnosis, an overall score, or a hiring recommendation.' : '题意复述、回答、背景、自查和复盘记录只保存在本机浏览器，不会发送到本站。复制到其他工具后，适用该工具的隐私规则。分析请求要求基于证据反馈，不生成示范答案、人格诊断、总分或录用建议。'}</p></aside>
+      <div class="practice-step-actions">
+        <button type="button" data-practice-step="1" class="practice-secondary-button">{en ? 'Back to my answer' : '返回组织回答'}</button>
+        <span></span>
+      </div>
+    </section>
   </section>
 
   <script>
     import { buildPracticePrompt } from '../lib/practice-prompt';
+    import { getPracticeGuide, getSelfCheckStatus, type SelfCheckValue } from '../lib/practice-guide';
     import type { PublicQuestionRecord, QuestionIndexRecord } from '../lib/question-feed';
 
     const locale = document.documentElement.lang === 'en' ? 'en' : 'zh-CN';
@@ -60,33 +120,50 @@ const en = locale === 'en';
     const status = document.querySelector<HTMLElement>('#practice-status')!;
     const workspace = document.querySelector<HTMLElement>('#practice-workspace')!;
     const answer = document.querySelector<HTMLTextAreaElement>('#practice-answer')!;
+    const understanding = document.querySelector<HTMLTextAreaElement>('#practice-understanding')!;
     const feedback = document.querySelector<HTMLTextAreaElement>('#practice-feedback')!;
     const promptField = document.querySelector<HTMLTextAreaElement>('#practice-prompt')!;
+    const promptPanel = document.querySelector<HTMLElement>('#practice-prompt-panel')!;
     const draftStatus = document.querySelector<HTMLElement>('#draft-status')!;
     const copyStatus = document.querySelector<HTMLElement>('#copy-status')!;
+    const selfCheck = document.querySelector<HTMLDivElement>('#practice-self-check')!;
+    const selfCheckStatus = document.querySelector<HTMLElement>('#self-check-status')!;
     const role = document.querySelector<HTMLInputElement>('#practice-role')!;
     const stage = document.querySelector<HTMLInputElement>('#practice-stage')!;
     const goal = document.querySelector<HTMLInputElement>('#practice-goal')!;
-    type Draft = { answer: string; feedback: string; role: string; stage: string; goal: string };
+    const panels = [...document.querySelectorAll<HTMLElement>('[data-practice-panel]')];
+    const stepButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-practice-step]')];
+    type Draft = { answer: string; understanding: string; feedback: string; role: string; stage: string; goal: string; selfAssessment: SelfCheckValue[]; step: number };
     let index: QuestionIndexRecord[] = [];
     let selected: PublicQuestionRecord | undefined;
     let selectionGeneration = 0;
     let saveTimer: number | undefined;
+    let activeStep = 0;
+    let selfAssessment: SelfCheckValue[] = [];
     let storageAvailable = true;
     const message = (zh: string, english: string) => en ? english : zh;
     const keyFor = (id: string) => `interview-compass:practice:${locale}:${id}`;
+    const emptyAssessment = (length: number): SelfCheckValue[] => Array.from({ length }, () => 'unreviewed');
     const getDraft = (id: string): Draft => {
       try {
         const value = localStorage.getItem(keyFor(id));
-        if (!value) return { answer: '', feedback: '', role: '', stage: '', goal: '' };
+        if (!value) return { answer: '', understanding: '', feedback: '', role: '', stage: '', goal: '', selfAssessment: [], step: 0 };
         const parsed = JSON.parse(value) as Partial<Draft>;
-        return { answer: parsed.answer ?? '', feedback: parsed.feedback ?? '', role: parsed.role ?? '', stage: parsed.stage ?? '', goal: parsed.goal ?? '' };
-      } catch { storageAvailable = false; return { answer: '', feedback: '', role: '', stage: '', goal: '' }; }
+        return {
+          answer: parsed.answer ?? '', understanding: parsed.understanding ?? '', feedback: parsed.feedback ?? '',
+          role: parsed.role ?? '', stage: parsed.stage ?? '', goal: parsed.goal ?? '',
+          selfAssessment: Array.isArray(parsed.selfAssessment) ? parsed.selfAssessment : [],
+          step: Number.isInteger(parsed.step) ? Math.min(2, Math.max(0, parsed.step!)) : 0,
+        };
+      } catch { storageAvailable = false; return { answer: '', understanding: '', feedback: '', role: '', stage: '', goal: '', selfAssessment: [], step: 0 }; }
     };
     const persistDraft = () => {
       if (!selected) return;
       try {
-        localStorage.setItem(keyFor(selected.questionId), JSON.stringify({ answer: answer.value, feedback: feedback.value, role: role.value, stage: stage.value, goal: goal.value } satisfies Draft));
+        localStorage.setItem(keyFor(selected.questionId), JSON.stringify({
+          answer: answer.value, understanding: understanding.value, feedback: feedback.value,
+          role: role.value, stage: stage.value, goal: goal.value, selfAssessment, step: activeStep,
+        } satisfies Draft));
         draftStatus.textContent = message('草稿已保存在本机浏览器', 'Draft saved in this browser');
       } catch { storageAvailable = false; draftStatus.textContent = message('浏览器无法保存，内容暂留在当前页面。', 'Storage is unavailable; your text remains in this page for now.'); }
     };
@@ -94,6 +171,63 @@ const en = locale === 'en';
       if (!selected) return;
       window.clearTimeout(saveTimer);
       saveTimer = window.setTimeout(persistDraft, 120);
+    };
+    const setStep = (step: number) => {
+      if (!selected || step < 0 || step >= panels.length) return;
+      window.clearTimeout(saveTimer);
+      persistDraft();
+      activeStep = step;
+      panels.forEach((panel, index) => { panel.hidden = index !== activeStep; });
+      stepButtons.forEach((button) => {
+        if (Number(button.dataset.practiceStep) === activeStep) button.setAttribute('aria-current', 'step');
+        else button.removeAttribute('aria-current');
+      });
+      persistDraft();
+      const heading = panels[activeStep].querySelector<HTMLElement>('h2');
+      heading?.setAttribute('tabindex', '-1');
+      heading?.focus();
+    };
+    const renderSignalPreview = (question: PublicQuestionRecord) => {
+      const list = document.querySelector<HTMLUListElement>('#practice-signal-preview')!;
+      list.replaceChildren(...question.signals.map((signal) => {
+        const item = document.createElement('li'); item.textContent = signal; return item;
+      }));
+    };
+    const renderGuide = (question: PublicQuestionRecord) => {
+      const guide = getPracticeGuide(question.formats ?? [], locale);
+      document.querySelector('#answer-guide-title')!.textContent = guide.title;
+      document.querySelector('#answer-guide-note')!.textContent = guide.note;
+      const list = document.querySelector<HTMLOListElement>('#answer-guide-steps')!;
+      list.replaceChildren(...guide.steps.map((step) => { const item = document.createElement('li'); item.textContent = step; return item; }));
+    };
+    const renderSelfCheck = () => {
+      if (!selected) return;
+      selfAssessment = Array.from({ length: selected.signals.length }, (_, index) => {
+        const value = selfAssessment[index];
+        return value === 'supported' || value === 'missing' ? value : 'unreviewed';
+      });
+      selfCheck.replaceChildren(...selected.signals.map((signal, index) => {
+        const fieldset = document.createElement('fieldset'); fieldset.className = 'practice-self-check-row'; fieldset.dataset.selfCheckRow = '';
+        const legend = document.createElement('legend'); legend.textContent = signal; fieldset.append(legend);
+        const options = document.createElement('div'); options.className = 'practice-self-check-options';
+        const choices: { value: SelfCheckValue; label: string }[] = [
+          { value: 'supported', label: message('我能举出具体事实', 'I can point to a concrete fact') },
+          { value: 'missing', label: message('还需要补充证据', 'I need more evidence') },
+          { value: 'unreviewed', label: message('暂未自查', 'Not reviewed yet') },
+        ];
+        for (const choice of choices) {
+          const label = document.createElement('label'); label.className = 'practice-self-check-choice';
+          const input = document.createElement('input'); input.type = 'radio'; input.name = `self-check-${index}`; input.value = choice.value; input.checked = selfAssessment[index] === choice.value; input.dataset.signalIndex = String(index);
+          const text = document.createElement('span'); text.textContent = choice.label;
+          label.append(input, text); options.append(label);
+        }
+        fieldset.append(options); return fieldset;
+      }));
+      updateSelfCheckStatus();
+    };
+    const updateSelfCheckStatus = () => {
+      selfCheckStatus.textContent = getSelfCheckStatus(selfAssessment, locale).message;
+      selfCheckStatus.dataset.ready = String(getSelfCheckStatus(selfAssessment, locale).ready);
     };
     const selectQuestion = async (id: string) => {
       const item = index.find((question) => question.questionId === id);
@@ -104,6 +238,7 @@ const en = locale === 'en';
       persistDraft();
       selected = undefined;
       promptField.value = '';
+      promptPanel.hidden = true;
       copyStatus.textContent = '';
       workspace.hidden = true;
       status.textContent = message('正在载入问题框架……', 'Loading question framework…');
@@ -114,15 +249,24 @@ const en = locale === 'en';
         if (generation !== selectionGeneration) return;
         selected = question;
         document.querySelector('#selected-question-title')!.textContent = selected.question;
-        document.querySelector('#selected-question-intent')!.textContent = `${selected.evaluation.intentTitle}：${selected.evaluation.intent}`;
+        document.querySelector('#selected-question-intent')!.textContent = selected.evaluation.intent;
+        renderSignalPreview(selected);
+        renderGuide(selected);
         const draft = getDraft(id);
-        answer.value = draft.answer; feedback.value = draft.feedback; role.value = draft.role; stage.value = draft.stage; goal.value = draft.goal;
+        answer.value = draft.answer; understanding.value = draft.understanding; feedback.value = draft.feedback;
+        role.value = draft.role; stage.value = draft.stage; goal.value = draft.goal;
+        selfAssessment = Array.from({ length: selected.signals.length }, (_, index) => {
+          const value = draft.selfAssessment[index];
+          return value === 'supported' || value === 'missing' ? value : 'unreviewed';
+        });
+        renderSelfCheck();
         workspace.hidden = false;
         search.value = item.question;
         results.replaceChildren();
         status.textContent = '';
         draftStatus.textContent = storageAvailable ? '' : message('浏览器本机存储不可用，仍可在当前页面练习。', 'Local storage is unavailable; you can still practice in this page.');
         history.replaceState(null, '', `${location.pathname}?question=${encodeURIComponent(id)}`);
+        setStep(draft.step);
       } catch {
         if (generation !== selectionGeneration) return;
         selected = undefined;
@@ -148,26 +292,38 @@ const en = locale === 'en';
       }
     };
     search.addEventListener('input', renderResults);
-    for (const field of [answer, feedback, role, stage, goal]) field.addEventListener('input', saveDraft);
+    for (const field of [answer, understanding, feedback, role, stage, goal]) field.addEventListener('input', saveDraft);
+    stepButtons.forEach((button) => button.addEventListener('click', () => setStep(Number(button.dataset.practiceStep))));
+    document.querySelector<HTMLButtonElement>('#start-answer')!.addEventListener('click', () => setStep(1));
+    document.querySelector<HTMLButtonElement>('#go-to-review')!.addEventListener('click', () => setStep(2));
+    selfCheck.addEventListener('change', (event) => {
+      const input = (event.target as HTMLElement).closest<HTMLInputElement>('input[data-signal-index]');
+      if (!input) return;
+      selfAssessment[Number(input.dataset.signalIndex)] = input.value as SelfCheckValue;
+      updateSelfCheckStatus(); saveDraft();
+    });
     document.querySelector<HTMLButtonElement>('#build-practice-prompt')!.addEventListener('click', () => {
       if (!selected) return;
-      promptField.value = buildPracticePrompt({ locale, question: selected, evaluation: selected.evaluation, answer: answer.value, role: role.value, stage: stage.value, goal: goal.value });
-      promptField.focus();
+      promptField.value = buildPracticePrompt({ locale, question: selected, evaluation: selected.evaluation, answer: answer.value, understanding: understanding.value, selfAssessment, role: role.value, stage: stage.value, goal: goal.value });
+      promptPanel.hidden = false;
+      promptPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
     document.querySelector<HTMLButtonElement>('#copy-practice-prompt')!.addEventListener('click', async () => {
-      if (!promptField.value) { copyStatus.textContent = message('请先生成提示词。', 'Create the prompt first.'); return; }
-      try { await navigator.clipboard.writeText(promptField.value); copyStatus.textContent = message('已复制。请粘贴到你选择的 AI 工具。', 'Copied. Paste it into the AI tool you choose.'); }
-      catch { promptField.focus(); promptField.select(); copyStatus.textContent = message('自动复制不可用，提示词已选中，可手动复制。', 'Clipboard access is unavailable; the prompt is selected for manual copying.'); }
+      if (!promptField.value) { copyStatus.textContent = message('请先生成分析请求。', 'Create the analysis request first.'); return; }
+      try { await navigator.clipboard.writeText(promptField.value); copyStatus.textContent = message('已复制。请自行粘贴到你选择的 AI 工具。', 'Copied. Paste it into the AI tool you choose.'); }
+      catch { promptField.focus(); promptField.select(); copyStatus.textContent = message('自动复制不可用，分析请求已选中，可手动复制。', 'Clipboard access is unavailable; the request is selected for manual copying.'); }
     });
     document.querySelector<HTMLButtonElement>('#clear-practice-draft')!.addEventListener('click', () => {
       if (!selected) return;
-      window.clearTimeout(saveTimer); answer.value = ''; feedback.value = ''; role.value = ''; stage.value = ''; goal.value = ''; promptField.value = '';
+      window.clearTimeout(saveTimer); answer.value = ''; understanding.value = ''; feedback.value = ''; role.value = ''; stage.value = ''; goal.value = '';
+      selfAssessment = emptyAssessment(selected.signals.length); renderSelfCheck(); promptField.value = ''; promptPanel.hidden = true;
+      setStep(0);
       try { localStorage.removeItem(keyFor(selected.questionId)); } catch { storageAvailable = false; }
       draftStatus.textContent = message('已清除本题草稿。', 'This question’s draft was cleared.');
     });
     document.querySelector<HTMLButtonElement>('#export-practice-draft')!.addEventListener('click', () => {
       if (!selected) return;
-      const file = new Blob([JSON.stringify({ questionId: selected.questionId, locale, answer: answer.value, feedback: feedback.value, role: role.value, stage: stage.value, goal: goal.value }, null, 2)], { type: 'application/json' });
+      const file = new Blob([JSON.stringify({ questionId: selected.questionId, locale, understanding: understanding.value, answer: answer.value, selfAssessment, feedback: feedback.value, role: role.value, stage: stage.value, goal: goal.value }, null, 2)], { type: 'application/json' });
       const url = URL.createObjectURL(file); const link = document.createElement('a'); link.href = url; link.download = `interview-compass-${selected.questionId}.json`; link.click(); URL.revokeObjectURL(url);
     });
     void fetch(`${base}/data/questions/${locale}.json`).then(async (response) => {

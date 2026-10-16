@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you improve estimates without punishing honest reporting?
 question: Four plans underestimated review and rework time. Leaders demand more accurate estimates. How would you improve the process, record uncertainty, and avoid turning estimates into a blame metric?
-intent: Assess whether the response clarifies goals and constraints around estimation error, honest reporting, and psychological safety, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response uses actual variance to improve estimates without turning estimation error into a penalty for honest reporting."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in estimation error, honest reporting, and psychological safety.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Compare estimates with actual time by work type and distinguish review, rework, waiting, and interruption."
+  - "Record scope changes and uncertainty and use variance to improve planning rather than rank individuals."
+  - "Explain how the team can report risks and estimate changes, then check forecast quality over several cycles."
 primaryCapability: delivery.capacity-planning
 roles:
   - manager

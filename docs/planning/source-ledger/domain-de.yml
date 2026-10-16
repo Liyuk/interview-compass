@@ -1,41 +1,46 @@
-# Domain D (delivery) and E (collaboration) source ledger fragment.
 sources:
   - id: blog-management-retrospective
     title: 管理复盘：从执行到系统的八个判断
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
     status: used
     questions:
-      - d-decomposition-vague-goal
+      - bulk1000-d-052-v1
       - d-incident-first-hour
       - bulk-a-incident-recovery-validation
       - e-communication-decision-update
       - e-communication-context-handoff
       - e-influence-without-authority
+      - bulk-d-recovery-plan-after-missed-milestone
+      - bulk-e-conflict-repair-after-escalation
   - id: blog-product-engineer-without-boundaries
     title: 产品资源排不上，研发接下项目后怎么推进？
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/consulting/2026/09/product-engineer-without-boundaries/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/consulting/2026/09/product-engineer-without-boundaries/zh.md
     status: used
     questions:
       - d-decomposition-unfamiliar-estimate
       - d-project-late-change-request
       - d-operations-campaign-landing
-      - e-negotiation-scope-for-date
+      - wave17-collab-001
       - e-influence-escalation
   - id: blog-working-under-resource-constraints
     title: 资源不足时，怎样不让团队靠透支运转
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/working-under-resource-constraints/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/working-under-resource-constraints/zh.md
     status: used
     questions:
       - d-capacity-real-capacity
       - d-capacity-overdraft-signals
       - bulk1000-d-055-v1
       - d-project-name-the-risk
-      - e-negotiation-scope-for-date
-      - e-negotiation-shared-engineers
+      - wave17-collab-001
+      - d-project-management-schedule-collision
       - e-influence-escalation
   - id: blog-resolving-project-conflicts
     title: 项目合作发生冲突时，先对齐哪三件事
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
     status: used
     questions:
       - bulk1000-d-055-v1
@@ -44,13 +49,15 @@ sources:
       - e-conflict-decision-record
   - id: blog-define-the-measurement
     title: 数据度量工作指南（二）：指标争论之前，先定义测量对象
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/03/define-the-measurement-before-arguing-about-metrics/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/03/define-the-measurement-before-arguing-about-metrics/zh.md
     status: used
     questions:
       - d-operations-experiment-guardrails
   - id: blog-use-your-own-product-feedback-loop
     title: 先用自己的产品：开发者如何建立真实反馈回路
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/05/use-your-own-product-feedback-loop/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/05/use-your-own-product-feedback-loop/zh.md
     status: used
     questions:
       - bulk-a-incident-recovery-validation
@@ -63,20 +70,24 @@ sources:
       - e-communication-decision-update
   - id: blog-information-sync-for-decisions
     title: 信息同步不是抄送
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/information-sync-for-decisions/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/information-sync-for-decisions/zh.md
     status: used
     questions:
       - e-communication-decision-update
   - id: blog-one-on-ones-and-decision-rights
     title: 1-on-1 不是例会：信息、预期与决策权怎样对齐
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/one-on-ones-and-decision-rights/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/one-on-ones-and-decision-rights/zh.md
     status: used
     questions:
       - e-feedback-align-on-one-on-one
       - e-feedback-background-vs-authority
+      - f-frontline-management-one-on-one-alignment
   - id: repo-tech-interview-handbook-behavioral
     title: Tech Interview Handbook：行为面试
-    url: https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
+    url: >-
+      https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
     status: used
     questions:
       - e-feedback-receiving-hard
@@ -90,7 +101,7 @@ sources:
     url: https://github.com/pingananth/fde-decomp-interview-guide
     status: used
     questions:
-      - d-decomposition-reduce-deploy-failure
+      - bulk1000-d-052-v1
       - d-decomposition-solution-shaped-customer-request
       - d-decomposition-conflicting-evidence-start
       - d-decomposition-resource-cut-midflight

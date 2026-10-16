@@ -18,6 +18,7 @@ sources:
       - c-metrics-causality-no-number-evidence
       - g-learning-transfer-unfamiliar-domain
       - e-communication-clarify-vague-question
+      - bulk-h-ownership-deliverable-unclaimed
   - id: blog-interview-questions-archive
     title: 面试题与工程师的成长路径
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2018/04/interview-questions-archive/zh.md

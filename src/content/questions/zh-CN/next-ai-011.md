@@ -3,7 +3,7 @@ questionId: next-ai-011
 kind: question
 status: published
 locale: zh-CN
-title: RAG 检索结果彼此矛盾时，怎样组织回答？
+title: 检索到的政策互相矛盾时，助手该怎样回答？
 question: 知识库中两份仍有效的政策给出不同要求，检索分数也接近。助手不能自行选择对用户最方便的一条。你会设计什么回答和升级路径？
 intent: 考察能否显式建模冲突、来源权威性和拒答边界。
 signals:

@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you strengthen promotion evidence that lists reach but not contribution?
 question: The packet says your work reached five teams but does not show how you influenced them or what you owned. Which decision, behavior, and outcome evidence would you add?
-intent: Assess whether the response clarifies goals and constraints around the evidence chain between reach and personal accountability, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response connects the stated scope of impact to the candidate’s actual responsibilities, decisions, and actions."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in the evidence chain between reach and personal accountability.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Explain how work reached multiple teams and what influence the candidate had over them."
+  - "Add the key decisions and actions the candidate took and the results linked to each."
+  - "Separate individual contribution, shared team results, and broader organizational context using verifiable artifacts."
 primaryCapability: work-responsibility.attribution
 roles:
   - manager

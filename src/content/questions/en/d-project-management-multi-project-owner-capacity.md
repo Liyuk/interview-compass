@@ -4,9 +4,7 @@ kind: question
 status: published
 locale: en
 title: How do you decide whether to add an owner or reduce scope when one person runs too many critical projects?
-question: >-
-  One owner manages four high-priority projects. Status is green, but risk closure, cross-team decisions, and
-  retrospectives are slipping. How would you choose added support, reassignment, or a smaller portfolio?
+question: "One owner is responsible for four high-priority projects. Status reports look normal, but risk handling, cross-team decisions, and retrospectives are all delayed. How would you decide whether to add support, reassign ownership, or reduce the portfolio?"
 intent: Assess whether you recognize management bandwidth limits and compare staffing with portfolio changes.
 signals:
   - Measure decision wait, overdue risks, coordination time, and team escalations.

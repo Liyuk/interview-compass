@@ -3,8 +3,8 @@ questionId: bulk-ai-model-provider-fallback
 kind: question
 status: published
 locale: zh-CN
-title: 模型供应商故障切换
-question: 产品依赖外部模型 API，供应商可能限流或改变可用模型。你会如何设计路由和降级，使切换后质量变化可见而不是静默发生？
+title: 模型供应商故障时，怎样切换服务并控制功能影响？
+question: "产品依赖外部模型接口，供应商可能限制调用频率或调整可用模型。你会如何设计切换规则和非核心功能的临时关闭方式，让切换后的质量变化可以被发现？"
 intent: 了解备用模型、质量契约、限流和依赖风险管理之间的关系。
 signals:
   - 比较重试、排队、备用模型与明确失败各自的后果

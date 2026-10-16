@@ -3,8 +3,8 @@ questionId: bulk-a-backend-rate-limit-distributed
 kind: question
 status: published
 locale: zh-CN
-title: 多实例限流语义
-question: 一个 API 部署在多个实例后，单机限流器使总配额随实例数增加。你会根据突发容忍度、精度和故障策略设计限流，并说明状态放在哪里？
+title: "多个服务实例怎样共同控制 API 请求速度？"
+question: "一个 API 部署在多个实例后，单机请求限制使总额度随实例数增加。你会根据突发容忍度、精度和故障策略设计请求速率限制，并说明状态放在哪里？"
 intent: 考察限流算法、分布式状态与故障权衡。
 signals:
   - 澄清按用户/租户/接口的限流维度

@@ -3,14 +3,14 @@ questionId: c-product-judgment-moat-over-short-term-metrics
 kind: question
 status: published
 locale: zh-CN
-title: 说一个当时看起来损害用户体验、短期指标大跌，但两年后成了商业护城河的产品决策。
-question: 说一个你做过的产品决策，它在当时看起来违背用户体验，短期指标大幅下跌，但两年后回头看，却为公司筑起了很高的商业护城河，或者让竞争对手难以追赶。你当时是怎样判断并说服别人的？
-intent: 了解你如何为一个短期不讨好的决定建立长期的判断，并诚实地区分远见和运气。
+title: 一次短期指标变差的产品决策，后来带来了什么长期结果？
+question: 讲一个你参与的产品决策：当时某项短期指标变差，但团队认为它可能带来长期价值。你依据什么作出决定？后来有哪些证据说明结果与这个决定有关？还有哪些外部因素可能解释结果？
+intent: 了解你如何在短期成本与预期长期价值之间作判断，并区分决策本身的贡献、运气和外部变化。
 signals:
   - 说清当时为什么相信长期价值，以及依据的机制，而不是事后合理化
   - 说明当时的短期代价和如何向各方解释
-  - 区分真正由决定带来的护城河和同期的运气与外部变化
-  - 说明事先设定的检验条件，以及什么情况下会改变决定
+  - 用后来收集到的证据检验结果，区分决定的影响和同期运气或外部变化。
+  - 说明哪些新证据会让你停止、调整或重新评估决定。
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, planning, ethics]
 roles: [product, manager]
@@ -19,8 +19,9 @@ careerTracks: [senior-manager, executive]
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:
-  - 如果当时的短期数据再差一倍，你还会坚持吗？
-  - 有没有一次你以为在筑护城河，结果只是损害了用户？
+  - 当时具体是哪项短期指标变差？谁受到影响？
+  - 你预先设定了什么时间点或信号来复查这项决定？
+  - 你怎样排除市场变化或其他产品改动的影响？
 source:
   - attribution: original
     label: "作者的分级面试框架，产品方向"

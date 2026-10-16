@@ -5,11 +5,11 @@ status: published
 locale: en
 title: The team agrees in public but privately executes different versions. What do you do?
 question: >-
-  After several reviews, everyone verbally agrees, yet product, engineering, and operations interpret the boundaries
-  differently during implementation. How would you resolve the conflict and prevent recurrence?
+  After several reviews, everyone verbally agrees, yet product, engineering, and operations interpret the
+  boundaries differently during implementation. How would you resolve the conflict and prevent recurrence?
 intent: >-
-  Assesses whether the candidate distinguishes apparent consensus from real disagreement and creates traceable decision
-  practices.
+  Assesses whether the candidate distinguishes apparent consensus from real disagreement and creates traceable
+  decision practices.
 signals:
   - Surfaces each party’s interpretation, constraints, and unspoken objections
   - Records decisions, open issues, owners, and conditions for reopening

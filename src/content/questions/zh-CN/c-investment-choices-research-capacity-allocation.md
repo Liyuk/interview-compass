@@ -3,8 +3,8 @@ questionId: c-investment-choices-research-capacity-allocation
 kind: question
 status: published
 locale: zh-CN
-title: 多条产品线争抢用户研究资源时，怎样安排研究顺序？
-question: 设计研究团队只有两名研究员，三个产品线都希望本月完成重要访谈；其中一项决策不可逆，另一项可以先用低成本数据验证。你会如何安排？
+title: 研究资源有限时，怎样安排优先级和投入时机？
+question: 设计研究团队只有两名研究员，三个产品线都希望本月完成重要访谈；一项决策很难撤回，另一项可以先用低成本数据验证。你会如何安排？
 intent: 考察能否按决策风险、信息缺口和替代方法配置稀缺研究能力。
 signals:
   - 识别决策时点、不可逆程度和错误代价。

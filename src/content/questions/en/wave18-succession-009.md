@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you preserve context when leaders hand over during a team merger?
 question: After two teams merge, customer commitments, historical exceptions, and open risks sit with different owners. How would you verify the handoff and find missing context?
-intent: Assess whether the response clarifies goals and constraints around accountability and context transfer during organizational change, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response transfers customer commitments, historical exceptions, and risks during a merger and verifies that owners can use the information."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in accountability and context transfer during organizational change.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "List the sources and owners for customer commitments, open risks, past exceptions, and decision context."
+  - "Arrange acknowledgement, questions, and joint handling for high-risk items."
+  - "Use an independent handoff exercise or record sample to find omissions and assign follow-up ownership."
 primaryCapability: people-organization.delegation-succession
 roles:
   - manager

@@ -5,8 +5,8 @@ status: published
 locale: en
 title: How should a manager of managers correct goal drift across teams?
 question: >-
-  Annual goals were translated into countable delivery volume at team level, while nobody owns customer outcomes.
-  How would you inspect the cascade and reset accountability?
+  Annual goals were translated into countable delivery volume at team level, while nobody owns customer
+  outcomes. How would you inspect the cascade and reset accountability?
 intent: >-
   Assess whether you calibrate goal chains through managers and identify metric substitution and local
   optimization.

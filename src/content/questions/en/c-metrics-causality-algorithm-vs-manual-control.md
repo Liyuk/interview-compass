@@ -3,8 +3,8 @@ questionId: c-metrics-causality-algorithm-vs-manual-control
 kind: question
 status: published
 locale: en
-title: The algorithm team says upgrading the recommendation model lifts conversion but operations would lose manual control of key placements. Do you trust the algorithm or insist on manual control?
-question: The algorithm team tells you that upgrading the recommendation model can lift conversion by 3 percent, but operations would lose the right to intervene manually on key placements. As the operations lead, do you trust the algorithm or insist on manual intervention? How do you design an experiment to judge which is better, and how do you treat value the experiment cannot measure?
+title: "A recommendation model may lift conversion but reduce manual control. How would you assess the change?"
+question: "The algorithm team expects an upgraded recommendation model to lift conversion by 3%, but operations would lose the ability to adjust key placements manually. How would you design an experiment and decision rules while accounting for value the experiment cannot measure?"
 intent: See how you decide between algorithmic efficiency and human control with experiments and principles rather than position or habit.
 signals:
   - Lists goals beyond conversion, such as brand, fairness to suppliers, and long-term experience

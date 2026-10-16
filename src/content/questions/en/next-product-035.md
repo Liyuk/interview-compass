@@ -4,7 +4,9 @@ kind: question
 status: published
 locale: en
 title: How do you prioritize when every team calls its work platform investment?
-question: Three teams propose shared-capability projects, each citing different future benefits with no near-term customer commitment. How would you validate and sequence platform investments?
+question: >-
+  Three teams propose shared-capability projects, each citing different future benefits with no near-term
+  customer commitment. How would you validate and sequence platform investments?
 intent: Assesses portfolio thinking, demand validation, and opportunity-cost reasoning.
 signals:
   - Identify real duplicated costs, users, and alternatives.
@@ -35,4 +37,5 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 A
+relatedQuestions: []
 ---

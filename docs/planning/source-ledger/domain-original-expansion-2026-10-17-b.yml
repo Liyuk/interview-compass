@@ -5,7 +5,7 @@ sources:
     questions:
       - wave17-domain-001
       - wave17-domain-002
-      - wave17-domain-003
+      - exp1500-b-029
       - wave17-domain-007
       - wave17-domain-008
       - wave17-domain-009
@@ -13,16 +13,16 @@ sources:
       - wave17-domain-012
       - wave17-domain-013
       - wave17-domain-014
-      - wave17-domain-015
+      - exp1500-b-049
       - wave17-value-001
       - wave17-value-003
       - wave17-value-004
-      - wave17-value-007
+      - bulk-c-metrics-06
       - wave17-value-008
-      - wave17-value-009
+      - next-product-035
       - wave17-value-010
-      - wave17-delivery-001
-      - wave17-delivery-003
+      - exp1500-d-027
+      - exp1500-d-029
       - wave17-delivery-004
       - wave17-delivery-005
       - wave17-delivery-006
@@ -33,25 +33,25 @@ sources:
       - wave17-collab-001
       - wave17-collab-002
       - wave17-collab-003
-      - wave17-collab-004
+      - bulk-e-influence-no-authority-experiment
       - wave17-collab-005
       - wave17-collab-006
       - wave17-collab-007
       - wave17-collab-008
-      - wave17-collab-009
+      - wave16-collab-037
       - wave17-collab-010
       - wave17-collab-011
       - wave17-collab-012
       - wave17-collab-013
       - wave17-collab-014
       - wave17-collab-015
-      - wave17-growth-001
-      - wave17-growth-002
+      - wave16-growth-046
+      - h-integrity-correct-forecast-after-new-evidence
       - wave17-growth-003
       - wave17-growth-004
-      - wave17-growth-005
-      - wave17-growth-007
-      - wave17-growth-009
+      - g-learning-transfer-measure-practice-effect
+      - bulk-g-recovery-after-public-mistake
+      - c-outcomes-scaling-cohort-reproducibility
       - wave17-growth-010
       - wave17-integrity-001
       - wave17-integrity-003
@@ -61,4 +61,6 @@ sources:
       - wave17-integrity-008
       - wave17-integrity-009
       - wave17-integrity-010
-    note: 题面为本站原创；本批逐题保留主要能力、观察信号和双语结构，发布前执行全库串行去重。 已将 11 道重复题的追问、信号和来源并入原题。 已将 wave17-domain-006 的内容并入 b-commercial-rules-settlement-split。
+    note: >-
+      题面为本站原创；本批逐题保留主要能力、观察信号和双语结构，发布前执行全库串行去重。 已将 11 道重复题的追问、信号和来源并入原题。 已将 wave17-domain-006 的内容并入
+      b-commercial-rules-settlement-split。

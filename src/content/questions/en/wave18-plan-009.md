@@ -3,12 +3,13 @@ questionId: wave18-plan-009
 kind: question
 status: published
 locale: en
-title: How do you plan a quarter when the key metric has no reliable baseline?
-question: The team wants to reduce customer wait time, but historical data is incomplete and regions measure it differently. How would you establish a baseline and set a learning-oriented goal?
-intent: Assess whether the response clarifies goals and constraints around goal setting and measurement readiness without a baseline, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+title: "How do you set quarterly goals without historical data?"
+question: "The team wants to reduce customer wait time this quarter, but historical data is incomplete and regions measure time differently. How would you establish comparable starting data and set a goal that can be recalibrated as you learn?"
+intent: "Assess whether the response establishes a comparable starting point and a learning goal when historical data is incomplete and regions measure differently."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in goal setting and measurement readiness without a baseline.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Check that regions define the start, end, and exclusions for waiting time consistently."
+  - "Explain how to collect missing data and test whether the sample represents the whole service."
+  - "Set a reviewable first improvement hypothesis and a date to recalibrate it with new data."
 primaryCapability: value-direction.planning
 roles:
   - manager

@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you rehearse an operation without its frontline leader?
 question: A leader plans to be away for a month, and the team normally waits for their return on major decisions. How would you design decision rehearsal, risk thresholds, and review?
-intent: Assess whether the response clarifies goals and constraints around absence rehearsal and evidence of organizational resilience, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response uses a realistic absence exercise to test independent team decisions and set appropriate risk safeguards."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in absence rehearsal and evidence of organizational resilience.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Choose realistic decisions likely during the absence and define risks the team must not cross."
+  - "Set interim decision rights, escalation thresholds, and emergency contacts."
+  - "After the exercise, review waits, errors, escalations, and user impact, then adjust delegation or preparation."
 primaryCapability: people-organization.delegation-succession
 roles:
   - manager

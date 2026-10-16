@@ -17,6 +17,9 @@ signals:
     confusion
   - Checks what the other person heard and listens to their concern before restating a position
   - Moves the discussion toward verifiable evidence, a specific revision, and a follow-up check
+  - >-
+    Clarifies the facts, stakeholders, and ownership boundaries involved in shared accountability and
+    fact-finding in cross-team feedback.
 primaryCapability: collaboration.feedback
 topics:
   - feedback
@@ -38,9 +41,12 @@ formats:
 source:
   - attribution: original
     label: Interview Compass 原创题目扩充批次 600–626
+  - attribution: original
+    label: Interview Compass coverage-led original expansion batch 2026-10-17 C
 followUps:
   - >-
     If they still reject your evidence standard, how would you record the disagreement and move the decision
     forward?
   - When would you acknowledge that your original delivery was unhelpful and adjust it?
+relatedQuestions: []
 ---

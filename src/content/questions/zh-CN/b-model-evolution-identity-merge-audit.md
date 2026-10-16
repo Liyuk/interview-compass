@@ -11,8 +11,11 @@ signals:
   - 明确哪些历史事实只做关联展示，哪些可重算或迁移。
   - 逐项定义合同、权限、审批和审计日志的继承边界。
   - 区分主实体、别名和历史归属关系。
-  - 避免覆盖旧标识或误合并不可逆记录。
+  - 避免覆盖旧标识或误合并不可逆（可以安全撤回）记录。
   - 验证跨系统引用、权限和审计查询。
+  - 区分实体身份、渠道标识、匹配候选和人工确认的主档。
+  - 明确子记录迁移、保留历史引用及误合并回滚方式。
+  - 记录匹配依据、决策人和合并/拆分事件以支持审计。
 primaryCapability: domain-modeling.model-evolution
 topics:
   - data-modeling
@@ -41,9 +44,12 @@ followUps:
   - 【合并两个实体后如何保存旧标识的可追溯性？】客户并购后两个企业账号需要合并为一个主体，但审计、合同和历史活动仍引用旧 ID。你会怎样设计映射和查询？
   - 拆分合并后的实体时如何恢复边界？
   - 哪些引用应该动态解析到主实体？
+  - 如果两个档案分别存在互相冲突的身份字段，如何决定是否合并？
+  - 怎样让下游系统逐步迁移而不在切换期间创建更多重复档案？
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 A
+relatedQuestions: []
 ---

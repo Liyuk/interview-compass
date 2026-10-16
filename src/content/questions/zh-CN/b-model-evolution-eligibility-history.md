@@ -9,7 +9,7 @@ intent: 了解你是否会把规则变化、事实发生时间和当前状态分
 signals:
   - 明确资格规则版本、生效时间、判断时可见的事实和审计来源
   - 区分重新计算历史决定与仅展示当时结果的业务场景
-  - 设计兼容迁移、历史回放和抽样核对，说明何时停止旧口径
+  - 设计兼容迁移、历史回放和抽样核对，说明何时停止旧规则
 primaryCapability: domain-modeling.model-evolution
 topics:
   - data-modeling

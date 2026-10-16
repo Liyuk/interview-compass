@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you tell whether several user groups share one product problem?
 question: A feature serves newcomers, administrators, and expert users, each with different obstacles. How would you separate shared needs from role-specific needs without forcing them into one solution?
-intent: Assess whether the response clarifies goals and constraints around user boundaries and evidence of a shared product problem, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response distinguishes product obstacles for different users and decides which are shared problems versus separate needs."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in user boundaries and evidence of a shared product problem.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Describe the tasks and concrete obstacles for new users, administrators, and experts."
+  - "Compare common causes with role-specific differences instead of merging problems because they use the same feature."
+  - "State what behavior or interview evidence would justify a shared solution or separate approaches."
 primaryCapability: domain-modeling.product-project-model
 roles:
   - product

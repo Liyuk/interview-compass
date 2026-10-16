@@ -3,8 +3,8 @@ questionId: f-hiring-cross-functional-joint-interview
 kind: question
 status: published
 locale: en
-title: When building the core team of a new business line, how do you have product, operations, and engineering leads interview one another and tell blame-shifting from shared ownership?
-question: When building the core team for a new business line, you can have senior product, operations, and engineering candidates interview one another or be interviewed together. How do you design such an interview to tell whether they shift blame or speak one shared business language, and how do you keep it from becoming a performance or a fight?
+title: "How can a joint interview reveal whether cross-functional leaders can share accountability?"
+question: "A new business line needs product, operations, and engineering leads to share responsibility for outcomes. How would you design a joint interview to observe how they handle disagreements about facts, ownership, and trade-offs—and prevent it from becoming a performance or confrontation?"
 intent: See how, as an interviewer, you design a situation that examines the quality of collaboration and judge by observable behavior rather than impression.
 signals:
   - Designs a shared situation with real constraints in which the three must make trade-offs together

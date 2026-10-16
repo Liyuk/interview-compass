@@ -3,13 +3,8 @@ questionId: bulk-c-metrics-04
 kind: question
 status: published
 locale: en
-title: >-
-  Teams define “retention” as login, product use, or renewal. How would you resolve the metric
-  question?
-question: >-
-  Product, operations, and sales reports all say “retention,” but refer to return visits, use of a
-  key feature, and renewal. How would you organize a definition discussion without merely
-  standardizing a dashboard label?
+title: "Different teams call login, usage, and renewal “retention.” How do you define each measure?"
+question: "Product, operations, and sales reports all say “retention,” but refer to return visits, key-feature use, and renewal. How would you clarify the measures so each name maps to a user behavior and business decision?"
 intent: >-
   Assess whether the candidate connects metric definitions to decisions and measured objects while
   preserving distinctions that matter.

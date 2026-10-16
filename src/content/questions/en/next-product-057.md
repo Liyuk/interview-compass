@@ -4,8 +4,8 @@ kind: question
 status: published
 title: How do you assess brand spend with no short-term conversions?
 question: >-
-  Brand advertising expands reach, but short-term direct conversions do not change and the sales cycle may last months.
-  How would you decide whether to wait, change creative, or stop?
+  Brand advertising expands reach, but short-term direct conversions do not change and the sales cycle may
+  last months. How would you decide whether to wait, change creative, or stop?
 intent: Assesses attribution windows and links between brand signals and commercial outcomes.
 signals:
   - Separate reach, brand lift, search behavior, and downstream conversion.

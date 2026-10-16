@@ -7,7 +7,9 @@ title: How do you include quiet users when research recruits mostly highly activ
 question: >-
   Interview participants are almost all power users and community members. Feedback on the latest redesign is
   positive, but retention continues to fall. How would you redesign recruitment and research questions?
-intent: Assess whether you identify sampling bias and include real tasks from inactive, churned, and edge-case users.
+intent: >-
+  Assess whether you identify sampling bias and include real tasks from inactive, churned, and edge-case
+  users.
 signals:
   - Define user states and critical tasks to cover.
   - Recruit non-completers, silent, churned, and users with accessibility needs.

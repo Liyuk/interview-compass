@@ -9,7 +9,8 @@ sources:
       - b-product-project-model-overview-facts
   - id: blog-engineer-product-judgment
     title: 工程师为什么需要产品判断
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
     status: used
     questions:
       - b-business-context-user-task-chain
@@ -46,10 +47,11 @@ sources:
       - c-metrics-causality-metric-tiers
   - id: blog-metric-dictionary
     title: 数据度量工作指南（四）：指标字典模板，把定义变成可复算的协作接口
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
     status: used
     questions:
-      - b-feature-model-window-definition
+      - bulk-b-feature-01
   - id: blog-top-k
     title: 思维训练（一）：Top K 问题——先找到最重要的事
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
@@ -82,7 +84,8 @@ sources:
     reason: 主题归属交付域 D（容量与承诺），由负责 D 域的作者处理；在 B/C 域内没有对应的主评价目标。
   - id: original-domain-modeling-boundaries
     title: 内容架构研究第 5 节：域之间容易混淆的判定规则（订单、分成、特征、模型演进示例）
-    url: https://github.com/Liyuk/interview-compass/blob/main/docs/planning/2026-10-14-content-architecture-mece.md
+    url: >-
+      https://github.com/Liyuk/interview-compass/blob/main/docs/planning/2026-10-14-content-architecture-mece.md
     status: used
     questions:
       - b-commercial-rules-promotion-stacking
@@ -92,7 +95,8 @@ sources:
       - b-model-evolution-concept-split
   - id: gh-dataskew-data-engineering-interview-questions
     title: dataskew-io/data-engineering-interview-questions
-    url: https://github.com/dataskew-io/data-engineering-interview-questions/tree/715f5fad79373c70bc9b7e9cd3dc1cb126f69428
+    url: >-
+      https://github.com/dataskew-io/data-engineering-interview-questions/tree/715f5fad79373c70bc9b7e9cd3dc1cb126f69428
     status: used
     questions:
       - b-data-model-active-user-grain

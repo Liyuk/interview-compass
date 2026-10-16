@@ -9,7 +9,7 @@ sources:
       - a-databases-read-replica-stale-read
       - a-debugging-cache-stampede-warmup
       - bulk-a-flaky-test-triage
-      - a-distributed-systems-deadline-budget-fanout
+      - exp1500-a-017
       - a-distributed-systems-partition-key-hotspot
       - a-programming-languages-ownership-transfer-async
       - a-programming-languages-unicode-normalization-identity
@@ -30,16 +30,16 @@ sources:
       - b-model-evolution-reopened-work-item
       - b-model-evolution-retroactive-correction-boundary
       - bulk-a-webhook-delivery
-      - bulk1000-b-032-v1
+      - exp1500-b-018
       - bulk1000-g-086-v1
       - c-prioritization-cost-delay-reversible-step
-      - d-project-management-change-freeze-criteria
+      - d-project-management-change-control-expedite-path
       - e-communication-customer-impact-notice
       - e-communication-uncertainty-update
       - e-feedback-measure-behavior-not-intent
       - e-negotiation-service-level-capacity
       - e-stakeholder-decision-log-objection
-      - f-team-design-single-expert-continuity
+      - f-team-design-expert-load-map
       - g-learning-transfer-practice-check
       - g-self-direction-focus-budget
       - h-boundaries-confidential-info

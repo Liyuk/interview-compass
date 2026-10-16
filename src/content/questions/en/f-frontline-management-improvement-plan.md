@@ -3,13 +3,8 @@ questionId: f-frontline-management-improvement-plan
 kind: question
 status: published
 locale: en
-title: >-
-  A long-serving employee can no longer keep up with the pace of the business and often spreads negativity. How would
-  you start a performance improvement plan?
-question: >-
-  A long-serving employee can no longer keep up with the pace of the business and often spreads negativity on the team.
-  How would you start a performance improvement plan? How do you structure the first conversation, design goals that are
-  specific, measurable, and acceptable to them, and keep the process fair and compliant?
+title: "How do you create a fair improvement plan when someone repeatedly misses role expectations?"
+question: "A team member’s recent work has repeatedly fallen below role expectations, and earlier feedback has not led to improvement. How would you create and carry out a fair, measurable performance improvement plan?"
 intent: >-
   See whether you can make performance improvement a sincere, supported process rather than a formality before an exit,
   and keep it fair and compliant.

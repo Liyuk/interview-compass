@@ -10,6 +10,9 @@ signals:
   - 描述干扰机制与偏差可能方向。
   - 检查随机化单元、曝光和跨组传播。
   - 考虑集群实验或敏感性分析并说明结论边界。
+  - 识别用户、内容和创作者之间的相互影响。
+  - 比较用户级、集群级和时间切换实验。
+  - 选择能解释外溢并保护关键护栏的估计方法。
 primaryCapability: value-direction.metrics-causality
 topics:
   - metrics
@@ -34,7 +37,12 @@ formats:
 followUps:
   - 无法重做实验时，哪些分析可辅助决策？
   - 如何把长期网络效应纳入护栏？
+  - 实验分组如何影响内容供给端？
+  - 怎样判断样本量足以支持集群实验？
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 D
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 B
+relatedQuestions: []
 ---

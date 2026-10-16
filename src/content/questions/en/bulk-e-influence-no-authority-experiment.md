@@ -6,8 +6,8 @@ locale: en
 title: Turn cross-team agreement into owned commitments
 question: >-
   Several teams agree in a review to improve data quality, but two weeks later no one has taken the
-  implementation work; each lead believes agreement itself completed the collaboration. How would
-  you turn consensus into ownership and checkpoints?
+  implementation work; each lead believes agreement itself completed the collaboration. How would you turn
+  consensus into ownership and checkpoints?
 intent: Examines whether collaboration turns verbal agreement into explicit, verifiable commitments.
 signals:
   - Checks whether work breakdown, capacity, or decision rights were misunderstood.
@@ -36,4 +36,5 @@ source:
     label: 'Tech Interview Handbook: behavioral interview rubrics'
     url: >-
       https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
+relatedQuestions: []
 ---

@@ -5,11 +5,11 @@ status: published
 locale: en
 title: How do you create shared outcome ownership when functions commit only to local metrics?
 question: >-
-  Product promises features, engineering promises dates, and operations promises ticket handling, but nobody owns
-  whether customers complete the key task. How would you reset goals with these leads?
+  Product promises features, engineering promises dates, and operations promises ticket handling, but nobody
+  owns whether customers complete the key task. How would you reset goals with these leads?
 intent: >-
-  Assess whether you connect functional measures, accountability boundaries, and shared reviews to an end-to-end
-  user outcome.
+  Assess whether you connect functional measures, accountability boundaries, and shared reviews to an
+  end-to-end user outcome.
 signals:
   - Define the shared user task and success or failure criteria.
   - Separate controllable functional inputs from shared outcome ownership.
@@ -43,4 +43,5 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 K
+relatedQuestions: []
 ---

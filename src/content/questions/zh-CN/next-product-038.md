@@ -3,13 +3,16 @@ questionId: next-product-038
 kind: question
 status: published
 locale: zh-CN
-title: 实验期间外部政策同时变化，结果还能归因吗？
+title: 实验期间外部政策同时变化，结果还能判断结果受哪些因素影响吗？
 question: 随机实验运行期间平台同时调整了收费政策，处理组和对照组受到影响程度不同。你会如何判断实验结果还能支持什么结论？
 intent: 考察实验干预、外部变化和因果解释边界。
 signals:
   - 梳理干预时间与组间暴露差异。
   - 检查随机化、污染和样本流失。
   - 限定可解释的估计量并补充敏感性分析。
+  - 核验随机化单位与实际曝光、账号合并及跨设备行为是否一致。
+  - 检查渠道、地区和时间的组间不平衡或交叉污染。
+  - 说明调整、分层分析或重新实验的条件及结论边界。
 primaryCapability: value-direction.metrics-causality
 topics:
   - metrics
@@ -32,7 +35,12 @@ formats:
 followUps:
   - 是否应暂停、重启或分层分析？
   - 哪些结果可以保留为方向性信号？
+  - 如果实验曝光本身不是随机的，随机分配还能回答什么？
+  - 怎样在实验前设计跨设备身份和污染检测？
 source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 A
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch C
+relatedQuestions: []
 ---

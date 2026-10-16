@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you handle a third conversation after the same feedback was ignored twice?
 question: You asked a report to surface risks before delivery, but twice they raised blockers just before launch. How would you check understanding, explore causes, and agree on observable change?
-intent: Assess whether the response clarifies goals and constraints around behavior diagnosis and improvement agreements after repeated feedback, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response investigates the cause of repeated behavior and agrees with the employee on a reviewable change."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in behavior diagnosis and improvement agreements after repeated feedback.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Cite the two specific late risk reports, their impact, and the prior agreement."
+  - "Ask how the employee understood the expectation, what obstacles arose, and whether process or authority was unclear."
+  - "Agree on a concrete checkpoint before the next delivery, available support, and what happens if the behavior does not change."
 primaryCapability: collaboration.feedback
 roles:
   - manager

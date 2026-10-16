@@ -5,12 +5,12 @@ status: published
 locale: zh-CN
 title: 你怎样确认团队的目标和公司的战略目标是一致的？
 question: 你怎样确认团队的目标和公司的战略目标是一致的？发现不一致时，是调整团队的目标，还是去影响上面的目标？
-intent: 了解你如何把团队规划与上层战略对齐，并在不一致时作出有依据的选择。
+intent: 了解你如何让团队计划服务于上层战略目标，并在两者不一致时作出有依据的选择。
 signals:
   - 说明如何弄清公司战略的真实含义，而不只是读到文件
   - 把团队的重点事项逐一对应到战略目标，并找出没有对应的投入
   - 发现不一致时，说明调整团队和向上反馈两种做法的取舍
-  - 说明怎样让团队成员也理解这种对齐，而不只是管理层知道
+  - 说明怎样让团队成员理解团队计划与上层目标的关系，而不只是管理层知道
 primaryCapability: value-direction.planning
 topics: [planning, communication, product-thinking, business-planning]
 roles: [manager, product, engineering, pmo]

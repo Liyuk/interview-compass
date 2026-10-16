@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you explain your contribution when success depended on another team?
 question: Another team provided resources at a critical moment. You did not manage them, but clarified dependencies, negotiated priority, and prepared alternatives. How would you describe your impact?
-intent: Assess whether the response clarifies goals and constraints around coordination contribution and evidence without direct authority, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response explains how the candidate identified, negotiated, and managed a cross-team dependency without direct authority."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in coordination contribution and evidence without direct authority.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Show when the dependency was found, how priorities were negotiated, and what fallback was prepared."
+  - "Separate the partner team’s delivery contribution from the candidate’s coordination contribution."
+  - "Explain how they escalated or replanned when the dependency failed and what evidence shows the effect of their actions."
 primaryCapability: work-responsibility.attribution
 roles:
   - product

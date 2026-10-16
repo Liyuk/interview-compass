@@ -3,12 +3,13 @@ questionId: wave18-bpm-009
 kind: question
 status: published
 locale: zh-CN
-title: 一次业务结果由线上产品和线下服务共同产生，怎样划清各环节的贡献？
-question: 用户转化提升发生在产品改版同期，线下团队也调整了服务流程。你会怎样建立共同的结果模型，避免只看线上漏斗就归因？
-intent: 考察能否围绕“线上线下服务链路中的共同结果”澄清目标与约束，结合具体证据作出判断，并说明关键取舍。
+title: 业务结果来自线上和线下时，怎样分清各自影响？
+question: 用户转化提升发生在产品改版同期，线下团队也调整了服务流程。你会如何一起衡量线上和线下的影响，避免把全部变化算到线上功能上？
+intent: "看你能否在产品改版和线下服务同时变化时，区分两者对用户结果的影响。"
 signals:
-  - 明确“线上线下服务链路中的共同结果”涉及的事实、对象和责任边界。
-  - 用可核验的例子说明判断依据、结果影响及必要的复盘。
+  - "列出线上改版、线下流程调整及其实施时间和覆盖人群。"
+  - "比较受影响与未受影响的人群或时段，并检查两类服务之间的交接。"
+  - "说明能支持何种影响判断、哪些仍无法区分，以及下一步怎样补充证据。"
 primaryCapability: domain-modeling.product-project-model
 roles:
   - product
@@ -30,4 +31,5 @@ source:
 topics:
   - product-thinking
   - commercialization
+relatedQuestions: []
 ---

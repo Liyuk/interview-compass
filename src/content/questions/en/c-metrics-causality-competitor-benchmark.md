@@ -5,7 +5,7 @@ status: published
 locale: en
 title: When you benchmark against a competitor's data, how do you decide what is comparable and what is not?
 question: When you benchmark against a competitor's data, how do you decide what is comparable and what is not? What decision did you finally use it for?
-intent: See whether you can spot differences in definitions and limits of source in benchmark data, and make the benchmark serve an actual decision.
+intent: "Assess whether you can identify differences in definitions, measurement methods, and sources in benchmark data and make the comparison useful for a decision."
 signals:
   - States where the data comes from, how it is defined, and what range is comparable, rather than comparing numbers directly
   - Points out which differences come from the business model, scale, or counting method

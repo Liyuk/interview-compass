@@ -5,8 +5,9 @@ status: published
 locale: en
 title: How do you compare a new platform investment with the cost of retiring a legacy system?
 question: >-
-  A new platform could reduce future development cost, but the legacy system needs two more years of support and
-  this quarter funds only one major investment. How would you compare build, migration, and status-quo options?
+  A new platform could reduce future development cost, but the legacy system needs two more years of support
+  and this quarter funds only one major investment. How would you compare build, migration, and status-quo
+  options?
 intent: >-
   Assess whether you estimate future benefit, transition cost, retirement obligations, and opportunity cost
   together.

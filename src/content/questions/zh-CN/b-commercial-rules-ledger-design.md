@@ -9,19 +9,33 @@ intent: 了解你能否用可审计的方式为资金建模，并让每一笔变
 signals:
   - 用不可变的流水和复式记账之类的思路，让余额可以由流水复算
   - 区分冻结、已结算和未结算等状态，以及它们之间的转换
-  - 说明幂等、并发扣款和失败补偿，防止重复入账
+  - 说明幂等（重复请求不会重复执行）、并发扣款和失败补偿，防止重复入账
   - 说明对账的方式，以及发现差错时怎样更正而不是改历史
 primaryCapability: domain-modeling.commercial-rules
-topics: [commercialization, data-modeling, databases, backend]
-roles: [backend, engineering, data, product]
-responsibilityScopes: [team]
-careerTracks: [individual-contributor]
-scenarios: [interview, hiring]
-formats: [system-design, case]
+topics:
+  - commercialization
+  - data-modeling
+  - databases
+  - backend
+roles:
+  - backend
+  - engineering
+  - data
+  - product
+responsibilityScopes:
+  - team
+careerTracks:
+  - individual-contributor
+scenarios:
+  - interview
+  - hiring
+formats:
+  - system-design
+  - case
 followUps:
   - 发现过去一个月有一类流水算错了，怎么更正？
   - 钱要经过多个系统，怎样保证最终两边对得上？
 source:
   - attribution: original
-    label: "作者的系统设计题：钱怎么算，账务与计费"
+    label: 作者的系统设计题：钱怎么算，账务与计费
 ---

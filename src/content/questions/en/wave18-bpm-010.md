@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you make an undefined “core user” verifiable?
 question: A proposal repeatedly refers to “core users” without identification rules, observation windows, or exclusions. What would you clarify so the team can study the same population?
-intent: Assess whether the response clarifies goals and constraints around observable criteria for defining core users, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response turns “core user” into concrete conditions that can be identified, studied, and revisited."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in observable criteria for defining core users.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Ask whether “core” refers to value, frequency, task type, or another goal and confirm how the definition will be used."
+  - "Define observable criteria, time range, exclusions, and data sources."
+  - "Test the definition against real users to find important groups it misses or distinct needs it combines."
 primaryCapability: domain-modeling.product-project-model
 roles:
   - product

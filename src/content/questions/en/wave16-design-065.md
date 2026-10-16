@@ -4,7 +4,9 @@ kind: question
 status: published
 locale: en
 title: How can a map designed for large screens support keyboard users?
-question: A map relies on dragging and zooming, making the same location data hard to access on mobile and by keyboard. How would you design equivalent controls?
+question: >-
+  A map relies on dragging and zooming, making the same location data hard to access on mobile and by
+  keyboard. How would you design equivalent controls?
 intent: Assesses equivalent interaction, accessible semantics, and task completeness across devices.
 signals:
   - Provide alternatives such as lists or search.

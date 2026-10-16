@@ -4,9 +4,7 @@ kind: question
 status: published
 locale: en
 title: Conversion improved, but support backlog doubled. Should the operations campaign expand?
-question: >-
-  A promotion increases orders but also raises return inquiries and manual review. Budget remains available. How would
-  you decide whether to scale, throttle, or fix the process first?
+question: "A promotion increases orders but also increases return inquiries and manual reviews. The budget has room left. How would you decide whether to expand the campaign, limit new traffic, or improve the process first?"
 intent: Assesses whether the candidate links growth to service capacity and risk guardrails.
 signals:
   - Quantifies support demand and unit cost from incremental orders
