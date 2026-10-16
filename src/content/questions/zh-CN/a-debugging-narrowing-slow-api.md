@@ -12,9 +12,16 @@ signals:
   - "说明什么时候应该先回退或限流，而不是继续查"
 primaryCapability: professional.debugging
 topics: [debugging, databases, backend]
-roles: [engineering, backend, data]
+roles:
+  - engineering
+  - backend
+  - data
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, operations-review]
 formats: [debugging]
 relatedQuestions:

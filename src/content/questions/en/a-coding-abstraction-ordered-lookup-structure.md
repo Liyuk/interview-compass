@@ -12,9 +12,16 @@ signals:
   - Explains how data size or access pattern would change the choice
 primaryCapability: professional.coding-abstraction
 topics: [data-structures]
-roles: [engineering, backend]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
 scenarios: [interview, campus]
 formats: [coding, knowledge]
 source:

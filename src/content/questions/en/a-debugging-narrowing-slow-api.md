@@ -12,9 +12,16 @@ signals:
   - "Says when to roll back or throttle first instead of continuing to dig"
 primaryCapability: professional.debugging
 topics: [debugging, databases, backend]
-roles: [engineering, backend, data]
+roles:
+  - engineering
+  - backend
+  - data
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, operations-review]
 formats: [debugging]
 relatedQuestions:

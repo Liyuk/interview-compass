@@ -7,12 +7,10 @@ title: 告警已触发，却因为交接不清无人确认，你会怎么查？
 question: 一次跨时区交接期间，关键告警已发送，但原值班人以为新值班人会处理，新值班人又没有收到确认；故障因此延迟升级。你会怎样还原责任链，修复告警确认与交接机制，并验证改动有效？
 intent: 考察候选人能否沿着告警触发、送达、确认、升级和交接的链路定位责任断点，并形成可验证的流程改进。
 signals:
-  - 按时间线核对告警是否触发、送达、确认及升级，而不是假定“发出即有人处理”
-  - 区分个人疏漏、排班信息、工具路由和交接约定等可能原因
-  - 提出明确的确认时限、超时升级与交接验收规则，并用演练或事件数据复核
-  - 定义未结告警、调查中和已缓解的状态。
-  - 明确交班确认人与超时升级路径。
-  - 演练跨班次交接并跟踪信息遗漏。
+  - 沿触发、送达、确认、升级与交接时间线核对证据，不假定发出即有人处理。
+  - 区分个人操作、排班、路由和交接约定等假设，说明本人权限与行动。
+  - 对未结、调查中和已缓解告警定义明确负责人、确认时限及超时升级。
+  - 以跨班演练和事件数据核验遗漏、重复响应及恢复时间，说明调整代价。
 primaryCapability: professional.debugging
 topics:
   - debugging
@@ -22,12 +20,17 @@ roles:
   - engineering
   - operations
   - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

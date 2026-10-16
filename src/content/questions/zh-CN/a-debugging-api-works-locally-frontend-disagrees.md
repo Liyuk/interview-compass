@@ -13,9 +13,17 @@ signals:
   - 用对方也能核对的证据沟通，而不是说"我这里是好的"
 primaryCapability: professional.debugging
 topics: [debugging, backend, frontend]
-roles: [engineering, backend, frontend]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [debugging, case]
 followUps:

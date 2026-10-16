@@ -12,9 +12,16 @@ signals:
   - 会说明数据规模或访问模式如何改变选择
 primaryCapability: professional.coding-abstraction
 topics: [data-structures]
-roles: [engineering, backend]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
 scenarios: [interview, campus]
 formats: [coding, knowledge]
 source:

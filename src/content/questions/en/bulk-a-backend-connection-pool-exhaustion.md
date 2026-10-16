@@ -9,12 +9,16 @@ question: >-
   distinguish connection leaks, an undersized pool, and slow transactions holding connections?
 intent: Tests connection-pool lifecycle knowledge and cross-layer diagnosis.
 signals:
-  - Inspects active/idle connections and wait time
-  - Checks connection-return paths and transaction duration
-  - Uses load and pool metrics to tell whether increasing capacity would mask the cause
-  - Calculate a global connection budget from instance count, concurrency, and downstream capacity.
-  - Compare queuing, rejection, rate limiting, and connection reuse.
-  - Verify scale-up and scale-down do not create oscillation.
+  - Aligns latency, connection waits, active and idle connections, and transaction duration.
+  - >-
+    Tests acquisition, release, and long transactions against competing leak, capacity, and query
+    hypotheses.
+  - >-
+    Budgets total connections against downstream capacity and compares pool growth, limiting, queueing,
+    and lifecycle fixes.
+  - >-
+    Uses controlled load and scaling to verify waits, errors, and downstream safety beyond temporary
+    recovery.
 primaryCapability: professional.debugging
 topics:
   - backend
@@ -24,6 +28,8 @@ topics:
 roles:
   - backend
   - engineering
+  - ai-engineer
+  - data
 responsibilityScopes:
   - individual
   - team
@@ -31,6 +37,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

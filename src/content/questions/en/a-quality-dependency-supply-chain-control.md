@@ -9,9 +9,18 @@ intent: "Assesses whether you can rank risk by exploitability, exposure, and mit
 signals: ["Confirm affected versions, call paths, exposure, and exploit conditions","Inventory affected services and apply temporary mitigations","Validate the upgrade and regression scope in isolation","Roll out in stages, monitor residual exposure, and record risk acceptance"]
 primaryCapability: "professional.quality-security-safety"
 topics: ["security","engineering-systems","devops"]
-roles: ["engineering","backend","frontend"]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["If no patch exists while scanners are probing the service, how would you choose temporary controls?","How would you prove every affected instance has been fixed?"]

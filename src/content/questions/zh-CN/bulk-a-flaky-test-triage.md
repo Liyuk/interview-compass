@@ -7,12 +7,10 @@ title: 偶尔失败的全流程测试拖慢合并
 question: 一个关键完整流程测试偶尔失败，团队开始重跑直到通过。你会怎样确定它是否真实暴露产品风险，并改进测试流程？
 intent: 考察如何区分产品缺陷、测试环境不稳定和测试本身的竞态。
 signals:
-  - 关联失败与浏览器、数据、并发和环境状态
-  - 定义隔离测试的条件、责任人和期限
-  - 衡量重跑对反馈时间及漏检风险的影响
-  - 从输入、机制和故障表现中提出可验证的技术假设
-  - 比较实现路径及其正确性、性能、安全或维护代价
-  - 说明覆盖边界场景的测试或运行指标
+  - 固定失败样例并关联浏览器、数据、并发与环境，形成可证伪的产品或测试假设。
+  - 比较最小复现、受控调度和环境对照，区分真实缺陷、竞态与基础设施失败。
+  - 若隔离测试，明确替代保护、负责人和期限，不让重跑通过抹去风险。
+  - 跟踪失败率、反馈耗时和漏检证据，验证修复而不是只增加重跑次数。
 primaryCapability: professional.quality-security-safety
 topics:
   - engineering-systems
@@ -26,7 +24,8 @@ roles:
   - frontend
   - backend
   - data
-  - operations
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
@@ -34,6 +33,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -7,12 +7,10 @@ title: 并发过期映射
 question: 请实现一个支持并发读写、按条目过期并可清理过期数据的映射。你会如何定义过期语义、同步边界和确定性测试？
 intent: 考察并发数据结构、时间抽象与可测试性。
 signals:
-  - 定义读取过期条目时的可见行为
-  - 避免共享 map 与清理线程之间的数据竞争
-  - 通过注入时钟避免依赖真实等待的测试
-  - 从输入、机制和故障表现中提出可验证的技术假设
-  - 比较实现路径及其正确性、性能、安全或维护代价
-  - 说明覆盖边界场景的测试或运行指标
+  - 定义过期依据、读取可见性、更新与清理的先后关系，而非只加一个时间字段。
+  - 比较同步或分区方式在正确性、吞吐和维护成本上的取舍，明确不变量。
+  - 通过可替换时钟与受控调度，验证并发读写、到期更新和清理竞态。
+  - 检查闲置条目的资源回收、关闭行为及实际内存边界。
 primaryCapability: professional.coding-abstraction
 topics:
   - concurrency
@@ -25,12 +23,12 @@ roles:
   - backend
   - frontend
   - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
-  - team-manager
 scenarios:
   - interview
   - campus

@@ -24,17 +24,14 @@ intent: >-
   Assesses whether you can design safe degradation based on error cost, evidence quality, and available
   alternatives.
 signals:
-  - Differentiate error costs by task consequence and reversibility
-  - Use calibrated evidence or confidence signals, not the model’s confident tone
-  - Define when to refuse, clarify, fall back to deterministic workflows, or hand off
-  - Monitor downstream outcomes such as abandonment, misuse, and escalation
   - >-
-    Identify the key mechanisms, state boundaries, and failure conditions in “Uncertainty boundaries in model
-    output,” including missing assumptions.
-  - Compare feasible approaches across correctness, performance, compatibility, cost, and recoverability.
+    Assesses error costs by consequences, recoverability, and alternatives rather than one confidence
+    value.
+  - Compares calibrated evidence, retrieval support, and unknowns instead of model certainty language.
   - >-
-    Design tests, runtime evidence, or rollback criteria that validate the diagnosis and cover boundary
-    failures.
+    Weighs refusal, clarification, bounded answers, deterministic paths, and handoff with explicit risk
+    thresholds.
+  - Reviews misuse, failures, abandonment, and human burden through segment evidence.
 topics:
   - ai-engineering
   - reliability
@@ -43,11 +40,16 @@ roles:
   - ai-engineer
   - product
   - operations
+  - engineering
+  - frontend
+  - backend
+  - mobile
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 formats:
   - system-design
   - case

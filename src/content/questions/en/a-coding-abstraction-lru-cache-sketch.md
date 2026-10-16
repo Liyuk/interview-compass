@@ -12,9 +12,16 @@ signals:
   - Tests cover edge cases such as capacity of one, repeated writes, and order changes after a read
 primaryCapability: professional.coding-abstraction
 topics: [data-structures, programming-languages]
-roles: [engineering, backend, frontend, mobile]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
 scenarios: [interview, campus]
 formats: [coding]
 source:

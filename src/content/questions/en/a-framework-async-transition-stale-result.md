@@ -9,9 +9,13 @@ intent: "Assesses whether you can distinguish concurrent rendering from request 
 signals: ["Track a stable identifier for each user intent and request","Choose whether to cancel old work or ignore stale responses","Separate pending, failed, and current-result states","Test rapid input, switching, and return scenarios"]
 primaryCapability: "professional.coding-abstraction"
 topics: ["frameworks","frontend","debugging"]
-roles: ["frontend","engineering"]
+roles:
+  - frontend
+  - engineering
+  - mobile
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["If cancellation is unreliable, how would you prevent stale responses from committing?","How should the interface represent the transition between old and new results?"]

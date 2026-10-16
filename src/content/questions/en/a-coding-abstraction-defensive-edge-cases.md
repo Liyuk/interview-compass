@@ -13,9 +13,17 @@ signals:
   - Separates what should be stopped at the boundary from what internal contracts cover, avoiding repeated checks everywhere
 primaryCapability: professional.coding-abstraction
 topics: [programming-languages, debugging]
-roles: [engineering, backend, frontend, mobile]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [behavioral, coding]
 followUps:

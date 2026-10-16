@@ -9,9 +9,13 @@ intent: "Assesses whether you can separate form interaction state, server facts,
 signals: ["Separate transient input, derived validation, server facts, and business rules","Define a source of truth and state transitions","Handle async-validation races and stale results","Use testable boundaries to reduce implicit coupling"]
 primaryCapability: "professional.coding-abstraction"
 topics: ["frameworks","frontend","programming-languages"]
-roles: ["frontend","engineering"]
+roles:
+  - frontend
+  - engineering
+  - mobile
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["Should cross-field rules live in a component, form library, or domain layer?","How would you prove concurrent validation cannot show stale errors?"]

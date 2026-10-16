@@ -13,12 +13,14 @@ intent: >-
   Assess whether you balance memory, error aggregation, partial results, and caller responsibilities in a
   streaming design.
 signals:
-  - Defines line iteration, fatal versus recoverable errors, and whether partial results are usable.
-  - Preserves accurate diagnostics such as line number, field error, and input encoding.
-  - Uses large files, truncated input, malformed rows, and cancellation to verify memory bounds and cleanup.
-  - Retain source spans and expansion relationships for values.
-  - Separate syntax, reference, and type errors.
-  - Map diagnostics back to original user input.
+  - >-
+    Defines streaming input, memory limits, error classes, and partial results, comparing continuation
+    with termination.
+  - Preserves record and field locations, encoding, and input links, including quoted newlines.
+  - Separates parsing, validation, and consumption with cancellation, backpressure, errors, and cleanup.
+  - >-
+    Tests large inputs, split characters, truncation, malformed records, and cancellation against
+    diagnostic and space limits.
 primaryCapability: professional.coding-abstraction
 topics:
   - programming-languages
@@ -28,6 +30,7 @@ roles:
   - backend
   - data
   - engineering
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team

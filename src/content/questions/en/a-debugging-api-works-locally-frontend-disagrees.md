@@ -13,9 +13,17 @@ signals:
   - Communicates with evidence the other side can also check, not "it works on my side"
 primaryCapability: professional.debugging
 topics: [debugging, backend, frontend]
-roles: [engineering, backend, frontend]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [debugging, case]
 followUps:

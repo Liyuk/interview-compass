@@ -16,6 +16,7 @@ topics:
   - frameworks
 roles:
   - frontend
+  - engineering
 responsibilityScopes:
   - individual
   - team

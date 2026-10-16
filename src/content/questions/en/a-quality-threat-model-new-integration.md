@@ -9,9 +9,18 @@ intent: "Assesses whether you can identify trust boundaries, critical assets, at
 signals: ["Mark trust boundaries, data and instruction flows, and principals","List abuse cases, blast radius, and plausible attackers","Prioritize least privilege, input validation, key isolation, and audit","Record residual risk, owners, and pre-release verification"]
 primaryCapability: "professional.quality-security-safety"
 topics: ["security","system-design","risk-management"]
-roles: ["backend","ai-engineer","engineering"]
+roles:
+  - backend
+  - ai-engineer
+  - engineering
+  - frontend
+  - mobile
+  - data
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["With limited time, how would you choose attack paths that must be tested?","Which risks require design changes rather than more monitoring?"]

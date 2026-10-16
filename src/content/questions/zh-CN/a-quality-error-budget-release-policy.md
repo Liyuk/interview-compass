@@ -7,13 +7,10 @@ title: "服务故障超过允许范围时，怎样调整发布和稳定性投入
 question: "服务故障已超过目标允许范围，但业务又有明确的功能交付承诺。你会怎样调整发布节奏和可靠性投入？"
 intent: 考察能否把可靠性目标、故障风险和交付承诺转化为透明且可执行的发布策略。
 signals:
-  - 明确服务目标、错误预算窗口和当前消耗速度
-  - 按变更风险区分发布冻结、限流或加强监控等措施
-  - 评估可靠性工作对用户和业务承诺的影响
-  - 设定恢复发布的证据门槛并复盘例外决策
-  - 确认预算消耗速率与用户影响。
-  - 让例外承担者明确接受风险与期限。
-  - 设置可验证的恢复服务目标和复审时间。
+  - 核对服务目标、窗口、消耗趋势与真实用户影响，不仅看当前是否达标。
+  - 按变更风险比较暂停、限制流量、加强验证或保留必要修复发布的条件。
+  - 说明对用户、可靠性修复和业务承诺的成本，明确例外接受人和期限。
+  - 给出恢复发布的验证门槛、复审时间及后续复盘，不无限冻结或无条件继续。
 primaryCapability: professional.quality-security-safety
 topics:
   - reliability
@@ -24,11 +21,16 @@ roles:
   - backend
   - operations
   - manager
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

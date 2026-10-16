@@ -11,16 +11,16 @@ question: >-
   stopped at once. How would you proceed?
 intent: See whether you map dependencies and plan an overlap period, verification, and revocation.
 signals:
-  - Inventories credential holders, permission scope, call paths, and last-used time
-  - Plans a brief overlap, staged cutover, and verification sequence for old and new credentials
-  - Revokes the old credential only after consumers have migrated and checks for residual use
-  - Distinguishes routine rotation from emergency rotation after a leak and prepares recovery or containment
-  - Inventories credential holders, privilege scope, and last-use times
-  - Discusses dual-credential transition, verification, and revocation order
-  - Explains differences between emergency compromise rotation and routine rotation
-  - Stage dual-key acceptance and single-key signing.
-  - Identify unmigrated callers and emergency response to key exposure.
-  - Use telemetry to confirm old-key use has stopped before revocation.
+  - >-
+    Inventories holders, permissions, paths, and usage, distinguishing routine rotation from suspected
+    compromise.
+  - >-
+    Compares overlapping credentials, staged migration, and immediate revocation with risk and business
+    costs.
+  - Defines issuance, acceptance, migration, and revocation using actual usage evidence.
+  - >-
+    Tests lagging clients, emergency blocking, and failure recovery without re-enabling compromised
+    credentials.
 primaryCapability: professional.quality-security-safety
 topics:
   - devops
@@ -30,12 +30,15 @@ topics:
 roles:
   - engineering
   - backend
+  - ai-engineer
+  - data
 responsibilityScopes:
   - multiple-teams
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

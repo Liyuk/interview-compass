@@ -19,6 +19,8 @@ topics:
   - concurrency
 roles:
   - mobile
+  - engineering
+  - frontend
 responsibilityScopes:
   - individual
   - team

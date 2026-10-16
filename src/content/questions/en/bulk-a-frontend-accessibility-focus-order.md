@@ -9,12 +9,14 @@ question: >-
   Which focus-management behaviors would you inspect, and how would you verify a fix?
 intent: Tests implementation details of accessible frontend interaction and state management.
 signals:
-  - Checks focus movement on open and restoration on close
-  - Considers focus containment and keyboard behavior such as Escape
-  - Proposes keyboard walkthroughs and assistive-technology verification
-  - Use appropriate live regions and semantic status.
-  - Decide whether focus moves and where it should land.
-  - Test keyboard order, screen-reader output, and duplicate submission.
+  - Defines initial focus, reachable controls, and return focus after closing.
+  - Distinguishes modal and nonmodal focus constraints and tests Tab and Escape.
+  - >-
+    Checks accessible names, states, and necessary announcements without forcing every change to be
+    announced.
+  - >-
+    Tests open, operate, close, reopen, and missing-trigger boundaries with keyboards and assistive
+    technology.
 primaryCapability: professional.coding-abstraction
 topics:
   - frontend
@@ -24,6 +26,7 @@ roles:
   - frontend
   - design
   - engineering
+  - mobile
 responsibilityScopes:
   - individual
   - team
@@ -31,6 +34,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

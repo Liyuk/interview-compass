@@ -18,6 +18,8 @@ topics:
   - frameworks
 roles:
   - frontend
+  - engineering
+  - mobile
 responsibilityScopes:
   - individual
   - team

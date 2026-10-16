@@ -19,6 +19,8 @@ topics:
   - frameworks
 roles:
   - backend
+  - engineering
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team

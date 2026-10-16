@@ -13,13 +13,12 @@ intent: >-
   Assesses whether you can trace copies and dependencies through the data lifecycle and prove deletion within
   policy boundaries.
 signals:
-  - Map sources, derived copies, processors, and retention exceptions
-  - Distinguish live deletion, backup expiry, anonymization, and required retention
-  - Track request state, retries, and downstream acknowledgements
-  - Design sample audits and overdue escalation
-  - Maps data flows and derived copies, distinguishing deletion from anonymization.
-  - Defines explainable timelines and exceptions for backup expiry, legal retention, and asynchronous jobs.
-  - Verifies completion while detecting failures, replays, and paths that can recreate deleted data.
+  - Maps sources, derived data, processors, and copies under verified deletion-retention policies.
+  - Distinguishes erasure, anonymization, backup expiry, and restricted retention with timing and owners.
+  - >-
+    Tracks requests, retries, and confirmations while preventing replay or rewrites from restoring erased
+    content.
+  - Verifies completed and pending scope through queries, logs, and audits, escalating overdue work.
 primaryCapability: professional.quality-security-safety
 topics:
   - security
@@ -29,11 +28,16 @@ roles:
   - backend
   - data
   - product
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

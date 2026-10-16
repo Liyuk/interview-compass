@@ -7,14 +7,10 @@ title: 核心流程只通过鼠标测试通过，键盘或屏幕阅读器用户�
 question: 核心流程只通过鼠标测试通过，键盘或屏幕阅读器用户无法完成操作，你会怎样把无障碍要求纳入交付门禁？
 intent: 考察能否把无障碍变成可验证的产品质量要求，并覆盖真实使用路径。
 signals:
-  - 识别受影响的用户任务及阻断级别
-  - 结合自动检查、键盘走查和辅助技术验证
-  - 定义严重缺陷门禁与例外依据
-  - 安排修复负责人、回归验证和用户反馈渠道
-  - 按用户能力、设备和流程阶段核实核心任务是否可完成。
-  - 评估失败影响、数据是否可恢复，以及证据覆盖了哪些用户。
-  - 比较修复、渐进发布和目标调整，并说明谁承担剩余排除风险。
-  - 定义发布阻断条件、替代路径和复测标准。
+  - 按用户任务、设备与辅助技术定位无法完成的步骤，评估阻断严重度和恢复成本。
+  - 结合自动检查、键盘走查和真实辅助技术验证，标明证据覆盖的范围。
+  - 比较修复、限制发布、替代路径及调整目标的收益与排除风险，明确批准人。
+  - 设定可核验的门禁、例外期限、修复负责人和复测标准，跟踪用户反馈。
 primaryCapability: professional.quality-security-safety
 topics:
   - accessibility
@@ -24,11 +20,14 @@ roles:
   - frontend
   - design
   - product
+  - engineering
+  - mobile
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

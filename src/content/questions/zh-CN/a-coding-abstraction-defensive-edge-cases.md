@@ -13,9 +13,17 @@ signals:
   - 区分哪些该在边界处拦截，哪些交给内部约定，避免处处重复校验
 primaryCapability: professional.coding-abstraction
 topics: [programming-languages, debugging]
-roles: [engineering, backend, frontend, mobile]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [behavioral, coding]
 followUps:

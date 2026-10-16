@@ -13,15 +13,13 @@ intent: >-
   and handoff, then define verifiable process improvements.
 signals:
   - >-
-    Checks the timeline for triggering, delivery, acknowledgment, and escalation instead of assuming that a sent alert
-    has an owner
-  - Distinguishes possible causes such as individual oversight, schedule data, routing tools, and handoff agreements
+    Traces trigger, delivery, acknowledgement, escalation, and handoff rather than assuming sent means
+    handled.
   - >-
-    Defines acknowledgment deadlines, timeout escalation, and handoff acceptance, then validates them through drills or
-    incident data
-  - Define states for open alerts, investigations, and mitigations.
-  - Assign handoff acknowledgments and timeout escalation.
-  - Exercise cross-shift handoffs and track information loss.
+    Distinguishes actions, schedules, routing, and agreements, stating personal authority and
+    contribution.
+  - Defines owners, acknowledgement limits, and escalation for open, investigating, and mitigated alerts.
+  - Validates omissions, duplicate responses, and recovery through drills and incidents, including costs.
 primaryCapability: professional.debugging
 topics:
   - debugging
@@ -31,12 +29,17 @@ roles:
   - engineering
   - operations
   - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

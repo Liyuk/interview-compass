@@ -17,12 +17,16 @@ topics:
 roles:
   - design
   - engineering
+  - frontend
+  - mobile
+  - product
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -9,13 +9,12 @@ intent: >-
   Assesses whether you can turn reliability goals, incident risk, and delivery commitments into a transparent
   release policy.
 signals:
-  - Clarify service objectives, error-budget window, and burn rate
-  - Match release freezes, throttling, or added monitoring to change risk
-  - Assess reliability work against user impact and business commitments
-  - Set evidence gates to resume releases and review exceptions
-  - Confirm burn rate and user impact.
-  - Make exception owners explicitly accept risk and duration.
-  - Set verifiable service-restoration goals and review dates.
+  - Checks objectives, windows, burn trends, and user impact beyond current compliance.
+  - Compares pauses, traffic limits, stronger checks, and necessary fixes by change risk.
+  - States user, reliability, and delivery costs with exception owners and expiry.
+  - >-
+    Defines recovery gates, review times, and learning beyond indefinite freezes or unconditional
+    release.
 primaryCapability: professional.quality-security-safety
 topics:
   - reliability
@@ -26,11 +25,16 @@ roles:
   - backend
   - operations
   - manager
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

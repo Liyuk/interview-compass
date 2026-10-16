@@ -12,9 +12,18 @@ signals:
   - "Does not treat the coverage number itself as the goal"
 primaryCapability: professional.quality-security-safety
 topics: [engineering-systems, reliability]
-roles: [engineering, backend, frontend, mobile]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, planning]
 followUps:

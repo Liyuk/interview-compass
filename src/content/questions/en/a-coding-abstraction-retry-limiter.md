@@ -12,16 +12,13 @@ intent: >-
   Assess how you abstract behavior involving time and failure, define retry bounds, cancellation semantics, and error
   boundaries, and make the implementation reliably testable.
 signals:
-  - Defines whether the maximum counts retries or total attempts
-  - Separates retryable from non-retryable errors and uses bounded backoff
-  - Controls waiting through an injectable clock or scheduler to avoid flaky tests
-  - Defines cancellation, idempotency, and final-error behavior to prevent infinite retries or repeated side effects
-  - Forms testable technical hypotheses from inputs, mechanisms, and failure symptoms
-  - Compares implementation paths and their correctness, performance, security, or maintenance cost
-  - Names tests or operational measures that cover edge cases
-  - Defines whether the retry limit includes the initial call
-  - Controls backoff and waits through a replaceable clock or scheduler
-  - Defines clear behavior for cancellation, non-retryable errors, and the final failure
+  - >-
+    Defines attempts, deadlines, error classes, and final outcomes, distinguishing retries from new
+    business actions.
+  - Compares backoff, jitter, concurrency limits, and budgets for caller and downstream effects.
+  - Injects scheduling or time dependencies for repeatable tests without real waits.
+  - Specifies cancellation, timeout, and partial-success behavior with attempt history and uncertainty.
+  - Tests non-retryable errors, cancellation races, and duplicate requests for cleanup and action safety.
 primaryCapability: professional.coding-abstraction
 topics:
   - programming-languages
@@ -40,7 +37,6 @@ responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
-  - team-manager
 scenarios:
   - interview
   - hiring

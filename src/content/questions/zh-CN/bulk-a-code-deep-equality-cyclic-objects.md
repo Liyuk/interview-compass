@@ -16,6 +16,10 @@ topics:
   - compiler-design
 roles:
   - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team

@@ -18,11 +18,14 @@ roles:
   - engineering
   - frontend
   - mobile
+  - backend
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus
