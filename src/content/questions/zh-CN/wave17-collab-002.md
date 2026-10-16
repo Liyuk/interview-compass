@@ -9,6 +9,8 @@ intent: 考察能否用证据和选择方案影响决策，同时维护承诺、
 signals:
   - 陈述证据强度、影响范围和剩余不确定性
   - 提供保留、缩小或停止的具体选项及沟通方式
+  - 指出新旧证据差异和受影响的决定。
+  - 尽早与利益相关方讨论调整选项和承担的成本。
 primaryCapability: collaboration.stakeholder-influence
 topics:
   - communication
@@ -30,4 +32,7 @@ formats:
 source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-17 B
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch G/H
+relatedQuestions: []
 ---

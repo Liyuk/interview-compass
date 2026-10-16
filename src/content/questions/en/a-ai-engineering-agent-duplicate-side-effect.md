@@ -3,20 +3,19 @@ questionId: a-ai-engineering-agent-duplicate-side-effect
 kind: question
 status: published
 locale: en
-title: >-
-  An agent can create tickets, issue refunds, or change accounts. After a timeout, the system cannot tell whether an
-  action succeeded and the agent retries. How would you prevent duplicate or unauthorized side effects?
+title: How can an AI assistant avoid duplicate or unauthorized actions after a refund request times out?
 question: >-
-  An agent can create tickets, issue refunds, or change accounts. After a timeout, the system cannot tell whether an
-  action succeeded and the agent retries. How would you prevent duplicate or unauthorized side effects?
-intent: Assess whether you can separate model decisions from real-world writes and design safe failure semantics.
+  An AI assistant can create tickets, issue refunds, or change accounts on a user's behalf. A refund request times out,
+  and the system cannot tell whether it completed; retrying may issue a second refund. How would you check the outcome,
+  control retries, and ensure actions stay within the user's authorization?
+intent: Assess whether you can separate an AI assistant's decisions from real actions and handle unknown outcomes, retries, and permission changes safely.
 signals:
-  - Separates read-only tools from side-effecting actions
-  - Uses idempotency keys, status checks, or human confirmation for uncertain outcomes
-  - Sets confirmation thresholds by permission, amount, or risk
-  - Explains recovery across retries, timeouts, and partial success
-  - Separates a new model decision from a network retry of the same tool request
-  - Explains how to pause or ask for human handling when execution status is unknown
+  - Separates information lookup from actions that change data or charge money.
+  - Gives each action a unique request ID and explains how to detect a duplicate, check its status, or ask a person before repeating it.
+  - Sets confirmation requirements based on permission and potential harm.
+  - Explains how to recover or pause after a timeout, partial completion, or unknown result.
+  - Distinguishes retrying the same network request from the assistant deciding to take the action again.
+  - Explains how changed permissions stop actions that have not run and how completed steps are handled.
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering
@@ -40,14 +39,8 @@ formats:
   - system-design
   - case
 followUps:
-  - How do you distinguish a new model decision from a network retry of the same tool request?
-  - When a timeout leaves the action outcome unknown, when do you check status, retry, pause, or hand off to a person?
-  - >-
-    【How do you safely retry an agent tool call after an ambiguous timeout?】An agent asks a partner to issue a refund,
-    then times out without a response; the status API is also unavailable. Retrying may refund twice, while abandoning
-    may lose the task. How would you design state and recovery?
-  - If the partner offers no idempotency support, what safer alternatives exist?
-  - How do you show task status without falsely reporting completion?
+  - If a partner cannot detect duplicate requests and its status service is unavailable, how would you pause, verify, and resume the task?
+  - How would you tell the user that a task is still in progress without claiming it has completed?
 source:
   - attribution: inspired
     label: atryx AI 工程题库的主题覆盖；题面为本站独立编写

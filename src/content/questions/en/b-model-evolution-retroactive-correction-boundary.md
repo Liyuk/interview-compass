@@ -3,9 +3,15 @@ questionId: b-model-evolution-retroactive-correction-boundary
 kind: question
 status: published
 locale: en
-title: A business rule is corrected retroactively. Reports need corrected results, while decision-makers also need the results available at the time. How would you manage both historical views?
-question: A business rule is corrected retroactively. Reports need corrected results, while decision-makers also need the results available at the time. How would you manage both historical views?
-intent: Assess whether you distinguish valid facts, later corrections, and decision-time snapshots while clarifying recomputation and audit boundaries.
+title: >-
+  A business rule is corrected retroactively. Reports need corrected results, while decision-makers also need
+  the results available at the time. How would you manage both historical views?
+question: >-
+  A business rule is corrected retroactively. Reports need corrected results, while decision-makers also need
+  the results available at the time. How would you manage both historical views?
+intent: >-
+  Assess whether you distinguish valid facts, later corrections, and decision-time snapshots while clarifying
+  recomputation and audit boundaries.
 signals:
   - Distinguish event time, rule effective time, record time, and correction time.
   - Preserve original, corrected, and as-known-at-the-time results, with each use made explicit.
@@ -13,6 +19,16 @@ signals:
   - Backfill in slices and verify differences, resource impact, rollback, and downstream notification.
   - Defines effective time, discovery time, and affected scope
   - Supports replay by historical version while retaining correction rationale and approval evidence
+  - >-
+    Distinguishes results visible at the time from results recalculated under the new rule and today's
+    decision basis.
+  - Records rule version, recomputation time, affected periods, and metric differences.
+  - >-
+    Ensures report consumers know which conclusions were restated without rewriting historical decision
+    evidence.
+  - Distinguishes occurrence time, ingestion time, and correction effective time
+  - Preserves revision history and defines how the current accepted value is derived
+  - Explains when historical restatement and as-of snapshots answer different questions
 primaryCapability: domain-modeling.model-evolution
 topics:
   - data-modeling
@@ -56,10 +72,27 @@ source:
     label: Interview Compass Original Expansion Batch 2026-10-16 A
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-17 B
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch B
+  - attribution: inspired
+    label: dataskew-io/data-engineering-interview-questions：数据质量与变化记录主题
+    url: https://github.com/dataskew-io/data-engineering-interview-questions
 followUps:
-  - If a correction affects only some customers or periods, how would you avoid changing unrelated history through a full recomputation?
+  - >-
+    If a correction affects only some customers or periods, how would you avoid changing unrelated history
+    through a full recomputation?
   - Which users should default to the latest value, and which must retain the version they saw at the time?
-  - An upstream fix corrects an error affecting the past two years of data, and the business wants corrected results quickly. How would you backfill without disrupting current production reports?
-  - After a feature definition is fixed, the modeling team wants a historical backfill. Training reproducibility requires the original version, while business reports want corrected values. How would you design both views?
-  - A tax configuration error is discovered. Finance wants corrected historical reports, while support must explain invoices as customers saw them. How would you preserve restated and as-was views?
+  - >-
+    An upstream fix corrects an error affecting the past two years of data, and the business wants corrected
+    results quickly. How would you backfill without disrupting current production reports?
+  - >-
+    After a feature definition is fixed, the modeling team wants a historical backfill. Training
+    reproducibility requires the original version, while business reports want corrected values. How would you
+    design both views?
+  - >-
+    A tax configuration error is discovered. Finance wants corrected historical reports, while support must
+    explain invoices as customers saw them. How would you preserve restated and as-was views?
+  - If old results were materially wrong, how would you balance historical authenticity and correction?
+  - How should later trend analysis select a version and remain comparable?
+relatedQuestions: []
 ---

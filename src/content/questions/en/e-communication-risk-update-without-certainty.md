@@ -5,8 +5,8 @@ status: published
 locale: en
 title: How do you update leadership before a risk is understood?
 question: >-
-  A vendor risk may affect a launch, but neither cause nor likelihood is clear. Leadership wants an answer today.
-  How would you report facts, unknowns, safeguards, and the next update time?
+  A vendor risk may affect a launch, but neither cause nor likelihood is clear. Leadership wants an answer
+  today. How would you report facts, unknowns, safeguards, and the next update time?
 intent: Assess whether you communicate uncertainty without false certainty and make needed actions clear.
 signals:
   - Separate verified facts, current hypotheses, and unknowns.
@@ -41,4 +41,5 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15
+relatedQuestions: []
 ---

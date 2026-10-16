@@ -17,6 +17,8 @@ signals:
   - >-
     Designs calibration, dissent records, and follow-up sampling while keeping managers accountable for
     judgments
+  - Compares role-level expectations and work evidence rather than impressions.
+  - Documents differences, gathers evidence, and reviews consistency across teams.
 primaryCapability: people-organization.manager-of-managers
 topics:
   - management
@@ -39,9 +41,12 @@ formats:
 source:
   - attribution: original
     label: Interview Compass 原创题目扩充批次 600–626
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch E/F
 followUps:
   - >-
     If a manager consistently rates their own team higher, how would you test the pattern with evidence rather
     than label it first?
   - How would you explain calibration to employees without exposing other people’s personal information?
+relatedQuestions: []
 ---

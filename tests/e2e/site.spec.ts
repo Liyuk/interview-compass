@@ -14,7 +14,7 @@ test('home page offers search, task entry choices, all eight domains and curated
 test('primary navigation follows task discovery before capability reference', async ({ page }) => {
   await page.goto('./');
   await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText([
-    '面试题库', '主题索引', '岗位导航', '使用场景', '能力地图', '阶段能力',
+    '面试题库', '提问框架', '主题索引', '岗位导航', '目标路径', '能力地图', '阶段能力',
   ]);
   await page.getByRole('navigation', { name: '主导航' }).getByRole('link', { name: '主题索引' }).click();
   await expect(page).toHaveURL(/\/topics\/$/);
@@ -28,7 +28,7 @@ test('primary navigation follows task discovery before capability reference', as
   }
   await page.goto('en/');
   await expect(page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link')).toHaveText([
-    'Question bank', 'Topics', 'Role paths', 'Use cases', 'Capability map', 'Stage expectations',
+    'Question bank', 'Questioning framework', 'Topics', 'Role paths', 'Goal paths', 'Capability map', 'Stage expectations',
   ]);
 });
 
@@ -82,12 +82,12 @@ test('capability path: home to domain to leaf to question with a canonical bread
   await expect(page).toHaveURL(/\/interview-compass\/capabilities\/delivery\/$/);
   await page.getByRole('link', { name: '容量与依赖' }).first().click();
   await expect(page).toHaveURL(/\/capabilities\/delivery\/capacity-planning\/$/);
-  const targetBatch = page.locator('.reading-batch').filter({ has: page.getByRole('link', { name: /调整计划/, includeHidden: true }) }).first();
+  const targetBatch = page.locator('.reading-batch').filter({ has: page.getByRole('link', { name: /可用工时减少三成/, includeHidden: true }) }).first();
   if (!await targetBatch.getAttribute('open').then(value => value !== null)) await targetBatch.locator('summary').click();
-  await targetBatch.getByRole('link', { name: /调整计划/ }).first().click();
+  await targetBatch.getByRole('link', { name: /可用工时减少三成/ }).first().click();
   const crumbs = page.getByRole('navigation', { name: '面包屑' });
-  await expect(crumbs.locator('li')).toHaveText(['首页', '面试题库', '交付执行与持续运营', '容量与依赖', /调整计划/]);
-  await expect(crumbs.locator('[aria-current="page"]')).toContainText('调整计划');
+  await expect(crumbs.locator('li')).toHaveText(['首页', '面试题库', '交付执行与持续运营', '容量与依赖', /招聘冻结后，团队下季度可用工时减少三成/]);
+  await expect(crumbs.locator('[aria-current="page"]')).toContainText('招聘冻结后，团队下季度可用工时减少三成');
 });
 
 test('question detail explains intent and signals, links its source, and keeps the Pages subpath', async ({ page }) => {
@@ -134,7 +134,7 @@ test('role, scenario and topic pages group the same questions by capability', as
     await expect(page.locator('.question-list li').first()).toBeVisible();
   }
   await page.goto('scenarios/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('使用场景');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('按目标开始');
   await page.goto('scenarios/promotion/');
   await expect(page.getByRole('heading', { name: '把晋升准备成一组持续证据' })).toBeVisible();
   await expect(page.getByText(/这是共用题库的浏览路径，不是公司职级标准/)).toBeVisible();
@@ -150,6 +150,44 @@ test('role, scenario and topic pages group the same questions by capability', as
   await expect(page.getByRole('heading', { name: 'Prepare for promotion as a body of evidence' })).toBeVisible();
   await page.goto('en/roles/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Role paths');
+});
+
+test('use cases present six goal-based paths and connect them to the right tools', async ({ page }) => {
+  await page.goto('scenarios/');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('按目标开始');
+  const paths = page.locator('.scenario-path');
+  await expect(paths).toHaveCount(6);
+  for (const title of [
+    '候选人求职', '招聘面试官', '晋升候选人', '晋升评审者', '自我训练与复盘', '项目与运营复盘',
+  ]) await expect(paths.filter({ has: page.getByText(title, { exact: true }) })).toHaveCount(1);
+
+  const candidate = paths.filter({ hasText: '候选人求职' });
+  await candidate.locator('summary').click();
+  await expect(candidate.getByRole('link', { name: '练习行为面试问题' })).toHaveAttribute('href', /scenario=interview.*format=behavioral/);
+  const questionLinks = await page.locator('.scenario-path a[href*="/questions/?"]').evaluateAll(links => links.map(link => (link as HTMLAnchorElement).href));
+  expect(questionLinks.length).toBeGreaterThan(10);
+  for (const href of questionLinks) {
+    await page.goto(href);
+    await expect(page.locator('#question-list > li:visible').first(), `Expected task path link to open a populated question list: ${href}`).toBeVisible();
+  }
+
+  await page.goto('scenarios/');
+  const practice = paths.filter({ hasText: '自我训练与复盘' });
+  await practice.locator('summary').click();
+  await expect(practice.getByRole('link', { name: '开始回答练习' })).toHaveAttribute('href', /practice\/$/);
+
+  await page.goto('en/scenarios/');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Choose a goal');
+  await expect(page.locator('.scenario-path')).toHaveCount(6);
+  await expect(page.getByText('Job candidate', { exact: true })).toBeVisible();
+});
+
+test('removed legacy question URLs return 404 in both locales', async ({ page }) => {
+  const zhResponse = await page.goto('questions/bulk-b-commercial-05/');
+  expect(zhResponse?.status()).toBe(404);
+
+  const enResponse = await page.goto('en/questions/exp1500-b-015/');
+  expect(enResponse?.status()).toBe(404);
 });
 
 test('footer publishes copyright and the separate code and content licenses', async ({ page }) => {
@@ -351,7 +389,7 @@ test('skip link and navigation are keyboard reachable', async ({ page }) => {
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: '跳到正文' })).toBeFocused();
   await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText([
-    '面试题库', '主题索引', '岗位导航', '使用场景', '能力地图', '阶段能力',
+    '面试题库', '提问框架', '主题索引', '岗位导航', '目标路径', '能力地图', '阶段能力',
   ]);
 });
 

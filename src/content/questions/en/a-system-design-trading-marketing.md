@@ -3,8 +3,8 @@ questionId: a-system-design-trading-marketing
 kind: question
 status: published
 locale: en
-title: In a trading system, how should marketing campaigns plug in without dragging down the main trading path?
-question: In a trading system, how should marketing campaigns such as coupons, threshold discounts, and flash sales plug in without dragging down the main trading path? How are discounts calculated, stacked, and reconciled?
+title: "How can promotions join a trading system without slowing checkout?"
+question: "How should coupons, discounts, and flash sales integrate with a trading system without slowing the core transaction flow? How would you calculate, combine, and reconcile discounts?"
 intent: See whether you can decouple marketing rules from the main trading path and handle stacking rules, inventory, and the risk of financial loss.
 signals:
   - Explains the boundary between marketing calculation and the main trading path, and degradation when marketing fails

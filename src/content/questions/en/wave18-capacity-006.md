@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you estimate collaboration capacity across time zones?
 question: The plan assumes three shared workdays each week, but local holidays and support rotations reduce overlap. How would you build a realistic calendar and response agreement?
-intent: Assess whether the response clarifies goals and constraints around calendar constraints and cross-time-zone collaboration capacity, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response estimates cross-time-zone collaboration from actual calendars and support responsibilities."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in calendar constraints and cross-time-zone collaboration capacity.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Include regional holidays, on-call shifts, overlapping meeting hours, and urgent-response duties."
+  - "Separate synchronous decisions, asynchronous work, and tasks requiring a timely response."
+  - "State the capacity and response commitments and how the plan changes when they shift."
 primaryCapability: delivery.capacity-planning
 roles:
   - pmo

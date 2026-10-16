@@ -6,51 +6,51 @@ sources:
       - bulk-a-code-deterministic-task-scheduler
       - wave16-c-002
       - wave16-c-003
-      - wave16-c-004
+      - a-coding-abstraction-streaming-validation
       - wave16-c-005
       - a-computer-science-memory-growth-vs-leak
       - wave16-c-007
       - wave16-c-008
       - wave16-c-009
       - wave16-c-010
-      - wave16-ai-011
+      - exp1500-a-038
       - a-ai-rag-source-freshness-contract
       - wave16-ai-013
       - wave16-ai-014
-      - bulk-ai-agent-budget-and-loop
+      - exp1500-a-011
       - a-ai-engineering-source-deletion-propagation
       - wave16-ai-017
-      - wave16-ai-018
-      - wave16-ai-019
+      - bulk-c-metrics-06
+      - a-ai-engineering-human-review-capacity
       - wave16-ai-020
       - wave16-domain-021
-      - bulk-a-usage-metering-pipeline
+      - exp1500-b-016
       - wave16-domain-023
-      - wave16-domain-024
-      - wave16-domain-025
-      - wave16-domain-026
+      - bulk-b-feature-02
+      - exp1500-b-036
+      - exp1500-c-048
       - wave16-product-027
-      - wave16-product-028
+      - wave17-integrity-008
       - wave16-product-029
       - wave16-product-030
       - wave16-delivery-031
-      - bulk1000-d-054-v1
+      - exp1500-d-006
       - wave16-delivery-033
-      - wave16-delivery-034
+      - d-operations-incident-command-authority-conflict
       - wave16-delivery-035
       - bulk-e-feedback-defensive-peer
       - wave16-collab-037
-      - wave16-collab-038
+      - exp1500-e-051
       - wave16-collab-039
-      - wave16-collab-040
+      - exp1500-e-050
       - wave16-people-041
       - wave16-people-042
       - wave16-people-043
       - e-feedback-manager-receives-team-concern
-      - wave16-people-045
+      - exp1500-f-038
       - wave16-growth-046
       - wave16-growth-047
       - wave16-growth-048
-      - wave16-growth-049
-      - wave16-growth-050
+      - wave18-attrib-008
+      - bulk1000-h-098-v1
     note: 补强编码抽象、系统运维、AI 治理、数据与商业模型、产品协作和个人责任。

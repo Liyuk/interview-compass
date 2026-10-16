@@ -1,7 +1,8 @@
 sources:
   - id: blog-frontline-engineering-management
     title: 一线技术管理的三种产出
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/frontline-engineering-management/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/frontline-engineering-management/zh.md
     status: used
     questions:
       - f-frontline-management-absence-test
@@ -15,7 +16,8 @@ sources:
       - h-boundaries-blurred-ownership
   - id: blog-career-growth-ten-questions
     title: 职场发展问题：晋升与面试前的完整自查清单
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
     status: used
     questions:
       - f-frontline-management-absence-test
@@ -28,9 +30,11 @@ sources:
       - h-integrity-early-bad-news
       - h-integrity-correct-own-account
       - h-attribution-team-vs-personal
+      - bulk-h-ownership-deliverable-unclaimed
   - id: blog-one-on-ones-and-decision-rights
     title: 1-on-1 不是例会：信息、预期与决策权怎样对齐
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/one-on-ones-and-decision-rights/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/one-on-ones-and-decision-rights/zh.md
     status: used
     questions:
       - f-frontline-management-one-on-one-alignment
@@ -38,53 +42,61 @@ sources:
       - h-expectations-fit-working-style
   - id: blog-manager-of-managers-management-and-authority
     title: 管理管理者如何带团队，以及如何让权限和资源服务结果
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/manager-of-managers-management-and-authority/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/manager-of-managers-management-and-authority/zh.md
     status: used
     questions:
       - f-manager-of-managers-bypass-the-lead
       - f-delegation-succession-decision-rights
   - id: blog-managing-managers-and-leader-profile
     title: 为什么需要管理管理者，以及什么样的人适合这段责任
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/managing-managers-and-leader-profile/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/managing-managers-and-leader-profile/zh.md
     status: used
     questions:
       - f-manager-of-managers-conflicting-local-optima
   - id: blog-governance-boundaries-for-managers
     title: 二线管理的治理底线：安全、公平与权力如何被约束
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/governance-boundaries-for-managers/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/governance-boundaries-for-managers/zh.md
     status: used
     questions:
       - f-manager-of-managers-decision-review
       - h-boundaries-non-negotiable-risk
   - id: blog-from-zero-design-the-team
     title: 从零搭团队时，先设计什么
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/06/from-zero-design-the-team/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/06/from-zero-design-the-team/zh.md
     status: used
     questions:
       - f-team-design-rebuild-from-zero
   - id: blog-team-growth-is-not-expansion
     title: 团队成长不是扩张：效率、梯队与延续
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/01/team-growth-is-not-expansion/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/01/team-growth-is-not-expansion/zh.md
     status: used
     questions:
       - f-team-design-prove-team-value
   - id: blog-technical-hiring-long-term-judgment
     title: 招聘与职业关系（一）：技术招聘，从“招到人”到建立长期判断
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/01/technical-hiring-long-term-judgment/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/01/technical-hiring-long-term-judgment/zh.md
     status: used
     questions:
       - f-hiring-role-gap-definition
       - f-hiring-structured-interview-design
   - id: github-sourcegraph-engineering-leadership
     title: 'Sourcegraph handbook: engineering leadership hiring'
-    url: https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
+    url: >-
+      https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
     status: used
     questions:
       - f-hiring-structured-interview-design
       - h-expectations-fit-must-have-conditions
   - id: github-tech-interview-handbook-behavioral
     title: 'Tech Interview Handbook: behavioral interview rubrics'
-    url: https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
+    url: >-
+      https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
     status: used
     questions:
       - f-hiring-structured-interview-design
@@ -92,25 +104,29 @@ sources:
       - h-attribution-team-vs-personal
   - id: blog-growth-paths-for-newcomers-core-and-leads
     title: 如何设计新人、骨干与负责人三条成长路径
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/06/growth-paths-for-newcomers-core-and-leads/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/06/growth-paths-for-newcomers-core-and-leads/zh.md
     status: used
     questions:
       - f-growth-development-stretch-responsibility
   - id: blog-specific-growth-milestones
     title: 成长里程碑：把“我想成长”聊成具体的样子
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/08/specific-growth-milestones/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/08/specific-growth-milestones/zh.md
     status: used
     questions:
       - f-growth-development-concrete-milestone
   - id: blog-sustaining-frontline-managers
     title: 怎么留与怎么补：让一线负责人形成可持续的接班安排
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/sustaining-frontline-managers/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/sustaining-frontline-managers/zh.md
     status: used
     questions:
       - f-delegation-succession-frontline-leaver
   - id: blog-evaluating-potential-with-care
     title: 评估潜力时，我们真正该看什么
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/02/evaluating-potential-with-care/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/02/evaluating-potential-with-care/zh.md
     status: used
     questions:
       - g-learning-transfer-unfamiliar-domain
@@ -121,7 +137,8 @@ sources:
       - h-attribution-passing-credit
   - id: blog-goals-retrospectives-and-next-actions
     title: 目标、规划与复盘：把“交作业”变成自己的成长
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/07/goals-retrospectives-and-next-actions/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/07/goals-retrospectives-and-next-actions/zh.md
     status: used
     questions:
       - g-learning-transfer-reuse-method
@@ -130,23 +147,27 @@ sources:
       - g-self-direction-goal-setting-difficulty
   - id: github-pm-interview-decision-you-got-wrong
     title: 'PM Interview Project: A Decision You Got Wrong'
-    url: https://github.com/deanpeters/The-Product-Manager-Interview-Project/blob/master/Questions/behavioral/A-Decision-You-Got-Wrong.md
+    url: >-
+      https://github.com/deanpeters/The-Product-Manager-Interview-Project/blob/master/Questions/behavioral/A-Decision-You-Got-Wrong.md
     status: used
     questions:
       - g-structured-reflection-judgment-overturned
   - id: blog-management-retrospective
     title: 管理复盘：从执行到系统的八个判断
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
     status: reviewed-not-used
     reason: 是各展开文章的总纲，只核对了 frontmatter 和导语；题目直接引用其展开文章，避免重复来源。
   - id: blog-campus-recruitment-training
     title: 筛选人和面试官到底在看什么
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
     status: reviewed-not-used
     reason: 只核对了 frontmatter 和导语，未逐段详读；校招的编码与项目阐述内容属于 A 域，由其他题目负责。
   - id: blog-manager-of-managers-leadership-supply
     title: 管理管理者如何找到、培养和交接负责人：HRBP、TA 与技术负责人的分工
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/manager-of-managers-leadership-supply/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/manager-of-managers-leadership-supply/zh.md
     status: used
     questions:
       - f-hiring-headcount-trade-offs

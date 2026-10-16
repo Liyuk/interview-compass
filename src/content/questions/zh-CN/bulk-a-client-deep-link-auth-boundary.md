@@ -3,7 +3,7 @@ questionId: bulk-a-client-deep-link-auth-boundary
 kind: question
 status: published
 locale: zh-CN
-title: 深链路由与认证边界
+title: "外部链接直达页面时，怎样保护登录和访问权限？"
 question: 用户通过外部链接直接打开需要登录的订单详情页。你会怎样设计路由解析、登录回跳和权限校验，避免深链绕过应用内流程？
 intent: 考察客户端深链、安全边界与导航状态处理。
 signals:

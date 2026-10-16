@@ -9,7 +9,7 @@ intent: 了解你如何负责任地结束一项业务，对受影响的人诚实
 signals:
   - 先弄清合同、法规和资金方面的义务，并制定分阶段的清退方案
   - 对受影响的合作方坦诚、提前、一致地沟通，并给出具体的补偿或过渡安排
-  - 预见可能升级的风险群体，并准备应对口径和渠道
+  - 预见可能升级的风险群体，并准备应对定义和渠道
   - 保留需要的数据和关系，并说明清退之后的跟进
 primaryCapability: delivery.operational-execution
 topics: [operations, risk-management, communication, ethics]

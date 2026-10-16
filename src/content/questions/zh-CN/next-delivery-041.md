@@ -3,7 +3,7 @@ questionId: next-delivery-041
 kind: question
 status: published
 locale: zh-CN
-title: 项目目标没有验收人时如何建立闭环？
+title: "项目没有验收人时，怎样完成验收和交接？"
 question: 项目即将完成，但业务发起人离职，接收团队也没有明确负责人。你会怎样处理验收、交接和未决风险？
 intent: 考察决策权识别、责任连续性和退出条件。
 signals:

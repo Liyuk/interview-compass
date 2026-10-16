@@ -4,17 +4,19 @@ kind: question
 status: published
 locale: en
 title: >-
-  A user asks to have personal data deleted, while finance must retain transaction records for audit. How would you
-  define the boundary among deletion, anonymization, and traceability?
+  A user asks to have personal data deleted, while finance must retain transaction records for audit. How
+  would you define the boundary among deletion, anonymization, and traceability?
 question: >-
-  A user asks to have personal data deleted, while finance must retain transaction records for audit. How would you
-  define the boundary among deletion, anonymization, and traceability?
+  A user asks to have personal data deleted, while finance must retain transaction records for audit. How
+  would you define the boundary among deletion, anonymization, and traceability?
 intent: >-
-  Assess whether you express data purpose, sensitivity, retention basis, and deletion propagation rather than treating
-  deletion as one database operation.
+  Assess whether you express data purpose, sensitivity, retention basis, and deletion propagation rather than
+  treating deletion as one database operation.
 signals:
   - Separates identity data, transaction facts, derived data, and audit evidence by purpose and sensitivity.
-  - Explains how deletion or anonymization propagates to caches, analytical sets, backups, and downstream copies.
+  - >-
+    Explains how deletion or anonymization propagates to caches, analytical sets, backups, and downstream
+    copies.
   - Defines evidence that deletion completed and data cannot re-enter production for an unauthorized purpose.
   - Distinguish deletable, anonymizable, and legally retained data.
   - Trace derived data, caches, backups, and downstream copies.
@@ -59,16 +61,18 @@ source:
     url: https://github.com/yangshun/tech-interview-handbook
 followUps:
   - >-
-    If backups cannot be rewritten item by item immediately, how would you prevent restored data from returning to
-    production?
+    If backups cannot be rewritten item by item immediately, how would you prevent restored data from
+    returning to production?
   - How would you demonstrate that anonymized records cannot be reidentified through linked data?
   - >-
-    【When can soft-deleted records be physically purged?】A customer requests account deletion, while finance must retain
-    some transactions and analytics systems hold copies. How would you define deletion semantics and verify scope?
+    【When can soft-deleted records be physically purged?】A customer requests account deletion, while finance
+    must retain some transactions and analytics systems hold copies. How would you define deletion semantics
+    and verify scope?
   - How would you prevent deleted data from reappearing after backup restoration?
   - How would you prove anonymization is irreversible?
   - >-
-    【How do you propagate data deletion and prove it is complete?】After a customer requests deletion, the source
-    database, CDC pipeline, and downstream indexes, caches, or materialized views may still retain old values. How would
-    you define deletion semantics, design propagation, and prove cleanup is complete?
+    【How do you propagate data deletion and prove it is complete?】After a customer requests deletion, the
+    source database, CDC pipeline, and downstream indexes, caches, or materialized views may still retain old
+    values. How would you define deletion semantics, design propagation, and prove cleanup is complete?
+relatedQuestions: []
 ---

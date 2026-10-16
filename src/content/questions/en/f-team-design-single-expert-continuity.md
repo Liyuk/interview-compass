@@ -5,15 +5,13 @@ status: published
 locale: en
 title: How do you reduce single-expert risk without disrupting delivery?
 question: >-
-  Critical system knowledge sits with one senior engineer during a peak delivery period. How would
-  you plan knowledge transfer, backup ownership, and short-term capacity?
+  Critical system knowledge sits with one senior engineer during a peak delivery period. How would you plan
+  knowledge transfer, backup ownership, and short-term capacity?
 intent: >-
-  Assess whether you build redundant capability into real work instead of only asking the expert to
-  write more documentation.
+  Assess whether you build redundant capability into real work instead of only asking the expert to write more
+  documentation.
 signals:
-  - >-
-    Separates recovery knowledge needed immediately from deeper knowledge that can transfer
-    gradually.
+  - Separates recovery knowledge needed immediately from deeper knowledge that can transfer gradually.
   - Tests backup capability through pairing, drills, rotation, or real changes.
   - Adjusts near-term plans so knowledge transfer is not unfunded extra work.
 primaryCapability: people-organization.team-design

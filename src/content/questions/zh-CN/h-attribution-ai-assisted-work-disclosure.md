@@ -11,7 +11,6 @@ signals:
   - 说明使用工具的数据边界和风险检查。
   - 不把产出归给自己，也不因工具参与而逃避责任。
   - 明确“工具辅助下的理解、披露与责任归属”涉及的事实、对象和责任边界。
-  - 用可核验的例子说明判断依据、结果影响及必要的复盘。
 primaryCapability: work-responsibility.attribution
 topics:
   - ethics

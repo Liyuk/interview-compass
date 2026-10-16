@@ -5,8 +5,8 @@ sources:
     questions:
       - a-microservices-team-boundary-change
       - a-microservices-saga-compensation-boundary
-      - a-microservices-contract-version-rollout
-      - a-microservices-timeout-retry-amplification
+      - b-model-evolution-schema-unknown-enum
+      - exp1500-a-009
       - a-microservices-read-model-freshness-contract
       - a-microservices-service-ownership-oncall-gap
       - a-microservices-data-ownership-migration
@@ -48,7 +48,7 @@ sources:
       - a-compiler-incremental-build-dependency-invalidation
       - a-compiler-diagnostic-source-map-macro-expansion
       - a-compiler-language-abi-boundary-change
-      - a-mobile-local-database-schema-upgrade-rollback
+      - a-engineering-systems-schema-deploy-rollback
       - a-mobile-cold-start-budget-low-end-device
       - c-technical-planning-platform-capability-sequencing
       - c-technical-planning-technology-sunset-exit

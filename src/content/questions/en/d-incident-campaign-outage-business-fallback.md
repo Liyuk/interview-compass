@@ -3,14 +3,10 @@ questionId: d-incident-campaign-outage-business-fallback
 kind: question
 status: published
 locale: en
-title: A big promotion goes live at midnight, the system is overwhelmed, and users complain they cannot claim coupons. As operations, what do you do during the half hour engineering is stopping the damage?
-question: A big promotion goes live at midnight, the system stalls under heavy concurrency, and many users complain they cannot claim coupons. As front-line operations, what specific business fallback measures do you take during the half hour you are helping engineering stop the damage?
+title: During a campaign outage, how can operations protect customers?
+question: A campaign goes live overnight, but heavy traffic stalls the system. Many users cannot claim their coupons and start complaining. As a frontline operations lead, what temporary business measures would you take while Engineering works on the outage?
 intent: See how you protect users and trust with business measures during an incident and divide the work with the technical team rather than only waiting for a fix.
-signals:
-  - First confirms the scope of impact and the affected users and aligns with engineering on current status and expected recovery time
-  - Gives concrete user reassurance, such as an announcement, customer-service wording, and reissuing to affected users
-  - Considers business-level controls such as pausing, postponing, or throttling the campaign
-  - Records facts and impact to support the later review and compensation
+signals: ["Confirm the failure scope, affected users, and expected recovery time, then share updated facts.","Offer a customer response such as a notice, consistent guidance for support staff, and compensation for affected users.","Compare pausing, delaying, or restricting new campaign traffic and their business effects.","Record response actions and user impact to support later review and compensation."]
 primaryCapability: delivery.reliability-incidents
 topics: [operations, reliability, communication]
 roles: [operations, marketing, product]

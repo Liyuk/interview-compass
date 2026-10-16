@@ -1,7 +1,8 @@
 sources:
   - id: blog-campus-recruitment-training
     title: 筛选人和面试官到底在看什么
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
     status: used
     questions:
       - a-computer-science-cache-boundaries
@@ -13,27 +14,31 @@ sources:
       - a-debugging-intermittent-duplicate-submit
   - id: blog-structured-thinking-practice
     title: 思维训练（四）：结构化思维实践
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/structured-thinking-practice/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/structured-thinking-practice/zh.md
     status: used
     questions:
       - a-engineering-systems-test-critical-path
   - id: blog-ai-engineering-capability-boundaries
     title: 把 AI 能力放进工程组织前，先定义哪些边界
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/research/2026/08/ai-engineering-capability-boundaries/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/research/2026/08/ai-engineering-capability-boundaries/zh.md
     status: used
     questions:
       - a-ai-engineering-rag-permission-change
       - a-ai-engineering-ship-ai-output-gate
   - id: blog-engineering-decision-skills
-    title: "Engineering Decision Skills：评审、排期、复盘时，我想让 AI 多做一步"
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/projects/2026/09/engineering-decision-skills/zh.md
+    title: Engineering Decision Skills：评审、排期、复盘时，我想让 AI 多做一步
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/projects/2026/09/engineering-decision-skills/zh.md
     status: used
     questions:
       - a-engineering-systems-release-rollback
       - a-system-design-async-coupon-issuing-review
   - id: blog-interview-questions-archive
     title: 面试题与工程师的成长路径
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2018/04/interview-questions-archive/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2018/04/interview-questions-archive/zh.md
     status: reviewed-not-used
     reason: 只是 2018 年原题库的索引和整理缘由，没有可提炼的题面；原题库在旧仓库，不批量迁入，其整理原则（写清为什么问、怎么想、哪里容易漏）已体现在 intent 与 signals 字段中。
   - id: gh-ombharatiya-ai-engineer-interview-questions
@@ -106,7 +111,7 @@ sources:
       - a-engineering-systems-progressive-fleet-deploy
       - a-engineering-systems-ci-untrusted-change
       - a-engineering-systems-infrastructure-drift
-      - a-engineering-systems-alert-noise-slo
+      - exp1500-d-018
       - a-engineering-systems-schema-deploy-rollback
       - a-engineering-systems-credential-rotation
       - a-engineering-systems-cost-reliability-tradeoff

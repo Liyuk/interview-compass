@@ -10,6 +10,10 @@ signals:
   - 检查错误发生时的任务、工具、提示和流程负荷。
   - 对照培训内容与实际错误机制及岗位场景。
   - 使用行为观察、模拟练习和错误趋势验证学习迁移。
+  - 比较训练任务与真实工作中的判断情境
+  - 设置观察行为、反馈来源和持续时间
+  - 定义培训对应的任务和期望行为。
+  - 通过独立完成率、错误趋势或知识共享验证变化。
 primaryCapability: learning-adaptation.learning-transfer
 topics:
   - learning
@@ -38,4 +42,9 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 L
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-17 B
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch E/F
+relatedQuestions: []
 ---

@@ -3,14 +3,14 @@ questionId: c-investment-choices-advocate-for-tech-time
 kind: question
 status: published
 locale: zh-CN
-title: 技术债让产品迭代变慢时，你怎样帮技术负责人向业务高层争取重构时间？
-question: 你过去一年为技术团队争取过多少技术基建的人力？当你发现技术债让产品迭代变慢时，你怎样帮技术负责人向业务高层解释，争取重构的时间？
-intent: 了解你作为产品负责人是否真的为技术投入争取过资源，并能把技术债翻译成业务能理解的语言。
+title: 积累的技术问题拖慢产品迭代时，怎样争取重构时间？
+question: "过去一年，你为解决技术债（累积的维护和改造问题）或改善构建、发布等工程基础设施争取过多少团队投入？当这些问题拖慢产品迭代时，你怎样向业务负责人说明影响和风险，并争取重构时间？"
+intent: 了解你是否为解决真实的工程问题争取过资源，以及能否把它们对产品交付的影响说明白。
 signals:
-  - 用具体数字说明为技术投入争取过什么，而不是只表达支持
-  - 把技术债翻译成对迭代速度、风险和机会的具体影响
-  - 帮助技术负责人准备业务高层能做决定的材料，包括选项和代价
-  - 说明怎样跟踪重构是否真的提升了迭代速度
+  - 用具体数字说明争取过多少团队时间、用于解决什么问题，而不只是表达支持。
+  - 说明维护问题或基础设施如何影响迭代速度、风险和业务机会。
+  - 准备业务负责人可以比较的方案和代价，帮助他们作出投入决定。
+  - 说明怎样检查重构后产品迭代是否确实变快。
 primaryCapability: value-direction.investment-choices
 topics: [engineering-systems, planning, communication, technical-planning]
 roles: [product, manager]

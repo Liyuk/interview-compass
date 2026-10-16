@@ -5,8 +5,8 @@ status: published
 locale: en
 title: Repair collaboration after escalation without retracting facts
 question: >-
-  After you escalated a delivery risk, a colleague felt bypassed and stopped sharing information
-  promptly. How would you repair the relationship while preserving necessary risk transparency?
+  After you escalated a delivery risk, a colleague felt bypassed and stopped sharing information promptly. How
+  would you repair the relationship while preserving necessary risk transparency?
 intent: Examines ownership of collaboration damage, communication boundaries, and follow-up mechanisms.
 signals:
   - Acknowledges the concrete impact without using explanation to dismiss it.

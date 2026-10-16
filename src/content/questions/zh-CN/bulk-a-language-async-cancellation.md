@@ -3,16 +3,14 @@ questionId: bulk-a-language-async-cancellation
 kind: question
 status: published
 locale: zh-CN
-title: 异步取消如何传播
-question: 一个请求触发了多个并行异步任务，客户端断开后仍有下游工作继续消耗资源。请解释取消信号如何沿调用链传播，以及哪些资源必须协作式释放。
-intent: 考察异步运行时取消语义和资源生命周期。
+title: 客户端断开后，怎样停止仍在运行的异步任务？
+question: 一个请求启动了多个异步任务；客户端断开或请求超时后，部分下游工作仍占用线程和连接。你会怎样让取消信号传到相关任务，并释放资源？
+intent: 考察对异步取消、任务所有权和资源清理边界的理解。
 signals:
-  - 区分取消请求与强制终止
-  - 追踪父子任务或取消令牌的传播
-  - 考虑 finally/清理逻辑与不可取消操作
-  - 说明取消的传递边界与任务所有权。
-  - 为不响应取消的操作设置期限、隔离和清理策略。
-  - 验证取消后没有泄漏或重复副作用。
+  - 区分超时、取消和任务自然完成。
+  - 说明取消信号如何跨父子任务和服务调用传播。
+  - 识别共享任务、不可中断操作和已经产生副作用（重复执行、越权等额外影响）的边界。
+  - 说明如何清理资源并验证取消后没有任务泄漏或重复副作用。
 primaryCapability: professional.computer-science
 topics:
   - programming-languages
@@ -21,6 +19,7 @@ topics:
 roles:
   - engineering
   - backend
+  - mobile
 responsibilityScopes:
   - individual
   - team
@@ -43,8 +42,11 @@ source:
     url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 A
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch A
 followUps:
-  - 【取消信号丢失时，怎样避免任务永久运行？】一个请求启动了多个并行任务，其中一个客户端断开，但部分下游不响应取消。你会怎样设计超时、清理和资源回收？
-  - 如果操作已写入外部系统但尚未返回，取消应如何表达？
-  - 如何证明清理逻辑覆盖异常退出？
+  - 如果下游操作不响应取消，怎样限制它持续占用资源？
+  - 如果外部写入已经完成但响应丢失，取消应代表什么？
+  - 如何验证异常退出也会执行必要清理？
+relatedQuestions: []
 ---

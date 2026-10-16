@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you adjust delegation when every decision still comes back to you?
 question: A team member delivers the work but waits for your approval at every step. How would you determine whether capability, information, risk, or authority is the blocker?
-intent: Assess whether the response clarifies goals and constraints around delegation boundaries, decision practice, and risk support, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response identifies why the employee waits for approval and gradually expands the decisions they can make independently."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in delegation boundaries, decision practice, and risk support.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Distinguish missing information, decision experience, risk support, and unclear authority as possible causes."
+  - "Choose a bounded task where the employee explains the reasoning and makes the decision independently."
+  - "Track approval waits, decision quality, and risk handling before expanding or changing the delegation."
 primaryCapability: people-organization.delegation-succession
 roles:
   - manager

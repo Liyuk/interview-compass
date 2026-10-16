@@ -3,14 +3,14 @@ questionId: c-investment-choices-advocate-for-tech-time
 kind: question
 status: published
 locale: en
-title: When technical debt slows product iteration, how do you help the tech lead win refactoring time from business leaders?
-question: How much headcount for technical infrastructure did you win for the engineering team over the past year? When you see technical debt slowing product iteration, how do you help the tech lead explain it to business leaders and win time for refactoring?
-intent: See whether, as a product owner, you have really fought for technical investment and can translate technical debt into language the business understands.
+title: When accumulated engineering problems slow product work, how do you secure time to refactor?
+question: "In the past year, how much team capacity did you secure to address technical debt (accumulated maintenance and rework) or improve engineering infrastructure such as builds and releases? When these problems slow product work, how do you explain their impact and risk to business leaders and secure time to refactor?"
+intent: See whether you have secured resources to address real engineering problems and can explain their impact on product delivery.
 signals:
-  - Uses concrete numbers for what was won for technical investment, not only expressing support
-  - Translates debt into specific effects on iteration speed, risk, and opportunity
-  - Helps the tech lead prepare material business leaders can decide on, including options and costs
-  - Says how it is tracked whether the refactor really sped up iteration
+  - Use concrete numbers to explain how much team time you secured and what it was used to fix, rather than only expressing support.
+  - Explain how maintenance problems or infrastructure affect iteration speed, risk, and business opportunities.
+  - Prepare options and costs that business leaders can compare to make an investment decision.
+  - Explain how you would check whether the refactor actually sped up product work.
 primaryCapability: value-direction.investment-choices
 topics: [engineering-systems, planning, communication, technical-planning]
 roles: [product, manager]

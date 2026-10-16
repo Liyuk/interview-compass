@@ -3,8 +3,8 @@ questionId: c-product-judgment-twenty-four-month-shift
 kind: question
 status: published
 locale: en
-title: In your view, which kind of company will this technology shift kill first in the next twenty-four months, and what seeds have you planted for your company's way out?
-question: Please do not use words from industry reports. In your view, which kind of company in the industry will this technology shift kill first within the next twenty-four months, what concrete way out does it give your company, and which seeds have you already planted for that way out?
+title: "How do you assess your company’s opportunities and risks from a technology shift?"
+question: "Without citing industry reports, which kinds of companies do you think this technology will affect most over the next two years, and why? What does that mean for your company, and what have you done to test or respond to your view?"
 intent: See whether you hold a specific, checkable view of industry change and have already acted on it, rather than restating a trend.
 signals:
   - Explains with a concrete mechanism, not buzzwords, why the change would kill a certain kind of company

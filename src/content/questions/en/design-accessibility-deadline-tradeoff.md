@@ -4,13 +4,24 @@ kind: question
 status: published
 locale: en
 title: How do you set acceptable trade-offs when an accessibility requirement conflicts with a launch date?
-question: A critical flow is two weeks from launch when a review finds that keyboard users cannot complete one step. A full redesign would affect the date. How would you assess the impact, negotiate scope with the team, and explain what can be staged versus what cannot safely ship?
-intent: Assesses whether the candidate treats accessibility as a real user impact and delivery risk, and can set boundaries and staged plans under pressure.
+question: >-
+  A critical flow is two weeks from launch when a review finds that keyboard users cannot complete one step. A
+  full redesign would affect the date. How would you assess the impact, negotiate scope with the team, and
+  explain what can be staged versus what cannot safely ship?
+intent: >-
+  Assesses whether the candidate treats accessibility as a real user impact and delivery risk, and can set
+  boundaries and staged plans under pressure.
 signals:
-  - Identifies affected users, tasks, and the degree of blockage instead of reducing the issue to visual preference
+  - >-
+    Identifies affected users, tasks, and the degree of blockage instead of reducing the issue to visual
+    preference
   - Proposes short-term mitigation that reduces the actual barrier and a follow-up fix with an owner and date
-  - States the launch threshold, who accepts any remaining risk, and when to escalate if the threshold cannot be met
-  - Identifies the stakeholders, constraints, and risks relevant to accessibility blockers, risk thresholds, and release commitments.
+  - >-
+    States the launch threshold, who accepts any remaining risk, and when to escalate if the threshold cannot
+    be met
+  - >-
+    Identifies the stakeholders, constraints, and risks relevant to accessibility blockers, risk thresholds,
+    and release commitments.
   - Proposes evidence or a review point that could confirm or change the decision.
 primaryCapability: value-direction.prioritization
 topics:
@@ -41,5 +52,7 @@ source:
   - attribution: original
     label: Interview Compass coverage-led original expansion batch 2026-10-17 C
 followUps:
-  - Testing shows keyboard users cannot complete a core setup flow, while touch users can. The release date is public. How would you assess impact, choose a fix, and communicate launch conditions?
+  - >-
+    Testing shows keyboard users cannot complete a core setup flow, while touch users can. The release date is
+    public. How would you assess impact, choose a fix, and communicate launch conditions?
 ---

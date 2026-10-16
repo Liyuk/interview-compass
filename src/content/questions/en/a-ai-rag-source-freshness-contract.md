@@ -5,16 +5,19 @@ status: published
 locale: en
 title: How do you define freshness ownership when a RAG answer cites a correct but outdated document?
 question: >-
-  A RAG assistant cites an internal document, but its owner has updated the process and the new version is not indexed
-  yet. How would you define freshness goals, propagation, and answer behavior during the gap?
+  A RAG assistant cites an internal document, but its owner has updated the process and the new version is not
+  indexed yet. How would you define freshness goals, propagation, and answer behavior during the gap?
 intent: >-
-  Assess whether you include data updates, index consistency, citation freshness, and business ownership in the
-  retrieval contract.
+  Assess whether you include data updates, index consistency, citation freshness, and business ownership in
+  the retrieval contract.
 signals:
-  - "Define the authoritative source, version, effective and expiry times, and owner."
-  - "Set and observe propagation targets for edits, deletions, and permission changes."
-  - "Distinguish relevance from current validity and handle stale or conflicting material."
-  - "Choose warnings, degraded behavior, human confirmation, or refusal according to risk."
+  - Define the authoritative source, version, effective and expiry times, and owner.
+  - Set and observe propagation targets for edits, deletions, and permission changes.
+  - Distinguish relevance from current validity and handle stale or conflicting material.
+  - Choose warnings, degraded behavior, human confirmation, or refusal according to risk.
+  - Defines traceability among source-document, index, and answer-citation versions.
+  - Sets measurable freshness objectives for indexing delay, cache invalidation, and retries.
+  - Identifies high-risk stale content and provides temporary suppression, labeling, or human review.
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering
@@ -41,11 +44,16 @@ followUps:
   - How do you handle document withdrawal while old and new versions coexist?
   - Who confirms that the knowledge source remains valid for the business?
   - >-
-    Retrieval returns accurate but obsolete procedure documents, and the cited answer leads a user to take an old
-    action. How would you represent source validity?
+    Retrieval returns accurate but obsolete procedure documents, and the cited answer leads a user to take an
+    old action. How would you represent source validity?
+  - How would you distinguish an outdated source document from delayed index propagation?
+  - What evidence would show that the old version is no longer cited in generated answers?
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 E
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 C
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch A/B
+relatedQuestions: []
 ---

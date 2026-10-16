@@ -7,7 +7,9 @@ title: How do you reset goals when output rises but user outcomes do not?
 question: >-
   A new process doubles weekly feature releases, but task completion is unchanged and support tickets rise
   slightly. How would you decide whether to continue, adjust, or stop?
-intent: Assess whether you distinguish output, adoption, and user outcomes and adjust decisions along the goal chain.
+intent: >-
+  Assess whether you distinguish output, adoption, and user outcomes and adjust decisions along the goal
+  chain.
 signals:
   - Check the causal assumption linking output to user value.
   - Break down exposure, adoption, task completion, and downstream cost.

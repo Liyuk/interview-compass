@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you ask questions that help quieter members share dissent?
 question: The most senior person speaks first in reviews and others tend to agree. How would you change question order and discussion format to gather independent evidence?
-intent: Assess whether the response clarifies goals and constraints around gathering independent views and reducing authority bias, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response reduces the influence of senior members speaking first and gathers independent views."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in gathering independent views and reducing authority bias.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Have members write down their views or take turns before inviting the most senior person to speak."
+  - "Ask what facts, concerns, and alternatives support each view instead of counting agreement."
+  - "Distinguish genuine consensus from unspoken disagreement or silence caused by status pressure."
 primaryCapability: collaboration.communication
 roles:
   - manager

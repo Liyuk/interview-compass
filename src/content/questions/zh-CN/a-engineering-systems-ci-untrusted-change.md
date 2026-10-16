@@ -3,8 +3,8 @@ questionId: a-engineering-systems-ci-untrusted-change
 kind: question
 status: published
 locale: zh-CN
-title: 仓库允许外部贡献者提交代码，CI 会读取测试凭证并构建发布包。你会怎样检查流水线中信任边界和凭证暴露风险？
-question: 仓库允许外部贡献者提交代码，CI 会读取测试凭证并构建发布包。你会怎样检查流水线中信任边界和凭证暴露风险？
+title: 外部贡献者提交代码后，自动检查流程会读取测试凭证并构建发布包。你会怎样检查流水线中的信任边界？
+question: 仓库允许外部贡献者提交代码，自动检查与构建流程会读取测试凭证并构建发布包。你会怎样检查流水线中的信任边界和凭证暴露风险？
 intent: 了解你能否区分不可信代码与受保护环境，并限制凭证和发布权限。
 signals:
   - 识别来自 fork、依赖脚本和构建步骤的执行风险

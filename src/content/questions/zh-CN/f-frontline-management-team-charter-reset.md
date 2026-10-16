@@ -3,7 +3,7 @@ questionId: f-frontline-management-team-charter-reset
 kind: question
 status: published
 locale: zh-CN
-title: 团队目标和成员职责逐渐漂移时，怎样重建团队约定？
+title: "团队扩大后，目标和成员职责不清晰，怎样重新约定？"
 question: 团队从 6 人扩到 14 人后，原有分工仍沿用；成员对谁决定架构、谁支持运营和谁负责质量理解不同。你会如何重新建立团队约定？
 intent: 考察能否把目标、职责、决策权和协作规则在团队成长后重新校准。
 signals:

@@ -3,14 +3,14 @@ questionId: c-product-judgment-moat-over-short-term-metrics
 kind: question
 status: published
 locale: en
-title: Tell me about a product decision that looked to harm user experience and sank short-term metrics but two years later became a commercial moat.
-question: Tell me about a product decision you made that at the time seemed to go against user experience and sharply lowered short-term metrics, but that two years later looks like it built a high commercial moat for the company or made it hard for competitors to catch up. How did you judge it and persuade others then?
-intent: See how you build a long-term judgment for a decision that is unpopular in the short term and whether you honestly separate foresight from luck.
+title: What evidence would support a product decision that hurts a short-term metric for long-term value?
+question: Describe a product decision where a short-term metric worsened, but the team expected a longer-term benefit. What evidence informed the decision, how did you monitor it, and what later evidence linked the outcome to that choice rather than outside factors?
+intent: Assess how you evaluate a decision with short-term costs, test the expected long-term benefit, and distinguish evidence from hindsight.
 signals:
-  - Says why long-term value was believed at the time and the mechanism behind it, not a rationalization after the fact
-  - Explains the short-term cost at the time and how it was explained to the parties
-  - Separates a moat truly produced by the decision from luck and outside change over the same period
-  - Says what check was set in advance and under what conditions the decision would have changed
+  - Identifies the short-term metric, affected users, and expected longer-term benefit
+  - Explains what evidence and assumptions supported the decision at the time
+  - Names a review signal, observation period, and conditions that would have changed the decision
+  - Separates the decision's contribution from outside changes and other explanations
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, planning, ethics]
 roles: [product, manager]

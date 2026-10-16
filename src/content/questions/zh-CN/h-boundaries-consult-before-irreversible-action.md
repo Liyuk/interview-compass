@@ -3,7 +3,7 @@ questionId: h-boundaries-consult-before-irreversible-action
 kind: question
 status: published
 locale: zh-CN
-title: 超出授权范围但可能造成不可逆影响时，先做什么？
+title: 超出授权范围但可能造成难以恢复的影响时，先做什么？
 question: 你值班时发现一个数据修复脚本可以快速恢复报表，但它也可能覆盖客户刚提交的修改。负责人暂时联系不上，业务方催你立即执行。你会怎样划分可先做的保护动作、需要授权的操作和升级路径？
 intent: 了解你是否能在紧急压力下判断权限边界、控制不可逆风险，并采取与职责相称的保护行动。
 signals:

@@ -3,11 +3,11 @@ questionId: g-structured-reflection-honest-retrospective
 kind: question
 status: published
 locale: zh-CN
-title: 做复盘时，你怎样避免避重就轻、替换口径，或把事实说得比实际更好？
-question: 做复盘时，你怎样避免避重就轻、替换口径，或把事实说得比实际更好？
+title: 做复盘时，你怎样避免避重就轻、替换定义，或把事实说得比实际更好？
+question: 做复盘时，你怎样避免避重就轻、替换定义，或把事实说得比实际更好？
 intent: 了解你是否有让复盘保持诚实的具体做法，而不是只表示"我会诚实"。
 signals:
-  - 复盘前先固定事实和口径，再讨论判断
+  - 复盘前先固定事实和定义，再讨论判断
   - 愿意写出低点和没做好的部分
   - 让别人能够核验数据和结论
 primaryCapability: learning-adaptation.structured-reflection

@@ -10,6 +10,9 @@ signals:
   - 找出共享依赖、关键路径重叠和风险相关性。
   - 比较单项目延期与组合价值损失。
   - 设定组合级升级阈值、决策者和调整后沟通机制。
+  - 统一展示需求、容量、日期、影响和置信度。
+  - 区分需要组合决策的取舍与团队可自行调整的执行细节。
+  - 记录决策人、选项、影响和后续检查点。
 primaryCapability: delivery.project-management
 topics:
   - planning
@@ -32,10 +35,9 @@ scenarios:
 formats:
   - case
   - planning
-followUps:
-  - 怎样避免把相关风险的影响重复相加？
-  - 如何防止被延后项目无声失控？
+followUps: ["如何避免统一状态表掩盖各项目采用不同估算方法？","哪些依赖的完成时间或工作量最不确定？","发生延误时，哪些项目需要由组合负责人重新排序？"]
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 D
+relatedQuestions: []
 ---

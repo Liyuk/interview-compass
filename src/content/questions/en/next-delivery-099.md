@@ -4,7 +4,9 @@ kind: question
 status: published
 locale: en
 title: How would you break “improve engineering productivity” into actionable problems?
-question: Leadership asks for higher engineering productivity next quarter without defining it. Some propose increasing commits; others want fewer meetings. How would you establish an improvement direction?
+question: >-
+  Leadership asks for higher engineering productivity next quarter without defining it. Some propose
+  increasing commits; others want fewer meetings. How would you establish an improvement direction?
 intent: Assesses goal clarification, system diagnosis, and avoiding misleading proxy metrics.
 signals:
   - Clarify the problem through lead time, quality, waiting, and user outcomes.

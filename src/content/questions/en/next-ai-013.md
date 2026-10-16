@@ -4,7 +4,9 @@ kind: question
 status: published
 locale: en
 title: How do you limit logging risk when model outputs contain personal data?
-question: Model responses may echo customer identifiers, while production debugging relies on request and response logs. How would you design collection, redaction, access, and retention?
+question: >-
+  Model responses may echo customer identifiers, while production debugging relies on request and response
+  logs. How would you design collection, redaction, access, and retention?
 intent: Assesses balancing diagnostic value with minimization of sensitive data.
 signals:
   - Separate required telemetry from raw content by purpose.

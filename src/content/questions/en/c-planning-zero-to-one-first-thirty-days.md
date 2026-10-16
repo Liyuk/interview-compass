@@ -3,14 +3,8 @@ questionId: c-planning-zero-to-one-first-thirty-days
 kind: question
 status: published
 locale: en
-title: >-
-  How would you validate the opportunity, team, and direction in the first thirty days of a new
-  market?
-question: >-
-  The core business is slowing, and the boss asks you to lead an exploration of an unfamiliar
-  market, possibly dominated by giants, with a budget and few requirements. In the first thirty
-  days, how would you clarify the goal, estimate the market and its uncertainty, find a viable entry
-  point, design the early team, and define a north-star metric that tests the direction?
+title: "How would you use the first 30 days to test whether a new market is worth pursuing?"
+question: "The company’s growth is slowing, and your manager asks you to explore an unfamiliar, highly competitive market with a limited budget. What would you learn and test in the first 30 days, and what evidence would determine whether to continue or stop?"
 intent: >-
   Assess whether you break a highly uncertain new-business launch into market judgment, problem
   validation, organization design, and staged decisions instead of producing a grand blueprint.

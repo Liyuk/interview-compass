@@ -9,7 +9,7 @@ intent: 考察时间语义、规则版本和计费可重现性。
 signals:
   - 区分绝对时间、业务时区和日期边界。
   - 保存应用规则时使用的地区与版本。
-  - 测试夏令时切换、迁移和重放场景。
+  - 测试夏令时切换、迁移和重放（重新处理历史消息或任务）场景。
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization

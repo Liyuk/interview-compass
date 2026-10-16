@@ -4,11 +4,14 @@ kind: question
 status: published
 locale: en
 title: How would you model an outcome jointly produced online and offline?
-question: Conversion rose after a product redesign, while the service team also changed its workflow. How would you model the shared outcome without attributing it only to the online funnel?
-intent: Assess whether the response clarifies goals and constraints around shared outcomes across online and offline service journeys, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+question: >-
+  Conversion rose after a product redesign, while the service team also changed its workflow. How would you
+  model the shared outcome without attributing it only to the online funnel?
+intent: "Assess whether the response separates the effects of a product change from concurrent changes to offline service."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in shared outcomes across online and offline service journeys.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "List the online redesign and offline process changes, their timing, and the groups affected."
+  - "Compare affected and unaffected groups or periods and examine handoffs between online and offline service."
+  - "State which effects can be supported, which remain indistinguishable, and what evidence to gather next."
 primaryCapability: domain-modeling.product-project-model
 roles:
   - product
@@ -30,4 +33,5 @@ source:
 topics:
   - product-thinking
   - commercialization
+relatedQuestions: []
 ---

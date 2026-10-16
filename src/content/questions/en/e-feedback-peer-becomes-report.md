@@ -11,7 +11,6 @@ signals:
   - Asks how the person sees the role change and behavior before clarifying the new expectation
   - Agrees on observable actions and a review date, applying the same standard consistently
   - Clarifies the facts, stakeholders, and ownership boundaries involved in feedback boundaries and support after a role transition.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
 primaryCapability: collaboration.feedback
 topics:
   - feedback

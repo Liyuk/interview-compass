@@ -5,10 +5,11 @@ status: published
 locale: en
 title: What would you ask first when a request is vague?
 question: A stakeholder asks for “an intelligent recommendation entry point” without explaining the outcome. What would you ask to clarify the user task, measure, and hard constraints?
-intent: Assess whether the response clarifies goals and constraints around question design that turns a solution request into goals and constraints, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response clarifies what users need to accomplish, the desired change, and the constraints before accepting a proposed solution."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in question design that turns a solution request into goals and constraints.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Ask how users complete the task today, where they get stuck, and who is affected."
+  - "Treat the recommendation entry point as a hypothesis; ask why recommendations are needed and what alternatives exist."
+  - "Explain which answers would change the scope, success measure, or investment decision."
 primaryCapability: collaboration.communication
 roles:
   - product

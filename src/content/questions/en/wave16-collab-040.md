@@ -4,7 +4,9 @@ kind: question
 status: published
 locale: en
 title: How can a team act when research findings are uncertain?
-question: A small user study suggests a workflow obstacle, but the team wants statistical significance before changing anything. How would you move forward?
+question: >-
+  A small user study suggests a workflow obstacle, but the team wants statistical significance before changing
+  anything. How would you move forward?
 intent: Assesses evidence strength, decision cost, and reversible experiments.
 signals:
   - Clarify what the sample can and cannot support.

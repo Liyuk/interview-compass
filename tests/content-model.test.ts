@@ -42,6 +42,10 @@ describe('question content contract', () => {
     }
   });
 
+  it('rejects legacy merge-alias metadata', () => {
+    expect(() => parseQuestionRecord(question('zh-CN', { mergedInto: 'canonical-question' }))).toThrow(/unrecognized key/i);
+  });
+
   it('requires provenance and a url unless the question is original', () => {
     expect(() => parseQuestionRecord(question('zh-CN', { source: [] }))).toThrow(/source|original/i);
     expect(() => parseQuestionRecord(question('zh-CN', { source: [{ attribution: 'inspired' }] }))).toThrow(/url/i);

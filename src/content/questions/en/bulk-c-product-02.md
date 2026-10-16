@@ -4,28 +4,33 @@ kind: question
 status: published
 locale: en
 title: Should a high-value customer’s custom request be delivered once, productized, or declined?
-question: >-
-  An important customer will pay well for a custom feature, but few other customers may use it. Delivery adds long-term
-  maintenance, permission, or data-definition costs, and sales may already have promised a date. How would you compare
-  custom delivery, configurable product work, a service-based solution, and walking away, then decide whether to invest
-  in productization?
+question: "A major customer will pay a high price for a custom feature, but reuse by other customers is uncertain. Ongoing maintenance, permissions, and data rules add cost, and sales has promised a delivery date. How would you compare a one-off build, productizing it, a service, or declining—and decide whether to invest?"
 intent: >-
-  Assess whether you bring the customer’s real obstacle, revenue certainty, reuse potential, ongoing maintenance, and
-  customer concentration risk into one verifiable investment decision.
+  Assess whether you bring the customer’s real obstacle, revenue certainty, reuse potential, ongoing
+  maintenance, and customer concentration risk into one verifiable investment decision.
 signals:
   - >-
-    Verifies the customer’s obstacle, willingness to pay and renewal conditions, usage frequency, alternatives, and the
-    boundary of sales commitments.
+    Verifies the customer’s obstacle, willingness to pay and renewal conditions, usage frequency,
+    alternatives, and the boundary of sales commitments.
   - >-
-    Separates one-time revenue from reuse value across customers, abstraction cost, and long-term permission and data
-    maintenance ownership.
+    Separates one-time revenue from reuse value across customers, abstraction cost, and long-term permission
+    and data maintenance ownership.
   - >-
-    Compares custom work, a general capability, a service, and walking away on benefits, risks, and roadmap opportunity
-    cost.
-  - Proposes reversible validation and clear thresholds for pilot, pricing, productization, expansion, or stopping.
+    Compares custom work, a general capability, a service, and walking away on benefits, risks, and roadmap
+    opportunity cost.
+  - >-
+    Proposes reversible validation and clear thresholds for pilot, pricing, productization, expansion, or
+    stopping.
   - Clarifies target users, intended outcomes, and guardrails that must not worsen
   - Separates behavioral correlation, causal evidence, and untested assumptions
   - Defines triggers for scaling, changing, or stopping investment
+  - Analyzes the underlying job, trigger frequency, and transferability across customer segments.
+  - Compares revenue retention, market expansion, support cost, and product complexity.
+  - >-
+    Proposes a testable lightweight option or clear rejection criteria instead of accepting customization by
+    default.
+  - Verifies the underlying job and whether other users share the problem.
+  - Compares custom work, configuration, general capability, and rejection.
 primaryCapability: value-direction.product-judgment
 topics:
   - product-thinking
@@ -64,13 +69,24 @@ source:
   - attribution: derived
     label: Liyuk 博客：产品判断、Top-K 与规划方法；题目为本站重新组织
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch C
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch E/F
 followUps:
-  - If only one customer needs it but the deal has strategic showcase value, how would you quantify that extra value?
-  - If customer segments differ sharply in value and cost, how would you choose a target audience and guardrails?
   - >-
-    How do you prevent sales from presenting an exploratory option as a firm commitment before productization is
-    decided?
+    If only one customer needs it but the deal has strategic showcase value, how would you quantify that extra
+    value?
   - >-
-    If the budget can fund only one direction, how would you compare opportunity cost and explain what is being given
-    up?
+    If customer segments differ sharply in value and cost, how would you choose a target audience and
+    guardrails?
+  - >-
+    How do you prevent sales from presenting an exploratory option as a firm commitment before productization
+    is decided?
+  - >-
+    If the budget can fund only one direction, how would you compare opportunity cost and explain what is
+    being given up?
+  - If renewal is explicitly tied to the feature, what additional evidence should inform the decision?
+  - How could a service or configuration validate demand without hardening it into the product architecture?
+relatedQuestions: []
 ---

@@ -4,11 +4,14 @@ kind: question
 status: published
 locale: en
 title: How would you test whether one customer request represents a broader need?
-question: A major customer requests a feature, and sales believes the whole market needs it. What would you ask about samples, use cases, and counterexamples?
-intent: Assess whether the response clarifies goals and constraints around representativeness, use-case scope, and counterexamples, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+question: >-
+  A major customer requests a feature, and sales believes the whole market needs it. What would you ask about
+  samples, use cases, and counterexamples?
+intent: "Assess whether the response tests how broadly one customer’s request applies and actively looks for counterexamples."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in representativeness, use-case scope, and counterexamples.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Ask what type of customer raised the request and in which usage context."
+  - "Compare behavior or interviews from other customers and state who the sample covers or misses."
+  - "Look for cases where users complete the task without the feature and define where the request does apply."
 primaryCapability: collaboration.communication
 roles:
   - product

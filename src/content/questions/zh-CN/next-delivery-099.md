@@ -9,7 +9,7 @@ intent: 考察目标澄清、系统诊断和避免代理指标误导。
 signals:
   - 从交付周期、质量、等待与用户结果明确问题。
   - 找到具体瓶颈及可影响因素。
-  - 先试行小范围改变并观察副作用。
+  - 先试行小范围改变并观察副作用（重复执行、越权等额外影响）。
 primaryCapability: delivery.decomposition
 topics:
   - execution

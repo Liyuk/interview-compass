@@ -8,7 +8,7 @@ question: 两个团队各自都达成了自己的目标，合在一起却损害�
 intent: 了解你如何识别局部最优对整体的伤害，并通过目标、边界和规则而不是个人关系来调整。
 signals:
   - 说明靠什么信号发现问题，而不是等到抱怨出现
-  - 把讨论拉回共同目标和可比较的口径
+  - 把讨论拉回共同目标和可比较的定义
   - 提出让规则比个人关系更可靠的调整，并说明如何复评
 primaryCapability: people-organization.manager-of-managers
 topics:

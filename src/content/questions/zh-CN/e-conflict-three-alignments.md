@@ -3,8 +3,8 @@ questionId: e-conflict-three-alignments
 kind: question
 status: published
 locale: zh-CN
-title: 两个团队都说对方不配合
-question: 两个团队都说对方不配合，项目因此卡住了，你会先对齐哪些事情？
+title: "两个团队互相指责时，先确认哪些事实和约定？"
+question: "两个团队都说对方不配合，项目因此卡住了。你会先确认双方目标、责任分工和已经作出的交付承诺吗？还会查哪些事实？"
 intent: 了解你如何把“不配合”还原为目标、事实和决策权这三类可以讨论的对象。
 signals:
   - 区分共同目标与各自目标

@@ -4,7 +4,9 @@ kind: question
 status: published
 locale: en
 title: Can an evaluation set remain trustworthy after repeated tuning?
-question: The team tunes prompts and model settings against the same fixed evaluation set every week. Scores rise, but new-user feedback does not improve. How would you restore evaluation trustworthiness?
+question: >-
+  The team tunes prompts and model settings against the same fixed evaluation set every week. Scores rise, but
+  new-user feedback does not improve. How would you restore evaluation trustworthiness?
 intent: Assesses evaluation contamination, hidden-set governance, and production representativeness.
 signals:
   - Identify overfitting and item leakage from repeated inspection.

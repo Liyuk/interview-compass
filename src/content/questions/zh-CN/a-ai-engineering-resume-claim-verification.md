@@ -11,14 +11,27 @@ signals:
   - 指出 AI 容易出错的地方，以及自己是怎样发现的
   - 能解释为什么把它限定为辅助，而不是直接交付
 primaryCapability: professional.ai-engineering
-topics: [ai-engineering]
-roles: [engineering, ai-engineer, backend, frontend]
-responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
-scenarios: [interview, campus]
-formats: [behavioral, artifact-review]
+topics:
+  - ai-engineering
+roles:
+  - engineering
+  - ai-engineer
+  - backend
+  - frontend
+responsibilityScopes:
+  - individual
+careerTracks:
+  - individual-contributor
+scenarios:
+  - interview
+  - campus
+formats:
+  - behavioral
+  - artifact-review
 source:
   - attribution: derived
     label: 博客《筛选人和面试官到底在看什么》
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+relatedQuestions: []
 ---

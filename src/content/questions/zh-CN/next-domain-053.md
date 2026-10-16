@@ -31,7 +31,7 @@ formats:
   - case
 followUps:
   - 部分履约或退款怎样体现？
-  - 谁维护跨域口径的变更记录？
+  - 谁维护跨业务领域的指标定义的变更记录？
 source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 B

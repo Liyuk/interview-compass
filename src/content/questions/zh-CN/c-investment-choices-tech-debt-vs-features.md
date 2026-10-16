@@ -11,12 +11,26 @@ signals:
   - 给出投入比例的依据，而不是各打五十大板
   - 说明如何向业务方解释，并设定复核的时间点
 primaryCapability: value-direction.investment-choices
-topics: [planning, prioritization, engineering-systems, technical-planning]
-roles: [engineering, manager, product]
-responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
-scenarios: [interview, promotion]
-formats: [case, planning]
+topics:
+  - planning
+  - prioritization
+  - engineering-systems
+  - technical-planning
+roles:
+  - engineering
+  - manager
+  - product
+responsibilityScopes:
+  - team
+careerTracks:
+  - individual-contributor
+  - team-manager
+scenarios:
+  - interview
+  - promotion
+formats:
+  - case
+  - planning
 followUps:
   - 技术债拖到下个季度会怎样？
   - 业务方不同意时，你拿出什么证据？

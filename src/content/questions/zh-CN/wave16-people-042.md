@@ -30,7 +30,7 @@ formats:
   - case
 followUps:
   - 怎样确保精简会议不会减少必要信息？
-  - 组织调整如何评估副作用？
+  - 组织调整如何评估副作用（重复执行、越权等额外影响）？
 source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 C

@@ -3,11 +3,11 @@ sources:
     title: Interview Compass 原创覆盖扩充批次 A：AI 评估与治理
     status: used
     questions:
-      - ai-governance-evaluation-set-representativeness
+      - exp1500-a-015
       - ai-governance-benchmark-contamination
       - ai-governance-release-gate-risk-thresholds
       - ai-governance-model-version-behavior-drift
-      - ai-governance-human-review-escalation
+      - a-ai-engineering-human-review-capacity
       - ai-governance-production-sampling-privacy
       - ai-governance-user-segment-harm-disparity
       - ai-governance-evidence-traceability-user-claims
@@ -20,13 +20,13 @@ sources:
     title: Interview Compass 原创覆盖扩充批次 B：市场与经济判断
     status: used
     questions:
-      - c-market-economics-contribution-margin-service-cost
-      - c-market-economics-customer-acquisition-payback
+      - b-business-context-unit-economics-service-mix
+      - exp1500-c-048
       - c-market-economics-free-tier-conversion-cost
-      - c-market-economics-bundle-cannibalization
-      - c-market-economics-subsidy-side-effects-marketplace
-      - c-market-economics-market-entry-localization
-      - c-market-economics-customer-concentration-risk
+      - bulk-b-commercial-04
+      - exp1500-b-001
+      - exp1500-c-046
+      - exp1500-c-050
       - c-market-economics-competitive-substitute-response
     note: 覆盖单位经济、获客回收、套餐结构、平台补贴、市场进入、客户集中和竞争响应。
   - id: interview-compass-original-coverage-expansion-2026-10-15-c
@@ -37,7 +37,7 @@ sources:
       - c-outcomes-baseline-shift-during-delivery
       - c-outcomes-multiple-initiatives-attribution
       - c-outcomes-leading-indicators-validation-window
-      - c-outcomes-user-value-vs-monetization
+      - bulk1000-c-039-v1
       - c-outcomes-null-result-decision
       - c-outcomes-scaling-cohort-reproducibility
       - c-outcomes-resource-reallocation-from-evidence

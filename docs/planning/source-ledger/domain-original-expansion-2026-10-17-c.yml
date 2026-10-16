@@ -12,13 +12,13 @@ sources:
       - wave18-asking-007
       - wave18-asking-008
       - wave18-asking-009
-      - wave18-asking-010
+      - exp1500-e-030
       - wave18-attrib-001
       - wave18-attrib-002
-      - wave18-attrib-003
+      - wave18-bpm-009
       - wave18-attrib-005
       - wave18-attrib-006
-      - wave18-attrib-007
+      - exp1500-h-023
       - wave18-attrib-008
       - wave18-attrib-009
       - wave18-attrib-010
@@ -30,9 +30,8 @@ sources:
       - wave18-bpm-005
       - wave18-bpm-007
       - wave18-bpm-008
-      - wave18-bpm-009
       - wave18-bpm-010
-      - wave18-capacity-002
+      - d-capacity-planning-incident-vs-roadmap-tradeoff
       - wave18-capacity-003
       - wave18-capacity-004
       - wave18-capacity-005
@@ -44,15 +43,15 @@ sources:
       - wave18-design-004
       - wave18-design-005
       - wave18-feedback-001
-      - wave18-feedback-002
-      - wave18-feedback-003
-      - wave18-feedback-004
+      - e-feedback-correct-misunderstanding
+      - f-frontline-management-strong-performer-bad-collaboration
+      - exp1500-d-056
       - wave18-feedback-005
       - wave18-feedback-006
       - wave18-feedback-007
       - wave18-feedback-009
       - wave18-feedback-010
-      - wave18-feedback-011
+      - exp1500-e-054
       - wave18-market-001
       - wave18-market-003
       - wave18-market-004
@@ -61,7 +60,7 @@ sources:
       - wave18-plan-002
       - wave18-plan-003
       - wave18-plan-004
-      - wave18-plan-005
+      - c-outcomes-leading-indicators-validation-window
       - wave18-plan-006
       - wave18-plan-007
       - wave18-plan-008
@@ -70,7 +69,7 @@ sources:
       - wave18-succession-001
       - wave18-succession-002
       - wave18-succession-003
-      - wave18-succession-004
+      - bulk-f-manager-coach-without-taking-over
       - wave18-succession-005
       - wave18-succession-007
       - wave18-succession-008

@@ -4,7 +4,9 @@ kind: question
 status: published
 locale: en
 title: How can “reduce rework” become a verifiable measure?
-question: The team believes rework is excessive, but some count bug fixes, others requirement changes, and others code rewrites. How would you define the problem and set an improvement target?
+question: >-
+  The team believes rework is excessive, but some count bug fixes, others requirement changes, and others code
+  rewrites. How would you define the problem and set an improvement target?
 intent: Assesses metric definition, baseline selection, and attribution.
 signals:
   - Clarify rework types, causes, and business impact.

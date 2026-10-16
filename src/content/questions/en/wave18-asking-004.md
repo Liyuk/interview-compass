@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you clarify the concern behind a proposal you disagree with?
 question: A reviewer requests microservices, but you think the bottleneck is release coordination. What would you ask about user impact, failure boundaries, and growth constraints?
-intent: Assess whether the response clarifies goals and constraints around clarifying underlying needs separately from proposed solutions, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response uncovers the concern behind the microservices proposal and tests the assumed problem with evidence."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in clarifying underlying needs separately from proposed solutions.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Ask what user impact, release delay, or failure scope the proposal is meant to address."
+  - "Test the release-process hypothesis with current release time, incident impact, and team dependencies."
+  - "Compare improving release practices, changing service boundaries, and splitting services by benefit and cost."
 primaryCapability: collaboration.communication
 roles:
   - engineering

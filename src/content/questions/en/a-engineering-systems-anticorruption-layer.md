@@ -3,8 +3,8 @@ questionId: a-engineering-systems-anticorruption-layer
 kind: question
 status: published
 locale: en
-title: An old system keeps accumulating new business and becomes hard to maintain. How do you design an isolation layer to protect new business code from it?
-question: An old system keeps accumulating new business and becomes harder to maintain. As the module owner, how do you design an isolation layer (anticorruption layer) to keep new business code from being polluted by the old system? Tell me about a real case you led and what compromises and risks you left because of real limits.
+title: "How do you isolate legacy rules and data when new business depends on an old system?"
+question: "An old system keeps accumulating new business and is becoming hard to maintain. How would you create an adapter boundary between old and new systems so legacy rules and data models do not spread into new code? Explain the migration steps and any compromises or risks you would accept."
 intent: See how you isolate a legacy system step by step with clear boundaries when a rewrite is not possible, and whether you are honest about compromises.
 signals:
   - Explains where the isolation layer sits, what it translates, and the boundary between old and new models

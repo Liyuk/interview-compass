@@ -4,7 +4,9 @@ kind: question
 status: published
 locale: en
 title: Can a recommendation experiment contaminate its control group?
-question: A recommendation algorithm changes content ranking and creator supply, so treatment behavior changes what the control group can see. How would you assess the experiment design?
+question: >-
+  A recommendation algorithm changes content ranking and creator supply, so treatment behavior changes what
+  the control group can see. How would you assess the experiment design?
 intent: Assesses network interference, experimental units, and spillovers.
 signals:
   - Map interactions among users, content, and creators.

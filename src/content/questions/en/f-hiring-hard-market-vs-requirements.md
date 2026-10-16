@@ -3,8 +3,8 @@ questionId: f-hiring-hard-market-vs-requirements
 kind: question
 status: published
 locale: en
-title: TA tells you almost nobody in the market meets every requirement of the role, yet the hiring lead will not relax any of them. What do you do?
-question: TA tells you almost nobody in the market meets every requirement of the role, yet the hiring lead will not relax any of them, and the business window is closing. What do you do? Which facts do you bring back into the discussion, and what options do you put on the table?
+title: "The recruiting team says few people meet every requirement, but the hiring manager will not relax any. What do you do?"
+question: "The recruiting team says few candidates meet every job requirement, but the hiring manager will not relax any and the business window is closing. What facts would you bring back into the discussion, and what options would you propose?"
 intent: See whether, when a role is hard to fill, you bring market facts into the trade-off rather than simply lowering the bar, adding unlimited budget, or shelving the problem.
 signals:
   - Makes market facts concrete, such as which conditions screen candidates out, the effect of pay and location, and whether the hiring cycle can meet the business window

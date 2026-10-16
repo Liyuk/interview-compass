@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you put cross-team dependencies into a quarterly strategy plan?
 question: A strategic outcome depends on product, legal, data, and delivery teams in sequence. Everyone agrees with the direction, but the plan contains only a final date. How would you define dependencies, decision points, and replanning rules?
-intent: Assess whether the response clarifies goals and constraints around cross-team strategic dependencies and planning governance, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response includes cross-team dependencies, handoffs, and decision timing in a quarterly plan instead of listing only a final date."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in cross-team strategic dependencies and planning governance.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "List the teams, prerequisites, and delivery order needed for the strategic outcome."
+  - "Assign each dependency an owner, required decision, committed date, and delay impact."
+  - "Set replanning or escalation conditions when a dependency slips and name who triggers them."
 primaryCapability: value-direction.planning
 roles:
   - manager

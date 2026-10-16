@@ -3,7 +3,7 @@ questionId: next-delivery-041
 kind: question
 status: published
 locale: en
-title: How do you close a project loop without an acceptance owner?
+title: "How do you complete acceptance and handoff when a project has no reviewer?"
 question: A project is nearly complete, but the business sponsor has left and the receiving team has no clear owner. How would you handle acceptance, handoff, and unresolved risk?
 intent: Assesses decision-right identification, continuity of ownership, and exit criteria.
 signals:

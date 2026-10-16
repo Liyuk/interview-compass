@@ -5,9 +5,9 @@ status: published
 locale: zh-CN
 title: 路线图目标变成组织 OKR 后失去用户结果怎么办？
 question: 路线图的目标是减少客户配置失败，部门 OKR 却变成“交付 12 个配置功能”。你会如何恢复目标与工作之间的因果关系？
-intent: 考察目标分解、产出与结果的区分及组织对齐。
+intent: 考察目标分解、产出与结果的区分，以及行动与组织目标的关系。
 signals:
-  - 回到用户障碍和失败基线。
+  - 回到用户障碍和失败基线（改动前的参照状态或数值）。
   - 把产出指标与结果指标分开。
   - 定义能触发调整的领先和滞后信号。
 primaryCapability: value-direction.prioritization

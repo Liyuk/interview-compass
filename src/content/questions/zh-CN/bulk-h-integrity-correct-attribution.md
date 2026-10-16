@@ -17,7 +17,7 @@ signals:
   - 承认关键协作依赖和其他贡献者。
   - 用共同结果说明个人工作的作用边界。
   - 拆分本人提出、判断、执行和协同的部分
-  - 将团队结果与个人可归因影响分别举证
+  - 将团队结果与个人可归因（判断结果由什么因素造成）影响分别举证
 primaryCapability: work-responsibility.attribution
 topics:
   - ethics
@@ -47,10 +47,12 @@ formats:
 source:
   - attribution: derived
     label: 职场发展问题：晋升与面试前的完整自查清单
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
   - attribution: derived
     label: Liyuk 博客：责任、贡献归属与工作边界；题目为本站重新组织
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 D
   - attribution: original

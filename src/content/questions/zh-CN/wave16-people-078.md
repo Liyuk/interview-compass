@@ -9,7 +9,7 @@ intent: 考察领先健康信号、持续性和团队管理责任。
 signals:
   - 结合缺勤、离职意向、返工和心理安全证据。
   - 保护反馈隐私并核实不同团队差异。
-  - 采取可逆措施并跟踪长期健康与产出。
+  - 采取可逆（可以安全撤回）措施并跟踪长期健康与产出。
 primaryCapability: people-organization.frontline-management
 topics:
   - management

@@ -8,7 +8,7 @@ question: 你推动的方案已被多个团队采用，随后发现关键假设�
 intent: 考察及时承认错误、损失控制和责任承担。
 signals:
   - 尽快说明新证据及其影响范围。
-  - 区分可逆步骤与需立即停止的工作。
+  - 区分可逆（可以安全撤回）步骤与需立即停止的工作。
   - 承担沟通和恢复责任并总结决策改进。
 primaryCapability: learning-adaptation.resilience-recovery
 topics:

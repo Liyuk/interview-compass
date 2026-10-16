@@ -3,8 +3,8 @@ questionId: e-communication-uncertainty-update
 kind: question
 status: published
 locale: zh-CN
-title: 证据不足但决策窗口已到，怎样把不确定性讲清楚？
-question: 上线决策今天必须做出，但核心实验还有数据未返回。你向负责人汇报时，如何区分事实、假设、未知风险和可逆选项？
+title: 数据还不充分但必须决策时，怎样讲清不确定性？
+question: 上线决策今天必须做出，但核心实验还有数据未返回。你向负责人汇报时，如何区分事实、假设、未知风险和可以撤回的选项？
 intent: 考察你能否把不确定性转化为可决策信息，而不是掩盖缺口或用模糊语言拖延。
 signals:
   - 区分观察事实、推断、未验证假设和潜在影响。

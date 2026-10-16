@@ -10,6 +10,8 @@ signals:
   - 在还有调整空间时主动同步，而不是等到截止前
   - 区分已知事实与尚未验证的部分
   - 带着备选路径和需要的决定去沟通
+  - 说明风险证据、概率范围和影响。
+  - 提出可控缓解选项并设定重新评估时间。
 primaryCapability: work-responsibility.integrity
 topics:
   - communication
@@ -40,8 +42,13 @@ followUps:
 source:
   - attribution: derived
     label: 职场发展问题：晋升与面试前的完整自查清单
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
   - attribution: derived
     label: 一线技术管理的三种产出
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/frontline-engineering-management/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/frontline-engineering-management/zh.md
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch G/H
+relatedQuestions: []
 ---

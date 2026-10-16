@@ -5,9 +5,9 @@ status: published
 locale: en
 title: How do you locate a lost-event boundary when a queue shows acknowledgment but no result?
 question: >-
-  Producer logs show an event published and the broker acknowledged it. The consumer has no visible error, but the
-  business object did not change. How would you distinguish acknowledgment semantics, dead letters, filters,
-  deserialization, and duplicate handling?
+  Producer logs show an event published and the broker acknowledged it. The consumer has no visible error, but
+  the business object did not change. How would you distinguish acknowledgment semantics, dead letters,
+  filters, deserialization, and duplicate handling?
 intent: >-
   Assess whether you trace evidence through the message lifecycle and distinguish broker acknowledgment from
   business commit.
@@ -40,4 +40,5 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 G
+relatedQuestions: []
 ---

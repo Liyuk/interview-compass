@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How do you distinguish a broken plan from poor execution after goals change?
 question: Mid-quarter market rules change, invalidating some assumptions behind the original goals. How would you reassess goals, invested resources, and irreversible commitments, then decide what to keep, change, or stop?
-intent: Assess whether the response clarifies goals and constraints around plan validity and commitment reassessment after external change, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response distinguishes a plan invalidated by changed external assumptions from execution falling short and reassesses commitments."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in plan validity and commitment reassessment after external change.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Identify which original assumptions the market-rule change invalidated and which goals remain valid."
+  - "Compare plan and execution, separating external changes, schedule variance, and sunk costs."
+  - "State what to keep, change, or stop and what information is needed to make new commitments."
 primaryCapability: value-direction.planning
 roles:
   - manager

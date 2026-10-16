@@ -3,8 +3,8 @@ questionId: c-investment-choices-roi-arr
 kind: question
 status: published
 locale: en
-title: From a product view, how do you calculate the overall return on the resources put into a direction (ROI), and how is ARR used in it?
-question: From a product view, how do you calculate the overall return on the resources put into a direction (ROI)? How do you count people, cost, and revenue, how is a metric such as ARR used, and where does it tend to be overstated?
+title: "How do you calculate a product direction’s return on investment? How does ARR help?"
+question: "How would you calculate a product direction’s return on investment? How would you account for labor, cost, and revenue, use annual recurring revenue (ARR), and identify where the calculation might overstate value?"
 intent: See whether you can put inputs and benefits on one definition and are clear about the assumptions and limits of the numbers.
 signals:
   - Says what the inputs consist of (people, infrastructure, opportunity cost) and how benefits are defined

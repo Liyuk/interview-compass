@@ -4,11 +4,7 @@ kind: question
 status: published
 locale: en
 title: How would you define a reusable interaction system across several product flows?
-question: >-
-  Different teams own a product's creation, editing, and review flows, yet similar forms and status
-  feedback appear in each. How would you decide which interactions should become shared system
-  patterns and which should retain contextual differences? Explain how you would cover loading,
-  empty, error, and recovery states.
+question: "Different teams own creation, editing, and review, and their form feedback is becoming inconsistent. How would you decide which patterns to standardize and which to keep distinct? How would you check loading, empty, error, and recovery states?"
 intent: >-
   Assesses whether the candidate can design interaction patterns as a system across flows, drawing
   clear boundaries between consistency, reuse, and task-specific needs.
@@ -20,9 +16,10 @@ signals:
   - Considers adoption, exception governance, and ongoing maintenance
 primaryCapability: professional.system-design
 topics:
-  - system-design
-  - frontend
-  - engineering-systems
+  - "system-design"
+  - "frontend"
+  - "engineering-systems"
+  - "product-discovery"
 roles:
   - design
   - frontend
@@ -33,11 +30,14 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
 scenarios:
-  - interview
-  - promotion
+  - "interview"
+  - "promotion"
+  - "self-reflection"
 formats:
   - case
   - artifact-review
+followUps:
+  - "Design reviews repeatedly flag inconsistent table filters, but page tasks differ. How would you decide whether to create shared guidance and verify it preserves necessary differences?"
 source:
   - attribution: inspired
     label: Designer Interview Questions（仅作主题启发；本站独立原创，不复制原问题）

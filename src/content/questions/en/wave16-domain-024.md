@@ -4,7 +4,9 @@ kind: question
 status: published
 locale: en
 title: Can default values hide a feature-collection outage?
-question: A missing risk feature is automatically set to zero. Latency and error rates are stable, but denial rates changed significantly. How would you judge whether the default is safe?
+question: >-
+  A missing risk feature is automatically set to zero. Latency and error rates are stable, but denial rates
+  changed significantly. How would you judge whether the default is safe?
 intent: Assesses missing-value semantics, distribution monitoring, and outcome guardrails.
 signals:
   - Separate true zero, unknown, and collection failure.

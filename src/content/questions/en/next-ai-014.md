@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: en
 title: How do you distinguish queueing from model latency when inference slows?
-question: Users see response times double, but measured model inference time is stable. How would you break down the request path, locate the bottleneck, and contain impact?
+question: "Users see response times double, but model inference time has barely changed. How would you break down the request-processing stages, locate the bottleneck, and limit impact?"
 intent: Assesses end-to-end observability, queueing, and layered mitigation.
 signals:
   - Measure waiting, retrieval, orchestration, network, and inference separately.

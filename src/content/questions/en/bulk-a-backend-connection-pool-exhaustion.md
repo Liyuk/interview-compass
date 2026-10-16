@@ -4,12 +4,17 @@ kind: question
 status: published
 locale: en
 title: Diagnosing Connection-Pool Exhaustion
-question: API latency rises while database CPU remains low, and application logs show connection waits. How would you distinguish connection leaks, an undersized pool, and slow transactions holding connections?
+question: >-
+  API latency rises while database CPU remains low, and application logs show connection waits. How would you
+  distinguish connection leaks, an undersized pool, and slow transactions holding connections?
 intent: Tests connection-pool lifecycle knowledge and cross-layer diagnosis.
 signals:
   - Inspects active/idle connections and wait time
   - Checks connection-return paths and transaction duration
   - Uses load and pool metrics to tell whether increasing capacity would mask the cause
+  - Calculate a global connection budget from instance count, concurrency, and downstream capacity.
+  - Compare queuing, rejection, rate limiting, and connection reuse.
+  - Verify scale-up and scale-down do not create oscillation.
 primaryCapability: professional.debugging
 topics:
   - backend
@@ -41,7 +46,11 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 A
 followUps:
-  - 【Why can scaling out make connection-pool exhaustion worse?】After adding application instances, total database connections exceed the limit and queues and timeouts rise together. How would you redesign connection budgets and overload behavior?
+  - >-
+    【Why can scaling out make connection-pool exhaustion worse?】After adding application instances, total
+    database connections exceed the limit and queues and timeouts rise together. How would you redesign
+    connection budgets and overload behavior?
   - How should tenants share the connection budget?
   - What metric should trigger rejection of new requests?
+relatedQuestions: []
 ---

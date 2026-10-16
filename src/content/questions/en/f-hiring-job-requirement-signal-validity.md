@@ -6,8 +6,8 @@ locale: en
 title: How do you simplify a job specification when requirements lack a clear link to performance?
 question: >-
   A role lists more than ten frameworks, languages, and tools, while the team says complex problem-solving and
-  product collaboration matter most. How would you distinguish must-haves from skills that can be learned after
-  joining?
+  product collaboration matter most. How would you distinguish must-haves from skills that can be learned
+  after joining?
 intent: Assess whether hiring criteria connect to real tasks, role level, and fair selection.
 signals:
   - Analyze critical tasks after onboarding and cost of failure.
@@ -41,4 +41,5 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 I
+relatedQuestions: []
 ---

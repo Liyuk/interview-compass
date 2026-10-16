@@ -5,22 +5,22 @@ sources:
     questions:
       - wave16-d-051
       - bulk-a-backend-pagination-consistency
-      - wave16-d-053
-      - wave16-d-054
+      - bulk1000-a-014-v1
+      - exp1500-d-040
       - wave16-d-055
       - wave16-d-056
       - wave16-d-057
       - wave16-d-058
-      - bulk1000-d-063-v1
+      - a-quality-restore-drill-evidence
       - wave16-d-060
       - wave16-design-061
       - wave16-design-062
       - wave16-design-063
       - wave16-design-064
-      - wave16-design-065
+      - bulk-a-frontend-accessibility-focus-order
       - d-project-management-recover-dependency-baseline
       - wave16-delivery-067
-      - wave16-delivery-068
+      - bulk-c-metrics-03
       - wave16-delivery-069
       - wave16-delivery-070
       - wave16-people-071
@@ -36,7 +36,7 @@ sources:
       - wave16-growth-081
       - wave16-growth-082
       - wave16-growth-083
-      - wave16-growth-084
+      - ai-governance-tool-permission-boundaries
       - wave16-growth-085
       - bulk-h-integrity-correct-attribution
       - wave16-growth-087

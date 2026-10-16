@@ -3,8 +3,8 @@ questionId: bulk-a-ci-migration-sequencing
 kind: question
 status: published
 locale: zh-CN
-title: 迁移共享 CI 平台
-question: 组织要把多个仓库从旧 CI 迁到新平台，但团队不能同时停下交付。你会怎样分批迁移，并判断哪些仓库可以进入下一批？
+title: 如何迁移多个仓库共用的自动构建与检查流程？
+question: 组织要把多个仓库从旧的自动构建与检查平台迁到新平台，但团队不能同时停下交付。你会怎样分批迁移，并判断哪些仓库可以进入下一批？
 intent: 关注迁移风险、仓库差异、回滚准备和共享平台容量。
 signals:
   - 按依赖、构建特性和维护能力划分迁移批次

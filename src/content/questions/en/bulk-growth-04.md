@@ -14,11 +14,9 @@ intent: >-
   See whether the candidate distinguishes delivered volume from effective reach and adapts execution
   to constraints.
 signals:
-  - Clarifies definitions for total impressions, unique reach, frequency, and target audience
-  - Compares options using remaining budget, channel performance, and marginal cost
-  - >-
-    Explains which commitments and measurement definitions must be updated when changing the mix or
-    goal
+  - "Distinguish total ad impressions, the number of distinct people who saw an ad, average views per person, and coverage of the target audience; explain what each measure answers."
+  - "Compare the next spending options using remaining budget, channel results, and marginal cost."
+  - "State which commitments, owners, and outcome measures must change when goals or channel mix change."
 primaryCapability: delivery.operational-execution
 topics:
   - operations

@@ -10,6 +10,8 @@ signals:
   - 及时澄清错误范围和可依赖的数据版本。
   - 向受影响方提供修正与防复发安排。
   - 复盘个人状态、求助和系统检查，而不隐藏影响。
+  - 区分已知影响、未知范围和自己的决策责任
+  - 设定用户修复、团队复盘和信任恢复的实际步骤
 primaryCapability: learning-adaptation.resilience-recovery
 topics:
   - learning
@@ -35,4 +37,7 @@ source:
     label: 评估潜力时，我们真正该看什么
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/02/evaluating-potential-with-care/zh.md
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-17 B
+relatedQuestions: []
 ---

@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: en
 title: Next year the business is expected to grow fivefold. Starting from your current architecture, how do you run a full bottleneck review and prepare in stages?
-question: Next year, because of a big promotion or expansion abroad, growth is expected to be fivefold. Starting from your current architecture, how do you run a full bottleneck review from the gateway through the core path and storage to machine resources? How many stages and how many people would you invest to prepare, and how do you confirm your judgment is right?
+question: "A major promotion or international launch may increase traffic fivefold next year. Starting from the current architecture, how would you check for bottlenecks in the gateway, critical request flows, storage, and machine resources? How would you phase the work, staff it, and validate your assumptions?"
 intent: See whether you can turn a growth expectation into a concrete list of capacity risks, invest in stages, and confirm by verification rather than intuition.
 signals:
   - Identifies bottlenecks layer by layer and their sensitivity to growth, separating what linear scaling solves from what needs an architecture change

@@ -1,0 +1,121 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Icon from '../components/Icon.astro';
+import { pathFor } from '../lib/routes';
+import type { Locale } from '../lib/taxonomy';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const interviewerSteps = en ? [
+  { title: 'Anchor to the role', text: 'Choose a capability that matters for this work and ask everyone a comparable, job-related lead question.' },
+  { title: 'Reconstruct one real event', text: 'Clarify the situation, the candidate’s responsibility, constraints, options, and the decision they personally made.' },
+  { title: 'Probe cause and alternatives', text: 'Ask what evidence supported the explanation, what else could have caused the result, and what changed after the action.' },
+  { title: 'Compare positive and difficult cases', text: 'Use both a strong outcome and a setback to understand repeatable judgment, learning, and recovery. A contradiction is a cue to clarify context, not proof of dishonesty.' },
+  { title: 'Record evidence before inference', text: 'Separate observed actions and outcomes from interpretations. Apply the same role-specific anchors to each candidate and note uncertainty.' },
+] : [
+  { title: '先锚定岗位', text: '选择对工作真正重要的能力，并向候选人提出可比较、与岗位相关的主问题。' },
+  { title: '还原一次真实事件', text: '澄清场景、候选人责任、约束、备选方案，以及本人作出的决定。' },
+  { title: '追问因果与替代解释', text: '询问判断依据是什么、结果还可能由什么造成，以及采取行动后哪些信号发生了变化。' },
+  { title: '对照顺利与困难经历', text: '用成功事件和挫折事件共同了解可复用的判断、学习和恢复。前后矛盾是澄清背景的线索，不是造假的证据。' },
+  { title: '先记证据，再作推论', text: '把可观察的行动、结果与面试官解释分开。对每位候选人使用同一岗位锚点，并记录不确定性。' },
+];
+const answerSteps = en ? [
+  ['Context', 'What was happening, who was affected, and what constraints mattered?'],
+  ['Responsibility', 'What outcome were you accountable for? What was yours versus the team’s?'],
+  ['Choices and action', 'What options did you consider, what did you decide, and why?'],
+  ['Result and evidence', 'What changed? How do you know, and what other factors contributed?'],
+  ['Learning and transfer', 'What would you repeat or change? Where have you used that learning since?'],
+] : [
+  ['背景', '当时发生了什么、影响了谁、有哪些关键约束？'],
+  ['责任', '你对什么结果负责？哪些是你个人的，哪些来自团队？'],
+  ['判断与行动', '考虑过哪些选项、最后作了什么决定、为什么？'],
+  ['结果与证据', '发生了什么变化？你如何确认，其他因素起了什么作用？'],
+  ['复盘与迁移', '哪些做法会保留或调整？之后在哪些场景用过这次经验？'],
+];
+const reverseQuestions = en ? [
+  { title: 'Clarify the work', text: 'What outcomes, users, or problems will occupy this role in the first months? What work is common, and what is unusually difficult?' },
+  { title: 'Clarify conditions', text: 'Which decisions can this role make? What dependencies, resources, on-call duties, or trade-offs shape delivery?' },
+  { title: 'Clarify the environment', text: 'How are disagreements resolved? What would cause the team to change direction? Can you share a recent example?' },
+  { title: 'Clarify support and success', text: 'How are expectations calibrated, feedback given, and progress reviewed? What support accompanies the responsibility?' },
+] : [
+  { title: '了解真实工作', text: '这个岗位前几个月要交付什么结果、服务哪些用户、解决什么问题？日常工作和最难的工作分别是什么？' },
+  { title: '了解责任条件', text: '岗位能独立决定什么？交付受哪些依赖、资源、值班要求或取舍影响？' },
+  { title: '了解工作环境', text: '团队怎样解决分歧？出现什么信号会改变方向？能否分享一个最近的例子？' },
+  { title: '了解支持与成功标准', text: '预期怎样校准、反馈如何进行、进展何时复盘？责任增加时会提供什么支持？' },
+];
+const promotionQuestions = en ? [
+  'What responsibility changes at the target stage, and which parts must already be sustained?',
+  'Which outcomes and behaviors count as evidence, over what period, and how is personal contribution distinguished from team context?',
+  'If evidence is not yet sufficient, what specific work would close the gap, who will support it, and when will it be reviewed?',
+] : [
+  '目标阶段最核心的责任变化是什么？哪些责任需要已经持续承担？',
+  '评审会看哪些结果和行为、覆盖多长时间？如何结合团队背景判断个人贡献？',
+  '如果证据还不足，什么具体工作可以补足？由谁提供支持，何时复盘？',
+];
+const cardSteps = en ? [
+  ['Objective problem', 'What real uncertainty does the question help resolve?'],
+  ['Assessment intent', 'Which job-related capability is in focus?'],
+  ['Possible inference', 'What hypothesis might the answer suggest, and what else could explain it?'],
+  ['Signals and context', 'What evidence or follow-up would clarify the story?'],
+  ['Decision and trade-offs', 'Given the context, what choices and consequences matter?'],
+  ['Evidence anchors', 'How does this response compare with the question-specific 1–4 references?'],
+] : [
+  ['客观问题', '这道题帮助澄清什么真实问题或不确定性？'],
+  ['考察意图', '当前关注哪一项与岗位相关的能力？'],
+  ['可能推论', '回答可能带来什么假设，还有什么其他解释？'],
+  ['信号与上下文', '需要哪些证据或追问才能还原事实？'],
+  ['决策与取舍', '补足背景后，有哪些选项和后果需要权衡？'],
+  ['评估锚点', '如何参照本题的 1–4 分表现标准理解证据？'],
+];
+---
+
+<SiteLayout locale={locale} route={{ type: 'framework' }} description={en ? 'How Interview Compass structures questions, interviewer follow-ups, candidate stories, and two-way due diligence.' : '说明 Interview Compass 如何组织面试官追问、候选人经历表达与双向尽调问题。'}>
+  <header class="framework-hero">
+    <p class="eyebrow">{en ? 'HOW TO ASK · HOW TO ANSWER · HOW TO CHOOSE' : '如何提问 · 如何回答 · 如何判断'}</p>
+    <h1 class="page-title">{en ? 'Questioning framework' : '提问框架'}</h1>
+    <p class="intro">{en ? 'The library is a set of prompts, not model answers. This page explains the reasoning behind those prompts and gives both sides a practical way to prepare a useful conversation.' : '本站提供问题和问题背后的考察逻辑，不提供标准答案。本页说明这些问题如何形成，也帮助双方把面试变成有证据、有来回的有效对话。'}</p>
+    <div class="framework-principle"><strong>{en ? 'Shared principle' : '共同原则'}</strong><span>{en ? 'Ask about observable work and context; distinguish facts, interpretation, and uncertainty.' : '围绕可观察的工作与背景提问；把事实、解释和不确定性分开。'}</span></div>
+  </header>
+
+  <section class="framework-card-anatomy" aria-labelledby="card-anatomy-heading">
+    <div class="framework-section-heading"><span>00</span><div><p class="eyebrow">{en ? 'HOW A QUESTION CARD IS BUILT' : '一道题如何形成'}</p><h2 id="card-anatomy-heading">{en ? 'From a real question to bounded evidence' : '从真实问题到有边界的证据'}</h2><p>{en ? 'Each card is designed to help someone ask, clarify, and reason. Its inference is a hypothesis to check, not a conclusion about a person.' : '每张题卡帮助提问、补足背景并进行判断。潜在推论只是待核实的假设，不是对人的结论。'}</p></div></div>
+    <ol class="card-anatomy-flow">{cardSteps.map(([title, text], index) => <li><span>{String(index + 1).padStart(2, '0')}</span><strong>{title}</strong><p>{text}</p></li>)}</ol>
+  </section>
+
+  <section class="framework-section" aria-labelledby="interviewer-framework-title">
+    <div class="framework-section-heading"><span>01</span><div><p class="eyebrow">{en ? 'INTERVIEWER' : '面试官视角'}</p><h2 id="interviewer-framework-title">{en ? 'Use questions to gather comparable evidence' : '用问题收集可比较的证据'}</h2><p>{en ? 'A strong interview is planned around role requirements. Follow-ups clarify the same evidence dimensions without forcing identical stories.' : '好的面试先围绕岗位要求设计。追问要澄清同一类证据，但不要求每个人讲出完全相同的经历。'}</p></div></div>
+    <ol class="framework-step-list">
+      {interviewerSteps.map((step, index) => <li><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}
+    </ol>
+    <div class="framework-note"><strong>{en ? 'Keep the inference bounded' : '控制推论边界'}</strong><p>{en ? 'Interview answers are evidence with limits. Gaps may reflect memory, access, role boundaries, or a poorly framed question. Clarify before drawing conclusions; do not infer intent or character from one response.' : '面试回答是有边界的证据。信息缺口可能来自记忆、权限、职责边界或问题本身不清楚。先追问澄清再下判断，不要凭单次回答推断动机或人格。'}</p></div>
+  </section>
+
+  <section class="framework-section" aria-labelledby="candidate-framework-title">
+    <div class="framework-section-heading"><span>02</span><div><p class="eyebrow">{en ? 'CANDIDATE · ANSWERING' : '候选人 · 回答问题'}</p><h2 id="candidate-framework-title">{en ? 'Turn an experience into a traceable causal story' : '把经历讲成可核验的因果链'}</h2><p>{en ? 'STAR is a useful memory aid, but a strong answer also makes choices, evidence, attribution, and learning visible.' : 'STAR 可以帮助回忆，但有说服力的回答还要呈现判断、证据、个人贡献和复盘。'}</p></div></div>
+    <ol class="answer-structure">
+      {answerSteps.map(([title, text], index) => <li><span>{String(index + 1).padStart(2, '0')}</span><strong>{title}</strong><p>{text}</p></li>)}
+    </ol>
+    <p class="framework-caution">{en ? 'Do not force every story into a perfect success narrative. Name constraints, missed assumptions, team contributions, and what changed in your later work.' : '不必把每段经历包装成完美成功故事。说明约束、错误假设、团队贡献，以及后来工作中真正改变了什么。'}</p>
+  </section>
+
+  <section class="framework-section" aria-labelledby="reverse-framework-title">
+    <div class="framework-section-heading"><span>03</span><div><p class="eyebrow">{en ? 'CANDIDATE · TWO-WAY CHOICE' : '候选人 · 双向选择'}</p><h2 id="reverse-framework-title">{en ? 'Use reverse questions for mutual due diligence' : '用反向提问做双向尽调'}</h2><p>{en ? 'Choose a few questions whose answers could change your decision. Ask for examples and compare the answer with what you heard from other interviewers.' : '优先选择那些答案可能改变你决定的问题。请对方举例，并对照不同面试官提供的信息是否一致。'}</p></div></div>
+    <div class="reverse-question-grid">
+      {reverseQuestions.map((item, index) => <article><span>{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}
+    </div>
+    <div class="promotion-reverse"><h3>{en ? 'For a promotion conversation' : '晋升沟通时，可以进一步确认'}</h3><ul>{promotionQuestions.map((question) => <li>{question}</li>)}</ul><p>{en ? 'These prompts clarify expectations, evidence, and organizational commitments. They are not scored against the candidate rubric.' : '这些问题用于澄清预期、证据和组织承诺，不使用候选人评分标准打分。'}</p></div>
+    <a class="framework-collection-link" href={pathFor({ type: 'collection', id: 'candidate-due-diligence' }, locale, base)}><span><strong>{en ? 'Browse the reverse-question guide' : '查看反向提问题单'}</strong><small>{en ? 'External role and promotion prompts, with purpose and decision use.' : '包含外部求职和晋升沟通，并说明每题想确认什么、怎样帮助决策。'}</small></span><Icon name="arrow-up-right" size={18} /></a>
+  </section>
+
+  <section class="framework-sources" aria-labelledby="framework-sources-title">
+    <h2 id="framework-sources-title">{en ? 'Further reading' : '参考资料'}</h2>
+    <p>{en ? 'These sources support structured, job-related assessment practices; they do not validate this site’s question bank or scoring anchors.' : '这些资料用于参考结构化、岗位相关的评估实践，不代表本站题库或评分锚点已经过效度验证。'}</p>
+    <ul>
+      <li><a href="https://www.opm.gov/policy-data-oversight/assessment-and-selection/other-assessment-methods/structured-interviews/" target="_blank" rel="noreferrer">U.S. Office of Personnel Management · Structured Interviews</a></li>
+      <li><a href="https://www.opm.gov/policy-data-oversight/assessment-and-selection/assessment-strategy/" target="_blank" rel="noreferrer">U.S. Office of Personnel Management · Designing an Assessment Strategy</a></li>
+      <li><a href="https://careerservices.upenn.edu/blog/2020/05/26/interviewing-answers-for-do-you-have-any-questions-for-us-during-covid-19/" target="_blank" rel="noreferrer">Penn Career Services · Questions to ask in an interview</a></li>
+    </ul>
+  </section>
+</SiteLayout>

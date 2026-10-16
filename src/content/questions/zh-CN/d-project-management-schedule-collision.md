@@ -11,17 +11,42 @@ signals:
   - 给出调整范围、顺序、人员或日期等选项，并说明各自的代价
   - 说明谁有权做决定，以及什么情况下升级
   - 决定之后向没被优先的一方说明理由，并约定重新评估的条件
+  - 追问各方真正需要的结果和时间窗口
+  - 提出至少两种分配并说明代价
+  - 说明未被满足一方如何补偿或重审
 primaryCapability: delivery.project-management
-topics: [execution, resource-allocation, conflict-resolution]
-roles: [pmo, manager, engineering, product]
-responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager, senior-manager]
-scenarios: [interview, promotion, operations-review]
-formats: [case, behavioral]
+topics:
+  - execution
+  - resource-allocation
+  - conflict-resolution
+roles:
+  - pmo
+  - manager
+  - engineering
+  - product
+responsibilityScopes:
+  - team
+  - multiple-teams
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
+scenarios:
+  - interview
+  - promotion
+  - operations-review
+formats:
+  - case
+  - behavioral
 followUps:
   - 两个项目都说自己不能延期，你怎么推进？
   - 这类冲突反复出现，你会从机制上改什么？
 source:
   - attribution: original
-    label: "作者的面试提问套路：项目排期的冲突"
+    label: 作者的面试提问套路：项目排期的冲突
+  - attribution: derived
+    label: 资源不足时，怎样不让团队靠透支运转
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/working-under-resource-constraints/zh.md
+relatedQuestions: []
 ---

@@ -9,7 +9,7 @@ intent: 考察挫折恢复、风险校准和渐进练习。
 signals:
   - 区分合理风险控制与避免暴露。
   - 复盘失败条件和可控行动。
-  - 选择有支持、可逆的挑战逐步恢复。
+  - 选择有支持、可逆（可以安全撤回）的挑战逐步恢复。
 primaryCapability: learning-adaptation.resilience-recovery
 topics:
   - resilience

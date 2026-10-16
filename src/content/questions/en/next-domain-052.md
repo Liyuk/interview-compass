@@ -4,8 +4,8 @@ kind: question
 status: published
 title: How should an invoice be recalculated when usage arrives late?
 question: >-
-  Last month’s usage arrives this month. The contract bills monthly and paid invoices cannot be silently overwritten.
-  How would you handle adjustments and notification?
+  Last month’s usage arrives this month. The contract bills monthly and paid invoices cannot be silently
+  overwritten. How would you handle adjustments and notification?
 intent: Assesses late-arriving facts, invoice immutability, and customer explainability.
 signals:
   - Retain the original invoice and late usage facts.

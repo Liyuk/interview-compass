@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you explain strong individual delivery when the team misses its goal?
 question: You met your own commitments, but the team missed its target. A reviewer attributes the whole result to you. How would you acknowledge shared accountability and explain your impact?
-intent: Assess whether the response clarifies goals and constraints around the scale of team accountability and individual performance evidence, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response accepts shared team outcomes while presenting individual performance evidence within the candidate’s responsibility."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in the scale of team accountability and individual performance evidence.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Compare team goals with personal commitments and state what the candidate completed, missed, and contributed to the outcome."
+  - "Explain how dependencies, resources, or decisions affected results and distinguish controllable factors from external conditions."
+  - "Name personal improvement responsibilities without blaming the entire team failure on circumstances or one person."
 primaryCapability: work-responsibility.attribution
 roles:
   - manager

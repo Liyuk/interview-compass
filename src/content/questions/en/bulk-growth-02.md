@@ -3,9 +3,7 @@ questionId: bulk-growth-02
 kind: question
 status: published
 locale: en
-title: >-
-  A campaign landing page gets traffic but few orders. Which operational path would you inspect
-  first?
+title: "A promotion page gets traffic but few orders. What would you check first?"
 question: >-
   During a major promotion, landing-page traffic meets expectations but add-to-cart and order rates
   are far below target. How would you quickly distinguish traffic quality, page information, pricing

@@ -10,6 +10,7 @@ signals:
   - 用具体事件说明交付贡献和协作成本。
   - 明确行为标准及其对团队结果的影响，不只评价性格。
   - 设定改变目标、支持措施、复查周期与未改善后果。
+  - 明确“行为影响、业务价值与反馈平衡”涉及的事实、对象和责任边界。
 primaryCapability: people-organization.frontline-management
 topics:
   - management
@@ -38,4 +39,7 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 C
+  - attribution: original
+    label: Interview Compass coverage-led original expansion batch 2026-10-17 C
+relatedQuestions: []
 ---

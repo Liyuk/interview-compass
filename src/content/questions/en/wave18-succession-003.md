@@ -4,11 +4,14 @@ kind: question
 status: published
 locale: en
 title: How should an organization reduce risk when its only successor is not ready?
-question: The sole candidate knows the business but has not led a larger team. How would you separate willingness, readiness, and replaceability, and design transition safeguards?
-intent: Assess whether the response clarifies goals and constraints around succession risk, readiness evidence, and transition safeguards, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+question: >-
+  The sole candidate knows the business but has not led a larger team. How would you separate willingness,
+  readiness, and replaceability, and design transition safeguards?
+intent: "Assess whether the response separately evaluates willingness, readiness, and organizational alternatives while reducing single-person dependency."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in succession risk, readiness evidence, and transition safeguards.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Ask whether the candidate wants the larger responsibility and identify observable evidence of readiness."
+  - "Name specific gaps in leading a larger team and design a testable transition assignment."
+  - "Create interim coverage, knowledge backups, and other succession options so the plan does not depend on one person."
 primaryCapability: people-organization.delegation-succession
 roles:
   - manager
@@ -29,4 +32,5 @@ source:
 topics:
   - management
   - hiring
+relatedQuestions: []
 ---

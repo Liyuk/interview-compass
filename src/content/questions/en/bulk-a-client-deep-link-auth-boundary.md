@@ -3,7 +3,7 @@ questionId: bulk-a-client-deep-link-auth-boundary
 kind: question
 status: published
 locale: en
-title: Deep Links and Authentication Boundaries
+title: "How do you protect sign-in and access when an external link opens a page directly?"
 question: >-
   A user opens a protected order-detail page from an external link. How would you design route
   parsing, login return, and authorization so the deep link cannot bypass in-app controls?

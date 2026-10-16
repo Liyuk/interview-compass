@@ -5,7 +5,7 @@ sources:
     questions:
       - c-product-judgment-legacy-feature-retirement
       - c-metrics-experiment-network-interference
-      - design-accessibility-submit-recovery-priority
+      - a-quality-accessible-keyboard-screen-reader-release
       - bulk-ai-llm-release-canary
       - d-pmo-correlated-dependency-escalation
     note: 原创双语题卡，补充低频功能退役、实验干扰、可访问性、AI 评测和组合依赖管理。

@@ -8,7 +8,7 @@ question: 某模型在主要市场通过评测，在新地区因语言、术语�
 intent: 考察外部有效性、公平覆盖和分区域发布治理。
 signals:
   - 按地区和用户群验证代表性任务。
-  - 定义未知覆盖下的降级与人工转接。
+  - 定义未知覆盖下的降级（关闭非核心功能以保住核心服务）与人工转接。
   - 以分区监测和暂停条件控制扩展。
 primaryCapability: professional.ai-engineering
 topics:

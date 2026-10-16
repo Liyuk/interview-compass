@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: en
 title: What if important bad news loses meaning through layers of editing?
-question: A frontline team reports high release risk, but upward updates become “monitoring” and decision-makers take no action. How would you repair the communication path?
+question: "Frontline teams report a high risk in the release window, but each upward update is softened to “we are monitoring it,” so decision-makers take no action. How would you correct the information loss across reporting levels?"
 intent: Assesses risk framing, information fidelity, and escalation.
 signals:
   - Show the original risk, evidence, and how it changed.

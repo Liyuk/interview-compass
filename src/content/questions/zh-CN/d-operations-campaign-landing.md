@@ -3,8 +3,8 @@ questionId: d-operations-campaign-landing
 kind: question
 status: published
 locale: zh-CN
-title: 把一个已定的活动策略落地
-question: 促销活动的策略已经定了，由你负责落地，上线前你会先确认哪些事？
+title: "活动策略已确定，上线前你会确认哪些条件？"
+question: "促销活动的策略已经确定，由你负责执行。上线前你会确认哪些目标、规则、资源、风险和验收条件？"
 intent: 了解你如何把策略转成执行清单，并检查目标、对象、资源、对既有用户的影响和验证方式。
 signals:
   - 确认目标指标与判断标准

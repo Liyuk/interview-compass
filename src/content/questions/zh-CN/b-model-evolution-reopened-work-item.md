@@ -31,7 +31,7 @@ scenarios:
 formats:
   - case
 followUps:
-  - 如果关闭时触发结算或通知，重新打开后哪些副作用需要补偿？
+  - 如果关闭时触发结算或通知，重新打开后哪些副作用（重复执行、越权等额外影响）需要补偿？
   - 如何汇总当前待办又不抹去第一次解决问题的时间？
 source:
   - attribution: original

@@ -37,6 +37,10 @@ describe('route model', () => {
     expect(pathFor({ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' }, 'zh-CN', base)).toBe('/interview-compass/capabilities/delivery/capacity-planning/');
     expect(pathFor({ type: 'role', id: 'product' }, 'en', base)).toBe('/interview-compass/en/roles/product/');
     expect(pathFor({ type: 'home' }, 'en', base)).toBe('/interview-compass/en/');
+    expect(pathFor({ type: 'collections' }, 'zh-CN', base)).toBe('/interview-compass/collections/');
+    expect(pathFor({ type: 'collection', id: 'general-interview' }, 'en', base)).toBe('/interview-compass/en/collections/general-interview/');
+    expect(pathFor({ type: 'framework' }, 'zh-CN', base)).toBe('/interview-compass/framework/');
+    expect(pathFor({ type: 'practice' }, 'en', base)).toBe('/interview-compass/en/practice/');
   });
 
   it('switches language to the same route in the other locale', () => {
@@ -62,9 +66,16 @@ describe('route model', () => {
   });
 
   it('derives page titles and the active navigation entry from the same route', () => {
-    expect(titleFor({ type: 'scenarios' }, 'zh-CN')).toBe('使用场景');
+    expect(titleFor({ type: 'scenarios' }, 'zh-CN')).toBe('目标路径');
     expect(titleFor({ type: 'topics' }, 'zh-CN')).toBe('主题索引');
     expect(titleFor({ type: 'capability-model' }, 'zh-CN')).toBe('阶段能力');
+    expect(titleFor({ type: 'collection', id: 'general-interview' }, 'zh-CN')).toBe('通用面试');
+    expect(titleFor({ type: 'framework' }, 'zh-CN')).toBe('提问框架');
+    expect(activeNavFor({ type: 'collections' })).toBe('questions');
+    expect(activeNavFor({ type: 'framework' })).toBe('framework');
+    expect(titleFor({ type: 'practice' }, 'zh-CN')).toBe('回答练习');
+    expect(activeNavFor({ type: 'practice' })).toBe('questions');
+    expect(breadcrumbsFor({ type: 'framework' }, 'en').map((crumb) => crumb.label)).toEqual(['Home', 'Questioning framework']);
     expect(activeNavFor(question)).toBe('questions');
     expect(activeNavFor({ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' })).toBe('capabilities');
     expect(activeNavFor({ type: 'scenario', id: 'promotion' })).toBe('scenarios');

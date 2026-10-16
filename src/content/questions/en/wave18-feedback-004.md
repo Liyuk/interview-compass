@@ -4,11 +4,14 @@ kind: question
 status: published
 locale: en
 title: How would you test whether a performance issue is a process gap or an individual behavior?
-question: A team member repeatedly commits to dates before checking dependencies, arguing that the process has no confirmation owner. How would you separate system and individual causes?
-intent: Assess whether the response clarifies goals and constraints around the boundary between system causes and individual behavior, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+question: >-
+  A team member repeatedly commits to dates before checking dependencies, arguing that the process has no
+  confirmation owner. How would you separate system and individual causes?
+intent: "Assess whether the response uses evidence to distinguish a process gap, individual judgment, or a combination behind missed commitments."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in the boundary between system causes and individual behavior.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Reconstruct the confirmation steps, dependency information, and ownership before the date was promised."
+  - "Compare similar events and check whether the process required dependency checks and the person knew that requirement."
+  - "Propose process changes and individual feedback separately and state how to tell whether each cause improved."
 primaryCapability: collaboration.feedback
 roles:
   - manager

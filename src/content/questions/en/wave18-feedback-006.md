@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you act on conflicting feedback from your manager and team?
 question: Your manager says you under-delegate; your team says decision boundaries are too vague. How would you test each impact and decide what to change or clarify?
-intent: Assess whether the response clarifies goals and constraints around evidence and scope when feedback conflicts, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response turns conflicting feedback into testable situations and decides what to retain or change."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in evidence and scope when feedback conflicts.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Ask the leader and team separately for the specific behavior, context, and impact they observed."
+  - "Distinguish differences in source, expected responsibility, and observation scope instead of taking a simple middle ground."
+  - "Test a change to delegation or communication and agree on review signals both sides can observe."
 primaryCapability: collaboration.feedback
 roles:
   - manager

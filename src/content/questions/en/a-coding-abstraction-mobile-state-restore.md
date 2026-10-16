@@ -16,6 +16,9 @@ signals:
   - Accounts for limited save opportunities and draft-version conflicts during process death
   - Checks server freshness after recovery to avoid overwriting newer data
   - Explains deterministic tests for process death, weak networks, and failed recovery
+  - Separates transient UI state from durable business state
+  - Accounts for limited opportunities to save during process termination
+  - Defines how restored state is reconciled with server data and staleness
 primaryCapability: professional.coding-abstraction
 topics:
   - mobile

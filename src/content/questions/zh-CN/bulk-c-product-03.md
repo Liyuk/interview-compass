@@ -10,6 +10,9 @@ signals:
   - 区分抱怨频次、问题严重性、现有解决方式与改变意愿
   - 将用户按任务、环境或约束切分，而非以总量掩盖差异
   - 选择能排除竞争性解释的低成本观察或试验
+  - 用真实目标和中性任务观察行为，而不是询问喜不喜欢。
+  - 区分理解、尝试意愿、现有替代方案和真实采用成本。
+  - 记录沉默、绕行和误解等反证，并按假设更新设计。
 primaryCapability: value-direction.product-judgment
 topics:
   - product-thinking
@@ -34,4 +37,10 @@ source:
   - attribution: inspired
     label: The Product Manager Interview Project：产品判断题卡结构
     url: https://github.com/deanpeters/The-Product-Manager-Interview-Project
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch A
+followUps:
+  - 如何避免让参与者猜出团队希望听到的结论？
+  - 哪些行为证据仍不足以证明上线后的持续使用？
+relatedQuestions: []
 ---

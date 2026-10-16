@@ -4,10 +4,7 @@ kind: question
 status: published
 locale: en
 title: Model-provider failover
-question: >-
-  A product depends on an external model API whose provider may throttle requests or change
-  available models. How would you design routing and degradation so quality changes after a switch
-  are visible rather than silent?
+question: "A product depends on an external model API, and the provider may restrict request frequency or change available models. How would you design switch rules and temporary shutdowns for noncritical features so quality changes after switching are visible?"
 intent: >-
   Explore the relationship among fallback models, quality contracts, throttling, and dependency
   risk.

@@ -5,8 +5,8 @@ status: published
 locale: en
 title: Keyboard Focus in Modal Interactions
 question: >-
-  A custom dialog works with a mouse, but keyboard users cannot reliably enter, close, or return from it. Which
-  focus-management behaviors would you inspect, and how would you verify a fix?
+  A custom dialog works with a mouse, but keyboard users cannot reliably enter, close, or return from it.
+  Which focus-management behaviors would you inspect, and how would you verify a fix?
 intent: Tests implementation details of accessible frontend interaction and state management.
 signals:
   - Checks focus movement on open and restoration on close
@@ -48,8 +48,9 @@ source:
 followUps:
   - >-
     【What if keyboard focus jumps to the top after dynamic content updates?】After submission, part of the page
-    refreshes. Mouse users see a success message, but keyboard and screen-reader users miss the state change. How would
-    you fix it?
+    refreshes. Mouse users see a success message, but keyboard and screen-reader users miss the state change.
+    How would you fix it?
   - Which messages need immediate announcement and which should not interrupt?
   - How do you prevent duplicate announcements?
+relatedQuestions: []
 ---

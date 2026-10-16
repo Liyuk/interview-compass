@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: en
 title: "How do you turn the area you own into a business map others can read?"
-question: "Draw a business map for an area you have owned for a long time: what task the user is trying to complete, where the main obstacles sit, and what your module can and cannot influence."
+question: "Map the area you have owned over time: what users are trying to do, where the main process obstacles are, what your module can influence, and what is outside its control."
 intent: "Understand whether you can express a business model through tasks and flows rather than org charts or feature lists, and state the boundary of your own scope."
 signals:
   - "Starts from a user or partner task, not from module or team names"

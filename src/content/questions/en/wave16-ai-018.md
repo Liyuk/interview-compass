@@ -4,7 +4,9 @@ kind: question
 status: published
 locale: en
 title: What does a rising human-handoff rate after refusals indicate?
-question: After a safety policy launch, human handoffs double while high-risk errors fall. Operations capacity is limited. How would you assess the result and tune thresholds?
+question: >-
+  After a safety policy launch, human handoffs double while high-risk errors fall. Operations capacity is
+  limited. How would you assess the result and tune thresholds?
 intent: Assesses safety gains, review capacity, and tiered threshold design.
 signals:
   - Break down handoffs by risk and reason.

@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you sequence validation across uncertain opportunities?
 question: The team sees three opportunities, each requiring cross-functional effort with unknown odds of success. How would you compare information value, validation cost, and the cost of missing a window?
-intent: Assess whether the response clarifies goals and constraints around validation order and information value under uncertainty, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response orders uncertain opportunities by information value, validation cost, and the risk of missing a window."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in validation order and information value under uncertainty.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Name the key assumption behind each opportunity and the loss if it is wrong."
+  - "Compare validation time, resources, information gained, and the cost of missing the window."
+  - "Choose what to test first, set continue/defer/drop conditions, and explain how to update the order."
 primaryCapability: value-direction.planning
 roles:
   - product

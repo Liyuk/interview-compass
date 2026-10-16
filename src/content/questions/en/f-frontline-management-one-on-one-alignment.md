@@ -3,9 +3,11 @@ questionId: f-frontline-management-one-on-one-alignment
 kind: question
 status: published
 locale: en
-title: How do you use one-on-ones to align a member's needs with your expectations of results? What would you not decide directly in a one-on-one?
-question: How do you use one-on-ones to align a member's needs with your expectations of results? What would you not decide directly in a one-on-one?
-intent: Explore whether you treat one-on-ones as alignment of goals and expectations rather than a repeat of the weekly meeting, and whether you separate sharing information from decision rights.
+title: "How do you clarify an employee’s needs and outcome expectations in a one-on-one, and what should not be decided there?"
+question: "How do you clarify an employee’s needs and your outcome expectations in a one-on-one? What would you avoid deciding on the spot?"
+intent: >-
+  Explore whether you treat one-on-ones as alignment of goals and expectations rather than a repeat of the
+  weekly meeting, and whether you separate sharing information from decision rights.
 signals:
   - States what each side needs to get out of the conversation
   - Distinguishes sharing context from handing over decision authority
@@ -35,5 +37,6 @@ followUps:
 source:
   - attribution: derived
     label: 1-on-1 不是例会：信息、预期与决策权怎样对齐
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/one-on-ones-and-decision-rights/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/one-on-ones-and-decision-rights/zh.md
 ---

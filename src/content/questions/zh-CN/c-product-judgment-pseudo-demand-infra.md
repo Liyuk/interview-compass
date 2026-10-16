@@ -3,14 +3,14 @@ questionId: c-product-judgment-pseudo-demand-infra
 kind: question
 status: published
 locale: zh-CN
-title: 说一个你做过的大型技术基建或重构，上线后几乎没有业务价值。你当时是怎么被误导的？
-question: 说一个你做过的大型技术基建或重构项目，上线后几乎没有业务价值，使用量也很低。你当时是被哪些指标或判断误导的？这次失败让你之后建立了什么防错机制？
-intent: 了解你如何识别"技术伪需求"，并把失败变成可以复用的判断机制，而不是只讲教训。
+title: "大型技术平台改造上线后使用很少、业务收益低，怎样复盘投资判断？"
+question: "讲一个你参与的技术平台改造项目：上线后使用团队很少，业务结果也不明显。你当时根据什么数据或假设决定投入？后来哪些判断被证据推翻，你增加了什么验证方式？"
+intent: 了解你如何确认技术平台改造是否解决了真实问题，并将失败转化为可复用的判断机制。
 signals:
-  - 说清当时依据了哪些指标或说法，以及它们为什么具有误导性
-  - 区分需求本身的问题、验证不足的问题和自己判断的问题
-  - 具体说明之后建立的机制，例如先找到真实使用方、小范围验证和设置停止条件
-  - 坦率交代这次失败的成本和自己承担的责任
+  - 说明当时根据哪些数据或说法判断项目值得做，以及后来哪些证据表明判断不成立。
+  - 区分需求本身不成立、验证不足和自己的判断错误。
+  - 说明后来增加了哪些做法，例如先找真实使用团队、小范围试用并设定停止条件。
+  - 坦率交代项目成本和自己承担的责任。
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, engineering-systems, metrics]
 roles: [engineering, backend, frontend, manager]

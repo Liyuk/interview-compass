@@ -3,7 +3,7 @@ questionId: a-backend-read-replica-consistency-window
 kind: question
 status: published
 locale: zh-CN
-title: 写入后读副本短暂返回旧数据时，接口契约该如何设计？
+title: 写入后读副本短暂返回旧数据时，接口接口约定该如何设计？
 question: 用户更新账户设置后立即刷新，服务从只读副本读取到旧值。切主读会增加数据库负载，等待同步又可能超时。你会怎样设计一致性体验？
 intent: 考察能否根据业务读写语义选择一致性窗口、路由和退化策略。
 signals:
@@ -12,7 +12,7 @@ signals:
   - 定义复制延迟监控、过期提示和容量代价。
   - 把用户可感知的不变量转成读写语义。
   - 比较主库读取、会话粘性和版本令牌。
-  - 验证复制延迟或故障时的降级行为。
+  - 验证复制延迟或故障时的降级（关闭非核心功能以保住核心服务）行为。
 primaryCapability: professional.system-design
 topics:
   - databases

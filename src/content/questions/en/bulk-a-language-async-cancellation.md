@@ -3,18 +3,16 @@ questionId: bulk-a-language-async-cancellation
 kind: question
 status: published
 locale: en
-title: Propagation of Asynchronous Cancellation
+title: How do you stop async work after a client disconnects?
 question: >-
-  A request starts several parallel tasks, but downstream work continues consuming resources after the client
-  disconnects. Explain how cancellation should propagate and which resources need cooperative cleanup.
-intent: Tests async-runtime cancellation semantics and resource lifecycles.
+  A request starts several async tasks. After the client disconnects or the request times out, some downstream
+  work still uses threads and connections. How would you propagate cancellation and release those resources?
+intent: Assess understanding of asynchronous cancellation, task ownership, and resource-cleanup boundaries.
 signals:
-  - Distinguishes a cancellation request from forced termination
-  - Traces parent/child task or cancellation-token propagation
-  - Accounts for cleanup and operations that cannot be cancelled
-  - Explain cancellation propagation boundaries and task ownership.
-  - Set deadlines, isolation, and cleanup for operations that ignore cancellation.
-  - Verify that cancellation leaves no leaks or duplicate side effects.
+  - Distinguishes timeout, cancellation, and normal task completion.
+  - Explains how cancellation propagates through parent tasks and service calls.
+  - Identifies boundaries such as shared work, non-interruptible operations, and completed side effects.
+  - Explains cleanup and how to verify cancellation leaves no leaked work or repeated side effects.
 primaryCapability: professional.computer-science
 topics:
   - programming-languages
@@ -23,6 +21,7 @@ topics:
 roles:
   - engineering
   - backend
+  - mobile
 responsibilityScopes:
   - individual
   - team
@@ -45,11 +44,11 @@ source:
     url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 A
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch A
 followUps:
-  - >-
-    【How do you prevent work from running forever when cancellation signals are lost?】A request starts several parallel
-    tasks. The client disconnects, but some downstreams ignore cancellation. How would you design timeouts, cleanup, and
-    resource reclamation?
-  - How should cancellation be represented if an external write completed but its response did not return?
-  - How would you prove cleanup covers abnormal exits?
+  - If a downstream operation ignores cancellation, how would you limit the resources it can keep using?
+  - If an external write completed but its response was lost, what should cancellation mean?
+  - How would you verify cleanup also runs after abnormal exits?
+relatedQuestions: []
 ---

@@ -10,6 +10,9 @@ signals:
   - 指定单一事件指挥者和技术执行负责人。
   - 区分恢复操作、业务风险接受与客户沟通职责。
   - 建立统一状态记录、决策日志和下一次更新时间。
+  - 区分指挥流程权和技术风险判断。
+  - 定义紧急决策、异议记录和升级时限。
+  - 确保采取的动作有回退或补偿路径。
 primaryCapability: delivery.reliability-incidents
 topics:
   - reliability
@@ -35,7 +38,12 @@ formats:
 followUps:
   - 如果指挥者不熟悉系统，怎样调用专家而不产生多头指挥？
   - 如何纠正已经发出的错误恢复时间？
+  - 当证据不完整时如何采取可逆（可以安全撤回）措施？
+  - 事后怎样复核决策而不归咎个人？
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 I
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 C
+relatedQuestions: []
 ---

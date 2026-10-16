@@ -5,10 +5,11 @@ status: published
 locale: en
 title: How would you choose the next question instead of exploring every hypothesis?
 question: Conversion may have fallen because of traffic, experience, price, or sales follow-up. Time is limited. How would you sequence questions by diagnostic value and cost?
-intent: Assess whether the response clarifies goals and constraints around information value and validation cost when sequencing questions, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+intent: "Assess whether the response prioritizes questions that best distinguish causes when time is limited instead of exhaustively listing every hypothesis."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in information value and validation cost when sequencing questions.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Identify how traffic, product experience, pricing, and sales follow-up would produce different evidence."
+  - "Prioritize hypotheses with high information value, low checking cost, and a realistic chance of changing the next action."
+  - "Explain how the first evidence will determine the next question or when to stop investigating."
 primaryCapability: collaboration.communication
 roles:
   - product

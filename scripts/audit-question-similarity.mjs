@@ -1,11 +1,16 @@
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import yaml from 'js-yaml';
+import { normalizeSimilarityText } from '../src/lib/question-similarity.ts';
 
 const directory = path.resolve('src/content/questions/zh-CN');
 const threshold = Number(process.env.SIMILARITY_THRESHOLD ?? 0.3);
+const maxCandidates = Number(process.env.SIMILARITY_MAX_CANDIDATES ?? 250);
 if (!Number.isFinite(threshold) || threshold < 0 || threshold > 1) {
   throw new Error('SIMILARITY_THRESHOLD must be between 0 and 1');
+}
+if (!Number.isFinite(maxCandidates) || maxCandidates < 0) {
+  throw new Error('SIMILARITY_MAX_CANDIDATES must be a non-negative number; use 0 to print every candidate');
 }
 const files = (await readdir(directory)).filter((file) => file.endsWith('.md')).sort();
 const records = [];
@@ -22,7 +27,7 @@ for (const file of files) {
 const segmenter = new Intl.Segmenter('zh-CN', { granularity: 'word' });
 const stopWords = new Set(['如何', '怎样', '什么', '哪些', '是否', '时候', '情况', '问题', '进行', '一个', '这个', '自己', '你会', '你如何', '可以', '以及', '如果', '面对', '之后', '并且', '能够', '需要', '说明', '判断']);
 const featureCounts = records.map((record) => {
-  const text = `${record.title} ${record.prompt}`.toLowerCase().normalize('NFKC');
+  const text = normalizeSimilarityText(`${record.title} ${record.prompt}`).toLowerCase().normalize('NFKC');
   const counts = new Map();
   for (const part of segmenter.segment(text)) {
     if (part.isWordLike && part.segment.length > 1 && !stopWords.has(part.segment)) {
@@ -66,7 +71,7 @@ for (let left = 0; left < records.length; left++) {
 }
 candidates.sort((a, b) => b.similarity - a.similarity || a.a.id.localeCompare(b.a.id) || a.b.id.localeCompare(b.b.id));
 console.log(`Serial comparison: ${records.length} published Chinese prompts, ${records.length * (records.length - 1) / 2} pairs, ${candidates.length} candidates at similarity >= ${threshold.toFixed(2)}.`);
-for (const candidate of candidates.slice(0, 250)) {
+for (const candidate of maxCandidates === 0 ? candidates : candidates.slice(0, maxCandidates)) {
   console.log(`${candidate.similarity.toFixed(3)}\t${candidate.a.id}\t${candidate.a.title}\t${candidate.a.prompt}`);
   console.log(`     \t${candidate.b.id}\t${candidate.b.title}\t${candidate.b.prompt}`);
 }

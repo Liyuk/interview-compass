@@ -9,7 +9,7 @@ intent: 了解你能否用业务结果、组织结果和可传递的能力来说
 signals:
   - 把团队产出连接到用户、业务、效率或风险的变化
   - 区分团队成果和个人贡献
-  - 说明哪些能力已经沉淀为机制或接班人，而不依赖个人
+  - 说明哪些能力已形成团队机制或有其他人能接手，不再依赖个人
 primaryCapability: people-organization.team-design
 topics:
   - management

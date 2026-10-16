@@ -3,8 +3,8 @@ questionId: c-marketing-campaign-holdout-contamination
 kind: question
 status: published
 locale: zh-CN
-title: 营销实验的留出组仍被其他渠道触达时，怎样估算增量？
-question: 活动随机留出 10% 用户，但这些用户仍可能收到销售外呼和自然推荐。活动组转化更高，渠道团队想据此扩预算。你会如何检查污染并判断结果？
+title: 营销实验的留出组仍看到其他渠道的广告时，怎样估算增量？
+question: 活动随机留出 10% 用户，但这些用户仍可能看到其他渠道的广告、收到销售联系或通过自然推荐进入。活动组转化更高，渠道团队想据此扩预算。你会如何检查组间差异并判断结果？
 intent: 考察是否识别跨渠道干扰、实验执行偏差和可解释的增量边界。
 signals:
   - 盘点留出组暴露、交叉渠道和随机分配执行情况。

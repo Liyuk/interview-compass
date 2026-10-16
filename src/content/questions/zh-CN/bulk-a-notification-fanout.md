@@ -3,8 +3,8 @@ questionId: bulk-a-notification-fanout
 kind: question
 status: published
 locale: zh-CN
-title: 通知扇出与用户偏好
-question: 产品要向数千万用户发送事务通知和可选营销通知，用户可以随时调整渠道偏好。如何设计扇出与发送链路？
+title: "大规模发送通知时，怎样尊重用户偏好？"
+question: "产品要向数千万用户发送事务通知和可选营销通知，用户可以随时调整渠道偏好。你会如何设计通知发送流程？"
 intent: 观察能否把通知语义、流量形态、偏好变化和供应商限制分层处理。
 signals:
   - 区分必须送达的事务通知与可抑制的营销消息

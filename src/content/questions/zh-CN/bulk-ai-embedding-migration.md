@@ -8,7 +8,7 @@ question: 更换嵌入模型后，新旧向量不可直接比较，但重建全�
 intent: 关注向量空间版本、在线重建、召回一致性和资源成本。
 signals:
   - 将嵌入模型版本显式纳入文档和查询索引元数据
-  - 设计双索引或分批回填期间的检索策略
+  - 设计双索引或分批回填（补算历史数据）期间的检索策略
   - 定义质量对照、切换窗口和旧索引退役条件
 primaryCapability: professional.ai-engineering
 topics:

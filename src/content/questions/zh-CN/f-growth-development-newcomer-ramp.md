@@ -11,20 +11,43 @@ signals:
   - 安排真实的问题而不是只做练习，并说明难度怎样逐步提升
   - 说明反馈的频率和方式，以及怎样让对方也能说出自己的困难
   - 用具体证据判断何时放手，并说明放手后的检查方式
+  - 确认规则、权限和风险升级条件是否可见。
+  - 检查学习材料、同伴网络和反馈时延。
+  - 逐步增加真实决策并复盘结果。
 primaryCapability: people-organization.growth-development
-topics: [management, learning, feedback]
-roles: [manager, engineering, product]
-responsibilityScopes: [individual, team]
-careerTracks: [team-manager]
-scenarios: [interview, hiring, self-reflection]
-formats: [behavioral, planning]
+topics:
+  - management
+  - learning
+  - feedback
+roles:
+  - manager
+  - engineering
+  - product
+responsibilityScopes:
+  - individual
+  - team
+careerTracks:
+  - team-manager
+scenarios:
+  - interview
+  - hiring
+  - self-reflection
+formats:
+  - behavioral
+  - planning
 followUps:
   - 新人三个月后仍然不能独立，你会怎么判断问题出在哪里？
   - 你怎么避免把新人带成只会按你的方式做事？
+  - 过度审批是否来自过去的惩罚经历？
+  - 如何判断独立性提升且错误风险可控？
 source:
   - attribution: original
     label: 作者的面试提问套路：新人的培养路径
   - attribution: derived
     label: 博客《如何设计新人、骨干与负责人三条成长路径》
-    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/06/growth-paths-for-newcomers-core-and-leads/zh.md
+    url: >-
+      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/06/growth-paths-for-newcomers-core-and-leads/zh.md
+  - attribution: original
+    label: Interview Compass Original Expansion Batch 2026-10-16 B
+relatedQuestions: []
 ---

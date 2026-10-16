@@ -12,6 +12,9 @@ signals:
   - 提出预算阶梯及停止追加的判定信号
   - 按渠道、用户群和漏斗阶段拆解质量变化
   - 核对线索定义、转化窗口和后续销售证据
+  - 区分线索数量、合格机会、成交和回款等阶段。
+  - 核验渠道用户意图、成本、转化时滞和与既有渠道的重复。
+  - 调整渠道质量标准、销售分配或合作激励，并设定验证定义。
 primaryCapability: delivery.operational-execution
 topics:
   - operations
@@ -46,6 +49,11 @@ source:
     label: 本站原创
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-17 B
+  - attribution: original
+    label: Interview Compass Original Expansion to 1,500 — Batch B
 followUps:
-  - 一次投放扩大覆盖并提高点击，但合格商机和最终毛利下降。你会怎样判断问题出在受众、创意、销售承接还是归因窗口？
+  - 一次投放扩大覆盖并提高点击，但合格商机和最终毛利下降。你会怎样判断问题出在受众、创意、销售承接还是归因（判断结果由什么因素造成）窗口？
+  - 如果渠道合同按线索付费而非成交付费，怎样控制激励错位？
+  - 如何把销售周期的滞后纳入阶段性评估？
+relatedQuestions: []
 ---

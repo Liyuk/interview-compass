@@ -8,7 +8,7 @@ question: 下季度团队只能保留一个直接拉动增长的项目和一个�
 intent: 考察候选人能否设定一致的比较依据，辨析近期收益、战略价值、风险和依赖，而非只争论项目标签。
 signals:
   - 先说明共同目标、时间尺度及不可违反的约束
-  - 比较预期收益、证据强弱、风险、可逆性和延迟成本
+  - 比较预期收益、证据强弱、风险、可逆（可以安全撤回）性和延迟成本
   - 说明组合决策及未入选项目的复议条件
 primaryCapability: value-direction.prioritization
 topics:
@@ -35,7 +35,6 @@ formats:
   - planning
 source:
   - attribution: derived
-    label: Top K 问题：排序口径、必要条件与不做项
-    url: >-
-      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
+    label: Top K 问题：排序标准、必要条件与不做项
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
 ---

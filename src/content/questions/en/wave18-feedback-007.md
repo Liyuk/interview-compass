@@ -4,11 +4,14 @@ kind: question
 status: published
 locale: en
 title: How would you repair trust after difficult feedback without retracting it?
-question: You told a colleague they escalated risks too late; since then they communicate less. How would you reopen the conversation, own any delivery issues, and retain the necessary standard?
-intent: Assess whether the response clarifies goals and constraints around repairing trust while maintaining performance expectations, uses concrete evidence to reach a judgment, and explains the key trade-offs.
+question: >-
+  You told a colleague they escalated risks too late; since then they communicate less. How would you reopen
+  the conversation, own any delivery issues, and retain the necessary standard?
+intent: "Assess whether the response repairs reduced communication after feedback while continuing to state necessary work standards clearly."
 signals:
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in repairing trust while maintaining performance expectations.
-  - Uses verifiable examples to explain the reasoning, outcome, and relevant learning.
+  - "Describe the specific reduction in communication and ask how the other person interpreted the feedback."
+  - "Acknowledge any impact of the delivery while restating the requirement to raise risks promptly."
+  - "Agree on future communication and review timing, then check whether trust and risk reporting recover."
 primaryCapability: collaboration.feedback
 roles:
   - manager
@@ -29,4 +32,5 @@ source:
 topics:
   - feedback
   - communication
+relatedQuestions: []
 ---

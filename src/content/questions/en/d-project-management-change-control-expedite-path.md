@@ -5,11 +5,11 @@ status: published
 locale: en
 title: How do you create a fast but traceable path when urgent requests bypass change control?
 question: >-
-  A business lead says change approval slows market opportunities and asks teams to insert requests outside review.
-  Past urgent work has caused rework. How would you design an exception path?
+  A business lead says change approval slows market opportunities and asks teams to insert requests outside
+  review. Past urgent work has caused rework. How would you design an exception path?
 intent: >-
-  Assess whether you distinguish necessary response from bypassing accountability, with lightweight risk review and
-  retrospective controls.
+  Assess whether you distinguish necessary response from bypassing accountability, with lightweight risk
+  review and retrospective controls.
 signals:
   - Define triggers and decision owners for expedited handling.
   - Keep minimum impact, capacity trade-off, and decision-log requirements.
@@ -42,4 +42,5 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 I
+relatedQuestions: []
 ---

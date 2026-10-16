@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: en
 title: Your solution depends on an underlying service or library. If it changes significantly, how does the solution migrate, degrade, roll back, or be replaced?
-question: Your solution depends on an underlying service or library. If it changes significantly, how does the solution migrate, degrade, roll back, or be replaced?
+question: "Your solution depends on a lower-level service or library. If it changes substantially, how would you migrate, fall back to a version that preserves core features, or replace it?"
 intent: See whether you know the boundary of what you depend on and have designed a way out for when it changes.
 signals:
   - First says what the dependency provides and where its boundary lies
