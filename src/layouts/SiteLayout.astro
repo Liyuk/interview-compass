@@ -1,9 +1,10 @@
 ---
 import '@radix-ui/themes/styles.css';
-import '../styles/global.css';
+import SiteMasthead from '../components/SiteMasthead.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import ReadingJourney from '../components/ReadingJourney.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import Icon from '../components/Icon.astro';
-import { activeNavFor, breadcrumbsFor, navLabel, pathFor, switchLocaleRoute, titleFor, type RouteRef } from '../lib/routes';
+import { activeNavFor, breadcrumbsFor, titleFor, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
 
 interface Props { locale: Locale; route: RouteRef; description?: string; redirectTo?: string }
@@ -11,19 +12,10 @@ const { locale, route, description = '', redirectTo } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const publicBase = base.endsWith('/') ? base : `${base}/`;
-const other: Locale = en ? 'zh-CN' : 'en';
 const title = titleFor(route, locale);
-const active = activeNavFor(route);
+const currentNav = activeNavFor(route);
+const active = ['roles', 'topics', 'capabilities'].includes(currentNav) ? 'browse' : currentNav;
 const crumbs = breadcrumbsFor(route, locale, base);
-const nav = [
-  { key: 'questions', ref: { type: 'questions' } as RouteRef, label: navLabel('questions', locale) },
-  { key: 'framework', ref: { type: 'framework' } as RouteRef, label: navLabel('framework', locale) },
-  { key: 'topics', ref: { type: 'topics' } as RouteRef, label: navLabel('topics', locale) },
-  { key: 'roles', ref: { type: 'roles' } as RouteRef, label: navLabel('roles', locale) },
-  { key: 'scenarios', ref: { type: 'scenarios' } as RouteRef, label: navLabel('scenarios', locale) },
-  { key: 'capabilities', ref: { type: 'capabilities' } as RouteRef, label: navLabel('capabilities', locale) },
-  { key: 'capability-model', ref: { type: 'capability-model' } as RouteRef, label: navLabel('capabilityModel', locale) },
-];
 ---
 <!doctype html>
 <html lang={locale} data-pagefind-filter="locale[lang]">
@@ -36,132 +28,16 @@ const nav = [
     <link rel="icon" type="image/svg+xml" href={`${publicBase}favicon.svg`} />
     <title>{route.type === 'home' ? 'Interview Compass' : `${title} · Interview Compass`}</title>
   </head>
-  <body class="radix-themes" data-accent-color="red" data-gray-color="sand" data-radius="medium">
+  <body class="radix-themes" data-accent-color="red" data-gray-color="sand" data-radius="medium" data-route-type={route.type}>
     <a class="skip-link" href="#main">{en ? 'Skip to content' : '跳到正文'}</a>
-    <header class="site-header">
-      <a class="wordmark" href={pathFor({ type: 'home' }, locale, base)}>
-        <img src={`${publicBase}logo.svg`} width="30" height="30" alt="" aria-hidden="true" />
-        <span>Interview Compass</span>
-      </a>
-      <nav class="primary-nav" aria-label={en ? 'Main navigation' : '主导航'}>
-        {nav.map((item) => <a href={pathFor(item.ref, locale, base)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
-      </nav>
-      <div class="language-switch" role="group" aria-label={en ? 'Language' : '语言'}>
-        <span aria-current="true">{en ? 'EN' : '中文'}</span><span aria-hidden="true"> / </span>
-        <a href={switchLocaleRoute(route, other, base)} lang={other} hreflang={other}>{en ? '中文' : 'EN'}</a>
-      </div>
-    </header>
-    <div class="search-strip">
-      <form class="search-form" role="search" data-pagefind-search>
-        <label class="sr-only" for="site-search">{en ? 'Search questions, topics, or keywords' : '搜索问题、主题或关键词'}</label>
-        <Icon name="search" size={21} class="search-icon" />
-        <input id="site-search" name="q" type="search" placeholder={en ? 'Search questions, topics, or keywords' : '搜索问题、主题或关键词'} autocomplete="off" />
-        <button type="submit">{en ? 'Search' : '搜索'}</button>
-      </form>
-      <div class="search-results" aria-live="polite" hidden></div>
-    </div>
+    <SiteMasthead locale={locale} active={active} route={route} />
     <div class="page-frame">
       {route.type !== 'home' && <Breadcrumbs crumbs={crumbs} locale={locale} />}
       <main id="main" class="main-content">
         <slot />
       </main>
     </div>
-    <footer class="site-footer">
-      <a class="footer-wordmark" href={pathFor({ type: 'home' }, locale, base)}>
-        <img src={`${publicBase}logo.svg`} width="20" height="20" alt="" aria-hidden="true" />
-        <span>Interview Compass</span>
-      </a>
-      <a href={pathFor({ type: 'guide' }, locale, base)}>{en ? 'How to use this question library' : '如何使用这套问题库'}</a>
-      <a href="https://github.com/Liyuk/interview-compass">GitHub</a>
-      <span class="copyright">© 2026 Liyuk</span>
-      <a href={`${publicBase}LICENSE`}>{en ? 'Code license · MIT' : '代码许可 · MIT'}</a>
-      <a href={`${publicBase}CONTENT-LICENSE.md`}>{en ? 'Content license · CC BY-NC-SA 4.0' : '内容许可 · CC BY-NC-SA 4.0'}</a>
-    </footer>
-    <script>
-      import { safeSearchResultHref } from '../lib/search-records';
-
-      const form = document.querySelector<HTMLFormElement>('.search-form');
-      const input = form?.querySelector<HTMLInputElement>('input');
-      const results = document.querySelector<HTMLElement>('.search-results');
-      const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-      const lang = document.documentElement.lang;
-      const noResultsText = lang === 'en' ? 'No matching questions.' : '没有找到匹配的问题。';
-      const errorText = lang === 'en' ? 'Search is unavailable. Try again.' : '搜索暂时不可用，请重试。';
-      type SearchData = { url: string; meta?: { title?: string }; excerpt?: string };
-      type SearchResult = { url: string; data: () => Promise<SearchData> };
-      type PagefindIndex = { search: (query: string, options: { filters: { locale: string } }) => Promise<{ results: SearchResult[] }> };
-      let pagefind: PagefindIndex | undefined;
-      let timer: number | undefined;
-      let activeSearch = 0;
-
-      function showSearchMessage(message: string) {
-        if (!results) return;
-        const paragraph = document.createElement('p');
-        paragraph.className = 'search-empty';
-        paragraph.textContent = message;
-        results.replaceChildren(paragraph);
-        results.hidden = false;
-      }
-
-      async function search(query: string) {
-        const request = ++activeSearch;
-        const normalizedQuery = query.trim();
-        if (!results || !normalizedQuery) {
-          results?.replaceChildren();
-          if (results) results.hidden = true;
-          return;
-        }
-
-        try {
-          pagefind ??= await import(/* @vite-ignore */ `${base}/pagefind/pagefind.js`) as PagefindIndex;
-          const response = await pagefind.search(normalizedQuery, { filters: { locale: lang } });
-          if (request !== activeSearch) return;
-
-          const rankedResults = response.results.slice(0, 8);
-          const items = await Promise.all(rankedResults.map((item) => item.data()));
-          if (request !== activeSearch) return;
-
-          const links = items.flatMap((item) => {
-            const href = safeSearchResultHref(item.url, { origin: window.location.origin, basePath: base });
-            if (!href) return [];
-
-            const link = document.createElement('a');
-            link.className = 'search-result';
-            link.href = href;
-
-            const title = document.createElement('strong');
-            title.textContent = item.meta?.title || item.url;
-            const excerpt = document.createElement('span');
-            excerpt.textContent = new DOMParser().parseFromString(item.excerpt ?? '', 'text/html').body.textContent ?? '';
-            link.append(title, excerpt);
-            return [link];
-          });
-
-          if (links.length) {
-            results.replaceChildren(...links);
-            results.hidden = false;
-          } else {
-            showSearchMessage(noResultsText);
-          }
-        } catch {
-          if (request === activeSearch) showSearchMessage(errorText);
-        }
-      }
-      form?.addEventListener('submit', (event) => { event.preventDefault(); if (input) void search(input.value); });
-      input?.addEventListener('input', () => {
-        window.clearTimeout(timer);
-        if (!input.value.trim()) { void search(''); return; }
-        timer = window.setTimeout(() => void search(input.value), 160);
-      });
-      document.addEventListener('keydown', (event) => {
-        if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); input?.focus(); }
-        if (event.key === 'Escape') {
-          activeSearch += 1;
-          window.clearTimeout(timer);
-          if (results) { results.replaceChildren(); results.hidden = true; }
-          input?.blur();
-        }
-      });
-    </script>
+    <SiteFooter locale={locale} />
+    <ReadingJourney />
   </body>
 </html>

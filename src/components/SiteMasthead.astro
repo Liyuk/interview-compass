@@ -1,0 +1,160 @@
+---
+import '../styles/global.css';
+import Icon from './Icon.astro';
+import { navLabel, pathFor, switchLocaleRoute, type RouteRef } from '../lib/routes';
+import type { Locale } from '../lib/taxonomy';
+
+interface Props { locale: Locale; active?: string; route?: RouteRef }
+const { locale, active = '', route = { type: 'home' } } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const other: Locale = en ? 'zh-CN' : 'en';
+const nav = [
+  { key: 'scenarios', ref: { type: 'scenarios' } as RouteRef, label: navLabel('scenarios', locale) },
+  { key: 'questions', ref: { type: 'questions' } as RouteRef, label: navLabel('questions', locale) },
+  { key: 'framework', ref: { type: 'framework' } as RouteRef, label: en ? 'Questioning methods' : '提问方法' },
+  { key: 'browse', ref: { type: 'browse' } as RouteRef, label: navLabel('browse', locale) },
+  { key: 'capability-model', ref: { type: 'capability-model' } as RouteRef, label: navLabel('capabilityModel', locale) },
+];
+---
+
+<header class="site-header">
+  <a class="wordmark" href={pathFor({ type: 'home' }, locale, base)}>
+    <img src={`${base.endsWith('/') ? base : `${base}/`}logo.svg`} width="30" height="30" alt="" aria-hidden="true" />
+    <span>Interview Compass</span>
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">{en ? 'Menu' : '导航'} <Icon name="chevron-down" size={16} /></button>
+  <nav id="primary-navigation" class="primary-nav" aria-label={en ? 'Main navigation' : '主导航'}>
+    {nav.map((item) => <a href={pathFor(item.ref, locale, base)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
+  </nav>
+  <div class="language-switch" role="group" aria-label={en ? 'Language' : '语言'}>
+    <span aria-current="true">{en ? 'EN' : '中文'}</span><span aria-hidden="true"> / </span>
+    <a href={switchLocaleRoute(route, other, base)} lang={other} hreflang={other}>{en ? '中文' : 'EN'}</a>
+  </div>
+</header>
+<div class="search-strip"><div class="search-container">
+  <form class="search-form" role="search" data-pagefind-search action={pathFor({ type: 'search' }, locale, base)} method="get">
+    <label class="sr-only" for="site-search">{en ? 'Search questions, topics, or keywords' : '搜索问题、主题或关键词'}</label>
+    <Icon name="search" size={21} class="search-icon" />
+    <input id="site-search" name="q" type="search" placeholder={en ? 'Search questions, topics, or keywords' : '搜索问题、主题或关键词'} autocomplete="off" />
+    <button type="submit">{en ? 'Search' : '搜索'}</button>
+  </form>
+  <div class="search-results" aria-live="polite" hidden></div>
+</div></div>
+
+<script>
+  import { safeSearchResultHref } from '../lib/search-records';
+
+  document.body.dataset.navigationReady = 'true';
+  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(expanded));
+    document.querySelector('.site-header')?.classList.toggle('nav-open', expanded);
+    const starlightHeader = document.querySelector<HTMLElement>('.page > .header');
+    if (expanded && starlightHeader) starlightHeader.style.setProperty('--sl-nav-height', '404px');
+    else starlightHeader?.style.removeProperty('--sl-nav-height');
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') {
+      toggle.setAttribute('aria-expanded', 'false');
+      document.querySelector('.site-header')?.classList.remove('nav-open');
+      document.querySelector<HTMLElement>('.page > .header')?.style.removeProperty('--sl-nav-height');
+      toggle.focus();
+    }
+  });
+
+  const form = document.querySelector<HTMLFormElement>('.search-form');
+  const input = form?.querySelector<HTMLInputElement>('input');
+  const results = document.querySelector<HTMLElement>('.search-results');
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  const lang = document.documentElement.lang;
+  const noResultsText = lang === 'en' ? 'No matching questions.' : '没有找到匹配的问题。';
+  const errorText = lang === 'en' ? 'Search is unavailable. Try again.' : '搜索暂时不可用，请重试。';
+  const languageLink = document.querySelector<HTMLAnchorElement>('.language-switch a');
+  if (languageLink) {
+    const transferableParams = ['q', 'role', 'scope', 'track', 'scenario', 'topic', 'format', 'capability', 'page'];
+    const current = new URL(window.location.href);
+    const target = new URL(languageLink.href, current);
+    for (const key of transferableParams) {
+      const value = current.searchParams.get(key);
+      if (value !== null) target.searchParams.set(key, value);
+    }
+    if (current.hash) target.hash = current.hash;
+    languageLink.href = target.href;
+  }
+  type SearchData = { url: string; meta?: { title?: string }; excerpt?: string };
+  type SearchResult = { url: string; data: () => Promise<SearchData> };
+  type PagefindIndex = { search: (query: string, options: { filters: { locale: string } }) => Promise<{ results: SearchResult[] }> };
+  let pagefind: PagefindIndex | undefined;
+  let timer: number | undefined;
+  let activeSearch = 0;
+
+  function showSearchMessage(message: string) {
+    if (!results) return;
+    const paragraph = document.createElement('p');
+    paragraph.className = 'search-empty';
+    paragraph.textContent = message;
+    results.replaceChildren(paragraph);
+    results.hidden = false;
+  }
+
+  async function search(query: string) {
+    const request = ++activeSearch;
+    const normalizedQuery = query.trim();
+    if (!results || !normalizedQuery) {
+      results?.replaceChildren();
+      if (results) results.hidden = true;
+      return;
+    }
+    try {
+      pagefind ??= await import(/* @vite-ignore */ `${base}/pagefind/pagefind.js`) as PagefindIndex;
+      const response = await pagefind.search(normalizedQuery, { filters: { locale: lang } });
+      if (request !== activeSearch) return;
+      const rankedResults = response.results.slice(0, 8);
+      const items = await Promise.all(rankedResults.map((item) => item.data()));
+      if (request !== activeSearch) return;
+      const links = items.flatMap((item) => {
+        const href = safeSearchResultHref(item.url, { origin: window.location.origin, basePath: base });
+        if (!href) return [];
+        const link = document.createElement('a');
+        link.className = 'search-result';
+        link.href = href;
+        const title = document.createElement('strong');
+        title.textContent = item.meta?.title || item.url;
+        const excerpt = document.createElement('span');
+        excerpt.textContent = new DOMParser().parseFromString(item.excerpt ?? '', 'text/html').body.textContent ?? '';
+        link.append(title, excerpt);
+        return [link];
+      });
+      if (links.length) {
+        const allLink = document.createElement('a');
+        allLink.className = 'search-all';
+        allLink.href = `${form?.action ?? `${base}/search/`}?q=${encodeURIComponent(normalizedQuery)}`;
+        allLink.textContent = lang === 'en' ? 'View all matches' : '查看全部匹配';
+        results.replaceChildren(...links, allLink);
+        results.hidden = false;
+      } else showSearchMessage(noResultsText);
+    } catch {
+      if (request === activeSearch) showSearchMessage(errorText);
+    }
+  }
+
+  const initialQuery = new URLSearchParams(location.search).get('q');
+  const isSearchPage = document.body.dataset.routeType === 'search' || location.pathname.startsWith(`${base}/search/`);
+  if (input && initialQuery) { input.value = initialQuery; if (!isSearchPage) void search(initialQuery); }
+  input?.addEventListener('input', () => {
+    window.clearTimeout(timer);
+    if (!input.value.trim()) { void search(''); return; }
+    timer = window.setTimeout(() => void search(input.value), 160);
+  });
+  document.addEventListener('keydown', (event) => {
+    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); input?.focus(); }
+    if (event.key === 'Escape') {
+      activeSearch += 1;
+      window.clearTimeout(timer);
+      if (results) { results.replaceChildren(); results.hidden = true; }
+      input?.blur();
+    }
+  });
+</script>

@@ -37,6 +37,8 @@ describe('route model', () => {
     expect(pathFor({ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' }, 'zh-CN', base)).toBe('/interview-compass/capabilities/delivery/capacity-planning/');
     expect(pathFor({ type: 'role', id: 'product' }, 'en', base)).toBe('/interview-compass/en/roles/product/');
     expect(pathFor({ type: 'home' }, 'en', base)).toBe('/interview-compass/en/');
+    expect(pathFor({ type: 'search' }, 'zh-CN', base)).toBe('/interview-compass/search/');
+    expect(pathFor({ type: 'search' }, 'en', base)).toBe('/interview-compass/en/search/');
     expect(pathFor({ type: 'collections' }, 'zh-CN', base)).toBe('/interview-compass/collections/');
     expect(pathFor({ type: 'collection', id: 'general-interview' }, 'en', base)).toBe('/interview-compass/en/collections/general-interview/');
     expect(pathFor({ type: 'framework' }, 'zh-CN', base)).toBe('/interview-compass/framework/');
@@ -67,11 +69,13 @@ describe('route model', () => {
 
   it('derives page titles and the active navigation entry from the same route', () => {
     expect(titleFor({ type: 'scenarios' }, 'zh-CN')).toBe('目标路径');
+    expect(titleFor({ type: 'search' }, 'en')).toBe('Search results');
     expect(titleFor({ type: 'topics' }, 'zh-CN')).toBe('主题索引');
     expect(titleFor({ type: 'capability-model' }, 'zh-CN')).toBe('阶段能力');
     expect(titleFor({ type: 'collection', id: 'general-interview' }, 'zh-CN')).toBe('通用面试');
     expect(titleFor({ type: 'framework' }, 'zh-CN')).toBe('提问框架');
     expect(activeNavFor({ type: 'collections' })).toBe('questions');
+    expect(activeNavFor({ type: 'search' })).toBe('questions');
     expect(activeNavFor({ type: 'framework' })).toBe('framework');
     expect(titleFor({ type: 'practice' }, 'zh-CN')).toBe('回答练习');
     expect(activeNavFor({ type: 'practice' })).toBe('questions');

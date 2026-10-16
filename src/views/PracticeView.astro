@@ -38,8 +38,15 @@ const en = locale === 'en';
         <h3 id="selected-question-title"></h3>
       </article>
       <section class="practice-plain-reading" aria-labelledby="plain-reading-heading">
+        <p id="practice-analysis-status" class="analysis-review-status"></p>
+        <h3>{en ? 'Concrete problem to clarify' : '先弄清题目要解决什么'}</h3>
+        <p id="selected-question-objective"></p>
         <h3 id="plain-reading-heading">{en ? 'What is it trying to understand?' : '这道题想了解什么？'}</h3>
         <p id="selected-question-intent"></p>
+        <div id="practice-comparisons" class="practice-comparison-prompts" hidden>
+          <h3>{en ? 'Possible approaches to compare' : '可以比较的思路'}</h3>
+          <ul id="practice-comparison-list"></ul>
+        </div>
       </section>
       <label class="practice-field-label" for="practice-understanding">{en ? 'Put the question in your own words (optional)' : '试着用自己的话复述题意（可选）'}</label>
       <textarea id="practice-understanding" rows="3" placeholder={en ? 'I think this question is asking me to explain…' : '我理解这题主要想让我说明……'}></textarea>
@@ -250,6 +257,19 @@ const en = locale === 'en';
         selected = question;
         document.querySelector('#selected-question-title')!.textContent = selected.question;
         document.querySelector('#selected-question-intent')!.textContent = selected.evaluation.intent;
+        document.querySelector('#selected-question-objective')!.textContent = selected.evaluation.objective;
+        const analysisStatus = document.querySelector<HTMLElement>('#practice-analysis-status')!;
+        analysisStatus.className = `analysis-review-status ${selected.evaluation.specific ? 'is-reviewed' : 'is-shared'}`;
+        analysisStatus.replaceChildren();
+        const statusTitle = document.createElement('strong'); statusTitle.textContent = selected.evaluation.reviewLabel;
+        const statusNote = document.createElement('span'); statusNote.textContent = selected.evaluation.reviewNote;
+        analysisStatus.append(statusTitle, statusNote);
+        const comparisonPanel = document.querySelector<HTMLElement>('#practice-comparisons')!;
+        const comparisonList = document.querySelector<HTMLUListElement>('#practice-comparison-list')!;
+        comparisonList.replaceChildren(...selected.evaluation.comparisons.map((comparison) => {
+          const item = document.createElement('li'); item.textContent = `${comparison.dimension}: ${comparison.guidance}`; return item;
+        }));
+        comparisonPanel.hidden = selected.evaluation.comparisons.length === 0;
         renderSignalPreview(selected);
         renderGuide(selected);
         const draft = getDraft(id);

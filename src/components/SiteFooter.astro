@@ -1,0 +1,22 @@
+---
+import type { Locale } from '../lib/taxonomy';
+import { pathFor } from '../lib/routes';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const publicBase = base.endsWith('/') ? base : `${base}/`;
+---
+
+<footer class="site-footer">
+  <a class="footer-wordmark" href={pathFor({ type: 'home' }, locale, base)}>
+    <img src={`${publicBase}logo.svg`} width="20" height="20" alt="" aria-hidden="true" />
+    <span>Interview Compass</span>
+  </a>
+  <a href={pathFor({ type: 'guide' }, locale, base)}>{en ? 'How to use this question library' : '如何使用这套问题库'}</a>
+  <a href="https://github.com/Liyuk/interview-compass">GitHub</a>
+  <span class="copyright">© 2026 Liyuk</span>
+  <a href={`${publicBase}LICENSE`}>{en ? 'Code license · MIT' : '代码许可 · MIT'}</a>
+  <a href={`${publicBase}CONTENT-LICENSE.md`}>{en ? 'Content license · CC BY-NC-SA 4.0' : '内容许可 · CC BY-NC-SA 4.0'}</a>
+</footer>

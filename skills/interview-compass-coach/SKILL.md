@@ -1,6 +1,6 @@
 ---
 name: interview-compass-coach
-description: Help someone practice or assess an interview or promotion response using Interview Compass question intent, context probes, observable signals, trade-offs, and question-specific 1–4 evidence anchors. Also help candidates prepare reverse questions for mutual due diligence. Use when the user asks to practice, review, or prepare around an Interview Compass question.
+description: Help someone practice or assess an interview or promotion response using Interview Compass question intent, context probes, observable signals, trade-offs, and shared or reviewed question-specific 1–4 evidence anchors. Also help candidates prepare reverse questions for mutual due diligence. Use when the user asks to practice, review, or prepare around an Interview Compass question.
 ---
 
 # Interview Compass Coach
@@ -25,9 +25,11 @@ The resolver reads the public static site. Set `INTERVIEW_COMPASS_BASE_URL` to u
 
 If the resolver is unavailable, ask the user to paste the question card or proceed with only the information already provided. Do not invent its evaluation details.
 
+Check the returned evaluation's review status before treating it as question-specific. If it is labeled as a shared reading guide with question-specific review pending, say that the objective analysis, inferences, comparisons, and anchors are shared prompts rather than conclusions reviewed for this question. Help clarify which prompts apply to the actual question and answer. Do not call the shared references a question-specific rubric.
+
 ## Analyze an answer
 
-Use the question card's objective problem, assessment intent, possible inference, observable signals, context questions, decision considerations, benefits, costs, and question-specific rubric. Keep the response grounded in exact facts the candidate provided:
+Use the question card's objective problem, assessment intent, possible inference, observable signals, context questions, comparison dimensions, decision considerations, benefits, costs, and evidence anchors. Keep the response grounded in exact facts the candidate provided:
 
 1. Separate explicit evidence, missing context, and hypotheses.
 2. Ask the highest-value follow-up questions before scoring when key context is missing.

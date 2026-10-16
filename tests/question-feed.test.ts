@@ -26,7 +26,7 @@ describe('buildQuestionFeed', () => {
     expect(index[0]).not.toHaveProperty('evaluation');
   });
 
-  it('returns one public question with question-specific evaluation anchors and no practice state', () => {
+  it('returns one public question with transparent shared anchors and no practice state', () => {
     const practiceAnswer = 'private practice answer sentinel';
     const serialized = JSON.stringify(buildPublicQuestion(record('en')));
     const question = JSON.parse(serialized);
@@ -36,6 +36,14 @@ describe('buildQuestionFeed', () => {
     expect(serialized).not.toContain('localStorage');
     expect(serialized).not.toContain('practiceHistory');
     expect(question.evaluation.levels.map((level: { score: number }) => level.score)).toEqual([1, 2, 3, 4]);
-    expect(question.evaluation.levels[1].reference).toContain('Defines a baseline');
+    expect(question.evaluation.specific).toBe(false);
+    expect(question.evaluation.reviewLabel).toContain('question-specific review pending');
+    expect(question.evaluation.levels[1].reference).not.toContain('Defines a baseline');
+  });
+
+  it('includes the same edited analysis in the public feed for a reviewed question', () => {
+    const question = buildPublicQuestion(record('en', 'c-metrics-causality-competitor-benchmark'));
+    expect(question.evaluation.specific).toBe(true);
+    expect(question.evaluation.comparisons[0].dimension).toBe('Measurement basis');
   });
 });

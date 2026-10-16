@@ -24,10 +24,11 @@ const paths = en ? [
   {
     id: 'interviewer', title: 'Hiring interviewer', summary: 'Turn role requirements into a consistent, evidence-based interview loop.',
     steps: [
-      { title: 'Start from the work and role', text: 'Identify which decisions and outcomes matter in this job, rather than testing generic confidence.', links: [{ label: 'Explore roles', href: pathFor({ type: 'roles' }, locale, base) }] },
-      { title: 'Choose lead questions and follow-ups', text: 'Use comparable, job-related questions; probe context, personal contribution, alternatives, and results.', links: [{ label: 'Behavioral questions', href: questionPath({ scenario: 'hiring', format: 'behavioral' }) }, { label: 'Case questions', href: questionPath({ scenario: 'hiring', format: 'case' }) }] },
-      { title: 'Calibrate evidence across interviewers', text: 'Agree what evidence supports an assessment and keep observations separate from inference.', links: [{ label: 'Interviewer questioning framework', href: pathFor({ type: 'framework' }, locale, base) }] },
-      { title: 'Review the process', text: 'Check whether each round added useful evidence, treated candidates consistently, and helped the team decide.', links: [{ label: 'Hiring questions', href: pathFor({ type: 'scenario', id: 'hiring' }, locale, base) }] },
+      { title: 'Define the role profile and success context', text: 'Describe the work, decision rights, expected results, organizational stage, and constraints. Separate requirements from preferences.', links: [{ label: 'Explore roles', href: pathFor({ type: 'roles' }, locale, base) }, { label: 'Product questions', href: questionPath({ scenario: 'hiring', role: 'product', format: 'case' }) }, { label: 'Operations questions', href: questionPath({ scenario: 'hiring', role: 'operations', format: 'case' }) }] },
+      { title: 'Map evidence to interview rounds', text: 'Decide which round observes which capability; remove duplicate questions and leave room for role-specific technical, product, operations, or management evidence.', links: [{ label: 'Questioning framework', href: pathFor({ type: 'framework' }, locale, base) }, { label: 'Management questions', href: questionPath({ scenario: 'hiring', track: 'team-manager' }) }] },
+      { title: 'Choose lead questions and follow-ups', text: 'Use comparable, job-related prompts. Probe the baseline, alternatives, personal decisions and hands-on actions, outcomes, and other plausible causes.', links: [{ label: 'Behavioral questions', href: questionPath({ scenario: 'hiring', format: 'behavioral' }) }, { label: 'Case questions', href: questionPath({ scenario: 'hiring', format: 'case' }) }] },
+      { title: 'Calibrate evidence across interviewers', text: 'Agree what would count as evidence at this responsibility scope. Keep observed facts, interpretations, and unanswered questions separate.', links: [{ label: 'Evidence and follow-up method', href: pathFor({ type: 'framework' }, locale, base) }, { label: 'Stage capability model', href: pathFor({ type: 'capability-model' }, locale, base) }] },
+      { title: 'Review the process and decision', text: 'Check whether each round added useful evidence, treated candidates consistently, and resolved the most important uncertainty in the role profile.', links: [{ label: 'Hiring questions', href: pathFor({ type: 'scenario', id: 'hiring' }, locale, base) }] },
     ],
   },
   {
@@ -84,10 +85,11 @@ const paths = en ? [
   {
     id: 'interviewer', title: '招聘面试官', summary: '把岗位要求转成一致、基于证据的面试流程。',
     steps: [
-      { title: '从岗位实际工作出发', text: '先确定这份工作需要作出哪些决定、交付什么结果，不用泛泛的“表达好不好”代替岗位要求。', links: [{ label: '浏览岗位', href: pathFor({ type: 'roles' }, locale, base) }] },
-      { title: '选择主问和追问', text: '使用可比较、与岗位相关的问题；追问背景、本人贡献、备选方案和结果。', links: [{ label: '行为问题', href: questionPath({ scenario: 'hiring', format: 'behavioral' }) }, { label: '案例问题', href: questionPath({ scenario: 'hiring', format: 'case' }) }] },
-      { title: '校准面试官的证据口径', text: '明确什么证据支持判断，并把观察到的事实与个人推论分开。', links: [{ label: '面试官提问框架', href: pathFor({ type: 'framework' }, locale, base) }] },
-      { title: '复盘招聘流程', text: '检查每一轮是否增加了有效信息、是否公平对待候选人，以及是否帮助团队作出判断。', links: [{ label: '招聘面试问题', href: pathFor({ type: 'scenario', id: 'hiring' }, locale, base) }] },
+      { title: '建立岗位画像与成功背景', text: '说明实际工作、决策权限、预期结果、组织阶段和约束；区分必要条件与偏好。', links: [{ label: '浏览岗位', href: pathFor({ type: 'roles' }, locale, base) }, { label: '产品岗位问题', href: questionPath({ scenario: 'hiring', role: 'product', format: 'case' }) }, { label: '运营岗位问题', href: questionPath({ scenario: 'hiring', role: 'operations', format: 'case' }) }] },
+      { title: '把证据分配到面试轮次', text: '明确每一轮观察什么能力，去掉重复问题，并为技术、产品、运营或管理证据留出合适环节。', links: [{ label: '提问框架', href: pathFor({ type: 'framework' }, locale, base) }, { label: '管理岗位问题', href: questionPath({ scenario: 'hiring', track: 'team-manager' }) }] },
+      { title: '选择主问和分支追问', text: '使用可比较且与岗位相关的问题；追问基线、备选方案、本人判断与实际行动、结果和其他可能原因。', links: [{ label: '行为问题', href: questionPath({ scenario: 'hiring', format: 'behavioral' }) }, { label: '案例问题', href: questionPath({ scenario: 'hiring', format: 'case' }) }] },
+      { title: '校准不同面试官的证据', text: '按目标责任范围约定证据标准，并分开记录观察事实、个人推论和仍未回答的问题。', links: [{ label: '证据与追问方法', href: pathFor({ type: 'framework' }, locale, base) }, { label: '阶段能力模型', href: pathFor({ type: 'capability-model' }, locale, base) }] },
+      { title: '复盘流程与判断', text: '检查每轮是否增加了有效信息、公平对待候选人，并解决了岗位画像中最重要的不确定性。', links: [{ label: '招聘面试问题', href: pathFor({ type: 'scenario', id: 'hiring' }, locale, base) }] },
     ],
   },
   {
@@ -138,7 +140,7 @@ const paths = en ? [
   <p class="intro scenario-intro">{en ? 'Choose what you need to do now. Each path connects the question bank with relevant role, evidence, and preparation tools. The same questions remain available through independent views such as role, topic, responsibility scope, and format.' : '选择你现在要完成的事。每条路径把问题库与相关岗位、证据整理和准备工具连起来；同一道题仍可按岗位、主题、责任范围和题型等独立维度查找。'}</p>
 
   <section class="scenario-path-list" aria-label={en ? 'Goal-based task paths' : '按目标组织的任务路径'}>
-    {paths.map((path) => <details class="scenario-path">
+    {paths.map((path) => <details class="scenario-path" id={path.id}>
       <summary>
         <span class="scenario-path-heading"><strong>{path.title}</strong><span>{path.summary}</span></span>
         <Icon name="chevron-right" size={18} />
@@ -161,3 +163,15 @@ const paths = en ? [
     <a href={questionPath({ format: 'system-design' })}>{en ? 'By format' : '按题型'}</a>
   </nav>
 </SiteLayout>
+
+<script>
+  function openTargetPath() {
+    const target = document.getElementById(location.hash.slice(1));
+    if (target instanceof HTMLDetailsElement && target.classList.contains('scenario-path')) {
+      target.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+  }
+  openTargetPath();
+  window.addEventListener('hashchange', openTargetPath);
+</script>

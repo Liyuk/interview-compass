@@ -69,6 +69,32 @@ const cardSteps = en ? [
   ['决策与取舍', '补足背景后，有哪些选项和后果需要权衡？'],
   ['评估锚点', '如何参照本题的 1–4 分表现标准理解证据？'],
 ];
+const coreSteps = en ? [
+  ['Set the comparison', 'Compare with internal history, a similar case, an industry or competitor reference, an alternative approach, and doing nothing. State what is and is not comparable.'],
+  ['Choose a challenging goal', 'Describe the baseline, intended change, constraints, and why the target is difficult. Keep stop and direction-change conditions visible.'],
+  ['Generate more than one route', 'Compare plausible solutions—including technical implementations—by correctness, quality, cost, risk, reversibility, and fit to context. Do not force a fixed number of options.'],
+  ['Reconstruct real contribution', 'Separate role and authority from team context. Ask what the person decided, implemented, tested, negotiated, delegated, or changed in practice.'],
+  ['Test causality and outcome', 'Use a suitable metric and time window, check counter-signals and other causes, then explain what can reasonably be attributed.'],
+  ['Find and express the highlight', 'Show why the contribution exceeded the relevant role expectation, what evidence supports it, what limits the claim, and what learning transferred.'],
+] : [
+  ['明确比较对象', '比较内部历史、相似案例、行业或竞品、备选方案，以及不做的代价；说明哪些可比、哪些不可比。'],
+  ['设定有挑战的目标', '讲清起点、希望改变什么、受到什么约束，以及目标为何有难度；保留停止或转向条件。'],
+  ['展开多种可行思路', '技术实现也要比较多种合理方案，检查正确性、质量、成本、风险、可逆性和场景适配；不为凑数强行列选项。'],
+  ['还原真实贡献', '区分岗位权限、团队背景与个人责任；追问本人实际作了什么判断、实现、测试、协商、授权或改变。'],
+  ['核验因果与结果', '选择合适指标和观察周期，检查反向信号及其他原因，再说明哪些结果能够合理归因。'],
+  ['挖掘并体现亮点', '说明贡献为何超出相关岗位常见要求、证据是什么、主张边界在哪里，以及经验如何迁移。'],
+];
+const growthLenses = en ? [
+  ['Learning', 'How a knowledge gap was found, tested, corrected, and transferred.'],
+  ['Self-direction', 'How useful work was initiated and advanced while adapting or stopping when evidence changed.'],
+  ['Thinking', 'How the problem was decomposed, modeled, compared, and the judgment updated.'],
+  ['Resilience', 'How the person recovered from setbacks, sought support, and changed the next attempt.'],
+] : [
+  ['学习', '如何发现知识缺口、验证理解、修正错误并迁移到新问题。'],
+  ['自驱', '如何主动识别并推进有价值的事情，也能根据证据调整或停止。'],
+  ['思维', '如何拆解、建模、比较方案，并依据反证更新判断。'],
+  ['韧性', '受挫后如何恢复行动、寻求支持，并改变下一次尝试。'],
+];
 ---
 
 <SiteLayout locale={locale} route={{ type: 'framework' }} description={en ? 'How Interview Compass structures questions, interviewer follow-ups, candidate stories, and two-way due diligence.' : '说明 Interview Compass 如何组织面试官追问、候选人经历表达与双向尽调问题。'}>
@@ -78,6 +104,17 @@ const cardSteps = en ? [
     <p class="intro">{en ? 'The library is a set of prompts, not model answers. This page explains the reasoning behind those prompts and gives both sides a practical way to prepare a useful conversation.' : '本站提供问题和问题背后的考察逻辑，不提供标准答案。本页说明这些问题如何形成，也帮助双方把面试变成有证据、有来回的有效对话。'}</p>
     <div class="framework-principle"><strong>{en ? 'Shared principle' : '共同原则'}</strong><span>{en ? 'Ask about observable work and context; distinguish facts, interpretation, and uncertainty.' : '围绕可观察的工作与背景提问；把事实、解释和不确定性分开。'}</span></div>
   </header>
+
+  <section class="framework-core" aria-labelledby="core-method-heading">
+    <div class="framework-section-heading"><span>00A</span><div><p class="eyebrow">{en ? 'THE CORE VIEWPOINT' : '本站的核心判断线索'}</p><h2 id="core-method-heading">{en ? 'Compare, challenge, execute, and verify' : '比较、挑战、执行，再核验证据'}</h2><p>{en ? 'The same reasoning applies to technical, product, operations, hiring, and promotion questions. The evidence changes with the role; the inquiry stays contextual.' : '这套思路贯穿技术、产品、运营、招聘与晋升问题。证据随岗位和责任变化，判断始终要回到具体背景。'}</p></div></div>
+    <ol class="framework-core-steps">{coreSteps.map(([title, text], index) => <li><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol>
+    <div class="growth-lenses"><h3>{en ? 'Four lenses for sustained growth' : '四项持续成长观察视角'}</h3><div>{growthLenses.map(([title, text]) => <article><strong>{title}</strong><p>{text}</p></article>)}</div></div>
+    <nav class="framework-core-links" aria-label={en ? 'Explore questions through this method' : '沿这套方法继续浏览'}>
+      <a href={pathFor({ type: 'collection', id: 'interviewer-evidence' }, locale, base)}>{en ? 'Interviewer evidence set' : '面试官取证精选'}</a>
+      <a href={pathFor({ type: 'collection', id: 'promotion-dialogue' }, locale, base)}>{en ? 'Promotion conversation set' : '晋升对话精选'}</a>
+      <a href={pathFor({ type: 'scenario', id: 'operations-review' }, locale, base)}>{en ? 'Project and operations review' : '项目与运营复盘题'}</a>
+    </nav>
+  </section>
 
   <section class="framework-card-anatomy" aria-labelledby="card-anatomy-heading">
     <div class="framework-section-heading"><span>00</span><div><p class="eyebrow">{en ? 'HOW A QUESTION CARD IS BUILT' : '一道题如何形成'}</p><h2 id="card-anatomy-heading">{en ? 'From a real question to bounded evidence' : '从真实问题到有边界的证据'}</h2><p>{en ? 'Each card is designed to help someone ask, clarify, and reason. Its inference is a hypothesis to check, not a conclusion about a person.' : '每张题卡帮助提问、补足背景并进行判断。潜在推论只是待核实的假设，不是对人的结论。'}</p></div></div>

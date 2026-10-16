@@ -63,6 +63,38 @@ for (const record of published) {
 }
 
 const publishedIds = new Set(published.map((record) => record.questionId));
+const analysesPath = 'src/data/question-specific-analyses.json';
+let specificAnalyses = [];
+try {
+  specificAnalyses = JSON.parse(await readFile(analysesPath, 'utf8'));
+  if (!Array.isArray(specificAnalyses)) throw new Error('expected a JSON array');
+} catch (error) {
+  errors.push(`${analysesPath}: ${error.message}`);
+}
+const analysisKeys = new Set();
+const analysesByQuestion = new Map();
+for (const entry of specificAnalyses) {
+  const key = `${entry.questionId}:${entry.locale}`;
+  if (analysisKeys.has(key)) errors.push(`${analysesPath}: duplicate analysis for ${key}`);
+  analysisKeys.add(key);
+  if (!publishedIds.has(entry.questionId)) errors.push(`${analysesPath}: analysis references unknown question ${entry.questionId}`);
+  if (!['zh-CN', 'en'].includes(entry.locale) || !published.some((record) => record.questionId === entry.questionId && record.locale === entry.locale)) {
+    errors.push(`${analysesPath}: analysis locale does not match a published question for ${key}`);
+  }
+  if (entry.reviewStatus !== 'reviewed' || !entry.objectiveProblem || !entry.inference?.hypothesis
+    || !Array.isArray(entry.inference?.alternatives) || !entry.inference.alternatives.length
+    || !Array.isArray(entry.contextQuestions) || !entry.contextQuestions.length
+    || !Array.isArray(entry.comparisons) || !entry.comparisons.length
+    || !entry.decisionRule || !Array.isArray(entry.benefits) || !entry.benefits.length
+    || !Array.isArray(entry.costs) || !entry.costs.length
+    || ['notPassing', 'passing', 'excellent', 'exceptional'].some((level) => !entry.anchors?.[level])) {
+    errors.push(`${analysesPath}: incomplete reviewed analysis for ${key}`);
+  }
+  analysesByQuestion.set(entry.questionId, [...(analysesByQuestion.get(entry.questionId) ?? []), entry.locale]);
+}
+for (const [id, locales] of analysesByQuestion) {
+  if (locales.length !== 2 || new Set(locales).size !== 2) errors.push(`${analysesPath}: expected one reviewed analysis per locale for ${id}`);
+}
 for (const error of validateQuestionCollections(questionCollections, published)) errors.push(`question collections: ${error}`);
 for (const path of crossDomainPaths) {
   const matching = (locale) => published.filter((record) => record.locale === locale

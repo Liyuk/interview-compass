@@ -1,0 +1,40 @@
+<script>
+  import { readingReturnPath } from '../lib/reading-journey';
+  import type { Locale } from '../lib/taxonomy';
+  const key = 'interview-compass-reading-return';
+  const locale: Locale = document.documentElement.lang === 'en' ? 'en' : 'zh-CN';
+  const base = import.meta.env.BASE_URL;
+  const prefix = `${base.replace(/\/$/, '')}/${locale === 'en' ? 'en/' : ''}questions/`;
+  const current = `${location.pathname}${location.search}${location.hash}`;
+  try {
+    const saved = JSON.parse(sessionStorage.getItem(key) ?? 'null');
+    if (saved && typeof saved.from === 'string') {
+      const from = readingReturnPath(saved.from, locale, base);
+      const link = document.querySelector<HTMLAnchorElement>('[data-reading-return]');
+      if (link && from && saved.to === location.pathname) {
+        link.href = from;
+        link.hidden = false;
+      }
+      if (from === current) {
+        if (Array.isArray(saved.open)) saved.open.forEach((index: unknown) => {
+          if (typeof index === 'number') document.querySelectorAll('details')[index]?.setAttribute('open', '');
+        });
+        if (typeof saved.y === 'number' && Number.isFinite(saved.y)) requestAnimationFrame(() => scrollTo(0, Math.max(0, saved.y)));
+      }
+    }
+  } catch { /* Storage is optional; canonical navigation still works. */ }
+  document.addEventListener('click', (event) => {
+    const anchor = event.target instanceof Element ? event.target.closest('a') : null;
+    if (!anchor || anchor.hasAttribute('data-reading-return')) return;
+    const target = new URL(anchor.href, location.href);
+    if (target.origin !== location.origin || !target.pathname.startsWith(prefix) || target.pathname === prefix) return;
+    const source = new URL(location.href);
+    const query = document.querySelector<HTMLInputElement>('#site-search')?.value.trim();
+    if (anchor.classList.contains('search-result') && query) source.searchParams.set('q', query);
+    const from = readingReturnPath(`${source.pathname}${source.search}${source.hash}`, locale, base);
+    if (!from) return;
+    try {
+      sessionStorage.setItem(key, JSON.stringify({ from, to: target.pathname, y: scrollY, open: [...document.querySelectorAll('details')].flatMap((item, i) => item.open ? [i] : []) }));
+    } catch { /* Private browsing or storage restrictions must not block links. */ }
+  });
+</script>

@@ -10,14 +10,16 @@ export default defineConfig({
     starlight({
       title: 'Interview Compass',
       pagefind: false,
+      components: {
+        Header: './src/components/starlight/Header.astro',
+        Footer: './src/components/starlight/Footer.astro',
+      },
       defaultLocale: 'root',
       locales: {
         root: { label: '简体中文', lang: 'zh-CN' },
         en: { label: 'English', lang: 'en' },
       },
-      sidebar: [
-        { label: '使用说明', translations: { en: 'Guide' }, items: [{ slug: 'handbook' }] },
-      ],
+      sidebar: [],
       editLink: { baseUrl: 'https://github.com/Liyuk/interview-compass/edit/main/' },
     }),
   ],

@@ -22,14 +22,17 @@ const record = (locale: 'zh-CN' | 'en') => ({
 });
 
 describe('question evaluation guide', () => {
-  it('shows the requested four levels and ties the anchors to question-specific signals', () => {
+  it('shows shared four-level anchors without pretending an unreviewed analysis is specific', () => {
     const guide = questionEvaluation(record('zh-CN'));
     expect(guide.levels.map(({ id }) => id)).toEqual(['not-pass', 'pass', 'excellent', 'exceptional']);
     expect(guide.levels.map(({ score }) => score)).toEqual([1, 2, 3, 4]);
     expect(guide.levels.map(({ label }) => label)).toEqual(['1 · 不通过', '2 · 通过', '3 · 优秀', '4 · 卓越']);
-    expect(guide.levels[1].reference).toContain('按明确口径比较项目');
-    expect(guide.levels[2].reference).toContain('说明依赖和容量冲突');
+    expect(guide.levels[1].reference).not.toContain('按明确口径比较项目');
     expect(guide.levels[3].reference).toMatch(/可归因|归因/);
+    expect(guide.specific).toBe(false);
+    expect(guide.reviewLabel).toContain('逐题分析待校准');
+    expect(guide.objective).not.toContain(record('zh-CN').question);
+    expect(guide.inference).not.toContain(record('zh-CN').signals[0]);
     expect(guide.note).toContain('2 分“通过”为基线');
     expect(guide.objectiveTitle).toBe('需要解决或厘清的客观问题');
     expect(guide.decisionTitle).toBe('基于上下文的决策');
@@ -43,11 +46,10 @@ describe('question evaluation guide', () => {
     const guide = questionEvaluation(record('en'));
     expect(guide.title).toBe('Assessment guide');
     expect(guide.contextQuestions.join(' ')).toMatch(/goal|constraint|evidence/i);
-    expect(guide.levels[1].reference).toContain('Compare initiatives on explicit criteria');
+    expect(guide.levels[1].reference).toContain('checkable line of reasoning');
     expect(guide.benefitsTitle).toBe('Benefits created');
     expect(guide.costsTitle).toBe('Costs and risks');
-    expect(guide.inference).toContain(record('en').signals[0]);
-    expect(guide.inference).toContain(record('en').intent.toLowerCase());
+    expect(guide.inference).toContain('No question-specific inference');
     expect(guide.contextQuestions[0]).toBe(record('en').followUps[0]);
     expect(guide.contextQuestions[1]).toBe('What goal, baseline, constraints, and responsibility boundary applied?');
     expect(guide.contextQuestions.slice(1).join(' ')).not.toMatch(/[\u3400-\u9fff]/);
@@ -57,15 +59,23 @@ describe('question evaluation guide', () => {
     const chinese = record('zh-CN');
     const guide = questionEvaluation(chinese);
 
-    expect(guide.objective).toContain(chinese.question);
+    expect(guide.objective).not.toContain(chinese.question);
     expect(guide.intent).toBe(chinese.intent);
-    expect(guide.inference).toContain(chinese.signals[0]);
-    expect(guide.inference).toContain(chinese.intent);
-    expect(guide.inference).toMatch(/假设|核实/);
+    expect(guide.inference).toContain('尚无经过复核的专属推论');
     expect(guide.contextQuestions[0]).toBe(chinese.followUps[0]);
     expect(guide.decision).toMatch(/补足上下文|上下文/);
     expect(guide.benefits.join(' ')).toMatch(/目标|价值|受益/);
     expect(guide.costs.join(' ')).toMatch(/成本|风险/);
+  });
+
+  it('uses reviewed, question-specific context, comparisons, trade-offs, and anchors when available', () => {
+    const specific = { ...record('zh-CN'), questionId: 'c-metrics-causality-competitor-benchmark' };
+    const guide = questionEvaluation(specific);
+    expect(guide.specific).toBe(true);
+    expect(guide.reviewLabel).toContain('逐题分析 · 已复核');
+    expect(guide.objective).toContain('竞品指标');
+    expect(guide.comparisons.length).toBeGreaterThan(0);
+    expect(guide.levels[1].reference).toContain('主要口径');
   });
 
   it('renders the complete structured guide for every published bilingual question', async () => {
@@ -80,13 +90,17 @@ describe('question evaluation guide', () => {
       const guide = questionEvaluation(question);
       expect(guide.objective, file).toBeTruthy();
       expect(guide.intent, file).toBe(question.intent);
-      expect(guide.inference, file).toContain(question.signals[0]);
+      if (!guide.specific) {
+        expect(guide.objective, file).not.toContain(question.question);
+        expect(guide.inference, file).not.toContain(question.signals[0]);
+        expect(guide.reviewNote, file).toMatch(/通用|shared prompts/i);
+      }
       expect(guide.contextQuestions.length, file).toBeGreaterThanOrEqual(4);
       expect(guide.decision, file).toBeTruthy();
       expect(guide.benefits.length, file).toBe(2);
       expect(guide.costs.length, file).toBe(2);
       expect(guide.levels.map(({ score }) => score), file).toEqual([1, 2, 3, 4]);
-      expect(guide.levels.every(({ reference }) => reference.includes(question.signals[0])), file).toBe(true);
+      expect(guide.levels.every(({ reference }) => reference.trim().length > 0), file).toBe(true);
       if (question.locale === 'en') {
         const localizedGuide = [
           guide.objective,

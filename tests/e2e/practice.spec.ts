@@ -7,6 +7,9 @@ test('practice starts from a question, keeps the draft locally, and builds a pri
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('回答练习');
   await expect(page.getByRole('heading', { name: '读懂题目' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '这道题想了解什么？' })).toBeVisible();
+  await expect(page.locator('#practice-analysis-status')).toContainText('逐题分析待校准');
+  await expect(page.getByRole('heading', { name: '先弄清题目要解决什么' })).toBeVisible();
+  await expect(page.locator('#selected-question-objective')).toContainText('专属客观问题尚未复核');
   await expect(page.getByRole('heading', { name: '回答时可以留意这些信号' })).toBeVisible();
   await expect(page.getByLabel('用自己的话自由作答')).toBeHidden();
   await page.getByLabel('试着用自己的话复述题意（可选）').fill('我需要说明怎么处理输入边界，并复盘一次真实失误。');
@@ -27,6 +30,7 @@ test('practice starts from a question, keeps the draft locally, and builds a pri
   await page.getByRole('button', { name: '生成外部分析请求' }).click();
   const prompt = page.locator('#practice-prompt');
   await expect(prompt).toHaveValue(/考察意图/);
+  await expect(prompt).toHaveValue(/分析复核状态/);
   await expect(prompt).toHaveValue(/我先确认了边界条件/);
   await expect(prompt).toHaveValue(/我需要说明怎么处理输入边界/);
   await expect(prompt).toHaveValue(/自查/);

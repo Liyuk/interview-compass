@@ -1,0 +1,8 @@
+---
+import SiteFooter from '../SiteFooter.astro';
+import type { Locale } from '../../lib/taxonomy';
+
+const locale: Locale = Astro.locals.starlightRoute.locale === 'en' ? 'en' : 'zh-CN';
+---
+
+<SiteFooter locale={locale} />
