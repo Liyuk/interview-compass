@@ -9,9 +9,19 @@ intent: "Assesses whether you can identify personal and systemic causes of repea
 signals: ["List interruption sources, commitment conflicts, and missed work","Agree with owners what to stop, defer, or protect","Create one priority intake path and focused work blocks","Check whether errors, recovery time, and delivery predictability improve"]
 primaryCapability: "learning-adaptation.resilience-recovery"
 topics: ["resilience","learning","communication"]
-roles: ["engineering","product","manager"]
+roles:
+  - engineering
+  - product
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["individual","team"]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["How would you escalate when every requester considers their work urgent?","How would you tell whether an adjustment merely shifts the load to someone else?"]

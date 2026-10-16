@@ -13,9 +13,17 @@ signals:
   - Follows up on what was learned after asking, avoiding asking again about the same kind of problem
 primaryCapability: work-responsibility.boundaries
 topics: [learning, communication]
-roles: [engineering, product, operations]
+roles:
+  - engineering
+  - product
+  - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
 scenarios: [interview, campus]
 formats: [behavioral]
 followUps:

@@ -13,9 +13,20 @@ signals:
   - Says how dependence on engineering is reduced before the tool exists
 primaryCapability: collaboration.negotiation
 topics: [operations, negotiation, communication]
-roles: [operations, marketing, product]
+roles:
+  - operations
+  - marketing
+  - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [behavioral, case]
 followUps:

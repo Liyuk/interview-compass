@@ -13,9 +13,18 @@ signals:
   - 对方最终没有采纳时，说明怎样执行并保留自己的意见
 primaryCapability: collaboration.negotiation
 topics: [negotiation, product-thinking, communication]
-roles: [engineering, backend, frontend, product]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - product
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral]
 followUps:

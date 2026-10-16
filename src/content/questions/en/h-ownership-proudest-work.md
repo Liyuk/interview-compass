@@ -12,9 +12,21 @@ signals:
   - Names the cost paid for it, or what was given up
 primaryCapability: work-responsibility.ownership
 topics: [learning]
-roles: [engineering, product, operations, manager, design]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - design
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, promotion]
 formats: [behavioral]
 followUps:

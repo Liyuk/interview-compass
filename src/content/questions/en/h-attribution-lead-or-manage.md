@@ -12,9 +12,21 @@ signals:
   - Does not overstate the role, and does not dodge the judgments you carried
 primaryCapability: work-responsibility.attribution
 topics: [ethics, promotion]
-roles: [engineering, product, operations, manager, pmo]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral]
 followUps:

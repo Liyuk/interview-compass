@@ -13,9 +13,20 @@ signals:
   - 说明什么情况下会升级，以及怎样避免个人对立
 primaryCapability: collaboration.conflict-navigation
 topics: [conflict-resolution, communication]
-roles: [engineering, product, operations, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

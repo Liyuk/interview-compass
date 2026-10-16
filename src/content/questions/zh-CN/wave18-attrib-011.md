@@ -14,9 +14,17 @@ primaryCapability: work-responsibility.attribution
 roles:
   - manager
   - pmo
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - organization
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios:
   - interview
   - hiring

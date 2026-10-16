@@ -13,9 +13,21 @@ signals:
   - State memory or record limits for uncertain details and correct errors proactively; inconsistency alone does not prove fabrication.
 primaryCapability: work-responsibility.integrity
 topics: [ethics, communication]
-roles: [engineering, product, operations, manager, design]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - design
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, self-reflection]
 formats: [behavioral]
 followUps:

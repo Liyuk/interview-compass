@@ -13,9 +13,21 @@ signals:
   - Separates what was done for the team from what was done for personal visibility
 primaryCapability: work-responsibility.ownership
 topics: [learning, ethics, execution]
-roles: [engineering, product, operations, manager, design]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - design
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral]
 followUps:

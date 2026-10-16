@@ -9,9 +9,19 @@ intent: "考察是否能识别持续中断的个人与系统原因，并采取�
 signals: ["列出打断来源、承诺冲突和已产生的遗漏","同负责人协商停止、延后或保护的工作","设置单一优先级入口和集中处理时段","观察错误、恢复时间和交付可预期性是否改善"]
 primaryCapability: "learning-adaptation.resilience-recovery"
 topics: ["resilience","learning","communication"]
-roles: ["engineering","product","manager"]
+roles:
+  - engineering
+  - product
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["individual","team"]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["当每个请求方都认为自己的事项最紧急时，如何决策升级？","如何判断调整只是把负荷转给别人？"]

@@ -20,10 +20,17 @@ roles:
   - product
   - pmo
   - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
-careerTracks: [team-manager, senior-manager, individual-contributor]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios:
   - interview
   - promotion

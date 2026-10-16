@@ -12,9 +12,18 @@ signals:
   - Separates fact, conjecture, and preference
 primaryCapability: collaboration.communication
 topics: [communication]
-roles: [engineering, product]
+roles:
+  - engineering
+  - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [behavioral, case]
 source:

@@ -13,9 +13,21 @@ signals:
   - Says what they are looking for and how they would tell whether the new place provides it
 primaryCapability: work-responsibility.expectations-fit
 topics: [learning, ethics]
-roles: [engineering, product, operations, manager, design]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - design
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, self-reflection]
 formats: [behavioral]
 followUps:

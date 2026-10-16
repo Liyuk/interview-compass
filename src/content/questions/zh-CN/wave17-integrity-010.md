@@ -16,10 +16,17 @@ topics:
 roles:
   - manager
   - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios:
   - interview
   - hiring

@@ -13,9 +13,20 @@ signals:
   - When resources are not granted, says how the commitment is narrowed rather than pushing on regardless
 primaryCapability: collaboration.stakeholder-influence
 topics: [communication, resource-allocation, negotiation]
-roles: [manager, product, engineering, pmo]
+roles:
+  - manager
+  - product
+  - engineering
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams, organization]
-careerTracks: [team-manager, senior-manager, individual-contributor]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

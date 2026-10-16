@@ -12,9 +12,18 @@ signals:
   - 区分事实、推测和偏好
 primaryCapability: collaboration.communication
 topics: [communication]
-roles: [engineering, product]
+roles:
+  - engineering
+  - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [behavioral, case]
 source:

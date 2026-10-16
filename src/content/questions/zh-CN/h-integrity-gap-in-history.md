@@ -13,9 +13,21 @@ signals:
   - 对不确定细节说明记忆或记录限制，发现差错时主动更正，不把前后不同直接判作造假。
 primaryCapability: work-responsibility.integrity
 topics: [ethics, communication]
-roles: [engineering, product, operations, manager, design]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - design
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, self-reflection]
 formats: [behavioral]
 followUps:

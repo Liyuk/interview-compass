@@ -13,9 +13,21 @@ signals:
   - 说明如何检查改进是否真的带来了变化
 primaryCapability: learning-adaptation.structured-reflection
 topics: [learning, execution]
-roles: [engineering, product, operations, pmo, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - pmo
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection, operations-review]
 formats: [behavioral, artifact-review]
 followUps:

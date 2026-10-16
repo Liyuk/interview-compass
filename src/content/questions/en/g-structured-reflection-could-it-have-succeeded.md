@@ -13,9 +13,21 @@ signals:
   - Admits that some projects might not have succeeded even if redone
 primaryCapability: learning-adaptation.structured-reflection
 topics: [learning, planning]
-roles: [engineering, product, operations, pmo, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - pmo
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

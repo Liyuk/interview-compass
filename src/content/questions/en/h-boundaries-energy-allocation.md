@@ -13,9 +13,19 @@ signals:
   - Says how the allocation is checked for reasonableness and adjusted in time
 primaryCapability: work-responsibility.boundaries
 topics: [management, planning, learning]
-roles: [manager, engineering, product]
+roles:
+  - manager
+  - engineering
+  - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral]
 followUps:

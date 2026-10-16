@@ -9,9 +9,19 @@ intent: "Assesses whether you can notice early risk signals, explain workload an
 signals: ["Describe the situation using commitments, hours, errors, and task avoidance","Separate a temporary peak from a sustained capacity gap","Request changes to scope, deadline, priority, or collaboration","Set a review date and clarify how work resumes after recovery"]
 primaryCapability: "learning-adaptation.resilience-recovery"
 topics: ["resilience","learning","communication"]
-roles: ["engineering","product","manager"]
+roles:
+  - engineering
+  - product
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["individual","team"]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["If support is denied while risk accumulates, how would you protect delivery next?","How would you ask without implying colleagues lack capability?"]

@@ -10,6 +10,28 @@ const entry: ApplicabilityEntry = {
   profiles: [{ roleId: 'product', stageIds: ['product-entry', 'product-independent'] }, { roleId: 'engineering', stageIds: ['senior-engineer'] }],
 };
 describe('explicit role and stage applicability', () => {
+  it('includes shared clarification for technical subroles without turning peer-to-report feedback into junior work', () => {
+    const entries: ApplicabilityEntry[] = JSON.parse(readFileSync(new URL('../src/content/question-applicability.json', import.meta.url), 'utf8'));
+    const clarification = entries.find(item => item.questionId === 'e-communication-clarify-vague-question');
+    const newManager = entries.find(item => item.questionId === 'e-feedback-peer-becomes-report');
+    for (const roleId of ['frontend', 'backend', 'mobile', 'ai-engineer']) {
+      expect(matchesTarget(clarification, { roleId, stageId: 'junior-engineer' })).toBe(true);
+      expect(matchesTarget(newManager, { roleId, stageId: 'junior-engineer' })).toBe(false);
+      expect(matchesTarget(newManager, { roleId, stageId: 'engineering-manager' })).toBe(true);
+    }
+  });
+  it('keeps shared growth and responsibility visible to technical subroles while retaining specialty and management boundaries', () => {
+    const entries: ApplicabilityEntry[] = JSON.parse(readFileSync(new URL('../src/content/question-applicability.json', import.meta.url), 'utf8'));
+    const find = (id: string) => entries.find(item => item.questionId === id);
+    for (const roleId of ['frontend', 'backend', 'mobile', 'ai-engineer']) {
+      expect(matchesTarget(find('g-self-direction-unassigned-goal'), { roleId, stageId: 'junior-engineer' })).toBe(true);
+      expect(matchesTarget(find('h-attribution-team-vs-personal'), { roleId, stageId: 'staff-engineer' })).toBe(true);
+      expect(matchesTarget(find('exp1500-h-025'), { roleId, stageId: 'engineering-manager' })).toBe(true);
+      expect(matchesTarget(find('exp1500-h-025'), { roleId, stageId: 'junior-engineer' })).toBe(false);
+    }
+    expect(matchesTarget(find('exp1500-g-002'), { roleId: 'engineering', stageId: 'mid-level-engineer' })).toBe(true);
+    expect(matchesTarget(find('exp1500-g-002'), { roleId: 'backend', stageId: 'mid-level-engineer' })).toBe(false);
+  });
   it('keeps reflection on actual resources and constraints available across technical stages without cloning the question', () => {
     const entries: ApplicabilityEntry[] = JSON.parse(readFileSync(new URL('../src/content/question-applicability.json', import.meta.url), 'utf8'));
     const constraints = entries.filter(entry => entry.questionId === 'd-capacity-resources-and-scope');

@@ -12,9 +12,18 @@ signals:
   - 说明接下来如何继续推进，或如何求助
 primaryCapability: learning-adaptation.resilience-recovery
 topics: [learning, communication]
-roles: [engineering, product]
+roles:
+  - engineering
+  - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [behavioral]
 source:

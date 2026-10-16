@@ -12,9 +12,19 @@ signals:
   - 决策形成后能执行，并说明如何让团队跟上
 primaryCapability: collaboration.conflict-navigation
 topics: [prioritization, conflict-resolution, communication]
-roles: [engineering, product, manager]
+roles:
+  - engineering
+  - product
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 source:

@@ -9,9 +9,19 @@ intent: "考察能否从表达方式中提取有效事实、保持必要边界�
 signals: ["区分可验证的具体事实与推测性评价","先稳定情绪，再确认需要澄清的内容","回应可改进事项并约定后续协作规则","必要时处理不尊重行为而不回避工作问题"]
 primaryCapability: "learning-adaptation.resilience-recovery"
 topics: ["resilience","learning","communication"]
-roles: ["engineering","product","manager"]
+roles:
+  - engineering
+  - product
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["individual","team"]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["如果批评事实错误但语气很强烈，怎样先处理交付再澄清？","何时需要第三方介入？"]

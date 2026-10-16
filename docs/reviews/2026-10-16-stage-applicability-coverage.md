@@ -14,36 +14,36 @@
 
 | 岗位 | 阶段 ID | 已审核题 | A | B | C | D | E | F | G | H |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| engineering | junior-engineer | 292 | 49 | 12 | 17 | 7 | 79 | 0 | 62 | 66 |
-| engineering | mid-level-engineer | 815 | 262 | 135 | 115 | 86 | 84 | 5 | 62 | 66 |
-| engineering | senior-engineer | 1018 | 309 | 165 | 157 | 134 | 85 | 37 | 66 | 65 |
-| engineering | staff-engineer | 1036 | 309 | 165 | 162 | 140 | 85 | 44 | 66 | 65 |
-| engineering | engineering-manager | 1099 | 277 | 165 | 162 | 141 | 86 | 139 | 64 | 65 |
-| engineering | manager-of-managers | 1124 | 277 | 165 | 162 | 141 | 86 | 164 | 64 | 65 |
-| frontend | junior-engineer | 78 | 41 | 9 | 17 | 7 | 4 | 0 | 0 | 0 |
-| frontend | mid-level-engineer | 469 | 195 | 70 | 113 | 82 | 4 | 5 | 0 | 0 |
-| frontend | senior-engineer | 634 | 225 | 89 | 153 | 126 | 4 | 37 | 0 | 0 |
-| frontend | staff-engineer | 652 | 225 | 89 | 158 | 132 | 4 | 44 | 0 | 0 |
-| frontend | engineering-manager | 722 | 199 | 89 | 158 | 133 | 4 | 139 | 0 | 0 |
-| frontend | manager-of-managers | 747 | 199 | 89 | 158 | 133 | 4 | 164 | 0 | 0 |
-| backend | junior-engineer | 76 | 37 | 12 | 17 | 7 | 3 | 0 | 0 | 0 |
-| backend | mid-level-engineer | 551 | 223 | 133 | 105 | 82 | 3 | 5 | 0 | 0 |
-| backend | senior-engineer | 739 | 261 | 163 | 145 | 130 | 3 | 37 | 0 | 0 |
-| backend | staff-engineer | 757 | 261 | 163 | 150 | 136 | 3 | 44 | 0 | 0 |
-| backend | engineering-manager | 831 | 239 | 163 | 150 | 137 | 3 | 139 | 0 | 0 |
-| backend | manager-of-managers | 856 | 239 | 163 | 150 | 137 | 3 | 164 | 0 | 0 |
-| mobile | junior-engineer | 96 | 41 | 9 | 17 | 7 | 2 | 0 | 20 | 0 |
-| mobile | mid-level-engineer | 492 | 196 | 71 | 114 | 84 | 2 | 5 | 20 | 0 |
-| mobile | senior-engineer | 654 | 223 | 90 | 154 | 128 | 2 | 37 | 20 | 0 |
-| mobile | staff-engineer | 672 | 223 | 90 | 159 | 134 | 2 | 44 | 20 | 0 |
-| mobile | engineering-manager | 736 | 197 | 90 | 159 | 135 | 2 | 139 | 14 | 0 |
-| mobile | manager-of-managers | 761 | 197 | 90 | 159 | 135 | 2 | 164 | 14 | 0 |
-| ai-engineer | junior-engineer | 75 | 40 | 10 | 17 | 7 | 0 | 0 | 0 | 1 |
-| ai-engineer | mid-level-engineer | 510 | 218 | 101 | 105 | 80 | 0 | 5 | 0 | 1 |
-| ai-engineer | senior-engineer | 696 | 256 | 130 | 144 | 128 | 0 | 37 | 0 | 1 |
-| ai-engineer | staff-engineer | 714 | 256 | 130 | 149 | 134 | 0 | 44 | 0 | 1 |
-| ai-engineer | engineering-manager | 788 | 234 | 130 | 149 | 135 | 0 | 139 | 0 | 1 |
-| ai-engineer | manager-of-managers | 813 | 234 | 130 | 149 | 135 | 0 | 164 | 0 | 1 |
+| engineering | junior-engineer | 366 | 49 | 12 | 17 | 7 | 99 | 0 | 93 | 89 |
+| engineering | mid-level-engineer | 924 | 262 | 135 | 115 | 86 | 138 | 5 | 93 | 90 |
+| engineering | senior-engineer | 1136 | 309 | 165 | 157 | 134 | 147 | 37 | 97 | 90 |
+| engineering | staff-engineer | 1154 | 309 | 165 | 162 | 140 | 147 | 44 | 97 | 90 |
+| engineering | engineering-manager | 1217 | 277 | 165 | 162 | 141 | 151 | 139 | 87 | 95 |
+| engineering | manager-of-managers | 1242 | 277 | 165 | 162 | 141 | 151 | 164 | 87 | 95 |
+| frontend | junior-engineer | 335 | 41 | 9 | 17 | 7 | 99 | 0 | 73 | 89 |
+| frontend | mid-level-engineer | 766 | 195 | 70 | 113 | 82 | 138 | 5 | 73 | 90 |
+| frontend | senior-engineer | 944 | 225 | 89 | 153 | 126 | 147 | 37 | 77 | 90 |
+| frontend | staff-engineer | 962 | 225 | 89 | 158 | 132 | 147 | 44 | 77 | 90 |
+| frontend | engineering-manager | 1037 | 199 | 89 | 158 | 133 | 151 | 139 | 73 | 95 |
+| frontend | manager-of-managers | 1062 | 199 | 89 | 158 | 133 | 151 | 164 | 73 | 95 |
+| backend | junior-engineer | 324 | 37 | 12 | 17 | 7 | 98 | 0 | 66 | 87 |
+| backend | mid-level-engineer | 838 | 223 | 133 | 105 | 82 | 136 | 5 | 66 | 88 |
+| backend | senior-engineer | 1039 | 261 | 163 | 145 | 130 | 145 | 37 | 70 | 88 |
+| backend | staff-engineer | 1057 | 261 | 163 | 150 | 136 | 145 | 44 | 70 | 88 |
+| backend | engineering-manager | 1137 | 239 | 163 | 150 | 137 | 149 | 139 | 67 | 93 |
+| backend | manager-of-managers | 1162 | 239 | 163 | 150 | 137 | 149 | 164 | 67 | 93 |
+| mobile | junior-engineer | 355 | 41 | 9 | 17 | 7 | 99 | 0 | 93 | 89 |
+| mobile | mid-level-engineer | 791 | 196 | 71 | 114 | 84 | 138 | 5 | 93 | 90 |
+| mobile | senior-engineer | 966 | 223 | 90 | 154 | 128 | 147 | 37 | 97 | 90 |
+| mobile | staff-engineer | 984 | 223 | 90 | 159 | 134 | 147 | 44 | 97 | 90 |
+| mobile | engineering-manager | 1053 | 197 | 90 | 159 | 135 | 151 | 139 | 87 | 95 |
+| mobile | manager-of-managers | 1078 | 197 | 90 | 159 | 135 | 151 | 164 | 87 | 95 |
+| ai-engineer | junior-engineer | 325 | 40 | 10 | 17 | 7 | 98 | 0 | 66 | 87 |
+| ai-engineer | mid-level-engineer | 799 | 218 | 101 | 105 | 80 | 136 | 5 | 66 | 88 |
+| ai-engineer | senior-engineer | 998 | 256 | 130 | 144 | 128 | 145 | 37 | 70 | 88 |
+| ai-engineer | staff-engineer | 1016 | 256 | 130 | 149 | 134 | 145 | 44 | 70 | 88 |
+| ai-engineer | engineering-manager | 1096 | 234 | 130 | 149 | 135 | 149 | 139 | 67 | 93 |
+| ai-engineer | manager-of-managers | 1121 | 234 | 130 | 149 | 135 | 149 | 164 | 67 | 93 |
 | data | data-entry | 76 | 31 | 6 | 5 | 0 | 4 | 0 | 12 | 18 |
 | data | data-independent | 355 | 165 | 82 | 56 | 18 | 4 | 0 | 12 | 18 |
 | data | data-senior | 425 | 199 | 104 | 63 | 25 | 4 | 0 | 12 | 18 |
@@ -94,4 +94,4 @@
 
 ## 低覆盖解释与后续
 
-审阅完成后，逐项记录低覆盖原因；题量阈值只用于发现需要检查的组合，不作为内容质量分数。
+当前没有总题量为零或少于 10 题的组合。能力域内的零值需按实际职责理解：初级不设通用人员管理要求，专项技术也不自动要求其他职能掌握。不能为填满矩阵扩大标签。岗位模型仍是编辑性责任参照；总题量与覆盖不表示行业校准或逐题分析质量。

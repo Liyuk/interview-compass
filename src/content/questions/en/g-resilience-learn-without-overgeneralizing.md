@@ -9,9 +9,19 @@ intent: "Assesses whether you can seek actionable feedback after an ambiguous se
 signals: ["Ask reviewers for specific risks, evidence gaps, and decision criteria","Separate a weak proposal from poor timing or low current value","Propose a small validation or alternative path","Set review conditions and decide when to stop investing"]
 primaryCapability: "learning-adaptation.resilience-recovery"
 topics: ["resilience","learning","communication"]
-roles: ["engineering","product","manager"]
+roles:
+  - engineering
+  - product
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["individual","team"]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["How would you get independent calibration if key reviewers cannot provide more detail?","What evidence would make you stop defending the original proposal?"]
