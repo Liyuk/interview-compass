@@ -3,10 +3,7 @@ import '../styles/global.css';
 import Icon from './Icon.astro';
 import { navLabel, pathFor, switchLocaleRoute, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
-import { audienceRoles, pick } from '../lib/taxonomy';
-import { getRoleStages } from '../lib/role-stage-model';
 import { loadQuestions } from '../lib/site-data';
-import TargetSelector from './TargetSelector';
 import TargetCount from './TargetCount.astro';
 
 interface Props { locale: Locale; active?: string; route?: RouteRef }
@@ -14,7 +11,6 @@ const { locale, active = '', route = { type: 'home' } } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const other: Locale = en ? 'zh-CN' : 'en';
-const targetRoles = audienceRoles.map(role => ({ id: role.id, name: pick(role.name, locale), path: pathFor({ type: 'role-stage-model', role: role.id }, locale, base), stages: getRoleStages(role.id, locale).map(({ id, name, summary, tier }) => ({ id, name, summary, tier })) }));
 const questions = await loadQuestions(locale);
 const nav = [
   { key: 'scenarios', ref: { type: 'scenarios' } as RouteRef, label: navLabel('scenarios', locale) },
@@ -30,7 +26,6 @@ const nav = [
   document.documentElement.dataset.targetEnabled = 'true';
   setTimeout(() => { delete document.documentElement.dataset.targetPending; document.querySelectorAll('[data-library-pending]').forEach(element => element.removeAttribute('data-library-pending')); }, 2500);
 </script>
-<script type="application/json" data-target-options set:html={JSON.stringify(targetRoles).replace(/</g, '\\u003c')} />
 
 <header class="site-header">
   <a class="wordmark" href={pathFor({ type: 'home' }, locale, base)}>
@@ -41,7 +36,25 @@ const nav = [
   <nav id="primary-navigation" class="primary-nav" aria-label={en ? 'Main navigation' : '主导航'}>
     {nav.map((item) => <a href={pathFor(item.ref, locale, base)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
   </nav>
-  <TargetSelector roles={targetRoles} locale={locale} client:load />
+  <button type="button" class="profile-trigger" data-profile-trigger>
+    <span data-profile-label>{en ? 'All questions' : '全部题目'}</span>
+    <Icon name="chevron-down" size={16} />
+  </button>
+  <dialog class="profile-dialog" data-profile-dialog aria-labelledby="profile-dialog-title" aria-describedby="profile-dialog-description">
+    <h2 id="profile-dialog-title">{en ? 'Choose your preparation target' : '选择你的准备目标'}</h2>
+    <p id="profile-dialog-description">{en ? 'For engineers: choose your specialization and target responsibility. Questions and search will show only reviewed matches. You can switch or explore everything at any time.' : '面向工程师，选择专业方向和准备承担的责任阶段。题目与搜索将只显示已审核的匹配内容，随时可以切换或查看全部。'}</p>
+    <label for="profile-role">{en ? 'Role type' : '岗位类型'}</label>
+    <span class="select-control"><select id="profile-role"><option value="">{en ? 'Choose a role' : '选择岗位'}</option></select><Icon name="chevron-down" size={16} /></span>
+    <label for="profile-stage">{en ? 'Target stage' : '目标阶段'}</label>
+    <span class="select-control"><select id="profile-stage" disabled><option value="">{en ? 'Choose a stage' : '选择阶段'}</option></select><Icon name="chevron-down" size={16} /></span>
+    <p class="profile-stage-description" data-profile-stage-description aria-live="polite">{en ? 'Stages describe responsibility, not years of experience or company title equivalence.' : '阶段表示责任要求，不按年限或公司职级名称换算。'}</p>
+    <div class="profile-dialog-actions">
+      <button type="button" class="profile-apply" data-profile-apply disabled>{en ? 'Browse this target' : '按此目标浏览'}</button>
+      <button type="button" class="secondary-button" data-profile-all>{en ? 'Explore all questions' : '先看全部题目'}</button>
+    </div>
+    <p class="profile-local-note">{en ? 'Saved only in this browser. No account required.' : '仅保存在当前浏览器，无需账号。'}</p>
+    <button type="button" class="profile-close" data-profile-close aria-label={en ? 'Close target selection' : '关闭目标选择'}>{en ? 'Close' : '关闭'}</button>
+  </dialog>
   <div class="language-switch" role="group" aria-label={en ? 'Language' : '语言'}>
     <span aria-current="true">{en ? 'EN' : '中文'}</span><span aria-hidden="true"> / </span>
     <a href={switchLocaleRoute(route, other, base)} lang={other} hreflang={other}>{en ? '中文' : 'EN'}</a>
@@ -67,10 +80,12 @@ const nav = [
 
 <script>
   import '../lib/target-dom';
+  import { initTargetSelector } from '../lib/target-selector';
   import { pagefindFilters, withLinkPreference } from '../lib/target-preferences';
   import { getTargetContext, subscribeTarget } from '../lib/target-state';
   import { safeSearchResultHref } from '../lib/search-records';
 
+  initTargetSelector();
   document.body.dataset.navigationReady = 'true';
   const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
   toggle?.addEventListener('click', () => {

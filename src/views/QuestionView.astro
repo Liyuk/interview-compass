@@ -8,6 +8,7 @@ import { facetRoute, pathFor } from '../lib/routes';
 import { facetValuesOf } from '../lib/question-catalog';
 import { questionEvaluation } from '../lib/question-evaluation';
 import { buildQuestionAnalysisPrompt } from '../lib/question-analysis-prompt';
+import { searchKeywords } from '../lib/search-keywords';
 import { loadAllRecords } from '../lib/site-data';
 
 interface Props { locale: Locale; id: string }
@@ -27,6 +28,7 @@ const related = (record.relatedQuestions ?? []).flatMap((relation) => {
 });
 const contextKinds: FacetKind[] = ['roles', 'scenarios', 'topics', 'responsibilityScopes', 'careerTracks', 'formats'];
 const context = contextKinds.map((kind) => ({ kind, ids: facetValuesOf(record, kind) })).filter((group) => group.ids.length > 0);
+const keywords = searchKeywords(record, locale);
 const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: en ? 'Derived from' : '提炼自', inspired: en ? 'Inspired by' : '启发自', original: en ? 'Original to this site' : '本站原创' };
 ---
 <SiteLayout locale={locale} route={route} description={record.intent}>
@@ -63,6 +65,10 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
   </section>
 
   <div data-pagefind-body>
+    <p class="sr-only">{keywords.join(' ')}</p>
+    {record.scenarios.map((facetId) => <meta data-pagefind-filter={`scenario:${facetId}`} />)}
+    {record.topics.map((facetId) => <meta data-pagefind-filter={`topic:${facetId}`} />)}
+    {record.roles.map((facetId) => <meta data-pagefind-filter={`role:${facetId}`} />)}
     <section class="detail-block" aria-labelledby="objective-h">
       <p class={`analysis-review-status ${evaluation.specific ? 'is-reviewed' : 'is-shared'}`}><strong>{evaluation.reviewLabel}</strong><span>{evaluation.reviewNote}</span></p>
       <h2 id="objective-h">{evaluation.objectiveTitle}</h2>
@@ -202,34 +208,5 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
 </SiteLayout>
 
 <script>
-  const panel = document.querySelector<HTMLElement>('[data-analysis-panel]');
-  const generate = document.querySelector<HTMLButtonElement>('[data-generate-analysis]');
-  const textarea = document.querySelector<HTMLTextAreaElement>('#question-ai-prompt');
-  const copy = document.querySelector<HTMLButtonElement>('[data-copy-analysis]');
-  const status = document.querySelector<HTMLElement>('[data-copy-status]');
-  const en = document.documentElement.lang === 'en';
-  const basePrompt = textarea?.value ?? '';
-  function syncStagePrompt() {
-    const addition = document.querySelector<HTMLElement>('[data-question-stage]')?.dataset.stagePrompt;
-    if (textarea) textarea.value = addition ? `${basePrompt}\n\n${addition}` : basePrompt;
-  }
-  document.addEventListener('question-stage-change', syncStagePrompt);
-  syncStagePrompt();
-
-  generate?.addEventListener('click', () => {
-    syncStagePrompt();
-    if (panel) panel.hidden = false;
-    textarea?.focus();
-  });
-  copy?.addEventListener('click', async () => {
-    if (!textarea || !status) return;
-    try {
-      await navigator.clipboard.writeText(textarea.value);
-      status.textContent = en ? 'Copied.' : '已复制';
-    } catch {
-      textarea.focus();
-      textarea.select();
-      status.textContent = en ? 'Clipboard unavailable. The prompt is selected for manual copying.' : '无法访问剪贴板，已选中 Prompt，可手动复制。';
-    }
-  });
+  import '../lib/question-analysis-panel';
 </script>

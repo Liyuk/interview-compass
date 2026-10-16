@@ -1,8 +1,11 @@
 import { matchesProfileTokens, withLinkPreference } from './target-preferences';
 import { adoptLinkTarget, getTargetContext, isTargetTemporary, openTargetSelector, removeLinkTarget, subscribeTarget, viewAllQuestions } from './target-state';
+import { loadTargetRoles } from './target-roles-client';
+import type { TargetRoleOption } from './target-roles';
 
 const en = document.documentElement.lang === 'en';
-const options = JSON.parse(document.querySelector('[data-target-options]')?.textContent ?? '[]') as { id: string; name: string; path: string; stages: { id: string; name: string }[] }[];
+let options: TargetRoleOption[] = [];
+void loadTargetRoles().then(roles => { options = roles; updateTargetDom(); }).catch(() => undefined);
 const inheritedLinks = new WeakMap<HTMLAnchorElement, string>();
 const parsedCounts = new WeakMap<HTMLElement, Record<string, number>>();
 export function updateTargetDom() {

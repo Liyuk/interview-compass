@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { questionStageGuidance } from '../src/lib/question-stage-guidance';
 import type { StageQuestion } from '../src/lib/question-stage-guidance';
+import { composeStageGuidance } from '../src/lib/question-stage-text';
+import { buildStageModel } from '../src/lib/stage-model-data';
 const question: StageQuestion = {
   questionId: 'same-question', roles: ['engineering', 'product'],
   primaryCapability: 'value-direction.prioritization', signals: ['说明取舍依据', '验证结果'], formats: ['case'],
@@ -44,5 +46,26 @@ describe('same question, different responsibility expectations', () => {
     expect(data.evidence.some(item => item.text.includes('粒度'))).toBe(true);
     const junior = questionStageGuidance({ ...question, primaryCapability: 'people-organization.hiring' }, 'engineering', 'junior-engineer', 'zh-CN');
     expect(junior.evidence.some(item => item.text.includes('不'))).toBe(true);
+  });
+  it('matches the locale stage model fetched by question pages', () => {
+    const direct = questionStageGuidance(question, 'engineering', 'junior-engineer', 'zh-CN');
+    const model = buildStageModel('zh-CN');
+    const role = model.roles.engineering;
+    const stage = role.stages.find(item => item.id === 'junior-engineer');
+    expect(stage).toBeTruthy();
+    expect(composeStageGuidance(question, 'zh-CN', {
+      roleId: 'engineering',
+      stageId: stage!.id,
+      stageName: stage!.name,
+      roleName: role.name,
+      tier: stage!.tier,
+      focus: direct.focus,
+      scope: stage!.scope,
+      process: stage!.process,
+      verify: stage!.verify,
+      boundary: stage!.boundary,
+      professionalEvidence: stage!.professionalEvidence,
+      anchor: stage!.anchors['value-direction'],
+    })).toEqual(direct);
   });
 });

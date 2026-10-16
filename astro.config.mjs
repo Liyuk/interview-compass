@@ -1,12 +1,10 @@
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
   site: 'https://liyuk.github.io',
   base: '/interview-compass',
   integrations: [
-    react(),
     starlight({
       title: 'Interview Compass',
       pagefind: false,

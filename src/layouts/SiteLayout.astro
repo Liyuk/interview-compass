@@ -1,5 +1,4 @@
 ---
-import '@radix-ui/themes/styles.css';
 import SiteMasthead from '../components/SiteMasthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ReadingJourney from '../components/ReadingJourney.astro';
@@ -28,7 +27,7 @@ const crumbs = breadcrumbsFor(route, locale, base);
     <link rel="icon" type="image/svg+xml" href={`${publicBase}favicon.svg`} />
     <title>{route.type === 'home' ? 'Interview Compass' : `${title} · Interview Compass`}</title>
   </head>
-  <body class="radix-themes" data-accent-color="red" data-gray-color="sand" data-radius="medium" data-route-type={route.type}>
+  <body data-route-type={route.type}>
     <a class="skip-link" href="#main">{en ? 'Skip to content' : '跳到正文'}</a>
     <SiteMasthead locale={locale} active={active} route={route} />
     <div class="page-frame">

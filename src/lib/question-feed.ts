@@ -1,5 +1,6 @@
 import type { QuestionRecord } from './content-model';
 import { questionEvaluation } from './question-evaluation';
+import { tokensForQuestion } from './question-profile-data';
 import type { Locale } from './taxonomy';
 
 export type PublicQuestionRecord = Omit<QuestionRecord, 'status'> & {
@@ -7,14 +8,33 @@ export type PublicQuestionRecord = Omit<QuestionRecord, 'status'> & {
   engineeringContext?: string;
 };
 
-export type QuestionIndexRecord = Pick<QuestionRecord,
-  'questionId' | 'locale' | 'title' | 'question' | 'primaryCapability' | 'topics' | 'roles' | 'scenarios'>;
+export type QuestionIndexRecord = {
+  questionId: string;
+  question: string;
+  primaryCapability: string;
+  topics: string[];
+  roles: string[];
+  responsibilityScopes: string[];
+  careerTracks: string[];
+  scenarios: string[];
+  formats: string[];
+  profiles: string[];
+};
 
 export function buildQuestionIndex(records: readonly QuestionRecord[], locale: Locale): QuestionIndexRecord[] {
   return records
     .filter((record) => record.locale === locale && record.status === 'published')
-    .map(({ questionId, locale: recordLocale, title, question, primaryCapability, topics, roles, scenarios }) => ({
-      questionId, locale: recordLocale, title, question, primaryCapability, topics, roles, scenarios,
+    .map(record => ({
+      questionId: record.questionId,
+      question: record.question,
+      primaryCapability: record.primaryCapability,
+      topics: record.topics,
+      roles: record.roles,
+      responsibilityScopes: record.responsibilityScopes,
+      careerTracks: record.careerTracks,
+      scenarios: record.scenarios,
+      formats: record.formats ?? [],
+      profiles: [...tokensForQuestion(record.questionId)],
     }))
     .sort((a, b) => a.questionId.localeCompare(b.questionId));
 }
