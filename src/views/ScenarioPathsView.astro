@@ -54,12 +54,12 @@ const paths = en ? [
     ],
   },
   {
-    id: 'self-practice', title: 'Self-practice and reflection', summary: 'Choose one skill to practice, answer in your own words, and turn feedback into a next step.',
+    id: 'self-practice', title: 'Self-preparation and reflection', summary: 'Choose a goal, find relevant questions, and identify evidence or context you still need.',
     steps: [
-      { title: 'Choose one practice goal', text: 'Pick a real gap—such as explaining a decision, decomposing a problem, or reflecting on a setback.', links: [{ label: 'Browse reflection questions', href: pathFor({ type: 'scenario', id: 'self-reflection' }, locale, base) }] },
-      { title: 'Answer a question in your own words', text: 'Use a concrete situation and make your actions, reasoning, and evidence visible.', links: [{ label: 'Start answer practice', href: pathFor({ type: 'practice' }, locale, base) }] },
-      { title: 'Review evidence before judging yourself', text: 'Separate what you said, what is missing, and what still needs verification; one answer is not a verdict on a person.', links: [{ label: 'See the questioning framework', href: pathFor({ type: 'framework' }, locale, base) }] },
-      { title: 'Set the next small practice', text: 'Choose one concrete behavior to rehearse and a signal that will tell you whether it improved.', links: [{ label: 'Choose another reflection question', href: questionPath({ scenario: 'self-reflection' }) }] },
+      { title: 'Choose a goal or evidence gap', text: 'Start with a decision, experience, or capability you want to understand better.', links: [{ label: 'Browse reflection questions', href: pathFor({ type: 'scenario', id: 'self-reflection' }, locale, base) }] },
+      { title: 'Find questions that fit', text: 'Use role, topic, and responsibility filters to select only relevant prompts.', links: [{ label: 'Open reflection questions', href: questionPath({ scenario: 'self-reflection' }) }] },
+      { title: 'Check evidence and missing context', text: 'Compare your account with the question’s signals; note what is factual, what is inferred, and what still needs verification.', links: [{ label: 'Read the questioning methods', href: pathFor({ type: 'framework' }, locale, base) }] },
+      { title: 'Choose what to verify next', text: 'Identify one comparison, outcome, or responsibility detail that would make your judgment more reliable.', links: [{ label: 'Read the guide', href: pathFor({ type: 'guide' }, locale, base) }] },
     ],
   },
   {
@@ -115,12 +115,12 @@ const paths = en ? [
     ],
   },
   {
-    id: 'self-practice', title: '自我训练与复盘', summary: '选定一个训练目标，用自己的话回答，再把反馈转成下一步练习。',
+    id: 'self-practice', title: '自我准备与复盘', summary: '选定一个目标，找到相关问题，识别仍需补足的证据和背景。',
     steps: [
-      { title: '选一个具体训练目标', text: '可以是解释一次决策、拆解一个问题，或复盘一次挫折。', links: [{ label: '浏览复盘问题', href: pathFor({ type: 'scenario', id: 'self-reflection' }, locale, base) }] },
-      { title: '用自己的话回答问题', text: '从具体情境出发，让自己的行动、推理和证据可以被看见。', links: [{ label: '开始回答练习', href: pathFor({ type: 'practice' }, locale, base) }] },
-      { title: '先看证据，再评价回答', text: '分清已经说出的事实、缺少的背景和仍需核实的内容；单次回答不是对一个人的定论。', links: [{ label: '查看提问框架', href: pathFor({ type: 'framework' }, locale, base) }] },
-      { title: '确定下一次小练习', text: '选一个可练习的具体行为，并设置信号来判断它是否有所改善。', links: [{ label: '继续选择复盘问题', href: questionPath({ scenario: 'self-reflection' }) }] },
+      { title: '选择一个目标或证据缺口', text: '从一个想看清的决定、经历或能力开始。', links: [{ label: '浏览复盘问题', href: pathFor({ type: 'scenario', id: 'self-reflection' }, locale, base) }] },
+      { title: '找到适合的问题', text: '用岗位、主题和责任范围筛选，只看当前相关的问题。', links: [{ label: '查看复盘问题', href: questionPath({ scenario: 'self-reflection' }) }] },
+      { title: '核对证据和缺少的背景', text: '对照题目中的观察信号，区分事实、推断和仍需核实的内容。', links: [{ label: '阅读提问方法', href: pathFor({ type: 'framework' }, locale, base) }] },
+      { title: '决定下一步核实什么', text: '找出一个能让判断更可靠的比较对象、结果口径或责任细节。', links: [{ label: '阅读使用说明', href: pathFor({ type: 'guide' }, locale, base) }] },
     ],
   },
   {

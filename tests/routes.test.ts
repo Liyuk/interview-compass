@@ -42,7 +42,7 @@ describe('route model', () => {
     expect(pathFor({ type: 'collections' }, 'zh-CN', base)).toBe('/interview-compass/collections/');
     expect(pathFor({ type: 'collection', id: 'general-interview' }, 'en', base)).toBe('/interview-compass/en/collections/general-interview/');
     expect(pathFor({ type: 'framework' }, 'zh-CN', base)).toBe('/interview-compass/framework/');
-    expect(pathFor({ type: 'practice' }, 'en', base)).toBe('/interview-compass/en/practice/');
+    expect(pathFor({ type: 'guide' }, 'zh-CN', base)).toBe('/interview-compass/handbook/');
   });
 
   it('switches language to the same route in the other locale', () => {
@@ -74,11 +74,11 @@ describe('route model', () => {
     expect(titleFor({ type: 'capability-model' }, 'zh-CN')).toBe('阶段能力');
     expect(titleFor({ type: 'collection', id: 'general-interview' }, 'zh-CN')).toBe('通用面试');
     expect(titleFor({ type: 'framework' }, 'zh-CN')).toBe('提问框架');
+    expect(titleFor({ type: 'guide' }, 'zh-CN')).toBe('使用说明');
     expect(activeNavFor({ type: 'collections' })).toBe('questions');
     expect(activeNavFor({ type: 'search' })).toBe('questions');
     expect(activeNavFor({ type: 'framework' })).toBe('framework');
-    expect(titleFor({ type: 'practice' }, 'zh-CN')).toBe('回答练习');
-    expect(activeNavFor({ type: 'practice' })).toBe('questions');
+    expect(activeNavFor({ type: 'guide' })).toBe('guide');
     expect(breadcrumbsFor({ type: 'framework' }, 'en').map((crumb) => crumb.label)).toEqual(['Home', 'Questioning framework']);
     expect(activeNavFor(question)).toBe('questions');
     expect(activeNavFor({ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' })).toBe('capabilities');

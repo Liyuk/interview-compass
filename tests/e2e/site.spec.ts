@@ -12,29 +12,33 @@ test('home starts with goals and keeps category and curated entry points', async
   await expect(page.locator('#interviewer .scenario-steps')).toBeVisible();
 });
 
-test('primary navigation separates goals, questions, methods, categories and stages', async ({ page }) => {
+test('primary navigation separates goals, questions, methods, guide, categories and stages', async ({ page }) => {
   await page.goto('./');
   if (await page.locator('.nav-toggle').isVisible()) await page.locator('.nav-toggle').click();
-  await expect(page.locator('.primary-nav a')).toHaveText(['目标路径', '面试题库', '提问方法', '分类索引', '阶段能力']);
+  await expect(page.locator('.primary-nav a')).toHaveText(['目标路径', '面试题库', '提问方法', '使用说明', '分类索引', '阶段能力']);
   await page.locator('.primary-nav').getByRole('link', { name: '分类索引' }).click();
   await page.locator('.browse-index').getByRole('link', { name: /主题索引/ }).click();
   await expect(page).toHaveURL(/\/topics\/$/);
   await page.goto('en/');
   if (await page.locator('.nav-toggle').isVisible()) await page.locator('.nav-toggle').click();
-  await expect(page.locator('.primary-nav a')).toHaveText(['Goal paths', 'Question bank', 'Questioning methods', 'Browse', 'Stage expectations']);
+  await expect(page.locator('.primary-nav a')).toHaveText(['Goal paths', 'Question bank', 'Questioning methods', 'How to use', 'Browse', 'Stage expectations']);
 });
 
 test('handbook uses the same site header, search, language, content alignment and footer', async ({ page }) => {
   await page.goto('handbook/');
-  await expect(page.locator('.primary-nav a')).toHaveText(['目标路径', '面试题库', '提问方法', '分类索引', '阶段能力']);
+  await expect(page.locator('.primary-nav a')).toHaveText(['目标路径', '面试题库', '提问方法', '使用说明', '分类索引', '阶段能力']);
+  await expect(page.locator('.primary-nav a[aria-current="page"]')).toHaveText('使用说明');
   await expect(page.getByRole('searchbox')).toBeVisible();
   await expect(page.locator('.breadcrumbs')).toContainText('使用说明');
   await expect(page.locator('main')).toContainText('共用的 1–4 分证据参考');
   await expect(page.locator('main')).toContainText('少部分已复核题目另有专属锚点');
+  await expect(page.locator('main')).toContainText('提问方法');
+  await expect(page.getByRole('main').getByRole('link', { name: '提问方法', exact: true })).toBeVisible();
   await expect(page.locator('.site-footer')).toContainText('© 2026 Liyuk');
   await page.getByRole('link', { name: 'EN' }).click();
   await expect(page).toHaveURL(/\/en\/handbook\//);
-  await expect(page.locator('.primary-nav a')).toHaveText(['Goal paths', 'Question bank', 'Questioning methods', 'Browse', 'Stage expectations']);
+  await expect(page.locator('.primary-nav a')).toHaveText(['Goal paths', 'Question bank', 'Questioning methods', 'How to use', 'Browse', 'Stage expectations']);
+  await expect(page.locator('.primary-nav a[aria-current="page"]')).toHaveText('How to use');
   await expect(page.getByRole('searchbox')).toBeVisible();
   await expect(page.locator('.site-footer')).toContainText('Content license · CC BY-NC-SA 4.0');
 });
@@ -110,7 +114,7 @@ test('question detail explains intent and signals, links its source, and keeps t
   await expect(page.getByRole('heading', { name: '方案收益' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '方案成本与风险' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '评估参考' })).toBeVisible();
-  await expect(page.getByText('共用阅读框架 · 逐题分析待校准')).toBeVisible();
+  await expect(page.getByText('共用阅读框架 · 逐题分析待校准', { exact: true })).toBeVisible();
   await expect(page.locator('.analysis-review-status')).toContainText('通用追问提示');
   for (const level of ['1 · 不通过', '2 · 通过', '3 · 优秀', '4 · 卓越']) await expect(page.getByRole('heading', { name: level, exact: true })).toBeVisible();
   await expect(page.getByText('本站原创')).toBeVisible();
@@ -138,11 +142,11 @@ test('question detail explains intent and signals, links its source, and keeps t
 
 test('reviewed question analyses expose question-specific comparisons in both languages', async ({ page }) => {
   await page.goto('questions/c-metrics-causality-competitor-benchmark/');
-  await expect(page.getByText('逐题分析 · 已复核')).toBeVisible();
+  await expect(page.getByText('逐题分析 · 已复核', { exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: '可以比较的思路' })).toBeVisible();
   await expect(page.getByText('数据口径', { exact: true })).toBeVisible();
   await page.getByRole('link', { name: 'EN' }).click();
-  await expect(page.getByText('Question-specific analysis · reviewed')).toBeVisible();
+  await expect(page.getByText('Question-specific analysis · reviewed', { exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Comparisons to consider' })).toBeVisible();
   await expect(page.getByText('Measurement basis', { exact: true })).toBeVisible();
 });
@@ -178,7 +182,7 @@ test('use cases present six goal-based paths and connect them to the right tools
   const paths = page.locator('.scenario-path');
   await expect(paths).toHaveCount(6);
   for (const title of [
-    '候选人求职', '招聘面试官', '晋升候选人', '晋升评审者', '自我训练与复盘', '项目与运营复盘',
+    '候选人求职', '招聘面试官', '晋升候选人', '晋升评审者', '自我准备与复盘', '项目与运营复盘',
   ]) await expect(paths.filter({ has: page.getByText(title, { exact: true }) })).toHaveCount(1);
 
   const candidate = paths.filter({ hasText: '候选人求职' });
@@ -215,9 +219,10 @@ test('use cases present six goal-based paths and connect them to the right tools
   await expect(page.locator('#question-list > li:visible').first()).toBeVisible();
 
   await page.goto('scenarios/');
-  const practice = paths.filter({ hasText: '自我训练与复盘' });
-  await practice.locator('summary').click();
-  await expect(practice.getByRole('link', { name: '开始回答练习' })).toHaveAttribute('href', /practice\/$/);
+  const selfReview = paths.filter({ hasText: '自我准备与复盘' });
+  await selfReview.locator('summary').click();
+  await expect(selfReview.getByRole('link', { name: '浏览复盘问题' })).toHaveAttribute('href', /\/scenarios\/self-reflection\/$/);
+  await expect(selfReview.locator('a[href*="practice"]')).toHaveCount(0);
 
   await page.goto('en/scenarios/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Choose a goal');
@@ -495,7 +500,7 @@ test('skip link and navigation are keyboard reachable', async ({ page }) => {
     await page.keyboard.press('Enter');
   }
   await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText([
-    '目标路径', '面试题库', '提问方法', '分类索引', '阶段能力',
+    '目标路径', '面试题库', '提问方法', '使用说明', '分类索引', '阶段能力',
   ]);
 });
 

@@ -16,7 +16,7 @@ Interview Compass is a bilingual, question-first heuristic library. A question p
 - Keep navigation and controls consistent with Starlight and Radix Themes. Prefer flat, low-radius surfaces and clear focus states over decorative cards.
 - Prioritize question relevance and task continuation: role and responsibility context first, then objective problem and intent, observations, context probes, comparisons and trade-offs, evidence anchors, and related routes.
 - Distinguish “逐题分析 · 已复核” from “共用阅读框架 · 逐题分析待校准”. Never style shared prompts to look like expert findings about a particular question.
-- Keep the main user journey task-first while preserving direct search, topic, role, capability, and stage entry points. A question detail should make it easy to return to the previous filtered set, practice optionally, or continue through a relevant view.
+- Keep the main user journey task-first while preserving direct search, topic, role, capability, and stage entry points. A question detail should make it easy to return to the previous filtered set, optionally generate an external analysis prompt, or continue through a relevant view.
 - Use topic counts only when computed from published content. Do not invent sample counts, source attributions, or other library facts in comps or implementation.
 - Chinese is the default locale at the root route; English is available under `/en/`. Keep the current-page language switch visible and pair translated pages by stable IDs.
 
