@@ -9,9 +9,18 @@ intent: "考察能否在独立发布、依赖可追踪性和仓库消费者体�
 signals: ["比较固定版本、独立版本和变更集机制的维护成本","定义破坏性变化、预发布和回滚规则","确保发布清单能追溯源码与依赖版本","验证消费者锁定和升级提示的行为"]
 primaryCapability: "professional.engineering-systems"
 topics: ["monorepo","engineering-systems","devops"]
-roles: ["engineering","frontend","backend"]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["紧急修复应如何越过常规发布节奏？","哪些包适合统一版本，哪些应独立？"]

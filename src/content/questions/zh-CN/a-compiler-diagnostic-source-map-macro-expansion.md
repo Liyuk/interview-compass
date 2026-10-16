@@ -9,9 +9,15 @@ intent: "考察能否在宏和代码生成链中保留准确来源映射，让�
 signals: ["区分原始位置、生成位置和宏展开调用链","保留多轮变换后的来源映射准确性","指出可修改的源码位置和上下文","处理映射缺失或多个候选位置的回退"]
 primaryCapability: "professional.computer-science"
 topics: ["compiler-design","programming-languages","debugging"]
-roles: ["engineering","backend"]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["如何避免诊断泄露生成代码中的敏感路径？","怎样验证来源映射在优化后仍准确？"]

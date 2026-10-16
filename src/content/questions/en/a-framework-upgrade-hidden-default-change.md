@@ -9,9 +9,15 @@ intent: "Assesses whether you can map changed framework defaults to product risk
 signals: ["List critical paths that depend on framework defaults and lifecycle","Build regressions for user behavior and data consistency","Use canaries, performance, and error monitoring to detect production differences","Prepare rollback or module-by-module migration"]
 primaryCapability: "professional.engineering-systems"
 topics: ["frameworks","frontend","engineering-systems"]
-roles: ["frontend","engineering"]
+roles:
+  - frontend
+  - engineering
+  - mobile
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["How would you respond to subtle production differences after tests pass?","How would you identify compatibility risks in third-party plugins?"]

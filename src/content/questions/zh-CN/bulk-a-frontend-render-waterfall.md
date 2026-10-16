@@ -16,11 +16,15 @@ topics:
   - computer-networks
 roles:
   - frontend
+  - engineering
+  - mobile
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

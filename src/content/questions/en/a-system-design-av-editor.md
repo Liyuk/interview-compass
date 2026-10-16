@@ -13,9 +13,17 @@ signals:
   - Says how export jobs are queued, show progress, and recover from failure
 primaryCapability: professional.system-design
 topics: [system-design, frontend, backend]
-roles: [engineering, frontend, backend, mobile]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

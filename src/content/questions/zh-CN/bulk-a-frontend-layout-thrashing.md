@@ -15,6 +15,8 @@ topics:
   - frontend
 roles:
   - frontend
+  - engineering
+  - mobile
 responsibilityScopes:
   - individual
   - team

@@ -12,9 +12,16 @@ signals:
   - "给出可以复演的上线前场景，而不是笼统的“多测一测”"
 primaryCapability: professional.system-design
 topics: [system-design, reliability, backend, distributed-systems]
-roles: [engineering, backend]
+roles:
+  - engineering
+  - backend
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion]
 formats: [artifact-review, case]
 relatedQuestions:

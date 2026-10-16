@@ -9,9 +9,15 @@ intent: "Assesses whether you can define navigation ownership, URL semantics, an
 signals: ["Specify route namespaces, default entry, and unknown-route behavior","Define back/forward, deep-link, and refresh behavior","Clarify auth return paths and mount order","Create testable contracts for cross-app navigation"]
 primaryCapability: "professional.engineering-systems"
 topics: ["micro-frontends","frontend","engineering-systems","system-design"]
-roles: ["frontend","engineering","design"]
+roles:
+  - frontend
+  - engineering
+  - design
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["Who should own global navigation and 404 handling?","How would you prevent one child app’s route change from breaking other teams?"]

@@ -9,9 +9,18 @@ intent: "Assesses whether you can make explicit trade-offs among independent rel
 signals: ["Compare maintenance costs of fixed, independent, and changeset-based versions","Define breaking changes, prereleases, and rollback rules","Trace source and dependency versions from release manifests","Verify consumer pinning and upgrade notices"]
 primaryCapability: "professional.engineering-systems"
 topics: ["monorepo","engineering-systems","devops"]
-roles: ["engineering","frontend","backend"]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["How should an emergency fix bypass the normal release cadence?","Which packages should share a version and which should release independently?"]

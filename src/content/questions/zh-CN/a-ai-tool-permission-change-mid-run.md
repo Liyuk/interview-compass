@@ -5,7 +5,7 @@ status: published
 locale: zh-CN
 title: Agent 运行期间用户权限发生变化时，怎样防止工具越权？
 question: 一个多步骤 Agent 在开始时读取了项目权限，执行到第三步时用户被移出项目，但任务仍持有已签发的工具令牌。你会如何设计权限检查和取消语义？
-intent: 考察能否把身份授权、短期凭证、运行时撤销和副作用（重复执行、越权等额外影响）边界纳入 Agent 工具设计。
+intent: 考察能否把身份授权、短期凭证、运行时撤销和副作用（改变外部状态的操作影响）边界纳入 Agent 工具设计。
 signals:
   - 明确权限是在任务创建时还是每次调用时校验。
   - 缩短凭证有效期并限制可执行资源和操作。
@@ -18,12 +18,17 @@ topics:
 roles:
   - ai-engineer
   - backend
+  - engineering
+  - frontend
+  - mobile
+  - data
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

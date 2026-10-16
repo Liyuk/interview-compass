@@ -13,9 +13,18 @@ signals:
   - Says how decisions are recorded and explained so they can be appealed and reviewed
 primaryCapability: professional.system-design
 topics: [system-design, security, feature-modeling, ai-engineering]
-roles: [engineering, backend, data, ai-engineer]
+roles:
+  - engineering
+  - backend
+  - data
+  - ai-engineer
+  - product
+  - operations
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

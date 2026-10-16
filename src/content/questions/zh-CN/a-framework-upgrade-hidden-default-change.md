@@ -3,7 +3,7 @@ questionId: a-framework-upgrade-hidden-default-change
 kind: question
 status: published
 locale: zh-CN
-title: 升级前端框架后没有编译错误，但渲染时机、默认缓存或副作用（重复执行、越权等额外影响）顺序改变。你会怎样验证升级不会改变产品行为？
+title: 升级前端框架后没有编译错误，但渲染时机、默认缓存或副作用执行顺序改变。你会怎样验证升级不会改变产品行为？
 question: 升级前端框架后没有编译错误，但渲染时机、默认缓存或副作用顺序改变。你会怎样验证升级不会改变产品行为？
 intent: 考察能否把框架升级的默认行为变化映射到产品风险，并用针对性回归和灰度验证。
 signals:
@@ -19,12 +19,14 @@ topics:
 roles:
   - frontend
   - engineering
+  - mobile
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -13,9 +13,19 @@ signals:
   - Says how debts are recorded and kept visible, and sets a time for review
 primaryCapability: professional.engineering-systems
 topics: [engineering-systems, planning, prioritization]
-roles: [engineering, backend, frontend, mobile, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - manager
+  - ai-engineer
+  - data
 responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [case, behavioral]
 followUps:

@@ -9,9 +9,14 @@ intent: "考察能否将迁移拆成可回退阶段，用实际协作和运行�
 signals: ["先识别变更耦合、团队等待和独立业务边界","选择低风险且有清晰所有者的切片试点","设置并行运行、回退和旧实现退出条件","比较迁移前后的发布自治、故障率与维护成本"]
 primaryCapability: "professional.engineering-systems"
 topics: ["micro-frontends","frontend","engineering-systems","system-design"]
-roles: ["frontend","engineering","design"]
+roles:
+  - frontend
+  - engineering
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["什么证据会让你停止迁移并保留模块化单体？","怎样防止新旧架构长期并存而无人负责？"]

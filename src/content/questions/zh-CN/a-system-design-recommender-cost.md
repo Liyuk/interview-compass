@@ -13,9 +13,16 @@ signals:
   - 说明成本优化如何通过实验验证没有损害体验
 primaryCapability: professional.system-design
 topics: [system-design, ai-engineering, resource-allocation]
-roles: [ai-engineer, backend, data, engineering]
+roles:
+  - ai-engineer
+  - backend
+  - data
+  - engineering
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, system-design]
 followUps:

@@ -9,9 +9,14 @@ intent: "考察能否以兼容范围、发布节奏和故障隔离决定哪些�
 signals: ["盘点体积、版本分布、共享频率和冲突影响","区分平台稳定依赖与团队快速迭代依赖","制定兼容窗口、升级策略和例外规则","测量加载收益并验证回滚路径"]
 primaryCapability: "professional.engineering-systems"
 topics: ["micro-frontends","frontend","engineering-systems","system-design"]
-roles: ["frontend","engineering","design"]
+roles:
+  - frontend
+  - engineering
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["共享依赖升级导致单一子应用故障时如何止损？","如何避免共享平台成为发布瓶颈？"]

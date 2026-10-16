@@ -13,9 +13,19 @@ signals:
   - Says where the judgment comes from and how reliable that source is
 primaryCapability: professional.engineering-systems
 topics: [engineering-systems, system-design, ai-engineering, technical-planning]
-roles: [engineering, backend, frontend, mobile, ai-engineer, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
+  - manager
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, behavioral]
 followUps:

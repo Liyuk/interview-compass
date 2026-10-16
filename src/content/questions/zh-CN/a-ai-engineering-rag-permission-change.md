@@ -12,9 +12,18 @@ signals:
   - "讨论权限变更的同步延迟与审计"
 primaryCapability: professional.ai-engineering
 topics: [ai-engineering, security, system-design]
-roles: [ai-engineer, backend, engineering]
+roles:
+  - ai-engineer
+  - backend
+  - engineering
+  - frontend
+  - mobile
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design, case]
 source:

@@ -9,9 +9,20 @@ intent: "考察你能否把成本分解到服务与业务价值，并明确降�
 signals: ["先按服务、环境和使用模式拆分成本", "区分浪费、闲置容量和可靠性冗余", "评估优化后对峰值容量和恢复时间的影响", "设定负责人、验证指标和回滚条件"]
 primaryCapability: "professional.engineering-systems"
 topics: ["devops", "resource-allocation", "reliability"]
-roles: ["engineering", "operations", "manager"]
+roles:
+  - engineering
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["multiple-teams"]
-careerTracks: ["team-manager", "senior-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case", "planning"]
 followUps: []

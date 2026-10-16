@@ -12,9 +12,19 @@ signals:
   - The way the gain is measured can be checked by others
 primaryCapability: professional.engineering-systems
 topics: [engineering-systems, system-design]
-roles: [engineering, backend, frontend, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - manager
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

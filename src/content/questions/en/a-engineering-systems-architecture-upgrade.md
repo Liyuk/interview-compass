@@ -13,9 +13,19 @@ signals:
   - Checks afterwards whether the benefit materialized and is candid about what did not
 primaryCapability: professional.engineering-systems
 topics: [engineering-systems, system-design, risk-management]
-roles: [engineering, backend, frontend, mobile, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - manager
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [behavioral, case]
 followUps:

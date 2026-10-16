@@ -12,9 +12,16 @@ signals:
   - 提出用执行计划之类的证据来验证，而不是凭印象判断
 primaryCapability: professional.computer-science
 topics: [databases, backend]
-roles: [backend, data]
+roles:
+  - backend
+  - data
+  - engineering
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [knowledge, case]
 source:

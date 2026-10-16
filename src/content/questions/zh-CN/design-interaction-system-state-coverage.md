@@ -20,11 +20,15 @@ roles:
   - design
   - frontend
   - product
+  - engineering
+  - mobile
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - "interview"
   - "promotion"

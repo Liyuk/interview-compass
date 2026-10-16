@@ -18,6 +18,10 @@ topics:
   - programming-languages
 roles:
   - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team

@@ -9,12 +9,10 @@ question: >-
   primary adds load, while waiting for replication may time out. How would you design the experience?
 intent: Assess whether you choose consistency windows, routing, and degraded behavior based on business read/write semantics.
 signals:
-  - Identify fields or actions requiring read-your-writes behavior.
-  - Compare session stickiness, version tokens, and brief primary reads.
-  - Define replication-lag monitoring, stale indicators, and capacity cost.
-  - Translate user-visible invariants into read/write semantics.
-  - Compare primary reads, session affinity, and version tokens.
-  - Verify degradation behavior during replication lag or failure.
+  - Defines read-your-writes, monotonic reads, and tolerated staleness by user action.
+  - Compares affinity, version tokens, primary reads, and explicit waits by cost and latency.
+  - Makes unsynchronized or failed states understandable rather than silently showing old values.
+  - Tests replication lag, primary failures, and cross-client access against guarantees.
 primaryCapability: professional.system-design
 topics:
   - databases
@@ -23,12 +21,17 @@ topics:
 roles:
   - backend
   - data
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

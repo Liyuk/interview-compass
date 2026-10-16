@@ -7,15 +7,24 @@ title: "How do you handle partial failure when syncing a database with a cache o
 question: "The local database has updated, but syncing the cache or sending a downstream message fails. How would you make the systems converge and handle retries, compensation, or manual recovery?"
 intent: See how you actually handle cross-system consistency and whether you can state the preconditions and costs of each approach rather than reciting names.
 signals:
-  - Explains the chosen approach and its preconditions, such as write-then-publish order, transactional messages, or a local message table
-  - Explains retries, idempotency, and compensation on failure, and how inconsistency is found and repaired
-  - Points out in which extreme case the approach still fails and whether that is acceptable
-  - Uses a concrete example they wrote or met, not only concepts
+  - Defines dual-write failure windows and business invariants along commit-send timelines.
+  - Compares outbox, transactional messages, retries, and compensation by prerequisites and cost.
+  - Explains reconciliation, deduplication, recovery, and remaining stop or manual paths.
+  - >-
+    Experience claims need personal evidence; hypothetical cases state assumptions and validation without
+    invented experience.
 primaryCapability: professional.system-design
 topics: [system-design, distributed-systems, databases, backend]
-roles: [backend, engineering]
+roles:
+  - backend
+  - engineering
+  - ai-engineer
+  - data
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [case, system-design]
 followUps:

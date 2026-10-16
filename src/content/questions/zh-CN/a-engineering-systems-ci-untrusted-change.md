@@ -7,13 +7,10 @@ title: 外部贡献者提交代码后，自动检查流程会读取测试凭证�
 question: 仓库允许外部贡献者提交代码，自动检查与构建流程会读取测试凭证并构建发布包。你会怎样检查流水线中的信任边界和凭证暴露风险？
 intent: 了解你能否区分不可信代码与受保护环境，并限制凭证和发布权限。
 signals:
-  - 识别来自 fork、依赖脚本和构建步骤的执行风险
-  - 按任务拆分最小权限凭证
-  - 避免不可信构建直接访问发布秘密
-  - 描述审计、隔离和安全发布的验证方法
-  - 从输入、机制和故障表现中提出可验证的技术假设
-  - 比较实现路径及其正确性、性能、安全或维护代价
-  - 说明覆盖边界场景的测试或运行指标
+  - 追踪fork代码、依赖脚本和构建步骤的执行权限，区分检查与受信任发布。
+  - 比较隔离执行、最小权限凭证和分离发布任务的条件，不让不可信产物直接获得生产权限。
+  - 核验缓存、制品和跨任务数据怎样影响受保护流程，记录来源和批准。
+  - 用恶意变更与权限失败样例验证秘密不可读、发布不可越权及审计可追溯。
 primaryCapability: professional.engineering-systems
 topics:
   - devops
@@ -25,13 +22,16 @@ roles:
   - engineering
   - backend
   - frontend
-  - operations
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes:
   - team
   - individual
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

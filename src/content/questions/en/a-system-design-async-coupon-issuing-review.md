@@ -12,9 +12,16 @@ signals:
   - "Gives pre-release scenarios that can be replayed instead of a vague “test more”"
 primaryCapability: professional.system-design
 topics: [system-design, reliability, backend, distributed-systems]
-roles: [engineering, backend]
+roles:
+  - engineering
+  - backend
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion]
 formats: [artifact-review, case]
 relatedQuestions:

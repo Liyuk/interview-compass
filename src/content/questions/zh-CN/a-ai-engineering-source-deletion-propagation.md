@@ -7,19 +7,10 @@ title: 一份内部文档被撤回或改为限权后，检索索引、缓存和�
 question: 一份内部文档被撤回或改为限权后，检索索引、缓存和已生成的引用可能仍保留旧内容。你会怎样设计更新与验证机制？
 intent: 了解你是否把删除、权限变化和缓存失效当成检索系统的生命周期要求。
 signals:
-  - 追踪原文到切片、向量、缓存和引用的依赖
-  - 说明撤权传播的时限与失败补偿
-  - 定义可审计的删除确认和抽样验证
-  - 考虑索引重建期间如何避免继续暴露旧数据
-  - 从输入、机制和故障表现中提出可验证的技术假设
-  - 比较实现路径及其正确性、性能、安全或维护代价
-  - 说明覆盖边界场景的测试或运行指标
-  - 追踪源文档版本到检索片段和回答引用
-  - 说明更新、删除传播及缓存失效的完成判据
-  - 处理索引失败期间的旧知识隔离或降级（关闭非核心功能以保住核心服务）
-  - 列出原文、分块、向量、缓存和备份副本。
-  - 区分请求受理、停止新检索和彻底清理状态。
-  - 设计可重试的删除事件与抽样验证。
+  - 追踪原文版本到分块、向量、索引、缓存、引用与备份副本的依赖。
+  - 区分受理、停止新访问和清理完成，按核验政策明确责任、时限及保留例外。
+  - 设计可重试传播与失败隔离，索引重建时保护撤权内容不再被检索或展示。
+  - 用下游查询、日志、版本和抽样确认验证完成范围，明确无法收回的已外发内容。
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering
@@ -35,6 +26,8 @@ roles:
   - data
   - engineering
   - product
+  - frontend
+  - mobile
 responsibilityScopes:
   - multiple-teams
   - individual
@@ -42,6 +35,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

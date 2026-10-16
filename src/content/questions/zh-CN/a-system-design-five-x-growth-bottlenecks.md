@@ -13,9 +13,19 @@ signals:
   - 说明增长不及预期或超出预期时怎样调整
 primaryCapability: professional.system-design
 topics: [system-design, reliability, planning, distributed-systems, technical-planning]
-roles: [engineering, backend, manager]
+roles:
+  - engineering
+  - backend
+  - manager
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [case, planning, system-design]
 followUps:

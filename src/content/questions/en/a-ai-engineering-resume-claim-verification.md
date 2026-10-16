@@ -13,9 +13,13 @@ intent: >-
   See whether you can state how AI was used on one concrete task, where its limits were, and how the result
   was checked, rather than only naming a tool.
 signals:
-  - States the task, the boundary, and the way it was verified, not only the tool
-  - Names where the AI tended to be wrong and how you found out
-  - Explains why it was kept as an aid instead of being delivered directly
+  - States the task, AI role, personal judgment, and verification artifacts beyond tool names.
+  - >-
+    Uses observed errors, reviews, and outcomes to bound AI use and separates facts from expected
+    benefits.
+  - >-
+    Compares manual, assisted, and automated work by evidence and cost without a required assistance-only
+    conclusion.
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering
@@ -24,10 +28,14 @@ roles:
   - ai-engineer
   - backend
   - frontend
+  - mobile
+  - data
 responsibilityScopes:
   - individual
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

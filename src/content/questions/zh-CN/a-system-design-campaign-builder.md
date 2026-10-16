@@ -13,9 +13,20 @@ signals:
   - 考虑配置变更的权限、审计和对线上稳定性的影响
 primaryCapability: professional.system-design
 topics: [system-design, operations, feature-modeling, commercialization]
-roles: [engineering, backend, product, operations]
+roles:
+  - engineering
+  - backend
+  - product
+  - operations
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion]
 formats: [system-design]
 followUps:

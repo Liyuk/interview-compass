@@ -9,9 +9,16 @@ intent: "See whether you can turn subjective quality judgments into reviewable c
 signals: ["Defines task goals and acceptable errors before voting", "Checks slices, annotation guidance, and reviewer agreement", "Separates model variability from evaluation differences", "Proposes adjudication, relabeling, or sampling to test the cause"]
 primaryCapability: "professional.ai-engineering"
 topics: ["ai-engineering", "metrics"]
-roles: ["ai-engineer", "data"]
+roles:
+  - ai-engineer
+  - data
+  - engineering
+  - product
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: ["What would you do if disagreement clustered in a few high-risk cases?"]

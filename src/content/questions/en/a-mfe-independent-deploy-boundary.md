@@ -9,9 +9,14 @@ intent: "Assesses whether you can distinguish build separation from real indepen
 signals: ["Track cross-module changes, coordinated releases, and waiting","Check interface contracts, shared state, and environment coupling","Assess independent degradation and rollback","Propose a pilot that tests the boundary with a small change"]
 primaryCapability: "professional.engineering-systems"
 topics: ["micro-frontends","frontend","engineering-systems","system-design"]
-roles: ["frontend","engineering","design"]
+roles:
+  - frontend
+  - engineering
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["When does independent deployment add only complexity?","How would you measure the value of team autonomy?"]

@@ -12,19 +12,12 @@ intent: >-
   Assesses whether you treat freshness, permission changes, and deletion as end-to-end data-lifecycle requirements and
   prevent stale or unauthorized content from being exposed when propagation fails.
 signals:
-  - Traces dependencies from source versions and permissions to chunks, vector indexes, caches, and citations
-  - Defines propagation deadlines, failure compensation, and completion criteria for updates and revocation
-  - Provides auditable deletion confirmation and sampling-based verification
-  - Quarantines stale content during index rebuilds or propagation failures to prevent unauthorized retrieval
-  - Forms testable technical hypotheses from inputs, mechanisms, and failure symptoms
-  - Compares implementation paths and their correctness, performance, security, or maintenance cost
-  - Names tests or operational measures that cover edge cases
-  - Traces source-document versions to retrieved chunks and answer citations
-  - Explains completion criteria for update, deletion propagation, and cache invalidation
-  - Handles isolation or degradation of stale knowledge while indexing fails
-  - Inventory source, chunks, vectors, caches, and backups.
-  - Separate request acceptance, retrieval suppression, and complete erasure.
-  - Design retryable deletion events and sampled verification.
+  - Traces source versions to chunks, vectors, indexes, caches, citations, and backups.
+  - Separates acceptance, blocked new access, and completed cleanup under verified policies.
+  - Defines retryable propagation and isolation so revoked content is not served during rebuilds.
+  - >-
+    Verifies scope with queries, logs, versions, and samples, stating limits on already distributed
+    content.
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering
@@ -40,6 +33,8 @@ roles:
   - data
   - engineering
   - product
+  - frontend
+  - mobile
 responsibilityScopes:
   - multiple-teams
   - individual
@@ -47,6 +42,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

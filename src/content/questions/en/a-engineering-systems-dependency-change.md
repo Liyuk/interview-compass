@@ -12,9 +12,18 @@ signals:
   - Points out which parts of today's design cannot survive such a change
 primaryCapability: professional.engineering-systems
 topics: [engineering-systems, risk-management]
-roles: [engineering, backend, frontend, mobile]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, system-design]
 followUps:

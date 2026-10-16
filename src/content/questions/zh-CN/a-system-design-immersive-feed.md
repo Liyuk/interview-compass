@@ -13,9 +13,16 @@ signals:
   - 说明怎样用首帧时间、滑动卡顿等指标验证体验
 primaryCapability: professional.system-design
 topics: [system-design, mobile, frontend]
-roles: [engineering, mobile, frontend, backend]
+roles:
+  - engineering
+  - mobile
+  - frontend
+  - backend
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

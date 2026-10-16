@@ -12,9 +12,17 @@ signals:
   - Describes ways to remove one condition and what each costs
 primaryCapability: professional.computer-science
 topics: [concurrency, operating-systems, debugging]
-roles: [backend, engineering]
+roles:
+  - backend
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [knowledge, debugging]
 source:

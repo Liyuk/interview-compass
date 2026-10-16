@@ -12,9 +12,18 @@ signals:
   - "承认估算有误差，并指出什么证据会修正它"
 primaryCapability: professional.system-design
 topics: [system-design, distributed-systems, databases]
-roles: [engineering, backend, data]
+roles:
+  - engineering
+  - backend
+  - data
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design, knowledge]
 source:

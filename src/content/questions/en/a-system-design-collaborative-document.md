@@ -13,9 +13,17 @@ signals:
   - Says how correctness under concurrency is verified, for example by replaying random operations
 primaryCapability: professional.system-design
 topics: [system-design, distributed-systems, frontend]
-roles: [engineering, frontend, backend]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

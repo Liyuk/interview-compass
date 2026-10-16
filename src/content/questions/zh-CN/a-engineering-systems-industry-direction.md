@@ -13,9 +13,19 @@ signals:
   - 说明判断的信息来源，以及其可靠程度
 primaryCapability: professional.engineering-systems
 topics: [engineering-systems, system-design, ai-engineering, technical-planning]
-roles: [engineering, backend, frontend, mobile, ai-engineer, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
+  - manager
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, behavioral]
 followUps:

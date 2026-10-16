@@ -9,9 +9,18 @@ intent: "考察能否明确端到端服务责任、用户流程和事故指挥�
 signals: ["沿用户影响路径标明服务依赖和责任人","定义端到端服务目标与跨团队升级机制","区分组件健康和用户结果健康","复盘后更新值班边界、运行手册和演练"]
 primaryCapability: "professional.system-design"
 topics: ["microservices","distributed-systems","system-design"]
-roles: ["backend","engineering","ai-engineer"]
+roles:
+  - backend
+  - engineering
+  - ai-engineer
+  - frontend
+  - mobile
+  - data
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["跨团队事故由谁担任指挥，依据是什么？","怎样避免把所有边界故障都升级给平台团队？"]

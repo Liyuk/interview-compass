@@ -12,9 +12,17 @@ signals:
   - 能指出自己的判断依赖哪些前提，比如状态是否需要共享
 primaryCapability: professional.computer-science
 topics: [operating-systems, concurrency, backend]
-roles: [backend, engineering]
+roles:
+  - backend
+  - engineering
+  - ai-engineer
+  - data
+  - mobile
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [knowledge, case]
 source:

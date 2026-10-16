@@ -13,9 +13,21 @@ signals:
   - Says how to separate genuinely net-new users from low-quality users drawn only by the reward
 primaryCapability: professional.system-design
 topics: [system-design, growth-experiments, security, operations]
-roles: [engineering, backend, product, operations, marketing]
+roles:
+  - engineering
+  - backend
+  - product
+  - operations
+  - marketing
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, operations-review]
 formats: [system-design, case]
 followUps:

@@ -13,17 +13,10 @@ intent: >-
   Assess whether you understand compatibility windows across application and data changes, and why rollback
   does not restore every state.
 signals:
-  - Use expand-and-contract stages so old and new application versions can coexist with the schema.
-  - Define when to stop rollout, disable a feature, roll back, or fix forward after a migration failure.
-  - Use rehearsals and monitoring to verify rollback, data repair, and recovery paths.
-  - Name the approver, risk owner, and containment boundary for irreversible changes.
-  - List supported upgrade spans and data-format versions
-  - Run recoverable migration on a copy or in a transaction
-  - Validate constraints and critical user data before and after
-  - Define failure recovery, old-version reads, and cleanup
-  - Separates expansion and contraction phases
-  - Considers combinations of old/new code and data shapes
-  - Defines validation, cutover, and old-schema removal conditions
+  - Maps old-new application and data combinations across expansion, cutover, and contraction.
+  - Compares rollback, pause, feature disablement, and forward fixes with irreversible-state limits.
+  - Defines validation, owners, authorization, and old-path retirement for backfill and cleanup.
+  - Tests mixed versions and recovery against key user data and continuity.
 primaryCapability: professional.engineering-systems
 topics:
   - devops
@@ -35,14 +28,15 @@ roles:
   - engineering
   - backend
   - data
-  - operations
   - product
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

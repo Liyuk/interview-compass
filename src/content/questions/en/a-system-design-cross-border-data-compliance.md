@@ -13,9 +13,20 @@ signals:
   - Says how the basis for decisions is recorded and how the system adapts quickly when rules change
 primaryCapability: professional.system-design
 topics: [security, system-design, ethics, engineering-systems]
-roles: [engineering, backend, data, manager, product]
+roles:
+  - engineering
+  - backend
+  - data
+  - manager
+  - product
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion]
 formats: [case, system-design]
 followUps:

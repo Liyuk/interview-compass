@@ -13,9 +13,18 @@ signals:
   - 回头看时，承认哪些判断的前提后来变了
 primaryCapability: professional.system-design
 topics: [system-design, engineering-systems]
-roles: [engineering, backend, frontend, mobile]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [behavioral, case]
 followUps:

@@ -9,9 +9,16 @@ intent: "了解你能否把主观质量判断拆成可复查的评价标准，�
 signals: ["先定义任务目标和可接受错误，而非直接取多数票", "检查样本切片、标注说明和评审者一致性", "区分固定输入的模型波动与评价定义差异", "提出仲裁、复标或补充样本的验证动作"]
 primaryCapability: "professional.ai-engineering"
 topics: ["ai-engineering", "metrics"]
-roles: ["ai-engineer", "data"]
+roles:
+  - ai-engineer
+  - data
+  - engineering
+  - product
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: ["如果分歧集中在少数高风险场景，你会怎样处理？"]

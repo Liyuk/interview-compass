@@ -12,9 +12,17 @@ signals:
   - 先看能直接测量的数据，再决定是否改动
 primaryCapability: professional.computer-science
 topics: [computer-networks, frontend, backend]
-roles: [frontend, backend, mobile]
+roles:
+  - frontend
+  - backend
+  - mobile
+  - engineering
+  - ai-engineer
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [knowledge, debugging]
 source:

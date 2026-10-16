@@ -9,9 +9,19 @@ intent: "Assess whether you can turn quality, latency, and cost into measurable 
 signals: ["Defines end-to-end latency and cost measures", "Times queueing, retrieval, generation, and tool calls separately", "Separates averages from tail latency and request types", "Validates optimizations against quality regressions"]
 primaryCapability: "professional.ai-engineering"
 topics: ["ai-engineering", "resource-allocation", "system-design"]
-roles: ["ai-engineer", "backend", "product"]
+roles:
+  - ai-engineer
+  - backend
+  - product
+  - engineering
+  - frontend
+  - mobile
+  - data
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case", "system-design"]
 followUps: []

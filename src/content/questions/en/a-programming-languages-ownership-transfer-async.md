@@ -27,11 +27,15 @@ roles:
   - mobile
   - backend
   - engineering
+  - frontend
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

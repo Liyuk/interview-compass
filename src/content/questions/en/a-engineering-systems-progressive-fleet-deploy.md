@@ -9,9 +9,16 @@ intent: "Assess whether you can control large-scale release risk through batchin
 signals: ["Groups rollout batches by failure domain or risk", "Validates compatibility and node health", "Uses explicit signals for pause or automated rollback", "Handles offline nodes and convergence after partial success"]
 primaryCapability: "professional.engineering-systems"
 topics: ["devops", "reliability", "risk-management"]
-roles: ["engineering", "backend"]
+roles:
+  - engineering
+  - backend
+  - ai-engineer
+  - data
 responsibilityScopes: ["multiple-teams"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["system-design", "case"]
 followUps: []

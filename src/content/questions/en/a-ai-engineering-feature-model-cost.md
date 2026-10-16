@@ -13,9 +13,16 @@ signals:
   - Says what retiring or merging a feature rests on and its risks
 primaryCapability: professional.ai-engineering
 topics: [ai-engineering, feature-modeling, resource-allocation]
-roles: [ai-engineer, data, backend, engineering]
+roles:
+  - ai-engineer
+  - data
+  - backend
+  - engineering
 responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, system-design]
 followUps:

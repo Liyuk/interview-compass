@@ -13,9 +13,20 @@ signals:
   - 说明如何记录决策依据，并在规则变化时能快速调整
 primaryCapability: professional.system-design
 topics: [security, system-design, ethics, engineering-systems]
-roles: [engineering, backend, data, manager, product]
+roles:
+  - engineering
+  - backend
+  - data
+  - manager
+  - product
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion]
 formats: [case, system-design]
 followUps:

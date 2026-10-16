@@ -13,9 +13,19 @@ signals:
   - Considers the scope of context, privacy, and how the quality of suggestions is assessed
 primaryCapability: professional.system-design
 topics: [system-design, ai-engineering, frontend]
-roles: [engineering, ai-engineer, frontend, product]
+roles:
+  - engineering
+  - ai-engineer
+  - frontend
+  - product
+  - backend
+  - mobile
+  - design
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

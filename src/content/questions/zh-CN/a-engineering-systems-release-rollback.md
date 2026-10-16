@@ -12,9 +12,18 @@ signals:
   - "要求看到演练记录，而不是只接受文字承诺"
 primaryCapability: professional.engineering-systems
 topics: [devops, reliability, engineering-systems]
-roles: [engineering, backend, frontend, mobile]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, operations-review]
 formats: [case]
 relatedQuestions:

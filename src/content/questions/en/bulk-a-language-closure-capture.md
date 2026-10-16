@@ -19,6 +19,10 @@ topics:
 roles:
   - engineering
   - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes:
   - individual
   - team

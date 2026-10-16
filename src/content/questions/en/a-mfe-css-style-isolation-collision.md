@@ -9,9 +9,15 @@ intent: "Assesses whether you can choose boundaries around isolation, shared des
 signals: ["Locate conflicts from global selectors, custom properties, and cascade order","Compare constraints of namespaces, CSS Modules, and Shadow DOM","Define theme tokens and overlay mounting conventions","Validate with representative pages and accessibility cases"]
 primaryCapability: "professional.engineering-systems"
 topics: ["micro-frontends","frontend","engineering-systems","system-design"]
-roles: ["frontend","engineering","design"]
+roles:
+  - frontend
+  - engineering
+  - design
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["How would you handle an overlay that must cross a Shadow DOM boundary?","How would you avoid maintaining a separate visual system in every app?"]

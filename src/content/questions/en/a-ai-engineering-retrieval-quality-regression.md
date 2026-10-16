@@ -9,9 +9,19 @@ intent: "Assess whether you can connect user outcomes to offline metrics and tra
 signals: ["Separates retrieval relevance, groundedness, and task completion", "Slices by query type, source, user group, or version", "Samples cases that distinguish retrieval from generation failures", "Explains distribution shifts that aggregate metrics may hide"]
 primaryCapability: "professional.ai-engineering"
 topics: ["ai-engineering", "metrics", "debugging"]
-roles: ["ai-engineer", "backend", "data"]
+roles:
+  - ai-engineer
+  - backend
+  - data
+  - engineering
+  - frontend
+  - mobile
+  - product
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["debugging", "case"]
 followUps: []

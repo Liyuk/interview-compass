@@ -19,11 +19,16 @@ topics:
   - distributed-systems
 roles:
   - backend
+  - engineering
+  - ai-engineer
+  - data
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - campus

@@ -13,9 +13,19 @@ signals:
   - Says how quality and cost are observed, not only availability
 primaryCapability: professional.system-design
 topics: [system-design, ai-engineering, backend]
-roles: [engineering, ai-engineer, backend, frontend]
+roles:
+  - engineering
+  - ai-engineer
+  - backend
+  - frontend
+  - mobile
+  - data
+  - product
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

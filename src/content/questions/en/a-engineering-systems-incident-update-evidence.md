@@ -9,9 +9,20 @@ intent: "See whether you can communicate usefully, honestly, and at a steady cad
 signals: ["Separates confirmed facts, hypotheses, and unknowns", "Commits to the next update rather than inventing an ETA", "Explains user impact and current mitigations", "States escalation triggers for decisions"]
 primaryCapability: "professional.engineering-systems"
 topics: ["devops", "communication", "risk-management"]
-roles: ["engineering", "operations", "manager"]
+roles:
+  - engineering
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["multiple-teams"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["behavioral", "case"]
 followUps: []

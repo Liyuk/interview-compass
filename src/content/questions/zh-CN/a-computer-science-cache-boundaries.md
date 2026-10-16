@@ -12,9 +12,17 @@ signals:
   - "提到如何观察命中率与过期读取，而不只是上线后等反馈"
 primaryCapability: professional.computer-science
 topics: [databases, backend, distributed-systems]
-roles: [engineering, backend]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [knowledge]
 followUps:

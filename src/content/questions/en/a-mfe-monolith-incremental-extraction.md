@@ -9,9 +9,14 @@ intent: "Assesses whether you can stage a reversible migration and use real coll
 signals: ["Identify change coupling, team waits, and independent business boundaries","Pilot a low-risk slice with a clear owner","Set parallel-run, rollback, and legacy-retirement criteria","Compare release autonomy, failure rate, and maintenance cost before and after"]
 primaryCapability: "professional.engineering-systems"
 topics: ["micro-frontends","frontend","engineering-systems","system-design"]
-roles: ["frontend","engineering","design"]
+roles:
+  - frontend
+  - engineering
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["What evidence would make you stop and keep a modular monolith?","How would you prevent old and new architectures from coexisting indefinitely without ownership?"]

@@ -16,6 +16,8 @@ topics:
   - programming-languages
 roles:
   - frontend
+  - engineering
+  - mobile
 responsibilityScopes:
   - individual
   - team

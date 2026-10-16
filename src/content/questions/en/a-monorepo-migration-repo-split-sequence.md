@@ -9,9 +9,18 @@ intent: "Assesses whether you can remove migration dependencies, preserve tracea
 signals: ["Map repository boundaries and cross-repository dependencies","Choose whether to preserve, mirror, or archive history and explain why","Plan dual-write or freeze windows, CI migration, and package-source updates","Set acceptance, rollback, and owners for each step"]
 primaryCapability: "professional.engineering-systems"
 topics: ["monorepo","engineering-systems","devops"]
-roles: ["engineering","frontend","backend"]
+roles:
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["team","multiple-teams"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["What signals show that splitting costs more than keeping a monorepo?","How would you keep security fixes and releases uninterrupted?"]

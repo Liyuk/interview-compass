@@ -17,12 +17,18 @@ topics:
 roles:
   - ai-engineer
   - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - design
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

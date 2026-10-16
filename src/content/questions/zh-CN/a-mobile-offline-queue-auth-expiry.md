@@ -18,11 +18,16 @@ topics:
 roles:
   - mobile
   - backend
+  - engineering
+  - frontend
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring
@@ -30,7 +35,7 @@ formats:
   - system-design
   - debugging
 followUps:
-  - 如果操作包含不可逆（可以安全撤回）支付或外发通知，怎样确认后再重放（重新处理历史消息或任务）？
+  - 如果操作包含不可逆（难以撤销或恢复）支付或外发通知，怎样确认后再重放（重新处理历史消息或任务）？
   - 本地队列保存期限和敏感数据保护如何设定？
 source:
   - attribution: original

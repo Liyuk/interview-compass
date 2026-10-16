@@ -9,9 +9,20 @@ intent: "了解你能否在信息不完整时提供有用、诚实且有节奏�
 signals: ["区分已确认事实、假设和未知项", "给出下一次更新时间而非编造确定时间", "说明当前用户影响与缓解动作", "同步决策需要的升级条件"]
 primaryCapability: "professional.engineering-systems"
 topics: ["devops", "communication", "risk-management"]
-roles: ["engineering", "operations", "manager"]
+roles:
+  - engineering
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: ["multiple-teams"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["behavioral", "case"]
 followUps: []

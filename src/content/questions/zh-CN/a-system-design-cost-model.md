@@ -13,9 +13,19 @@ signals:
   - 指出降低成本时可能付出的代价，例如延迟、可靠性
 primaryCapability: professional.system-design
 topics: [system-design, resource-allocation, engineering-systems]
-roles: [engineering, backend, data, manager]
+roles:
+  - engineering
+  - backend
+  - data
+  - manager
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, system-design]
 followUps:

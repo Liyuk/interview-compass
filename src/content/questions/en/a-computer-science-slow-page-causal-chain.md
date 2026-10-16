@@ -12,9 +12,15 @@ signals:
   - "States side effects or limits for preloading, compression, caching, and similar measures"
 primaryCapability: professional.computer-science
 topics: [computer-networks, frontend]
-roles: [engineering, frontend]
+roles:
+  - engineering
+  - frontend
+  - mobile
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [knowledge, case]
 followUps:

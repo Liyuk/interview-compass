@@ -24,10 +24,14 @@ roles:
   - ai-engineer
   - data
   - product
+  - engineering
+  - backend
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -13,9 +13,19 @@ signals:
   - 考虑权限校验的性能和一致性，以及越权的排查方式
 primaryCapability: professional.system-design
 topics: [system-design, security, backend]
-roles: [engineering, backend, frontend, product]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - product
+  - mobile
+  - ai-engineer
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

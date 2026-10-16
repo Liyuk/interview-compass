@@ -13,9 +13,16 @@ signals:
   - Says how the experience is verified with metrics such as time to first frame and scroll stutter
 primaryCapability: professional.system-design
 topics: [system-design, mobile, frontend]
-roles: [engineering, mobile, frontend, backend]
+roles:
+  - engineering
+  - mobile
+  - frontend
+  - backend
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design]
 followUps:

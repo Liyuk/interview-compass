@@ -7,13 +7,10 @@ title: 线上回答出现了错误引用，但当时的提示词、模型版本�
 question: 线上回答出现了错误引用，但当时的提示词、模型版本和检索结果都没有完整记录。你会补哪些观测信息，才能既排查问题又控制敏感数据暴露？
 intent: 考察你能否建立足够的追踪证据，同时明确日志保留、脱敏与访问边界。
 signals:
-  - 记录模型、提示、索引和工具版本等可复现信息
-  - 对输入、输出和检索内容按敏感度脱敏
-  - 提供关联请求的追踪 ID 与错误分类
-  - 说明日志访问权限和保留周期
-  - 选择请求 ID、模型版本、检索统计和错误类别等最小字段
-  - 说明脱敏、抽样、保留期限和受控临时采集的条件
-  - 验证遥测仍能区分检索、模型和工具链路退化
+  - 用关联ID和模型、提示、索引、工具及参数版本重建请求路径。
+  - 从具体错误确定最小必要输入、检索和输出证据，不默认完整原文都应保留。
+  - 比较脱敏、抽样、统计与受控临时采集的诊断价值、局限和敏感暴露。
+  - 规定访问、用途、保留和删除，并用故障样例验证仍能区分检索模型与工具退化。
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering
@@ -24,12 +21,16 @@ roles:
   - ai-engineer
   - backend
   - engineering
+  - frontend
+  - mobile
+  - data
 responsibilityScopes:
   - team
   - organization
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring
