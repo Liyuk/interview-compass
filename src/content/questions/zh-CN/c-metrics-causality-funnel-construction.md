@@ -13,9 +13,21 @@ signals:
   - 说明漏斗的粒度是用户、会话还是请求，以及为什么
 primaryCapability: value-direction.metrics-causality
 topics: [metrics, product-thinking, growth-experiments]
-roles: [product, operations, data, engineering, marketing]
+roles:
+  - product
+  - operations
+  - data
+  - engineering
+  - marketing
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, knowledge]
 followUps:

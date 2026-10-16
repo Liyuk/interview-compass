@@ -16,12 +16,16 @@ topics:
   - accessibility
 roles:
   - design
+  - engineering
+  - frontend
+  - mobile
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

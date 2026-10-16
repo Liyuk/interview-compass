@@ -12,9 +12,19 @@ signals:
   - 说明验证方式及结论的适用边界
 primaryCapability: value-direction.metrics-causality
 topics: [metrics, communication]
-roles: [engineering, product, operations]
+roles:
+  - engineering
+  - product
+  - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, promotion]
 formats: [behavioral, artifact-review]
 source:

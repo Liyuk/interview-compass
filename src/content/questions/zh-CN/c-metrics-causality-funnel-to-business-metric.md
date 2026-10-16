@@ -10,7 +10,7 @@ signals:
   - 说明每个环节的变化如何传导到业务指标，而不是只列出两组数字
   - 用敏感度或历史数据判断哪一环影响最大，并说明依据
   - 指出传导关系里不确定的部分，以及怎样验证
-  - 说明改善某一环时可能挤压其他环节的副作用（重复执行、越权等额外影响）
+  - 说明改善某一环时可能把成本、等待或用户损害转移到其他环节
 primaryCapability: value-direction.metrics-causality
 topics:
   - metrics
@@ -21,12 +21,17 @@ roles:
   - data
   - engineering
   - marketing
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - promotion

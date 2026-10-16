@@ -13,9 +13,20 @@ signals:
   - 说明怎样让团队成员理解团队计划与上层目标的关系，而不只是管理层知道
 primaryCapability: value-direction.planning
 topics: [planning, communication, product-thinking, business-planning]
-roles: [manager, product, engineering, pmo]
+roles:
+  - manager
+  - product
+  - engineering
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, promotion]
 formats: [planning, case]
 followUps:

@@ -13,9 +13,20 @@ signals:
   - Names the new risks that the adaptation brings
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, system-design]
-roles: [engineering, product, operations, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, behavioral]
 followUps:

@@ -13,9 +13,20 @@ signals:
   - Says whether the uniqueness is valuable to the business or merely different from others
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, planning]
-roles: [engineering, product, operations, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

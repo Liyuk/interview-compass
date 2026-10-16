@@ -10,27 +10,17 @@ intent: >-
   maintenance, and customer concentration risk into one verifiable investment decision.
 signals:
   - >-
-    Verifies the customer’s obstacle, willingness to pay and renewal conditions, usage frequency,
-    alternatives, and the boundary of sales commitments.
+    Verify tasks, payment and renewal, usage, alternatives, and sales promises, separating facts from
+    reuse assumptions.
   - >-
-    Separates one-time revenue from reuse value across customers, abstraction cost, and long-term permission
-    and data maintenance ownership.
+    Compare customization, configuration, shared capability, service, and refusal by revenue,
+    abstraction, data-permission maintenance, and roadmap cost.
   - >-
-    Compares custom work, a general capability, a service, and walking away on benefits, risks, and roadmap
-    opportunity cost.
+    Confirm pricing, resource, and commitment authority rather than treating a high offer or powerful
+    client as proof of value.
   - >-
-    Proposes reversible validation and clear thresholds for pilot, pricing, productization, expansion, or
-    stopping.
-  - Clarifies target users, intended outcomes, and guardrails that must not worsen
-  - Separates behavioral correlation, causal evidence, and untested assumptions
-  - Defines triggers for scaling, changing, or stopping investment
-  - Analyzes the underlying job, trigger frequency, and transferability across customer segments.
-  - Compares revenue retention, market expansion, support cost, and product complexity.
-  - >-
-    Proposes a testable lightweight option or clear rejection criteria instead of accepting customization by
-    default.
-  - Verifies the underlying job and whether other users share the problem.
-  - Compares custom work, configuration, general capability, and rejection.
+    Set bounded validation, adoption evidence, and scale, productization, or stop conditions with
+    concentration and ongoing costs.
 primaryCapability: value-direction.product-judgment
 topics:
   - product-thinking
@@ -44,6 +34,10 @@ roles:
   - engineering
   - marketing
   - data
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams

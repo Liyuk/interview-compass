@@ -12,9 +12,14 @@ signals:
   - 说清收缩的条件和复核的时间点
 primaryCapability: value-direction.investment-choices
 topics: [operations, prioritization]
-roles: [operations, product]
+roles:
+  - operations
+  - product
 responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, operations-review, promotion]
 formats: [case, planning]
 source:

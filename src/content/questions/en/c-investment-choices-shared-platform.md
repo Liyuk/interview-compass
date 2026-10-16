@@ -12,9 +12,18 @@ signals:
   - "Names the cost of premature abstraction and how adoption or reuse would validate the choice"
 primaryCapability: value-direction.investment-choices
 topics: [planning, system-design, resource-allocation, technical-planning]
-roles: [engineering, backend, manager]
+roles:
+  - engineering
+  - backend
+  - manager
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case]
 followUps:

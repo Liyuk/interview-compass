@@ -12,9 +12,20 @@ signals:
   - "说明指标变化时谁做什么，说不清的降为观察或按需"
 primaryCapability: value-direction.metrics-causality
 topics: [metrics, product-thinking, operations]
-roles: [product, data, operations, engineering]
+roles:
+  - product
+  - data
+  - operations
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, operations-review, hiring]
 formats: [case, artifact-review]
 followUps:

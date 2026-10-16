@@ -7,12 +7,10 @@ title: 实验期间外部政策同时变化，结果还能判断结果受哪些�
 question: 随机实验运行期间平台同时调整了收费政策，处理组和对照组受到影响程度不同。你会如何判断实验结果还能支持什么结论？
 intent: 考察实验干预、外部变化和因果解释边界。
 signals:
-  - 梳理干预时间与组间暴露差异。
-  - 检查随机化、污染和样本流失。
-  - 限定可解释的估计量并补充敏感性分析。
-  - 核验随机化单位与实际曝光、账号合并及跨设备行为是否一致。
-  - 检查渠道、地区和时间的组间不平衡或交叉污染。
-  - 说明调整、分层分析或重新实验的条件及结论边界。
+  - 记录收费变化与实验的时间、分组和实际暴露，确认处理组与对照组受到什么不同影响。
+  - 检查随机分配、交叉污染、样本流失及变化后的可比范围，不在结果出现后随意挑选样本。
+  - 比较分层、敏感性检查、延长观察或重新实验的条件，说明各自不能解决什么。
+  - 限定当前可解释结论和决策风险，记录需要什么补充证据。
 primaryCapability: value-direction.metrics-causality
 topics:
   - metrics
@@ -20,12 +18,18 @@ topics:
 roles:
   - product
   - data
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

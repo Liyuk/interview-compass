@@ -9,9 +9,20 @@ intent: "Assesses whether you can describe contribution carefully under multiple
 signals: ["List timing, target groups, expected mechanisms, and dependencies","Look for phased rollout, differentiated groups, or natural experiments as controls","Separate identifiable causal effects from directional evidence and unattributable change","Carry uncertainty into future investment ranking and reuse decisions"]
 primaryCapability: "value-direction.business-outcomes"
 topics: ["metrics","product-thinking","prioritization"]
-roles: ["product","data","manager"]
+roles:
+  - product
+  - data
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["Without a clean control group, how would you avoid false precision in attribution?","If initiatives cannot be isolated but resources must be ranked, how would you use limited evidence?"]

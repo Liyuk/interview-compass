@@ -12,9 +12,19 @@ signals:
   - "提出比永久开关更小的替代或验证方式，例如默认值加一次说明"
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, product-discovery]
-roles: [product, engineering, frontend, design]
+roles:
+  - product
+  - engineering
+  - frontend
+  - design
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [case]
 followUps:

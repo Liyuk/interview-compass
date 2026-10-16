@@ -12,9 +12,18 @@ signals:
   - "指出提前抽象的代价，并说明怎样用采用率或复用结果验证"
 primaryCapability: value-direction.investment-choices
 topics: [planning, system-design, resource-allocation, technical-planning]
-roles: [engineering, backend, manager]
+roles:
+  - engineering
+  - backend
+  - manager
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case]
 followUps:

@@ -12,9 +12,20 @@ signals:
   - "Proposes a validation with stop conditions for low-confidence but high-potential items instead of ranking them last"
 primaryCapability: value-direction.prioritization
 topics: [prioritization, planning, resource-allocation]
-roles: [manager, product, engineering, pmo]
+roles:
+  - manager
+  - product
+  - engineering
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, promotion, operations-review]
 formats: [case]
 followUps:

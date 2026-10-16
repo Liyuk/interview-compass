@@ -10,9 +10,16 @@ question: >-
   contamination and results?
 intent: Assess whether you identify cross-channel interference, execution bias, and the limits of incremental claims.
 signals:
-  - Audit holdout exposure, channel overlap, and assignment execution.
-  - Estimate contamination direction and bias instead of treating raw difference as causal.
-  - Propose a redesign, stratified estimate, or conservative budget decision.
+  - Check assignment against exposure, separating other ads, sales contacts, and organic recommendations.
+  - >-
+    Explain which comparisons contamination changes, whether its direction is identifiable, and what
+    remains unknown rather than treating the raw gap as total channel lift.
+  - >-
+    Compare redesign, segment checks, sensitivity analysis, or conservative investment by conditions and
+    cost.
+  - >-
+    State decisions supported by current evidence and further validation rather than scaling budgets
+    because a result is significant.
 primaryCapability: value-direction.metrics-causality
 topics:
   - growth-experiments
@@ -28,6 +35,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

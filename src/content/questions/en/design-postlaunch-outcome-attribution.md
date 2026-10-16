@@ -12,13 +12,16 @@ intent: >-
   Assesses whether the candidate can interpret mixed post-launch evidence with causal discipline rather than
   labeling a design successful or unsuccessful from one aggregate metric.
 signals:
-  - Checks the target metric, observation window, segments, and comparability before and after launch
-  - Treats behavioral data, qualitative feedback, and support cost as distinct evidence with stated limits
-  - Proposes follow-up analysis or experiments that test a specific mechanism and inform a design decision
   - >-
-    Identifies the stakeholders, constraints, and risks relevant to differences between lab performance and
-    real-world outcomes.
-  - Proposes evidence or a review point that could confirm or change the decision.
+    Check completion, support, and feedback definitions, windows, and user mix for pre/post
+    comparability.
+  - >-
+    Treat behavior, qualitative feedback, and support cost as different evidence with distinct sources
+    and limits.
+  - Propose mechanisms and alternatives, identifying effects not yet attributable to design.
+  - >-
+    Use segment research or small tests to retain, adjust, or revert, checking recovery for affected
+    users.
 primaryCapability: value-direction.metrics-causality
 topics:
   - metrics
@@ -28,12 +31,16 @@ roles:
   - design
   - product
   - data
+  - engineering
+  - frontend
+  - mobile
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - promotion

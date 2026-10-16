@@ -9,9 +9,19 @@ intent: "考察能否结合统计不确定性、执行质量、机会成本和�
 signals: ["检查样本量、实验执行、目标人群和指标灵敏度","区分方案无效、执行失败与证据不足","比较继续收集信息的价值与占用资源的机会成本","明确下一轮实验如何改变判断，或为何应停止"]
 primaryCapability: "value-direction.business-outcomes"
 topics: ["metrics","prioritization","learning"]
-roles: ["product","engineering","data"]
+roles:
+  - product
+  - engineering
+  - data
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["如果继续实验的成本超过潜在收益，如何处理证据不足？","怎样防止把“未证明无效”解释成“已经证明有效”？"]

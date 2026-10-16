@@ -12,9 +12,20 @@ signals:
   - "说明哪些假设不成立时会重新规划，以及先砍哪里"
 primaryCapability: value-direction.planning
 topics: [planning, resource-allocation, risk-management]
-roles: [manager, product, engineering]
+roles:
+  - manager
+  - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
+  - executive
 scenarios: [interview, promotion]
 formats: [case, planning]
 followUps:

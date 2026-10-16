@@ -12,9 +12,18 @@ signals:
   - "区分优化的是性能还是策略，并写出开始之前就定好的停止条件"
 primaryCapability: value-direction.investment-choices
 topics: [planning, prioritization, system-design, technical-planning]
-roles: [engineering, backend, frontend, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - manager
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [case, planning]
 followUps:

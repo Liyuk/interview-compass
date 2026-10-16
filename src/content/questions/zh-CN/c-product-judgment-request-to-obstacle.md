@@ -12,9 +12,18 @@ signals:
   - "能想到真正诉求可能是筛选或核对能力缺失"
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, product-discovery]
-roles: [engineering, backend, frontend, product]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - product
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, self-reflection]
 formats: [case]
 followUps:

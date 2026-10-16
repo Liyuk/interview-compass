@@ -12,9 +12,20 @@ signals:
   - "Says which known assumption must change, and which investment gets replaced, when someone reopens an item"
 primaryCapability: value-direction.planning
 topics: [planning, prioritization, communication]
-roles: [manager, product, engineering, pmo]
+roles:
+  - manager
+  - product
+  - engineering
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, promotion, self-reflection]
 formats: [planning, behavioral]
 followUps:

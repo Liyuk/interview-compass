@@ -12,9 +12,19 @@ signals:
   - "Offers something smaller than a permanent switch, such as a default plus one explanation"
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, product-discovery]
-roles: [product, engineering, frontend, design]
+roles:
+  - product
+  - engineering
+  - frontend
+  - design
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [case]
 followUps:

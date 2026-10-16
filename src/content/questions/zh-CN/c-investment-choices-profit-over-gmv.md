@@ -13,9 +13,17 @@ signals:
   - 说明怎样向供给方沟通，使调整被理解而不是被抗拒
 primaryCapability: value-direction.investment-choices
 topics: [commercialization, operations, metrics, resource-allocation]
-roles: [operations, product, manager, marketing]
+roles:
+  - operations
+  - product
+  - manager
+  - marketing
 responsibilityScopes: [organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [interview, promotion, operations-review]
 formats: [case, planning]
 followUps:

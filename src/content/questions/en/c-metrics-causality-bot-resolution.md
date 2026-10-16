@@ -12,9 +12,21 @@ signals:
   - "Proposes a small validation on a specific task with guardrails rather than a blanket cut"
 primaryCapability: value-direction.metrics-causality
 topics: [metrics, operations, risk-management]
-roles: [product, operations, data, manager]
+roles:
+  - product
+  - operations
+  - data
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, operations-review, promotion]
 formats: [case]
 followUps:

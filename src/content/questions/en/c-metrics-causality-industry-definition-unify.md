@@ -13,9 +13,21 @@ signals:
   - Says what judgment the comparison finally supports and what it does not
 primaryCapability: value-direction.metrics-causality
 topics: [metrics, product-thinking]
-roles: [product, operations, marketing, data, engineering]
+roles:
+  - product
+  - operations
+  - marketing
+  - data
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, operations-review]
 formats: [case, behavioral]
 followUps:

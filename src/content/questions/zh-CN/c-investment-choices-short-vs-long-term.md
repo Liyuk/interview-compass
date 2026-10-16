@@ -12,9 +12,19 @@ signals:
   - 指出长期收益的验证信号和失效条件
 primaryCapability: value-direction.investment-choices
 topics: [planning, prioritization]
-roles: [engineering, product, manager]
+roles:
+  - engineering
+  - product
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, behavioral]
 followUps:

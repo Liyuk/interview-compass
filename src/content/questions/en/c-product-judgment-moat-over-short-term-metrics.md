@@ -13,9 +13,20 @@ signals:
   - Separates the decision's contribution from outside changes and other explanations
 primaryCapability: value-direction.product-judgment
 topics: [product-thinking, planning, ethics]
-roles: [product, manager]
+roles:
+  - product
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

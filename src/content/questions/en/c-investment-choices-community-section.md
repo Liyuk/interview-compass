@@ -12,9 +12,14 @@ signals:
   - States the conditions for shrinking and when it will be reviewed
 primaryCapability: value-direction.investment-choices
 topics: [operations, prioritization]
-roles: [operations, product]
+roles:
+  - operations
+  - product
 responsibilityScopes: [team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, operations-review, promotion]
 formats: [case, planning]
 source:

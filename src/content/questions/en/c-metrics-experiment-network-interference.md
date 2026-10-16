@@ -9,12 +9,18 @@ question: >-
   are significant, but spillover cannot be fully isolated. How would you assess the conclusion?
 intent: Assess whether you identify interference, randomization units, and network effects in causal inference.
 signals:
-  - Describe the interference mechanism and likely direction of bias.
-  - Check randomization unit, exposure, and cross-group spillover.
-  - Consider cluster experiments or sensitivity analysis and state limits.
-  - Map interactions among users, content, and creators.
-  - Compare user-level, cluster-level, and switchback designs.
-  - Choose an estimand that accounts for spillovers and safeguards.
+  - >-
+    Reconstruct inviter and friend allocation, exposure, and propagation, identifying cross-group
+    influence.
+  - >-
+    Separate significance, propagation, and business effects, stating whether bias direction is
+    identifiable and under what assumptions.
+  - >-
+    Compare assignment units, cluster or time designs, and sensitivity checks without assuming
+    interference can always be removed.
+  - >-
+    State interpretable conclusions, residual uncertainty, and next validation with experience
+    guardrails.
 primaryCapability: value-direction.metrics-causality
 topics:
   - metrics
@@ -23,12 +29,18 @@ roles:
   - data
   - product
   - marketing
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

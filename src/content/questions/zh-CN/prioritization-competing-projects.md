@@ -12,9 +12,21 @@ signals:
   - 能说明排序结果如何传达给被推后的团队
 primaryCapability: value-direction.prioritization
 topics: [planning, prioritization, resource-allocation, conflict-resolution]
-roles: [engineering, product, manager, pmo]
+roles:
+  - engineering
+  - product
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [team-manager, senior-manager, executive]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [interview, promotion, operations-review]
 formats: [case, planning]
 source:

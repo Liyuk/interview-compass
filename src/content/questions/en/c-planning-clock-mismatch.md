@@ -12,9 +12,20 @@ signals:
   - "Says which assumptions would trigger replanning, and what gets cut first"
 primaryCapability: value-direction.planning
 topics: [planning, resource-allocation, risk-management]
-roles: [manager, product, engineering]
+roles:
+  - manager
+  - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
+  - executive
 scenarios: [interview, promotion]
 formats: [case, planning]
 followUps:

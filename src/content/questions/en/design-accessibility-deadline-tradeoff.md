@@ -13,16 +13,15 @@ intent: >-
   boundaries and staged plans under pressure.
 signals:
   - >-
-    Identifies affected users, tasks, and the degree of blockage instead of reducing the issue to visual
-    preference
-  - Proposes short-term mitigation that reduces the actual barrier and a follow-up fix with an owner and date
+    Verify affected keyboard tasks, scope, and severity, separating preference from inability to complete
+    a critical task.
+  - Compare testable mitigations, scope changes, delay, and full repair by user value and ongoing cost.
   - >-
-    States the launch threshold, who accepts any remaining risk, and when to escalate if the threshold cannot
-    be met
+    Clarify release thresholds, risk authority, and escalation when safeguards cannot be met, without
+    unilateral waiver.
   - >-
-    Identifies the stakeholders, constraints, and risks relevant to accessibility blockers, risk thresholds,
-    and release commitments.
-  - Proposes evidence or a review point that could confirm or change the decision.
+    Set owners, timing, and real keyboard-use validation rather than treating documentation as resolved
+    access.
 primaryCapability: value-direction.prioritization
 topics:
   - prioritization
@@ -33,12 +32,15 @@ roles:
   - design
   - product
   - engineering
+  - frontend
+  - mobile
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -13,9 +13,21 @@ signals:
   - 说明定义是如何被记录并让别人能复算的
 primaryCapability: value-direction.metrics-causality
 topics: [metrics, product-thinking]
-roles: [product, operations, data, engineering, marketing]
+roles:
+  - product
+  - operations
+  - data
+  - engineering
+  - marketing
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [knowledge, case]
 followUps:

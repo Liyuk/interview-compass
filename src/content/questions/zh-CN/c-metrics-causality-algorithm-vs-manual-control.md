@@ -13,9 +13,19 @@ signals:
   - 愿意在证据面前改变自己原来的立场，并说明什么证据会让自己改变
 primaryCapability: value-direction.metrics-causality
 topics: [operations, ai-engineering, metrics, growth-experiments]
-roles: [operations, product, data, ai-engineer, manager]
+roles:
+  - operations
+  - product
+  - data
+  - ai-engineer
+  - manager
+  - engineering
+  - backend
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, behavioral]
 followUps:
