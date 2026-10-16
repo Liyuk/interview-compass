@@ -9,9 +9,20 @@ intent: "了解你是否会先澄清业务用途、观察粒度和时间语义�
 signals: ["询问各团队用该指标做什么决策", "明确用户、事件、去重键与时间窗口", "区分真实定义差异与数据质量问题", "保留必要的不同定义并明确负责人"]
 primaryCapability: "domain-modeling.data-model"
 topics: ["data-modeling", "metrics"]
-roles: ["data", "product", "operations"]
+roles:
+  - data
+  - product
+  - operations
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: []

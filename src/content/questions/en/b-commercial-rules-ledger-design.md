@@ -13,9 +13,16 @@ signals:
   - Says how reconciliation is done and how errors are corrected without rewriting history
 primaryCapability: domain-modeling.commercial-rules
 topics: [commercialization, data-modeling, databases, backend]
-roles: [backend, engineering, data, product]
+roles:
+  - backend
+  - engineering
+  - data
+  - product
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [system-design, case]
 followUps:

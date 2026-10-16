@@ -12,9 +12,18 @@ signals:
   - "区分了已有证据与仍待验证的假设"
 primaryCapability: domain-modeling.business-context
 topics: [product-thinking]
-roles: [engineering, backend, product]
+roles:
+  - engineering
+  - backend
+  - product
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [case]
 followUps:

@@ -12,16 +12,12 @@ intent: >-
   Understand whether the candidate treats time semantics, business meaning, and usage context as part of a
   feature contract.
 signals:
-  - Clarifies window boundaries, time zone, refunds, and late-data rules
-  - Distinguishes a shared concept with different parameters from genuinely different features
-  - Designs a discoverable, versioned definition with consumer traceability
-  - Defines entity grain, calendar-day or rolling windows, timezone, and prediction time
-  - Specifies refunds, cancellations, late data, deduplication, and missing-value semantics
-  - Distinguishes a shared definition, configurable parameters, and genuinely different business concepts
-  - Makes definitions discoverable and versioned, with consumers and historical changes traceable
-  - Distinguishes a fixed calendar-day window from a relative sliding window.
-  - Defines time zone, endpoint inclusion, refresh cadence, and late-data policy.
-  - Reconciles boundary samples to verify batch and online implementations follow one contract.
+  - Defines entity grain, calendar or rolling windows, endpoint inclusion, time zones, and cadence.
+  - >-
+    Explains refunds, cancellation, late data, deduplication, and no-history semantics instead of
+    defaulting to zero.
+  - Compares shared definitions, parameterized reuse, and distinct features by consumer needs.
+  - Versions owners and consumer relations, reconciling batch and online boundary examples.
 primaryCapability: domain-modeling.feature-model
 topics:
   - feature-modeling
@@ -32,10 +28,13 @@ roles:
   - ai-engineer
   - product
   - engineering
+  - backend
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
   - promotion

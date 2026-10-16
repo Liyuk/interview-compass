@@ -9,9 +9,20 @@ intent: "See whether you clarify business use, grain, and time semantics before 
 signals: ["Asks what decisions each team makes with the metric", "Defines user, event, deduplication key, and time window", "Separates legitimate definition differences from data-quality issues", "Keeps necessary variants with clear owners"]
 primaryCapability: "domain-modeling.data-model"
 topics: ["data-modeling", "metrics"]
-roles: ["data", "product", "operations"]
+roles:
+  - data
+  - product
+  - operations
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: []

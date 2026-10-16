@@ -13,9 +13,19 @@ signals:
   - Says how the effect on the inside is limited when the external model changes
 primaryCapability: domain-modeling.data-model
 topics: [data-modeling, commercialization, system-design]
-roles: [backend, data, product, engineering]
+roles:
+  - backend
+  - data
+  - product
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, system-design]
 followUps:

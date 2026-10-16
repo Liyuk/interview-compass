@@ -12,9 +12,19 @@ signals:
   - "区分去重键与关联键，并说明任务或会话 ID 的作用"
 primaryCapability: domain-modeling.data-model
 topics: [data-modeling, databases, metrics]
-roles: [data, backend, product]
+roles:
+  - data
+  - backend
+  - product
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus]
 formats: [knowledge, case]
 followUps:

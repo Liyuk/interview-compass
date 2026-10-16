@@ -21,6 +21,11 @@ roles:
   - data
   - product
   - operations
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
   - organization

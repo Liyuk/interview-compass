@@ -12,9 +12,19 @@ signals:
   - "不熟悉项目的人读完能回答这个方向为什么存在、最重要的问题是什么"
 primaryCapability: domain-modeling.product-project-model
 topics: [product-thinking, planning]
-roles: [engineering, product, pmo]
+roles:
+  - engineering
+  - product
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [case]
 followUps:

@@ -7,16 +7,10 @@ title: 新套餐扩大了试用，却蚕食原有高价套餐收入，你怎么�
 question: 新套餐让更多用户愿意开始试用，但其中一部分原本会购买高价套餐的客户转向了低价方案。你会用什么商业模型和观察窗口判断套餐组合是否创造了新增价值？
 intent: 考察候选人能否同时看转化、套餐迁移、毛利和长期价值，评估产品组合而非单点销量。
 signals:
-  - 区分新增用户转化与存量客户降档迁移
-  - 比较各套餐的毛利、服务成本和生命周期贡献
-  - 提出分群观察、对照或继续投入的判定条件
-  - 区分新增需求与套餐间迁移。
-  - 分析毛利、留存、服务成本和客户生命周期。
-  - 设置分群实验与停止或调整阈值。
-  - 比较套餐推出前后的购买率、客单价、毛利与续费表现
-  - 识别新增购买和从高价方案迁移的比例
-  - 按使用需求和客群检查套餐是否让价值匹配更清晰
-  - 说明需要观察的周期及重新定价或下线条件
+  - 区分新增购买、原高价客户降档与原有需求提前购买，说明识别依据。
+  - 按客群比较组合毛利、服务成本、留存和生命周期贡献，而非单一套餐销量。
+  - 提出可比的基线或分群实验，说明观察周期、尚未成熟的结果与不确定性。
+  - 给出继续投入、调价或退出的条件，并分析对客户价值和现有产品的影响。
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization
@@ -32,9 +26,9 @@ responsibilityScopes:
   - multiple-teams
   - team
 careerTracks:
+  - individual-contributor
   - team-manager
   - senior-manager
-  - individual-contributor
 scenarios:
   - interview
   - promotion

@@ -12,9 +12,19 @@ signals:
   - "留下了范围声明、未知清单和更新触发条件，方便后来者补充"
 primaryCapability: domain-modeling.product-project-model
 topics: [product-thinking, communication]
-roles: [product, engineering, operations]
+roles:
+  - product
+  - engineering
+  - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [artifact-review]
 followUps:

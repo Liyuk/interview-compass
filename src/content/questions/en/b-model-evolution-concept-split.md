@@ -12,9 +12,18 @@ signals:
   - "Points out old records that cannot be mapped with certainty and how they are handled"
 primaryCapability: domain-modeling.model-evolution
 topics: [data-modeling, databases]
-roles: [backend, engineering, data]
+roles:
+  - backend
+  - engineering
+  - data
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case]
 followUps:

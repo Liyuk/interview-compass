@@ -9,9 +9,17 @@ intent: "Assess whether you can set blocking, alerting, and review levels based 
 signals: ["Separates critical integrity constraints from soft anomalies", "Sets thresholds and response levels by downstream impact", "Defines authorization and audit trail for manual overrides", "Tunes rules using false positives, misses, and downstream loss"]
 primaryCapability: "domain-modeling.data-model"
 topics: ["data-modeling", "reliability", "operations"]
-roles: ["data", "engineering", "operations"]
+roles:
+  - data
+  - engineering
+  - operations
+  - backend
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: []

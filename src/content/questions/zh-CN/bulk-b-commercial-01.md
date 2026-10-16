@@ -7,12 +7,10 @@ title: 按月订阅、按量计费和最低消费同时存在，怎样解释一�
 question: 一个企业产品同时收取月订阅费、超额用量费和最低消费补差。你如何定义计费周期、用量归属、价格生效时间和账单解释，使客户能够核对费用？
 intent: 了解候选人如何把多种计价条款转成可解释、可核对的商业规则。
 signals:
-  - 明确不同费用项的适用对象、周期与计价单位
-  - 解释最低消费与用量费用的先后或抵扣关系
-  - 考虑价格变更、补单和账单明细的可追溯性
-  - 明确最低消费、折扣和税费的计算顺序。
-  - 让每个账单行可追溯到合同版本和用量。
-  - 用边界案例验证舍入、退款与对账。
+  - 明确订阅、超额用量和最低消费的对象、计量单位与周期。
+  - 说明最低消费、用量费、折扣和税费的计算或抵扣顺序，并比较边界结果。
+  - 让账单行可追溯到合同版本、用量事实和价格生效时间。
+  - 用变价、补单、退款及舍入样例验证客户解释、历史复算和对账。
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization
@@ -23,12 +21,15 @@ roles:
   - engineering
   - data
   - operations
+  - backend
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - promotion

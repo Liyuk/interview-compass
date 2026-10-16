@@ -12,9 +12,20 @@ signals:
   - "说明了某条路径更好的具体场景，并把它标为事实或推断"
 primaryCapability: domain-modeling.business-context
 topics: [product-thinking, product-discovery]
-roles: [product, operations, marketing]
+roles:
+  - product
+  - operations
+  - marketing
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [case]
 followUps:

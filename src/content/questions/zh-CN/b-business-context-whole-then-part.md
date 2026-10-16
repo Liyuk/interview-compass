@@ -13,9 +13,20 @@ signals:
   - 对全局中自己不了解的部分坦率说明
 primaryCapability: domain-modeling.business-context
 topics: [product-thinking, communication]
-roles: [engineering, product, operations, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, hiring]
 formats: [behavioral]
 followUps:

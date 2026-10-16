@@ -13,14 +13,14 @@ intent: >-
   Assess whether you express data purpose, sensitivity, retention basis, and deletion propagation rather than
   treating deletion as one database operation.
 signals:
-  - Separates identity data, transaction facts, derived data, and audit evidence by purpose and sensitivity.
   - >-
-    Explains how deletion or anonymization propagates to caches, analytical sets, backups, and downstream
-    copies.
-  - Defines evidence that deletion completed and data cannot re-enter production for an unauthorized purpose.
-  - Distinguish deletable, anonymizable, and legally retained data.
-  - Trace derived data, caches, backups, and downstream copies.
-  - Define deletion evidence, exceptions, and review mechanisms.
+    Classifies identity, transaction, derived, and audit data by purpose, sensitivity, and verified
+    retention grounds.
+  - Compares erasure, anonymization, and restricted retention without universal assumptions.
+  - Traces cache, analytical, backup, and downstream handling with owners, timing, and recovery.
+  - >-
+    Verifies completed scope, pending copies, and exceptions while preventing unauthorized restoration or
+    reuse.
 primaryCapability: domain-modeling.data-model
 topics:
   - data-modeling
@@ -33,6 +33,9 @@ roles:
   - engineering
   - product
   - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
   - organization
@@ -40,6 +43,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

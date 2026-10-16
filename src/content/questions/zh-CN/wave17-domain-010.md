@@ -16,12 +16,14 @@ topics:
 roles:
   - backend
   - engineering
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

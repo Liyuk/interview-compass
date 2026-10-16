@@ -12,19 +12,16 @@ intent: >-
   Assess whether you handle unknown values, versioning, consumer contract tests, and deployment coordination
   as an evolution problem.
 signals:
-  - Specify semantics for new, deprecated, and unknown values.
-  - Allow consumers to safely ignore, retain, or quarantine unknown values.
-  - Use a compatible-first rollout and cross-team verification.
-  - Define safe handling for unknown fields and enum values.
-  - Map a compatibility matrix across producers, consumers, and stored versions.
-  - Test mixed-version behavior, downgrade, and rollback paths.
-  - Find downstream consumers silently collapsing unknown states.
-  - Choose safe failure, compatibility mapping, or version negotiation.
-  - Use contract tests and a consumer inventory to govern rollout.
-  - Separate additive, semantic, and breaking changes
-  - Inventory consumers and actual usage
-  - Design dual-read/write, version adapters, or staged migration
-  - Use compatibility tests and traffic evidence to decide when to remove the old contract
+  - >-
+    Distinguishes additive, deprecated, and semantic breaking changes across actual producer, consumer,
+    and storage behavior.
+  - >-
+    Compares safe failure, preservation or quarantine, mapping, and negotiation, including information
+    lost by silent folding.
+  - Tests mixed versions and release order without assuming unknown values can always be ignored.
+  - >-
+    Uses consumer confirmation, traffic, and error evidence for rollback, upgrades, and old-contract
+    removal.
 primaryCapability: domain-modeling.model-evolution
 topics:
   - data-modeling
@@ -36,12 +33,16 @@ roles:
   - data
   - product
   - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

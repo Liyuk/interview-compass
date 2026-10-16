@@ -9,15 +9,12 @@ question: >-
   precedence differently, so access sometimes flips. How would you define eligibility and conflict rules?
 intent: Assess whether you model entitlement source, validity, precedence, revocation, and explainability.
 signals:
-  - List benefit sources, subject scope, and effective and expiry times.
-  - Define stacking, override, mutual exclusion, and revocation precedence.
-  - Keep decisions explainable and traceable, with combination tests for consistency.
-  - Separate sales packaging, subscription state, and runtime entitlement.
-  - Define server-side authority and cache refresh rules.
-  - Cover upgrades, downgrades, trial expiry, and manual exceptions.
-  - Separates feature existence, visibility, executable permission, and usage quota.
-  - Defines precedence among plan defaults, trial windows, and contractual exceptions.
-  - Can explain why a user has or lacks a capability at a given time.
+  - >-
+    Distinguishes existence, visibility, authorization, and quota, with sources and validity for plans,
+    trials, campaigns, and compensation.
+  - Defines stacking, overrides, exclusions, expiry, revocation, and conflict ownership.
+  - States authoritative decisions and cache updates; hiding UI does not enforce access.
+  - Tests upgrades, plan downgrades, expiry, and exceptions, explaining point-in-time entitlement.
 primaryCapability: domain-modeling.feature-model
 topics:
   - feature-modeling
@@ -26,12 +23,17 @@ roles:
   - product
   - backend
   - operations
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

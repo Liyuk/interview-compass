@@ -9,9 +9,18 @@ intent: "Assess whether you understand schema changes as cross-team contract cha
 signals: ["Maps direct and indirect dependencies and their importance", "Separates compatible changes from semantic breaks", "Plans parallel compatibility, migration windows, and deprecation", "Defines validation, communication, and removal criteria"]
 primaryCapability: "domain-modeling.model-evolution"
 topics: ["data-modeling", "engineering-systems", "communication"]
-roles: ["data", "backend", "engineering"]
+roles:
+  - data
+  - backend
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["multiple-teams"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case", "planning"]
 followUps: []

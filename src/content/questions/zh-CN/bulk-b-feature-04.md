@@ -20,11 +20,14 @@ roles:
   - ai-engineer
   - product
   - operations
+  - engineering
+  - backend
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - operations-review

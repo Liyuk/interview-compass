@@ -13,9 +13,19 @@ signals:
   - 说明外部模型变化时，怎样限制对内部的影响
 primaryCapability: domain-modeling.data-model
 topics: [data-modeling, commercialization, system-design]
-roles: [backend, data, product, engineering]
+roles:
+  - backend
+  - data
+  - product
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, system-design]
 followUps:

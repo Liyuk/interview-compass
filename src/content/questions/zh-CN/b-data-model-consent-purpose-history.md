@@ -7,12 +7,10 @@ title: 用户撤回授权后，怎样证明数据只用于允许的目的？
 question: 一个用户曾同意用于产品分析，后来撤回授权；部分派生指标已进入报表、实验和模型训练数据。你会怎样建模授权状态、用途范围与传播关系？
 intent: 考察能否将授权作为有时间和用途范围的领域事实，并追踪派生数据的处置责任。
 signals:
-  - 区分用户、授权对象、用途、有效时间和撤回时间。
-  - 建立从原始记录到派生特征、报表和训练集的血缘。
-  - 定义删除、重算、隔离和无法回收时的升级机制。
-  - 以主体、用途、依据和生效时间表达同意。
-  - 为延迟管道设置拒绝新处理和补偿删除。
-  - 追踪下游消费方并验证撤回完成。
+  - 区分主体、授权用途、依据、有效时间和撤回时间，不把一个同意字段当永久全用途授权。
+  - 追踪原始记录到报表、特征、训练集及消费方的传播关系。
+  - 根据已核验规则比较停止新处理、删除、重算或隔离的适用范围，明确责任人和例外升级。
+  - 用下游查询、处理日志与消费方确认验证撤回执行，并说明无法回收部分的限制。
 primaryCapability: domain-modeling.data-model
 topics:
   - data-modeling
@@ -22,12 +20,17 @@ roles:
   - data
   - backend
   - product
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -7,15 +7,10 @@ title: 用户同时拥有套餐、试用和人工授权时，功能权限按什�
 question: 同一账号可能同时拥有基础套餐、临时试用、活动权益和客服补偿。各系统对优先级的实现不一致，客户看到的权限偶尔反复变化。你会怎样定义资格与冲突规则？
 intent: 考察能否把产品资格拆成来源、有效期、优先级、撤销与解释能力。
 signals:
-  - 列出权益来源、主体范围、生效与到期时间。
-  - 定义叠加、覆盖、互斥和撤销优先级。
-  - 确保决策可解释、可追溯，并用一致性测试覆盖组合。
-  - 区分销售包装、订阅状态与运行时授权。
-  - 定义服务端权威判断和缓存更新规则。
-  - 覆盖升级、降级（关闭非核心功能以保住核心服务）、试用到期和人工例外。
-  - 区分功能存在、用户可见、可执行权限和使用额度。
-  - 让套餐默认、试用期限和合同例外具有清晰优先级。
-  - 允许查询某用户在某时点为何具备或缺少一项能力。
+  - 区分功能存在、展示可见、操作授权和额度，并列出套餐、试用、活动及补偿的来源和有效期。
+  - 定义叠加、覆盖、互斥、到期与撤销的规则，说明冲突由谁确认。
+  - 明确权威判断与各端缓存更新，不以隐藏界面代替权限控制。
+  - 用升级、套餐降档、试用到期和人工例外核对组合结果，并能解释某时点为何有或无权益。
 primaryCapability: domain-modeling.feature-model
 topics:
   - feature-modeling
@@ -24,12 +19,17 @@ roles:
   - product
   - backend
   - operations
+  - engineering
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

@@ -9,9 +9,17 @@ intent: "考察你能否把特征新鲜度与实际决策收益、延迟和维�
 signals: ["确认业务真正需要的新鲜度", "量化过期对结果的影响和实时方案成本", "比较定时批处理、缓存或按需计算", "定义继续实时化的收益门槛"]
 primaryCapability: "domain-modeling.feature-model"
 topics: ["feature-modeling", "resource-allocation", "ai-engineering"]
-roles: ["data", "ai-engineer", "product"]
+roles:
+  - data
+  - ai-engineer
+  - product
+  - engineering
+  - backend
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: []

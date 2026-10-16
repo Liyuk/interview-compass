@@ -12,9 +12,20 @@ signals:
   - "States the specific situation where an alternative wins, labeled as fact or inference"
 primaryCapability: domain-modeling.business-context
 topics: [product-thinking, product-discovery]
-roles: [product, operations, marketing]
+roles:
+  - product
+  - operations
+  - marketing
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring]
 formats: [case]
 followUps:

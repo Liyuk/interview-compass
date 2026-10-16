@@ -7,12 +7,10 @@ title: 用户要求删除个人数据，但财务审计仍需要保留交易记�
 question: 用户要求删除个人数据，但财务审计仍需要保留交易记录。你会怎样划定删除、匿名化和可追溯性的边界？
 intent: 考察你能否把数据用途、敏感性、保留依据和删除传播范围表达清楚，而不是把“删除”当作单一数据库操作。
 signals:
-  - 区分身份信息、交易事实、派生数据和审计证据的用途与敏感级别。
-  - 说明删除或匿名化如何传播到缓存、分析集、备份和下游副本。
-  - 提出验证删除完成且不再被非授权用途恢复的证据。
-  - 区分可删除、需匿名化及依法保留的数据。
-  - 追踪派生、缓存、备份和下游副本。
-  - 定义删除完成证据、例外和复核机制。
+  - 按用途、敏感性和已核验的保留依据区分身份信息、交易事实、派生数据与审计证据。
+  - 比较删除、匿名化和受限保留的适用条件，不假设所有数据都必须删除或都可以保留。
+  - 追踪缓存、分析集、备份与下游副本的处理责任、时间和失败恢复。
+  - 用验证记录证明已完成的范围、尚待处理的副本和例外，并防止未授权恢复或复用。
 primaryCapability: domain-modeling.data-model
 topics:
   - data-modeling
@@ -25,6 +23,9 @@ roles:
   - engineering
   - product
   - backend
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
   - organization
@@ -32,6 +33,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

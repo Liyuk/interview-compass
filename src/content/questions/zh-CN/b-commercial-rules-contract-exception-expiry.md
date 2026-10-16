@@ -7,12 +7,10 @@ title: 大客户合同要求一项特殊费率，但合同续约时可能失效�
 question: 大客户合同要求一项特殊费率，但合同续约时可能失效。系统和运营流程如何避免旧例外被永久沿用？
 intent: 考察你能否将商业例外的适用对象、有效期、审批和退出机制建模到执行流程中。
 signals:
-  - 指出例外适用于哪些客户、产品、交易和时间范围。
-  - 为批准、变更、续约和到期建立可追溯的责任与通知机制。
-  - 提出到期后的自动回退、人工复核和误用检测方式。
-  - 区分通用规则与有期限的合同例外。
-  - 记录审批依据、适用客户/产品、责任人和生效/到期时间。
-  - 建立临期提醒、续期证据和过期自动回归默认规则的策略。
+  - 区分默认费率与合同例外，明确适用客户、产品、交易和有效期。
+  - 保留批准依据、责任人、版本和变更通知，说明续约是否延续例外。
+  - 比较到期回归默认、暂停或人工复核的条件，不将自动回退当作无条件正确。
+  - 用到期前后交易和续约样例验证误用检测、客户解释与历史核对。
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization
@@ -22,11 +20,13 @@ roles:
   - product
   - operations
   - engineering
+  - backend
 responsibilityScopes:
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

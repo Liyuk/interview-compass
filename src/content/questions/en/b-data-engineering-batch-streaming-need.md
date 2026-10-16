@@ -9,9 +9,18 @@ intent: "See whether you choose batch, micro-batch, or streaming based on decisi
 signals: ["Identifies the business action the data triggers", "Estimates the impact of latency on outcomes and cost", "Compares operational burden across batch, micro-batch, and streaming", "Proposes freshness targets that can be validated incrementally"]
 primaryCapability: "domain-modeling.business-context"
 topics: ["data-modeling", "product-thinking", "resource-allocation"]
-roles: ["data", "product", "operations"]
+roles:
+  - data
+  - product
+  - operations
+  - engineering
+  - backend
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case", "system-design"]
 followUps: []

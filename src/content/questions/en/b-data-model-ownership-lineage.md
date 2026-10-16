@@ -9,9 +9,18 @@ intent: "See how you combine lineage, ownership, privacy access, and business co
 signals: ["Starts with high-value or high-risk datasets", "Records upstream sources, downstream use, and owners", "Classifies sensitive fields and access roles", "Stages remediation and communication by risk"]
 primaryCapability: "domain-modeling.data-model"
 topics: ["data-modeling", "security", "operations"]
-roles: ["data", "operations", "product"]
+roles:
+  - data
+  - operations
+  - product
+  - engineering
+  - backend
+  - ai-engineer
 responsibilityScopes: ["multiple-teams"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case", "planning"]
 followUps: []

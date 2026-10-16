@@ -13,22 +13,14 @@ intent: >-
   Assess whether you distinguish valid facts, later corrections, and decision-time snapshots while clarifying
   recomputation and audit boundaries.
 signals:
-  - Distinguish event time, rule effective time, record time, and correction time.
-  - Preserve original, corrected, and as-known-at-the-time results, with each use made explicit.
-  - Record versions, correction reasons, impact scope, and downstream dependencies for replay and audit.
-  - Backfill in slices and verify differences, resource impact, rollback, and downstream notification.
-  - Defines effective time, discovery time, and affected scope
-  - Supports replay by historical version while retaining correction rationale and approval evidence
+  - Separates event, ingestion, rule-effective, discovery, and correction times and affected periods.
+  - Preserves original results, as-known snapshots, and restatements with explicit reader purposes.
   - >-
-    Distinguishes results visible at the time from results recalculated under the new rule and today's
-    decision basis.
-  - Records rule version, recomputation time, affected periods, and metric differences.
-  - >-
-    Ensures report consumers know which conclusions were restated without rewriting historical decision
+    Records versions, reasons, approval grounds, differences, and dependencies without rewriting decision
     evidence.
-  - Distinguishes occurrence time, ingestion time, and correction effective time
-  - Preserves revision history and defines how the current accepted value is derived
-  - Explains when historical restatement and as-of snapshots answer different questions
+  - >-
+    Recalculates in batches with difference checks, resource limits, rollback, external-action
+    protection, and notices.
 primaryCapability: domain-modeling.model-evolution
 topics:
   - data-modeling
@@ -53,6 +45,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - operations-review

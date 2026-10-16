@@ -11,23 +11,17 @@ intent: >-
   Understand whether you treat a feature as a business definition with time semantics rather than just a
   column of numbers, and can spot information leakage.
 signals:
+  - Defines prediction time, feature cutoff, seven-day window, and label window.
+  - Separates event, ingestion, and model-availability times for source fields and joins.
   - >-
-    Defines prediction time, feature cutoff, and observation window instead of only saying “the last seven
-    days”
-  - Checks event time, update time, label window, and joins for future information leakage
-  - Recomputes with point-in-time queries and compares training results
-  - Keeps online and offline semantics aligned and reproducible
-  - Adds tests that prevent future information from entering training data
+    Compares point-in-time joins, snapshots, or alternatives against future and backfilled information
+    leakage.
   - >-
-    Feature snapshots and label leakage：Defines core entities, grain, state, or time semantics without
-    conflating concepts
-  - Identifies sources of truth, historical retention, and exception paths for the rules
-  - Explains how to reconcile, recompute, or validate the model against business meaning
-  - Distinguishes event time, ingestion time, and model-visible time
-  - Rebuilds examples as of prediction time and tests that backfills stay out
-  - Defines the prediction time for each sample and the availability time of each field.
-  - Uses point-in-time joins or historical snapshots to prevent future information entering past samples.
-  - Compares offline replay with serving logs and identifies features behind inflated metrics.
+    Reconciles training examples with serving logs and investigates inflated offline metrics or missing
+    online values.
+  - >-
+    Tests window boundaries, late backfills, and future labels for reproducibility and serving
+    consistency.
 primaryCapability: domain-modeling.feature-model
 topics:
   - feature-modeling
@@ -36,10 +30,13 @@ roles:
   - data
   - ai-engineer
   - backend
+  - engineering
 responsibilityScopes:
   - team
 careerTracks:
   - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios:
   - interview
 formats:

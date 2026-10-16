@@ -12,18 +12,11 @@ intent: >-
   Assess whether the candidate separates newly available information from information that can be derived from
   old data and states the evidence boundary clearly.
 signals:
-  - Avoids fabricating historical status detail that was never observable
-  - Designs a compatible transition and an upgrade path for downstream consumers
-  - States comparability limits between old and new data and how reports will explain them
+  - Defines evidence behind new and old states without inventing historical shipment or receipt details.
+  - Inventories API and report consumers and compares unknown states, mappings, and parallel versions.
   - >-
-    Define the business entities, grain, states, and time semantics involved in “Historical interpretation
-    during state-model migration.”
-  - >-
-    Trace sources of truth, rule owners, historical changes, and exception paths without conflating concepts
-    or responsibility.
-  - >-
-    Explain how examples, reconciliation, recomputation, or audit records would verify that the model
-    preserves business meaning.
+    Marks comparability and ownership, validating migration with historical examples and consumer
+    confirmation.
 primaryCapability: domain-modeling.model-evolution
 topics:
   - data-modeling
@@ -34,11 +27,16 @@ roles:
   - data
   - engineering
   - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - promotion
