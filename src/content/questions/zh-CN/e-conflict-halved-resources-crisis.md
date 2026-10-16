@@ -15,7 +15,7 @@ primaryCapability: collaboration.conflict-navigation
 topics: [conflict-resolution, resource-allocation, communication]
 roles: [product, engineering, operations, manager]
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: [interview, hiring, promotion]
 formats: [case, behavioral]
 followUps:

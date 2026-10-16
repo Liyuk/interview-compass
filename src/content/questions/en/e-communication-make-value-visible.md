@@ -15,7 +15,7 @@ primaryCapability: collaboration.communication
 topics: [communication, prioritization]
 roles: [engineering, product, operations, manager]
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

@@ -13,9 +13,17 @@ signals:
   - Whatever the conclusion, gives a concrete next step, such as changing priorities, adding support, or setting clear expectations
 primaryCapability: people-organization.frontline-management
 topics: [management, feedback, resource-allocation]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

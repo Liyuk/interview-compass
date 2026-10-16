@@ -7,13 +7,10 @@ title: "成员持续未达到岗位要求时，怎样制定公平的改进计划
 question: "一位成员近期交付持续低于岗位要求，之前的反馈也没有带来改善。你会怎样制定并执行公平、可衡量的绩效改进计划？"
 intent: 了解你能否把绩效改进做成真诚的、有支持的过程，而不是走形式的前奏，并守住公平和合规。
 signals:
-  - 先用具体事实和事例说明差距，并确认对方理解，而不是下结论
-  - 设计具体、可衡量、有时限的目标，并让对方参与讨论
-  - 说明会提供什么支持，以及定期检查和记录的方式
-  - 保持过程真诚，让改进有真实的可能，同时按公司制度和与人力资源的配合保证合规
-  - 区分事实、影响和解释。
-  - 描述明确标准、时间窗口和资源支持。
-  - 安排定期检查并提前说明结果选项。
+  - 用具体事实对照已说明的岗位要求，核验目标、资源和支持，区分表现差距与管理条件。
+  - 与成员明确可观察、有时限的改进目标和支持，不预设改进一定失败。
+  - 约定定期双向反馈和记录，提前说明可能的后续决定及其证据依据。
+  - 按实际授权与组织流程会同人力资源处理正式决定，不把专业带教等同于人事处置权。
 primaryCapability: people-organization.frontline-management
 topics:
   - management
@@ -22,13 +19,16 @@ topics:
 roles:
   - manager
   - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - team-manager
   - senior-manager
-  - individual-contributor
 scenarios:
   - interview
   - hiring

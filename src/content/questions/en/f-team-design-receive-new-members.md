@@ -13,9 +13,17 @@ signals:
   - Says how it is checked that integration really happened, not only by meetings held
 primaryCapability: people-organization.team-design
 topics: [management, communication, team-planning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

@@ -18,11 +18,16 @@ signals:
 primaryCapability: people-organization.delegation-succession
 roles:
   - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
-  - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

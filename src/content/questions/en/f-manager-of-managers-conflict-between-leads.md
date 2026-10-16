@@ -13,9 +13,16 @@ signals:
   - Avoids becoming the endpoint of every conflict and helps the managers learn to resolve things themselves
 primaryCapability: people-organization.manager-of-managers
 topics: [management, conflict-resolution, communication]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [senior-manager]
+careerTracks:
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

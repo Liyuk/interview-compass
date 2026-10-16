@@ -13,9 +13,17 @@ signals:
   - 说明离开之后怎样检查交接是否真的成功
 primaryCapability: people-organization.delegation-succession
 topics: [management, planning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

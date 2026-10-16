@@ -13,9 +13,17 @@ signals:
   - 事后修复关系，并检查冲突是否暴露了管理上的问题
 primaryCapability: people-organization.frontline-management
 topics: [management, conflict-resolution, feedback]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

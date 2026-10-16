@@ -13,9 +13,18 @@ signals:
   - Admits that sometimes it is the wrong choice and says how that is noticed
 primaryCapability: people-organization.frontline-management
 topics: [management, feedback, learning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

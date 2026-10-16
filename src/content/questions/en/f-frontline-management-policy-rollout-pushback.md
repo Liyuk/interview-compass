@@ -13,9 +13,18 @@ signals:
   - Sets a trial period and review metrics and judges by results whether the policy works
 primaryCapability: people-organization.frontline-management
 topics: [management, communication, feedback]
-roles: [manager, pmo]
+roles:
+  - manager
+  - pmo
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

@@ -13,9 +13,17 @@ signals:
   - 对关键人物私下沟通，而不是在团队里公开指责
 primaryCapability: people-organization.team-design
 topics: [management, communication, conflict-resolution]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

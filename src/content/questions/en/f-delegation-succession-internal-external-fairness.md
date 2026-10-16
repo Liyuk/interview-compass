@@ -13,9 +13,18 @@ signals:
   - Lets people who were not chosen know how to get feedback and the next opportunity, rather than leaving them labeled "not suited"
 primaryCapability: people-organization.delegation-succession
 topics: [management, promotion, hiring]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams, organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [interview, hiring, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

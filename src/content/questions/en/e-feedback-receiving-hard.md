@@ -23,9 +23,7 @@ roles:
   - design
 responsibilityScopes:
   - individual
-careerTracks:
-  - individual-contributor
-  - team-manager
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios:
   - interview
   - campus

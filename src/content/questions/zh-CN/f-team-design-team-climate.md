@@ -7,15 +7,23 @@ title: 你怎样判断并塑造团队的氛围？
 question: 你怎样判断并塑造团队的氛围？氛围不好时你最先看到什么信号，怎样让大家敢于暴露问题和不同意见？
 intent: 了解你是否能把团队氛围转成可以观察和改变的具体行为，而不是停留在"要开放"这样的口号。
 signals:
-  - 说出氛围的可观察信号，例如是否有人敢提反对意见、坏消息是否被早期暴露
-  - 说明管理者自己的行为怎样塑造氛围，包括怎样对待犯错的人
-  - 给出具体的机制，例如复盘不追责、匿名反馈和固定的讨论场合
-  - 说明怎样检查氛围是否真的变好，而不只靠感觉
+  - 用坏消息是否及时上行、异议是否被倾听和机会分配是否公平等行为观察团队氛围。
+  - 说明管理者怎样回应错误、不同意见和不确定性，区分支持与放任问题。
+  - 复盘先核验事实和系统条件，避免羞辱或预先归罪；行为责任按证据与实际权限处理。
+  - 使用独立反馈、工作记录和后续变化验证机制，而不只依赖感觉或匿名问卷。
 primaryCapability: people-organization.team-design
 topics: [management, feedback, communication]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

@@ -9,7 +9,7 @@ intent: Assess whether you can turn a resource dispute into a verifiable arrange
 signals:
   - Checks business impact, critical paths, and adjustable scope for both commitments
   - Offers allocation by time, deliverable, or shared risk while naming what cannot be met simultaneously
-  - Names the decision owner, support window, handoff requirements, and signals that trigger reallocation
+  - Confirm the authorized decision owner, support window, handoff requirements, and signals for reallocating resources.
 primaryCapability: collaboration.negotiation
 topics:
   - negotiation
@@ -24,10 +24,7 @@ roles:
 responsibilityScopes:
   - multiple-teams
   - team
-careerTracks:
-  - team-manager
-  - senior-manager
-  - individual-contributor
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios:
   - interview
   - hiring

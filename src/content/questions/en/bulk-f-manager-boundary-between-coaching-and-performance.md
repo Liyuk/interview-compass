@@ -21,10 +21,16 @@ topics:
   - ethics
 roles:
   - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - promotion

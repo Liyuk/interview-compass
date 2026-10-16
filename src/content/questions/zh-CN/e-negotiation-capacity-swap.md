@@ -9,7 +9,7 @@ intent: 观察你能否把资源争夺从立场冲突转成围绕目标、容量
 signals:
   - 核对两项承诺的业务影响、关键路径和可以调整的范围
   - 提出按时段、交付物或风险分摊的方案，并明确不能同时满足的部分
-  - 指定决策人、支持时限、交接要求和触发重新分配的信号
+  - 确认有权的决策人、支持时限、交接要求和触发重新分配的信号。
 primaryCapability: collaboration.negotiation
 topics:
   - negotiation
@@ -24,10 +24,7 @@ roles:
 responsibilityScopes:
   - multiple-teams
   - team
-careerTracks:
-  - team-manager
-  - senior-manager
-  - individual-contributor
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios:
   - interview
   - hiring

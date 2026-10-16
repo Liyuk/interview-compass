@@ -10,16 +10,15 @@ intent: >-
   and keep it fair and compliant.
 signals:
   - >-
-    First shows the gap with concrete facts and examples and confirms the person understands, rather than announcing a
-    verdict
-  - Designs specific, measurable, time-bound goals and lets the person take part in discussing them
-  - Says what support will be given and how progress is checked and recorded
+    Compare concrete facts with communicated role expectations and check goals, resources, and support,
+    separating performance gaps from management conditions.
+  - Agree observable, time-bound improvements and support without predetermining failure.
   - >-
-    Keeps the process sincere so improvement is genuinely possible, while following company policy and working with HR
-    to stay compliant
-  - Separate facts, impact, and interpretation.
-  - State clear standards, timeframe, and support.
-  - Schedule regular reviews and explain possible outcomes in advance.
+    Set regular two-way feedback and records, explaining possible next decisions and their evidence in
+    advance.
+  - >-
+    Handle formal decisions with HR under actual authority and organizational process; specialist
+    coaching does not confer personnel authority.
 primaryCapability: people-organization.frontline-management
 topics:
   - management
@@ -28,13 +27,16 @@ topics:
 roles:
   - manager
   - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - team-manager
   - senior-manager
-  - individual-contributor
 scenarios:
   - interview
   - hiring

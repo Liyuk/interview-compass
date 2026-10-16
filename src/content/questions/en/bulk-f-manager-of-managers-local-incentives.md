@@ -20,6 +20,11 @@ topics:
   - ethics
 roles:
   - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
   - organization

@@ -28,9 +28,7 @@ roles:
   - operations
 responsibilityScopes:
   - multiple-teams
-careerTracks:
-  - individual-contributor
-  - team-manager
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios:
   - interview
   - self-reflection

@@ -13,9 +13,18 @@ signals:
   - Also talks with the person about reasons and expectations and follows up on whether behavior changed
 primaryCapability: people-organization.frontline-management
 topics: [management, engineering-systems, feedback]
-roles: [manager, engineering]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

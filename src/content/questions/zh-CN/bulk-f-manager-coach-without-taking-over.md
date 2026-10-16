@@ -7,13 +7,9 @@ title: 关键决策质量下降时怎样安排复核而不收回授权
 question: 一位刚获得决策权的负责人连续两次忽略了用户迁移风险，直接收回权限可能让团队回到事事等你拍板。你会怎样增加保障并保留有效授权？
 intent: 考察授权后的风险分级、反馈和决策护栏。
 signals:
-  - 区分能力缺口、信息缺失和授权范围不清。
-  - 对高影响决定设临时复核，而非所有事项审批。
-  - 说明撤销或放宽护栏所需的证据和时间点。
-  - 说明岗位或责任范围对应的可观察行为和结果
-  - 区分能力、动机、资源、目标清晰度等不同成因
-  - 设计辅导、授权或组织调整，并约定复查证据
-  - 明确“决策质量与授权范围的动态校准”涉及的事实、对象和责任边界。
+  - 还原两次迁移判断所用的信息、风险和授权，区分能力缺口、上下文缺失与边界不清。
+  - 为高影响决定设置有期限的复核与支持，保留低风险范围内的真实决策权。
+  - 明确哪些证据支持放宽、维持或收紧保障，并检查风险、等待和负责人独立性的变化。
 primaryCapability: people-organization.frontline-management
 topics:
   - management
@@ -25,6 +21,10 @@ roles:
   - manager
   - engineering
   - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams

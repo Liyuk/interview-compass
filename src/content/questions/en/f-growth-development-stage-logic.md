@@ -13,9 +13,17 @@ signals:
   - Names the limits of the logic, such as where it does not suit everyone
 primaryCapability: people-organization.growth-development
 topics: [management, learning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

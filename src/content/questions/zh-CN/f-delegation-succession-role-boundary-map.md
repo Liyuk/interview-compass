@@ -7,12 +7,9 @@ title: 新负责人上任后团队仍绕过他找你，怎样完成授权交接�
 question: 你刚把团队交给新负责人，但成员遇到争议仍直接找你，合作方也继续要求你拍板。你会如何让决策权真正迁移？
 intent: 考察是否会通过公开授权、行为示范和稳定升级边界支持接班。
 signals:
-  - 公开说明新负责人的决定范围和保留事项。
-  - 把日常请求转回新负责人并提供必要辅导。
-  - 监测绕过行为、团队信任和决策质量，再调整支持。
-  - 明确“组织授权的外部信号与升级路径”涉及的事实、对象和责任边界。
-  - 公开说明新的责任与升级边界。
-  - 原负责人转为定期辅导或仅在预设条件下介入。
+  - 与有权负责人公开确认新负责人的决策范围、保留事项和升级边界。
+  - 把日常请求转回新负责人，原负责人只在约定条件下介入或提供辅导。
+  - 观察绕过行为、团队信任、决策质量和业务风险，按证据调整支持而不随意收回权限。
 primaryCapability: people-organization.delegation-succession
 topics:
   - management
@@ -22,12 +19,17 @@ topics:
 roles:
   - manager
   - operations
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
-  - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

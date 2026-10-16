@@ -13,9 +13,17 @@ signals:
   - Turns cost cutting into outcomes that make the business more efficient and shows value with measurable results
 primaryCapability: people-organization.manager-of-managers
 topics: [management, resource-allocation, planning, ethics]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - senior-manager
+  - executive
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

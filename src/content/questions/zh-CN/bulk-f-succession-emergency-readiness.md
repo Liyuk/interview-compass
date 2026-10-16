@@ -17,6 +17,11 @@ topics:
   - planning
 roles:
   - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams

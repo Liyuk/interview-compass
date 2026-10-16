@@ -13,9 +13,17 @@ signals:
   - 说明哪些人事信息不对外公开，并在不公开的同时避免作出误导性的承诺
 primaryCapability: people-organization.hiring
 topics: [hiring, communication, ethics]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

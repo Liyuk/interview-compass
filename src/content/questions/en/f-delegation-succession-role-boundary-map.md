@@ -11,14 +11,15 @@ intent: >-
   Assess whether you support succession through explicit authority, modeled behavior, and stable escalation
   boundaries.
 signals:
-  - Publicly state the new lead’s decision scope and reserved matters.
-  - Redirect routine requests and coach the new lead when appropriate.
-  - Monitor bypassing, trust, and decision quality, then adjust support.
   - >-
-    Clarifies the facts, stakeholders, and ownership boundaries involved in external signals of authority and
-    escalation paths.
-  - Communicates new ownership and escalation boundaries.
-  - Moves the former owner to coaching or predefined intervention conditions.
+    Publicly confirm the new lead’s decision scope, reserved matters, and escalation boundaries with
+    authorized owners.
+  - >-
+    Redirect routine requests to the new lead; the former owner intervenes or coaches only under agreed
+    conditions.
+  - >-
+    Observe bypassing, trust, decision quality, and business risk, adjusting support from evidence rather
+    than casually reclaiming authority.
 primaryCapability: people-organization.delegation-succession
 topics:
   - management
@@ -28,12 +29,17 @@ topics:
 roles:
   - manager
   - operations
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
-  - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

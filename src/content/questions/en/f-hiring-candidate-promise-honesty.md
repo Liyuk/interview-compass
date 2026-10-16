@@ -13,9 +13,17 @@ signals:
   - Says which personnel information is not shared, and avoids misleading promises while keeping it private
 primaryCapability: people-organization.hiring
 topics: [hiring, communication, ethics]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

@@ -7,13 +7,10 @@ title: 一个新人入职后，你怎样带他从完成任务走到独立负责�
 question: 一个新人入职后，你怎样带他从完成任务走到独立负责？前三个月你会给他安排什么，怎样给反馈，怎样判断他可以放手了？
 intent: 了解你是否为新人设计了清晰的上手路径、真实的问题和持续的反馈，并知道什么时候放手。
 signals:
-  - 给出清晰的上手路径和阶段目标，而不是让新人自己摸索
-  - 安排真实的问题而不是只做练习，并说明难度怎样逐步提升
-  - 说明反馈的频率和方式，以及怎样让对方也能说出自己的困难
-  - 用具体证据判断何时放手，并说明放手后的检查方式
-  - 确认规则、权限和风险升级条件是否可见。
-  - 检查学习材料、同伴网络和反馈时延。
-  - 逐步增加真实决策并复盘结果。
+  - 根据岗位任务和新人已有经验明确上手目标，不把固定三个月当作统一能力期限。
+  - 安排逐步增加判断责任的真实任务，提供材料、同伴支持、权限和风险升级条件。
+  - 约定及时、双向的反馈，核验本人操作、判断与求助过程，而非只统计任务完成数量。
+  - 用独立处理常见任务与异常的证据决定放手范围，并说明后续检查和管理授权。
 primaryCapability: people-organization.growth-development
 topics:
   - management
@@ -23,11 +20,17 @@ roles:
   - manager
   - engineering
   - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - individual
   - team
 careerTracks:
   - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios:
   - interview
   - hiring

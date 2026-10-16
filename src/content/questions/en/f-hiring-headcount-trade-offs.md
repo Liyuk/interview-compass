@@ -33,6 +33,11 @@ topics:
   - prioritization
 roles:
   - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
 careerTracks:

@@ -18,6 +18,10 @@ roles:
   - manager
   - engineering
   - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:

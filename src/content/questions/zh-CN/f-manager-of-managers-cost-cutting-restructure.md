@@ -13,9 +13,17 @@ signals:
   - 把降本转成让业务更高效的成果，并用可度量的结果说明价值
 primaryCapability: people-organization.manager-of-managers
 topics: [management, resource-allocation, planning, ethics]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - senior-manager
+  - executive
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

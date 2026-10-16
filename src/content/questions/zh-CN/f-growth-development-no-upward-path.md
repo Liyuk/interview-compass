@@ -13,9 +13,17 @@ signals:
   - 说明怎样让团队里其他人也看到这是公平的安排
 primaryCapability: people-organization.growth-development
 topics: [management, promotion, learning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion, self-reflection]
 formats: [behavioral, case]
 followUps:

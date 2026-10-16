@@ -19,9 +19,7 @@ roles:
   - manager
 responsibilityScopes:
   - team
-careerTracks:
-  - team-manager
-  - senior-manager
+careerTracks: [team-manager, senior-manager]
 scenarios:
   - interview
   - promotion

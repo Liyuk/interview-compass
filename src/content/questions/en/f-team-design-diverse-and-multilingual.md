@@ -13,9 +13,17 @@ signals:
   - Says how to check whether anyone is being marginalized, not relying only on self-reports
 primaryCapability: people-organization.team-design
 topics: [management, communication, hiring]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

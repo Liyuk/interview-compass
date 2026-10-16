@@ -13,9 +13,18 @@ signals:
   - 同时与本人沟通原因和期待，并跟进行为是否改变
 primaryCapability: people-organization.frontline-management
 topics: [management, engineering-systems, feedback]
-roles: [manager, engineering]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

@@ -13,9 +13,18 @@ signals:
   - Talks honestly with people about their growth path rather than deflecting with "the business needs it"
 primaryCapability: people-organization.growth-development
 topics: [management, engineering-systems, learning]
-roles: [manager, engineering]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
+  - individual-contributor
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

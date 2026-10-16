@@ -13,9 +13,17 @@ signals:
   - 说明怎样发现团队士气的变化，以及怎样留住关键的人
 primaryCapability: people-organization.frontline-management
 topics: [management, communication, planning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

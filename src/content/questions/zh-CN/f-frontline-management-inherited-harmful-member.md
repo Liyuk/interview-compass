@@ -13,9 +13,17 @@ signals:
   - 在改进无效时，说明按制度推进的步骤，并保持过程的公平和合规
 primaryCapability: people-organization.frontline-management
 topics: [management, feedback, ethics]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

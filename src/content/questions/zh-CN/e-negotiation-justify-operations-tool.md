@@ -15,7 +15,7 @@ primaryCapability: collaboration.negotiation
 topics: [operations, negotiation, communication]
 roles: [operations, marketing, product]
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: [interview, campus]
 formats: [behavioral, case]
 followUps:

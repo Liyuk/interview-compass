@@ -13,9 +13,16 @@ signals:
   - 避免成为所有冲突的终点，让一线管理者逐步学会自己解决
 primaryCapability: people-organization.manager-of-managers
 topics: [management, conflict-resolution, communication]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [senior-manager]
+careerTracks:
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

@@ -21,9 +21,7 @@ roles:
 responsibilityScopes:
   - individual
   - team
-careerTracks:
-  - individual-contributor
-  - team-manager
+careerTracks: [team-manager, senior-manager, individual-contributor]
 scenarios:
   - interview
   - hiring

@@ -13,9 +13,17 @@ signals:
   - Writes disagreements as concrete questions rather than closing with "poor culture fit" or "not mature enough", and says final level is approved through the organization's authority mechanism
 primaryCapability: people-organization.hiring
 topics: [hiring, promotion, management]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion]
 formats: [behavioral, case]
 followUps:

@@ -13,9 +13,17 @@ signals:
   - Is candid about cases where retention failed and says how a good handover was arranged
 primaryCapability: people-organization.frontline-management
 topics: [management, feedback]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

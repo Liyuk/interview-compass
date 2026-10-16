@@ -13,9 +13,17 @@ signals:
   - If improvement fails, describes the steps taken under policy and keeps the process fair and compliant
 primaryCapability: people-organization.frontline-management
 topics: [management, feedback, ethics]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

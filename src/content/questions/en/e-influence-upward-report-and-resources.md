@@ -15,7 +15,7 @@ primaryCapability: collaboration.stakeholder-influence
 topics: [communication, resource-allocation, negotiation]
 roles: [manager, product, engineering, pmo]
 responsibilityScopes: [team, multiple-teams, organization]
-careerTracks: [team-manager, senior-manager]
+careerTracks: [team-manager, senior-manager, individual-contributor]
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

@@ -13,9 +13,17 @@ signals:
   - Says when expectations and consequences must be made explicit and how it is followed up
 primaryCapability: people-organization.growth-development
 topics: [management, feedback, learning]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team]
-careerTracks: [team-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:

@@ -13,9 +13,17 @@ signals:
   - 把分歧写成具体问题，而不是用"文化不匹配"或"不够成熟"结束讨论，并说明最终级别按组织授权机制批准
 primaryCapability: people-organization.hiring
 topics: [hiring, promotion, management]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [multiple-teams]
-careerTracks: [senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, promotion]
 formats: [behavioral, case]
 followUps:

@@ -19,12 +19,17 @@ roles:
   - manager
   - engineering
   - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - organization
 careerTracks:
   - team-manager
   - senior-manager
+  - individual-contributor
 scenarios:
   - hiring
   - interview

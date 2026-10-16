@@ -11,15 +11,10 @@ intent: >-
   See whether, as an interviewer, you can tell personal contribution from team results without making the
   candidate feel interrogated.
 signals:
-  - >-
-    Asks about proposing, evaluating, building, and deciding separately, rather than one "what exactly did you
-    do"
-  - Verifies with specifics, such as the reason behind one particular decision and the alternatives
-  - Leaves room for a frank answer about what they were not involved in, and does not penalize it
-  - Compares the level of involvement observed with the scope of responsibility the candidate held
-  - Separates proposing, evaluating, building, and deciding, and says who did each, rather than saying "we"
-  - Can give the specific judgments and reasons for the part you took part in
-  - Admits plainly what you were not involved in and how well you understood it
+  - Probe the specific problems, judgments, implementation, validation, or coordination the person participated in.
+  - Distinguish proposing, discussing, deciding, and executing; participation is not the same as leading.
+  - Allow the candidate to identify areas they did not participate in or only know as background without discounting real contribution within their role.
+  - Verify personal impact through artifacts, process details, and collaborators; ask for missing evidence rather than infer dishonesty.
 primaryCapability: people-organization.hiring
 topics:
   - hiring
@@ -27,11 +22,16 @@ topics:
 roles:
   - manager
   - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
 careerTracks:
   - team-manager
   - senior-manager
+  - individual-contributor
 scenarios:
   - hiring
 formats:

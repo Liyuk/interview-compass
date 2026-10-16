@@ -27,6 +27,11 @@ topics:
 roles:
   - manager
   - pmo
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
   - organization

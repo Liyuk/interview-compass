@@ -4,14 +4,12 @@ kind: question
 status: published
 locale: en
 title: How do you record dissent and keep collaborating after a decision is made?
-question: >-
-  The launch owner decides to ship on schedule. Security believes residual risk exceeds its tolerance, but
-  leadership proceeds. How would you record dissent, ownership, and review conditions while moving forward?
+question: The release owner decides to ship on schedule. The security team says residual risk exceeds its acceptance range, but leadership chooses to continue. How would you record dissent, responsibility, and review conditions and clarify executable scope and escalation boundaries?
 intent: Assess whether you preserve facts, clarify risk acceptance, and follow authority when you disagree.
 signals:
   - Record rationale, dissenting evidence, risk acceptor, and scope.
   - Set monitoring, stop conditions, and a review time.
-  - Distinguish executing a decision from endorsing its correctness.
+  - Distinguish executing a decision from endorsing it; do not execute unauthorized actions or treat a management decision as removing escalation duties.
 primaryCapability: collaboration.stakeholder-influence
 topics:
   - communication
@@ -24,9 +22,7 @@ roles:
 responsibilityScopes:
   - team
   - multiple-teams
-careerTracks:
-  - individual-contributor
-  - team-manager
+careerTracks: [team-manager, senior-manager, individual-contributor]
 scenarios:
   - interview
   - hiring

@@ -15,7 +15,7 @@ primaryCapability: collaboration.negotiation
 topics: [negotiation, product-thinking, communication]
 roles: [engineering, backend, frontend, product]
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: [interview, promotion]
 formats: [behavioral]
 followUps:

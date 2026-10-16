@@ -7,7 +7,9 @@ title: How do you stabilize collaboration when virtual-team ownership crosses or
 question: Product, legal, and engineering report to different leaders with different priorities, yet jointly own a customer workflow. How would you design collaboration?
 intent: Assesses cross-org goals, decision rights, and recognition.
 signals:
-  - Define end-to-end ownership and interface decision rights.
+  - >-
+    Agree end-to-end ownership and interface decision rights with authorized owners, distinguishing
+    project coordination from formal management authority.
   - Connect shared outcomes to local goals.
   - Make contribution assessment and conflict escalation transparent.
 primaryCapability: people-organization.team-design
@@ -16,12 +18,17 @@ topics:
   - management
 roles:
   - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
-  - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

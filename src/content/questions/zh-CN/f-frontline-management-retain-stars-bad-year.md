@@ -13,9 +13,17 @@ signals:
   - 接受留不住的可能，并提前降低团队对这两个人的依赖
 primaryCapability: people-organization.frontline-management
 topics: [management, feedback, promotion]
-roles: [manager]
+roles:
+  - manager
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [team-manager, senior-manager]
+careerTracks:
+  - team-manager
+  - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
 followUps:
