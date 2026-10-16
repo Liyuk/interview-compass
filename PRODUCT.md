@@ -16,7 +16,7 @@ People preparing for interviews, interviewers exploring questions, and people re
 
 ## Product Purpose
 
-Interview Compass is a question-first, heuristic library. Visitors search for questions or browse by topic and role. Each question explains what it is intended to explore and which capabilities or evidence it may surface. Success means making a large body of useful questions easy to find and understand without requiring answer guides.
+Interview Compass is a question-first, heuristic library. Visitors start from a goal, search directly, or browse by topic, role, responsibility, and capability. Questions help readers compare approaches, examine context and causality, and surface verifiable contribution. The site guides inquiry; it does not supply model answers.
 
 ## Positioning
 
@@ -24,12 +24,13 @@ The core unit is a question with its purpose, organized through both shared capa
 
 ## Operating Context
 
-The main entry paths are direct question search and topic browsing. Role exploration is open-ended; the home page must not privilege a single role. The library includes technical, product, operations, engineering, and management contexts, including promotion and growth reflection.
+The main entry paths are direct question search and topic browsing. A task-first path helps candidates, interviewers, promotion candidates and reviewers, people practicing, and teams reviewing projects. Role exploration is open-ended; the home page must not privilege a single role. The library includes technical, product, operations, engineering, and management contexts.
 
 ## Capabilities and Constraints
 
-- Questions are the primary content. Explain the purpose, capability, or evidence the question is meant to surface.
-- Do not require answers, answer examples, scoring rubrics, or hiring recommendations.
+- Questions are the primary content. Explain the objective problem, purpose, context to establish, possible interpretations, comparisons, decision considerations, and evidence that could support a judgment.
+- Show shared 1–4 evidence anchors and clearly distinguish them from the smaller set of individually reviewed question analyses. Never imply an unreviewed template is a question-specific conclusion.
+- Do not provide model answers, automatic scoring, aggregate candidate scores, or hiring recommendations.
 - General frameworks and role-specific frameworks coexist; cross-link questions rather than duplicating them for each entry path.
 - Include technical foundations, role skills, engineering practice, domain modeling, product and end-to-end thinking, delivery and management, operations, and professional growth.
 - Use Radix Themes as the site-wide visual and component baseline, and Radix Primitives for interactions that need accessible behavior. Map Starlight surfaces into the same color, type, spacing, and control system; do not mix unrelated component styles or add decorative patterns without a product reason.
@@ -51,6 +52,8 @@ Use the name “Interview Compass.” The site is a practical, question-led refe
 - Make questions easy to search and explore.
 - Ship Chinese and English from the first release, with a visible language switch that stays on the corresponding page when a translation exists.
 - Explain what a question is meant to surface, without prescribing an answer.
+- Center comparisons, challenging goals, execution, measured outcomes, contribution and attribution; help readers find and substantiate highlights.
+- Use learning, self-direction, thinking, and resilience as cross-cutting growth lenses.
 - Separate shared capability frameworks from role-specific knowledge while allowing useful cross-links.
 - Keep classification dimensions independent so one question can appear in several relevant views.
 - Make sources and content provenance traceable.

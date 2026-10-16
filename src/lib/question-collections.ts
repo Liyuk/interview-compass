@@ -61,7 +61,7 @@ export const questionCollections: readonly QuestionCollection[] = [
       entry('bulk-c-metrics-03', '练习同时看主指标和反向指标，并解释结果取舍。', 'Practices weighing a primary metric against counter-metrics.'),
       entry('wave17-delivery-010', '检查跨团队交付中的拆解、依赖与责任边界。', 'Examines decomposition, dependencies, and ownership in cross-team delivery.'),
       entry('bulk-e-cross-team-decision-deadlock', '观察如何定位僵局并推动明确决策。', 'Explores how the candidate diagnoses and resolves a cross-team deadlock.'),
-      entry('bulk-f-manager-coach-without-taking-over', '在管理题中练习支持成员，同时保留授权和责任。', 'Practices supporting a teammate while preserving ownership and accountability.'),
+      entry('c-prioritization-top-three-stop-two', '练习按目标和容量比较优先级，也说明暂缓事项及停止条件。', 'Practices ranking work against goals and capacity, including deferrals and stop conditions.'),
       entry('bulk-g-recovery-after-public-mistake', '用真实挫折观察复盘、恢复和后续改进。', 'Uses a setback to examine reflection, recovery, and follow-through.'),
       entry('h-attribution-team-vs-personal', '说明团队结果中的个人贡献，并避免夸大归因。', 'Clarifies individual contribution without overstating attribution.'),
     ]),

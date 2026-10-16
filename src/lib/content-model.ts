@@ -13,6 +13,34 @@ const sourceSchema = z.object({
   }
 });
 
+export const questionSpecificAnalysisSchema = z.object({
+  questionId: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+  locale: z.enum(['zh-CN', 'en']),
+  reviewStatus: z.literal('reviewed'),
+  objectiveProblem: z.string().trim().min(1),
+  inference: z.object({
+    hypothesis: z.string().trim().min(1),
+    alternatives: z.array(z.string().trim().min(1)).min(1),
+  }).strict(),
+  contextQuestions: z.array(z.string().trim().min(1)).min(1),
+  comparisons: z.array(z.object({
+    dimension: z.string().trim().min(1),
+    guidance: z.string().trim().min(1),
+  }).strict()).min(1),
+  decisionRule: z.string().trim().min(1),
+  benefits: z.array(z.string().trim().min(1)).min(1),
+  costs: z.array(z.string().trim().min(1)).min(1),
+  highlightEvidence: z.array(z.string().trim().min(1)).default([]),
+  anchors: z.object({
+    notPassing: z.string().trim().min(1),
+    passing: z.string().trim().min(1),
+    excellent: z.string().trim().min(1),
+    exceptional: z.string().trim().min(1),
+  }).strict(),
+}).strict();
+
+export type QuestionSpecificAnalysis = z.infer<typeof questionSpecificAnalysisSchema>;
+
 const facetFields = ['topics', 'roles', 'responsibilityScopes', 'careerTracks', 'scenarios', 'formats'] as const satisfies readonly FacetKind[];
 
 export const questionSchema = z.object({

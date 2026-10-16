@@ -5,6 +5,7 @@ import { capabilityLabel, facetLabel, facetMeta, pick, splitCapability, type Fac
 import { facetRoute, pathFor } from '../lib/routes';
 import { facetValuesOf } from '../lib/question-catalog';
 import { questionEvaluation } from '../lib/question-evaluation';
+import { buildQuestionAnalysisPrompt } from '../lib/question-analysis-prompt';
 import { loadAllRecords } from '../lib/site-data';
 
 interface Props { locale: Locale; id: string }
@@ -14,6 +15,7 @@ const base = import.meta.env.BASE_URL;
 const all = await loadAllRecords();
 const record = all.find((item) => item.questionId === id && item.locale === locale && item.status === 'published')!;
 const evaluation = questionEvaluation(record);
+const analysisPrompt = buildQuestionAnalysisPrompt({ locale, question: record, evaluation });
 const { domain, leaf } = splitCapability(record.primaryCapability);
 const route = { type: 'question', questionId: record.questionId, capability: record.primaryCapability, title: record.question } as const;
 const related = (record.relatedQuestions ?? []).flatMap((relation) => {
@@ -25,12 +27,37 @@ const context = contextKinds.map((kind) => ({ kind, ids: facetValuesOf(record, k
 const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: en ? 'Derived from' : '提炼自', inspired: en ? 'Inspired by' : '启发自', original: en ? 'Original to this site' : '本站原创' };
 ---
 <SiteLayout locale={locale} route={route} description={record.intent}>
+  <a class="reading-return" data-reading-return hidden href={pathFor({ type: 'questions' }, locale, base)}><Icon name="arrow-left" size={16} /> {en ? 'Back to your results or question set' : '返回本次结果或题单'}</a>
   <p class="eyebrow">{domain?.letter} · {domain && pick(domain.name, locale)} <Icon name="chevron-right" size={14} /> {leaf && pick(leaf.name, locale)}</p>
   <h1 class="page-title" data-pagefind-meta="title">{record.question}</h1>
-  <p class="question-practice-link"><a class="button-link" href={`${pathFor({ type: 'practice' }, locale, base)}?question=${encodeURIComponent(record.questionId)}`}>{en ? 'Practice this question' : '开始练习'} <Icon name="arrow-up-right" size={16} /></a></p>
+  <div class="question-fit" aria-label={en ? 'Question relevance' : '适用范围'}>
+    {context.filter((group) => ['roles', 'responsibilityScopes', 'careerTracks'].includes(group.kind)).map((group) => <p><strong>{pick(facetMeta[group.kind].name, locale)}</strong><span>{group.ids.map((id) => facetLabel(group.kind, id, locale)).join(en ? ' · ' : '、')}</span></p>)}
+    <p class="band-text">{en ? 'Select questions for the responsibility you actually hold or seek. These labels are not universal stage requirements.' : '按目标岗位和实际责任选题；这些标签不表示所有阶段都必须掌握。'} <a href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Stage expectations' : '查看阶段要求'}</a></p>
+  </div>
+  <nav class="question-context-nav" aria-label={en ? 'Explore related views' : '按相关维度继续查找'}>
+    <span>{en ? 'Explore this question through:' : '按相关维度继续查找：'}</span>
+    {context.filter((group) => ['topics', 'scenarios'].includes(group.kind)).flatMap((group) => group.ids.map((facetId) => {
+      const target = facetRoute(group.kind, facetId);
+      return target ? <a href={pathFor(target, locale, base)}>{facetLabel(group.kind, facetId, locale)}</a> : null;
+    }))}
+    <a href={pathFor({ type: 'leaf', domain: domain!.id, leaf: leaf!.id }, locale, base)}>{en ? 'More in this capability' : '同类能力问题'}</a>
+  </nav>
+  <section class="question-analysis-prompt" aria-label={en ? 'Optional external AI analysis' : '可选的外部 AI 分析'}>
+    <p>{en ? 'Want deeper feedback? Generate a prompt with this question’s evidence framework, then choose an AI tool yourself.' : '需要进一步分析时，可以生成包含本题证据框架的 Prompt，再自行选择 AI 工具使用。本站不会发送你的回答。'}</p>
+    <button class="button-link" type="button" data-generate-analysis>{en ? 'Generate AI analysis prompt' : '生成 AI 分析 Prompt'} <Icon name="arrow-up-right" size={16} /></button>
+    <div id="question-analysis-prompt-panel" data-analysis-panel data-pagefind-ignore hidden>
+      <label for="question-ai-prompt">{en ? 'AI analysis prompt' : 'AI 分析 Prompt'}</label>
+      <textarea id="question-ai-prompt" readonly rows="18">{analysisPrompt}</textarea>
+      <div class="question-analysis-prompt-actions">
+        <button type="button" class="secondary-button" data-copy-analysis>{en ? 'Copy prompt' : '复制 Prompt'}</button>
+        <span role="status" aria-live="polite" data-copy-status></span>
+      </div>
+    </div>
+  </section>
 
   <div data-pagefind-body>
     <section class="detail-block" aria-labelledby="objective-h">
+      <p class={`analysis-review-status ${evaluation.specific ? 'is-reviewed' : 'is-shared'}`}><strong>{evaluation.reviewLabel}</strong><span>{evaluation.reviewNote}</span></p>
       <h2 id="objective-h">{evaluation.objectiveTitle}</h2>
       <p class="intent-callout">{evaluation.objective}</p>
     </section>
@@ -49,6 +76,11 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
       <h2 id="signals-h">{en ? 'Signals worth noticing' : '值得观察的信号'}</h2>
       <ul class="signal-list">{record.signals.map((signal) => <li>{signal}</li>)}</ul>
     </section>
+
+    {evaluation.comparisons.length > 0 && <section class="detail-block" aria-labelledby="comparisons-h">
+      <h2 id="comparisons-h">{evaluation.comparisonsTitle}</h2>
+      <div class="comparison-prompt-grid">{evaluation.comparisons.map((item) => <article><h3>{item.dimension}</h3><p>{item.guidance}</p></article>)}</div>
+    </section>}
 
     <section class="detail-block" aria-labelledby="context-h">
       <h2 id="context-h">{evaluation.contextTitle}</h2>
@@ -92,6 +124,11 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
         ))}
       </div>
     </section>
+
+    {evaluation.highlightEvidence.length > 0 && <section class="detail-block" aria-labelledby="highlight-evidence-h">
+      <h2 id="highlight-evidence-h">{en ? 'Evidence that could make a contribution visible' : '可以体现贡献的证据'}</h2>
+      <ul class="signal-list">{evaluation.highlightEvidence.map((item) => <li>{item}</li>)}</ul>
+    </section>}
 
     {record.background?.length ? (
       <section class="detail-block" aria-labelledby="background-h">
@@ -154,4 +191,30 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
       </ul>
     </div>
   </section>
+  <aside class="journey-next"><h2>{en ? 'Where next?' : '接下来怎么用？'}</h2><p>{en ? 'Return to your chosen set, compare related questions, or choose a different goal.' : '回到选定的题单或结果继续阅读，也可以换一个目标重新选题。'}</p><div class="journey-links"><a href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'Curated sets' : '精选题单'}</a><a href={pathFor({ type: 'scenarios' }, locale, base)}>{en ? 'Choose a goal' : '目标路径'}</a><a href={pathFor({ type: 'leaf', domain: domain!.id, leaf: leaf!.id }, locale, base)}>{en ? 'More in this capability' : '同类能力问题'}</a></div></aside>
 </SiteLayout>
+
+<script>
+  const panel = document.querySelector<HTMLElement>('[data-analysis-panel]');
+  const generate = document.querySelector<HTMLButtonElement>('[data-generate-analysis]');
+  const textarea = document.querySelector<HTMLTextAreaElement>('#question-ai-prompt');
+  const copy = document.querySelector<HTMLButtonElement>('[data-copy-analysis]');
+  const status = document.querySelector<HTMLElement>('[data-copy-status]');
+  const en = document.documentElement.lang === 'en';
+
+  generate?.addEventListener('click', () => {
+    if (panel) panel.hidden = false;
+    textarea?.focus();
+  });
+  copy?.addEventListener('click', async () => {
+    if (!textarea || !status) return;
+    try {
+      await navigator.clipboard.writeText(textarea.value);
+      status.textContent = en ? 'Copied.' : '已复制';
+    } catch {
+      textarea.focus();
+      textarea.select();
+      status.textContent = en ? 'Clipboard unavailable. The prompt is selected for manual copying.' : '无法访问剪贴板，已选中 Prompt，可手动复制。';
+    }
+  });
+</script>

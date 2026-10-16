@@ -1,6 +1,6 @@
 # Interview Compass
 
-Interview Compass is a bilingual, question-first library for exploring external interviews and internal promotion. It explains what a question is intended to surface and links it to related capabilities, topics, roles, and responsibility paths; it does not prescribe answers or score people.
+Interview Compass is a bilingual, question-first heuristic library for external interviews, hiring, promotion, and project reflection. Start from a goal or search directly; use questions to compare approaches, examine context and causality, and make contribution visible through evidence. It does not prescribe answers or automatically score people.
 
 This repository contains the Interview Compass site and its source content.
 
@@ -13,9 +13,9 @@ npm ci
 npm run dev
 ```
 
-The site has Chinese and English routes for the home page, curated question sets, a filterable full library, the questioning framework, local answer practice, a capability map (eight domains and their leaves), role, scenario and topic views, and question pages that explain intent and observable signals. Stage profiles describe role-specific behaviors, evidence to inspect, and the distinction between the IC and management paths. Search uses Pagefind per language. The Pages base path is `/interview-compass/`; the Chinese site is at `/interview-compass/` and English at `/interview-compass/en/`.
+The site has Chinese and English routes for the home page, six goal-based paths, curated question sets, a filterable full library, a user guide, the questioning framework, an eight-domain capability map, role, scenario and topic views, and question pages. Question cards distinguish individually reviewed analysis from shared reading prompts. Stage profiles describe role-specific behaviors, evidence to inspect, and the distinction between professional-contributor and management paths. Search uses Pagefind per language. The Pages base path is `/interview-compass/`; the Chinese site is at `/interview-compass/` and English at `/interview-compass/en/`.
 
-The practice page stores drafts only in the browser. It creates a structured analysis prompt that a user may copy into an AI tool; answers are never sent automatically. The question library also has a compact public data feed for selected question cards. The companion skill at `skills/interview-compass-coach/` uses that feed for question lookup and follows the same evidence and privacy limits.
+Each question page can generate a structured analysis prompt for a user-selected external AI tool. The site does not collect answers or send them anywhere. The question library also has a compact public data feed for selected question cards. The companion skill at `skills/interview-compass-coach/` uses that feed for question lookup and follows the same evidence and privacy limits.
 
 ## Checks
 
@@ -35,7 +35,7 @@ Copyright © 2026 Liyuk. Software code is licensed under MIT (`LICENSE`). Origin
 
 ## Content model
 
-Question records live under `src/content/questions/zh-CN/` and `src/content/questions/en/`. Keep each pair aligned by stable question ID and identical primary capability. Frontmatter provides the question, intent, observable `signals`, exactly one `primaryCapability` leaf, independent facets (topics, roles, scopes, tracks, scenarios, formats) and a `source` with provenance (`adapted`, `derived`, `inspired`, or `original`); answers and scoring fields are intentionally outside the content model. Curated sets reference question IDs in `src/lib/question-collections.ts`; candidate due-diligence prompts use a separate, non-scored shape. The single vocabulary lives in `src/lib/taxonomy.ts`; routes, titles and breadcrumbs come from `src/lib/routes.ts`. Source review status is tracked in `docs/planning/source-ledger/*.yml` and validated by `npm run check:content`. `npm run report:coverage` prints unique question counts by domain, role, scenario, format and locale. `docs/planning/` contains the MECE architecture, research, and migration plans. Public project snapshots are archived outside this repository and are not part of the site build.
+Question records live under `src/content/questions/zh-CN/` and `src/content/questions/en/`. Keep each pair aligned by stable question ID and identical primary capability. Frontmatter provides the question, intent, observable `signals`, exactly one `primaryCapability` leaf, independent facets (topics, roles, scopes, tracks, scenarios, formats) and provenance. Shared 1–4 evidence references are not stored as question-specific judgments. Individually reviewed objective analysis, alternative interpretations, context probes, comparison dimensions, trade-offs and four anchors live in `src/data/question-specific-analyses.json`; that file is paired by ID and locale and validated against the published bank. Curated sets reference question IDs in `src/lib/question-collections.ts`; candidate due-diligence prompts use a separate, non-scored shape. The single vocabulary lives in `src/lib/taxonomy.ts`; routes, titles and breadcrumbs come from `src/lib/routes.ts`. Source review status is tracked in `docs/planning/source-ledger/*.yml` and validated by `npm run check:content`. `npm run report:coverage` prints unique question counts by domain, role, scenario, format and locale. `docs/planning/` contains the MECE architecture, research, and migration plans. Public project snapshots are archived outside this repository and are not part of the site build.
 
 ## Deployment
 

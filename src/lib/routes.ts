@@ -10,11 +10,12 @@ export type Crumb = { label: string; href?: string };
 
 export type RouteRef =
   | { type: 'home' }
+  | { type: 'browse' }
   | { type: 'questions' }
+  | { type: 'search' }
   | { type: 'collections' }
   | { type: 'collection'; id: string }
   | { type: 'framework' }
-  | { type: 'practice' }
   | { type: 'capabilities' }
   | { type: 'domain'; domain: string }
   | { type: 'leaf'; domain: string; leaf: string }
@@ -32,18 +33,19 @@ export type RouteRef =
   | { type: 'capability-model-mapping' }
   | { type: 'guide' };
 
-export type NavKey = 'questions' | 'capabilities' | 'capability-model' | 'roles' | 'scenarios' | 'topics' | 'framework' | '';
+export type NavKey = 'browse' | 'questions' | 'capabilities' | 'capability-model' | 'roles' | 'scenarios' | 'topics' | 'framework' | 'guide' | '';
 
 const text = (zh: string, en: string): Bilingual => ({ zh, en });
 const labels = {
   home: text('首页', 'Home'),
+  browse: text('分类索引', 'Browse'),
   questions: text('面试题库', 'Question bank'),
   capabilities: text('能力地图', 'Capability map'),
   roles: text('岗位导航', 'Role paths'),
   scenarios: text('目标路径', 'Goal paths'),
   capabilityModel: text('阶段能力', 'Stage expectations'),
   topics: text('主题索引', 'Topics'),
-  guide: text('使用说明', 'Guide'),
+  guide: text('使用说明', 'How to use'),
   collections: text('精选题单', 'Curated sets'),
   framework: text('提问框架', 'Questioning framework'),
 };
@@ -57,11 +59,12 @@ export function pathFor(ref: RouteRef, locale: Locale, base = ''): string {
   const route = (() => {
     switch (ref.type) {
       case 'home': return `${root}/`;
+      case 'browse': return `${root}/browse/`;
       case 'questions': return `${root}/questions/`;
+      case 'search': return `${root}/search/`;
       case 'collections': return `${root}/collections/`;
       case 'collection': return `${root}/collections/${ref.id}/`;
       case 'framework': return `${root}/framework/`;
-      case 'practice': return `${root}/practice/`;
       case 'capabilities': return `${root}/capabilities/`;
       case 'capability-model': return `${root}/capability-model/`;
       case 'capability-model-stage': return `${root}/capability-model/stages/${ref.stage}/`;
@@ -100,14 +103,15 @@ function leafName(domainId: string, leafId: string, locale: Locale) {
 export function titleFor(ref: RouteRef, locale: Locale): string {
   switch (ref.type) {
     case 'home': return pick(labels.home, locale);
+    case 'browse': return pick(labels.browse, locale);
     case 'questions': return pick(labels.questions, locale);
+    case 'search': return locale === 'en' ? 'Search results' : '搜索结果';
     case 'collections': return pick(labels.collections, locale);
     case 'collection': {
       const collection = questionCollectionById(ref.id);
       return collection ? pick(collection.title, locale) : ref.id;
     }
     case 'framework': return pick(labels.framework, locale);
-    case 'practice': return locale === 'en' ? 'Answer practice' : '回答练习';
     case 'capabilities': return pick(labels.capabilities, locale);
     case 'capability-model': return pick(labels.capabilityModel, locale);
     case 'capability-model-stage': return getStageProfile(ref.stage, locale).name;
@@ -130,8 +134,8 @@ export function titleFor(ref: RouteRef, locale: Locale): string {
 export function parentOf(ref: RouteRef): RouteRef | undefined {
   switch (ref.type) {
     case 'home': return undefined;
-    case 'questions': case 'capabilities': case 'roles': case 'scenarios': case 'topics': case 'guide': case 'framework': return { type: 'home' };
-    case 'practice': return { type: 'questions' };
+    case 'browse': case 'questions': case 'capabilities': case 'roles': case 'scenarios': case 'topics': case 'guide': case 'framework': return { type: 'home' };
+    case 'search': return { type: 'questions' };
     case 'collections': return { type: 'questions' };
     case 'collection': return { type: 'collections' };
     case 'capability-model': return { type: 'home' };
@@ -157,15 +161,17 @@ export function breadcrumbsFor(ref: RouteRef, locale: Locale, base = ''): Crumb[
     ? [chain[0], { type: 'questions' }, ...chain.filter((item) => item.type === 'domain' || item.type === 'leaf'), ref]
     : chain;
   return trail.map((item, index) => ({
-    label: titleFor(item, locale),
+    label: item.type === 'question' && item.title.length > 36 ? (locale === 'en' ? 'Question detail' : '题目详情') : titleFor(item, locale),
     href: index === trail.length - 1 ? undefined : pathFor(item, locale, base),
   }));
 }
 
 export function activeNavFor(ref: RouteRef): NavKey {
   switch (ref.type) {
-    case 'questions': case 'question': case 'collections': case 'collection': case 'practice': return 'questions';
+    case 'browse': return 'browse';
+    case 'questions': case 'search': case 'question': case 'collections': case 'collection': return 'questions';
     case 'framework': return 'framework';
+    case 'guide': return 'guide';
     case 'capabilities': case 'domain': case 'leaf': return 'capabilities';
     case 'capability-model': case 'capability-model-stage': case 'capability-model-dimension': case 'capability-model-mapping': return 'capability-model';
     case 'roles': case 'role': return 'roles';

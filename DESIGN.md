@@ -4,7 +4,7 @@ The user selected a practical, information-first question detail page, using the
 
 ## Product identity
 
-Interview Compass is a bilingual question library. A question page helps readers understand what a prompt examines, which related topics it touches, and where they can continue learning. The interface presents questions and their intent; it does not provide sample answers or score people.
+Interview Compass is a bilingual, question-first heuristic library. A question page helps readers understand the problem, intent, context, comparison dimensions, evidence, and where to continue. The interface presents shared evidence references and labels individually reviewed analyses explicitly; it does not provide sample answers, automatically score people, or make hiring decisions.
 
 ## Visual rules
 
@@ -14,13 +14,15 @@ Interview Compass is a bilingual question library. A question page helps readers
 - Make search prominent and bilingual. Keep the language switch visible in the global header.
 - Use one functional icon system: Lucide via @lucide/astro, wrapped by Icon.astro, on a 24 × 24 source grid with 1.75px rounded strokes and currentColor. Use 16/18/20/24px display sizes. Keep the authored compass brand separate: logo.svg for lockups and a simplified favicon.svg for tiny tabs. Use shared icons for search, navigation chevrons, select indicators, and directional actions; text arrows may describe actual progression. Native select controls are 40px high with 12px text inset, 16px chevrons inset 12px from the right, and 40px reserved text padding. Preserve native keyboard interaction and forced-color rendering.
 - Keep navigation and controls consistent with Starlight and Radix Themes. Prefer flat, low-radius surfaces and clear focus states over decorative cards.
-- Explain the question through three linked parts: **考察意图** (why ask it), **相关主题** (what concepts it touches), and **来源与延伸** (what context or reading helps interpret it). The numbered line is a quick overview; the sections below are the detailed explanation, not repeated content.
+- Prioritize question relevance and task continuation: role and responsibility context first, then objective problem and intent, observations, context probes, comparisons and trade-offs, evidence anchors, and related routes.
+- Distinguish “逐题分析 · 已复核” from “共用阅读框架 · 逐题分析待校准”. Never style shared prompts to look like expert findings about a particular question.
+- Keep the main user journey task-first while preserving direct search, topic, role, capability, and stage entry points. A question detail should make it easy to return to the previous filtered set, optionally generate an external analysis prompt, or continue through a relevant view.
 - Use topic counts only when computed from published content. Do not invent sample counts, source attributions, or other library facts in comps or implementation.
 - Chinese is the default locale at the root route; English is available under `/en/`. Keep the current-page language switch visible and pair translated pages by stable IDs.
 
 ## Avoid
 
-- Answers, answer examples, hiring scores, or implied pass/fail judgments.
+- Answers, answer examples, automated scores, aggregate candidate scores, or hiring recommendations. Four evidence levels may be shown as references, not verdicts.
 - Decorative diagrams that suggest a required sequence between independent topics and roles.
 - Fake metrics, unverifiable sources, promotional slogans, or generic product dashboard styling.
 - Small, low-contrast annotations that make the page dense without making relationships clearer.

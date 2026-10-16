@@ -1,0 +1,23 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Icon from '../components/Icon.astro';
+import { pathFor } from '../lib/routes';
+import type { Locale } from '../lib/taxonomy';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const entries = [
+  { type: 'roles' as const, name: en ? 'Roles' : '岗位导航', text: en ? 'Find professional questions for the work you do or want to do.' : '先确定目标岗位，找到专业实践与通用能力相关的问题。' },
+  { type: 'topics' as const, name: en ? 'Topics' : '主题索引', text: en ? 'Explore a technology, subject, or working method.' : '从技术、业务或工作方法开始，比较概念、解法与适用条件。' },
+  { type: 'capabilities' as const, name: en ? 'Capability map' : '能力地图', text: en ? 'Understand the capability a question examines across eight domains.' : '按 A–H 八个能力域，理解一道题主要想考察什么。' },
+];
+---
+<SiteLayout locale={locale} route={{ type: 'browse' }}>
+  <h1 class="page-title">{en ? 'Browse by category' : '分类索引'}</h1>
+  <p class="intro">{en ? 'Different views of the same questions. Choose the one closest to what you already know.' : '这些是同一批问题的不同视角，选择最接近你当前需要的入口。'}</p>
+  <div class="browse-index">
+    {entries.map((entry) => <a href={pathFor({ type: entry.type }, locale, base)}><h2>{entry.name} <Icon name="arrow-up-right" size={18} /></h2><p>{entry.text}</p></a>)}
+  </div>
+  <aside class="journey-next"><h2>{en ? 'Need a starting point?' : '还不确定要找什么？'}</h2><p>{en ? 'Choose a goal for interview preparation, hiring, promotion, or reflection.' : '先选择求职、招聘、晋升或复盘目标，再按步骤找到一小组相关问题。'}</p><a href={pathFor({ type: 'scenarios' }, locale, base)}>{en ? 'Choose your goal' : '按目标开始'} <Icon name="arrow-right" size={16} /></a></aside>
+</SiteLayout>
