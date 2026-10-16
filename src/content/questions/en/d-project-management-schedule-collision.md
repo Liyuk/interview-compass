@@ -11,15 +11,16 @@ intent: >-
   See how you handle a schedule conflict by turning it into a trade-off of goals and costs rather than a
   contest of who is more forceful.
 signals:
-  - First confirms each project's goal, the reason for its deadline, and the real staffing need
-  - Offers options such as changing scope, order, people, or dates, with the cost of each
-  - Says who has the authority to decide and when to escalate
   - >-
-    After deciding, explains the reasons to the side not prioritized and agrees the condition for
-    re-evaluation
-  - Probes each side’s real outcome and time window
-  - Proposes at least two allocations with their costs
-  - Explains how the unmet side is compensated or reviewed
+    Verify goals, deadline reasons, real staffing needs, and dependencies that cannot be satisfied
+    together.
+  - Compare scope, sequence, staffing, and date options with unmet outcomes and transferred costs.
+  - >-
+    Clarify authority, decision deadlines, and escalation rather than using rank or forcefulness as
+    evidence.
+  - >-
+    Explain decisions, support, and review conditions to affected parties and verify feasible
+    commitments.
 primaryCapability: delivery.project-management
 topics:
   - execution
@@ -30,6 +31,10 @@ roles:
   - manager
   - engineering
   - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams

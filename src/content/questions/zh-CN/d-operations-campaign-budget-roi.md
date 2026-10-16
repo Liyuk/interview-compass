@@ -13,9 +13,14 @@ signals:
   - 复盘中指出哪些投入浪费了，并说明下次怎么改
 primaryCapability: delivery.operational-execution
 topics: [operations, growth-experiments, metrics]
-roles: [operations, marketing]
+roles:
+  - operations
+  - marketing
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, operations-review]
 formats: [behavioral, case]
 followUps:

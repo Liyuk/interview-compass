@@ -13,9 +13,19 @@ signals:
   - 用具体指标证明改善，并持续跟踪是否复发
 primaryCapability: delivery.reliability-incidents
 topics: [reliability, risk-management, engineering-systems]
-roles: [engineering, backend, manager, pmo]
+roles:
+  - engineering
+  - backend
+  - manager
+  - pmo
+  - frontend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, operations-review]
 formats: [case, behavioral]
 followUps:

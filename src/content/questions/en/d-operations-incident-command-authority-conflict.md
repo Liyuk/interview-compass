@@ -12,12 +12,18 @@ intent: >-
   Assess whether you clarify incident command, source of truth, risk acceptance, and communication cadence
   quickly.
 signals:
-  - Assign one incident commander and a technical execution lead.
-  - Separate recovery actions, business risk acceptance, and customer communications.
-  - Maintain one status record, decision log, and next update time.
-  - Separate incident-command process authority from technical judgment.
-  - Define emergency decisions, dissent records, and escalation deadlines.
-  - Ensure actions have rollback or compensation paths.
+  - >-
+    Confirm one incident coordinator and technical execution owner under the emergency mandate; escalate
+    quickly when authority is unclear.
+  - >-
+    Separate technical recovery judgment, business risk acceptance, and customer communication rather
+    than acting on conflicting verbal requests.
+  - >-
+    Use shared facts, decision logs, and update times, retaining dissent and decisions needing authorized
+    owners.
+  - >-
+    Check conflicting mitigations and rollback or compensation paths, identifying risks that cannot be
+    accepted unilaterally.
 primaryCapability: delivery.reliability-incidents
 topics:
   - reliability
@@ -27,12 +33,17 @@ roles:
   - operations
   - engineering
   - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

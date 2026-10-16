@@ -13,9 +13,21 @@ signals:
   - 把零散信息整理成有层次的方案，先说明全局，再给出可以执行的具体步骤
 primaryCapability: delivery.decomposition
 topics: [planning, communication, execution]
-roles: [engineering, product, operations, manager, pmo]
+roles:
+  - engineering
+  - product
+  - operations
+  - manager
+  - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [case, behavioral]
 followUps:

@@ -26,7 +26,6 @@ roles:
   - operations
   - data
   - product
-  - engineering
 responsibilityScopes:
   - multiple-teams
   - individual
@@ -34,6 +33,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - operations-review

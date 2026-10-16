@@ -13,9 +13,14 @@ signals:
   - In the review, names which spending was wasted and what would change next time
 primaryCapability: delivery.operational-execution
 topics: [operations, growth-experiments, metrics]
-roles: [operations, marketing]
+roles:
+  - operations
+  - marketing
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, operations-review]
 formats: [behavioral, case]
 followUps:

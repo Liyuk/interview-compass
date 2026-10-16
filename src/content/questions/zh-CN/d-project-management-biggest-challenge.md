@@ -12,9 +12,21 @@ signals:
   - 诚实说明结果，包括没有解决的部分
 primaryCapability: delivery.project-management
 topics: [execution, risk-management]
-roles: [engineering, product, operations, pmo, manager]
+roles:
+  - engineering
+  - product
+  - operations
+  - pmo
+  - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral]
 followUps:

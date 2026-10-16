@@ -7,16 +7,10 @@ title: 外部依赖日期失真后，怎样重建可信计划？
 question: 关键供应商连续两次推迟接口交付，但项目计划仍沿用最初日期，内部团队开始并行开发临时适配层。你会怎样更新计划、处理新增工作量，并判断哪些承诺仍可信？
 intent: 了解你能否在依赖不断变化时重建计划，而不是继续报告已经失真的原始排期。
 signals:
-  - 区分外部承诺、内部估算、验证节点和真正的关键路径。
-  - 量化延期、临时适配、返工与长期维护成本。
-  - 基于容量和情景重建承诺，说明需要谁作出取舍或升级决定。
-  - 向受影响方更新置信度、下一检查点和仍需接受的风险。
-  - 验证延期事实、交付条件和供应商恢复可信度。
-  - 找出可提前完成的模拟、合同、数据或测试准备。
-  - 比较等待、替代方案和范围调整，并明确升级责任。
-  - 将依赖的交付、验收和责任条件明确化。
-  - 区分可独立完成的工作、阻塞项和低价值等待。
-  - 用情景范围与置信度更新预测，及时调整范围或承诺。
+  - 核验供应商延期事实、交付条件与恢复可信度，区分外部承诺、内部估算和验证节点。
+  - 把适配层、返工、测试和长期维护纳入真实容量，识别可独立推进与被阻塞的工作。
+  - 比较等待、替代接口、调整顺序和范围的情景与置信度，不继续引用失真的原始日期。
+  - 由有权者确认承诺变化，向受影响方同步代价、剩余风险和下一检查点。
 primaryCapability: delivery.project-management
 topics:
   - planning
@@ -27,13 +21,17 @@ roles:
   - engineering
   - product
   - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - multiple-teams
   - team
 careerTracks:
+  - individual-contributor
   - team-manager
   - senior-manager
-  - individual-contributor
 scenarios:
   - interview
   - hiring

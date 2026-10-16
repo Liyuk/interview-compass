@@ -13,9 +13,21 @@ signals:
   - When success criteria conflict, decides by the shared goal and facts, not by rank
 primaryCapability: delivery.project-management
 topics: [execution, communication]
-roles: [product, pmo, design, operations, engineering]
+roles:
+  - product
+  - pmo
+  - design
+  - operations
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion]
 formats: [behavioral, case]
 followUps:

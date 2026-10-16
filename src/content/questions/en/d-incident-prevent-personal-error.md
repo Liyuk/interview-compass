@@ -7,15 +7,34 @@ title: How do you keep the same kind of personal mistake from happening again?
 question: How do you keep the same kind of personal mistake from happening again? Did you improve the process and tooling, or just remind yourself to be careful? How do you know the improvement works?
 intent: See whether you turn error prevention into a mechanism that can be relied on rather than personal discipline, and can verify the result.
 signals:
-  - Builds protection into mechanisms, such as review, automated checks, narrower permissions, staged rollout, and rollback, rather than relying on discipline
-  - Says what the improvement costs and why it is worth it
-  - Says how it is verified that it works, such as drills or no recurrence
-  - Separates a one-time fix from lasting optimization
+  - >-
+    Reconstruct information, actions, and support, turning reminders into executable review, checks,
+    permissions, or recovery safeguards.
+  - >-
+    Compare benefits, false blocks, maintenance cost, and boundaries rather than assuming more controls
+    are better.
+  - >-
+    Validate with drills, controlled tests, or later exposure and state the observation period;
+    nonrecurrence alone does not establish causation.
+  - >-
+    Separate one-off repair, personal practice, and team mechanisms without presuming the individual is
+    the sole cause.
 primaryCapability: delivery.reliability-incidents
 topics: [reliability, risk-management, engineering-systems]
-roles: [engineering, backend, frontend, operations, pmo, manager]
+roles:
+  - engineering
+  - backend
+  - frontend
+  - operations
+  - pmo
+  - manager
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, self-reflection, operations-review]
 formats: [behavioral, case]
 followUps:

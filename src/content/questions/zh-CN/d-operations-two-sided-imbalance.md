@@ -10,7 +10,7 @@ signals:
   - 先判断失衡是暂时的还是结构性的，以及哪一侧是瓶颈
   - 针对不同的侧设计不同的杠杆，例如对稀缺侧的激励和对过剩侧的引导
   - 说明价格或补贴的上限、触发条件和退出方式，避免形成依赖
-  - 用数据监测平衡是否恢复，以及对另一侧体验的副作用（重复执行、越权等额外影响）
+  - 用数据监测平衡是否恢复，以及对另一侧体验的负面影响
 primaryCapability: delivery.operational-execution
 topics:
   - operations
@@ -27,6 +27,7 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - promotion

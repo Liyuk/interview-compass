@@ -10,6 +10,15 @@ const entry: ApplicabilityEntry = {
   profiles: [{ roleId: 'product', stageIds: ['product-entry', 'product-independent'] }, { roleId: 'engineering', stageIds: ['senior-engineer'] }],
 };
 describe('explicit role and stage applicability', () => {
+  it('keeps reflection on actual resources and constraints available across technical stages without cloning the question', () => {
+    const entries: ApplicabilityEntry[] = JSON.parse(readFileSync(new URL('../src/content/question-applicability.json', import.meta.url), 'utf8'));
+    const constraints = entries.filter(entry => entry.questionId === 'd-capacity-resources-and-scope');
+    expect(constraints).toHaveLength(1);
+    for (const stageId of ['junior-engineer', 'mid-level-engineer', 'senior-engineer', 'staff-engineer', 'engineering-manager', 'manager-of-managers']) {
+      expect(matchesTarget(constraints[0], { roleId: 'engineering', stageId })).toBe(true);
+      expect(matchesTarget(constraints[0], { roleId: 'backend', stageId })).toBe(true);
+    }
+  });
   it('keeps reviewed technical profiles compatible with role and career-track browsing in both locales', () => {
     const entries: ApplicabilityEntry[] = JSON.parse(readFileSync(new URL('../src/content/question-applicability.json', import.meta.url), 'utf8'));
     const cases = [

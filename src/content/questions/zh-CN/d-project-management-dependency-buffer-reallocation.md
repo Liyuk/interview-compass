@@ -8,7 +8,7 @@ question: 三个项目都把同一平台团队列为关键依赖，缓冲时间�
 intent: 考察能否识别关键路径、承诺层级、资源真实容量和延期后果。
 signals:
   - 核实依赖工作量、可并行部分和完成置信度。
-  - 比较监管时限、业务影响、不可逆（可以安全撤回）成本和跨项目阻塞。
+  - 比较监管时限、业务影响、不可逆成本和跨项目阻塞。
   - 明确被挤出的工作、责任人、告知对象和重新检查条件。
 primaryCapability: delivery.capacity-planning
 topics:
@@ -20,12 +20,17 @@ roles:
   - manager
   - engineering
   - product
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

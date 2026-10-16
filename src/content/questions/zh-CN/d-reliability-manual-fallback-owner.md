@@ -7,12 +7,10 @@ title: 自动系统故障后，怎样让临时人工流程按时退出？
 question: 一个自动审批服务停摆后，运营团队临时改用表格处理，用户影响暂时得到控制。两周后服务仍未恢复，表格流程的权限和记录方式也不一致。你会如何管理临时人工流程、恢复自动审批，并确定何时关闭临时流程？
 intent: 观察你能否把应急处理限制在明确范围内，同时持续管理风险、恢复服务和临时机制的退场。
 signals:
-  - 量化人工流程的容量、错误、权限和审计风险并明确适用范围
-  - 指定自动恢复的技术负责人、依赖、检查点和升级条件
-  - 制定临时数据核对、迁移与关闭标准，验证关闭后没有遗留任务
-  - 收集频率、影响、触发条件、风险和处理差异。
-  - 先确认例外背后的业务规则与授权边界。
-  - 比较流程标准化、系统改造和人工复核的收益及误判风险。
+  - 明确临时人工流程的适用范围、容量上限、权限与记录责任，核验当前用户影响。
+  - 为自动服务恢复确认技术负责人、依赖、检查点和升级条件，不让临时方案无限延续。
+  - 对账临时数据、重复处理和未决任务，比较恢复自动化与继续人工的风险和成本。
+  - 以数据迁移、权限撤销、任务接回和用户验证为退场条件，确认没有遗留工作。
 primaryCapability: delivery.operational-execution
 topics:
   - operations
@@ -22,10 +20,15 @@ roles:
   - operations
   - engineering
   - pmo
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
+  - individual-contributor
   - team-manager
   - senior-manager
 scenarios:

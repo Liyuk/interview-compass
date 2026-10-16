@@ -13,9 +13,20 @@ signals:
   - Says how new adversary tactics are noticed and iterated against quickly while keeping the rules predictable
 primaryCapability: delivery.operational-execution
 topics: [operations, security, ethics, risk-management]
-roles: [operations, product, manager, data]
+roles:
+  - operations
+  - product
+  - manager
+  - data
+  - engineering
+  - backend
+  - ai-engineer
 responsibilityScopes: [organization]
-careerTracks: [senior-manager, executive]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
+  - executive
 scenarios: [interview, promotion, operations-review]
 formats: [case, behavioral]
 followUps:

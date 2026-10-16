@@ -9,9 +9,19 @@ intent: "了解你是否会从方案请求回到用户任务、决策时点和�
 signals: ["追问最近一次问题发生时的具体流程", "确认谁在什么时点需要采取什么动作", "比较实时看板与更简单的通知/对账方案", "用小范围验证决定是否扩大方案"]
 primaryCapability: "delivery.decomposition"
 topics: ["product-thinking", "communication", "operations"]
-roles: ["product", "engineering", "operations"]
+roles:
+  - product
+  - engineering
+  - operations
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: ["team"]
-careerTracks: ["individual-contributor", "team-manager"]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: []

@@ -13,9 +13,18 @@ signals:
   - Says how engineering and test are used to check the document for omissions
 primaryCapability: delivery.decomposition
 topics: [product-thinking, execution]
-roles: [product, engineering]
+roles:
+  - product
+  - engineering
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, promotion]
 formats: [behavioral, case]
 followUps:

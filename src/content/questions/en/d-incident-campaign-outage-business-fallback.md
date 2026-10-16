@@ -9,9 +9,15 @@ intent: See how you protect users and trust with business measures during an inc
 signals: ["Confirm the failure scope, affected users, and expected recovery time, then share updated facts.","Offer a customer response such as a notice, consistent guidance for support staff, and compensation for affected users.","Compare pausing, delaying, or restricting new campaign traffic and their business effects.","Record response actions and user impact to support later review and compensation."]
 primaryCapability: delivery.reliability-incidents
 topics: [operations, reliability, communication]
-roles: [operations, marketing, product]
+roles:
+  - operations
+  - marketing
+  - product
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, operations-review]
 formats: [case, behavioral]
 followUps:

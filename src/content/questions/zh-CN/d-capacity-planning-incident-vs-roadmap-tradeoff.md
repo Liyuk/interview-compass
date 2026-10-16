@@ -7,15 +7,10 @@ title: 事故工作长期挤占路线图时，怎样决定稳定性投入和交�
 question: 团队每个迭代都被事故和恢复任务打断，路线图连续延期；管理层要求保持既定日期，同时不希望增加人手。你会如何提出容量和目标调整？
 intent: 考察能否把事故负荷作为可测量的工作需求，并形成稳定性投资与承诺的取舍。
 signals:
-  - 量化事故频率、恢复时间、重复原因和机会成本。
-  - 区分应急处理、复发修复和可延后的功能工作。
-  - 提出容量比例、止损条件和可验证的稳定性结果。
-  - 用历史数据区分计划工作、支持负荷和不可预期中断。
-  - 预留明确容量或轮值机制，并说明它的成本。
-  - 依据剩余容量重排范围、日期或服务水平，而非隐藏加班。
-  - 用历史数据估算不同类别突发工作的频率和影响。
-  - 区分已承诺容量、缓冲和可调整的候选工作。
-  - 为超出缓冲的事件定义升级、替换范围和重新承诺规则。
+  - 按类别和周期核验事故、中断、恢复耗时与复发原因，将其计入真实容量。
+  - 比较应急处理、复发预防和功能工作，说明持续成本及被挤出的结果。
+  - 依据历史分布和服务承诺提出预留、轮值或稳定性投入，说明容量比例的不确定性。
+  - 由有权负责人确认范围、日期或服务等级的取舍，设置超限升级和复核条件，不以隐性加班补缺口。
 primaryCapability: delivery.capacity-planning
 topics:
   - resource-allocation
@@ -25,12 +20,17 @@ roles:
   - engineering
   - operations
   - manager
+  - frontend
+  - backend
+  - mobile
+  - ai-engineer
 responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
+  - senior-manager
 scenarios:
   - interview
   - hiring

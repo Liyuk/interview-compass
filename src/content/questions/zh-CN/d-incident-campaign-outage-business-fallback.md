@@ -9,9 +9,15 @@ intent: 了解你在事故中如何用业务手段保护用户和信任，并与
 signals: ["先确认故障影响范围、受影响用户和预计恢复时间，并及时更新事实。","提供用户安抚措施，例如公告、客服统一说法和对受影响用户的补偿。","比较暂停、延期或限制新活动流量等方案及其业务影响。","记录处置过程和用户影响，为后续复盘与补偿提供依据。"]
 primaryCapability: delivery.reliability-incidents
 topics: [operations, reliability, communication]
-roles: [operations, marketing, product]
+roles:
+  - operations
+  - marketing
+  - product
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, campus, operations-review]
 formats: [case, behavioral]
 followUps:

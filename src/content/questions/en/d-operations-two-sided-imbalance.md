@@ -13,9 +13,16 @@ signals:
   - Uses data to monitor whether balance is restored and the side effects on the other side's experience
 primaryCapability: delivery.operational-execution
 topics: [operations, growth-experiments, resource-allocation]
-roles: [operations, marketing, product, data]
+roles:
+  - operations
+  - marketing
+  - product
+  - data
 responsibilityScopes: [team, multiple-teams]
-careerTracks: [individual-contributor, team-manager]
+careerTracks:
+  - individual-contributor
+  - team-manager
+  - senior-manager
 scenarios: [interview, promotion, operations-review]
 formats: [case]
 followUps:
