@@ -39,4 +39,10 @@ describe('same question, different responsibility expectations', () => {
     expect(() => questionStageGuidance(question, 'design', 'design-senior', 'en')).toThrow();
     expect(() => questionStageGuidance(question, 'product', 'senior-engineer', 'en')).toThrow();
   });
+  it('uses the same role-domain behavior as the matrix instead of generic professional text', () => {
+    const data = questionStageGuidance({ ...question, roles: ['data'], primaryCapability: 'domain-modeling.data-model' }, 'data', 'data-senior', 'zh-CN');
+    expect(data.evidence.some(item => item.text.includes('粒度'))).toBe(true);
+    const junior = questionStageGuidance({ ...question, primaryCapability: 'people-organization.hiring' }, 'engineering', 'junior-engineer', 'zh-CN');
+    expect(junior.evidence.some(item => item.text.includes('不'))).toBe(true);
+  });
 });

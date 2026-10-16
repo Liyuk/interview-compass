@@ -14,7 +14,7 @@ primaryCapability: learning-adaptation.structured-reflection
 topics: [learning, planning]
 roles: [engineering, product, operations, pmo, manager]
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral]
 followUps:

@@ -11,13 +11,11 @@ intent: >-
   Assess whether you distinguish test knowledge from work behavior, environmental safeguards, and real risk
   outcomes.
 signals:
-  - Inspect the task, tools, prompts, and workload when errors occur.
-  - Compare training content with actual failure mechanisms and role scenarios.
-  - Use observation, simulation, and error trends to validate transfer.
-  - Compares training exercises with real decision contexts
-  - Defines observable behavior, feedback sources, and duration
-  - Defines work tasks and expected behaviors linked to training.
-  - Checks changes in independent execution, error trends, or knowledge sharing.
+  - Check whether the knowledge assessed in training corresponds to real sensitive-configuration tasks and error mechanisms.
+  - Examine tool prompts, safeguards, permissions, and workload to distinguish skill gaps from environmental causes.
+  - Observe behavioral transfer through realistic simulations and independent-operation records.
+  - Define error measures, task exposure, observation windows, and risk guardrails.
+  - Use evidence to compare additional training, tool improvements, and workflow changes rather than merely raise exam pass rates.
 primaryCapability: learning-adaptation.learning-transfer
 topics:
   - learning
@@ -30,9 +28,7 @@ roles:
 responsibilityScopes:
   - team
   - multiple-teams
-careerTracks:
-  - individual-contributor
-  - team-manager
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios:
   - interview
   - hiring

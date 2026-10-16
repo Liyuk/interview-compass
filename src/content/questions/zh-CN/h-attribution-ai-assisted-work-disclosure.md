@@ -7,10 +7,10 @@ title: 使用 AI 协助完成工作后，怎样准确说明个人贡献？
 question: 你交付了一份分析和方案，其中研究、代码草稿和文档大量由 AI 工具辅助生成，但问题定义、验证和最终决定由你负责。你会怎样向团队说明贡献？
 intent: 考察能否准确呈现工具、协作者与个人判断的边界，并承担验证责任。
 signals:
-  - 区分自动生成、人工修改、独立验证和最终决策。
-  - 说明使用工具的数据边界和风险检查。
-  - 不把产出归给自己，也不因工具参与而逃避责任。
-  - 明确“工具辅助下的理解、披露与责任归属”涉及的事实、对象和责任边界。
+  - 区分工具生成、本人修改、独立验证和最终决策的部分。
+  - 用验证记录或产物说明本人如何发现问题、修正内容并承担责任。
+  - 说明使用工具时的数据边界与风险检查。
+  - 不把工具生成说成自己独立完成，也不因工具参与而逃避责任。
 primaryCapability: work-responsibility.attribution
 topics:
   - ethics
@@ -25,9 +25,7 @@ roles:
 responsibilityScopes:
   - team
   - multiple-teams
-careerTracks:
-  - individual-contributor
-  - team-manager
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios:
   - interview
   - hiring

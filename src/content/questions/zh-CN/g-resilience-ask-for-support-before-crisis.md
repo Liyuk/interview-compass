@@ -11,7 +11,7 @@ primaryCapability: "learning-adaptation.resilience-recovery"
 topics: ["resilience","learning","communication"]
 roles: ["engineering","product","manager"]
 responsibilityScopes: ["individual","team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["如果求助被拒绝但风险在累积，下一步怎样保护交付？","如何避免把求助描述成对同事能力的否定？"]

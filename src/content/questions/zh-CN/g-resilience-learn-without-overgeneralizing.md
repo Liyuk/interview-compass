@@ -11,7 +11,7 @@ primaryCapability: "learning-adaptation.resilience-recovery"
 topics: ["resilience","learning","communication"]
 roles: ["engineering","product","manager"]
 responsibilityScopes: ["individual","team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["如果关键评审者无法提供更多信息，怎样获得独立校准？","什么证据会让你停止为原方案辩护？"]

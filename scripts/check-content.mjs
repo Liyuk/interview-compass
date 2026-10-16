@@ -1,5 +1,7 @@
 import { readFile, glob } from 'node:fs/promises';
 import yaml from 'js-yaml';
+import { createHash } from 'node:crypto';
+import { applicabilityFingerprintInput, validateApplicability } from '../src/lib/question-applicability.ts';
 import { crossDomainPaths, domains, taxonomy } from '../src/lib/taxonomy.ts';
 import { questionCollections, validateQuestionCollections } from '../src/lib/question-collections.ts';
 
@@ -130,6 +132,15 @@ for await (const ledgerPath of glob('docs/planning/source-ledger/*.yml')) {
   } catch (error) {
     errors.push(`${ledgerPath}: ${error.message}`);
   }
+}
+
+try {
+  const applicability = JSON.parse(await readFile('src/content/question-applicability.json', 'utf8'));
+  const fingerprints = new Map([...grouped].map(([id, pair]) => [id, createHash('sha256').update(applicabilityFingerprintInput(pair)).digest('hex')]));
+  errors.push(...validateApplicability(applicability, fingerprints));
+  console.log(`Stage applicability: ${applicability.filter(entry => entry.reviewStatus === 'reviewed').length} reviewed, ${applicability.filter(entry => entry.reviewStatus === 'pending').length} pending; pending entries do not enable filtering.`);
+} catch (error) {
+  errors.push(`stage applicability: ${error.message}`);
 }
 
 if (errors.length) {

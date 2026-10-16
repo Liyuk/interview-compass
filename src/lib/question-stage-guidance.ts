@@ -1,4 +1,5 @@
 import { getRoleStage, tierFrames } from './role-stage-model';
+import { getRoleResponsibilityAnchor } from './role-stage-expectations';
 import type { QuestionRecord } from './content-model';
 import { capabilityLabel, facetLabel, type Locale } from './taxonomy';
 
@@ -14,13 +15,7 @@ export function questionStageGuidance(question: StageQuestion, roleId: string, s
   const behavioral = formats.includes('behavioral') || formats.includes('artifact-review');
   const knowledge = formats.length === 1 && formats[0] === 'knowledge';
   const domain = question.primaryCapability.split('.')[0];
-  const domainDimension = {
-    professional: 'domain-expertise', 'domain-modeling': 'domain-expertise', 'value-direction': 'business-results',
-    delivery: 'business-results', collaboration: 'team-influence', 'people-organization': 'team-influence',
-    'learning-adaptation': 'human-competitive-advantage', 'work-responsibility': 'human-competitive-advantage',
-  } as const;
-  const dimension = domainDimension[domain as keyof typeof domainDimension];
-  const standards = dimension ? stage.dimensions[dimension] : [];
+  const domainAnchor = getRoleResponsibilityAnchor(roleId, stageId, domain, locale);
   const answerMode = knowledge
     ? (en ? 'Knowledge question: verify concepts, assumptions, counterexamples, and reasoning. Do not require project outcomes or direct reports as proof of a correct explanation.' : '知识解释题：核验概念、前提、反例和推理；不能把项目结果或直属人数当作解释正确的必要证据。')
     : behavioral
@@ -37,9 +32,7 @@ export function questionStageGuidance(question: StageQuestion, roleId: string, s
       : local(frame.verify),
     boundary: local(frame.boundary),
     attribution: en ? 'Ask what the person actually decided, implemented, reviewed, or delegated. Inspect role-relevant artifacts and alternative explanations; do not infer hands-on work from fluent terminology or a large team result.' : '追问本人具体决定、实现、评审或授权了什么，用岗位产物和其他解释核验；不能凭术语熟练或团队大结果推定本人实际参与。',
-    evidence: domain === 'work-responsibility'
-      ? [{ text: local(frame.boundary), evidence: local(frame.evidence) }, { text: local(frame.verify), evidence: en ? 'Verify truthful reporting, personal contribution, corrections, and actual authority.' : '核验如实汇报、本人贡献、纠错及实际权限。' }]
-      : standards.map(item => ({ text: item.text, evidence: item.evidence })),
+    evidence: [{ text: domainAnchor.behavior, evidence: domainAnchor.evidence }],
     professionalEvidence: stage.professionalEvidence,
     signals: question.signals,
     answerMode,

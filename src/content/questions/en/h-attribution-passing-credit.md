@@ -23,9 +23,7 @@ roles:
 responsibilityScopes:
   - team
   - multiple-teams
-careerTracks:
-  - team-manager
-  - senior-manager
+careerTracks: [team-manager, senior-manager, individual-contributor]
 scenarios:
   - interview
   - promotion

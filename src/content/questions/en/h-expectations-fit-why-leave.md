@@ -15,7 +15,7 @@ primaryCapability: work-responsibility.expectations-fit
 topics: [learning, ethics]
 roles: [engineering, product, operations, manager, design]
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor, team-manager]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: [interview, self-reflection]
 formats: [behavioral]
 followUps:

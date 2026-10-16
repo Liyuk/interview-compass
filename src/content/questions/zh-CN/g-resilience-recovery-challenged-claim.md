@@ -15,7 +15,7 @@ primaryCapability: learning-adaptation.resilience-recovery
 topics: [communication, feedback, ethics]
 roles: [engineering, product, operations, manager]
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor, team-manager]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: [interview, campus, promotion]
 formats: [behavioral]
 followUps:

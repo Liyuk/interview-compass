@@ -7,10 +7,10 @@ title: How do you describe personal contribution after using AI to assist your w
 question: You deliver an analysis and proposal with substantial AI help for research, code drafts, and documentation, while you own problem framing, validation, and final decisions. How would you explain contribution to the team?
 intent: Assess whether you accurately separate tool output, collaboration, and personal judgment while owning validation.
 signals:
-  - Separate generated material, human edits, independent validation, and final decisions.
-  - Explain data boundaries and risk checks for tool use.
-  - Do not claim generated output as solely yours or use the tool to evade responsibility.
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in understanding, disclosure, and accountability for tool-assisted work.
+  - Distinguish tool generation, personal modification, independent validation, and final decisions.
+  - Use validation records or artifacts to explain how the person found issues, corrected content, and retained accountability.
+  - Explain data boundaries and risk checks during tool use.
+  - Do not present tool-generated material as independently authored, or evade responsibility because a tool was involved.
 primaryCapability: work-responsibility.attribution
 topics:
   - ethics
@@ -25,9 +25,7 @@ roles:
 responsibilityScopes:
   - team
   - multiple-teams
-careerTracks:
-  - individual-contributor
-  - team-manager
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios:
   - interview
   - hiring

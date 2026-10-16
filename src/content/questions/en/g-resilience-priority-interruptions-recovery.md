@@ -11,7 +11,7 @@ primaryCapability: "learning-adaptation.resilience-recovery"
 topics: ["resilience","learning","communication"]
 roles: ["engineering","product","manager"]
 responsibilityScopes: ["individual","team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["How would you escalate when every requester considers their work urgent?","How would you tell whether an adjustment merely shifts the load to someone else?"]

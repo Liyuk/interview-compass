@@ -11,7 +11,7 @@ primaryCapability: "learning-adaptation.resilience-recovery"
 topics: ["resilience","learning","communication"]
 roles: ["engineering","product","manager"]
 responsibilityScopes: ["individual","team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["If support is denied while risk accumulates, how would you protect delivery next?","How would you ask without implying colleagues lack capability?"]

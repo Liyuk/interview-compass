@@ -7,17 +7,11 @@ title: 晋升材料中团队成果容易被误写成个人贡献
 question: 一次高影响项目的总结由你主笔，但结果来自多团队协作，其中某个关键决策并非你提出。你会怎样写清自己的贡献、他人的贡献和你承担的责任？
 intent: 考察贡献归属、诚信和证据表达。
 signals:
-  - 区分提出、决策、执行和结果归属。
-  - 提供能支持个人主张的具体证据。
-  - 主动标明共同成果和仍有争议的部分。
-  - 区分亲自完成、共同产出、推断和未知部分
-  - 明确风险、责任边界和需要升级的决策
-  - 提出纠正或保护受影响者的行动，并保留事实记录
-  - 具体说出本人负责的决策与产物。
-  - 承认关键协作依赖和其他贡献者。
-  - 用共同结果说明个人工作的作用边界。
-  - 拆分本人提出、判断、执行和协同的部分
-  - 将团队结果与个人可归因（判断结果由什么因素造成）影响分别举证
+  - 分别说明提出问题、提出方案、作出决策、执行与协调的负责人。
+  - 用记录或产物支持本人实际承担的判断和行动。
+  - 明确关键决策由他人提出，不把主笔总结等同主导项目。
+  - 承认跨团队依赖、共同成果和外部条件。
+  - 对贡献仍有争议或证据不足的部分如实标记并安排核验。
 primaryCapability: work-responsibility.attribution
 topics:
   - ethics
@@ -33,10 +27,7 @@ responsibilityScopes:
   - individual
   - team
   - multiple-teams
-careerTracks:
-  - individual-contributor
-  - team-manager
-  - senior-manager
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios:
   - promotion
   - self-reflection

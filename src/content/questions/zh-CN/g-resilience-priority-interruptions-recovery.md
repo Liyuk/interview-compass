@@ -11,7 +11,7 @@ primaryCapability: "learning-adaptation.resilience-recovery"
 topics: ["resilience","learning","communication"]
 roles: ["engineering","product","manager"]
 responsibilityScopes: ["individual","team"]
-careerTracks: ["individual-contributor","team-manager"]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["当每个请求方都认为自己的事项最紧急时，如何决策升级？","如何判断调整只是把负荷转给别人？"]

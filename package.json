@@ -16,6 +16,9 @@
     "test:e2e": "playwright test",
     "check:content": "node scripts/check-content.mjs",
     "report:coverage": "node scripts/coverage-report.mjs",
+    "prepare:stage-applicability": "node scripts/prepare-stage-applicability.mjs",
+    "report:stage-coverage": "node scripts/stage-coverage-report.mjs",
+    "check:stage-coverage": "node scripts/stage-coverage-report.mjs --require-complete",
     "check": "astro check",
     "ci": "npm run check && npm run check:content && npm run test:unit && npm run build && npm run test:e2e"
   },

@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import RoleCapabilityMatrix from '../components/RoleCapabilityMatrix.astro';
 import { getRoleStages, validateRoleStageModels } from '../lib/role-stage-model';
 import { facetDefinitions, facetLabel, capabilityLabel, type Locale } from '../lib/taxonomy';
 import { pathFor } from '../lib/routes';
@@ -28,6 +29,7 @@ const dimensions = { 'business-results': en ? 'Business outcomes' : '业务结�
       <p class="model-note">{en ? 'The question list currently filters by role. Each question offers a stage-specific reading framework; global stage filtering will follow the applicability audit.' : '当前此入口按岗位筛题；可在每道题内切换阶段阅读要求。全站阶段过滤将在适用性审核完成后开启。'}</p>
     </div>
   </details>)}
+  <RoleCapabilityMatrix roleId={roleId} locale={locale} />
 </SiteLayout>
 <style>
   .role-switch-links, .stage-jump { display:flex; flex-wrap:wrap; gap:.5rem 1rem; margin:1.5rem 0; }

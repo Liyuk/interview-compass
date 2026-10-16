@@ -16,9 +16,7 @@ roles:
   - pmo
 responsibilityScopes:
   - organization
-careerTracks:
-  - individual-contributor
-  - team-manager
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios:
   - interview
   - hiring

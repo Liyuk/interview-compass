@@ -36,3 +36,23 @@ test('one question changes evidence by stage and carries the selection into the 
   const width = await page.evaluate(() => ({ body: document.documentElement.scrollWidth, viewport: innerWidth }));
   expect(width.body).toBeLessThanOrEqual(width.viewport);
 });
+
+test('role matrices distinguish delivery, people responsibility, and domain evidence without page overflow', async ({ page }) => {
+  await page.goto('capability-model/roles/pmo/');
+  const matrix = page.getByRole('region', { name: '岗位责任深度矩阵' });
+  const independent = matrix.getByRole('row').filter({ has: page.getByRole('link', { name: '项目经理', exact: true }) });
+  await expect(independent.locator('td').nth(0)).toContainText('50%');
+  await expect(independent.locator('td').nth(3)).toContainText('75%');
+  const entry = matrix.getByRole('row').filter({ has: page.getByRole('link', { name: '项目协调者', exact: true }) });
+  await expect(entry.locator('td').nth(5)).toContainText('0%');
+  await entry.locator('td').nth(5).getByText('行为锚点', { exact: true }).click();
+  await expect(entry.locator('td').nth(5)).toContainText('不作为本阶段的通用要求');
+  const manager = matrix.getByRole('row').filter({ has: page.getByRole('link', { name: '项目管理团队管理者', exact: true }) });
+  await expect(manager.locator('td').nth(5)).toContainText('100%');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.goto('en/capability-model/roles/data/');
+  const data = page.getByRole('region', { name: 'Role responsibility depth matrix' });
+  const senior = data.getByRole('row').filter({ has: page.getByRole('link', { name: 'Senior data practitioner', exact: true }) });
+  await senior.locator('td').nth(1).getByText('Details', { exact: true }).click();
+  await expect(senior.locator('td').nth(1)).toContainText('grain');
+});

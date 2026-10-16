@@ -1,8 +1,7 @@
 import type { Bilingual } from '../../lib/taxonomy';
 
 export const b = (zh: string, en: string): Bilingual => ({ zh, en });
-export const tiers = ['entry', 'independent', 'senior', 'expert', 'manager', 'organization'] as const;
-export type ResponsibilityTier = typeof tiers[number];
+export { tiers, type ResponsibilityTier } from './registry';
 export interface CraftStage { name: Bilingual; outcome: Bilingual; craft: Bilingual }
 export interface RoleCraft { stages: CraftStage[]; artifacts: Bilingual; risks: Bilingual; capabilities: string[] }
 const s = (zh: string, en: string, outcome: Bilingual, craft: Bilingual): CraftStage => ({ name: b(zh, en), outcome, craft });

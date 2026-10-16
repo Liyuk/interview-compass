@@ -15,7 +15,7 @@ primaryCapability: learning-adaptation.learning-transfer
 topics: [learning]
 roles: [engineering, product, operations, pmo, manager]
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral]
 followUps:

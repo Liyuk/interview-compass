@@ -14,7 +14,7 @@ primaryCapability: work-responsibility.ownership
 topics: [learning]
 roles: [engineering, product, operations, manager, design]
 responsibilityScopes: [individual]
-careerTracks: [individual-contributor]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: [interview, campus, promotion]
 formats: [behavioral]
 followUps:

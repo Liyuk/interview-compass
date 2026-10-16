@@ -24,9 +24,7 @@ roles:
 responsibilityScopes:
   - individual
   - team
-careerTracks:
-  - individual-contributor
-  - team-manager
+careerTracks: [individual-contributor, team-manager]
 scenarios:
   - promotion
   - self-reflection

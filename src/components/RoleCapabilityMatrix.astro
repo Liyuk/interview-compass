@@ -1,0 +1,24 @@
+---
+import { domains, pick, type Locale } from '../lib/taxonomy';
+import { getRoleStages } from '../lib/role-stage-model';
+import { getRoleExpectations, getRoleResponsibilityAnchor, validateRoleExpectations } from '../lib/role-stage-expectations';
+import { depthAnchors } from '../lib/capability-expectations';
+interface Props { roleId: string; locale: Locale }
+const { roleId, locale } = Astro.props;
+const en = locale === 'en';
+const stages = getRoleStages(roleId, locale);
+const errors = validateRoleExpectations();
+if (errors.length) throw new Error(errors.join('; '));
+---
+<section class="model-section" aria-labelledby="role-matrix-heading">
+  <h2 id="role-matrix-heading">{en ? 'This role’s stage × A–H responsibility depth' : '本岗位的阶段 × A–H 责任深度'}</h2>
+  <p id="role-matrix-note">{en ? 'Editorial responsibility anchors, not measured mastery, company levels, or the 1–4 response score. Read within the role-relevant leaves. Integrity and safety apply at every stage; higher responsibility adds prevention and correction scope.' : '这是编辑性责任参照，不是实测掌握率、公司职级或回答的 1–4 分。请在岗位相关叶子内比较。诚信与安全始终是共同底线；更高责任扩大的是防护与纠偏范围。'}</p>
+  <details><summary>{en ? 'Read the depth labels' : '查看各档位的含义'}</summary><dl>{depthAnchors.map(anchor => <><dt>{anchor.percent}% · {pick(anchor.name, locale)}</dt><dd>{pick(anchor.description, locale)}</dd></>)}</dl></details>
+  <div class="matrix-scroll" role="region" aria-label={en ? 'Role responsibility depth matrix' : '岗位责任深度矩阵'} tabindex="0">
+    <table class="capability-matrix" aria-describedby="role-matrix-note">
+      <caption>{en ? 'Open a cell for behavior and evidence. Percentages are ordinal navigation labels and are not summed.' : '展开单元格查看行为和证据。百分比用于档位定位，各项不相加。'}</caption>
+      <thead><tr><th scope="col">{en ? 'Stage' : '阶段'}</th>{domains.map(domain => <th scope="col">{domain.letter}<span>{pick(domain.name, locale)}</span></th>)}</tr></thead>
+      <tbody>{stages.map(stage => { const values = getRoleExpectations(roleId, stage.id); return <tr class:list={{ 'matrix-track-break': stage.tier === 'manager' }}><th scope="row"><a href={`#${stage.id}`}>{stage.name}</a></th>{domains.map(domain => { const anchor = getRoleResponsibilityAnchor(roleId, stage.id, domain.id, locale); const depth = values[domain.id]; return <td data-depth={depth}><span class="depth-value">{depth}%</span><details class="cell-anchor"><summary>{en ? 'Details' : '行为锚点'}</summary><p>{anchor.behavior}</p><p><strong>{en ? 'Evidence' : '核验证据'}：</strong>{anchor.evidence}</p></details></td>; })}</tr>; })}</tbody>
+    </table>
+  </div>
+</section>

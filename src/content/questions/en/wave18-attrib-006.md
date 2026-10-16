@@ -15,9 +15,7 @@ roles:
   - manager
 responsibilityScopes:
   - organization
-careerTracks:
-  - individual-contributor
-  - team-manager
+careerTracks: [team-manager, senior-manager]
 scenarios:
   - interview
   - hiring

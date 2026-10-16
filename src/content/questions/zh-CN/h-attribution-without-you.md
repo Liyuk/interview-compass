@@ -14,7 +14,7 @@ primaryCapability: work-responsibility.attribution
 topics: [promotion, ethics]
 roles: [engineering, product, operations, manager]
 responsibilityScopes: [individual, team]
-careerTracks: [individual-contributor, team-manager]
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios: [interview, promotion, self-reflection]
 formats: [behavioral]
 followUps:

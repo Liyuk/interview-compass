@@ -7,15 +7,11 @@ title: 学到的方法与团队工具不兼容时怎样迁移？
 question: 你在前一家公司学会了高效的交付方法，但当前团队使用不同技术、合规要求和协作节奏。你会如何判断哪些部分可迁移？
 intent: 考察抽象原则、情境适配和验证循环。
 signals:
-  - 区分方法背后的原则与表面流程。
-  - 检查新环境中的约束和不适配假设。
-  - 用小范围试验观察实际收益及副作用（重复执行、越权等额外影响）。
-  - 识别应用商店流程和客户端版本分布的特殊约束。
-  - 设计分阶段发布、服务端开关和旧版本兼容的组合策略。
-  - 说明试点范围、基线（改动前的参照状态或数值）、支持成本和退出条件
-  - 比较维护、安全、协作收益与培训成本
-  - 用代表性项目比较原型效率、反馈和交接质量。
-  - 评估团队学习成本、文件兼容和长期维护。
+  - 区分旧方法背后的原则与具体流程。
+  - 核对新团队的技术、合规、权限和协作约束。
+  - 用小范围、可回滚的试验验证适配性，而不是要求全面照搬。
+  - 比较交付周期、质量、维护和协作成本，并记录观察窗口。
+  - 说明哪些反馈会让自己保留、调整或停止迁移。
 primaryCapability: learning-adaptation.learning-transfer
 topics:
   - learning
@@ -25,9 +21,7 @@ roles:
 responsibilityScopes:
   - team
   - multiple-teams
-careerTracks:
-  - individual-contributor
-  - team-manager
+careerTracks: [individual-contributor, team-manager, senior-manager]
 scenarios:
   - interview
   - hiring
