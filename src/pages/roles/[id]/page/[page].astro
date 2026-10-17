@@ -1,0 +1,7 @@
+---
+import FacetView from '../../../../views/FacetView.astro';
+import { facetPageStaticPaths } from '../../../../lib/site-data';
+export function getStaticPaths() { return facetPageStaticPaths('roles', 'zh-CN'); }
+const { id, page } = Astro.params as Record<string, string>;
+---
+<FacetView locale="zh-CN" kind="roles" id={id} page={Number(page)} />

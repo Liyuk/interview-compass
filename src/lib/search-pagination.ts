@@ -1,3 +1,5 @@
+export const CATALOG_PAGE_SIZE = 50;
+
 export type PageWindow = { page: number; pageCount: number; start: number; end: number };
 
 export function getPageWindow(total: number, requestedPage: number, requestedPageSize: number): PageWindow {

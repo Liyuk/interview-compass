@@ -1,11 +1,12 @@
 ---
 import Icon from '../components/Icon.astro';
-import { tokensForQuestion, countsForQuestionIds } from '../lib/question-profile-data';
+import { tokensForQuestion } from '../lib/question-profile-data';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { domains, audienceRoles, facetDefinitions, facetKinds, facetMeta, pick, type FacetKind, type Locale } from '../lib/taxonomy';
 import { facetCounts } from '../lib/question-catalog';
 import { capabilityLabel } from '../lib/taxonomy';
 import { pathFor } from '../lib/routes';
+import { CATALOG_PAGE_SIZE } from '../lib/search-pagination';
 import { loadQuestions } from '../lib/site-data';
 
 interface Props { locale: Locale }
@@ -18,6 +19,8 @@ const primaryFilterKinds: FacetKind[] = ['roles', 'scenarios', 'responsibilitySc
 const advancedFilterKinds: FacetKind[] = ['topics', 'formats'];
 const queryKey: Record<FacetKind, string> = { topics: 'topic', roles: 'role', responsibilityScopes: 'scope', careerTracks: 'track', scenarios: 'scenario', formats: 'format' };
 const capabilityOptions = domains.flatMap((domain) => domain.leaves.map((leaf) => ({ id: `${domain.id}.${leaf.id}`, label: `${domain.letter} · ${pick(leaf.name, locale)}`, count: questions.filter((q) => q.primaryCapability === `${domain.id}.${leaf.id}`).length }))).filter((option) => option.count > 0);
+const capabilityLabels = Object.fromEntries(capabilityOptions.map(option => [option.id, capabilityLabel(option.id, locale)]));
+const firstPage = questions.slice(0, CATALOG_PAGE_SIZE);
 const facetOptions = filterKinds.map((kind) => {
   const counts = facetCounts(questions, { locale, facet: kind });
   return { kind, options: (kind === 'roles' ? audienceRoles : facetDefinitions[kind]).filter((entry) => counts.has(entry.id)).map((entry) => ({ id: entry.id, label: pick(entry.name, locale), count: counts.get(entry.id) ?? 0 })) };
@@ -36,7 +39,7 @@ const facetOptions = filterKinds.map((kind) => {
     {facetOptions.filter((group) => primaryFilterKinds.includes(group.kind)).map((group) => (
       <label>
         <span>{pick(facetMeta[group.kind].name, locale)}</span>
-        <span class="select-control"><select name={queryKey[group.kind]}><option value="">{en ? 'Any' : '全部'}</option>{group.options.map((o) => <option value={o.id} data-count-label={o.label} data-total-count={o.count} data-profile-counts={JSON.stringify(countsForQuestionIds(questions.filter(q => group.kind === 'topics' ? q.topics.includes(o.id) : group.kind === 'roles' ? q.roles.includes(o.id) : group.kind === 'responsibilityScopes' ? q.responsibilityScopes.includes(o.id) : group.kind === 'careerTracks' ? q.careerTracks.includes(o.id) : group.kind === 'scenarios' ? q.scenarios.includes(o.id) : (q.formats ?? []).includes(o.id)).map(q => q.questionId)).profiles)}>{o.label} ({o.count})</option>)}</select><Icon name="chevron-down" size={16} /></span>
+        <span class="select-control"><select name={queryKey[group.kind]}><option value="">{en ? 'Any' : '全部'}</option>{group.options.map((o) => <option value={o.id} data-count-label={o.label} data-total-count={o.count}>{o.label} ({o.count})</option>)}</select><Icon name="chevron-down" size={16} /></span>
       </label>
     ))}
     </div>
@@ -45,12 +48,12 @@ const facetOptions = filterKinds.map((kind) => {
       <div class="filters filters-advanced">
         <label>
           <span>{en ? 'Capability' : '能力'}</span>
-          <span class="select-control"><select name="capability"><option value="">{en ? 'Any' : '全部'}</option>{capabilityOptions.map((o) => <option value={o.id} data-count-label={o.label} data-total-count={o.count} data-profile-counts={JSON.stringify(countsForQuestionIds(questions.filter(q => q.primaryCapability === o.id).map(q => q.questionId)).profiles)}>{o.label} ({o.count})</option>)}</select><Icon name="chevron-down" size={16} /></span>
+          <span class="select-control"><select name="capability"><option value="">{en ? 'Any' : '全部'}</option>{capabilityOptions.map((o) => <option value={o.id} data-count-label={o.label} data-total-count={o.count}>{o.label} ({o.count})</option>)}</select><Icon name="chevron-down" size={16} /></span>
         </label>
         {facetOptions.filter((group) => advancedFilterKinds.includes(group.kind)).map((group) => (
           <label>
             <span>{pick(facetMeta[group.kind].name, locale)}</span>
-            <span class="select-control"><select name={queryKey[group.kind]}><option value="">{en ? 'Any' : '全部'}</option>{group.options.map((o) => <option value={o.id} data-count-label={o.label} data-total-count={o.count} data-profile-counts={JSON.stringify(countsForQuestionIds(questions.filter(q => group.kind === 'topics' ? q.topics.includes(o.id) : group.kind === 'roles' ? q.roles.includes(o.id) : group.kind === 'responsibilityScopes' ? q.responsibilityScopes.includes(o.id) : group.kind === 'careerTracks' ? q.careerTracks.includes(o.id) : group.kind === 'scenarios' ? q.scenarios.includes(o.id) : (q.formats ?? []).includes(o.id)).map(q => q.questionId)).profiles)}>{o.label} ({o.count})</option>)}</select><Icon name="chevron-down" size={16} /></span>
+            <span class="select-control"><select name={queryKey[group.kind]}><option value="">{en ? 'Any' : '全部'}</option>{group.options.map((o) => <option value={o.id} data-count-label={o.label} data-total-count={o.count}>{o.label} ({o.count})</option>)}</select><Icon name="chevron-down" size={16} /></span>
           </label>
         ))}
       </div>
@@ -67,9 +70,10 @@ const facetOptions = filterKinds.map((kind) => {
 
   <div id="selected-filters" class="selected-filters" aria-label={en ? 'Selected filters' : '已选条件'}></div>
   <div class="share-filter-controls"><button type="button" class="secondary-button" id="share-filter-link">{en ? 'Copy filtered link' : '复制筛选链接'}</button><span id="share-filter-status" role="status" aria-live="polite"></span><input id="share-filter-value" readonly hidden aria-label={en ? 'Shareable filtered URL' : '可分享的筛选链接'} /></div>
+  <script type="application/json" id="library-capability-labels" set:html={JSON.stringify(capabilityLabels).replace(/</g, '\\u003c')} />
   <p data-target-content id="result-count" class="result-count" role="status" aria-live="polite">{en ? `${questions.length} questions` : `${questions.length} 道问题`}</p>
   <ul class="question-list" id="question-list" data-library-pending>
-    {questions.map((q) => (
+    {firstPage.map((q) => (
       <li
         data-question-id={q.questionId}
         data-question-profiles={tokensForQuestion(q.questionId).join(' ')}
@@ -88,6 +92,7 @@ const facetOptions = filterKinds.map((kind) => {
       </li>
     ))}
   </ul>
+  <noscript><p>{en ? `This page lists the first ${firstPage.length} questions. Enable JavaScript to filter and page the full library.` : `本页列出前 ${firstPage.length} 题。启用 JavaScript 后可筛选并翻页浏览全部题目。`}</p></noscript>
   <nav class="library-pagination" id="library-pagination" aria-label={en ? 'Question pages' : '问题分页'} hidden>
     <button type="button" id="previous-page">{en ? 'Previous page' : '上一页'}</button>
     <span id="page-status" role="status"></span>

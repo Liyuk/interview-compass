@@ -1,14 +1,24 @@
 import { getCollection } from 'astro:content';
 import type { QuestionRecord } from './content-model';
 import { facetValuesOf, getQuestions } from './question-catalog';
+import { CATALOG_PAGE_SIZE } from './search-pagination';
 import { crossDomainPaths, domains, facetDefinitions, audienceRoles, type FacetKind, type Locale } from './taxonomy';
 
-export async function loadAllRecords(): Promise<QuestionRecord[]> {
-  return (await getCollection('questions')).map((entry) => ({ ...entry.data, roles: entry.data.roles.filter(id => audienceRoles.some(role => role.id === id)) }));
+let allRecordsPromise: Promise<QuestionRecord[]> | undefined;
+const questionsByLocale = new Map<Locale, Promise<QuestionRecord[]>>();
+
+export function loadAllRecords(): Promise<QuestionRecord[]> {
+  allRecordsPromise ??= getCollection('questions').then(entries => entries.map(entry => ({ ...entry.data, roles: entry.data.roles.filter(id => audienceRoles.some(role => role.id === id)) })));
+  return allRecordsPromise;
 }
 
-export async function loadQuestions(locale: Locale): Promise<QuestionRecord[]> {
-  return getQuestions(await loadAllRecords(), { locale });
+export function loadQuestions(locale: Locale): Promise<QuestionRecord[]> {
+  let pending = questionsByLocale.get(locale);
+  if (!pending) {
+    pending = loadAllRecords().then(records => getQuestions(records, { locale }));
+    questionsByLocale.set(locale, pending);
+  }
+  return pending;
 }
 
 export async function facetStaticPaths(kind: FacetKind, locale: Locale) {
@@ -26,6 +36,19 @@ export async function leafStaticPaths(locale: Locale) {
   return domains.flatMap((domain) => domain.leaves
     .filter((leaf) => used.has(`${domain.id}.${leaf.id}`))
     .map((leaf) => ({ params: { domain: domain.id, leaf: leaf.id } })));
+}
+
+const facetFilter = { roles: 'role', scenarios: 'scenario', topics: 'topic' } as const;
+
+export async function facetPageStaticPaths(kind: keyof typeof facetFilter, locale: Locale) {
+  const questions = await loadQuestions(locale);
+  const entries: readonly { id: string }[] = kind === 'roles' ? audienceRoles : facetDefinitions[kind];
+  const ids = entries.map(entry => entry.id);
+  return ids.flatMap(id => {
+    const count = getQuestions(questions, { locale, [facetFilter[kind]]: id }).length;
+    const pageCount = Math.ceil(count / CATALOG_PAGE_SIZE);
+    return Array.from({ length: Math.max(0, pageCount - 1) }, (_, index) => ({ params: { id, page: String(index + 2) } }));
+  });
 }
 
 export function pathStaticPaths() {
