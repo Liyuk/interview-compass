@@ -79,6 +79,20 @@ test('mobile wiki rail closes on load and Escape restores focus to its disclosur
   await expect(summary).toHaveAttribute('aria-expanded', 'false');
 });
 
+test('mobile article outline appears before the article body', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 740 });
+  await page.goto('questions/prioritization-limited-resources/');
+  const outline = page.locator('[data-wiki-outline] > summary');
+  await expect(outline).toBeVisible();
+  const [outlineBox, headingBox] = await Promise.all([
+    outline.boundingBox(),
+    page.locator('main h1').boundingBox(),
+  ]);
+  expect(outlineBox).not.toBeNull();
+  expect(headingBox).not.toBeNull();
+  expect(outlineBox!.y + outlineBox!.height).toBeLessThan(headingBox!.y);
+});
+
 test('wiki rail remains available as server-rendered links without JavaScript', async ({ browser, baseURL }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
