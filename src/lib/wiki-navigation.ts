@@ -61,7 +61,7 @@ export function wikiNavigationFor(route: RouteRef, locale: Locale, base = ''): W
   searchItem.current = route.type === 'search';
   const collectionsItem = questionItems.find(item => item.key === 'collections')!;
   collectionsItem.href = pathFor({ type: 'collections' }, locale, base);
-  collectionsItem.current = route.type === 'collections' || route.type === 'collection';
+  collectionsItem.current = route.type === 'collections';
   collectionsItem.children = questionCollections.map(collection => {
     const collectionRef: RouteRef = { type: 'collection', id: collection.id };
     return make(`collection:${collection.id}`, collectionRef, collection.title[locale === 'en' ? 'en' : 'zh'], 'collections');
@@ -79,7 +79,7 @@ export function wikiNavigationFor(route: RouteRef, locale: Locale, base = ''): W
     return root;
   };
 
-  const browsingItems: WikiNavItem[] = [facetItems('roles'), facetItems('topics'), facetItems('scenarios')];
+  const browsingItems: WikiNavItem[] = [make('browse', { type: 'browse' }), facetItems('roles'), facetItems('topics'), facetItems('scenarios')];
   const capabilityRoot = make('capabilities', { type: 'capabilities' });
   const domainId = route.type === 'domain' || route.type === 'leaf' ? route.domain : undefined;
   if (domainId) {

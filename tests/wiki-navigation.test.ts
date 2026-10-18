@@ -31,6 +31,7 @@ describe('wiki knowledge navigation', () => {
     [{ type: 'questions' }, 'questions'],
     [{ type: 'search' }, 'search'],
     [{ type: 'collection', id: 'general-interview' }, 'collection:general-interview'],
+    [{ type: 'browse' }, 'browse'],
     [{ type: 'question', questionId: 'q-1', capability: 'delivery.capacity-planning', title: 'Q' }, 'questions'],
     [{ type: 'domain', domain: domains[0].id }, `domain:${domains[0].id}`],
     [{ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' }, 'leaf:delivery.capacity-planning'],
@@ -72,7 +73,7 @@ describe('wiki knowledge navigation', () => {
     expect(role.children?.map(item => item.key)).toEqual(['role:frontend']);
     expect(topic.children).toBeUndefined();
     expect(scenario.children).toBeUndefined();
-    expect(browsing.items.map(item => item.key)).toEqual(['roles', 'topics', 'scenarios', 'capabilities']);
+    expect(browsing.items.map(item => item.key)).toEqual(['browse', 'roles', 'topics', 'scenarios', 'capabilities']);
     expect(facetEntries('roles', 'en').some(entry => entry.id === 'frontend')).toBe(true);
   });
 
@@ -88,5 +89,11 @@ describe('wiki knowledge navigation', () => {
   it('does not enumerate question records in the navigation', () => {
     const items = allItems({ type: 'question', questionId: 'q-1', capability: 'delivery.capacity-planning', title: 'Q' });
     expect(items.every(item => !item.key.startsWith('question:'))).toBe(true);
+  });
+
+  it('marks only the most specific route current for collection details', () => {
+    const sections = wikiNavigationFor({ type: 'collection', id: 'general-interview' }, 'en');
+    expect(findItem(sections[0].items, 'collections')?.current).toBe(false);
+    expect(findItem(sections[0].items, 'collection:general-interview')?.current).toBe(true);
   });
 });
