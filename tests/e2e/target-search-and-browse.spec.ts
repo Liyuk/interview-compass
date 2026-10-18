@@ -49,6 +49,7 @@ test('an invalid link is explained without overriding a saved target', async ({ 
   await expect(page.locator('[data-target-summary]')).toContainText('链接中的目标无效');
   await expect(page.locator('[data-profile-trigger]')).toContainText('全部题目');
   await expect(page.getByRole('dialog')).not.toBeVisible();
+  await page.locator('[data-profile-trigger]').click();
   await page.getByRole('button', { name: '移除链接目标', exact: true }).click();
   await expect(page.locator('[data-profile-trigger]')).toContainText('后端');
 });
@@ -69,7 +70,7 @@ test('static no-JavaScript browsing remains available without a blocking chooser
   await page.goto(`${baseURL}questions/`);
   await expect(page.locator('#question-list > li').first()).toBeVisible();
   await expect(page.getByRole('dialog')).not.toBeVisible();
-  const wikiNavigation = page.getByRole('navigation', { name: '知识导航' });
+  const wikiNavigation = page.getByRole('navigation', { name: '主导航' });
   await expect(wikiNavigation).toBeVisible();
   await expect(wikiNavigation.getByRole('link', { name: '面试题库' })).toBeVisible();
   await context.close();

@@ -4,6 +4,9 @@ const key = 'interview-compass.target.v1';
 
 test('first visit selects a role and stage and preserves it across pages and locales', async ({ page }) => {
   await page.goto('./');
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+  await page.locator('[data-profile-trigger]').click();
+  await page.locator('[data-edit-target]').click();
   const dialog = page.getByRole('dialog', { name: '选择你的准备目标' });
   await expect(dialog).toBeVisible({ timeout: 5000 });
   await expect(dialog.getByRole('button', { name: '按此目标浏览' })).toBeDisabled();
@@ -23,11 +26,14 @@ test('first visit selects a role and stage and preserves it across pages and loc
 
 test('temporary dismissal stays within the session while explicit all mode is persistent', async ({ page }) => {
   await page.goto('./');
-  await expect(page.getByRole('dialog')).toBeVisible();
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+  await page.locator('[data-profile-trigger]').click();
+  await page.locator('[data-edit-target]').click();
   await page.keyboard.press('Escape');
   await page.goto('handbook/');
   await expect(page.getByRole('dialog')).not.toBeVisible();
   await page.locator('[data-profile-trigger]').click();
+  await page.locator('[data-edit-target]').click();
   await page.getByRole('button', { name: '先看全部题目' }).click();
   expect(await page.evaluate(storageKey => JSON.parse(localStorage.getItem(storageKey)!).mode, key)).toBe('all');
 });
@@ -42,6 +48,7 @@ test('link target overrides local choice without saving it and local filters rem
   await page.getByRole('button', { name: '清除页面条件', exact: true }).click();
   await expect(page.locator('#question-list > li:visible').first()).toBeVisible();
   await expect(page).toHaveURL(/profileRole=frontend/);
+  await page.locator('[data-profile-trigger]').click();
   await page.getByRole('button', { name: '移除链接目标', exact: true }).click();
   await expect(page.locator('[data-profile-trigger]')).toContainText('后端');
   await expect(page).not.toHaveURL(/profileRole/);
@@ -51,6 +58,7 @@ test('target changes reset pagination, role changes clear incompatible stages, a
   await page.goto('questions/?profileRole=frontend&profileStage=senior-engineer&page=2');
   await expect(page.locator('#page-status')).toContainText('第 2 /');
   await page.locator('[data-profile-trigger]').click();
+  await page.locator('[data-edit-target]').click();
   const dialog = page.getByRole('dialog');
   await dialog.getByLabel('岗位类型', { exact: true }).selectOption('data');
   await expect(dialog.getByLabel('目标阶段', { exact: true })).toHaveValue('');
@@ -59,9 +67,11 @@ test('target changes reset pagination, role changes clear incompatible stages, a
   await dialog.getByRole('button', { name: '按此目标浏览' }).click();
   await expect(page.locator('#page-status')).toContainText('第 1 /');
   await expect(page).not.toHaveURL(/page=2|profileRole/);
+  await page.locator('[data-profile-trigger]').click();
   await page.getByRole('button', { name: '查看全部题目', exact: true }).first().click();
   await expect(page.locator('[data-profile-trigger]')).toContainText('全部题目');
   await page.locator('[data-profile-trigger]').click();
+  await page.locator('[data-edit-target]').click();
   await expect(dialog.getByLabel('岗位类型', { exact: true })).toHaveValue('data');
   await expect(dialog.getByLabel('目标阶段', { exact: true })).toHaveValue('data-independent');
 });
@@ -75,9 +85,11 @@ test('sharing includes the effective target and page filters while adopting a li
   expect(copied.searchParams.get('profileStage')).toBe('senior-engineer');
   expect(copied.searchParams.get('topic')).toBe('reliability');
   expect(await page.evaluate(storageKey => localStorage.getItem(storageKey), key)).toBeNull();
+  await page.locator('[data-profile-trigger]').click();
   await page.getByRole('button', { name: '设为我的默认', exact: true }).click();
   expect(await page.evaluate(storageKey => JSON.parse(localStorage.getItem(storageKey)!).target.roleId, key)).toBe('frontend');
   await expect(page).not.toHaveURL(/profileRole/);
+  await page.locator('[data-profile-trigger]').click();
   await page.getByRole('button', { name: '查看全部题目', exact: true }).first().click();
   await page.getByRole('button', { name: '复制筛选链接' }).click();
   expect(new URL((await page.locator('body').getAttribute('data-copied-url'))!).searchParams.get('profile')).toBe('all');
@@ -125,6 +137,8 @@ test('direct questions stay readable outside the target and comparison lenses do
 test('blocked browser storage still allows a current-page choice with an honest persistence notice', async ({ page }) => {
   await page.addInitScript(() => { for (const storage of ['localStorage', 'sessionStorage']) Object.defineProperty(window, storage, { configurable: true, get() { throw new Error('storage blocked'); } }); });
   await page.goto('questions/');
+  await page.locator('[data-profile-trigger]').click();
+  await page.locator('[data-edit-target]').click();
   const dialog = page.getByRole('dialog');
   await dialog.getByLabel('岗位类型', { exact: true }).selectOption('backend');
   await dialog.getByLabel('目标阶段', { exact: true }).selectOption('mid-level-engineer');
@@ -136,6 +150,8 @@ test('blocked browser storage still allows a current-page choice with an honest 
 
 test('target selection stays keyboard-contained and the header remains usable at narrow widths', async ({ page }) => {
   await page.goto('./');
+  await page.locator('[data-profile-trigger]').click();
+  await page.locator('[data-edit-target]').click();
   const dialog = page.getByRole('dialog');
   await expect(dialog).toBeVisible();
   for (let index = 0; index < 9; index++) { await page.keyboard.press('Tab'); expect(await dialog.evaluate(node => node.contains(document.activeElement))).toBe(true); }
@@ -146,10 +162,13 @@ test('target selection stays keyboard-contained and the header remains usable at
 
 test('a target change in another tab updates the current tab', async ({ page }) => {
   await page.goto('./');
+  await page.locator('[data-profile-trigger]').click();
+  await page.locator('[data-edit-target]').click();
   await page.getByRole('button', { name: '先看全部题目' }).click();
   const second = await page.context().newPage();
   await second.goto('questions/');
   await second.locator('[data-profile-trigger]').click();
+  await second.locator('[data-edit-target]').click();
   const dialog = second.getByRole('dialog');
   await dialog.getByLabel('岗位类型', { exact: true }).selectOption('backend');
   await dialog.getByLabel('目标阶段', { exact: true }).selectOption('mid-level-engineer');

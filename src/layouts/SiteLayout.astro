@@ -1,4 +1,5 @@
 ---
+import { pagePresentationFor } from '../lib/page-presentation';
 import SiteMasthead from '../components/SiteMasthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ReadingJourney from '../components/ReadingJourney.astro';
@@ -18,6 +19,8 @@ const publicBase = base.endsWith('/') ? base : `${base}/`;
 const title = titleFor(route, locale);
 const currentNav = activeNavFor(route);
 const active = ['roles', 'topics', 'capabilities'].includes(currentNav) ? 'browse' : currentNav;
+const presentation = pagePresentationFor(route);
+const hasSidebar = presentation.kind === 'section';
 const crumbs = breadcrumbsFor(route, locale, base);
 ---
 <!doctype html>
@@ -31,15 +34,15 @@ const crumbs = breadcrumbsFor(route, locale, base);
     <link rel="icon" type="image/svg+xml" href={`${publicBase}favicon.svg`} />
     <title>{route.type === 'home' ? 'Interview Compass' : `${title} · Interview Compass`}</title>
   </head>
-  <body data-route-type={route.type}>
+  <body data-route-type={route.type} data-page-kind={presentation.kind}>
     <a class="skip-link" href="#main">{en ? 'Skip to content' : '跳到正文'}</a>
     <SiteMasthead locale={locale} active={active} route={route} wiki={route.type !== 'home'} />
     {route.type === 'home' ? <div class="page-frame">
       <main id="main" class="main-content"><slot /></main>
     </div> : <div class="page-frame wiki-page-frame">
       <Breadcrumbs crumbs={crumbs} locale={locale} />
-      <div class="wiki-reading-grid">
-        <WikiSidebar route={route} locale={locale} base={base} />
+      <div class:list={['wiki-reading-grid', { 'has-section-nav': hasSidebar, 'has-outline': outline.length > 0 }]}>
+        {hasSidebar && <WikiSidebar route={route} locale={locale} base={base} section={presentation.section} />}
         <main id="main" class="main-content"><slot /></main>
         <WikiOutline items={outline} locale={locale} />
       </div>

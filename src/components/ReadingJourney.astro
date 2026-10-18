@@ -11,10 +11,8 @@
     const saved = JSON.parse(sessionStorage.getItem(key) ?? 'null');
     if (saved && typeof saved.from === 'string') {
       const from = readingReturnPath(saved.from, locale, base);
-      const link = document.querySelector<HTMLAnchorElement>('[data-reading-return]');
-      if (link && from && saved.to === location.pathname) {
-        link.href = from;
-        link.hidden = false;
+      if (from && saved.to === location.pathname) {
+        document.querySelectorAll<HTMLAnchorElement>('[data-reading-return]').forEach(link => { link.href = from; link.hidden = false; });
       }
       if (from === current) {
         if (Array.isArray(saved.open)) saved.open.forEach((key: unknown) => {

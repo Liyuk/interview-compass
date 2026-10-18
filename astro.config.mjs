@@ -11,6 +11,7 @@ export default defineConfig({
       disable404Route: true,
       customCss: ['./src/styles/starlight.css'],
       components: {
+        PageFrame: './src/components/starlight/PageFrame.astro',
         Header: './src/components/starlight/Header.astro',
         Footer: './src/components/starlight/Footer.astro',
         Sidebar: './src/components/starlight/Sidebar.astro',

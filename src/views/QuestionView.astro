@@ -46,7 +46,7 @@ const keywords = searchKeywords(record, locale);
 const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: en ? 'Derived from' : '提炼自', inspired: en ? 'Inspired by' : '启发自', original: en ? 'Original to this site' : '本站原创' };
 ---
 <SiteLayout locale={locale} route={route} description={record.intent} outline={outline}>
-  <a class="reading-return" data-reading-return hidden href={pathFor({ type: 'questions' }, locale, base)}><Icon name="arrow-left" size={16} /> {en ? 'Back to your results or question set' : '返回本次结果或题单'}</a>
+  <a class="reading-return" data-reading-return href={pathFor({ type: 'questions' }, locale, base)}><Icon name="arrow-left" size={16} /> {en ? 'Back to your results or question set' : '返回本次结果或题单'}</a>
   <p class="eyebrow">{domain?.letter} · {domain && pick(domain.name, locale)} <Icon name="chevron-right" size={14} /> {leaf && pick(leaf.name, locale)}</p>
   <h1 class="page-title" data-pagefind-meta="title">{record.question}</h1>
   {tokensForQuestion(record.questionId).map(token => <span hidden data-pagefind-filter="profile[data-profile-token]" data-profile-token={token} />)}
@@ -218,7 +218,7 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
       </ul>
     </div>
   </section>
-  <aside class="journey-next"><h2>{en ? 'Where next?' : '接下来怎么用？'}</h2><p>{en ? 'Return to your chosen set, compare related questions, or choose a different goal.' : '回到选定的题单或结果继续阅读，也可以换一个目标重新选题。'}</p><div class="journey-links"><a href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'Curated sets' : '精选题单'}</a><a href={pathFor({ type: 'scenarios' }, locale, base)}>{en ? 'Choose a goal' : '目标路径'}</a><a href={pathFor({ type: 'leaf', domain: domain!.id, leaf: leaf!.id }, locale, base)}>{en ? 'More in this capability' : '同类能力问题'}</a></div></aside>
+  <aside class="journey-next"><h2>{en ? 'Where next?' : '接下来怎么用？'}</h2><p>{en ? 'Return to your chosen set, compare related questions, or choose a different goal.' : '回到选定的题单或结果继续阅读，也可以换一个目标重新选题。'}</p><div class="journey-links"><a data-reading-return href={pathFor({ type: 'questions' }, locale, base)}>{en ? 'Back to your results or question set' : '返回本次结果或题单'}</a><a href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'Curated sets' : '精选题单'}</a><a href={pathFor({ type: 'scenarios' }, locale, base)}>{en ? 'Choose a goal' : '目标路径'}</a><a href={pathFor({ type: 'leaf', domain: domain!.id, leaf: leaf!.id }, locale, base)}>{en ? 'More in this capability' : '同类能力问题'}</a></div></aside>
 </SiteLayout>
 
 <script>

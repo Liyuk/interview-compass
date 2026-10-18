@@ -6,9 +6,10 @@ const QUESTION = 'questions/prioritization-limited-resources/';
 test('home starts with goals and keeps category and curated entry points', async ({ page }) => {
   await page.goto('./');
   await expect(page.getByRole('searchbox')).toBeVisible();
-  await expect(page.locator('.goal-links > a')).toHaveCount(6);
+  await expect(page.locator('.hero-primary')).toHaveText(/按目标开始/);
   await expect(page.locator('.hero-entry')).toHaveCount(4);
-  await page.locator('.goal-links a[href$="#interviewer"]').click();
+  await page.locator('.hero-primary').click();
+  await page.locator('#interviewer > summary').click();
   await expect(page.locator('#interviewer')).toHaveAttribute('open', '');
   await expect(page.locator('#interviewer .scenario-steps')).toBeVisible();
 });
@@ -27,7 +28,7 @@ test('primary navigation separates goals, questions, methods, guide, categories 
 
 test('handbook uses the shared knowledge rail, Starlight TOC, search, language and footer', async ({ page }) => {
   await page.goto('handbook/');
-  if ((page.viewportSize()?.width ?? 1280) <= 760) await page.getByRole('button', { name: '菜单' }).click();
+  if ((page.viewportSize()?.width ?? 1280) <= 760) await page.locator('[data-wiki-disclosure] > summary').click();
   const zhSidebar = page.getByRole('navigation', { name: '知识导航' });
   await expect(zhSidebar.getByRole('link', { name: '使用说明' })).toHaveAttribute('aria-current', 'page');
   await expect(page.getByRole('navigation', { name: '本页内容' })).toBeVisible();
@@ -40,7 +41,7 @@ test('handbook uses the shared knowledge rail, Starlight TOC, search, language a
   await expect(page.locator('.site-footer')).toContainText('© 2026 Liyuk');
   await page.getByRole('link', { name: 'EN' }).click();
   await expect(page).toHaveURL(/\/en\/handbook\//);
-  if ((page.viewportSize()?.width ?? 1280) <= 760) await page.getByRole('button', { name: 'Menu' }).click();
+  if ((page.viewportSize()?.width ?? 1280) <= 760) await page.locator('[data-wiki-disclosure] > summary').click();
   await expect(page.getByRole('navigation', { name: 'Knowledge navigation' }).getByRole('link', { name: 'How to use' })).toHaveAttribute('aria-current', 'page');
   await expect(page.getByRole('navigation', { name: 'On this page' })).toBeVisible();
   await expect(page.getByRole('searchbox')).toBeVisible();
@@ -625,9 +626,9 @@ test('capability leaf reveals questions in bounded reading batches', async ({ pa
   const original = page.url();
   const first = await page.locator('#question-list > li:visible a').first().getAttribute('href');
   await page.locator('#question-list > li:visible a').first().click();
-  await expect(page.locator('[data-reading-return]')).toBeVisible();
+  await expect(page.locator('[data-reading-return]').first()).toBeVisible();
   await expect(page.locator('.question-fit')).toBeVisible();
-  await page.locator('[data-reading-return]').click();
+  await page.locator('[data-reading-return]').first().click();
   await expect(page).toHaveURL(original);
   await expect(page.locator('#page-status')).toContainText('2 /');
   await expect(page.locator('#question-list > li:visible a').first()).toHaveAttribute('href', first!);
@@ -644,7 +645,7 @@ test('return link restores the saved reading position and expanded filter groups
   await first.click();
   const saved = await page.evaluate(() => JSON.parse(sessionStorage.getItem('interview-compass-reading-return') || 'null'));
   expect(saved).toMatchObject({ y: expect.any(Number), open: expect.arrayContaining(['#advanced-filters']) });
-  await page.locator('[data-reading-return]').click();
+  await page.locator('[data-reading-return]').first().click();
   await expect(page).toHaveURL(/questions\/\?role=backend&page=2/);
   await expect(page.locator('#advanced-filters')).toHaveAttribute('open', '');
   await expect.poll(() => page.evaluate(() => scrollY)).toBe(saved.y);

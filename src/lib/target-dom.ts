@@ -21,7 +21,7 @@ export function updateTargetDom() {
     const description = summary.querySelector('[data-target-description]');
     if (description) description.textContent = context.invalidLink
       ? (en ? 'This link has an invalid target. Showing all questions; your saved choice is unchanged.' : '链接中的目标无效，当前显示全部题目；本地选择未改变。')
-      : `${context.hasLink ? (en ? 'Target from link: ' : '来自链接的目标：') : (en ? 'Current target: ' : '当前目标：')}${target ? `${role?.name} · ${stage?.name}` : (en ? 'All questions' : '全部题目')}`;
+      : `${context.hasLink ? (en ? 'Target from link: ' : '来自链接的目标：') : (en ? 'Current target: ' : '当前目标：')}${target ? `${role?.name ?? (en ? 'Loading target' : '正在载入目标')} · ${stage?.name ?? ''}` : (en ? 'All questions' : '全部题目')}`;
     const adopt = summary.querySelector<HTMLButtonElement>('[data-adopt-target]');
     if (adopt) adopt.hidden = !context.hasLink || context.invalidLink;
     const clear = summary.querySelector<HTMLButtonElement>('[data-remove-link-target]');
@@ -102,15 +102,4 @@ subscribeTarget(updateTargetDom);
 export function sharedTargetUrl(url: URL): string {
   url.search = withLinkPreference(url.searchParams, getTargetContext().preference).toString();
   return url.href;
-}
-
-const handbook = document.querySelector<HTMLElement>('.page > .header');
-if (handbook) {
-  const resize = () => {
-    const elements = ['.site-header', '.search-strip', '.handbook-crumbs'].map(selector => document.querySelector<HTMLElement>(selector));
-    handbook.style.setProperty('--sl-nav-height', `${elements.reduce((sum, item) => sum + (item?.offsetHeight ?? 0), 0)}px`);
-  };
-  const observer = new ResizeObserver(resize);
-  for (const selector of ['.site-header', '.search-strip', '.handbook-crumbs']) { const item = document.querySelector(selector); if (item) observer.observe(item); }
-  resize();
 }

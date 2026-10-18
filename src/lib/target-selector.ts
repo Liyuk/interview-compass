@@ -19,7 +19,7 @@ function currentLabel() {
   const target = preference.mode === 'target' ? preference.target : undefined;
   const role = roles.find(item => item.id === target?.roleId);
   const stage = role?.stages.find(item => item.id === target?.stageId);
-  return target && role && stage ? `${role.name} · ${stage.name}` : (en ? 'Preparation target' : '准备目标');
+  return target && role && stage ? `${role.name} · ${stage.name}` : (en ? 'All questions · Target' : '全部题目 · 准备目标');
 }
 
 function selectedRole() { return roles.find(role => role.id === roleSelect?.value); }
@@ -92,18 +92,31 @@ function closeStatus() {
 
 async function openEditor() {
   if (!dialog || !roleSelect) return;
-  roles = await loadTargetRoles();
-  fillRoles();
-  const remembered = rememberedTarget(getTargetContext().preference) ?? rememberedTarget(getStoredPreference());
-  roleSelect.value = remembered?.roleId ?? '';
-  fillStages(remembered?.stageId ?? '');
   closeStatus();
   if (!dialog.open) dialog.showModal();
-  roleSelect.focus();
+  const error = dialog.querySelector<HTMLElement>('[data-profile-error]');
+  const retry = dialog.querySelector<HTMLButtonElement>('[data-profile-retry]');
+  if (error) error.hidden = true;
+  if (retry) retry.hidden = true;
+  roleSelect.disabled = true;
+  if (applyButton) applyButton.disabled = true;
+  try {
+    roles = await loadTargetRoles();
+    fillRoles();
+    const remembered = rememberedTarget(getTargetContext().preference) ?? rememberedTarget(getStoredPreference());
+    roleSelect.value = remembered?.roleId ?? '';
+    fillStages(remembered?.stageId ?? '');
+    roleSelect.disabled = false;
+    if (dialog.open) roleSelect.focus();
+  } catch {
+    if (error) error.hidden = false;
+    if (retry) { retry.hidden = false; if (dialog.open) retry.focus(); }
+  }
 }
 
 export function initTargetSelector() {
   if (!dialog || !trigger || !roleSelect || !stageSelect) return;
+  dialog.querySelector('[data-profile-retry]')?.addEventListener('click', () => { void openEditor(); });
   roleSelect.addEventListener('change', () => fillStages(''));
   stageSelect.addEventListener('change', describe);
   applyButton?.addEventListener('click', () => {

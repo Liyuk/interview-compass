@@ -61,7 +61,7 @@ export function pathFor(ref: RouteRef, locale: Locale, base = ''): string {
   const route = (() => {
     switch (ref.type) {
       case 'home': return `${root}/`;
-      case 'not-found': return `${root}/404/`;
+      case 'not-found': return locale === 'en' ? `${root}/404/` : `${root}/404.html`;
       case 'browse': return `${root}/browse/`;
       case 'questions': return `${root}/questions/`;
       case 'search': return `${root}/search/`;

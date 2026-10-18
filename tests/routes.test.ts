@@ -50,7 +50,7 @@ describe('route model', () => {
 
   it('models localized not-found pages as wiki routes without a misleading current section', () => {
     const notFound: RouteRef = { type: 'not-found' };
-    expect(pathFor(notFound, 'zh-CN', base)).toBe('/interview-compass/404/');
+    expect(pathFor(notFound, 'zh-CN', base)).toBe('/interview-compass/404.html');
     expect(pathFor(notFound, 'en', base)).toBe('/interview-compass/en/404/');
     expect(titleFor(notFound, 'zh-CN')).toBe('页面不存在');
     expect(titleFor(notFound, 'en')).toBe('Page not found');

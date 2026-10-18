@@ -13,14 +13,6 @@ const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const questions = await loadQuestions(locale);
 const featured = ['general-interview', 'technical-selected', 'candidate-due-diligence'].flatMap((id) => questionCollections.find((item) => item.id === id) ?? []);
-const goals = [
-  ['candidate', '候选人求职', 'Job candidate', '准备重点经历、专业问题与反问。', 'Prepare experience, professional questions, and due diligence.'],
-  ['interviewer', '招聘面试官', 'Interviewer', '从岗位画像选择主问、追问与证据。', 'Choose lead questions and probes for the role you are hiring.'],
-  ['promotion-candidate', '晋升候选人', 'Promotion candidate', '对照目标责任，整理持续贡献。', 'Gather sustained evidence for your target responsibilities.'],
-  ['promotion-reviewer', '晋升评审者', 'Promotion reviewer', '核实责任、结果与个人作用。', 'Examine responsibility, outcomes, and personal contribution.'],
-  ['self-practice', '自我准备与复盘', 'Self-preparation', '选择一个思考目标，发现证据缺口。', 'Choose a goal and identify missing evidence.'],
-  ['project-review', '项目与运营复盘', 'Project review', '比较目标与结果，找到下一步行动。', 'Compare goals with outcomes and identify the next action.'],
-];
 const entries = [
   { ref: { type: 'roles' } as const, title: en ? 'Roles' : '岗位', text: en ? 'Find questions relevant to your work.' : '按职能找到相关实践问题。' },
   { ref: { type: 'topics' } as const, title: en ? 'Topics' : '主题', text: en ? 'Explore a subject or working method.' : '查找技术、业务或方法主题。' },
@@ -52,11 +44,6 @@ const entries = [
     <div class="journey-links"><a href={pathFor({ type: 'topic', id: 'product-thinking' }, locale, base)}>{en ? 'Product judgment' : '产品判断'} <Icon name="arrow-up-right" size={16} /></a><a href={pathFor({ type: 'topic', id: 'operations' }, locale, base)}>{en ? 'Operating workflows' : '运营工作流'} <Icon name="arrow-up-right" size={16} /></a><a href={pathFor({ type: 'topic', id: 'product-discovery' }, locale, base)}>{en ? 'Discovery and design collaboration' : '需求与设计协作'} <Icon name="arrow-up-right" size={16} /></a></div>
   </section>
 
-  <section class="home-goals" aria-labelledby="goals-title">
-    <h2 id="goals-title" class="section-title">{en ? 'What are you here to do?' : '这次，你想完成什么？'}</h2>
-    <p class="band-text">{en ? 'Choose a task, then follow the steps to questions that fit your role and responsibility.' : '先选当前任务，再按角色和责任范围找到相关问题。'}</p>
-    <div class="goal-links">{goals.map(([id, zh, english, description, descriptionEn]) => <a href={`${pathFor({ type: 'scenarios' }, locale, base)}#${id}`}><strong>{en ? english : zh} <Icon name="arrow-up-right" size={16} /></strong><span>{en ? descriptionEn : description}</span></a>)}</div>
-  </section>
   <section class="home-featured" aria-labelledby="featured-title">
     <div class="collection-section-heading"><h2 id="featured-title" class="section-title">{en ? 'Start with a few questions' : '先看一小组问题'}</h2><a href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'All curated sets' : '全部精选题单'} <Icon name="chevron-right" size={16} /></a></div>
     <div class="featured-collection-grid">{featured.map((collection) => <a class="featured-collection" href={pathFor({ type: 'collection', id: collection.id }, locale, base)}><strong>{pick(collection.title, locale)} <Icon name="arrow-up-right" size={15} /></strong><span>{pick(collection.purpose, locale)}</span>{collection.kind === 'question-set' && <TargetCount ids={collection.entries.map((entry: { questionId: string }) => entry.questionId)} locale={locale} unit />}</a>)}</div>

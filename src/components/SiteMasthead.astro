@@ -1,25 +1,19 @@
 ---
 import '../styles/global.css';
 import Icon from './Icon.astro';
-import { navLabel, pathFor, switchLocaleRoute, type RouteRef } from '../lib/routes';
+import { pathFor, switchLocaleRoute, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
 import { loadQuestions } from '../lib/site-data';
+import { siteNavigationFor } from '../lib/site-navigation';
 import TargetCount from './TargetCount.astro';
 
 interface Props { locale: Locale; active?: string; route?: RouteRef; wiki?: boolean }
-const { locale, active = '', route = { type: 'home' }, wiki = false } = Astro.props;
+const { locale, route = { type: 'home' } } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const other: Locale = en ? 'zh-CN' : 'en';
 const questions = await loadQuestions(locale);
-const nav = [
-  { key: 'scenarios', ref: { type: 'scenarios' } as RouteRef, label: navLabel('scenarios', locale) },
-  { key: 'questions', ref: { type: 'questions' } as RouteRef, label: navLabel('questions', locale) },
-  { key: 'framework', ref: { type: 'framework' } as RouteRef, label: en ? 'Questioning methods' : '提问方法' },
-  { key: 'guide', ref: { type: 'guide' } as RouteRef, label: navLabel('guide', locale) },
-  { key: 'browse', ref: { type: 'browse' } as RouteRef, label: navLabel('browse', locale) },
-  { key: 'capability-model', ref: { type: 'capability-model' } as RouteRef, label: navLabel('capabilityModel', locale) },
-];
+const nav = siteNavigationFor(route, locale, base);
 ---
 <script is:inline>
   document.body.dataset.navigationReady = 'true';
@@ -33,12 +27,10 @@ const nav = [
     <img src={`${base.endsWith('/') ? base : `${base}/`}logo.svg`} width="30" height="30" alt="" aria-hidden="true" />
     <span>Interview Compass</span>
   </a>
-  {!wiki && <>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">{en ? 'Menu' : '导航'} <Icon name="chevron-down" size={16} /></button>
-    <nav id="primary-navigation" class="primary-nav" aria-label={en ? 'Main navigation' : '主导航'}>
-      {nav.map((item) => <a href={pathFor(item.ref, locale, base)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
+    <button class="nav-toggle" data-site-navigation-toggle type="button" aria-expanded="false" aria-controls="primary-navigation">{en ? 'Menu' : '导航'} <Icon name="chevron-down" size={16} /></button>
+    <nav id="primary-navigation" class="primary-nav" data-site-navigation aria-label={en ? 'Main navigation' : '主导航'}>
+      {nav.map((item) => <a href={item.href} aria-current={item.current ? 'page' : undefined}>{item.label}</a>)}
     </nav>
-  </>}
   <div class="target-status">
   <button type="button" class="profile-trigger" data-profile-trigger aria-expanded="false" aria-controls="target-status-panel">
     <span data-profile-label>{en ? 'Preparation target' : '准备目标'}</span>
@@ -56,6 +48,8 @@ const nav = [
   <dialog class="profile-dialog" data-profile-dialog aria-labelledby="profile-dialog-title" aria-describedby="profile-dialog-description">
     <h2 id="profile-dialog-title">{en ? 'Choose your preparation target' : '选择你的准备目标'}</h2>
     <p id="profile-dialog-description">{en ? 'For engineers: choose your specialization and target responsibility. Questions and search will show only reviewed matches. You can switch or explore everything at any time.' : '面向工程师，选择专业方向和准备承担的责任阶段。题目与搜索将只显示已审核的匹配内容，随时可以切换或查看全部。'}</p>
+    <p data-profile-error role="status" hidden>{en ? 'Preparation targets could not load. Retry or browse all questions.' : '准备目标暂时无法加载，请重试或先浏览全部题目。'}</p>
+    <button type="button" class="secondary-button" data-profile-retry hidden>{en ? 'Retry' : '重试加载'}</button>
     <label for="profile-role">{en ? 'Role type' : '岗位类型'}</label>
     <span class="select-control"><select id="profile-role"><option value="">{en ? 'Choose a role' : '选择岗位'}</option></select><Icon name="chevron-down" size={16} /></span>
     <label for="profile-stage">{en ? 'Target stage' : '目标阶段'}</label>
@@ -92,23 +86,7 @@ const nav = [
   import { safeSearchResultHref } from '../lib/search-records';
 
   initTargetSelector();
-  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
-  toggle?.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') !== 'true';
-    toggle.setAttribute('aria-expanded', String(expanded));
-    document.querySelector('.site-header')?.classList.toggle('nav-open', expanded);
-    const starlightHeader = document.querySelector<HTMLElement>('.page > .header');
-    if (expanded && starlightHeader) starlightHeader.style.setProperty('--sl-nav-height', '404px');
-    else starlightHeader?.style.removeProperty('--sl-nav-height');
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') {
-      toggle.setAttribute('aria-expanded', 'false');
-      document.querySelector('.site-header')?.classList.remove('nav-open');
-      document.querySelector<HTMLElement>('.page > .header')?.style.removeProperty('--sl-nav-height');
-      toggle.focus();
-    }
-  });
+  import '../lib/site-navigation-dom';
 
   const form = document.querySelector<HTMLFormElement>('.search-form');
   const input = form?.querySelector<HTMLInputElement>('input');
