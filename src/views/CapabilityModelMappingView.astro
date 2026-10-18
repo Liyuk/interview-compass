@@ -12,8 +12,12 @@ const mapping = getLevelMapping(locale);
 const errors = validateCapabilityModel();
 if (errors.length) throw new Error(`Invalid capability model: ${errors.join('; ')}`);
 const route: RouteRef = { type: 'capability-model-mapping' };
+const outline = [
+  { id: 'mapping-sources-heading', label: en ? 'What these sources can tell you' : '两个来源各自能提供什么' },
+  { id: 'mapping-checklist-heading', label: en ? 'A cautious comparison checklist' : '做职级对照时，至少核对这些条件' },
+];
 ---
-<SiteLayout locale={locale} route={route} description={en ? 'A cautious guide to partial cross-company level mapping.' : '了解跨公司职级映射可以比较什么，以及它的边界。'}>
+<SiteLayout locale={locale} route={route} description={en ? 'A cautious guide to partial cross-company level mapping.' : '了解跨公司职级映射可以比较什么，以及它的边界。'} outline={outline}>
   <p class="eyebrow">{en ? 'PARTIAL COMPARISON · NOT A RUBRIC' : '部分对照 · 不是晋升标准'}</p>
   <h1 class="page-title">{en ? 'Cross-company level mapping' : '跨公司职级映射：可比范围与边界'}</h1>
   <p class="source-date">{mapping.reviewDate}</p>
@@ -38,7 +42,7 @@ const route: RouteRef = { type: 'capability-model-mapping' };
   </section>
 
   <section class="model-section">
-    <h2>{en ? 'A cautious comparison checklist' : '做职级对照时，至少核对这些条件'}</h2>
+    <h2 id="mapping-checklist-heading">{en ? 'A cautious comparison checklist' : '做职级对照时，至少核对这些条件'}</h2>
     <div class="mapping-factors">{mapping.factors.map((factor, index) => <div><span>{String(index + 1).padStart(2, '0')}</span><strong>{factor}</strong></div>)}</div>
     <div class="mapping-caution"><ul>{mapping.caveats.map((caveat) => <li>{caveat}</li>)}</ul></div>
   </section>

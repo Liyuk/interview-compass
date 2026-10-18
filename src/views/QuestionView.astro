@@ -26,12 +26,26 @@ const related = (record.relatedQuestions ?? []).flatMap((relation) => {
   const target = all.find((item) => item.questionId === relation.questionId && item.locale === locale && item.status === 'published');
   return target ? [{ ...relation, target }] : [];
 });
+const outline = [
+  { id: 'objective-h', label: evaluation.objectiveTitle },
+  { id: 'intent-h', label: evaluation.intentTitle },
+  { id: 'inference-h', label: evaluation.inferenceTitle },
+  { id: 'signals-h', label: en ? 'Signals worth noticing' : '值得观察的信号' },
+  ...(evaluation.comparisons.length > 0 ? [{ id: 'comparisons-h', label: evaluation.comparisonsTitle }] : []),
+  { id: 'context-h', label: evaluation.contextTitle },
+  { id: 'decision-h', label: evaluation.decisionTitle },
+  { id: 'tradeoffs-h', label: en ? 'Examine the trade-offs' : '分析方案的利与弊' },
+  { id: 'assessment-h', label: evaluation.title },
+  ...(evaluation.highlightEvidence.length > 0 ? [{ id: 'highlight-evidence-h', label: en ? 'Evidence that could make a contribution visible' : '可以体现贡献的证据' }] : []),
+  ...(record.background?.length ? [{ id: 'background-h', label: en ? 'Background to review' : '背景知识' }] : []),
+  ...(related.length > 0 ? [{ id: 'related-h', label: en ? 'Related questions' : '相近的问题' }] : []),
+];
 const contextKinds: FacetKind[] = ['roles', 'scenarios', 'topics', 'responsibilityScopes', 'careerTracks', 'formats'];
 const context = contextKinds.map((kind) => ({ kind, ids: facetValuesOf(record, kind) })).filter((group) => group.ids.length > 0);
 const keywords = searchKeywords(record, locale);
 const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: en ? 'Derived from' : '提炼自', inspired: en ? 'Inspired by' : '启发自', original: en ? 'Original to this site' : '本站原创' };
 ---
-<SiteLayout locale={locale} route={route} description={record.intent}>
+<SiteLayout locale={locale} route={route} description={record.intent} outline={outline}>
   <a class="reading-return" data-reading-return hidden href={pathFor({ type: 'questions' }, locale, base)}><Icon name="arrow-left" size={16} /> {en ? 'Back to your results or question set' : '返回本次结果或题单'}</a>
   <p class="eyebrow">{domain?.letter} · {domain && pick(domain.name, locale)} <Icon name="chevron-right" size={14} /> {leaf && pick(leaf.name, locale)}</p>
   <h1 class="page-title" data-pagefind-meta="title">{record.question}</h1>
@@ -102,11 +116,11 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
 
     <section class="analysis-grid" aria-label={evaluation.decisionTitle}>
       <article class="analysis-card decision-card">
-        <h2>{evaluation.decisionTitle}</h2>
+        <h2 id="decision-h">{evaluation.decisionTitle}</h2>
         <p>{evaluation.decision}</p>
       </article>
       <article class="analysis-card tradeoff-card">
-        <h2>{en ? 'Examine the trade-offs' : '分析方案的利与弊'}</h2>
+        <h2 id="tradeoffs-h">{en ? 'Examine the trade-offs' : '分析方案的利与弊'}</h2>
         <div class="tradeoff-columns">
           <section aria-labelledby="benefits-h">
             <h3 id="benefits-h">{evaluation.benefitsTitle}</h3>

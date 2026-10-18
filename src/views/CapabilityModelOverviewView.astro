@@ -18,8 +18,12 @@ const icStages = stages.filter((stage) => stage.track === 'ic');
 const managementStages = stages.filter((stage) => stage.track !== 'ic');
 const dimensions = dimensionIds.map((id) => getDimensionProgression(id, locale));
 const route: RouteRef = { type: 'capability-model' };
+const outline = [
+  { id: 'stage-heading', label: en ? 'Scope and leverage expand with each stage' : '阶段变化体现为责任范围与影响方式的扩展' },
+  { id: 'dimension-heading', label: en ? 'Four dimensions, connected to the A–H map' : '四个评价维度，连接站内 A–H 能力地图' },
+];
 ---
-<SiteLayout locale={locale} route={route} description={en ? 'An editorial capability heuristic for organizing interview questions.' : '用于组织面试问题的启发式能力模型草稿。'}>
+<SiteLayout locale={locale} route={route} description={en ? 'An editorial capability heuristic for organizing interview questions.' : '用于组织面试问题的启发式能力模型草稿。'} outline={outline}>
   <section class="model-hero">
     <p class="eyebrow">{en ? 'INTERVIEW COMPASS EDITORIAL DRAFT' : 'INTERVIEW COMPASS · 启发式草稿'}</p>
     <h1 class="page-title">{en ? 'Build outcomes. Exercise judgment. Grow capability.' : '创造业务结果，建设判断力与人的竞争力'}</h1>

@@ -1,14 +1,36 @@
 ---
 import type { Locale } from '../lib/taxonomy';
+import type { WikiOutlineItem } from '../lib/wiki-outline';
 
-interface OutlineItem { id: string; label: string }
-interface Props { items: OutlineItem[]; locale: Locale }
+interface Props { items: WikiOutlineItem[]; locale: Locale }
 const { items, locale } = Astro.props;
 const visibleItems = items.filter(item => item.id.trim() && item.label.trim());
 const label = locale === 'en' ? 'On this page' : '本页目录';
 ---
 
-{visibleItems.length > 0 && <nav class="wiki-outline" aria-label={label}>
-  <h2>{label}</h2>
-  <ol>{visibleItems.map(item => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ol>
-</nav>}
+{visibleItems.length > 0 && <details class="wiki-outline" open data-wiki-outline>
+  <summary aria-expanded="true"><span>{label}</span><span aria-hidden="true">⌄</span></summary>
+  <nav aria-label={label}><ol>{visibleItems.map(item => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ol></nav>
+</details>}
+
+<script>
+  const outline = document.querySelector<HTMLDetailsElement>('[data-wiki-outline]');
+  const summary = outline?.querySelector<HTMLElement>('summary');
+  const media = window.matchMedia('(max-width: 760px)');
+  const syncExpanded = () => summary?.setAttribute('aria-expanded', String(Boolean(outline?.open)));
+  const syncViewport = () => {
+    if (!outline) return;
+    outline.open = !media.matches;
+    syncExpanded();
+  };
+  syncViewport();
+  media.addEventListener('change', syncViewport);
+  outline?.addEventListener('toggle', syncExpanded);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && media.matches && outline?.open) {
+      outline.open = false;
+      syncExpanded();
+      summary?.focus();
+    }
+  });
+</script>

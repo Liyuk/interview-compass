@@ -28,14 +28,14 @@ const summaryLabel = locale === 'en' ? 'Browse knowledge' : '浏览知识目录'
     </summary>
     <nav id={navId} aria-label={label}>
       {sections.map(section => <section class="wiki-nav-section" aria-labelledby={`${idPrefix}-${section.key}`}>
-        <h2 id={`${idPrefix}-${section.key}`}>{section.label}</h2>
+        <p id={`${idPrefix}-${section.key}`}>{section.label}</p>
         <WikiNavList items={section.items} />
       </section>)}
     </nav>
   </details>}
   {!mobileDisclosure && <nav id={navId} aria-label={label}>
     {sections.map(section => <section class="wiki-nav-section" aria-labelledby={`${idPrefix}-${section.key}`}>
-      <h2 id={`${idPrefix}-${section.key}`}>{section.label}</h2>
+      <p id={`${idPrefix}-${section.key}`}>{section.label}</p>
       <WikiNavList items={section.items} />
     </section>)}
   </nav>}

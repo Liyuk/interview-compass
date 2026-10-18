@@ -16,15 +16,19 @@ const sections = path.domains.map((domainId: string) => {
   const domain = domains.find((item) => item.id === domainId)!;
   return { domain, items: getPathQuestions(all, { locale, domain: domainId, topics: path.topics }) };
 }).filter((section) => section.items.length > 0);
+const outline = sections.map(({ domain }) => ({
+  id: `path-domain-${domain.id}`,
+  label: `${domain.letter} · ${pick(domain.name, locale)}`,
+}));
 ---
-<SiteLayout locale={locale} route={{ type: 'path', id: path.id }} description={pick(path.description, locale)}>
+<SiteLayout locale={locale} route={{ type: 'path', id: path.id }} description={pick(path.description, locale)} outline={outline}>
   <p class="eyebrow">{en ? 'CROSS-DOMAIN PATH' : '跨域路径'}</p>
   <h1 class="page-title">{pick(path.name, locale)}</h1>
   <p class="intro">{pick(path.description, locale)}</p>
   <p class="intro">{en ? 'Each question below still belongs to one capability. The path only gathers them in reading order.' : '下面每道题仍然只属于一个能力，这条路径只是把它们按阅读顺序放在一起。'}</p>
   {sections.map(({ domain, items }, index) => (
     <section class="leaf-section">
-      <h2>{index + 1}. {domain.letter} · {pick(domain.name, locale)}<TargetCount class="count" questions={items} /></h2>
+      <h2 id={`path-domain-${domain.id}`}>{index + 1}. {domain.letter} · {pick(domain.name, locale)}<TargetCount class="count" questions={items} /></h2>
       <QuestionList questions={items} locale={locale} />
     </section>
   ))}

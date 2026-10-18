@@ -31,6 +31,22 @@ test('wiki outline is omitted when a page has no substantial outline entries', a
   await expect(page.getByRole('navigation', { name: '本页目录' })).toHaveCount(0);
 });
 
+test('question outlines link only to rendered sections and omit missing comparison analysis', async ({ page }) => {
+  await page.goto('questions/prioritization-limited-resources/');
+  const outlineDetails = page.locator('[data-wiki-outline]');
+  if ((page.viewportSize()?.width ?? 1280) <= 760) await outlineDetails.locator('summary').click();
+  const outline = page.getByRole('navigation', { name: '本页目录' });
+  await expect(outline).toBeVisible();
+  await expect(page.locator('#comparisons-h')).toHaveCount(0);
+  await expect(outline.locator('a[href="#comparisons-h"]')).toHaveCount(0);
+  const anchors = await outline.locator('a').evaluateAll(links => links.map(link => (link as HTMLAnchorElement).hash.slice(1)));
+  for (const id of anchors) {
+    const heading = page.locator(`main h2[id="${id}"]`);
+    await expect(heading).toHaveCount(1);
+    await expect(heading).toBeVisible();
+  }
+});
+
 test('mobile wiki rail closes on load and Escape restores focus to its disclosure button', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('questions/');
