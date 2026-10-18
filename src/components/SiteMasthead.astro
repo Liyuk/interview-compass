@@ -39,10 +39,20 @@ const nav = [
       {nav.map((item) => <a href={pathFor(item.ref, locale, base)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
     </nav>
   </>}
-  <button type="button" class="profile-trigger" data-profile-trigger>
-    <span data-profile-label>{en ? 'All questions' : '全部题目'}</span>
+  <div class="target-status">
+  <button type="button" class="profile-trigger" data-profile-trigger aria-expanded="false" aria-controls="target-status-panel">
+    <span data-profile-label>{en ? 'Preparation target' : '准备目标'}</span>
     <Icon name="chevron-down" size={16} />
   </button>
+<div id="target-status-panel" class="target-summary" data-target-summary hidden data-pagefind-ignore aria-label={en ? 'Preparation status' : '准备状态'}>
+  <div class="target-summary-inner">
+    <div class="target-summary-copy"><p class="target-summary-current"><span data-target-description></span><span class="target-summary-count"><TargetCount questions={questions} locale={locale} unit /></span></p>
+      <p data-target-storage-warning hidden>{en ? 'Could not save this preference. Your choice applies only to this page.' : '未能保存此选择，仅在当前页有效。'}</p>
+    </div>
+    <div class="target-summary-actions"><button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button><button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button><button type="button" data-adopt-target hidden>{en ? 'Save as my default' : '设为我的默认'}</button><button type="button" data-remove-link-target hidden>{en ? 'Remove link target' : '移除链接目标'}</button><a data-target-model hidden>{en ? 'Stage expectations' : '阶段要求'}<Icon name="arrow-up-right" size={14} /></a></div>
+  </div>
+</div>
+  </div>
   <dialog class="profile-dialog" data-profile-dialog aria-labelledby="profile-dialog-title" aria-describedby="profile-dialog-description">
     <h2 id="profile-dialog-title">{en ? 'Choose your preparation target' : '选择你的准备目标'}</h2>
     <p id="profile-dialog-description">{en ? 'For engineers: choose your specialization and target responsibility. Questions and search will show only reviewed matches. You can switch or explore everything at any time.' : '面向工程师，选择专业方向和准备承担的责任阶段。题目与搜索将只显示已审核的匹配内容，随时可以切换或查看全部。'}</p>
@@ -72,14 +82,7 @@ const nav = [
   </form>
   <div class="search-results" aria-live="polite" hidden></div>
 </div></div>
-<aside class="target-summary" data-target-summary hidden data-pagefind-ignore>
-  <div class="target-summary-inner">
-    <div class="target-summary-copy"><p class="target-summary-current"><span data-target-description></span><span class="target-summary-count"><TargetCount questions={questions} locale={locale} unit /></span></p>
-      <p data-target-storage-warning hidden>{en ? 'Could not save this preference. Your choice applies only to this page.' : '未能保存此选择，仅在当前页有效。'}</p>
-    </div>
-    <div class="target-summary-actions"><button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button><button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button><button type="button" data-adopt-target hidden>{en ? 'Save as my default' : '设为我的默认'}</button><button type="button" data-remove-link-target hidden>{en ? 'Remove link target' : '移除链接目标'}</button><a data-target-model hidden>{en ? 'Stage expectations' : '阶段要求'}<Icon name="arrow-up-right" size={14} /></a></div>
-  </div>
-</aside>
+
 
 <script>
   import '../lib/target-dom';

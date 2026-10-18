@@ -1,6 +1,6 @@
 import type { TargetRoleOption } from './target-roles';
 import { allPreference, rememberedTarget, targetPreference } from './target-preferences';
-import { choosePreference, dismissTargetPrompt, getStoredPreference, getTargetContext, needsTargetPrompt, subscribeTarget } from './target-state';
+import { choosePreference, dismissTargetPrompt, getStoredPreference, getTargetContext, subscribeTarget } from './target-state';
 import { loadTargetRoles } from './target-roles-client';
 
 const en = document.documentElement.lang === 'en';
@@ -19,7 +19,7 @@ function currentLabel() {
   const target = preference.mode === 'target' ? preference.target : undefined;
   const role = roles.find(item => item.id === target?.roleId);
   const stage = role?.stages.find(item => item.id === target?.stageId);
-  return target && role && stage ? `${role.name} · ${stage.name}` : (en ? 'All questions' : '全部题目');
+  return target && role && stage ? `${role.name} · ${stage.name}` : (en ? 'Preparation target' : '准备目标');
 }
 
 function selectedRole() { return roles.find(role => role.id === roleSelect?.value); }
@@ -84,6 +84,12 @@ function containTab(event: KeyboardEvent) {
   }
 }
 
+function closeStatus() {
+  trigger?.setAttribute('aria-expanded', 'false');
+  const status = document.querySelector<HTMLElement>('#target-status-panel');
+  if (status) status.hidden = true;
+}
+
 async function openEditor() {
   if (!dialog || !roleSelect) return;
   roles = await loadTargetRoles();
@@ -91,6 +97,7 @@ async function openEditor() {
   const remembered = rememberedTarget(getTargetContext().preference) ?? rememberedTarget(getStoredPreference());
   roleSelect.value = remembered?.roleId ?? '';
   fillStages(remembered?.stageId ?? '');
+  closeStatus();
   if (!dialog.open) dialog.showModal();
   roleSelect.focus();
 }
@@ -116,12 +123,30 @@ export function initTargetSelector() {
     dismissTargetPrompt();
     focusTrigger();
   });
-  trigger.addEventListener('click', () => { void openEditor(); });
+  const status = document.querySelector<HTMLElement>('#target-status-panel');
+  trigger.addEventListener('click', () => {
+    if (!status) return;
+    const expanded = trigger.getAttribute('aria-expanded') !== 'true';
+    trigger.setAttribute('aria-expanded', String(expanded));
+    status.hidden = !expanded;
+  });
+  document.addEventListener('click', event => {
+    if (event.target instanceof Node && !document.querySelector('.target-status')?.contains(event.target)) closeStatus();
+    if (event.target instanceof Element && event.target.closest('[data-view-all-target], [data-adopt-target], [data-remove-link-target]')) closeStatus();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
+      closeStatus();
+      trigger.focus();
+    }
+  });
+  document.addEventListener('focusin', event => {
+    if (event.target instanceof Node && !document.querySelector('.target-status')?.contains(event.target)) closeStatus();
+  });
   window.addEventListener('compass-open-target', () => { void openEditor(); });
   subscribeTarget(() => { if (label) label.textContent = currentLabel(); });
   void loadTargetRoles().then(loaded => {
     roles = loaded;
     if (label) label.textContent = currentLabel();
-    if (needsTargetPrompt()) void openEditor();
   }).catch(() => { /* The trigger still offers the dialog once the index can load. */ });
 }

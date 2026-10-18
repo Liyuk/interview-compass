@@ -16,7 +16,6 @@ export function updateTargetDom() {
   const stage = role?.stages.find(item => item.id === target?.stageId);
   const summary = document.querySelector<HTMLElement>('[data-target-summary]');
   if (summary) {
-    summary.hidden = !target && !context.hasLink && !isTargetTemporary();
     const storageNote = summary.querySelector<HTMLElement>('[data-target-storage-warning]');
     if (storageNote) storageNote.hidden = !isTargetTemporary();
     const description = summary.querySelector('[data-target-description]');
@@ -108,10 +107,10 @@ export function sharedTargetUrl(url: URL): string {
 const handbook = document.querySelector<HTMLElement>('.page > .header');
 if (handbook) {
   const resize = () => {
-    const elements = ['.site-header', '.search-strip', '[data-target-summary]', '.handbook-crumbs'].map(selector => document.querySelector<HTMLElement>(selector));
+    const elements = ['.site-header', '.search-strip', '.handbook-crumbs'].map(selector => document.querySelector<HTMLElement>(selector));
     handbook.style.setProperty('--sl-nav-height', `${elements.reduce((sum, item) => sum + (item?.offsetHeight ?? 0), 0)}px`);
   };
   const observer = new ResizeObserver(resize);
-  for (const selector of ['.site-header', '.search-strip', '[data-target-summary]', '.handbook-crumbs']) { const item = document.querySelector(selector); if (item) observer.observe(item); }
+  for (const selector of ['.site-header', '.search-strip', '.handbook-crumbs']) { const item = document.querySelector(selector); if (item) observer.observe(item); }
   resize();
 }

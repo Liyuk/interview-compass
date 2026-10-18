@@ -808,3 +808,19 @@ html[data-target-enabled] [data-library-pending] { visibility: hidden; }
   .wiki-outline[open] > summary span:last-child { transform: rotate(180deg); }
   .wiki-outline > nav { padding: 12px 0 0; }
 }
+
+/* Preparation status stays outside document flow when expanded. */
+.target-status { position: relative; margin-inline-start: auto; flex: 0 0 auto; width: 15rem; max-width: 45vw; }
+.target-status .profile-trigger { width: 100%; max-width: none; height: 40px; min-height: 40px; margin: 0; }
+.target-status [data-profile-label] { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.target-status .profile-trigger svg { flex-shrink: 0; }
+.target-status .target-summary { position: absolute; top: calc(100% + 8px); right: 0; z-index: 20; width: min(22rem, calc(100vw - 36px)); max-height: min(70dvh, 32rem); overflow: auto; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); }
+.target-status .target-summary-inner { display: grid; gap: 1rem; padding: 1rem; }
+.target-status .target-summary-current { display: grid; gap: .5rem; }
+.target-status .target-summary-count { border: 0; padding: 0; }
+.target-status .target-summary-actions { display: grid; gap: .25rem; }
+.target-status .target-summary-actions > :is(button, a) { min-height: 44px; text-align: start; }
+@media (max-width: 760px) {
+  .target-status { width: 9rem; max-width: 40vw; }
+  .target-status .profile-trigger { padding-inline: .5rem; font-size: 12px; }
+}
