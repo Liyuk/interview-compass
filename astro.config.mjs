@@ -8,9 +8,11 @@ export default defineConfig({
     starlight({
       title: 'Interview Compass',
       pagefind: false,
+      customCss: ['./src/styles/starlight.css'],
       components: {
         Header: './src/components/starlight/Header.astro',
         Footer: './src/components/starlight/Footer.astro',
+        Sidebar: './src/components/starlight/Sidebar.astro',
       },
       defaultLocale: 'root',
       locales: {

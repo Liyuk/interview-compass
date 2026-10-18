@@ -25,10 +25,12 @@ test('primary navigation separates goals, questions, methods, guide, categories 
   await expect(page.locator('.primary-nav a')).toHaveText(['Goal paths', 'Question bank', 'Questioning methods', 'How to use', 'Browse', 'Stage expectations']);
 });
 
-test('handbook uses the same site header, search, language, content alignment and footer', async ({ page }) => {
+test('handbook uses the shared knowledge rail, Starlight TOC, search, language and footer', async ({ page }) => {
   await page.goto('handbook/');
-  await expect(page.locator('.primary-nav a')).toHaveText(['目标路径', '面试题库', '提问方法', '使用说明', '分类索引', '阶段能力']);
-  await expect(page.locator('.primary-nav a[aria-current="page"]')).toHaveText('使用说明');
+  if ((page.viewportSize()?.width ?? 1280) <= 760) await page.getByRole('button', { name: '菜单' }).click();
+  const zhSidebar = page.getByRole('navigation', { name: '知识导航' });
+  await expect(zhSidebar.getByRole('link', { name: '使用说明' })).toHaveAttribute('aria-current', 'page');
+  await expect(page.getByRole('navigation', { name: '本页内容' })).toBeVisible();
   await expect(page.getByRole('searchbox')).toBeVisible();
   await expect(page.locator('.breadcrumbs')).toContainText('使用说明');
   await expect(page.locator('main')).toContainText('共用的 1–4 分证据参考');
@@ -38,8 +40,9 @@ test('handbook uses the same site header, search, language, content alignment an
   await expect(page.locator('.site-footer')).toContainText('© 2026 Liyuk');
   await page.getByRole('link', { name: 'EN' }).click();
   await expect(page).toHaveURL(/\/en\/handbook\//);
-  await expect(page.locator('.primary-nav a')).toHaveText(['Goal paths', 'Question bank', 'Questioning methods', 'How to use', 'Browse', 'Stage expectations']);
-  await expect(page.locator('.primary-nav a[aria-current="page"]')).toHaveText('How to use');
+  if ((page.viewportSize()?.width ?? 1280) <= 760) await page.getByRole('button', { name: 'Menu' }).click();
+  await expect(page.getByRole('navigation', { name: 'Knowledge navigation' }).getByRole('link', { name: 'How to use' })).toHaveAttribute('aria-current', 'page');
+  await expect(page.getByRole('navigation', { name: 'On this page' })).toBeVisible();
   await expect(page.getByRole('searchbox')).toBeVisible();
   await expect(page.locator('.site-footer')).toContainText('Content license · CC BY-NC-SA 4.0');
 });
@@ -640,7 +643,7 @@ test('return link restores the saved reading position and expanded filter groups
   const first = page.locator('#question-list > li:visible a').first();
   await first.click();
   const saved = await page.evaluate(() => JSON.parse(sessionStorage.getItem('interview-compass-reading-return') || 'null'));
-  expect(saved).toMatchObject({ y: expect.any(Number), open: expect.arrayContaining([0]) });
+  expect(saved).toMatchObject({ y: expect.any(Number), open: expect.arrayContaining(['#advanced-filters']) });
   await page.locator('[data-reading-return]').click();
   await expect(page).toHaveURL(/questions\/\?role=backend&page=2/);
   await expect(page.locator('#advanced-filters')).toHaveAttribute('open', '');

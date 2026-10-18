@@ -41,7 +41,7 @@ test('question outlines link only to rendered sections and omit missing comparis
   await expect(outline.locator('a[href="#comparisons-h"]')).toHaveCount(0);
   const anchors = await outline.locator('a').evaluateAll(links => links.map(link => (link as HTMLAnchorElement).hash.slice(1)));
   for (const id of anchors) {
-    const heading = page.locator(`main h2[id="${id}"]`);
+    const heading = page.locator(`main h1[id="${id}"], main h2[id="${id}"]`);
     await expect(heading).toHaveCount(1);
     await expect(heading).toBeVisible();
   }
@@ -70,4 +70,106 @@ test('wiki rail remains available as server-rendered links without JavaScript', 
   await expect(page.getByRole('navigation', { name: '知识导航' }).getByRole('link', { name: '面试题库' })).toBeVisible();
   await expect(page.locator('#question-list > li').first()).toBeVisible();
   await context.close();
+});
+
+test('Starlight handbook reuses the knowledge rail and exposes one localized on-page TOC', async ({ page }) => {
+  await page.goto('handbook/');
+  if ((page.viewportSize()?.width ?? 1280) <= 760) {
+    await page.getByRole('button', { name: '菜单' }).click();
+  }
+  const sidebar = page.getByRole('navigation', { name: '知识导航' });
+  await expect(sidebar).toBeVisible();
+  await expect(sidebar.getByRole('link', { name: '使用说明' })).toHaveAttribute('aria-current', 'page');
+  await expect(sidebar.getByRole('link', { name: '面试题库' })).toHaveAttribute('href', '/interview-compass/questions/');
+  const toc = page.getByRole('navigation', { name: '本页内容' });
+  await expect(toc).toBeVisible();
+  const anchors = await toc.locator('a').evaluateAll(links => links.map(link => decodeURIComponent((link as HTMLAnchorElement).hash.slice(1))));
+  expect(anchors.length).toBeGreaterThan(0);
+  expect(new Set(anchors).size).toBe(anchors.length);
+  for (const id of anchors) {
+    const matches = await page.locator('main h1, main h2').evaluateAll((headings, expectedId) =>
+      headings.filter(heading => heading.id === expectedId && heading.getClientRects().length > 0).length,
+      id,
+    );
+    expect(matches).toBe(1);
+  }
+  await page.getByRole('link', { name: 'EN', exact: true }).click();
+  await expect(page).toHaveURL(/\/en\/handbook\//);
+  if ((page.viewportSize()?.width ?? 1280) <= 760) {
+    await page.getByRole('button', { name: 'Menu' }).click();
+  }
+  const englishSidebar = page.getByRole('navigation', { name: 'Knowledge navigation' });
+  await expect(englishSidebar.getByRole('link', { name: 'How to use' })).toHaveAttribute('aria-current', 'page');
+  await expect(page.getByRole('navigation', { name: 'On this page' })).toBeVisible();
+});
+
+test('Starlight handbook navigation opens in the built-in mobile popover', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 740 });
+  await page.goto('handbook/');
+  await expect(page.getByRole('button', { name: '菜单' })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: '知识导航' })).toBeHidden();
+  await expect(page.getByRole('navigation', { name: '本页内容' })).toBeVisible();
+  await page.getByRole('button', { name: '菜单' }).click();
+  await expect(page.getByRole('navigation', { name: '知识导航' })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: '知识导航' }).getByRole('link', { name: '使用说明' })).toHaveAttribute('aria-current', 'page');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('Chinese and English non-home route families share the wiki rail', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const routes = [
+    ['questions/', '面试题库', 'Question bank'],
+    ['questions/prioritization-limited-resources/', '面试题库', 'Question bank'],
+    ['search/?q=rollback', '搜索结果', 'Search results'],
+    ['browse/', '分类索引', 'Browse'],
+    ['roles/frontend/', '前端', 'Frontend'],
+    ['topics/planning/', '规划', 'Planning'],
+    ['scenarios/promotion/', '晋升准备', 'Promotion preparation'],
+    ['capabilities/delivery/', '交付执行与持续运营', 'Delivery and ongoing operations'],
+    ['capabilities/delivery/capacity-planning/', '容量与依赖', 'Capacity and dependencies'],
+    ['capability-model/', '阶段能力', 'Stage expectations'],
+    ['capability-model/stages/junior-engineer/', '初级工程师', 'Junior Engineer'],
+    ['capability-model/dimensions/business-results/', '业务结果', 'Business results'],
+    ['capability-model/mapping/', '跨公司职级映射', 'Cross-company level mapping'],
+    ['collections/', '精选题单', 'Curated sets'],
+    ['collections/general-interview/', '通用面试', 'General interview'],
+    ['paths/business-planning/', '业务规划', 'Business planning'],
+    ['framework/', '提问框架', 'Questioning framework'],
+    ['handbook/', '使用说明', 'How to use'],
+  ] as const;
+
+  for (const [route, zhCurrent, enCurrent] of routes) {
+    for (const [prefix, locale, current] of [['', 'zh-CN', zhCurrent], ['en/', 'en', enCurrent]] as const) {
+      await page.goto(`${prefix}${route}`);
+      await expect(page.locator('html')).toHaveAttribute('lang', locale);
+      await expect(page.locator('main#main h1, main h1').first()).toBeVisible();
+      const rail = page.getByRole('navigation', { name: locale === 'en' ? 'Knowledge navigation' : '知识导航' });
+      await expect(rail).toBeVisible();
+      await expect(rail.getByRole('link').first()).toBeVisible();
+      const currentLinks = rail.locator('a[aria-current="page"]');
+      await expect(currentLinks).toHaveCount(1);
+      await expect(currentLinks).toContainText(current);
+    }
+  }
+});
+
+test('wiki content stays usable without horizontal overflow at 320px and 390px', async ({ page }) => {
+  for (const width of [320, 390]) {
+    await page.setViewportSize({ width, height: 844 });
+    for (const route of ['questions/', 'capabilities/delivery/capacity-planning/', 'handbook/']) {
+      await page.goto(route);
+      await expect(page.locator('main h1').first()).toBeVisible();
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+      await expect(page.getByRole('searchbox')).toBeVisible();
+      if (route === 'handbook/') {
+        const [crumbs, toc] = await Promise.all([
+          page.locator('.handbook-crumbs').boundingBox(),
+          page.getByRole('navigation', { name: '本页内容' }).boundingBox(),
+        ]);
+        expect(crumbs).not.toBeNull();
+        expect(toc).not.toBeNull();
+        expect(crumbs!.y + crumbs!.height <= toc!.y || toc!.y + toc!.height <= crumbs!.y).toBe(true);
+      }
+    }
+  }
 });

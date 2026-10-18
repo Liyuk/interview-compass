@@ -1,0 +1,101 @@
+/* Keep the handbook's reading frame and colors aligned with custom wiki pages. */
+.page > .sidebar {
+  display: block;
+}
+
+:root[data-has-sidebar] {
+  --sl-content-inline-start: 0rem;
+  --sl-content-width: 50rem;
+}
+
+:root {
+  color-scheme: light;
+  --sl-font: var(--font-sans, Inter, ui-sans-serif, system-ui, sans-serif);
+  --sl-color-white: var(--ink, #172132);
+  --sl-color-black: var(--paper, #fff);
+  --sl-color-gray-1: #283244;
+  --sl-color-gray-2: #46505f;
+  --sl-color-gray-3: #68717e;
+  --sl-color-gray-4: #858b93;
+  --sl-color-gray-5: #c6c8ca;
+  --sl-color-gray-6: #e4e2df;
+  --sl-color-gray-7: var(--page, #fbfaf8);
+  --sl-color-accent-low: var(--soft-blue, #e8f2fa);
+  --sl-color-accent: var(--blue, #1769b2);
+  --sl-color-accent-high: #14558d;
+  --sl-color-text: var(--ink, #172132);
+  --sl-color-text-accent: var(--blue, #1769b2);
+  --sl-color-text-invert: var(--paper, #fff);
+  --sl-color-bg: var(--page, #fbfaf8);
+  --sl-color-bg-nav: var(--paper, #fff);
+  --sl-color-bg-sidebar: var(--page, #fbfaf8);
+  --sl-color-bg-inline-code: #f1f0ed;
+  --sl-color-bg-accent: var(--soft-blue, #e8f2fa);
+  --sl-color-hairline-light: var(--line, #d9d9d7);
+  --sl-color-hairline: var(--line, #d9d9d7);
+  --sl-color-hairline-shade: var(--line, #d9d9d7);
+}
+
+.page > .sidebar .wiki-sidebar {
+  position: static;
+  max-height: calc(100vh - var(--sl-nav-height) - 2rem);
+  padding-inline: 0.25rem;
+}
+
+.page > .sidebar .wiki-sidebar nav {
+  gap: 1.25rem;
+}
+
+.page > .sidebar .wiki-nav-section > p {
+  color: var(--muted, #6d7480);
+}
+
+.page > .sidebar .wiki-nav-item > a {
+  color: var(--ink, #172132);
+}
+
+.page > .sidebar .wiki-nav-item > a[aria-current='page'] {
+  border-inline-start-color: var(--red, #b8322c);
+  background: var(--soft-red, #f6e9e7);
+  color: #762c27;
+}
+
+.page .right-sidebar-panel {
+  border-inline-start-color: var(--line, #d9d9d7);
+}
+
+.page .right-sidebar-panel h2 {
+  color: var(--ink, #172132);
+}
+
+.page .right-sidebar-panel a {
+  color: var(--muted, #6d7480);
+}
+
+.page .right-sidebar-panel a:hover {
+  color: var(--blue, #1769b2);
+}
+
+@media (max-width: 50rem) {
+  .page .header .site-header {
+    padding-inline-end: calc(clamp(20px, 3vw, 46px) + 3rem);
+  }
+
+  mobile-starlight-toc nav {
+    top: calc(var(--sl-nav-height) + 48px);
+  }
+
+  .page main {
+    margin-top: 49px;
+  }
+
+  .page > .sidebar .wiki-sidebar {
+    max-height: none;
+  }
+}
+
+@media (min-width: 50rem) {
+  :root[data-has-sidebar] {
+    --sl-content-inline-start: var(--sl-sidebar-width);
+  }
+}
