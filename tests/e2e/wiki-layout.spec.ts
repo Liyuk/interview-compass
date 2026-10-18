@@ -92,6 +92,7 @@ test('wiki rail remains available as server-rendered links without JavaScript', 
 
 test('Starlight handbook reuses the knowledge rail and exposes one localized on-page TOC', async ({ page }) => {
   await page.goto('handbook/');
+  await expect(page.locator('h1')).toHaveCount(1);
   if ((page.viewportSize()?.width ?? 1280) <= 760) {
     await page.getByRole('button', { name: '菜单' }).click();
   }
@@ -113,6 +114,7 @@ test('Starlight handbook reuses the knowledge rail and exposes one localized on-
   }
   await page.getByRole('link', { name: 'EN', exact: true }).click();
   await expect(page).toHaveURL(/\/en\/handbook\//);
+  await expect(page.locator('h1')).toHaveCount(1);
   if ((page.viewportSize()?.width ?? 1280) <= 760) {
     await page.getByRole('button', { name: 'Menu' }).click();
   }
