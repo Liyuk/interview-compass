@@ -13,9 +13,9 @@ const label = locale === 'en' ? 'On this page' : '本页目录';
   <nav aria-label={label}><ol>{visibleItems.map(item => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ol></nav>
 </details>}
 
-<script>
-  const outline = document.querySelector<HTMLDetailsElement>('[data-wiki-outline]');
-  const summary = outline?.querySelector<HTMLElement>('summary');
+<script is:inline>
+  const outline = document.querySelector('details[data-wiki-outline]');
+  const summary = outline?.querySelector('summary');
   const media = window.matchMedia('(max-width: 760px)');
   const syncExpanded = () => summary?.setAttribute('aria-expanded', String(Boolean(outline?.open)));
   const syncViewport = () => {

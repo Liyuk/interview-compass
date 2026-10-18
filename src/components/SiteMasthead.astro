@@ -22,6 +22,7 @@ const nav = [
 ];
 ---
 <script is:inline>
+  document.body.dataset.navigationReady = 'true';
   document.documentElement.dataset.targetPending = 'true';
   document.documentElement.dataset.targetEnabled = 'true';
   setTimeout(() => { delete document.documentElement.dataset.targetPending; document.querySelectorAll('[data-library-pending]').forEach(element => element.removeAttribute('data-library-pending')); }, 2500);
@@ -88,7 +89,6 @@ const nav = [
   import { safeSearchResultHref } from '../lib/search-records';
 
   initTargetSelector();
-  document.body.dataset.navigationReady = 'true';
   const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
   toggle?.addEventListener('click', () => {
     const expanded = toggle.getAttribute('aria-expanded') !== 'true';

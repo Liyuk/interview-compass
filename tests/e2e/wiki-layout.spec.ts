@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { devices, expect, test } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem('interview-compass.target.v1', JSON.stringify({ version: 1, mode: 'all' })));
@@ -91,6 +91,60 @@ test('mobile article outline appears before the article body', async ({ page }) 
   expect(outlineBox).not.toBeNull();
   expect(headingBox).not.toBeNull();
   expect(outlineBox!.y + outlineBox!.height).toBeLessThan(headingBox!.y);
+});
+
+test('mobile page load does not cause a large layout shift', async ({ browser, baseURL }) => {
+  const context = await browser.newContext({ ...devices['iPhone 13'], baseURL });
+  const page = await context.newPage();
+  await page.route('**/*.js', async (route) => {
+    await new Promise((resolve) => setTimeout(resolve, 200));
+    await route.continue();
+  });
+  await page.addInitScript(() => {
+    (window as Window & { __layoutShifts?: number[] }).__layoutShifts = [];
+    (window as Window & { __paintOutlineOpen?: boolean[] }).__paintOutlineOpen = [];
+    new PerformanceObserver((entries) => {
+      const states = (window as Window & { __paintOutlineOpen?: boolean[] }).__paintOutlineOpen;
+      states?.push(...entries.getEntries().filter((entry) => entry.name === 'first-contentful-paint').map(() => Boolean(document.querySelector('[data-wiki-outline]')?.hasAttribute('open'))));
+    }).observe({ type: 'paint', buffered: true });
+    new PerformanceObserver((entries) => {
+      const shifts = (window as Window & { __layoutShifts?: number[] }).__layoutShifts;
+      const layoutShifts = entries.getEntries() as Array<PerformanceEntry & { value: number; hadRecentInput: boolean }>;
+      shifts?.push(...layoutShifts.filter((entry) => !entry.hadRecentInput).map((entry) => entry.value));
+    }).observe({ type: 'layout-shift', buffered: true });
+  });
+  await page.goto('questions/prioritization-limited-resources/');
+  await page.waitForLoadState('networkidle');
+  await page.waitForTimeout(250);
+  const totalShift = await page.evaluate(() => (window as Window & { __layoutShifts?: number[] }).__layoutShifts?.reduce((sum, value) => sum + value, 0) ?? 0);
+  const firstPaintOpen = await page.evaluate(() => (window as Window & { __paintOutlineOpen?: boolean[] }).__paintOutlineOpen?.[0]);
+  expect(firstPaintOpen).toBe(false);
+  expect(totalShift).toBeLessThan(0.05);
+  await context.close();
+});
+
+test('mobile home renders its collapsed navigation before first paint', async ({ browser, baseURL }) => {
+  const context = await browser.newContext({ ...devices['iPhone 13'], baseURL });
+  const page = await context.newPage();
+  await page.route('**/*.js', async (route) => {
+    await new Promise((resolve) => setTimeout(resolve, 200));
+    await route.continue();
+  });
+  await page.addInitScript(() => {
+    (window as Window & { __navAtPaint?: Array<{ nav: string; toggle: string }> }).__navAtPaint = [];
+    new PerformanceObserver((entries) => {
+      const states = (window as Window & { __navAtPaint?: Array<{ nav: string; toggle: string }> }).__navAtPaint;
+      states?.push(...entries.getEntries().filter((entry) => entry.name === 'first-contentful-paint').map(() => ({
+        nav: getComputedStyle(document.querySelector('#primary-navigation')!).display,
+        toggle: getComputedStyle(document.querySelector('.nav-toggle')!).display,
+      })));
+    }).observe({ type: 'paint', buffered: true });
+  });
+  await page.goto('./');
+  await page.waitForLoadState('networkidle');
+  const navAtPaint = await page.evaluate(() => (window as Window & { __navAtPaint?: Array<{ nav: string; toggle: string }> }).__navAtPaint?.[0]);
+  expect(navAtPaint).toEqual({ nav: 'none', toggle: 'flex' });
+  await context.close();
 });
 
 test('wiki rail remains available as server-rendered links without JavaScript', async ({ browser, baseURL }) => {
