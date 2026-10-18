@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { activeNavFor, breadcrumbsFor, pathFor, switchLocaleRoute, titleFor, type RouteRef } from '../src/lib/routes';
+import { activeNavFor, breadcrumbsFor, parentOf, pathFor, switchLocaleRoute, titleFor, type RouteRef } from '../src/lib/routes';
 import { capabilityIds, domains, hasTaxonomyId, splitCapability } from '../src/lib/taxonomy';
 
 const base = '/interview-compass';
@@ -46,6 +46,17 @@ describe('route model', () => {
     expect(pathFor({ type: 'role-stage-model', role: 'product' }, 'en', base)).toBe('/interview-compass/en/capability-model/roles/product/');
     expect(activeNavFor({ type: 'role-stage-model', role: 'product' })).toBe('capability-model');
     expect(breadcrumbsFor({ type: 'role-stage-model', role: 'product' }, 'zh-CN', base).map(c => c.label)).toEqual(['首页', '阶段能力', '产品 · 阶段能力']);
+  });
+
+  it('models localized not-found pages as wiki routes without a misleading current section', () => {
+    const notFound: RouteRef = { type: 'not-found' };
+    expect(pathFor(notFound, 'zh-CN', base)).toBe('/interview-compass/404/');
+    expect(pathFor(notFound, 'en', base)).toBe('/interview-compass/en/404/');
+    expect(titleFor(notFound, 'zh-CN')).toBe('页面不存在');
+    expect(titleFor(notFound, 'en')).toBe('Page not found');
+    expect(parentOf(notFound)).toEqual({ type: 'home' });
+    expect(breadcrumbsFor(notFound, 'en', base).map(crumb => crumb.label)).toEqual(['Home', 'Page not found']);
+    expect(activeNavFor(notFound)).toBe('');
   });
 
   it('switches language to the same route in the other locale', () => {

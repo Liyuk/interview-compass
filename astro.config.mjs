@@ -8,6 +8,7 @@ export default defineConfig({
     starlight({
       title: 'Interview Compass',
       pagefind: false,
+      disable404Route: true,
       customCss: ['./src/styles/starlight.css'],
       components: {
         Header: './src/components/starlight/Header.astro',

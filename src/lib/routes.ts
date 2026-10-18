@@ -10,6 +10,7 @@ export type Crumb = { label: string; href?: string };
 
 export type RouteRef =
   | { type: 'home' }
+  | { type: 'not-found' }
   | { type: 'browse' }
   | { type: 'questions' }
   | { type: 'search' }
@@ -60,6 +61,7 @@ export function pathFor(ref: RouteRef, locale: Locale, base = ''): string {
   const route = (() => {
     switch (ref.type) {
       case 'home': return `${root}/`;
+      case 'not-found': return `${root}/404/`;
       case 'browse': return `${root}/browse/`;
       case 'questions': return `${root}/questions/`;
       case 'search': return `${root}/search/`;
@@ -105,6 +107,7 @@ function leafName(domainId: string, leafId: string, locale: Locale) {
 export function titleFor(ref: RouteRef, locale: Locale): string {
   switch (ref.type) {
     case 'home': return pick(labels.home, locale);
+    case 'not-found': return locale === 'en' ? 'Page not found' : '页面不存在';
     case 'browse': return pick(labels.browse, locale);
     case 'questions': return pick(labels.questions, locale);
     case 'search': return locale === 'en' ? 'Search results' : '搜索结果';
@@ -137,6 +140,7 @@ export function titleFor(ref: RouteRef, locale: Locale): string {
 export function parentOf(ref: RouteRef): RouteRef | undefined {
   switch (ref.type) {
     case 'home': return undefined;
+    case 'not-found': return { type: 'home' };
     case 'browse': case 'questions': case 'capabilities': case 'roles': case 'scenarios': case 'topics': case 'guide': case 'framework': return { type: 'home' };
     case 'search': return { type: 'questions' };
     case 'collections': return { type: 'questions' };

@@ -25,6 +25,24 @@ test('homepage keeps its task-oriented navigation and does not gain the wiki rai
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
 });
 
+test('localized not-found pages use the shared wiki shell', async ({ page }) => {
+  await page.goto('404.html');
+  await expect(page.locator('main h1')).toHaveText('页面不存在');
+  if ((page.viewportSize()?.width ?? 1280) <= 760) await page.locator('[data-wiki-disclosure] summary').click();
+  const zhRail = page.getByRole('navigation', { name: '知识导航' });
+  await expect(zhRail).toBeVisible();
+  await expect(zhRail.getByRole('link', { name: '面试题库' })).toBeVisible();
+  await expect(zhRail.locator('a[aria-current="page"]')).toHaveCount(0);
+  await expect(page.getByRole('navigation', { name: '面包屑' })).toBeVisible();
+  await page.getByRole('link', { name: 'EN', exact: true }).click();
+  await expect(page).toHaveURL(/\/en\/404\/$/);
+  await expect(page.locator('main h1')).toHaveText('Page not found');
+  if ((page.viewportSize()?.width ?? 1280) <= 760) await page.locator('[data-wiki-disclosure] summary').click();
+  const enRail = page.getByRole('navigation', { name: 'Knowledge navigation' });
+  await expect(enRail).toBeVisible();
+  await expect(enRail.locator('a[aria-current="page"]')).toHaveCount(0);
+});
+
 test('wiki outline is omitted when a page has no substantial outline entries', async ({ page }) => {
   await page.goto('search/?q=rollback');
   await expect(page.locator('main#main h1')).toBeVisible();
