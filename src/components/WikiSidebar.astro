@@ -1,0 +1,71 @@
+---
+import { wikiNavigationFor } from '../lib/wiki-navigation';
+import type { RouteRef } from '../lib/routes';
+import type { Locale } from '../lib/taxonomy';
+import WikiNavList from './WikiNavList.astro';
+
+interface Props {
+  route: RouteRef;
+  locale: Locale;
+  base?: string;
+  idPrefix?: string;
+  mobileDisclosure?: boolean;
+}
+
+const { route, locale, base = '', idPrefix = 'wiki', mobileDisclosure = true } = Astro.props;
+const sections = wikiNavigationFor(route, locale, base);
+const navId = `${idPrefix}-knowledge-navigation`;
+const label = locale === 'en' ? 'Knowledge navigation' : '知识导航';
+const summaryLabel = locale === 'en' ? 'Browse knowledge' : '浏览知识目录';
+
+---
+
+<aside class="wiki-sidebar" data-wiki-sidebar data-mobile-disclosure={mobileDisclosure ? 'true' : 'false'}>
+  {mobileDisclosure && <details open data-wiki-disclosure>
+    <summary aria-controls={navId} aria-expanded="true">
+      <span>{summaryLabel}</span>
+      <span class="wiki-disclosure-icon" aria-hidden="true">⌄</span>
+    </summary>
+    <nav id={navId} aria-label={label}>
+      {sections.map(section => <section class="wiki-nav-section" aria-labelledby={`${idPrefix}-${section.key}`}>
+        <h2 id={`${idPrefix}-${section.key}`}>{section.label}</h2>
+        <WikiNavList items={section.items} />
+      </section>)}
+    </nav>
+  </details>}
+  {!mobileDisclosure && <nav id={navId} aria-label={label}>
+    {sections.map(section => <section class="wiki-nav-section" aria-labelledby={`${idPrefix}-${section.key}`}>
+      <h2 id={`${idPrefix}-${section.key}`}>{section.label}</h2>
+      <WikiNavList items={section.items} />
+    </section>)}
+  </nav>}
+</aside>
+
+{mobileDisclosure && <script>
+  const sidebar = document.querySelector<HTMLElement>('[data-wiki-sidebar][data-mobile-disclosure="true"]');
+  const disclosure = sidebar?.querySelector<HTMLDetailsElement>('[data-wiki-disclosure]');
+  const summary = disclosure?.querySelector<HTMLElement>('summary');
+  const media = window.matchMedia('(max-width: 760px)');
+
+  const syncExpanded = () => summary?.setAttribute('aria-expanded', String(Boolean(disclosure?.open)));
+  const syncViewport = () => {
+    if (!disclosure) return;
+    if (media.matches) disclosure.open = false;
+    else disclosure.open = true;
+    syncExpanded();
+  };
+
+  syncViewport();
+  media.addEventListener('change', syncViewport);
+  disclosure?.addEventListener('toggle', syncExpanded);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && media.matches && disclosure?.open) {
+      disclosure.open = false;
+      syncExpanded();
+      summary?.focus();
+    }
+  });
+  disclosure?.querySelectorAll('nav a').forEach(link => link.addEventListener('click', () => {
+    if (media.matches && disclosure.open) disclosure.open = false;
+  }));
+</script>}

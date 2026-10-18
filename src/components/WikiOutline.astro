@@ -1,0 +1,14 @@
+---
+import type { Locale } from '../lib/taxonomy';
+
+interface OutlineItem { id: string; label: string }
+interface Props { items: OutlineItem[]; locale: Locale }
+const { items, locale } = Astro.props;
+const visibleItems = items.filter(item => item.id.trim() && item.label.trim());
+const label = locale === 'en' ? 'On this page' : '本页目录';
+---
+
+{visibleItems.length > 0 && <nav class="wiki-outline" aria-label={label}>
+  <h2>{label}</h2>
+  <ol>{visibleItems.map(item => <li><a href={`#${item.id}`}>{item.label}</a></li>)}</ol>
+</nav>}

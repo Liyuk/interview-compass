@@ -3,11 +3,14 @@ import SiteMasthead from '../components/SiteMasthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ReadingJourney from '../components/ReadingJourney.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import WikiSidebar from '../components/WikiSidebar.astro';
+import WikiOutline from '../components/WikiOutline.astro';
 import { activeNavFor, breadcrumbsFor, titleFor, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
 
-interface Props { locale: Locale; route: RouteRef; description?: string; redirectTo?: string }
-const { locale, route, description = '', redirectTo } = Astro.props;
+interface OutlineItem { id: string; label: string }
+interface Props { locale: Locale; route: RouteRef; description?: string; redirectTo?: string; outline?: OutlineItem[] }
+const { locale, route, description = '', redirectTo, outline = [] } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const publicBase = base.endsWith('/') ? base : `${base}/`;
@@ -29,13 +32,17 @@ const crumbs = breadcrumbsFor(route, locale, base);
   </head>
   <body data-route-type={route.type}>
     <a class="skip-link" href="#main">{en ? 'Skip to content' : '跳到正文'}</a>
-    <SiteMasthead locale={locale} active={active} route={route} />
-    <div class="page-frame">
-      {route.type !== 'home' && <Breadcrumbs crumbs={crumbs} locale={locale} />}
-      <main id="main" class="main-content">
-        <slot />
-      </main>
-    </div>
+    <SiteMasthead locale={locale} active={active} route={route} wiki={route.type !== 'home'} />
+    {route.type === 'home' ? <div class="page-frame">
+      <main id="main" class="main-content"><slot /></main>
+    </div> : <div class="page-frame wiki-page-frame">
+      <Breadcrumbs crumbs={crumbs} locale={locale} />
+      <div class="wiki-reading-grid">
+        <WikiSidebar route={route} locale={locale} base={base} />
+        <main id="main" class="main-content"><slot /></main>
+        <WikiOutline items={outline} locale={locale} />
+      </div>
+    </div>}
     <SiteFooter locale={locale} />
     <ReadingJourney />
   </body>

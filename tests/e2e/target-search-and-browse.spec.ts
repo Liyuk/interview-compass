@@ -69,6 +69,8 @@ test('static no-JavaScript browsing remains available without a blocking chooser
   await page.goto(`${baseURL}questions/`);
   await expect(page.locator('#question-list > li').first()).toBeVisible();
   await expect(page.getByRole('dialog')).not.toBeVisible();
-  await expect(page.locator('.primary-nav')).toBeVisible();
+  const wikiNavigation = page.getByRole('navigation', { name: '知识导航' });
+  await expect(wikiNavigation).toBeVisible();
+  await expect(wikiNavigation.getByRole('link', { name: '面试题库' })).toBeVisible();
   await context.close();
 });

@@ -6,8 +6,8 @@ import type { Locale } from '../lib/taxonomy';
 import { loadQuestions } from '../lib/site-data';
 import TargetCount from './TargetCount.astro';
 
-interface Props { locale: Locale; active?: string; route?: RouteRef }
-const { locale, active = '', route = { type: 'home' } } = Astro.props;
+interface Props { locale: Locale; active?: string; route?: RouteRef; wiki?: boolean }
+const { locale, active = '', route = { type: 'home' }, wiki = false } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const other: Locale = en ? 'zh-CN' : 'en';
@@ -32,10 +32,12 @@ const nav = [
     <img src={`${base.endsWith('/') ? base : `${base}/`}logo.svg`} width="30" height="30" alt="" aria-hidden="true" />
     <span>Interview Compass</span>
   </a>
-  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">{en ? 'Menu' : '导航'} <Icon name="chevron-down" size={16} /></button>
-  <nav id="primary-navigation" class="primary-nav" aria-label={en ? 'Main navigation' : '主导航'}>
-    {nav.map((item) => <a href={pathFor(item.ref, locale, base)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
-  </nav>
+  {!wiki && <>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">{en ? 'Menu' : '导航'} <Icon name="chevron-down" size={16} /></button>
+    <nav id="primary-navigation" class="primary-nav" aria-label={en ? 'Main navigation' : '主导航'}>
+      {nav.map((item) => <a href={pathFor(item.ref, locale, base)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
+    </nav>
+  </>}
   <button type="button" class="profile-trigger" data-profile-trigger>
     <span data-profile-label>{en ? 'All questions' : '全部题目'}</span>
     <Icon name="chevron-down" size={16} />
