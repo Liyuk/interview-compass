@@ -105,15 +105,15 @@
 - [x] **Step 2: Remove stale Starlight claims from the current direction notes** and add a clear historical label to abandoned rerolls and candidate prompts. Keep accepted mock images and user-supplied reference assets.
 - [x] **Step 3: Check active source module consumers** with import, route, and script searches. Do not remove modules with an observed consumer or public data contract. The route, view, and script audit found the documented ownership boundaries have live consumers; it also found one unused `total` local in discovery, which was removed.
 - [x] **Step 4: Verify** current design notes contain no present-tense Starlight claim and the architecture map's module ownership matches actual consumers.
-- [x] **Step 5: Commit** as `docs: clean stale design direction and verify module ownership` (`pending`).
+- [x] **Step 5: Commit** as `docs: clean stale design direction and verify module ownership` (`7c3a7a1`).
 
 ### Task 6: Full site acceptance
 
 **Files:**
 - Modify: any source or docs found inconsistent during acceptance; update this plan's checkboxes with actual outcomes.
 
-- [ ] **Step 1: Run focused unit and browser tests** for guide mapping, locale hash switching, guide anchors, search discovery, and handbook route compatibility.
-- [ ] **Step 2: Run repository-wide searches** for Starlight and stale framework descriptions; inspect every remaining match in text files and classify it as historical, captured evidence, or third-party attribution.
-- [ ] **Step 3: Run `npm run ci`** and address any failures at their source.
-- [ ] **Step 4: Start the production preview and inspect** `/interview-compass/handbook/`, `/interview-compass/en/handbook/`, home, question bank, search, and representative question pages. Confirm shared shell, outline, locale switching, links, and browser console/network health.
-- [ ] **Step 5: Commit** any acceptance fixes as `fix: resolve architecture cleanup acceptance findings`; report commit IDs and exact verification results.
+- [x] **Step 1: Run focused unit and browser tests** for guide mapping, locale hash switching, guide anchors, search discovery, and handbook route compatibility.
+- [x] **Step 2: Run repository-wide searches** for Starlight and stale framework descriptions; inspect every remaining match in text files and classify it as historical, captured evidence, or third-party attribution.
+- [x] **Step 3: Run `PLAYWRIGHT_PORT=18566 CI=1 npm run ci`**; exit 0. `astro check`: 0 errors/0 warnings/4 editor hints; content and stage checks pass; 35 unit files / 182 tests pass; 3470 pages build; shell and knowledge output checks each report 0 failures; E2E: 241 passed / 1 skipped across desktop and mobile.
+- [x] **Step 4: Start the production preview and inspect** `/interview-compass/handbook/`, `/interview-compass/en/handbook/`, home, question bank, search, and representative question pages. Confirm shared shell, outline, locale switching, links, and browser console/network health.
+- [x] **Step 5: No additional acceptance-fix commit was needed. Commit this verification record as `docs: record architecture cleanup acceptance`.
