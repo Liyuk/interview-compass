@@ -168,7 +168,6 @@ async function render() {
     const group = query.searchScope === 'docs' ? result.docs : result.questions.total ? result.questions : result.docs;
     pageCount = Math.max(1, group.pageCount);
     if (query.page !== group.page) { query.page = group.page; write(query, false); }
-    const total = result.docs.total + result.questions.total;
     status.textContent = en ? `${result.questions.total} questions · ${result.docs.total} documents · Page ${group.page} of ${pageCount}` : `${result.questions.total} 道问题 · ${result.docs.total} 篇文档 · 第 ${group.page} / ${pageCount} 页`;
     pagination.hidden = query.searchScope === 'all' || pageCount <= 1;
     for (const kind of ['docs','questions'] as const) {

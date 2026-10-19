@@ -24,7 +24,6 @@ export async function checkKnowledgeOutput({root,baseline,knowledge = undefined}
       if(!available.has(path)) failures.push(`Missing resource ${url} → ${resource}`);
     }
     const ids=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(match=>match[1]));
-    const headingIds=new Set([...html.matchAll(/<h[1-6]\b[^>]*\bid="([^"]+)"/g)].map(match=>match[1]));
     const fragmentTargets=new Set();
     for(const [,hash] of html.matchAll(/\bhref="#([^"\s]+)"/g)) {
       try { fragmentTargets.add(decodeURIComponent(hash)); } catch { fragmentTargets.add(hash); }

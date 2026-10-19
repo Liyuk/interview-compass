@@ -92,7 +92,7 @@
 - [x] **Step 2: Add a short standard historical notice** to narrative records: date-stamped historical record, its status is not current architecture, and link to `docs/architecture/current-state.md`. Preserve original findings and decisions.
 - [x] **Step 3: Add the historical-record index** in `docs/architecture/README.md`; leave machine-generated compatibility/resource snapshots byte-for-byte unchanged where their capture metadata already identifies them as historical, and link them from the index or relevant review notice.
 - [x] **Step 4: Verify** every remaining textual Starlight reference under docs is clearly in a historical record or captured snapshot; no old spec is presented as active guidance.
-- [x] **Step 5: Commit** as `docs: label Starlight-era records as historical` (`pending`).
+- [x] **Step 5: Commit** as `docs: label Starlight-era records as historical` (`dc22e4b`).
 
 ### Task 5: Clean active design notes and confirm module ownership
 
@@ -103,9 +103,9 @@
 
 - [x] **Step 1: Classify the matching `.impeccable` text files** as accepted/current, rejected alternative, or screenshot metadata. Preserve current accepted visual direction and user-supplied reference assets.
 - [x] **Step 2: Remove stale Starlight claims from the current direction notes** and add a clear historical label to abandoned rerolls and candidate prompts. Keep accepted mock images and user-supplied reference assets.
-- [x] **Step 3: Check active source module consumers** with import, route, and script searches. Do not remove modules with an observed consumer or public data contract.
+- [x] **Step 3: Check active source module consumers** with import, route, and script searches. Do not remove modules with an observed consumer or public data contract. The route, view, and script audit found the documented ownership boundaries have live consumers; it also found one unused `total` local in discovery, which was removed.
 - [x] **Step 4: Verify** current design notes contain no present-tense Starlight claim and the architecture map's module ownership matches actual consumers.
-- [ ] **Step 5: Commit** as `docs: clean stale design direction and verify module ownership`.
+- [x] **Step 5: Commit** as `docs: clean stale design direction and verify module ownership` (`pending`).
 
 ### Task 6: Full site acceptance
 
