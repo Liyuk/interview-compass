@@ -80,7 +80,7 @@
 - [x] **Step 2: Correct product and design docs** so every present-tense stack/rendering/module claim matches the architecture map and executable config. Link to the map from the README.
 - [x] **Step 3: Verify the claims** against `package.json`, `astro.config.mjs`, `src/content.config.ts`, `src/lib/routes.ts`, `src/layouts/SiteLayout.astro`, `scripts/`, and the public data endpoints.
 - [x] **Step 4: Run** `git diff --check` and a targeted stale-claim search across current docs.
-- [ ] **Step 5: Commit** as `docs: document current site architecture`.
+- [x] **Step 5: Commit** as `docs: document current site architecture` (`pending`).
 
 ### Task 4: Mark Starlight-era plans and reviews as historical
 
