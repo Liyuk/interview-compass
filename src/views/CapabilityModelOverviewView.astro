@@ -40,8 +40,11 @@ const outline = [
     <h3 class="track-heading management-track-heading">{en ? 'Management path' : '管理路径'} <span>{en ? 'Branches from senior contribution' : '从高级专业贡献分流'}</span></h3>
     <div class="stage-grid management-stage-grid">{managementStages.map((stage) => <a class="stage-card" href={pathFor({ type: 'capability-model-stage', stage: stage.id }, locale, base)}><span class="stage-track">{stage.track === 'engineering-management' ? (en ? 'Engineering management' : '工程管理') : (en ? 'Organization leadership' : '组织管理')}</span><strong>{stage.name}</strong><p>{stage.summary}</p><span class="stage-link">{en ? 'View standards' : '查看阶段标准'} <Icon name="arrow-right" size={16} /></span></a>)}</div>
   </section>
-  <PlanningOverview locale={locale} />
-  <CapabilityMatrix locale={locale} />
+  <details class="reference-disclosure">
+    <summary>{en ? 'Explore shared planning reference and the full responsibility matrix' : '展开共用规划参考与完整责任矩阵'}</summary>
+    <PlanningOverview locale={locale} />
+    <CapabilityMatrix locale={locale} />
+  </details>
   <section class="model-section" aria-labelledby="dimension-heading">
     <div class="model-section-heading"><div><p class="eyebrow">{en ? 'Capability map' : '能力地图'}</p><h2 id="dimension-heading">{en ? 'Four dimensions, connected to the A–H map' : '四个评价维度，连接站内 A–H 能力地图'}</h2></div><p>{en ? 'Each standard points back to the observable capability leaves it draws on.' : '维度描述阶段期待，A–H 能力叶子描述可发展的具体能力。每条标准都回连到相应能力叶子。'}</p></div>
     <div class="dimension-grid">{dimensions.map((dimension) => <a class="dimension-card" href={pathFor({ type: 'capability-model-dimension', dimension: dimension.id }, locale, base)}><span>{dimension.stages.reduce((sum, item) => sum + item.standards.length, 0)} {en ? 'stage standards' : '条阶段标准'}</span><strong>{dimension.name}</strong><p>{dimension.stages[0]?.standards[0]?.text}</p><span class="stage-link">{en ? 'Explore progression' : '查看能力变迁'} <Icon name="arrow-right" size={16} /></span></a>)}</div>

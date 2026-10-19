@@ -11,6 +11,7 @@ test('a preparation target does not hide the handbook from document search', asy
 test('query and independent facets share URLs, back navigation, and locale switching', async ({ page }) => {
   await page.goto('questions/?q=回滚&searchScope=questions&profile=all');
   await expect(page.locator('[data-discovery-results] > li').first()).toBeVisible();
+  if (!await page.locator('#advanced-filters > summary').isVisible()) await page.locator('[data-discovery-facets] > summary').click();
   await page.locator('#advanced-filters > summary').click();
   await page.locator('select[name=topic]').selectOption('system-design');
   await expect(page).toHaveURL(/topic=system-design/);

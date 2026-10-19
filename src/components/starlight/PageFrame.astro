@@ -17,8 +17,8 @@ const { hasSidebar } = Astro.locals.starlightRoute;
   .handbook-reading-frame .main-pane { padding-top: 0; }
   .handbook-page .handbook-crumbs { padding-block: 12px 0; }
   .handbook-page .handbook-crumbs .breadcrumbs { margin: 0; }
-  .handbook-page .right-sidebar { top: 20px; }
-  @media (max-width: 799px) {
+  .handbook-page .right-sidebar { position: sticky; top: 20px; width: 100%; height: auto; max-height: calc(100dvh - 40px); }
+  @media (max-width: 760px) {
     .handbook-reading-frame { display: block; padding-inline: 18px; }
     .handbook-page .wiki-sidebar > details > summary { display: flex; }
     .handbook-page .wiki-sidebar { margin-bottom: 18px; }

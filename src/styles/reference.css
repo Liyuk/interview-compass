@@ -1,0 +1,97 @@
+/* Shared reference styles for Astro and Starlight. */
+.model-hero { padding: 18px 0 28px; border-bottom: 1px solid var(--line); }
+.model-hero .page-title { max-width: 900px; margin-bottom: 14px; }
+.model-hero .intro { max-width: 900px; font-size: 18px; }
+.model-principles { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 12px; }
+.model-principles span { padding: 7px 12px; border: 1px solid #e1c5c2; border-radius: 3px; background: var(--soft-red); color: #762c27; font-weight: 600; }
+.model-note { max-width: 900px; color: var(--muted); line-height: 1.7; }
+.model-section { padding: 30px 0 8px; }
+.model-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 16px; }
+.model-section-heading h2 { margin: 0; font: 650 clamp(23px, 2vw, 30px)/1.3 var(--font-editorial); }
+.model-section-heading > p { max-width: 450px; margin: 0; color: var(--muted); line-height: 1.6; }
+.stage-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.stage-grid-four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.management-stage-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 780px; }
+.stage-card, .dimension-card { display: flex; flex-direction: column; min-height: 205px; padding: 18px; border: 1px solid var(--line); border-radius: 5px; background: var(--paper); color: var(--ink); }
+.stage-card:hover, .dimension-card:hover { border-color: var(--red); text-decoration: none; }
+.stage-index { color: var(--red); font: 700 27px/1 var(--font-editorial); }
+.stage-track { margin: 10px 0 7px; color: var(--muted); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
+.stage-card strong, .dimension-card strong { font-size: 18px; }
+.stage-card p, .dimension-card p { margin: 8px 0 15px; color: #58616e; font-size: 14px; line-height: 1.6; }
+.stage-link { margin-top: auto; color: var(--blue); font-size: 14px; font-weight: 600; }
+.dimension-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.dimension-card { min-height: 180px; }
+.dimension-card > span:first-child { margin-bottom: 12px; color: var(--muted); font-size: 12px; }
+.model-callout { display: flex; justify-content: space-between; align-items: center; gap: 22px; margin: 25px 0 0; padding: 20px 22px; border: 1px solid var(--line); border-left-color: var(--red); background: #f2f0ed; }
+.model-callout strong { display: block; font-size: 18px; }
+.model-detail-header { padding: 12px 0; }
+.model-detail-header .page-title { margin-bottom: 10px; }
+.dimension-guidance { margin-top: 28px; }
+.dimension-guidance-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.dimension-guidance-grid article { padding: 14px 16px; border: 1px solid var(--line); background: var(--paper); }
+.dimension-guidance-grid h3 { margin: 0 0 6px; font-size: 15px; }
+.dimension-guidance-grid p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.stage-next { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 22px; padding-top: 15px; border-top: 1px solid var(--line); }
+.stage-next > span { color: var(--muted); }
+.stage-next a { padding: 8px 12px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); }
+.progression-stage { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 15px; }
+.progression-stage:last-child .progression-marker::after { display: none; }
+.stage-mapping-list { margin-top: 16px; border-top: 1px solid var(--line); }
+.stage-mapping-row { display: grid; grid-template-columns: minmax(150px, .8fr) minmax(200px, 1fr) minmax(260px, 1.5fr); gap: 14px; align-items: start; padding: 14px 12px; border-bottom: 1px solid var(--line); background: var(--paper); }
+.stage-mapping-row > div { display: grid; gap: 4px; }
+.stage-mapping-row span { color: var(--muted); font-size: 12px; }
+.stage-mapping-row strong { line-height: 1.5; }
+.stage-mapping-row p { margin: 0; color: #58616e; font-size: 14px; line-height: 1.6; }
+.model-inline-link { display: inline-block; margin: 3px 0 17px; padding: 9px 12px; border-radius: 4px; background: #f2f0ed; color: #4f5866; font-size: 14px; }
+.model-inline-link a { font-weight: 650; }
+.promotion-model-note { margin: 20px 0 14px; padding: 11px 14px; border: 1px solid var(--line); border-left-color: var(--red); background: #f6f0ee; color: #555c66; line-height: 1.65; }
+.promotion-lane .stage-link { color: var(--blue); font-weight: 650; }
+@media (max-width: 900px) {
+  .dimension-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stage-grid, .stage-grid-four, .management-stage-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .model-section-heading { display: block; }
+  .model-section-heading > p { margin-top: 9px; }
+}
+@media (max-width: 600px) {
+  .stage-grid, .stage-grid-four, .management-stage-grid, .dimension-grid { grid-template-columns: 1fr; }
+  .model-callout { align-items: flex-start; flex-direction: column; }
+  .stage-mapping-row { grid-template-columns: 1fr; gap: 8px; }
+}
+.depth-legend { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 20px; margin: 22px 0; }
+.depth-legend strong { font-size: 14px; }
+.depth-legend p { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.matrix-scroll { position: relative; max-width: 100%; overflow-x: auto; margin-top: 18px; border: 1px solid var(--line); }
+.matrix-scroll:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.capability-matrix { width: 100%; min-width: 950px; border-collapse: collapse; font-size: 14px; }
+.capability-matrix caption { text-align: left; caption-side: bottom; padding: 14px; color: var(--muted); font-size: 13px; }
+.capability-matrix th, .capability-matrix td { padding: 15px 12px; border-bottom: 1px solid var(--line); text-align: center; }
+.capability-matrix th { background: var(--page); font-weight: 600; }
+.capability-matrix thead th:first-child, .capability-matrix tbody th { position: sticky; left: 0; text-align: left; min-width: 140px; z-index: 1; }
+.capability-matrix th span { display: block; margin-top: 5px; font-weight: 400; font-size: 12px; color: var(--muted); }
+.capability-matrix thead a { font-size: 16px; }
+.capability-matrix th a span { max-width: 110px; margin-inline: auto; }
+.capability-matrix td { font-variant-numeric: tabular-nums; }
+.capability-matrix [data-depth="0"] { background: #fff; color: #747b84; }
+.capability-matrix [data-depth="10"] { background: #f5f5f3; color: #626a73; }
+.capability-matrix [data-depth="25"] { background: #faf9f7; }
+.capability-matrix [data-depth="50"] { background: #eeede9; }
+.capability-matrix [data-depth="75"] { background: #f6e9e7; }
+.capability-matrix [data-depth="100"] { background: #ead1cd; color: #702520; font-weight: 700; }
+.matrix-caveat { margin-top: 10px; }
+.matrix-track-break > * { border-top: 2px solid var(--ink); }
+.matrix-notes { margin-top: 15px; font-size: 14px; line-height: 1.65; }
+.matrix-notes summary { cursor: pointer; }
+.matrix-notes dt { margin-top: 12px; font-weight: 650; }
+.matrix-notes dd { margin: 3px 0; color: var(--muted); }
+@media (max-width: 760px) { .depth-legend { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } }
+@media (max-width: 760px) { .dimension-guidance-grid { grid-template-columns: 1fr; } }
+
+.planning-outline { margin: 18px 0 0; }
+.planning-outline > div { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 24px; padding: 20px 0; border-top: 1px solid var(--line); }
+.planning-outline dt { font: 650 20px/1.5 var(--font-editorial); }
+.planning-outline dd { margin: 0; line-height: 1.7; }
+.planning-outline dd p { margin: 6px 0 0; color: var(--muted); }
+@media (max-width: 600px) { .planning-outline > div { grid-template-columns: 1fr; gap: 8px; } }
+.shared-question-framework, .reference-disclosure { margin-block: 1.5rem 2rem; border-block: 1px solid var(--line); padding-block: .85rem; }
+.shared-question-framework > summary, .reference-disclosure > summary { cursor: pointer; min-height: 44px; font-weight: 650; line-height: 1.6; }
+.shared-question-framework[open] > summary, .reference-disclosure[open] > summary { margin-bottom: 1rem; }

@@ -157,9 +157,11 @@ export function initTargetSelector() {
     if (event.target instanceof Node && !document.querySelector('.target-status')?.contains(event.target)) closeStatus();
   });
   window.addEventListener('compass-open-target', () => { void openEditor(); });
-  subscribeTarget(() => { if (label) label.textContent = currentLabel(); });
+  subscribeTarget(() => { if (label) label.textContent = currentLabel();
+  if (trigger) trigger.title = currentLabel(); });
   void loadTargetRoles().then(loaded => {
     roles = loaded;
     if (label) label.textContent = currentLabel();
+  if (trigger) trigger.title = currentLabel();
   }).catch(() => { /* The trigger still offers the dialog once the index can load. */ });
 }

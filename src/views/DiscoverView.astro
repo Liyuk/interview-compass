@@ -32,7 +32,7 @@ const facetOptions = filterKinds.map((kind) => {
     <a href={pathFor({ type: 'questions' }, locale, base)} aria-current="page">{en ? 'Full library' : '全量题库'}</a>
   </nav>
   <h1 class="page-title">{routeType === 'search' ? (en ? 'Search results' : '搜索结果') : (en ? 'Question library' : '面试题库')}</h1>
-  <p class="intro">{en ? 'Each filter is an independent view of the same questions. Combining filters narrows the list, and the address bar keeps your selection so you can share it.' : '每个筛选项都是同一批题目的独立视角。组合筛选会缩小列表，地址栏会保留你的选择，方便分享。'}</p>
+  <p class="intro">{en ? 'Search documents and methods, or filter questions. Preparation targets and page filters apply to questions. The address bar keeps your view for sharing.' : '搜索文档与方法，或按条件选题。准备目标与题目筛选只作用于题目；地址栏保留当前视图，方便分享。'}</p>
 
   <form data-target-content class="question-filters" id="filters" aria-label={en ? 'Filter questions' : '筛选问题'}>
     <div class="filters discovery-query">
@@ -41,6 +41,8 @@ const facetOptions = filterKinds.map((kind) => {
       <label><span>{en ? 'Order' : '排序'}</span><select name="sort"><option value="relevance">{en ? 'Recommended order' : '推荐顺序'}</option><option value="title">{en ? 'Title' : '标题'}</option></select></label>
       <button type="submit">{en ? 'Find' : '查找'}</button>
     </div>
+    <details open class="discovery-facet-disclosure" data-discovery-facets>
+      <summary>{en ? 'Filter questions' : '筛选题目'}</summary>
     <div class="filters filters-primary">
     {facetOptions.filter((group) => primaryFilterKinds.includes(group.kind)).map((group) => (
       <label>
@@ -64,6 +66,8 @@ const facetOptions = filterKinds.map((kind) => {
         ))}
       </div>
     </details>
+    </details>
+    <script is:inline>{ const d = document.currentScript?.previousElementSibling; if (d?.matches('[data-discovery-facets]') && matchMedia('(max-width:760px)').matches) d.open = false; }</script>
     <button type="button" id="clear-filters">{en ? 'Clear filters' : '清除筛选'}</button>
   </form>
   <details class="filter-help">
@@ -100,7 +104,7 @@ const facetOptions = filterKinds.map((kind) => {
       </li>
     ))}
   </ul>
-  <noscript><p>{en ? `This page lists the first ${firstPage.length} questions. Enable JavaScript to filter and page the full library.` : `本页列出前 ${firstPage.length} 题。启用 JavaScript 后可筛选并翻页浏览全部题目。`}</p></noscript>
+  <noscript><style>.question-filters,.share-filter-controls,.selected-filters{display:none!important}</style><p>{en ? `This page lists the first ${firstPage.length} questions. Enable JavaScript to filter and page the full library.` : `本页列出前 ${firstPage.length} 题。启用 JavaScript 后可筛选并翻页浏览全部题目。`}</p></noscript>
   <nav class="library-pagination" id="library-pagination" aria-label={en ? 'Question pages' : '问题分页'} hidden>
     <button type="button" id="previous-page">{en ? 'Previous page' : '上一页'}</button>
     <span id="page-status" role="status"></span>

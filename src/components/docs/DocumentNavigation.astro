@@ -3,6 +3,7 @@ import type { Locale } from '../../lib/taxonomy';
 import type { RouteRef } from '../../lib/routes';
 import { contentIdForRoute } from '../../lib/knowledge/definitions';
 import { loadKnowledgeRegistry } from '../../lib/knowledge/site-registry';
+import Icon from '../Icon.astro';
 import DocumentTree from './DocumentTree.astro';
 interface Props { route: RouteRef; locale: Locale; idPrefix?: string }
 const { route, locale, idPrefix = 'document' } = Astro.props;
@@ -12,7 +13,7 @@ const en = locale === 'en';
 ---
 <aside class="wiki-sidebar document-navigation" data-wiki-sidebar>
   <details open data-wiki-disclosure>
-    <summary aria-expanded="true"><span>{en ? 'Document navigation' : '文档目录'}</span><span aria-hidden="true">⌄</span></summary>
+    <summary aria-expanded="true"><span>{en ? 'Document navigation' : '文档目录'}</span><Icon name="chevron-down" class="wiki-disclosure-icon" size={16} /></summary>
     <nav id={`${idPrefix}-navigation`} aria-label={en ? 'Document navigation' : '文档目录'}>
       <DocumentTree nodes={navigation.tree} />
       {navigation.current?.kind === 'question' && <p class="document-current-title" aria-current="page">{navigation.current.title}</p>}
@@ -39,8 +40,11 @@ const en = locale === 'en';
 .document-tree-list a { display: block; min-height: 36px; padding: 7px 8px; color: var(--ink); font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
 .document-tree-list a[aria-current="page"] { background: var(--soft-red); color: var(--red); font-weight: 650; border-inline-start: 2px solid var(--red); }
 .document-tree-list details > summary { display: flex; gap: 5px; align-items: center; min-height: 36px; cursor: pointer; list-style: none; }
-.document-tree-list details > summary::before { content: '+'; font-size: 14px; min-width: 12px; }
-.document-tree-list details[open] > summary::before { content: '−'; }
+.document-tree-list details > summary > svg { transition: transform 140ms ease; }
+.document-tree-list details[open] > summary > svg { transform: rotate(90deg); }
+.document-tree-list > .document-linked-branch { position: relative; }
+.document-linked-branch > .document-branch-link { position: absolute; inset-inline-start: 32px; inset-inline-end: 0; top: 0; min-height: 36px; z-index: 1; }
+.document-linked-branch > details > summary { width: 32px; }
 .document-tree-list details > summary a { flex: 1; }
 .document-tree-list details > summary > span { padding: 7px 8px; font-size: 13px; }
 .document-current-title { color: var(--muted); font-size: 12px; line-height: 1.6; padding: 8px; border-top: 1px solid var(--line); }

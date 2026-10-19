@@ -22,6 +22,7 @@ const base = import.meta.env.BASE_URL;
 const all = await loadAllRecords();
 const record = all.find((item) => item.questionId === id && item.locale === locale && item.status === 'published')!;
 const evaluation = questionEvaluation(record);
+const FrameworkTag = evaluation.specific ? 'div' : 'details';
 const analysisPrompt = buildQuestionAnalysisPrompt({ locale, question: record, evaluation, engineeringContext: engineeringLens?.[en ? 'en' : 'zh'] });
 const { domain, leaf } = splitCapability(record.primaryCapability);
 const route = { type: 'question', questionId: record.questionId, capability: record.primaryCapability, title: record.question } as const;
@@ -32,10 +33,10 @@ const related = (record.relatedQuestions ?? []).flatMap((relation) => {
 const chapters = [
   { id: 'objective-h', label: evaluation.objectiveTitle },
   { id: 'intent-h', label: evaluation.intentTitle },
-  { id: 'inference-h', label: evaluation.inferenceTitle },
   { id: 'signals-h', label: en ? 'Signals worth noticing' : '值得观察的信号' },
-  ...(evaluation.comparisons.length > 0 ? [{ id: 'comparisons-h', label: evaluation.comparisonsTitle }] : []),
   { id: 'context-h', label: evaluation.contextTitle },
+  { id: 'inference-h', label: evaluation.inferenceTitle },
+  ...(evaluation.comparisons.length > 0 ? [{ id: 'comparisons-h', label: evaluation.comparisonsTitle }] : []),
   { id: 'decision-h', label: evaluation.decisionTitle },
   { id: 'tradeoffs-h', label: en ? 'Examine the trade-offs' : '分析方案的利与弊' },
   { id: 'assessment-h', label: evaluation.title },
@@ -59,37 +60,10 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
 <SiteLayout locale={locale} route={route} description={record.intent} outline={outline}>
   <SectionTranslations sections={outline.map(item => ({ sectionKey: item.sectionKey, anchors: { 'zh-CN': item.id, en: item.id } }))} />
   <a class="reading-return" data-reading-return href={pathFor({ type: 'questions' }, locale, base)}><Icon name="arrow-left" size={16} /> {en ? 'Back to your results or question set' : '返回本次结果或题单'}</a>
-  <p class="eyebrow">{domain?.letter} · {domain && pick(domain.name, locale)} <Icon name="chevron-right" size={14} /> {leaf && pick(leaf.name, locale)}</p>
   <h1 class="page-title" data-pagefind-meta="title">{record.question}</h1>
   {tokensForQuestion(record.questionId).map(token => <span hidden data-pagefind-filter="profile[data-profile-token]" data-profile-token={token} />)}
   <aside class="target-mismatch" data-question-detail-profiles={tokensForQuestion(record.questionId).join(' ')} hidden data-pagefind-ignore><p>{en ? 'This question is outside your current target. The direct link stays readable.' : '此题不在当前目标范围内，直接链接仍可完整阅读。'}</p><button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button><button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button></aside>
   {engineeringLens && <aside class="engineering-context" data-engineering-context data-pagefind-ignore><strong>{en ? 'Engineering business context' : '工程师的业务理解视角'}</strong><p>{engineeringLens[en ? 'en' : 'zh']}</p></aside>}
-  <div class="question-fit" aria-label={en ? 'Question relevance' : '适用范围'}>
-    {context.filter((group) => ['roles', 'responsibilityScopes', 'careerTracks'].includes(group.kind)).map((group) => <p><strong>{pick(facetMeta[group.kind].name, locale)}</strong><span>{group.ids.map((id) => facetLabel(group.kind, id, locale)).join(en ? ' · ' : '、')}</span></p>)}
-    <p class="band-text">{en ? 'Select questions for the responsibility you actually hold or seek. These labels are not universal stage requirements.' : '按目标岗位和实际责任选题；这些标签不表示所有阶段都必须掌握。'} <a href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Stage expectations' : '查看阶段要求'}</a></p>
-  </div>
-  <nav class="question-context-nav" aria-label={en ? 'Explore related views' : '按相关维度继续查找'}>
-    <span>{en ? 'Explore this question through:' : '按相关维度继续查找：'}</span>
-    {context.filter((group) => ['topics', 'scenarios'].includes(group.kind)).flatMap((group) => group.ids.map((facetId) => {
-      const target = facetRoute(group.kind, facetId);
-      return target ? <a href={pathFor(target, locale, base)}>{facetLabel(group.kind, facetId, locale)}</a> : null;
-    }))}
-    <a href={pathFor({ type: 'leaf', domain: domain!.id, leaf: leaf!.id }, locale, base)}>{en ? 'More in this capability' : '同类能力问题'}</a>
-  </nav>
-  <QuestionStageGuidance question={record} locale={locale} />
-  <section class="question-analysis-prompt" aria-label={en ? 'Optional external AI analysis' : '可选的外部 AI 分析'}>
-    <p>{en ? 'Want deeper feedback? Generate a prompt with this question’s evidence framework, then choose an AI tool yourself.' : '需要进一步分析时，可以生成包含本题证据框架的 Prompt，再自行选择 AI 工具使用。本站不会发送你的回答。'}</p>
-    <button class="button-link" type="button" data-generate-analysis>{en ? 'Generate AI analysis prompt' : '生成 AI 分析 Prompt'} <Icon name="arrow-up-right" size={16} /></button>
-    <div id="question-analysis-prompt-panel" data-analysis-panel data-pagefind-ignore hidden>
-      <label for="question-ai-prompt">{en ? 'AI analysis prompt' : 'AI 分析 Prompt'}</label>
-      <textarea id="question-ai-prompt" readonly rows="18">{analysisPrompt}</textarea>
-      <div class="question-analysis-prompt-actions">
-        <button type="button" class="secondary-button" data-copy-analysis>{en ? 'Copy prompt' : '复制 Prompt'}</button>
-        <span role="status" aria-live="polite" data-copy-status></span>
-      </div>
-    </div>
-  </section>
-
   <div data-pagefind-body>
     <p class="sr-only">{keywords.join(' ')}</p>
     <meta data-pagefind-filter={`capability:${record.primaryCapability}`} />
@@ -101,7 +75,7 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
     {record.topics.map((facetId) => <meta data-pagefind-filter={`topic:${facetId}`} />)}
     {record.roles.map((facetId) => <meta data-pagefind-filter={`role:${facetId}`} />)}
     <section class="detail-block" aria-labelledby="objective-h">
-      <p class={`analysis-review-status ${evaluation.specific ? 'is-reviewed' : 'is-shared'}`}><strong>{evaluation.reviewLabel}</strong><span>{evaluation.reviewNote}</span></p>
+      <details class={`analysis-review-status ${evaluation.specific ? 'is-reviewed' : 'is-shared'}`}><summary>{evaluation.reviewLabel}</summary><p>{evaluation.reviewNote}</p></details>
       <SectionHeading heading={headingFor('objective-h')} />
       <p class="intent-callout">{evaluation.objective}</p>
     </section>
@@ -111,25 +85,27 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
       <p>{evaluation.intent}</p>
     </section>
 
-    <section class="detail-block" aria-labelledby="inference-h">
-      <SectionHeading heading={headingFor('inference-h')} />
-      <p>{evaluation.inference}</p>
-    </section>
-
     <section class="detail-block" aria-labelledby="signals-h">
       <SectionHeading heading={headingFor('signals-h')} />
       <ul class="signal-list">{record.signals.map((signal) => <li>{signal}</li>)}</ul>
+    </section>
+
+    <section class="detail-block" aria-labelledby="context-h">
+      <SectionHeading heading={headingFor('context-h')} />
+      <ul class="signal-list">{evaluation.contextQuestions.map((item) => <li>{item}</li>)}</ul>
+    </section>
+
+    <FrameworkTag class:list={{'shared-question-framework': !evaluation.specific}}>
+      {!evaluation.specific && <summary>{en ? 'Shared analysis and assessment prompts' : '查看共用的分析与评估提示'}</summary>}
+    <section class="detail-block" aria-labelledby="inference-h">
+      <SectionHeading heading={headingFor('inference-h')} />
+      <p>{evaluation.inference}</p>
     </section>
 
     {evaluation.comparisons.length > 0 && <section class="detail-block" aria-labelledby="comparisons-h">
       <SectionHeading heading={headingFor('comparisons-h')} />
       <div class="comparison-prompt-grid">{evaluation.comparisons.map((item) => <article><h3>{item.dimension}</h3><p>{item.guidance}</p></article>)}</div>
     </section>}
-
-    <section class="detail-block" aria-labelledby="context-h">
-      <SectionHeading heading={headingFor('context-h')} />
-      <ul class="signal-list">{evaluation.contextQuestions.map((item) => <li>{item}</li>)}</ul>
-    </section>
 
     <section class="analysis-grid" aria-label={evaluation.decisionTitle}>
       <article class="analysis-card decision-card">
@@ -174,12 +150,46 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
       <ul class="signal-list">{evaluation.highlightEvidence.map((item) => <li>{item}</li>)}</ul>
     </section>}
 
+    </FrameworkTag>
+
     {record.background?.length ? (
       <section class="detail-block" aria-labelledby="background-h">
         <SectionHeading heading={headingFor('background-h')} />
         <ul class="signal-list">{record.background.map((item) => <li>{item}</li>)}</ul>
       </section>
     ) : null}
+
+  </div>
+
+  <details class="question-relevance" data-pagefind-ignore>
+    <summary>{en ? 'Question context and related views' : '适用范围与相关索引'}</summary>
+  <div class="question-fit" aria-label={en ? 'Question relevance' : '适用范围'}>
+    {context.filter((group) => ['roles', 'responsibilityScopes', 'careerTracks'].includes(group.kind)).map((group) => <p><strong>{pick(facetMeta[group.kind].name, locale)}</strong><span>{group.ids.map((id) => facetLabel(group.kind, id, locale)).join(en ? ' · ' : '、')}</span></p>)}
+    <p class="band-text">{en ? 'Select questions for the responsibility you actually hold or seek. These labels are not universal stage requirements.' : '按目标岗位和实际责任选题；这些标签不表示所有阶段都必须掌握。'} <a href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Stage expectations' : '查看阶段要求'}</a></p>
+  </div>
+  <nav class="question-context-nav" aria-label={en ? 'Explore related views' : '按相关维度继续查找'}>
+    <span>{en ? 'Explore this question through:' : '按相关维度继续查找：'}</span>
+    {context.filter((group) => ['topics', 'scenarios'].includes(group.kind)).flatMap((group) => group.ids.map((facetId) => {
+      const target = facetRoute(group.kind, facetId);
+      return target ? <a href={pathFor(target, locale, base)}>{facetLabel(group.kind, facetId, locale)}</a> : null;
+    }))}
+    <a href={pathFor({ type: 'leaf', domain: domain!.id, leaf: leaf!.id }, locale, base)}>{en ? 'More in this capability' : '同类能力问题'}</a>
+  </nav>
+  </details>
+  <noscript><style>.question-analysis-prompt{display:none!important}</style></noscript>
+  <QuestionStageGuidance question={record} locale={locale} />
+  <section class="question-analysis-prompt" aria-label={en ? 'Optional external AI analysis' : '可选的外部 AI 分析'}>
+    <p>{en ? 'Want deeper feedback? Generate a prompt with this question’s evidence framework, then choose an AI tool yourself.' : '需要进一步分析时，可以生成包含本题证据框架的 Prompt，再自行选择 AI 工具使用。本站不会发送你的回答。'}</p>
+    <button class="button-link" type="button" data-generate-analysis>{en ? 'Generate AI analysis prompt' : '生成 AI 分析 Prompt'} <Icon name="arrow-up-right" size={16} /></button>
+    <div id="question-analysis-prompt-panel" data-analysis-panel data-pagefind-ignore hidden>
+      <label for="question-ai-prompt">{en ? 'AI analysis prompt' : 'AI 分析 Prompt'}</label>
+      <textarea id="question-ai-prompt" readonly rows="18">{analysisPrompt}</textarea>
+      <div class="question-analysis-prompt-actions">
+        <button type="button" class="secondary-button" data-copy-analysis>{en ? 'Copy prompt' : '复制 Prompt'}</button>
+        <span role="status" aria-live="polite" data-copy-status></span>
+      </div>
+    </div>
+  </section>
 
     {related.length > 0 && (
       <section class="detail-block" aria-labelledby="related-h" data-related-section>
@@ -198,8 +208,6 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
         </table>
       </section>
     )}
-  </div>
-
   <section class="metadata-grid" aria-label={en ? 'Question context' : '问题的上下文'}>
     <div class="metadata-block">
       <h2>{en ? 'Primary capability' : '主要能力'}</h2>

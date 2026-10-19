@@ -13,11 +13,26 @@ async function start(root: HTMLElement) {
   const en = locale === 'en';
   const data = JSON.parse(root.querySelector('[data-stage-question]')!.textContent!) as StageQuestion & { modelPaths: Record<string, string> };
   let model: StageModel;
+  const asyncStatus = root.querySelector<HTMLElement>('[data-async-status]')!;
+  const retry = asyncStatus.querySelector<HTMLButtonElement>('[data-async-retry]')!;
+  const message = asyncStatus.querySelector('[data-async-message]')!;
+  const controls = [...root.querySelectorAll<HTMLSelectElement>('.stage-controls select')];
+  asyncStatus.dataset.state = 'loading';
+  message.textContent = en ? 'Loading stage model…' : '正在加载阶段模型…';
+  retry.hidden = true; retry.disabled = true;
+  for (const select of controls) select.disabled = true;
   try {
     model = await loadStageModel(locale);
   } catch {
+    asyncStatus.dataset.state = 'error';
+    message.textContent = en ? 'Stage model could not load or needs an update. Retry, or follow the static model link below.' : '阶段模型无法载入或需要更新。请重试，或使用下方完整模型链接。';
+    retry.hidden = false; retry.disabled = false;
+    retry.onclick = () => void start(root);
     return;
   }
+  asyncStatus.dataset.state = 'ready';
+  retry.onclick = null;
+  for (const select of controls) select.disabled = false;
   const role = root.querySelector<HTMLSelectElement>('[data-stage-role]')!;
   const stage = root.querySelector<HTMLSelectElement>('[data-stage-select]')!;
   const detail = root.querySelector<HTMLElement>('[data-stage-detail]')!;

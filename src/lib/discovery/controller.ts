@@ -10,6 +10,7 @@ import { safeSearchResultHref } from '../search-records';
 const form = document.querySelector<HTMLFormElement>('#filters')!;
 const list = document.querySelector<HTMLElement>('[data-discovery-results]')!;
 const status = document.querySelector<HTMLElement>('#result-count, #search-page-status')!;
+const staticFallback = [...list.children].map(node => node.cloneNode(true));
 const docs = document.querySelector<HTMLElement>('#discovery-docs')!;
 const docsList = document.querySelector<HTMLElement>('#document-results')!;
 const empty = document.querySelector<HTMLElement>('#no-results')!;
@@ -68,6 +69,7 @@ function read(): BrowseQuery {
   query.target = getTargetContext();
   keyword.value = query.q; scope.value = query.searchScope; sort.value = query.sort;
   for (const select of facetSelects) select.value = query.facets[select.name as FacetKey] ?? '';
+  if (Object.keys(query.facets).length) document.querySelector<HTMLDetailsElement>('[data-discovery-facets]')!.open = true;
   const header = document.querySelector<HTMLInputElement>('#site-search'); if (header) header.value = query.q;
   return query;
 }
@@ -118,6 +120,7 @@ const discovery = createDiscovery({
 async function refreshCounts(query: BrowseQuery) {
   const request = version;
   const advanced = document.querySelector<HTMLDetailsElement>('#advanced-filters')!;
+  if (!document.querySelector<HTMLDetailsElement>('[data-discovery-facets]')!.open) return;
   await Promise.all(facetSelects.map(async select => {
     if (select.closest('#advanced-filters') && !advanced.open) return;
     try {
@@ -172,6 +175,9 @@ async function render() {
   } catch {
     if (request !== version) return;
     error.hidden = false;
+    docs.hidden = true;
+    list.replaceChildren(...staticFallback.map(node => node.cloneNode(true)));
+    delete list.dataset.readingOrder;
     error.querySelector('[data-error-message]')!.textContent = en ? 'Content could not be loaded. Retry, or read the static questions below; filters have not been applied.' : '内容暂时无法载入。可以重试，或阅读下方静态题目；筛选尚未应用。';
     status.textContent = en ? 'Results unavailable' : '结果暂不可用';
     for (const select of facetSelects) select.disabled = true;
@@ -189,6 +195,7 @@ function submitControls() {
 }
 form.addEventListener('submit', event => { event.preventDefault(); submitControls(); });
 form.addEventListener('change', submitControls);
+document.querySelector('[data-discovery-facets]')?.addEventListener('toggle', () => { if (lastQuery) void refreshCounts(lastQuery); });
 document.querySelector('#advanced-filters')?.addEventListener('toggle', () => { if (lastQuery) refreshCounts(lastQuery); });
 function clear() { const query = read(); query.facets = {}; query.page = 1; write(query); void render(); }
 document.querySelector('#clear-filters')?.addEventListener('click', clear);
