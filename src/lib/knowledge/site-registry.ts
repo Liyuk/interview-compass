@@ -5,6 +5,7 @@ import { stageIds, dimensionIds } from '../capability-model';
 import { questionCollections } from '../question-collections';
 import { createKnowledgeRegistry } from './registry';
 import { contentIdForRoute } from './definitions';
+import type { KnowledgeEdge } from './relations';
 import type { KnowledgeKind, KnowledgeNode, KnowledgeRegistry } from './types';
 
 let pending: Promise<KnowledgeRegistry> | undefined;
@@ -15,6 +16,7 @@ export function loadKnowledgeRegistry(): Promise<KnowledgeRegistry> {
 async function build(): Promise<KnowledgeRegistry> {
   const records = await loadAllRecords();
   const nodes: KnowledgeNode[] = [];
+  const edges: KnowledgeEdge[] = [];
   for (const locale of ['zh-CN', 'en'] as const) {
     let order = 0;
     const add = (route: RouteRef, kind: KnowledgeKind, parent?: string, hidden = false) => {
@@ -59,10 +61,17 @@ async function build(): Promise<KnowledgeRegistry> {
     for (const dimension of dimensionIds) add({ type: 'capability-model-dimension', dimension }, 'stage-reference', dimensions);
     add({ type: 'capability-model-mapping' }, 'stage-reference', stages);
     for (const question of records.filter(item => item.locale === locale && item.status === 'published')) {
-      add({ type: 'question', questionId: question.questionId, title: question.question, capability: question.primaryCapability }, 'question', `capability:${question.primaryCapability}`, true);
+      const from = add({ type: 'question', questionId: question.questionId, title: question.question, capability: question.primaryCapability }, 'question', `capability:${question.primaryCapability}`, true);
+      for (const relation of question.relatedQuestions ?? []) edges.push({ from, to: `question:${relation.questionId}`, type: 'contrasts', reason: relation.relation, contrast: relation.contrast, locale });
+      for (const collection of questionCollections) {
+        if (collection.kind !== 'question-set') continue;
+        const entry = collection.entries.find(item => item.questionId === question.questionId);
+        if (entry) edges.push({ from, to: `collection:${collection.id}`, type: 'included-in', reason: entry.rationale[locale === 'en' ? 'en' : 'zh'], locale });
+      }
+      if (question.questionId === 'h-attribution-team-vs-personal') edges.push({ from, to: 'framework', type: 'uses-method', reason: locale === 'en' ? 'Use evidence probes to distinguish individual contribution from team outcomes.' : '用证据追问区分个人贡献和团队结果。', locale });
     }
   }
-  const result = createKnowledgeRegistry({ nodes });
+  const result = createKnowledgeRegistry({ nodes, edges });
   if (result.ok === false) throw new Error(`Invalid knowledge registry: ${JSON.stringify(result.diagnostics)}`);
   return result.registry;
 }

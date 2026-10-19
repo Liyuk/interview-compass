@@ -1,3 +1,4 @@
+import { buildRelations } from './relations';
 import type { Locale } from '../taxonomy';
 import type { KnowledgeNode, KnowledgeDiagnostic, NavigationNode, RegistryInput, RegistryResult } from './types';
 const key = (id: string, locale: Locale) => `${locale}:${id}`;
@@ -28,8 +29,11 @@ export function createKnowledgeRegistry(input: RegistryInput): RegistryResult {
     }
   }
   if (diagnostics.length) return { ok: false, diagnostics };
+  const relations = buildRelations(nodes, input.edges ?? []);
+  if (relations.ok === false) return relations;
   const ordered = (items: KnowledgeNode[]) => items.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   return { ok: true, registry: {
+    relations: (id, locale) => relations.index.forPage(id, locale),
     page: (id, locale) => byId.get(key(id, locale)),
     navigation(id, locale) {
       const current = byId.get(key(id, locale));

@@ -4,6 +4,7 @@ import SiteMasthead from '../components/SiteMasthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ReadingJourney from '../components/ReadingJourney.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleRelations from '../components/docs/ArticleRelations.astro';
 import DocumentNavigation from '../components/docs/DocumentNavigation.astro';
 import WikiOutline from '../components/WikiOutline.astro';
 import { activeNavFor, breadcrumbsFor, titleFor, type RouteRef } from '../lib/routes';
@@ -43,7 +44,7 @@ const crumbs = breadcrumbsFor(route, locale, base);
       <Breadcrumbs crumbs={crumbs} locale={locale} />
       <div class:list={['wiki-reading-grid', { 'has-section-nav': hasSidebar, 'has-outline': outline.length > 0 }]}>
         {hasSidebar && <DocumentNavigation route={route} locale={locale} />}
-        <main id="main" class="main-content"><slot /></main>
+        <main id="main" class="main-content"><slot />{hasSidebar && <ArticleRelations route={route} locale={locale} />}</main>
         <WikiOutline items={outline} locale={locale} />
       </div>
     </div>}

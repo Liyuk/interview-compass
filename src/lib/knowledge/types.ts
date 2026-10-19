@@ -1,3 +1,4 @@
+import type { KnowledgeEdge, KnowledgeRelations } from './relations';
 import type { Locale } from '../taxonomy';
 
 export type KnowledgeKind = 'guide' | 'method' | 'concept' | 'question' | 'collection' | 'path' | 'stage-reference' | 'index' | 'group';
@@ -31,7 +32,8 @@ export interface KnowledgeDiagnostic {
 }
 export interface KnowledgeRegistry {
   page(contentId: string, locale: Locale): KnowledgeNode | undefined;
+  relations(contentId: string, locale: Locale): KnowledgeRelations;
   navigation(contentId: string, locale: Locale): KnowledgeNavigation;
 }
-export interface RegistryInput { nodes: KnowledgeNode[] }
+export interface RegistryInput { nodes: KnowledgeNode[]; edges?: KnowledgeEdge[] }
 export type RegistryResult = { ok: true; registry: KnowledgeRegistry } | { ok: false; diagnostics: KnowledgeDiagnostic[] };
