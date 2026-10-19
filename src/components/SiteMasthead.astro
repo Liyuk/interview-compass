@@ -80,6 +80,7 @@ const nav = siteNavigationFor(route, locale, base);
 
 <script>
   import '../lib/target-dom';
+  import { parseBrowseQuery, serializeBrowseQuery } from '../lib/discovery/query';
   import { translateArticleHash, type SectionTranslation } from '../lib/article-sections';
   import { initTargetSelector } from '../lib/target-selector';
   import { pagefindFilters, withLinkPreference } from '../lib/target-preferences';
@@ -98,14 +99,15 @@ const nav = siteNavigationFor(route, locale, base);
   const errorText = lang === 'en' ? 'Search is unavailable. Try again.' : '搜索暂时不可用，请重试。';
   const languageLink = document.querySelector<HTMLAnchorElement>('.language-switch a');
   if (languageLink) {
-    const transferableParams = ['q', 'role', 'scope', 'track', 'scenario', 'topic', 'format', 'capability', 'page', 'targetRole', 'targetStage', 'profile', 'profileRole', 'profileStage'];
     const syncLanguageLink = () => {
       const current = new URL(window.location.href);
       const target = new URL(languageLink.href, current);
-      for (const key of transferableParams) {
+      const parsed = parseBrowseQuery(current, { base, locale: lang === 'en' ? 'zh-CN' : 'en' });
+      target.search = new URL(serializeBrowseQuery(parsed.query, target), current).search;
+      // Comparison lenses belong to the same question, not the browsing target.
+      if (document.body.dataset.routeType === 'question') for (const key of ['targetRole', 'targetStage']) {
         const value = current.searchParams.get(key);
-        if (value !== null) target.searchParams.set(key, value);
-        else target.searchParams.delete(key);
+        if (value) target.searchParams.set(key, value);
       }
       const data = document.getElementById('article-section-translations');
       if (data) {
