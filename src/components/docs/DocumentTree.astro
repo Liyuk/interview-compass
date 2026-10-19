@@ -1,0 +1,13 @@
+---
+import type { NavigationNode } from '../../lib/knowledge/types';
+interface Props { nodes: NavigationNode[] }
+const { nodes } = Astro.props;
+---
+<ul class="document-tree-list">
+  {nodes.map(node => <li>
+    {node.children.length ? <details open={node.expanded || node.current} data-document-branch>
+      <summary>{node.href ? <a href={node.href} aria-current={node.current ? 'page' : undefined}>{node.title}</a> : <span>{node.title}</span>}</summary>
+      <Astro.self nodes={node.children} />
+    </details> : node.href ? <a href={node.href} aria-current={node.current ? 'page' : undefined}>{node.title}</a> : <span>{node.title}</span>}
+  </li>)}
+</ul>

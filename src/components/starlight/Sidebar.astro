@@ -1,16 +1,6 @@
 ---
-import WikiSidebar from '../WikiSidebar.astro';
+import DocumentNavigation from '../docs/DocumentNavigation.astro';
 import type { Locale } from '../../lib/taxonomy';
-
-const route = Astro.locals.starlightRoute;
-const locale: Locale = route.locale === 'en' ? 'en' : 'zh-CN';
+const locale: Locale = Astro.locals.starlightRoute.locale === 'en' ? 'en' : 'zh-CN';
 ---
-
-<WikiSidebar
-  route={{ type: 'guide' }}
-  locale={locale}
-  base={import.meta.env.BASE_URL}
-  idPrefix={`starlight-${locale}`}
-  mobileDisclosure={true}
-  section="guide"
-/>
+<DocumentNavigation route={{ type: 'guide' }} locale={locale} idPrefix={`starlight-${locale}`} />

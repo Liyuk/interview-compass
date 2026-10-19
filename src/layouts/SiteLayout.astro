@@ -4,7 +4,7 @@ import SiteMasthead from '../components/SiteMasthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ReadingJourney from '../components/ReadingJourney.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import WikiSidebar from '../components/WikiSidebar.astro';
+import DocumentNavigation from '../components/docs/DocumentNavigation.astro';
 import WikiOutline from '../components/WikiOutline.astro';
 import { activeNavFor, breadcrumbsFor, titleFor, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
@@ -20,7 +20,7 @@ const title = titleFor(route, locale);
 const currentNav = activeNavFor(route);
 const active = ['roles', 'topics', 'capabilities'].includes(currentNav) ? 'browse' : currentNav;
 const presentation = pagePresentationFor(route);
-const hasSidebar = presentation.kind === 'section';
+const hasSidebar = presentation.kind === 'section' || presentation.kind === 'article';
 const crumbs = breadcrumbsFor(route, locale, base);
 ---
 <!doctype html>
@@ -42,7 +42,7 @@ const crumbs = breadcrumbsFor(route, locale, base);
     </div> : <div class="page-frame wiki-page-frame">
       <Breadcrumbs crumbs={crumbs} locale={locale} />
       <div class:list={['wiki-reading-grid', { 'has-section-nav': hasSidebar, 'has-outline': outline.length > 0 }]}>
-        {hasSidebar && <WikiSidebar route={route} locale={locale} base={base} section={presentation.section} />}
+        {hasSidebar && <DocumentNavigation route={route} locale={locale} />}
         <main id="main" class="main-content"><slot /></main>
         <WikiOutline items={outline} locale={locale} />
       </div>
