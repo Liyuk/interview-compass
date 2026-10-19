@@ -31,7 +31,15 @@ test('section navigation stays local and mobile menus do not move the article', 
     for (const route of ['questions/', 'capabilities/delivery/capacity-planning/', 'handbook/', 'en/handbook/']) {
       await page.goto(route);
       await expect(page.locator('main h1').first()).toBeVisible();
-      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+      const layout = await page.evaluate(() => ({
+        viewport: innerWidth,
+        scrollWidth: document.documentElement.scrollWidth,
+        overflowing: [...document.querySelectorAll<HTMLElement>('body *')].filter(element => {
+          const box = element.getBoundingClientRect();
+          return box.width > 0 && box.right > innerWidth;
+        }).slice(0, 12).map(element => ({tag: element.tagName, class: element.className, right: element.getBoundingClientRect().right, text: element.textContent?.trim().slice(0, 60)})),
+      }));
+      expect(layout.scrollWidth, JSON.stringify({route, width, ...layout})).toBeLessThanOrEqual(layout.viewport);
       if (route === 'questions/' && width >= 768 && width <= 1024) {
         const main = await page.locator('main').boundingBox();
         expect(main!.width).toBeGreaterThan(width * 0.5);
