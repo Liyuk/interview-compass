@@ -2,9 +2,10 @@ import { expect, test } from './all-questions-fixture';
 
 test('question library offers curated collections and a full-library path', async ({ page }) => {
   await page.goto('questions/');
-  await expect(page.getByRole('link', { name: '精选题单' })).toHaveAttribute('href', /\/collections\/$/);
-  await expect(page.getByRole('link', { name: '全量题库' })).toHaveAttribute('aria-current', 'page');
-  await page.getByRole('link', { name: '精选题单' }).click();
+  const entryNav = page.getByRole('navigation', { name: '题库入口' });
+  await expect(entryNav.getByRole('link', { name: '精选题单' })).toHaveAttribute('href', /\/collections\/$/);
+  await expect(entryNav.getByRole('link', { name: '全量题库' })).toHaveAttribute('aria-current', 'page');
+  await entryNav.getByRole('link', { name: '精选题单' }).click();
   await expect(page).toHaveURL(/\/collections\/$/);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('精选题单');
   for (const title of ['通用面试', '技术精选', '面试官取证', '岗位尽调', '晋升对话']) {

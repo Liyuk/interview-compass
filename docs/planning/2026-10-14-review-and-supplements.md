@@ -1,4 +1,6 @@
 # 规划审阅与补充
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../architecture/current-state.md).
+
 
 日期：2026-10-14。对象：本目录全部规划文档与 CONTEXT.md。本文件记录审阅结论、实测事实和补充内容；补充部分是建议，尚未实施。
 

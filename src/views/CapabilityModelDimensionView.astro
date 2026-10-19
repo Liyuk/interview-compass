@@ -27,8 +27,9 @@ const paths = [
   },
 ];
 const route: RouteRef = { type: 'capability-model-dimension', dimension: dimensionId };
+const outline = paths.map(path => ({ id: `${path.id}-path-heading`, label: path.title }));
 ---
-<SiteLayout locale={locale} route={route} description={en ? `Stage expectations for ${progression.name}.` : `${progression.name}在六个发展阶段的行为要求。`}>
+<SiteLayout locale={locale} route={route} description={en ? `Stage expectations for ${progression.name}.` : `${progression.name}在六个发展阶段的行为要求。`} outline={outline}>
   <header class="model-detail-header"><p class="eyebrow">{en ? 'Dimension progression' : '能力维度变迁'}</p><h1 class="page-title">{progression.name}</h1><p class="intro">{en ? 'Expectations change in scope, autonomy, ambiguity, and leverage. A higher stage means a different level of impact, not simply more tasks.' : '要求随责任范围、自主性、问题模糊度与影响杠杆变化。阶段提升意味着影响方式发生变化，不只是承担更多任务。'}</p></header>
   {paths.map((path) => (
     <section class="progression-path" aria-labelledby={`${path.id}-path-heading`}>

@@ -1,0 +1,33 @@
+---
+import { loadKnowledgeRegistry } from '../../lib/knowledge/site-registry';
+import { contentIdForRoute } from '../../lib/knowledge/definitions';
+import type { RouteRef } from '../../lib/routes';
+import type { Locale } from '../../lib/taxonomy';
+interface Props { route: RouteRef; locale: Locale }
+const { route, locale } = Astro.props;
+const en = locale === 'en';
+const registry = await loadKnowledgeRegistry();
+const relations = registry.relations(contentIdForRoute(route), locale);
+// Explicit question comparisons already retain their authored contrast table in QuestionView.
+const outgoing = relations.outgoing.filter(edge => edge.type !== 'included-in' && edge.type !== 'contrasts');
+const memberships = relations.outgoing.filter(edge => edge.type === 'included-in');
+const incoming = relations.incoming.filter(edge => edge.type !== 'included-in');
+const groups = [
+  { label: en ? 'Linked content' : '关联内容', items: outgoing.map(edge => ({ node: edge.target, reason: edge.reason })) },
+  { label: en ? 'Referenced by' : '引用本文', items: incoming.map(edge => ({ node: edge.source, reason: edge.reason })) },
+  { label: en ? 'Included in collections' : '收录于题单', items: memberships.map(edge => ({ node: edge.target, reason: edge.reason })) },
+].filter(group => group.items.length);
+---
+{groups.length > 0 && <aside class="article-relations" data-pagefind-ignore>
+  {groups.map(group => <nav aria-label={group.label}>
+    <h2>{group.label}</h2>
+    <ul>{group.items.map(item => <li><a href={item.node.href}>{item.node.title}</a><p>{item.reason}</p></li>)}</ul>
+  </nav>)}
+</aside>}
+<style>
+  .article-relations { border-top: 1px solid var(--line, #ddd); margin-top: 2rem; padding-top: 1rem; }
+  h2 { font-size: 1rem; }
+  ul { padding-inline-start: 1.25rem; }
+  li { margin-block: .75rem; }
+  p { color: var(--muted, #596579); font-size: .875rem; margin-block: .2rem; }
+</style>

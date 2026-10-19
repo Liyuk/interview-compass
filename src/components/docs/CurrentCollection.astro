@@ -1,0 +1,15 @@
+---
+import type { Locale } from '../../lib/taxonomy';
+interface Props { locale: Locale; questionId?: string }
+const { locale, questionId } = Astro.props;
+const en = locale === 'en';
+---
+<details id="current-collection" class="current-collection" data-current-collection hidden data-pagefind-ignore>
+  <summary>{en ? 'Your current collection' : '本次题单'} <span data-collection-count>0 / 200</span></summary>
+  <p>{en ? 'Only question IDs and their order are saved on this browser. Up to 200 questions; no answers, scores, or completion tracking.' : '仅在当前浏览器保存题目编号与顺序，最多 200 题，不保存回答、评分或完成状态。'}</p>
+  {questionId && <button type="button" data-collection-add={questionId}>{en ? 'Add this question' : '加入本次题单'}</button>}
+  <button type="button" data-collection-clear>{en ? 'Clear collection' : '清空本次题单'}</button>
+  <p role="status" data-collection-status aria-live="polite"></p>
+  <ol data-collection-list></ol>
+</details>
+<style>.current-collection { margin-block: 2rem; padding-block: 1rem; border-top: 1px solid var(--line); } summary { cursor: pointer; font-weight: 700; } ol { padding-inline-start: 1.5rem; } button { margin: .25rem; } :global(.collection-item-controls) { display:flex; flex-wrap:wrap; gap:.4rem; margin-block:.3rem .8rem; }</style>

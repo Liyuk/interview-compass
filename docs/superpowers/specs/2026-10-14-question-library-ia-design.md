@@ -1,4 +1,6 @@
 # Interview Compass question library: information architecture design
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../../architecture/current-state.md).
+
 
 Date: 2026-10-14
 

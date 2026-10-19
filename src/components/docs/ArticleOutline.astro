@@ -1,0 +1,24 @@
+---
+import type { Locale } from '../../lib/taxonomy';
+import { createOutline, type ArticleHeading } from '../../lib/knowledge/outline';
+import Icon from '../Icon.astro';
+import OutlineTree from './OutlineTree.astro';
+interface Props { headings: ArticleHeading[]; locale: Locale }
+const { headings, locale } = Astro.props;
+const result = createOutline(headings);
+if (result.ok === false) throw new Error(`Invalid article outline: ${JSON.stringify(result.diagnostics)}`);
+const label = locale === 'en' ? 'On this page' : '本页目录';
+---
+{result.nodes.length > 0 && <details class="wiki-outline" open data-wiki-outline>
+  <summary aria-expanded="true"><span>{label}</span><Icon name="chevron-down" size={16} /></summary>
+  <nav aria-label={label}><OutlineTree nodes={result.nodes} /></nav>
+</details>}
+<script is:inline>
+{const root=document.currentScript?.previousElementSibling;if(root?.matches('[data-wiki-outline]')){root.open=!matchMedia('(max-width:1100px)').matches;root.querySelector('summary')?.setAttribute('aria-expanded',String(root.open));}}
+</script>
+<script>import '../../lib/docs-navigation-client';</script>
+<style is:global>
+.wiki-outline ol ol { padding-inline-start: 12px; margin-block: 6px 4px; border-inline-start: 1px solid var(--line); }
+.wiki-outline a[aria-current="location"] { color: var(--red); font-weight: 650; }
+[data-section-key], .anchor-alias { scroll-margin-top: 24px; }
+</style>

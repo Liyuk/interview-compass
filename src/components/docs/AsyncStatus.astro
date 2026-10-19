@@ -1,0 +1,9 @@
+---
+interface Props { loading: string; retry: string }
+const { loading, retry } = Astro.props;
+---
+<div class="async-status" data-async-status data-state="loading" data-pagefind-ignore>
+  <p role="status" aria-live="polite" data-async-message>{loading}</p>
+  <button type="button" data-async-retry hidden>{retry}</button>
+</div>
+<style>.async-status { font-size: .875rem; color: var(--muted); } .async-status[data-state="ready"] { display:none; } button { min-height:44px; }</style>

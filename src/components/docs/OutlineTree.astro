@@ -1,0 +1,6 @@
+---
+import type { OutlineNode } from '../../lib/knowledge/outline';
+interface Props { nodes: OutlineNode[] }
+const { nodes } = Astro.props;
+---
+<ol>{nodes.map(node => <li><a data-outline-link href={`#${node.id}`} data-section-key={node.sectionKey}>{node.label}</a>{node.children.length > 0 && <Astro.self nodes={node.children} />}</li>)}</ol>

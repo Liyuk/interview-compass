@@ -4,6 +4,8 @@ Interview Compass is a bilingual, question-first heuristic library for external 
 
 This repository contains the Interview Compass site and its source content. The site serves engineers and engineering managers. Product sense, operating workflows, design collaboration, and commercial reasoning expand engineering business understanding; they are not separate target careers.
 
+Maintainer reference: [current site architecture](docs/architecture/current-state.md). Dated plans, reviews, and design explorations record past decisions and should not be read as a description of the current implementation.
+
 ## Explore locally
 
 Requirements: Node.js 24 and npm.

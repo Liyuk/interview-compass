@@ -12,6 +12,9 @@ const { locale, id } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const collection = questionCollections.find((item) => item.id === id)!;
+const outline = collection.kind === 'question-set'
+  ? [{ id: 'collection-questions-heading', label: en ? 'Follow this path' : '按这个顺序练习' }]
+  : collection.sections.map(section => ({ id: `prompt-group-${section.id}`, label: pick(section.title, locale) }));
 const records = collection.kind === 'question-set' ? await loadAllRecords() : [];
 const questions = collection.kind === 'question-set' ? collection.entries.flatMap((entry) => {
   const record = records.find((item) => item.questionId === entry.questionId && item.locale === locale && item.status === 'published');
@@ -19,7 +22,7 @@ const questions = collection.kind === 'question-set' ? collection.entries.flatMa
 }) : [];
 ---
 
-<SiteLayout locale={locale} route={{ type: 'collection', id }} description={pick(collection.purpose, locale)}>
+<SiteLayout locale={locale} route={{ type: 'collection', id }} description={pick(collection.purpose, locale)} outline={outline}>
   <header class="collection-detail-header">
     <p class="eyebrow">{collection.kind === 'candidate-guide' ? (en ? 'CANDIDATE DUE DILIGENCE' : '候选人反向提问') : (en ? 'CURATED QUESTION PATH' : '精选问题路径')}</p>
     <h1 class="page-title">{pick(collection.title, locale)}</h1>

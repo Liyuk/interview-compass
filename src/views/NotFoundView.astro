@@ -1,0 +1,23 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { pathFor } from '../lib/routes';
+import type { Locale } from '../lib/taxonomy';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+---
+
+<SiteLayout locale={locale} route={{ type: 'not-found' }} description={en ? 'The requested page could not be found.' : '找不到你访问的页面。'}>
+  <section class="not-found-page">
+    <p class="eyebrow">404</p>
+    <h1>{en ? 'Page not found' : '页面不存在'}</h1>
+    <p>{en ? 'The address may have changed, or the page may no longer be available.' : '这个地址可能已经变更，或页面暂时不可用。'}</p>
+    <p>
+      <a href={pathFor({ type: 'home' }, locale, base)}>{en ? 'Return to the homepage' : '返回首页'}</a>
+      <span aria-hidden="true"> · </span>
+      <a href={pathFor({ type: 'questions' }, locale, base)}>{en ? 'Browse the question library' : '浏览面试题库'}</a>
+    </p>
+  </section>
+</SiteLayout>

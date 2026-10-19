@@ -1,0 +1,12 @@
+---
+import type { WikiNavItem } from '../lib/wiki-navigation';
+interface Props { items: WikiNavItem[] }
+const { items } = Astro.props;
+---
+
+<ul>
+  {items.map(item => <li class:list={{ 'wiki-nav-item': true, 'wiki-nav-item-current': item.current }}>
+    <a href={item.href} aria-current={item.current ? 'page' : undefined}>{item.label}</a>
+    {item.children?.length && <Astro.self items={item.children} />}
+  </li>)}
+</ul>

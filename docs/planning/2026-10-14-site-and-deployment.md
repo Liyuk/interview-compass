@@ -1,4 +1,6 @@
 # Interview Compass：站点技术与 GitHub 部署决策
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../architecture/current-state.md).
+
 
 日期：2026-10-14。状态：Astro + Starlight、Radix 基线、双语首发及 GitHub Pages 工作流已经实现首个本地切片；新个人远端已准备提交，但 Pages 尚未启用或发布。本文件记录架构依据和部署验收要求。
 

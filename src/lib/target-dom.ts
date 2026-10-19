@@ -16,13 +16,12 @@ export function updateTargetDom() {
   const stage = role?.stages.find(item => item.id === target?.stageId);
   const summary = document.querySelector<HTMLElement>('[data-target-summary]');
   if (summary) {
-    summary.hidden = !target && !context.hasLink && !isTargetTemporary();
     const storageNote = summary.querySelector<HTMLElement>('[data-target-storage-warning]');
     if (storageNote) storageNote.hidden = !isTargetTemporary();
     const description = summary.querySelector('[data-target-description]');
     if (description) description.textContent = context.invalidLink
       ? (en ? 'This link has an invalid target. Showing all questions; your saved choice is unchanged.' : '链接中的目标无效，当前显示全部题目；本地选择未改变。')
-      : `${context.hasLink ? (en ? 'Target from link: ' : '来自链接的目标：') : (en ? 'Current target: ' : '当前目标：')}${target ? `${role?.name} · ${stage?.name}` : (en ? 'All questions' : '全部题目')}`;
+      : `${context.hasLink ? (en ? 'Target from link: ' : '来自链接的目标：') : (en ? 'Current target: ' : '当前目标：')}${target ? `${role?.name ?? (en ? 'Loading target' : '正在载入目标')} · ${stage?.name ?? ''}` : (en ? 'All questions' : '全部题目')}`;
     const adopt = summary.querySelector<HTMLButtonElement>('[data-adopt-target]');
     if (adopt) adopt.hidden = !context.hasLink || context.invalidLink;
     const clear = summary.querySelector<HTMLButtonElement>('[data-remove-link-target]');
@@ -79,7 +78,7 @@ export function updateTargetDom() {
   // Only an explicit link target follows navigation; local preferences stay out of ordinary URLs.
   const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
   for (const link of document.querySelectorAll<HTMLAnchorElement>('a[href]')) {
-    if (link.closest('.language-switch') || link.hasAttribute('data-reading-return') || link.hasAttribute('data-stage-model') || link.hasAttribute('data-target-model')) continue;
+    if (link.hasAttribute('data-search-scope') || link.hasAttribute('data-discovery-group') || link.closest('.language-switch') || link.hasAttribute('data-reading-return') || link.hasAttribute('data-stage-model') || link.hasAttribute('data-target-model')) continue;
     const original = inheritedLinks.get(link);
     if (!context.hasLink) { if (original) { link.href = original; inheritedLinks.delete(link); } continue; }
     const url = new URL(original ?? link.href, location.href);
@@ -103,15 +102,4 @@ subscribeTarget(updateTargetDom);
 export function sharedTargetUrl(url: URL): string {
   url.search = withLinkPreference(url.searchParams, getTargetContext().preference).toString();
   return url.href;
-}
-
-const handbook = document.querySelector<HTMLElement>('.page > .header');
-if (handbook) {
-  const resize = () => {
-    const elements = ['.site-header', '.search-strip', '[data-target-summary]', '.handbook-crumbs'].map(selector => document.querySelector<HTMLElement>(selector));
-    handbook.style.setProperty('--sl-nav-height', `${elements.reduce((sum, item) => sum + (item?.offsetHeight ?? 0), 0)}px`);
-  };
-  const observer = new ResizeObserver(resize);
-  for (const selector of ['.site-header', '.search-strip', '[data-target-summary]', '.handbook-crumbs']) { const item = document.querySelector(selector); if (item) observer.observe(item); }
-  resize();
 }

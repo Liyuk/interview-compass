@@ -1,48 +1,70 @@
 ---
 import '../styles/global.css';
 import Icon from './Icon.astro';
-import { navLabel, pathFor, switchLocaleRoute, type RouteRef } from '../lib/routes';
+import { pathFor, switchLocaleRoute, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
 import { loadQuestions } from '../lib/site-data';
+import { siteNavigationFor } from '../lib/site-navigation';
 import TargetCount from './TargetCount.astro';
 
-interface Props { locale: Locale; active?: string; route?: RouteRef }
-const { locale, active = '', route = { type: 'home' } } = Astro.props;
+interface Props { locale: Locale; active?: string; route?: RouteRef; wiki?: boolean }
+const { locale, route = { type: 'home' } } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const other: Locale = en ? 'zh-CN' : 'en';
 const questions = await loadQuestions(locale);
-const nav = [
-  { key: 'scenarios', ref: { type: 'scenarios' } as RouteRef, label: navLabel('scenarios', locale) },
-  { key: 'questions', ref: { type: 'questions' } as RouteRef, label: navLabel('questions', locale) },
-  { key: 'framework', ref: { type: 'framework' } as RouteRef, label: en ? 'Questioning methods' : '提问方法' },
-  { key: 'guide', ref: { type: 'guide' } as RouteRef, label: navLabel('guide', locale) },
-  { key: 'browse', ref: { type: 'browse' } as RouteRef, label: navLabel('browse', locale) },
-  { key: 'capability-model', ref: { type: 'capability-model' } as RouteRef, label: navLabel('capabilityModel', locale) },
-];
+const nav = siteNavigationFor(route, locale, base);
 ---
 <script is:inline>
+  document.body.dataset.navigationReady = 'true';
   document.documentElement.dataset.targetPending = 'true';
   document.documentElement.dataset.targetEnabled = 'true';
   setTimeout(() => { delete document.documentElement.dataset.targetPending; document.querySelectorAll('[data-library-pending]').forEach(element => element.removeAttribute('data-library-pending')); }, 2500);
 </script>
 
+<noscript><style>.preparation-target-action,.target-status,.nav-toggle,.search-strip{display:none!important}.wiki-sidebar>details>nav{position:static!important;max-height:none!important;box-shadow:none!important}</style></noscript>
 <header class="site-header">
   <a class="wordmark" href={pathFor({ type: 'home' }, locale, base)}>
     <img src={`${base.endsWith('/') ? base : `${base}/`}logo.svg`} width="30" height="30" alt="" aria-hidden="true" />
     <span>Interview Compass</span>
   </a>
-  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">{en ? 'Menu' : '导航'} <Icon name="chevron-down" size={16} /></button>
-  <nav id="primary-navigation" class="primary-nav" aria-label={en ? 'Main navigation' : '主导航'}>
-    {nav.map((item) => <a href={pathFor(item.ref, locale, base)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>)}
-  </nav>
-  <button type="button" class="profile-trigger" data-profile-trigger>
-    <span data-profile-label>{en ? 'All questions' : '全部题目'}</span>
+    <button class="nav-toggle" data-site-navigation-toggle type="button" aria-expanded="false" aria-controls="primary-navigation">{en ? 'Menu' : '导航'} <Icon name="chevron-down" size={16} /></button>
+    <nav id="primary-navigation" class="primary-nav" data-site-navigation aria-label={en ? 'Main navigation' : '主导航'}>
+      {nav.map((item) => <a href={item.href} aria-current={item.current ? 'page' : undefined}>{item.label}</a>)}
+    </nav>
+  <div class="target-status">
+  <button type="button" class="profile-trigger" data-profile-trigger aria-expanded="false" aria-controls="target-status-panel">
+    <span data-profile-label>{en ? 'All questions · Target' : '全部题目 · 准备目标'}</span>
     <Icon name="chevron-down" size={16} />
   </button>
+  <script is:inline>
+    // Paint the saved target before first render; target-selector.ts refreshes it once roles load.
+    (function () {
+      try {
+        var pref = JSON.parse(localStorage.getItem('interview-compass.target.v1') || 'null');
+        if (!pref || pref.mode !== 'target' || !pref.target) return;
+        var cache = JSON.parse(localStorage.getItem('interview-compass.target-label.v1') || '{}');
+        var locale = document.documentElement.lang === 'en' ? 'en' : 'zh-CN';
+        var text = cache[locale] && cache[locale][pref.target.roleId + ':' + pref.target.stageId];
+        var label = document.querySelector('[data-profile-label]');
+        if (text && label) { label.textContent = text; label.closest('button').title = text; }
+      } catch (e) {}
+    })();
+  </script>
+<div id="target-status-panel" class="target-summary" data-target-summary hidden data-pagefind-ignore aria-label={en ? 'Preparation status' : '准备状态'}>
+  <div class="target-summary-inner">
+    <div class="target-summary-copy"><p class="target-summary-current"><span data-target-description></span><span class="target-summary-count"><TargetCount questions={questions} locale={locale} unit /></span></p>
+      <p data-target-storage-warning hidden>{en ? 'Could not save this preference. Your choice applies only to this page.' : '未能保存此选择，仅在当前页有效。'}</p>
+    </div>
+    <div class="target-summary-actions"><button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button><button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button><button type="button" data-adopt-target hidden>{en ? 'Save as my default' : '设为我的默认'}</button><button type="button" data-remove-link-target hidden>{en ? 'Remove link target' : '移除链接目标'}</button><a data-target-model hidden>{en ? 'Stage expectations' : '阶段要求'}<Icon name="arrow-up-right" size={14} /></a></div>
+  </div>
+</div>
+  </div>
   <dialog class="profile-dialog" data-profile-dialog aria-labelledby="profile-dialog-title" aria-describedby="profile-dialog-description">
     <h2 id="profile-dialog-title">{en ? 'Choose your preparation target' : '选择你的准备目标'}</h2>
     <p id="profile-dialog-description">{en ? 'For engineers: choose your specialization and target responsibility. Questions and search will show only reviewed matches. You can switch or explore everything at any time.' : '面向工程师，选择专业方向和准备承担的责任阶段。题目与搜索将只显示已审核的匹配内容，随时可以切换或查看全部。'}</p>
+    <p data-profile-error role="status" hidden>{en ? 'Preparation targets could not load. Retry or browse all questions.' : '准备目标暂时无法加载，请重试或先浏览全部题目。'}</p>
+    <button type="button" class="secondary-button" data-profile-retry hidden>{en ? 'Retry' : '重试加载'}</button>
     <label for="profile-role">{en ? 'Role type' : '岗位类型'}</label>
     <span class="select-control"><select id="profile-role"><option value="">{en ? 'Choose a role' : '选择岗位'}</option></select><Icon name="chevron-down" size={16} /></span>
     <label for="profile-stage">{en ? 'Target stage' : '目标阶段'}</label>
@@ -69,144 +91,6 @@ const nav = [
   </form>
   <div class="search-results" aria-live="polite" hidden></div>
 </div></div>
-<aside class="target-summary" data-target-summary hidden data-pagefind-ignore>
-  <div class="target-summary-inner">
-    <div class="target-summary-copy"><p class="target-summary-current"><span data-target-description></span><span class="target-summary-count"><TargetCount questions={questions} locale={locale} unit /></span></p>
-      <p data-target-storage-warning hidden>{en ? 'Could not save this preference. Your choice applies only to this page.' : '未能保存此选择，仅在当前页有效。'}</p>
-    </div>
-    <div class="target-summary-actions"><button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button><button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button><button type="button" data-adopt-target hidden>{en ? 'Save as my default' : '设为我的默认'}</button><button type="button" data-remove-link-target hidden>{en ? 'Remove link target' : '移除链接目标'}</button><a data-target-model hidden>{en ? 'Stage expectations' : '阶段要求'}<Icon name="arrow-up-right" size={14} /></a></div>
-  </div>
-</aside>
 
-<script>
-  import '../lib/target-dom';
-  import { initTargetSelector } from '../lib/target-selector';
-  import { pagefindFilters, withLinkPreference } from '../lib/target-preferences';
-  import { getTargetContext, subscribeTarget } from '../lib/target-state';
-  import { safeSearchResultHref } from '../lib/search-records';
 
-  initTargetSelector();
-  document.body.dataset.navigationReady = 'true';
-  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
-  toggle?.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') !== 'true';
-    toggle.setAttribute('aria-expanded', String(expanded));
-    document.querySelector('.site-header')?.classList.toggle('nav-open', expanded);
-    const starlightHeader = document.querySelector<HTMLElement>('.page > .header');
-    if (expanded && starlightHeader) starlightHeader.style.setProperty('--sl-nav-height', '404px');
-    else starlightHeader?.style.removeProperty('--sl-nav-height');
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') {
-      toggle.setAttribute('aria-expanded', 'false');
-      document.querySelector('.site-header')?.classList.remove('nav-open');
-      document.querySelector<HTMLElement>('.page > .header')?.style.removeProperty('--sl-nav-height');
-      toggle.focus();
-    }
-  });
-
-  const form = document.querySelector<HTMLFormElement>('.search-form');
-  const input = form?.querySelector<HTMLInputElement>('input');
-  const results = document.querySelector<HTMLElement>('.search-results');
-  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-  const lang = document.documentElement.lang;
-  const noResultsText = lang === 'en' ? 'No matching questions.' : '没有找到匹配的问题。';
-  const errorText = lang === 'en' ? 'Search is unavailable. Try again.' : '搜索暂时不可用，请重试。';
-  const languageLink = document.querySelector<HTMLAnchorElement>('.language-switch a');
-  if (languageLink) {
-    const transferableParams = ['q', 'role', 'scope', 'track', 'scenario', 'topic', 'format', 'capability', 'page', 'targetRole', 'targetStage', 'profile', 'profileRole', 'profileStage'];
-    const current = new URL(window.location.href);
-    const target = new URL(languageLink.href, current);
-    for (const key of transferableParams) {
-      const value = current.searchParams.get(key);
-      if (value !== null) target.searchParams.set(key, value);
-    }
-    if (current.hash) target.hash = current.hash;
-    languageLink.href = target.href;
-  }
-  type SearchData = { url: string; meta?: { title?: string }; excerpt?: string };
-  type SearchResult = { url: string; data: () => Promise<SearchData> };
-  type PagefindIndex = { search: (query: string, options: { filters: Record<string, string> }) => Promise<{ results: SearchResult[] }> };
-  let pagefind: PagefindIndex | undefined;
-  let timer: number | undefined;
-  let activeSearch = 0;
-
-  function showSearchMessage(message: string) {
-    if (!results) return;
-    const paragraph = document.createElement('p');
-    paragraph.className = 'search-empty';
-    paragraph.textContent = message;
-    results.replaceChildren(paragraph);
-    results.hidden = false;
-  }
-
-  async function search(query: string) {
-    const request = ++activeSearch;
-    const normalizedQuery = query.trim();
-    if (!results || !normalizedQuery) {
-      results?.replaceChildren();
-      if (results) results.hidden = true;
-      return;
-    }
-    try {
-      pagefind ??= await import(/* @vite-ignore */ `${base}/pagefind/pagefind.js`) as PagefindIndex;
-      const response = await pagefind.search(normalizedQuery, { filters: pagefindFilters(lang, getTargetContext()) });
-      if (request !== activeSearch) return;
-      const rankedResults = response.results.slice(0, 8);
-      const items = await Promise.all(rankedResults.map((item) => item.data()));
-      if (request !== activeSearch) return;
-      const links = items.flatMap((item) => {
-        const href = safeSearchResultHref(item.url, { origin: window.location.origin, basePath: base });
-        if (!href) return [];
-        const link = document.createElement('a');
-        link.className = 'search-result';
-        const linkUrl = new URL(href, location.origin);
-        if (getTargetContext().hasLink) linkUrl.search = withLinkPreference(linkUrl.searchParams, getTargetContext().preference).toString();
-        link.href = `${linkUrl.pathname}${linkUrl.search}${linkUrl.hash}`;
-        const title = document.createElement('strong');
-        title.textContent = item.meta?.title || item.url;
-        const excerpt = document.createElement('span');
-        excerpt.textContent = new DOMParser().parseFromString(item.excerpt ?? '', 'text/html').body.textContent ?? '';
-        link.append(title, excerpt);
-        return [link];
-      });
-      if (links.length) {
-        const allLink = document.createElement('a');
-        allLink.className = 'search-all';
-        const allUrl = new URL(form?.action ?? `${base}/search/`, location.origin); allUrl.searchParams.set('q', normalizedQuery);
-        if (getTargetContext().hasLink) allUrl.search = withLinkPreference(allUrl.searchParams, getTargetContext().preference).toString();
-        allLink.href = allUrl.href;
-        allLink.textContent = lang === 'en' ? 'View all matches' : '查看全部匹配';
-        results.replaceChildren(...links, allLink);
-        results.hidden = false;
-      } else showSearchMessage(noResultsText);
-    } catch {
-      if (request === activeSearch) showSearchMessage(errorText);
-    }
-  }
-
-  form?.addEventListener('submit', () => {
-    form.querySelectorAll('[data-profile-form-value]').forEach(item => item.remove());
-    if (!getTargetContext().hasLink) return;
-    const params = withLinkPreference(new URLSearchParams(), getTargetContext().preference);
-    for (const [name, value] of params) { const hidden = document.createElement('input'); hidden.type = 'hidden'; hidden.name = name; hidden.value = value; hidden.dataset.profileFormValue = ''; form.append(hidden); }
-  });
-  const initialQuery = new URLSearchParams(location.search).get('q');
-  const isSearchPage = document.body.dataset.routeType === 'search' || location.pathname.startsWith(`${base}/search/`);
-  if (input && initialQuery) { input.value = initialQuery; if (!isSearchPage) void search(initialQuery); }
-  subscribeTarget((_context, reset) => { if (reset) { activeSearch++; if (results) { results.replaceChildren(); results.hidden = true; } if (input?.value.trim()) void search(input.value); } });
-  input?.addEventListener('input', () => {
-    window.clearTimeout(timer);
-    if (!input.value.trim()) { void search(''); return; }
-    timer = window.setTimeout(() => void search(input.value), 160);
-  });
-  document.addEventListener('keydown', (event) => {
-    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); input?.focus(); }
-    if (event.key === 'Escape') {
-      activeSearch += 1;
-      window.clearTimeout(timer);
-      if (results) { results.replaceChildren(); results.hidden = true; }
-      input?.blur();
-    }
-  });
-</script>
+<script>import '../lib/masthead-client';</script>

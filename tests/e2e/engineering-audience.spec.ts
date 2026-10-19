@@ -5,6 +5,7 @@ test('preparation targets are engineering specializations while business expansi
   await expect(page.locator('.hero-copy')).toContainText('面向工程师');
   await expect(page.locator('.engineering-expansion')).toContainText('产品 sense、运营工作流理解、设计协作');
   await page.locator('[data-profile-trigger]').click();
+  await page.locator('[data-edit-target]').click();
   const roles = await page.locator('#profile-role option').evaluateAll(options => options.map(option => (option as HTMLOptionElement).value).filter(Boolean));
   expect(roles).toEqual(['engineering', 'frontend', 'backend', 'mobile', 'ai-engineer', 'data']);
   await expect(page.locator('#profile-role')).toContainText('通用工程');
@@ -19,9 +20,7 @@ test('commercial case explains engineering scope and keeps it in the external an
   await expect(page.locator('[data-engineering-context]')).toContainText('不要求拥有定价');
   await page.locator('[data-generate-analysis]').click();
   await expect(page.locator('#question-ai-prompt')).toHaveValue(/工程师从业务规则/);
-  const summary = page.locator('.target-summary-inner');
-  const search = page.locator('.search-container');
-  const lefts = await Promise.all([summary, search].map(item => item.evaluate(el => el.getBoundingClientRect().left + parseFloat(getComputedStyle(el).paddingLeft))));
-  expect(Math.abs(lefts[0] - lefts[1])).toBeLessThan(1);
+  await page.locator('[data-profile-trigger]').click();
+  await expect(page.locator('[data-target-summary]')).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
 });
