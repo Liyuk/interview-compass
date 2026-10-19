@@ -10,6 +10,7 @@ export type Crumb = { label: string; href?: string };
 
 export type RouteRef =
   | { type: 'home' }
+  | { type: 'preparation' | 'guide-capabilities' | 'guide-direction' }
   | { type: 'not-found' }
   | { type: 'browse' }
   | { type: 'questions' }
@@ -60,6 +61,9 @@ export function pathFor(ref: RouteRef, locale: Locale, base = ''): string {
   const root = prefix(locale);
   const route = (() => {
     switch (ref.type) {
+      case 'preparation': return `${root}/guide/`;
+      case 'guide-capabilities': return `${root}/guide/capabilities/`;
+      case 'guide-direction': return `${root}/guide/direction/`;
       case 'home': return `${root}/`;
       case 'not-found': return locale === 'en' ? `${root}/404/` : `${root}/404.html`;
       case 'browse': return `${root}/browse/`;
@@ -106,6 +110,9 @@ function leafName(domainId: string, leafId: string, locale: Locale) {
 
 export function titleFor(ref: RouteRef, locale: Locale): string {
   switch (ref.type) {
+    case 'preparation': return locale === 'en' ? 'Preparation guide' : '准备指南';
+    case 'guide-capabilities': return locale === 'en' ? 'Understand the capability framework' : '理解能力框架';
+    case 'guide-direction': return locale === 'en' ? 'Choose your preparation direction' : '确定准备方向';
     case 'home': return pick(labels.home, locale);
     case 'not-found': return locale === 'en' ? 'Page not found' : '页面不存在';
     case 'browse': return pick(labels.browse, locale);
@@ -140,19 +147,24 @@ export function titleFor(ref: RouteRef, locale: Locale): string {
 export function parentOf(ref: RouteRef): RouteRef | undefined {
   switch (ref.type) {
     case 'home': return undefined;
+    case 'preparation': return { type: 'home' };
+    case 'guide-capabilities': case 'guide-direction': return { type: 'preparation' };
     case 'not-found': return { type: 'home' };
-    case 'browse': case 'questions': case 'capabilities': case 'roles': case 'scenarios': case 'topics': case 'guide': case 'framework': return { type: 'home' };
-    case 'search': return { type: 'questions' };
+    case 'questions': return { type: 'home' };
+    case 'browse': case 'guide': case 'framework': return { type:'preparation' };
+    case 'capabilities': case 'roles': case 'topics': return {type:'browse'};
+    case 'scenarios': return {type:'guide-direction'};
+    case 'search': return { type: 'home' };
     case 'collections': return { type: 'questions' };
     case 'collection': return { type: 'collections' };
-    case 'capability-model': return { type: 'home' };
+    case 'capability-model': return { type: 'preparation' };
     case 'role-stage-model': case 'capability-model-stage': case 'capability-model-dimension': case 'capability-model-mapping': return { type: 'capability-model' };
     case 'domain': return { type: 'capabilities' };
     case 'leaf': return { type: 'domain', domain: ref.domain };
     case 'role': return { type: 'roles' };
-    case 'scenario': return { type: 'scenarios' };
+    case 'scenario': return { type: 'browse' };
     case 'topic': return { type: 'topics' };
-    case 'path': return { type: 'home' };
+    case 'path': return { type: 'scenarios' };
     case 'question': {
       const { domain, leaf } = splitCapability(ref.capability);
       return domain && leaf ? { type: 'leaf', domain: domain.id, leaf: leaf.id } : { type: 'questions' };
@@ -166,7 +178,9 @@ export function breadcrumbsFor(ref: RouteRef, locale: Locale, base = ''): Crumb[
   for (let current: RouteRef | undefined = ref; current; current = parentOf(current)) chain.unshift(current);
   const trail: RouteRef[] = ref.type === 'question'
     ? [chain[0], { type: 'questions' }, ...chain.filter((item) => item.type === 'domain' || item.type === 'leaf'), ref]
-    : chain;
+    : boardFor(ref) === 'preparation' && !chain.some(item => item.type === 'preparation')
+      ? [chain[0], { type: 'preparation' }, ...chain.slice(1)]
+      : chain;
   return trail.map((item, index) => ({
     label: item.type === 'question' && item.title.length > 36 ? (locale === 'en' ? 'Question detail' : '题目详情') : titleFor(item, locale),
     href: index === trail.length - 1 ? undefined : pathFor(item, locale, base),
@@ -198,3 +212,11 @@ export const facetRoute = (kind: FacetKind, id: string): RouteRef | undefined =>
 };
 
 export const facetTitle = (kind: FacetKind, locale: Locale) => pick(facetMeta[kind].name, locale);
+
+/** One source of truth for top-level content ownership; search is a global tool. */
+export function boardFor(ref: RouteRef): 'home' | 'preparation' | 'questions' | null {
+  if (ref.type === 'home') return 'home';
+  if (ref.type === 'search' || ref.type === 'not-found') return null;
+  if (['questions','question','collections','collection'].includes(ref.type)) return 'questions';
+  return 'preparation';
+}

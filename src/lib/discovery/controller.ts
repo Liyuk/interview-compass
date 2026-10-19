@@ -67,6 +67,11 @@ function read(): BrowseQuery {
     history.replaceState(null, '', corrected);
   }
   query.target = getTargetContext();
+  for (const a of document.querySelectorAll<HTMLAnchorElement>('[data-search-scope]')) {
+    const selected = a.dataset.searchScope as BrowseQuery['searchScope'];
+    a.href = serializeBrowseQuery({...query, searchScope:selected, page:1},new URL(location.href));
+    if (query.searchScope === selected) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+  }
   keyword.value = query.q; scope.value = query.searchScope; sort.value = query.sort;
   for (const select of facetSelects) select.value = query.facets[select.name as FacetKey] ?? '';
   if (Object.keys(query.facets).length) document.querySelector<HTMLDetailsElement>('[data-discovery-facets]')!.open = true;
@@ -202,7 +207,7 @@ async function render() {
 function submitControls() {
   const values = new FormData(form);
   const query = parseBrowseQuery(new URL(location.href), { base, locale }).query; query.target = getTargetContext();
-  query.q = String(values.get('q') ?? '').trim(); query.searchScope = String(values.get('searchScope')) as BrowseQuery['searchScope']; query.sort = String(values.get('sort')) as BrowseQuery['sort'];
+  query.q = String(document.body.dataset.routeType === 'search' ? document.querySelector<HTMLInputElement>('#site-search')?.value ?? '' : values.get('q') ?? '').trim(); query.searchScope = String(values.get('searchScope')) as BrowseQuery['searchScope']; query.sort = String(values.get('sort')) as BrowseQuery['sort'];
   query.facets = Object.fromEntries(facetSelects.filter(select => select.value).map(select => [select.name, select.value])); query.page = 1;
   write(query); void render();
 }
@@ -223,6 +228,7 @@ document.querySelector('#share-filter-link')?.addEventListener('click', async ()
   catch { const input = document.querySelector<HTMLInputElement>('#share-filter-value')!; input.hidden = false; input.value = href; input.focus(); input.select(); message.textContent = en ? 'Copy the selected link.' : '可手动复制已选中的链接。'; }
 });
 document.querySelector<HTMLFormElement>('.search-form')?.addEventListener('submit', event => {
+  if (document.body.dataset.routeType !== 'search') return;
   event.preventDefault(); const value = document.querySelector<HTMLInputElement>('#site-search')?.value.trim() ?? ''; const query = read(); query.q = value; query.page = 1; write(query); void render();
 });
 window.addEventListener('popstate', () => void render());

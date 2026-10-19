@@ -24,7 +24,7 @@ const title = titleFor(route, locale);
 const currentNav = activeNavFor(route);
 const active = ['roles', 'topics', 'capabilities'].includes(currentNav) ? 'browse' : currentNav;
 const presentation = pagePresentationFor(route);
-const hasSidebar = Boolean(presentation.section);
+const hasSidebar = Boolean(presentation.section) || route.type === 'search';
 const hasReadingTools = presentation.kind === 'section' || presentation.kind === 'article';
 const crumbs = breadcrumbsFor(route, locale, base);
 ---

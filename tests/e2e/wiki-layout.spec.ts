@@ -12,9 +12,11 @@ test('all route families retain global navigation with task appropriate content'
       await expect(page.locator('main h1').first()).toBeVisible();
       const primary = page.locator('#primary-navigation');
       await expect(primary).toBeVisible();
-      await expect(primary.locator('a')).toHaveCount(6);
-      if (route) await expect(primary.locator('[aria-current="page"]')).toHaveCount(1);
-      if (route) {
+      await expect(primary.locator('a')).toHaveCount(3);
+      await expect(primary.locator('[aria-current="page"]')).toHaveCount(route.startsWith('search/') ? 0 : 1);
+      if (route.startsWith('search/')) {
+        await expect(page.locator('[data-search-scope]')).toHaveCount(3);
+      } else if (route) {
         const sidebar = page.locator('[data-wiki-sidebar]');
         await expect(sidebar).toBeVisible();
         const activeHref = await primary.locator('[aria-current=page]').getAttribute('href');
@@ -71,7 +73,7 @@ test('static navigation is usable without JavaScript', async ({browser,baseURL})
   const context=await browser.newContext({javaScriptEnabled:false});
   const page=await context.newPage();
   await page.goto(`${baseURL}questions/`);
-  await expect(page.locator('#primary-navigation a')).toHaveCount(6);
+  await expect(page.locator('#primary-navigation a')).toHaveCount(3);
   await expect(page.locator('#primary-navigation a').first()).toBeVisible();
   await expect(page.locator('#question-list > li').first()).toBeVisible();
   await context.close();

@@ -38,7 +38,7 @@ test('a late failed query cannot replace a newer successful response', async ({ 
     return { results: options.filters.kind === 'questions' ? [{ id: 'new', data: async () => ({url:'/interview-compass/questions/h-attribution-team-vs-personal/', meta:{title:'New result'}}) }] : [] };
   }` }));
   await page.goto('search/?q=slow&profile=all');
-  await page.locator('#filters [name=q]').fill('new');
+  await page.locator('#site-search').fill('new');
   await page.locator('#filters').getByRole('button', { name: '查找', exact: true }).click();
   await expect(page.locator('[data-discovery-results]')).toContainText('New result');
   await page.waitForTimeout(850);

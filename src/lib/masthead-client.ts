@@ -60,6 +60,7 @@ function showSearchMessage(message: string) {
 }
 
 async function search(query: string) {
+  if (document.body.dataset.routeType === 'search') { if (results) results.hidden = true; return; }
   const request = ++activeSearch;
   const normalizedQuery = query.trim();
   if (!results || !normalizedQuery) {
@@ -71,7 +72,7 @@ async function search(query: string) {
     pagefind ??= await import(/* @vite-ignore */ `${base}/pagefind/pagefind.js`) as PagefindIndex;
     const adapter = createPagefindAdapter(pagefind);
     const query = parseBrowseQuery(new URL(location.href), { base, locale: lang === 'en' ? 'en' : 'zh-CN' }).query;
-    query.q = normalizedQuery; query.target = getTargetContext(); query.page = 1;
+    query.q = normalizedQuery; query.searchScope = 'all'; query.facets = {}; query.target = getTargetContext(); query.page = 1;
     const response = await createDiscovery({ catalog: adapter, pagefind: adapter }).search(query, { pageSize: 8 });
     if (request !== activeSearch) return;
     const items = [...response.docs.items.map(item => ({ ...item, group: lang === 'en' ? 'Document' : '文档' })), ...response.questions.items.map(item => ({ ...item, group: lang === 'en' ? 'Question' : '题目' }))];

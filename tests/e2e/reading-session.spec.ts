@@ -47,8 +47,8 @@ test('a local collection can be reordered, resumed, and edited without jumping a
 
 test('ordinary documents continue through their authored directory order', async ({ page }) => {
   await page.goto('handbook/?profile=all');
-  await page.getByRole('navigation',{name:'继续阅读',exact:true}).getByRole('link',{name:/下一页.*提问框架/}).click();
-  await expect(page).toHaveURL(/\/framework\//);
+  await page.getByRole('navigation',{name:'继续阅读',exact:true}).getByRole('link',{name:/下一页.*理解能力框架/}).click();
+  await expect(page).toHaveURL(/\/guide\/capabilities\//);
   await expect(page.getByRole('navigation',{name:'继续阅读',exact:true}).getByRole('link',{name:/上一页.*使用说明/})).toBeVisible();
 });
 

@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Astro + Starlight, with bilingual Chinese-default/English routes, Pagefind search, Radix Themes as the site-wide visual system, Radix Primitives for accessible interactions, and GitHub Actions deployment to GitHub Pages.
+Astro + Starlight, with bilingual Chinese-default/English routes, Pagefind search, shared CSS tokens and native accessible HTML controls, and GitHub Actions deployment to GitHub Pages.
 
 ## Users
 
@@ -33,7 +33,7 @@ The main entry paths are direct question search and topic browsing. A task-first
 - Do not provide model answers, automatic scoring, aggregate candidate scores, or hiring recommendations.
 - General frameworks and role-specific frameworks coexist; cross-link questions rather than duplicating them for each entry path.
 - Include technical foundations, role skills, engineering practice, domain modeling, product and end-to-end thinking, delivery and management, operations, and professional growth.
-- Use Radix Themes as the site-wide visual and component baseline, and Radix Primitives for interactions that need accessible behavior. Map Starlight surfaces into the same color, type, spacing, and control system; do not mix unrelated component styles or add decorative patterns without a product reason.
+- Use shared CSS tokens, the authored Icon sprite, and native links, buttons, details, dialogs and selects as the interface baseline. Map Starlight surfaces into the same color, type, spacing, and control system; do not mix unrelated component styles or add decorative patterns without a product reason.
 - Deployment target is GitHub Pages; the design should work as a static site unless a demonstrated requirement changes that constraint.
 - External reference material is research input. Preserve attribution and license boundaries; do not publish archived source snapshots as site content.
 
@@ -57,3 +57,7 @@ Use the name “Interview Compass.” The site is a practical, question-led refe
 - Separate shared capability frameworks from role-specific knowledge while allowing useful cross-links.
 - Keep classification dimensions independent so one question can appear in several relevant views.
 - Make sources and content provenance traceable.
+
+## Preparation and discovery
+
+Primary navigation is Home, Preparation guide and Question bank. Global search is a persistent utility. The guide organizes getting started, capabilities, preparation direction, role expectations, methods and classification; question browsing reuses the same independent facets. The guide recommends a reading sequence and supports direct entry. Targets mean the role and responsibility being prepared for or assessed; context remains an independent filter.

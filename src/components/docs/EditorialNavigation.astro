@@ -7,7 +7,7 @@ interface Props { route: RouteRef; locale: Locale }
 const { route, locale } = Astro.props;
 const registry = await loadKnowledgeRegistry();
 const id = contentIdForRoute(route);
-const siblings = registry.navigation(id,locale).siblings.filter(item => item.href && ['guide','method','concept','path','stage-reference'].includes(item.kind));
+const siblings = registry.navigation(id,locale).siblings.filter(item => item.contentId !== 'questions' && item.href && ['guide','method','concept','path','stage-reference','index'].includes(item.kind));
 const position = siblings.findIndex(item => item.contentId === id);
 const previous = position > 0 ? siblings[position-1] : undefined;
 const next = position >= 0 ? siblings[position+1] : undefined;

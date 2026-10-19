@@ -29,7 +29,7 @@ const facetOptions = filterKinds.map((kind) => {
 }).filter((group) => group.options.length > 0);
 ---
 <SiteLayout locale={locale} route={{ type: routeType }} description={en ? 'Browse and filter every published question.' : '浏览并筛选所有已发布的问题。'}>
-  <nav class="library-mode-switch" aria-label={en ? 'Question library modes' : '题库入口'}>
+  <nav hidden={routeType === 'search'} class="library-mode-switch" aria-label={en ? 'Question library modes' : '题库入口'}>
     <a href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'Curated sets' : '精选题单'}</a>
     <a href={pathFor({ type: 'questions' }, locale, base)} aria-current="page">{en ? 'Full library' : '全量题库'}</a>
   </nav>
@@ -38,7 +38,7 @@ const facetOptions = filterKinds.map((kind) => {
 
   <form data-target-content class="question-filters" id="filters" aria-label={en ? 'Filter questions' : '筛选问题'}>
     <div class="filters discovery-query">
-      <label><span>{en ? 'Keywords' : '关键词'}</span><input type="search" name="q" aria-label={en ? 'Discovery keywords' : '检索关键词'} /></label>
+      <label hidden={routeType === 'search'}><span>{en ? 'Keywords' : '关键词'}</span><input type={routeType === 'search' ? 'hidden' : 'search'} name="q" aria-label={en ? 'Discovery keywords' : '检索关键词'} /></label>
       <label><span>{en ? 'Content' : '内容类型'}</span><select name="searchScope"><option value="all">{en ? 'All content' : '全部内容'}</option><option value="docs">{en ? 'Documents and methods' : '文档与方法'}</option><option value="questions">{en ? 'Questions' : '题目'}</option></select></label>
       <label><span>{en ? 'Order' : '排序'}</span><select name="sort"><option value="relevance">{en ? 'Recommended order' : '推荐顺序'}</option><option value="title">{en ? 'Title' : '标题'}</option></select></label>
       <button type="submit">{en ? 'Find' : '查找'}</button>

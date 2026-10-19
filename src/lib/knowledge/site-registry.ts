@@ -30,13 +30,17 @@ async function build(): Promise<KnowledgeRegistry> {
     };
     add({ type: 'home' }, 'index', undefined, true);
     add({ type: 'not-found' }, 'index', undefined, true);
-    add({ type: 'guide' }, 'guide');
-    add({ type: 'framework' }, 'method');
+    const preparation = add({type:'preparation'},'guide');
+    add({type:'guide'},'guide',preparation);
+    add({type:'guide-capabilities'},'guide',preparation);
+    add({type:'guide-direction'},'guide',preparation);
+    const stages = add({type:'capability-model'},'stage-reference',preparation);
+    add({type:'framework'},'method',preparation);
+    const browse = add({type:'browse'},'index',preparation);
     const questions = add({ type: 'questions' }, 'index');
-    add({ type: 'search' }, 'index', questions);
+    add({ type: 'search' }, 'index', undefined, true);
     const collections = add({ type: 'collections' }, 'index', questions);
     for (const collection of questionCollections) add({ type: 'collection', id: collection.id }, collection.kind === 'candidate-guide' ? 'guide' : 'collection', collections);
-    const browse = add({ type: 'browse' }, 'index');
     const capabilities = add({ type: 'capabilities' }, 'index', browse);
     for (const domain of domains) {
       const domainId = add({ type: 'domain', domain: domain.id }, 'concept', capabilities);
@@ -50,9 +54,8 @@ async function build(): Promise<KnowledgeRegistry> {
     const scenarios = group('scenario-categories', '使用场景', 'Use contexts', browse);
     const usedScenarios = new Set(records.filter(item => item.locale === locale).flatMap(item => item.scenarios));
     for (const scenario of facetDefinitions.scenarios.filter(item => usedScenarios.has(item.id))) add({ type: 'scenario', id: scenario.id }, 'index', scenarios);
-    const paths = add({ type: 'scenarios' }, 'path');
+    const paths = add({ type: 'scenarios' }, 'path', 'guide-direction');
     for (const path of crossDomainPaths) add({ type: 'path', id: path.id }, 'path', paths);
-    const stages = add({ type: 'capability-model' }, 'stage-reference');
     const roleStages = group('role-stage-guides', '岗位与阶段', 'Role and stage', stages);
     for (const role of audienceRoles) add({ type: 'role-stage-model', role: role.id }, 'stage-reference', roleStages);
     const sharedStages = group('shared-stages', '共用阶段模型', 'Shared stage model', stages);

@@ -22,7 +22,7 @@ const nav = siteNavigationFor(route, locale, base);
   setTimeout(() => { delete document.documentElement.dataset.targetPending; document.querySelectorAll('[data-library-pending]').forEach(element => element.removeAttribute('data-library-pending')); }, 2500);
 </script>
 
-<noscript><style>.target-status,.nav-toggle,.search-strip{display:none!important}.wiki-sidebar>details>nav{position:static!important;max-height:none!important;box-shadow:none!important}</style></noscript>
+<noscript><style>.preparation-target-action,.target-status,.nav-toggle,.search-strip{display:none!important}.wiki-sidebar>details>nav{position:static!important;max-height:none!important;box-shadow:none!important}</style></noscript>
 <header class="site-header">
   <a class="wordmark" href={pathFor({ type: 'home' }, locale, base)}>
     <img src={`${base.endsWith('/') ? base : `${base}/`}logo.svg`} width="30" height="30" alt="" aria-hidden="true" />

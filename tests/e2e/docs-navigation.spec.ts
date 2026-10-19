@@ -6,8 +6,8 @@ test('readers change boards through global navigation and see only local entries
   const tree = page.getByRole('navigation', { name: '板块目录', exact: true });
   await expect(tree).toBeVisible();
   await expect(tree.getByRole('link', { name: '使用说明', exact: true })).toHaveAttribute('aria-current', 'page');
-  await expect(tree.getByRole('link', { name: '提问框架', exact: true })).toHaveCount(0);
-  await page.locator('#primary-navigation').getByRole('link', { name: '提问方法', exact: true }).click();
+  await expect(tree.getByRole('link', { name: '提问框架', exact: true })).toBeVisible();
+  await tree.getByRole('link', { name: '提问框架', exact: true }).click();
   await expect(page).toHaveURL(/\/framework\/$/);
   await expect(page.locator('main h1')).toBeVisible();
   await expect(page.getByRole('navigation', { name: '板块目录', exact: true }).getByRole('link', { name: '提问框架', exact: true })).toHaveAttribute('aria-current', 'page');
@@ -56,6 +56,6 @@ test('question lists and articles keep the same local board navigation', async (
     expect(await board.locator('.document-tree-list a').evaluateAll(nodes=>nodes.map(node=>new URL((node as HTMLAnchorElement).href).pathname))).toEqual(links);
     expect((await board.boundingBox())!.x).toBe(before!.x);
     await expect(board.locator('a[href*="/capabilities/value-direction/prioritization/"]')).toBeVisible();
-    await expect(page.locator('#primary-navigation a')).toHaveCount(6);
+    await expect(page.locator('#primary-navigation a')).toHaveCount(3);
   }
 });

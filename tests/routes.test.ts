@@ -45,7 +45,7 @@ describe('route model', () => {
     expect(pathFor({ type: 'guide' }, 'zh-CN', base)).toBe('/interview-compass/handbook/');
     expect(pathFor({ type: 'role-stage-model', role: 'product' }, 'en', base)).toBe('/interview-compass/en/capability-model/roles/product/');
     expect(activeNavFor({ type: 'role-stage-model', role: 'product' })).toBe('capability-model');
-    expect(breadcrumbsFor({ type: 'role-stage-model', role: 'product' }, 'zh-CN', base).map(c => c.label)).toEqual(['首页', '阶段能力', '产品 · 阶段能力']);
+    expect(breadcrumbsFor({ type: 'role-stage-model', role: 'product' }, 'zh-CN', base).map(c => c.label)).toEqual(['首页', '准备指南', '阶段能力', '产品 · 阶段能力']);
   });
 
   it('models localized not-found pages as wiki routes without a misleading current section', () => {
@@ -71,9 +71,9 @@ describe('route model', () => {
   });
 
   it('uses the natural hierarchy for facet and capability pages', () => {
-    expect(breadcrumbsFor({ type: 'role', id: 'product' }, 'zh-CN', base).map((crumb) => crumb.label)).toEqual(['首页', '岗位导航', '产品']);
+    expect(breadcrumbsFor({ type: 'role', id: 'product' }, 'zh-CN', base).map((crumb) => crumb.label)).toEqual(['首页', '准备指南', '分类索引', '岗位导航', '产品']);
     expect(breadcrumbsFor({ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' }, 'zh-CN', base).map((crumb) => crumb.label))
-      .toEqual(['首页', '能力地图', '交付执行与持续运营', '容量与依赖']);
+      .toEqual(['首页', '准备指南', '分类索引', '能力地图', '交付执行与持续运营', '容量与依赖']);
   });
 
   it('does not change a question trail when the reader came from a role page', () => {
@@ -93,7 +93,7 @@ describe('route model', () => {
     expect(activeNavFor({ type: 'search' })).toBe('questions');
     expect(activeNavFor({ type: 'framework' })).toBe('framework');
     expect(activeNavFor({ type: 'guide' })).toBe('guide');
-    expect(breadcrumbsFor({ type: 'framework' }, 'en').map((crumb) => crumb.label)).toEqual(['Home', 'Questioning framework']);
+    expect(breadcrumbsFor({ type: 'framework' }, 'en').map((crumb) => crumb.label)).toEqual(['Home', 'Preparation guide', 'Questioning framework']);
     expect(activeNavFor(question)).toBe('questions');
     expect(activeNavFor({ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' })).toBe('capabilities');
     expect(activeNavFor({ type: 'scenario', id: 'promotion' })).toBe('scenarios');

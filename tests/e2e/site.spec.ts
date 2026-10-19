@@ -3,27 +3,28 @@ import { expect, test } from './all-questions-fixture';
 const QUESTION = 'questions/prioritization-limited-resources/';
 
 
-test('home starts with goals and keeps category and curated entry points', async ({ page }) => {
+test('home starts with preparation reading and keeps direct question entry points', async ({ page }) => {
   await page.goto('./');
   await expect(page.locator('#site-search')).toBeVisible();
-  await expect(page.locator('.hero-primary')).toHaveText(/按目标开始/);
+  await expect(page.locator('.hero-primary')).toHaveText(/从准备指南开始/);
   await expect(page.locator('.hero-entry')).toHaveCount(4);
   await page.locator('.hero-primary').click();
-  await page.locator('#interviewer > summary').click();
-  await expect(page.locator('#interviewer')).toHaveAttribute('open', '');
-  await expect(page.locator('#interviewer .scenario-steps')).toBeVisible();
+  await expect(page.locator('main h1')).toHaveText('准备指南');
+  await page.locator('main').getByRole('link',{name:'确定准备方向',exact:true}).first().click();
+  await expect(page.locator('main h1')).toHaveText('确定准备方向');
 });
 
 test('primary navigation separates goals, questions, methods, guide, categories and stages', async ({ page }) => {
   await page.goto('./');
   if (await page.locator('.nav-toggle').isVisible()) await page.locator('.nav-toggle').click();
-  await expect(page.locator('.primary-nav a')).toHaveText(['目标路径', '面试题库', '提问方法', '使用说明', '分类索引', '阶段能力']);
-  await page.locator('.primary-nav').getByRole('link', { name: '分类索引' }).click();
+  await expect(page.locator('.primary-nav a')).toHaveText(['首页', '准备指南', '面试题库']);
+  await page.locator('.primary-nav').getByRole('link', { name: '准备指南' }).click();
+  await page.locator('main').getByRole('link',{name:'分类与查阅',exact:true}).click();
   await page.locator('.browse-index').getByRole('link', { name: /主题索引/ }).click();
   await expect(page).toHaveURL(/\/topics\/$/);
   await page.goto('en/');
   if (await page.locator('.nav-toggle').isVisible()) await page.locator('.nav-toggle').click();
-  await expect(page.locator('.primary-nav a')).toHaveText(['Goal paths', 'Question bank', 'Questioning methods', 'How to use', 'Browse', 'Stage expectations']);
+  await expect(page.locator('.primary-nav a')).toHaveText(['Home', 'Preparation guide', 'Question bank']);
 });
 
 test('handbook uses the shared knowledge rail, Starlight TOC, search, language and footer', async ({ page }) => {
@@ -365,7 +366,8 @@ test('English results are selected before the visible-result limit', async ({ pa
   await page.goto('en/?searchScope=questions');
   await page.locator('#site-search').fill('AI');
   const resultLinks = page.locator('.search-results .search-result');
-  await expect(resultLinks).toHaveCount(8);
+  await expect(page.locator('.search-results .search-result[href*="/en/questions/"]')).toHaveCount(8);
+  expect(await resultLinks.count()).toBeLessThanOrEqual(16);
   const hrefs = await resultLinks.evaluateAll((links) => links.map((link) => (link as HTMLAnchorElement).getAttribute('href')));
   expect(hrefs.length).toBeGreaterThan(0);
   expect(hrefs.every((href) => href?.includes('/interview-compass/en/'))).toBe(true);
@@ -512,7 +514,7 @@ test('skip link and navigation are keyboard reachable', async ({ page }) => {
     await page.keyboard.press('Enter');
   }
   await expect(page.getByRole('navigation', { name: '主导航' }).getByRole('link')).toHaveText([
-    '目标路径', '面试题库', '提问方法', '使用说明', '分类索引', '阶段能力',
+    '首页', '准备指南', '面试题库',
   ]);
 });
 

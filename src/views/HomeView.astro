@@ -27,7 +27,7 @@ const entries = [
       <h1 id="home-title" class="page-title">{en ? 'Find the question. Understand what it reveals.' : '找到问题，也看懂它想了解什么。'}</h1>
       <p class="intro">{en ? 'For engineers preparing for interviews, promotion, or technical management. Compare approaches, examine evidence, and explain your contribution—from technical depth to business understanding.' : '面向工程师的面试、晋升与技术管理。从技术深度到业务理解，用一小组相关问题，比较思路、核实证据、说明自己的贡献。'}</p>
       <div class="hero-actions">
-        <a class="hero-primary" href={pathFor({ type: 'scenarios' }, locale, base)}>{en ? 'Choose your goal' : '按目标开始'} <Icon name="arrow-up-right" size={17} /></a>
+        <a class="hero-primary" href={pathFor({ type: 'preparation' }, locale, base)}>{en ? 'Start with the preparation guide' : '从准备指南开始'} <Icon name="arrow-up-right" size={17} /></a>
         <a class="hero-secondary" href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'Curated sets' : '从精选题单开始'}</a>
       </div>
       <p class="hero-count">{en ? `Library total: ${questions.length} questions · Chinese and English · Explore only what you need` : `题库总量 ${questions.length} 道 · 中英双语 · 按需选择，不必读完整库`}</p>

@@ -8,16 +8,16 @@ describe('task based page presentation', () => {
     expect(pagePresentationFor({ type: 'search' }).kind).toBe('discovery');
     expect(pagePresentationFor({ type: 'question', questionId: 'q', capability: 'x', title: 'q' }).kind).toBe('article');
     expect(pagePresentationFor({ type: 'home' }).kind).toBe('home');
-    expect(pagePresentationFor({ type: 'role', id: 'frontend' })).toEqual({ kind: 'section', section: 'browse' });
-    expect(pagePresentationFor({ type: 'capability-model' }).section).toBe('stages');
+    expect(pagePresentationFor({ type: 'role', id: 'frontend' })).toEqual({ kind: 'section', section: 'preparation' });
+    expect(pagePresentationFor({ type: 'capability-model' }).section).toBe('preparation');
   });
-  it('keeps six global destinations and highlights the parent board', () => {
+  it('keeps three global destinations and highlights the parent board', () => {
     for (const locale of ['zh-CN', 'en'] as const) {
       const links = siteNavigationFor({ type: 'path', id: 'business-planning' }, locale, '/interview-compass/');
-      expect(links).toHaveLength(6);
-      expect(links.filter(link => link.current).map(link => link.key)).toEqual(['scenarios']);
+      expect(links).toHaveLength(3);
+      expect(links.filter(link => link.current).map(link => link.key)).toEqual(['preparation']);
       expect(links.every(link => link.href.startsWith(`/interview-compass/${locale === 'en' ? 'en/' : ''}`))).toBe(true);
-      expect(siteNavigationFor({ type: 'topic', id: 'planning' }, locale, '').filter(link => link.current).map(link => link.key)).toEqual(['browse']);
+      expect(siteNavigationFor({ type: 'topic', id: 'planning' }, locale, '').filter(link => link.current).map(link => link.key)).toEqual(['preparation']);
     }
   });
 });
