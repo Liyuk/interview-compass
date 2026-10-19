@@ -66,7 +66,6 @@ function read(): BrowseQuery {
     if (query.page === 1) corrected.searchParams.delete('page'); else corrected.searchParams.set('page', String(query.page));
     history.replaceState(null, '', corrected);
   }
-  if (!query.q && document.body.dataset.routeType === 'questions' && !new URL(location.href).searchParams.has('searchScope')) query.searchScope = 'questions';
   query.target = getTargetContext();
   keyword.value = query.q; scope.value = query.searchScope; sort.value = query.sort;
   for (const select of facetSelects) select.value = query.facets[select.name as FacetKey] ?? '';
@@ -155,6 +154,7 @@ async function render() {
   try {
     const result = await discovery.search(query);
     if (request !== version) return;
+    for (const select of facetSelects) select.disabled = false;
     renderGroup(list, result.questions, query, true);
     renderGroup(docsList, result.docs, query, false);
     docs.hidden = result.docs.total === 0;

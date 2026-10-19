@@ -61,3 +61,15 @@ test('keyword search retains the full resolved order across a page boundary', as
   await page.locator('[data-discovery-results] > li > a').last().click();
   await expect(page.locator('[data-reading-next]')).toHaveAttribute('href',expected!);
 });
+
+test('all return links retain the original results after moving and translating', async ({ page }) => {
+  await page.goto('questions/?page=2&profile=all');
+  await expect(page.locator('#page-status')).toContainText('第 2 /');
+  await page.locator('#question-list > li a').first().click();
+  await page.locator('[data-reading-next]').click();
+  const source = '/interview-compass/questions/?page=2&profile=all';
+  await expect(page.locator('[data-session-return]')).toHaveAttribute('href', source);
+  for (const link of await page.locator('[data-reading-return]').all()) await expect(link).toHaveAttribute('href', source);
+  await page.getByRole('link', {name:'EN',exact:true}).click();
+  for (const link of await page.locator('[data-reading-return]').all()) await expect(link).toHaveAttribute('href', '/interview-compass/en/questions/?page=2&profile=all');
+});

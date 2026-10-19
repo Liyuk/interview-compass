@@ -259,6 +259,7 @@ test('footer publishes copyright and the separate code and content licenses', as
 
 test('question library filters combine, update the shareable URL, and clear', async ({ page }) => {
   await page.goto('questions/');
+  await expect(page.locator('#result-count')).toContainText(/^\d+ 道问题/);
   const total = Number((await page.locator('#result-count').innerText()).match(/^\d+/)?.[0]);
   expect(total).toBeGreaterThan(10);
   if (!await page.locator('select[name="scenario"]').isVisible()) await page.locator('[data-discovery-facets] > summary').click();
@@ -266,15 +267,17 @@ test('question library filters combine, update the shareable URL, and clear', as
   await page.locator('select[name="role"]').selectOption('frontend');
   await expect(page).toHaveURL(/scenario=promotion/);
   await expect(page).toHaveURL(/role=frontend/);
+  await expect(page.locator('[data-discovery-results]')).not.toHaveAttribute('aria-busy', 'true');
+  await expect(page.locator('#result-count')).toContainText(/^\d+ 道问题/);
   const filtered = Number((await page.locator('#result-count').innerText()).match(/^\d+/)?.[0]);
   expect(filtered).toBeGreaterThan(0);
   expect(filtered).toBeLessThan(total);
   await expect(page.locator('#result-count')).toContainText(String(filtered));
   await page.reload();
   await expect(page.locator('select[name="role"]')).toHaveValue('frontend');
-  expect(await page.locator('#question-list > li:visible').count()).toBe(Math.min(50, filtered));
+  await expect(page.locator('#question-list > li:visible')).toHaveCount(Math.min(50, filtered));
   await page.getByRole('button', { name: '清除筛选' }).click();
-  expect(await page.locator('#question-list > li:visible').count()).toBe(Math.min(50, total));
+  await expect(page.locator('#question-list > li:visible')).toHaveCount(Math.min(50, total));
 });
 
 test('question library keeps common filters visible and reveals advanced filters on demand', async ({ page }) => {

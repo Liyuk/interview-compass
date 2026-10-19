@@ -39,6 +39,7 @@ function render() {
     }
     const source = navigation.querySelector<HTMLAnchorElement>('[data-session-return]')!;
     source.href = state.source || `${prefix}collections/`;
+    if (state.source) document.querySelectorAll<HTMLAnchorElement>('[data-reading-return]').forEach(link => { link.href = state.source!; link.hidden = false; });
     navigation.querySelector('[data-reading-position]')!.textContent = state.position >= 0
       ? (en ? `Question ${state.position + 1} of ${state.questionIds.length}` : `本次集合第 ${state.position + 1} / ${state.questionIds.length} 题`)
       : (en ? 'This question is no longer in this set. Return to choose another.' : '当前题已不在本次集合中，可以返回集合重新选择。');

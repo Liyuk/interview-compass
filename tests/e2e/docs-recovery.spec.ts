@@ -95,3 +95,17 @@ test('old chapter links reveal the shared reference and remain readable', async 
   await expect(page.locator('#benefits-h')).toBeVisible();
   await expect(page.locator('details.shared-question-framework')).toHaveAttribute('open','');
 });
+
+test('successful browsing restores filters after recovering without the retry button', async ({ page }) => {
+  await page.route('**/data/questions/*.json', route => route.fulfill({status:503,body:'unavailable'}));
+  await page.goto('questions/?profile=all');
+  await expect(page.locator('#discovery-error')).toBeVisible();
+  await expect(page.locator('select[name=role]')).toBeDisabled();
+  await page.unroute('**/data/questions/*.json');
+  await page.locator('select[name=searchScope]').selectOption('docs');
+  await expect(page.locator('#document-results').getByRole('link',{name:'使用说明',exact:true})).toBeVisible();
+  await page.locator('select[name=searchScope]').selectOption('questions');
+  await expect(page.locator('#result-count')).toContainText(/^\d+ 道问题/);
+  await expect(page.locator('#discovery-error')).toBeHidden();
+  await expect(page.locator('select[name=role]')).toBeEnabled();
+});

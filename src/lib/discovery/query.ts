@@ -14,7 +14,8 @@ export function parseBrowseQuery(url: URL, context: QueryContext): QueryResult {
   let page = rawPage && /^[1-9][0-9]*$/.test(rawPage) && Number.isSafeInteger(Number(rawPage)) ? Number(rawPage) : 1;
   if (rawPage && String(page) !== rawPage) diagnostics.push('invalid-page');
   if (context.pageCount !== undefined) page = Math.min(page, Math.max(1, context.pageCount));
-  const query: BrowseQuery = { locale: context.locale, searchScope: params.get('searchScope') === 'docs' ? 'docs' : params.get('searchScope') === 'questions' ? 'questions' : 'all', q: (params.get('q') ?? '').trim(), target: resolvePreference(params, context.localTarget), facets, sort: params.get('sort') === 'title' ? 'title' : 'relevance', page };
+  const defaultScope = !params.get('q')?.trim() && /\/questions\/$/.test(url.pathname) ? 'questions' : 'all';
+  const query: BrowseQuery = { locale: context.locale, searchScope: params.get('searchScope') === 'docs' ? 'docs' : params.get('searchScope') === 'questions' ? 'questions' : params.get('searchScope') === 'all' ? 'all' : defaultScope, q: (params.get('q') ?? '').trim(), target: resolvePreference(params, context.localTarget), facets, sort: params.get('sort') === 'title' ? 'title' : 'relevance', page };
   if (query.target.invalidLink) diagnostics.push('invalid-target');
   return { query, diagnostics, normalizedUrl: serializeBrowseQuery(query, url) };
 }
@@ -22,7 +23,8 @@ export function serializeBrowseQuery(query: BrowseQuery, destination: URL, optio
   let params = new URLSearchParams();
   if (query.q) params.set('q', query.q);
   for (const key of facetKeys) if (query.facets[key]) params.set(key, query.facets[key]!);
-  if (query.searchScope !== 'all') params.set('searchScope', query.searchScope);
+  const defaultScope = !query.q && /\/questions\/$/.test(destination.pathname) ? 'questions' : 'all';
+  if (query.searchScope !== defaultScope) params.set('searchScope', query.searchScope);
   if (query.sort !== 'relevance') params.set('sort', query.sort);
   if (query.page > 1) params.set('page', String(query.page));
   if (query.target.hasLink || options.share) params = withLinkPreference(params, query.target.preference);

@@ -59,3 +59,14 @@ test('document browsing without keywords works with the search engine unavailabl
   await expect(page.locator('#discovery-error')).toBeHidden();
   await expect(page.locator('[data-discovery-results] > li')).toHaveCount(0);
 });
+
+test('an explicit all-content selection survives question-route reloads', async ({ page }) => {
+  await page.goto('questions/?profile=all');
+  await expect(page.locator('#result-count')).toContainText(/^\d+ 道问题/);
+  await page.locator('select[name=searchScope]').selectOption('all');
+  await expect(page.locator('select[name=searchScope]')).toHaveValue('all');
+  await expect(page.locator('#document-results').getByRole('link', {name:'使用说明',exact:true})).toBeVisible();
+  await page.reload();
+  await expect(page.locator('select[name=searchScope]')).toHaveValue('all');
+  await expect(page.locator('#document-results').getByRole('link', {name:'使用说明',exact:true})).toBeVisible();
+});
