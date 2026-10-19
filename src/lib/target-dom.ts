@@ -78,7 +78,7 @@ export function updateTargetDom() {
   // Only an explicit link target follows navigation; local preferences stay out of ordinary URLs.
   const base = import.meta.env.BASE_URL.replace(/\/$/, '') + '/';
   for (const link of document.querySelectorAll<HTMLAnchorElement>('a[href]')) {
-    if (link.closest('.language-switch') || link.hasAttribute('data-reading-return') || link.hasAttribute('data-stage-model') || link.hasAttribute('data-target-model')) continue;
+    if (link.hasAttribute('data-search-scope') || link.hasAttribute('data-discovery-group') || link.closest('.language-switch') || link.hasAttribute('data-reading-return') || link.hasAttribute('data-stage-model') || link.hasAttribute('data-target-model')) continue;
     const original = inheritedLinks.get(link);
     if (!context.hasLink) { if (original) { link.href = original; inheritedLinks.delete(link); } continue; }
     const url = new URL(original ?? link.href, location.href);
