@@ -168,6 +168,7 @@ dialog.profile-dialog::backdrop { background: #17213266; }
 .wiki-reading-grid > .main-content { max-width: 900px; }
 body[data-page-kind="discovery"] .wiki-reading-grid > .main-content { max-width: 1120px; }
 .wiki-reading-grid.has-outline { grid-template-columns: minmax(0, 900px) minmax(150px, 190px); justify-content: center; }
+.wiki-reading-grid.has-section-nav > .main-content { justify-self: start; }
 .wiki-reading-grid.has-section-nav { grid-template-columns: minmax(180px, 220px) minmax(0, 1fr); }
 .wiki-reading-grid.has-section-nav.has-outline { grid-template-columns: minmax(180px, 220px) minmax(0, 1fr) minmax(150px, 190px); }
 .site-header { position: relative; z-index: 12; }

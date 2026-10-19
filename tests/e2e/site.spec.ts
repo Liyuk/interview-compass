@@ -29,7 +29,7 @@ test('primary navigation separates goals, questions, methods, guide, categories 
 test('handbook uses the shared knowledge rail, Starlight TOC, search, language and footer', async ({ page }) => {
   await page.goto('handbook/');
   if ((page.viewportSize()?.width ?? 1280) <= 760) await page.locator('[data-wiki-disclosure] > summary').click();
-  const zhSidebar = page.getByRole('navigation', { name: '文档目录' });
+  const zhSidebar = page.getByRole('navigation', { name: '板块目录' });
   await expect(zhSidebar.getByRole('link', { name: '使用说明' })).toHaveAttribute('aria-current', 'page');
   await expect(page.getByRole('navigation', { name: '本页目录' })).toBeVisible();
   await expect(page.locator('#site-search')).toBeVisible();
@@ -42,7 +42,7 @@ test('handbook uses the shared knowledge rail, Starlight TOC, search, language a
   await page.getByRole('link', { name: 'EN' }).click();
   await expect(page).toHaveURL(/\/en\/handbook\//);
   if ((page.viewportSize()?.width ?? 1280) <= 760) await page.locator('[data-wiki-disclosure] > summary').click();
-  await expect(page.getByRole('navigation', { name: 'Document navigation' }).getByRole('link', { name: 'How to use' })).toHaveAttribute('aria-current', 'page');
+  await expect(page.getByRole('navigation', { name: 'Section navigation' }).getByRole('link', { name: 'How to use' })).toHaveAttribute('aria-current', 'page');
   await expect(page.getByRole('navigation', { name: 'On this page' })).toBeVisible();
   await expect(page.locator('#site-search')).toBeVisible();
   await expect(page.locator('.site-footer')).toContainText('Content license · CC BY-NC-SA 4.0');

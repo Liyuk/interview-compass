@@ -29,7 +29,7 @@ Interview Compass is a bilingual, question-first heuristic library. A question p
 
 ## Docs and Wiki implementation (2026-10)
 
-- SiteLayout and Starlight consume the same validated knowledge Registry. The left tree is the permanent content hierarchy, the right outline is the article's H2/H3 hierarchy, and explicit Wiki edges supply references/backlinks and curated membership.
+- SiteLayout and Starlight consume the same validated knowledge Registry. The top navigation switches global boards. Every non-home content page, including discovery lists, has a left tree scoped to its active board; the right outline is the article's H2/H3 hierarchy. Question pages keep their permanent capability ancestry in breadcrumbs and a separate knowledge-category link, while the board tree stays in Questions. Explicit Wiki edges supply references/backlinks and curated membership.
 - Use the existing authored SVG sprite through Icon.astro; this project does not depend on Radix Themes or @lucide/astro. Native links, details, selects and buttons preserve browser keyboard behavior.
 - Question reading starts with the question, objective, intent, signals and actual follow-ups. Shared unreviewed analysis is explicitly labelled and expandable; role context and optional stage/AI tools follow the main reading material.
 - Discovery groups documents/methods separately from questions. Targets and facets apply only to questions. All-content previews link to complete groups; full groups use 50 results per page. The original `scope` remains responsibility scope; `searchScope` selects content type.

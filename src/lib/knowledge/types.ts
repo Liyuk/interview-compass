@@ -34,7 +34,7 @@ export interface KnowledgeRegistry {
   pages(locale: Locale): KnowledgeNode[];
   page(contentId: string, locale: Locale): KnowledgeNode | undefined;
   relations(contentId: string, locale: Locale): KnowledgeRelations;
-  navigation(contentId: string, locale: Locale): KnowledgeNavigation;
+  navigation(contentId: string, locale: Locale, rootId?: string): KnowledgeNavigation;
 }
 export interface RegistryInput { nodes: KnowledgeNode[]; edges?: KnowledgeEdge[] }
 export type RegistryResult = { ok: true; registry: KnowledgeRegistry } | { ok: false; diagnostics: KnowledgeDiagnostic[] };

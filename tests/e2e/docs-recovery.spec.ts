@@ -51,7 +51,7 @@ test('mobile document navigation overlays without moving the article', async ({ 
   await page.locator('[data-wiki-disclosure] > summary').click();
   const after = await page.locator('main').boundingBox();
   expect(Math.abs(after!.y-before!.y)).toBeLessThan(.5);
-  await expect(page.getByRole('navigation',{name:'文档目录',exact:true})).toBeVisible();
+  await expect(page.getByRole('navigation',{name:'板块目录',exact:true})).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(page.locator('[data-wiki-disclosure] > summary')).toBeFocused();
 });

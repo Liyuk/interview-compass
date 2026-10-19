@@ -57,3 +57,20 @@ it('enumerates localized pages for build adapters without leaking grouping nodes
   expect(result.registry.pages('en').map(node=>node.contentId)).toEqual(['guide']);
   expect(result.registry.pages('zh-CN')).toEqual([]);
 });
+
+it('scopes the board tree without changing a question’s permanent ancestry', () => {
+  const result = createKnowledgeRegistry({nodes: [
+    {contentId:'questions',locale:'en',kind:'index',title:'Questions',href:'/questions/',missingTranslations:['zh-CN']},
+    {contentId:'collections',locale:'en',kind:'index',title:'Collections',href:'/collections/',primaryParentId:'questions',missingTranslations:['zh-CN']},
+    {contentId:'browse',locale:'en',kind:'index',title:'Categories',href:'/browse/',missingTranslations:['zh-CN']},
+    {contentId:'leaf',locale:'en',kind:'concept',title:'Planning',href:'/planning/',primaryParentId:'browse',missingTranslations:['zh-CN']},
+    {contentId:'q',locale:'en',kind:'question',title:'Question',href:'/questions/q/',primaryParentId:'leaf',hiddenFromNavigation:true,missingTranslations:['zh-CN']},
+  ]});
+  if (!result.ok) throw Error('fixture');
+  const list = result.registry.navigation('questions','en','questions');
+  const article = result.registry.navigation('q','en','questions');
+  expect(article.tree.map(node=>node.contentId)).toEqual(['questions']);
+  expect(article.tree[0].children.map(node=>node.contentId)).toEqual(list.tree[0].children.map(node=>node.contentId));
+  expect(article.tree[0].children.map(node=>node.contentId)).toEqual(['collections']);
+  expect(article.ancestors.map(node=>node.contentId)).toEqual(['browse','leaf']);
+});

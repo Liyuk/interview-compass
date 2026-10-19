@@ -24,7 +24,8 @@ const title = titleFor(route, locale);
 const currentNav = activeNavFor(route);
 const active = ['roles', 'topics', 'capabilities'].includes(currentNav) ? 'browse' : currentNav;
 const presentation = pagePresentationFor(route);
-const hasSidebar = presentation.kind === 'section' || presentation.kind === 'article';
+const hasSidebar = Boolean(presentation.section);
+const hasReadingTools = presentation.kind === 'section' || presentation.kind === 'article';
 const crumbs = breadcrumbsFor(route, locale, base);
 ---
 <!doctype html>
@@ -48,8 +49,8 @@ const crumbs = breadcrumbsFor(route, locale, base);
       <Breadcrumbs crumbs={crumbs} locale={locale} />
       <div class:list={['wiki-reading-grid', { 'has-section-nav': hasSidebar, 'has-outline': outline.length > 0 }]}>
         {hasSidebar && <DocumentNavigation route={route} locale={locale} />}
-        <main id="main" class="main-content" data-pagefind-body={route.type !== 'question'} data-pagefind-ignore={['search', 'questions', 'not-found'].includes(route.type) ? 'all' : undefined}><slot />{hasSidebar && <ArticleRelations route={route} locale={locale} />}
-          {hasSidebar && route.type !== 'question' && <EditorialNavigation route={route} locale={locale} />}
+        <main id="main" class="main-content" data-pagefind-body={route.type !== 'question'} data-pagefind-ignore={['search', 'questions', 'not-found'].includes(route.type) ? 'all' : undefined}><slot />{hasReadingTools && <ArticleRelations route={route} locale={locale} />}
+          {hasReadingTools && route.type !== 'question' && <EditorialNavigation route={route} locale={locale} />}
           {route.type === 'question' && <ReadingNavigation locale={locale} questionId={route.questionId} />}
           {['question', 'collections', 'questions', 'search'].includes(route.type) && <CurrentCollection locale={locale} questionId={route.type === 'question' ? route.questionId : undefined} />}</main>
         <WikiOutline items={outline} locale={locale} />

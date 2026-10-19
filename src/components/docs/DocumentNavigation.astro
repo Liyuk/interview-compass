@@ -1,5 +1,6 @@
 ---
 import type { Locale } from '../../lib/taxonomy';
+import { pagePresentationFor } from '../../lib/page-presentation';
 import type { RouteRef } from '../../lib/routes';
 import { contentIdForRoute } from '../../lib/knowledge/definitions';
 import { loadKnowledgeRegistry } from '../../lib/knowledge/site-registry';
@@ -8,14 +9,20 @@ import DocumentTree from './DocumentTree.astro';
 interface Props { route: RouteRef; locale: Locale; idPrefix?: string }
 const { route, locale, idPrefix = 'document' } = Astro.props;
 const registry = await loadKnowledgeRegistry();
-const navigation = registry.navigation(contentIdForRoute(route), locale);
+const section = pagePresentationFor(route).section;
+const roots = { goals: 'scenarios', questions: 'questions', browse: 'browse', stages: 'capability-model', methods: 'framework', guide: 'guide' };
+const rootId = section ? roots[section] : undefined;
+const navigation = registry.navigation(contentIdForRoute(route), locale, rootId);
+const parent = navigation.current?.kind === 'question' ? navigation.ancestors.at(-1) : undefined;
 const en = locale === 'en';
 ---
 <aside class="wiki-sidebar document-navigation" data-wiki-sidebar>
   <details open data-wiki-disclosure>
-    <summary aria-expanded="true"><span>{en ? 'Document navigation' : '文档目录'}</span><Icon name="chevron-down" class="wiki-disclosure-icon" size={16} /></summary>
-    <nav id={`${idPrefix}-navigation`} aria-label={en ? 'Document navigation' : '文档目录'}>
+    <summary aria-expanded="true"><span>{en ? 'Section navigation' : '板块目录'}</span><Icon name="chevron-down" class="wiki-disclosure-icon" size={16} /></summary>
+    <nav id={`${idPrefix}-navigation`} aria-label={en ? 'Section navigation' : '板块目录'}>
+      <p class="document-nav-label" aria-hidden="true">{en ? 'Section navigation' : '板块目录'}</p>
       <DocumentTree nodes={navigation.tree} />
+      {parent?.href && <p class="document-context"><span>{en ? 'Knowledge category' : '知识归属'}</span><a href={parent.href}>{parent.title}</a></p>}
       {navigation.current?.kind === 'question' && <p class="document-current-title" aria-current="page">{navigation.current.title}</p>}
     </nav>
   </details>
@@ -26,6 +33,10 @@ const en = locale === 'en';
 <script>import '../../lib/docs-navigation-client';</script>
 <style is:global>
 .document-navigation nav { gap: 0; }
+.document-nav-label, .document-context > span { display:block; color:var(--muted); font-size:12px; margin:0; padding:8px; }
+.document-context { margin:12px 0 0; border-top:1px solid var(--line); }
+.document-context > a { display:block; padding:7px 8px; font-size:13px; }
+@media(max-width:760px) { .document-nav-label { display:none; } }
 .document-tree-list { list-style: none; margin: 0; padding: 0; }
 .document-tree-list .document-tree-list { margin: 3px 0 8px 10px; padding-inline-start: 10px; border-inline-start: 1px solid var(--line); }
 .document-tree-list a { display: block; min-height: 36px; padding: 7px 8px; color: var(--ink); font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }

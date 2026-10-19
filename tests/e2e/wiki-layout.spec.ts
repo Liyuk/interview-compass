@@ -14,7 +14,13 @@ test('all route families retain global navigation with task appropriate content'
       await expect(primary).toBeVisible();
       await expect(primary.locator('a')).toHaveCount(6);
       if (route) await expect(primary.locator('[aria-current="page"]')).toHaveCount(1);
-      if (['questions/', 'search/?q=rollback'].includes(route)) await expect(page.locator('[data-wiki-sidebar]')).toHaveCount(0);
+      if (route) {
+        const sidebar = page.locator('[data-wiki-sidebar]');
+        await expect(sidebar).toBeVisible();
+        const activeHref = await primary.locator('[aria-current=page]').getAttribute('href');
+        await expect(sidebar.locator('.document-tree-list').first().locator(':scope > li')).toHaveCount(1);
+        await expect(sidebar.locator('.document-tree-list').first().locator(':scope > li > a')).toHaveAttribute('href', activeHref!);
+      } else await expect(page.locator('[data-wiki-sidebar]')).toHaveCount(0);
     }
   }
 });
@@ -28,7 +34,9 @@ test('section navigation stays local and mobile menus do not move the article', 
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       if (route === 'questions/' && width >= 768 && width <= 1024) {
         const main = await page.locator('main').boundingBox();
-        expect(main!.width).toBeGreaterThan(width * 0.7);
+        expect(main!.width).toBeGreaterThan(width * 0.5);
+        const sidebar = await page.locator('[data-wiki-sidebar]').boundingBox();
+        expect(sidebar!.x + sidebar!.width).toBeLessThan(main!.x);
       }
       if (width <= 760 && await page.locator('[data-wiki-outline]').count()) await expect(page.locator('[data-wiki-outline]')).not.toHaveAttribute('open', '');
       const toggle=page.locator('[data-site-navigation-toggle]');

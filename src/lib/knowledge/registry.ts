@@ -36,7 +36,7 @@ export function createKnowledgeRegistry(input: RegistryInput): RegistryResult {
     relations: (id, locale) => relations.index.forPage(id, locale),
     pages: locale => nodes.filter(node => node.locale === locale && Boolean(node.href)).map(node => ({...node})),
     page: (id, locale) => byId.get(key(id, locale)),
-    navigation(id, locale) {
+    navigation(id, locale, rootId) {
       const current = byId.get(key(id, locale));
       const ancestors: KnowledgeNode[] = [];
       let parent = current?.primaryParentId;
@@ -47,13 +47,14 @@ export function createKnowledgeRegistry(input: RegistryInput): RegistryResult {
         parent = node.primaryParentId;
       }
       const expanded = new Set(ancestors.map(node => node.contentId));
+      if (rootId) expanded.add(rootId);
       const visible = nodes.filter(node => node.locale === locale && !node.hiddenFromNavigation);
       function branch(parentId?: string): NavigationNode[] {
         return ordered(visible.filter(node => node.primaryParentId === parentId)).map(node => ({
           ...node, current: node.contentId === id, expanded: expanded.has(node.contentId), children: expanded.has(node.contentId) || node.contentId === id || !node.href ? branch(node.contentId) : [],
         }));
       }
-      return { current, ancestors, tree: branch(), siblings: ordered(visible.filter(node => node.primaryParentId === current?.primaryParentId)) };
+      return { current, ancestors, tree: rootId ? branch().filter(node => node.contentId === rootId) : branch(), siblings: ordered(visible.filter(node => node.primaryParentId === current?.primaryParentId)) };
     },
   } };
 }
