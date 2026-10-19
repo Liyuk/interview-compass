@@ -27,11 +27,16 @@ test('primary navigation separates goals, questions, methods, guide, categories 
   await expect(page.locator('.primary-nav a')).toHaveText(['Home', 'Preparation guide', 'Question bank']);
 });
 
-test('handbook uses the shared knowledge rail, Starlight TOC, search, language and footer', async ({ page }) => {
+test('handbook uses the shared knowledge rail, TOC, search, language and footer', async ({ page }) => {
   await page.goto('handbook/');
   if ((page.viewportSize()?.width ?? 1280) <= 760) await page.locator('[data-wiki-disclosure] > summary').click();
   const zhSidebar = page.getByRole('navigation', { name: '板块目录' });
   await expect(zhSidebar.getByRole('link', { name: '使用说明' })).toHaveAttribute('aria-current', 'page');
+  if ((page.viewportSize()?.width ?? 1280) <= 760) await page.keyboard.press('Escape');
+  {
+    const outline = page.locator('details[data-wiki-outline]');
+    if (!(await outline.evaluate(element => (element as HTMLDetailsElement).open))) await outline.locator(':scope > summary').click();
+  }
   await expect(page.getByRole('navigation', { name: '本页目录' })).toBeVisible();
   await expect(page.locator('#site-search')).toBeVisible();
   await expect(page.locator('.breadcrumbs')).toContainText('使用说明');
@@ -44,6 +49,11 @@ test('handbook uses the shared knowledge rail, Starlight TOC, search, language a
   await expect(page).toHaveURL(/\/en\/handbook\//);
   if ((page.viewportSize()?.width ?? 1280) <= 760) await page.locator('[data-wiki-disclosure] > summary').click();
   await expect(page.getByRole('navigation', { name: 'Section navigation' }).getByRole('link', { name: 'How to use' })).toHaveAttribute('aria-current', 'page');
+  if ((page.viewportSize()?.width ?? 1280) <= 760) await page.keyboard.press('Escape');
+  {
+    const outline = page.locator('details[data-wiki-outline]');
+    if (!(await outline.evaluate(element => (element as HTMLDetailsElement).open))) await outline.locator(':scope > summary').click();
+  }
   await expect(page.getByRole('navigation', { name: 'On this page' })).toBeVisible();
   await expect(page.locator('#site-search')).toBeVisible();
   await expect(page.locator('.site-footer')).toContainText('Content license · CC BY-NC-SA 4.0');

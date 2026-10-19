@@ -197,7 +197,7 @@ body[data-page-kind="discovery"] .wiki-reading-grid > .main-content { max-width:
   .site-header .language-switch { grid-column: 2; grid-row: 2; justify-self: end; margin: 0; }
 }
 :where(.result-count, .library-pagination, .target-summary-count) { font-variant-numeric: tabular-nums; }
-:where(.main-content, .sl-markdown-content) :is(p, li, h1, h2, h3, td, th) { overflow-wrap: anywhere; }
+:where(.main-content) :is(p, li, h1, h2, h3, td, th) { overflow-wrap: anywhere; }
 @media (min-width: 761px) and (max-width: 1100px) {
   .wiki-outline > summary { display:flex; justify-content:space-between; align-items:center; min-height:44px; cursor:pointer; }
 }
@@ -206,5 +206,7 @@ body[data-page-kind="discovery"] .wiki-reading-grid > .main-content { max-width:
   .wiki-sidebar > details > nav { position:absolute; inset-inline:0; top:100%; z-index:10; width:100%; max-height:65dvh; box-shadow:0 12px 24px #1721321c; }
 }
 
-.handbook-page h1 { font-family:var(--font-editorial); font-size:clamp(30px,3vw,45px); line-height:1.27; letter-spacing:-.03em; }
-.handbook-page .sl-markdown-content h2 { font-size:1.5rem; line-height:1.4; margin-block:2.25rem .8rem; }
+/* Guide: plain Markdown rendered inside the shared article frame. */
+.guide-prose h2 { font-size:1.5rem; line-height:1.4; margin-block:2.25rem .8rem; }
+.guide-prose :is(p, li) { line-height:1.75; }
+.guide-prose ul { padding-inline-start:1.25rem; }

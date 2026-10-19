@@ -9,7 +9,7 @@ This site serves engineers: general software engineering, frontend, backend, mob
 
 ## Role and stage targets
 
-Start with the [preparation guide](/interview-compass/en/guide/) to understand capabilities and responsibility, then choose the role and stage you want to prepare for or assess, or explore all questions. The top-right control lets you switch at any time. Lists, previews, counts, and search strictly use reviewed role–stage combinations; topic and format filters narrow that set further. Clear page filters or view all if there is no intersection.
+Start with the [preparation guide](../guide/) to understand capabilities and responsibility, then choose the role and stage you want to prepare for or assess, or explore all questions. The top-right control lets you switch at any time. Lists, previews, counts, and search strictly use reviewed role–stage combinations; topic and format filters narrow that set further. Clear page filters or view all if there is no intersection.
 
 One question may serve several stages with different responsibility, judgment, and outcome evidence. Stage is not question difficulty or an automatic score. Comparing stages inside a question does not change your site target. Direct links outside your target remain readable with a scope notice.
 
@@ -33,7 +33,7 @@ Roles, topics, responsibility scopes, career tracks, use cases, and question for
 
 Interviewers start with the role’s goals and responsibility scope, then use contrasting experiences, comparisons between options, causal probes, and hands-on details to verify experience and judgment. For setbacks or conflict, ask about the context, the person’s actions, outcomes, and what changed afterward. Follow-ups should fill context, test alternative explanations, and clarify contribution—not steer someone toward a model answer.
 
-Candidates can start from a real situation and explain the goal, their responsibility, constraints, actions, alternatives and trade-offs, then the result, attribution evidence, and reflection. STAR can help organize an experience, but technical, case, and system-design questions should not be forced into it. Make reasoning, comparisons, hands-on participation, and evidence visible. See the full [questioning methods](/interview-compass/en/framework/) for interviewer prompts, candidate responses, and mutual due diligence.
+Candidates can start from a real situation and explain the goal, their responsibility, constraints, actions, alternatives and trade-offs, then the result, attribution evidence, and reflection. STAR can help organize an experience, but technical, case, and system-design questions should not be forced into it. Make reasoning, comparisons, hands-on participation, and evidence visible. See the full [questioning methods](../framework/) for interviewer prompts, candidate responses, and mutual due diligence.
 
 ## External interviews and internal promotion
 

@@ -1,6 +1,0 @@
----
-import DocumentNavigation from '../docs/DocumentNavigation.astro';
-import type { Locale } from '../../lib/taxonomy';
-const locale: Locale = Astro.locals.starlightRoute.locale === 'en' ? 'en' : 'zh-CN';
----
-<DocumentNavigation route={{ type: 'guide' }} locale={locale} idPrefix={`starlight-${locale}`} />

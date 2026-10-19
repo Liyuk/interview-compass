@@ -34,9 +34,23 @@ const nav = siteNavigationFor(route, locale, base);
     </nav>
   <div class="target-status">
   <button type="button" class="profile-trigger" data-profile-trigger aria-expanded="false" aria-controls="target-status-panel">
-    <span data-profile-label>{en ? 'Preparation target' : '准备目标'}</span>
+    <span data-profile-label>{en ? 'All questions · Target' : '全部题目 · 准备目标'}</span>
     <Icon name="chevron-down" size={16} />
   </button>
+  <script is:inline>
+    // Paint the saved target before first render; target-selector.ts refreshes it once roles load.
+    (function () {
+      try {
+        var pref = JSON.parse(localStorage.getItem('interview-compass.target.v1') || 'null');
+        if (!pref || pref.mode !== 'target' || !pref.target) return;
+        var cache = JSON.parse(localStorage.getItem('interview-compass.target-label.v1') || '{}');
+        var locale = document.documentElement.lang === 'en' ? 'en' : 'zh-CN';
+        var text = cache[locale] && cache[locale][pref.target.roleId + ':' + pref.target.stageId];
+        var label = document.querySelector('[data-profile-label]');
+        if (text && label) { label.textContent = text; label.closest('button').title = text; }
+      } catch (e) {}
+    })();
+  </script>
 <div id="target-status-panel" class="target-summary" data-target-summary hidden data-pagefind-ignore aria-label={en ? 'Preparation status' : '准备状态'}>
   <div class="target-summary-inner">
     <div class="target-summary-copy"><p class="target-summary-current"><span data-target-description></span><span class="target-summary-count"><TargetCount questions={questions} locale={locale} unit /></span></p>

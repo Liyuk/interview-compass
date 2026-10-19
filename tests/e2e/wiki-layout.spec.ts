@@ -62,8 +62,7 @@ test('section navigation stays local and mobile menus do not move the article', 
       }
       if(route.includes('handbook')) {
         await expect(page.locator('h1')).toHaveCount(1);
-        await expect(page.locator('.sl-menu-button')).toHaveCount(0);
-        await expect(page.locator('mobile-starlight-toc, .right-sidebar')).not.toHaveCount(0);
+        await expect(page.locator('[data-wiki-outline]')).toHaveCount(1);
       }
     }
   }
@@ -126,16 +125,18 @@ test('mobile page load does not cause a large layout shift', async ({ browser, b
 });
 
 test('handbook breadcrumb and article spacing stays stable across tablet breakpoint', async ({ page }) => {
+  const gaps: number[] = [];
   for (const width of [801, 800, 790, 761]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('handbook/');
-    const spacing = await page.evaluate(() => {
-      const breadcrumb = document.querySelector('.handbook-crumbs')!.getBoundingClientRect();
-      const main = document.querySelector('.handbook-reading-frame main')!.getBoundingClientRect();
-      return main.top - breadcrumb.bottom;
-    });
-    expect(spacing, `unexpected gap at ${width}px`).toBe(24);
+    gaps.push(await page.evaluate(() => {
+      const breadcrumb = document.querySelector('.breadcrumbs')!.getBoundingClientRect();
+      const heading = document.querySelector('main#main h1')!.getBoundingClientRect();
+      return Math.round(heading.top - breadcrumb.bottom);
+    }));
   }
+  // The article must not jump when the layout crosses the tablet breakpoints.
+  expect(Math.max(...gaps) - Math.min(...gaps), `gaps ${gaps.join(', ')}`).toBeLessThanOrEqual(2);
 });
 
 test('mobile home renders its collapsed navigation before first paint', async ({ browser, baseURL }) => {
