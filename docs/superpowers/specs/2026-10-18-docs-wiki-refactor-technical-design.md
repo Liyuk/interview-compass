@@ -1,6 +1,6 @@
 # 文档型 Wiki 重构技术方案与测试契约
 
-日期：2026-10-18。状态：待审阅；本轮未进入产品代码实现。
+日期：2026-10-18。状态：用户已确认技术方案及S1–S7测试边界；实施计划待审阅。
 
 依据：`2026-10-18-docs-wiki-information-architecture-design.md`、`2026-10-18-site-resource-and-experience-v2-design.md` 和资源盘点JSON。代码基线为 `2da4d16`。执行方式沿用用户已选择的 Native；最后使用 review-agent 做只读缺陷审查。
 
