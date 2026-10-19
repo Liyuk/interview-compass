@@ -146,3 +146,15 @@ test('mobile home renders its collapsed navigation before first paint', async ({
   expect(navAtPaint).toEqual({ nav: 'none', toggle: 'flex' });
   await context.close();
 });
+
+test('the English footer wraps when fallback fonts widen its links at tablet widths', async ({ page }) => {
+  await page.setViewportSize({width:768,height:900});
+  await page.goto('en/handbook/');
+  await page.addStyleTag({content:'.site-footer { font-family: monospace; }'});
+  const layout = await page.evaluate(()=>({width:innerWidth, scrollWidth:document.documentElement.scrollWidth}));
+  expect(layout.scrollWidth).toBeLessThanOrEqual(layout.width);
+  for (const link of await page.locator('.site-footer a').all()) {
+    const box = await link.boundingBox();
+    expect(box!.x + box!.width).toBeLessThanOrEqual(layout.width);
+  }
+});
