@@ -3,14 +3,14 @@ import type { Locale } from '../../lib/taxonomy';
 import { createOutline, type ArticleHeading } from '../../lib/knowledge/outline';
 import Icon from '../Icon.astro';
 import OutlineTree from './OutlineTree.astro';
-interface Props { headings: ArticleHeading[]; locale: Locale; legacySummaryId?: string }
-const { headings, locale, legacySummaryId } = Astro.props;
+interface Props { headings: ArticleHeading[]; locale: Locale }
+const { headings, locale } = Astro.props;
 const result = createOutline(headings);
 if (result.ok === false) throw new Error(`Invalid article outline: ${JSON.stringify(result.diagnostics)}`);
 const label = locale === 'en' ? 'On this page' : '本页目录';
 ---
 {result.nodes.length > 0 && <details class="wiki-outline" open data-wiki-outline>
-  <summary id={legacySummaryId} aria-expanded="true"><span>{label}</span><Icon name="chevron-down" size={16} /></summary>
+  <summary aria-expanded="true"><span>{label}</span><Icon name="chevron-down" size={16} /></summary>
   <nav aria-label={label}><OutlineTree nodes={result.nodes} /></nav>
 </details>}
 <script is:inline>

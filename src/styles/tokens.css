@@ -1,4 +1,4 @@
-/* Shared tokens styles for Astro and Starlight. */
+/* Design tokens used by shared Astro pages. */
 :root {
   color-scheme: light;
   --page: #fbfaf8;

@@ -1,4 +1,4 @@
-/* Shared reference styles for Astro and Starlight. */
+/* Reference styles used by shared Astro pages. */
 .model-hero { padding: 18px 0 28px; border-bottom: 1px solid var(--line); }
 .model-hero .page-title { max-width: 900px; margin-bottom: 14px; }
 .model-hero .intro { max-width: 900px; font-size: 18px; }

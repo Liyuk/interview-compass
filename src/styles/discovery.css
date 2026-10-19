@@ -1,4 +1,4 @@
-/* Shared discovery styles for Astro and Starlight. */
+/* Discovery styles used by shared Astro pages. */
 .search-strip { position: relative; z-index: 3; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.62); }
 .search-form { position: relative; height: 54px; display: flex; gap: 8px; align-items: center; }
 .search-form input { flex: 1; min-width: 0; height: 100%; border: 1px solid #c6c8ca; border-radius: 5px; padding: 0 18px 0 54px; color: var(--ink); background: var(--paper); font-size: 16px; }

@@ -53,7 +53,7 @@ const crumbs = breadcrumbsFor(route, locale, base);
           {hasReadingTools && route.type !== 'question' && <EditorialNavigation route={route} locale={locale} />}
           {route.type === 'question' && <ReadingNavigation locale={locale} questionId={route.questionId} />}
           {['question', 'collections', 'questions', 'search'].includes(route.type) && <CurrentCollection locale={locale} questionId={route.type === 'question' ? route.questionId : undefined} />}</main>
-        <WikiOutline items={outline} locale={locale} legacySummaryId={route.type === 'guide' ? 'starlight__on-this-page' : undefined} />
+        <WikiOutline items={outline} locale={locale} />
       </div>
     </div>}
     <SiteFooter locale={locale} />

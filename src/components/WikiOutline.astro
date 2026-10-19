@@ -2,8 +2,8 @@
 import type { Locale } from '../lib/taxonomy';
 import type { WikiOutlineItem } from '../lib/wiki-outline';
 import ArticleOutline from './docs/ArticleOutline.astro';
-interface Props { items: WikiOutlineItem[]; locale: Locale; legacySummaryId?: string }
-const { items, locale, legacySummaryId } = Astro.props;
+interface Props { items: WikiOutlineItem[]; locale: Locale }
+const { items, locale } = Astro.props;
 const headings = items.map(item => ({ ...item, level: item.level ?? 2, sectionKey: item.sectionKey ?? item.id }));
 ---
-<ArticleOutline headings={headings} locale={locale} legacySummaryId={legacySummaryId} />
+<ArticleOutline headings={headings} locale={locale} />

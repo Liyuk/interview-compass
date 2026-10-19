@@ -1,4 +1,4 @@
-/* Shared reading styles for Astro and Starlight. */
+/* Reading styles used by shared Astro pages. */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .site-icon { display: inline-block; flex: none; vertical-align: -.15em; }
 .eyebrow { margin: 0 0 8px; color: var(--muted); font-size: 14px; letter-spacing: .04em; }
