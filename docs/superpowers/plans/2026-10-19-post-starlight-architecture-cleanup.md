@@ -42,11 +42,11 @@
 - `guide-content.ts` exports `guideSectionsFor(docs): SectionTranslation[]`, validating each configured locale anchor occurs exactly once in headings and every H2 chapter is represented.
 - `guideHeadings(doc, locale, sections)` maps each validated anchor to the stable section key.
 
-- [ ] **Step 1: Add failing guide mapping tests** for reordered H2 chapters, missing/duplicate/unknown anchors and exact diagnostics naming locale, key, and anchor.
-- [ ] **Step 2: Run** `npx vitest run tests/guide-content.test.ts tests/article-sections.test.ts`; confirm the new contract assertions fail against positional mapping and unused `handbookSections`.
-- [ ] **Step 3: Implement the single explicit mapping** and validation described in the spec. Rename `handbookSections` to `guideSections`; remove `guideSectionKeys`; make `GuideView.astro` consume validated sections.
-- [ ] **Step 4: Run the focused tests** and verify the existing Chinese/English heading anchors remain unchanged.
-- [ ] **Step 5: Commit** as `refactor: validate bilingual guide chapter mapping`.
+- [x] **Step 1: Add failing guide mapping tests** for reordered H2 chapters, missing/duplicate/unknown anchors and exact diagnostics naming locale, key, and anchor.
+- [x] **Step 2: Run** `npx vitest run tests/guide-content.test.ts tests/article-sections.test.ts`; confirmed the new contract assertions failed against positional mapping and unused `handbookSections`.
+- [x] **Step 3: Implement the single explicit mapping** and validation described in the spec. Rename `handbookSections` to `guideSections`; remove `guideSectionKeys`; make `GuideView.astro` consume validated sections.
+- [x] **Step 4: Run the focused tests** and verify the existing Chinese/English heading anchors remain unchanged. Focused mapping and translation tests pass.
+- [x] **Step 5: Commit** as `refactor: validate bilingual guide chapter mapping` (`00a4531`).
 
 ### Task 2: Remove Starlight-only outline compatibility residue
 
@@ -115,5 +115,5 @@
 - [x] **Step 1: Run focused unit and browser tests** for guide mapping, locale hash switching, guide anchors, search discovery, and handbook route compatibility.
 - [x] **Step 2: Run repository-wide searches** for Starlight and stale framework descriptions; inspect every remaining match in text files and classify it as historical, captured evidence, or third-party attribution.
 - [x] **Step 3: Run `PLAYWRIGHT_PORT=18566 CI=1 npm run ci`**; exit 0. `astro check`: 0 errors/0 warnings/4 editor hints; content and stage checks pass; 35 unit files / 182 tests pass; 3470 pages build; shell and knowledge output checks each report 0 failures; E2E: 241 passed / 1 skipped across desktop and mobile.
-- [x] **Step 4: Start the production preview and inspect** `/interview-compass/handbook/`, `/interview-compass/en/handbook/`, home, question bank, search, and representative question pages. Confirm shared shell, outline, locale switching, links, and browser console/network health.
+- [x] **Step 4: Start the production preview and inspect** `/interview-compass/handbook/`, `/interview-compass/en/handbook/`, home, question bank, search, and representative question pages. Confirmed shared shell, outline, locale routes, and page titles; all six routes returned HTTP 200 in Chromium with no page errors, console errors, or failed requests.
 - [x] **Step 5: No additional acceptance-fix commit was needed. Commit this verification record as `docs: record architecture cleanup acceptance`.
