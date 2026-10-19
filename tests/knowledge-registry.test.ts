@@ -47,3 +47,13 @@ it('requires a translation or an explicit missing-translation declaration', () =
   expect(result.ok).toBe(false);
   if (result.ok === false) expect(result.diagnostics).toContainEqual(expect.objectContaining({ code: 'missing-translation', contentId: 'guide' }));
 });
+
+it('enumerates localized pages for build adapters without leaking grouping nodes', () => {
+  const result = createKnowledgeRegistry({nodes:[
+    {contentId:'group',locale:'en',kind:'group',title:'Group',missingTranslations:['zh-CN']},
+    {contentId:'guide',locale:'en',kind:'guide',title:'Guide',href:'/en/guide/',primaryParentId:'group',missingTranslations:['zh-CN']},
+  ]});
+  if(result.ok === false) throw Error('fixture');
+  expect(result.registry.pages('en').map(node=>node.contentId)).toEqual(['guide']);
+  expect(result.registry.pages('zh-CN')).toEqual([]);
+});

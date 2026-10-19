@@ -68,3 +68,13 @@ it('preserves the order and source when the reader changes language', () => {
   expect(translated.current?.locale).toBe('zh-CN');
   expect(translated.next?.contentId).toBe('question:q2');
 });
+
+it('keeps incompatible persisted collections in page memory instead of overwriting them', () => {
+  const backing=memory();
+  backing.set('interview-compass.collection.v1',JSON.stringify({version:2,ids:['q1']}));
+  const storage={...backing,scope:'device' as const};
+  const session=createReadingSession(storage,registry,{base:'/',locale:'en'});
+  expect(session.collection().scope).toBe('page');
+  expect(session.updateCollection({type:'add',id:'q2'}).ids).toEqual(['q2']);
+  expect(createReadingSession(storage,registry,{base:'/',locale:'en'}).collection().ids).toEqual([]);
+});

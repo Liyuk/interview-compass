@@ -18,5 +18,5 @@ test('Chinese search finds promotion questions through 职级评审', async ({ p
   await expect(page.locator('.search-page-result-title').first()).toBeVisible();
   const count = await page.locator('.search-page-result-title').count();
   expect(count).toBeGreaterThan(0);
-  await expect(page.locator('#search-page-status')).toContainText('条匹配结果');
+  await expect(page.locator('#search-page-status')).toContainText('道问题');
 });

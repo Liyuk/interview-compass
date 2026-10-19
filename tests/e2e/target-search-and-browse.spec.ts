@@ -6,7 +6,7 @@ const target = { roleId: 'frontend', stageId: 'senior-engineer' };
 const applicable = new Set(entries.filter(entry => matchesTarget(entry, target)).map(entry => entry.questionId));
 
 test('real Pagefind applies target filtering before full-page and instant ranking limits', async ({ page }) => {
-  await page.goto('search/?q=回滚&profileRole=frontend&profileStage=senior-engineer');
+  await page.goto('search/?q=回滚&searchScope=questions&profileRole=frontend&profileStage=senior-engineer');
   await expect(page.locator('.search-page-result-title').first()).toBeVisible();
   const results = await page.locator('.search-page-result-title').evaluateAll(links => links.map(link => new URL((link as HTMLAnchorElement).href).pathname));
   expect(results.length).toBeGreaterThan(0);
@@ -14,10 +14,10 @@ test('real Pagefind applies target filtering before full-page and instant rankin
   const expected = await page.evaluate(async () => {
     const index = await import(location.origin + '/interview-compass/pagefind/pagefind.js');
     const response = await index.search('回滚', { filters: { locale: 'zh-CN', profile: 'frontend:senior-engineer' } });
-    return Promise.all(response.results.slice(0, 20).map(async (item: { data(): Promise<{ url: string }> }) => new URL((await item.data()).url, location.origin).pathname));
+    return Promise.all(response.results.slice(0, 50).map(async (item: { data(): Promise<{ url: string }> }) => new URL((await item.data()).url, location.origin).pathname));
   });
   expect(results).toEqual(expected);
-  await page.getByRole('searchbox').fill('取消');
+  await page.locator('#site-search').fill('取消');
   const instant = await page.evaluate(async () => {
     const index = await import(location.origin + '/interview-compass/pagefind/pagefind.js');
     const response = await index.search('取消', { filters: { locale: 'zh-CN', profile: 'frontend:senior-engineer' } });
@@ -25,7 +25,7 @@ test('real Pagefind applies target filtering before full-page and instant rankin
   });
   await expect(page.locator('.search-results .search-result')).toHaveCount(instant.length);
   expect(await page.locator('.search-results .search-result').evaluateAll(links => links.map(link => new URL((link as HTMLAnchorElement).href).pathname))).toEqual(instant);
-  await page.goto('en/search/?q=rollback&profileRole=frontend&profileStage=senior-engineer');
+  await page.goto('en/search/?q=rollback&searchScope=questions&profileRole=frontend&profileStage=senior-engineer');
   await expect(page.locator('.search-page-result-title').first()).toBeVisible();
   const english = await page.locator('.search-page-result-title').evaluateAll(links => links.map(link => new URL((link as HTMLAnchorElement).href).pathname));
   expect(english.every(path => path.includes('/en/') && applicable.has(path.split('/').filter(Boolean).at(-1)!))).toBe(true);

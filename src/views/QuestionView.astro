@@ -60,7 +60,7 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
 <SiteLayout locale={locale} route={route} description={record.intent} outline={outline}>
   <SectionTranslations sections={outline.map(item => ({ sectionKey: item.sectionKey, anchors: { 'zh-CN': item.id, en: item.id } }))} />
   <a class="reading-return" data-reading-return href={pathFor({ type: 'questions' }, locale, base)}><Icon name="arrow-left" size={16} /> {en ? 'Back to your results or question set' : '返回本次结果或题单'}</a>
-  <h1 class="page-title" data-pagefind-meta="title">{record.question}</h1>
+  <h1 class="page-title" data-pagefind-meta="title" data-pagefind-body data-pagefind-weight="10">{record.question}</h1>
   {tokensForQuestion(record.questionId).map(token => <span hidden data-pagefind-filter="profile[data-profile-token]" data-profile-token={token} />)}
   <aside class="target-mismatch" data-question-detail-profiles={tokensForQuestion(record.questionId).join(' ')} hidden data-pagefind-ignore><p>{en ? 'This question is outside your current target. The direct link stays readable.' : '此题不在当前目标范围内，直接链接仍可完整阅读。'}</p><button type="button" data-edit-target>{en ? 'Change target' : '切换目标'}</button><button type="button" data-view-all-target>{en ? 'View all questions' : '查看全部题目'}</button></aside>
   {engineeringLens && <aside class="engineering-context" data-engineering-context data-pagefind-ignore><strong>{en ? 'Engineering business context' : '工程师的业务理解视角'}</strong><p>{engineeringLens[en ? 'en' : 'zh']}</p></aside>}
@@ -95,7 +95,7 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
       <ul class="signal-list">{evaluation.contextQuestions.map((item) => <li>{item}</li>)}</ul>
     </section>
 
-    <FrameworkTag class:list={{'shared-question-framework': !evaluation.specific}}>
+    <FrameworkTag data-pagefind-ignore={!evaluation.specific ? 'all' : undefined} class:list={{'shared-question-framework': !evaluation.specific}}>
       {!evaluation.specific && <summary>{en ? 'Shared analysis and assessment prompts' : '查看共用的分析与评估提示'}</summary>}
     <section class="detail-block" aria-labelledby="inference-h">
       <SectionHeading heading={headingFor('inference-h')} />

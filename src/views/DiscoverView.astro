@@ -1,4 +1,5 @@
 ---
+import { loadKnowledgeRegistry } from '../lib/knowledge/site-registry';
 import Icon from '../components/Icon.astro';
 import { tokensForQuestion } from '../lib/question-profile-data';
 import SiteLayout from '../layouts/SiteLayout.astro';
@@ -20,6 +21,7 @@ const advancedFilterKinds: FacetKind[] = ['topics', 'formats'];
 const queryKey: Record<FacetKind, string> = { topics: 'topic', roles: 'role', responsibilityScopes: 'scope', careerTracks: 'track', scenarios: 'scenario', formats: 'format' };
 const capabilityOptions = domains.flatMap((domain) => domain.leaves.map((leaf) => ({ id: `${domain.id}.${leaf.id}`, label: `${domain.letter} · ${pick(leaf.name, locale)}`, count: questions.filter((q) => q.primaryCapability === `${domain.id}.${leaf.id}`).length }))).filter((option) => option.count > 0);
 const capabilityLabels = Object.fromEntries(capabilityOptions.map(option => [option.id, capabilityLabel(option.id, locale)]));
+const documents = (await loadKnowledgeRegistry()).pages(locale).filter(node => ['guide','method','concept','path','stage-reference'].includes(node.kind)).map(node=>({id:node.contentId,kind:'docs',title:node.title,url:node.href}));
 const firstPage = questions.slice(0, CATALOG_PAGE_SIZE);
 const facetOptions = filterKinds.map((kind) => {
   const counts = facetCounts(questions, { locale, facet: kind });
@@ -81,7 +83,8 @@ const facetOptions = filterKinds.map((kind) => {
   <div id="selected-filters" class="selected-filters" aria-label={en ? 'Selected filters' : '已选条件'}></div>
   <div class="share-filter-controls"><button type="button" class="secondary-button" id="share-filter-link">{en ? 'Copy filtered link' : '复制筛选链接'}</button><span id="share-filter-status" role="status" aria-live="polite"></span><input id="share-filter-value" readonly hidden aria-label={en ? 'Shareable filtered URL' : '可分享的筛选链接'} /></div>
   <script type="application/json" id="library-capability-labels" set:html={JSON.stringify(capabilityLabels).replace(/</g, '\\u003c')} />
-  <section aria-label={en ? 'Documents and methods' : '文档与方法'} id="discovery-docs" hidden data-pagefind-ignore><h2>{en ? 'Documents and methods' : '文档与方法'} <span data-docs-count></span></h2><ul class="question-list" id="document-results"></ul></section>
+  <script type="application/json" id="discovery-documents" set:html={JSON.stringify(documents).replaceAll('<', '\u003c')} />
+  <section aria-label={en ? 'Documents and methods' : '文档与方法'} id="discovery-docs" hidden data-pagefind-ignore><h2>{en ? 'Documents and methods' : '文档与方法'} <span data-docs-count></span></h2><ul class="question-list" id="document-results"></ul><a data-discovery-group="docs" hidden></a></section>
   <h2 id="discovery-questions-heading">{en ? 'Questions' : '题目'}</h2>
   <p data-target-content id={routeType === 'search' ? 'search-page-status' : 'result-count'} class="result-count" role="status" aria-live="polite">{en ? `${questions.length} questions` : `${questions.length} 道问题`}</p>
   <ul class="question-list search-page-results" id={routeType === 'search' ? 'search-page-results' : 'question-list'} data-discovery-results data-library-pending>
@@ -104,6 +107,7 @@ const facetOptions = filterKinds.map((kind) => {
       </li>
     ))}
   </ul>
+  <a data-discovery-group="questions" hidden></a>
   <noscript><style>.question-filters,.share-filter-controls,.selected-filters{display:none!important}</style><p>{en ? `This page lists the first ${firstPage.length} questions. Enable JavaScript to filter and page the full library.` : `本页列出前 ${firstPage.length} 题。启用 JavaScript 后可筛选并翻页浏览全部题目。`}</p></noscript>
   <nav class="library-pagination" id="library-pagination" aria-label={en ? 'Question pages' : '问题分页'} hidden>
     <button type="button" id="previous-page">{en ? 'Previous page' : '上一页'}</button>

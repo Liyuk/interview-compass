@@ -31,6 +31,7 @@ export interface KnowledgeDiagnostic {
   message: string;
 }
 export interface KnowledgeRegistry {
+  pages(locale: Locale): KnowledgeNode[];
   page(contentId: string, locale: Locale): KnowledgeNode | undefined;
   relations(contentId: string, locale: Locale): KnowledgeRelations;
   navigation(contentId: string, locale: Locale): KnowledgeNavigation;

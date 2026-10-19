@@ -21,18 +21,9 @@ const en = locale === 'en';
   </details>
 </aside>
 <script is:inline>
-{
-  const root = document.currentScript?.previousElementSibling;
-  const disclosure = root?.querySelector('[data-wiki-disclosure]');
-  const summary = disclosure?.querySelector('summary');
-  const media = matchMedia('(max-width: 760px)');
-  const sync = () => { if (disclosure) { disclosure.open = !media.matches; summary?.setAttribute('aria-expanded', String(disclosure.open)); } };
-  sync();
-  media.addEventListener('change', sync);
-  disclosure?.addEventListener('toggle', () => summary?.setAttribute('aria-expanded', String(disclosure.open)));
-  disclosure?.addEventListener('keydown', event => { if (event.key === 'Escape' && media.matches && disclosure.open) { disclosure.open = false; summary?.focus(); } });
-}
+{const root=document.currentScript?.previousElementSibling?.querySelector('[data-wiki-disclosure]');if(root){root.open=!matchMedia('(max-width:760px)').matches;root.querySelector('summary')?.setAttribute('aria-expanded',String(root.open));}}
 </script>
+<script>import '../../lib/docs-navigation-client';</script>
 <style is:global>
 .document-navigation nav { gap: 0; }
 .document-tree-list { list-style: none; margin: 0; padding: 0; }

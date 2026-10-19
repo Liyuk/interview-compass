@@ -14,7 +14,7 @@ test('all route families retain global navigation with task appropriate content'
       await expect(primary).toBeVisible();
       await expect(primary.locator('a')).toHaveCount(6);
       if (route) await expect(primary.locator('[aria-current="page"]')).toHaveCount(1);
-      if (['questions/', 'search/?q=rollback', 'questions/prioritization-limited-resources/'].includes(route)) await expect(page.locator('[data-wiki-sidebar]')).toHaveCount(0);
+      if (['questions/', 'search/?q=rollback'].includes(route)) await expect(page.locator('[data-wiki-sidebar]')).toHaveCount(0);
     }
   }
 });

@@ -5,7 +5,7 @@ const QUESTION = 'questions/prioritization-limited-resources/';
 
 test('home starts with goals and keeps category and curated entry points', async ({ page }) => {
   await page.goto('./');
-  await expect(page.getByRole('searchbox')).toBeVisible();
+  await expect(page.locator('#site-search')).toBeVisible();
   await expect(page.locator('.hero-primary')).toHaveText(/按目标开始/);
   await expect(page.locator('.hero-entry')).toHaveCount(4);
   await page.locator('.hero-primary').click();
@@ -29,10 +29,10 @@ test('primary navigation separates goals, questions, methods, guide, categories 
 test('handbook uses the shared knowledge rail, Starlight TOC, search, language and footer', async ({ page }) => {
   await page.goto('handbook/');
   if ((page.viewportSize()?.width ?? 1280) <= 760) await page.locator('[data-wiki-disclosure] > summary').click();
-  const zhSidebar = page.getByRole('navigation', { name: '知识导航' });
+  const zhSidebar = page.getByRole('navigation', { name: '文档目录' });
   await expect(zhSidebar.getByRole('link', { name: '使用说明' })).toHaveAttribute('aria-current', 'page');
-  await expect(page.getByRole('navigation', { name: '本页内容' })).toBeVisible();
-  await expect(page.getByRole('searchbox')).toBeVisible();
+  await expect(page.getByRole('navigation', { name: '本页目录' })).toBeVisible();
+  await expect(page.locator('#site-search')).toBeVisible();
   await expect(page.locator('.breadcrumbs')).toContainText('使用说明');
   await expect(page.locator('main')).toContainText('共用的 1–4 分证据参考');
   await expect(page.locator('main')).toContainText('少部分已复核题目另有专属锚点');
@@ -42,9 +42,9 @@ test('handbook uses the shared knowledge rail, Starlight TOC, search, language a
   await page.getByRole('link', { name: 'EN' }).click();
   await expect(page).toHaveURL(/\/en\/handbook\//);
   if ((page.viewportSize()?.width ?? 1280) <= 760) await page.locator('[data-wiki-disclosure] > summary').click();
-  await expect(page.getByRole('navigation', { name: 'Knowledge navigation' }).getByRole('link', { name: 'How to use' })).toHaveAttribute('aria-current', 'page');
+  await expect(page.getByRole('navigation', { name: 'Document navigation' }).getByRole('link', { name: 'How to use' })).toHaveAttribute('aria-current', 'page');
   await expect(page.getByRole('navigation', { name: 'On this page' })).toBeVisible();
-  await expect(page.getByRole('searchbox')).toBeVisible();
+  await expect(page.locator('#site-search')).toBeVisible();
   await expect(page.locator('.site-footer')).toContainText('Content license · CC BY-NC-SA 4.0');
 });
 
@@ -112,6 +112,7 @@ test('question detail explains intent and signals, links its source, and keeps t
   await expect(page.getByRole('heading', { level: 1 })).toContainText('资源只够做两项');
   await expect(page.getByRole('heading', { name: '考察意图' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '需要解决或厘清的客观问题' })).toBeVisible();
+  await page.locator('.shared-question-framework > summary').click();
   await expect(page.getByRole('heading', { name: '回答还可能说明什么' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '值得观察的信号' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '值得补充询问的上下文' })).toBeVisible();
@@ -129,6 +130,7 @@ test('question detail explains intent and signals, links its source, and keeps t
   await expect(page).toHaveURL(/\/interview-compass\/en\/questions\/prioritization-limited-resources\/$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('How would you plan next quarter');
+  await page.locator('.shared-question-framework > summary').click();
   for (const heading of [
     'Objective problem to resolve or clarify',
     'What it examines',
@@ -259,6 +261,7 @@ test('question library filters combine, update the shareable URL, and clear', as
   await page.goto('questions/');
   const total = Number((await page.locator('#result-count').innerText()).match(/^\d+/)?.[0]);
   expect(total).toBeGreaterThan(10);
+  if (!await page.locator('select[name="scenario"]').isVisible()) await page.locator('[data-discovery-facets] > summary').click();
   await page.locator('select[name="scenario"]').selectOption('promotion');
   await page.locator('select[name="role"]').selectOption('frontend');
   await expect(page).toHaveURL(/scenario=promotion/);
@@ -279,6 +282,7 @@ test('question library keeps common filters visible and reveals advanced filters
   await expect(page.locator('.filters-primary select')).toHaveCount(4);
   await expect(page.locator('#advanced-filters')).not.toHaveAttribute('open', '');
   await expect(page.locator('select[name="capability"]')).toBeHidden();
+  if (!await page.locator('#advanced-filters > summary').isVisible()) await page.locator('[data-discovery-facets] > summary').click();
   await page.locator('#advanced-filters > summary').click();
   await expect(page.locator('select[name="capability"]')).toBeVisible();
   await page.locator('select[name="capability"]').selectOption('delivery.capacity-planning');
@@ -293,11 +297,11 @@ test('question library keeps common filters visible and reveals advanced filters
 test('search supports keyboard focus and finds a localized question', async ({ page }) => {
   await page.goto('./');
   await page.keyboard.press('Control+k');
-  await expect(page.getByRole('searchbox')).toBeFocused();
+  await expect(page.locator('#site-search')).toBeFocused();
   await page.keyboard.press('Escape');
   await page.keyboard.press('Meta+k');
-  await expect(page.getByRole('searchbox')).toBeFocused();
-  await page.getByRole('searchbox').fill('资源只够做两项');
+  await expect(page.locator('#site-search')).toBeFocused();
+  await page.locator('#site-search').fill('资源只够做两项');
   await expect(page.locator('.search-results')).toBeVisible();
   await expect(page.locator('.search-results')).toContainText('资源只够做两项');
   const allMatches = new URL(await page.locator('.search-all').getAttribute('href')!);
@@ -312,7 +316,7 @@ test('language switching keeps search and question-library state', async ({ page
   await page.locator('.language-switch a').click();
   await expect(page).toHaveURL(/\/en\/search\//);
   expect(new URL(page.url()).searchParams.get('q')).toBe('资源只够做两项');
-  await expect(page.getByRole('searchbox')).toHaveValue('资源只够做两项');
+  await expect(page.locator('#site-search')).toHaveValue('资源只够做两项');
 
   await page.goto('questions/?role=backend&scenario=promotion&page=2');
   await page.locator('.language-switch a').click();
@@ -325,7 +329,7 @@ test('language switching keeps search and question-library state', async ({ page
 
 test('English search stays within the English index', async ({ page }) => {
   await page.goto('en/');
-  await page.getByRole('searchbox').fill('capacity');
+  await page.locator('#site-search').fill('capacity');
   await expect(page.locator('.search-results')).toBeVisible();
   await expect(page.locator('.search-results a').first()).toHaveAttribute('href', /\/interview-compass\/en\//);
   await expect(page.locator('.search-results')).not.toContainText('资源只够做两项');
@@ -333,7 +337,7 @@ test('English search stays within the English index', async ({ page }) => {
 
 test('search shows a localized empty state and hides it when the query is cleared', async ({ page }) => {
   await page.goto('./');
-  const search = page.getByRole('searchbox');
+  const search = page.locator('#site-search');
   const results = page.locator('.search-results');
   await search.fill('zxqvplm49372');
   await expect(results).toContainText('没有找到匹配的问题。');
@@ -343,8 +347,8 @@ test('search shows a localized empty state and hides it when the query is cleare
 
 test('search submits to the complete results page and opens a result under the Pages base path', async ({ page }) => {
   await page.goto('./');
-  await page.getByRole('searchbox').fill('资源只够做两项');
-  await page.getByRole('searchbox').press('Enter');
+  await page.locator('#site-search').fill('资源只够做两项');
+  await page.locator('#site-search').press('Enter');
   await expect(page).toHaveURL(/\/search\/?\?q=%E8%B5%84%E6%BA%90%E5%8F%AA%E5%A4%9F%E5%81%9A%E4%B8%A4%E9%A1%B9/);
   const result = page.locator('.search-page-result a').filter({ hasText: '资源只够做两项' }).first();
   await expect(result).toBeVisible();
@@ -355,8 +359,8 @@ test('search submits to the complete results page and opens a result under the P
 });
 
 test('English results are selected before the visible-result limit', async ({ page }) => {
-  await page.goto('en/');
-  await page.getByRole('searchbox').fill('AI');
+  await page.goto('en/?searchScope=questions');
+  await page.locator('#site-search').fill('AI');
   const resultLinks = page.locator('.search-results .search-result');
   await expect(resultLinks).toHaveCount(8);
   const hrefs = await resultLinks.evaluateAll((links) => links.map((link) => (link as HTMLAnchorElement).getAttribute('href')));
@@ -367,10 +371,10 @@ test('English results are selected before the visible-result limit', async ({ pa
 test('search preserves Pagefind ranking and caps the visible results at eight', async ({ page }) => {
   await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
     contentType: 'application/javascript',
-    body: `export async function search() { return { results: Array.from({ length: 12 }, (_, index) => ({ data: async () => ({ url: '/interview-compass/questions/result-' + index + '/', meta: { title: 'Result ' + index }, excerpt: 'Ranked result' }) })) }; }`,
+    body: `export async function search(query, options) { if(options?.filters?.kind === 'docs') return {results:[]}; return { results: Array.from({ length: 12 }, (_, index) => ({ data: async () => ({ url: '/interview-compass/questions/result-' + index + '/', meta: { title: 'Result ' + index }, excerpt: 'Ranked result' }) })) }; }`,
   }));
   await page.goto('./');
-  await page.getByRole('searchbox').fill('ranked');
+  await page.locator('#site-search').fill('ranked');
   const results = page.locator('.search-results .search-result');
   await expect(results).toHaveCount(8);
   await expect(results.first()).toContainText('Result 0');
@@ -381,28 +385,28 @@ test('search preserves Pagefind ranking and caps the visible results at eight', 
 test('full search results paginate all matches, retain the query, and follow browser history', async ({ page }) => {
   await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
     contentType: 'application/javascript',
-    body: `export async function search() { return { results: Array.from({ length: 43 }, (_, index) => ({ data: async () => ({ url: '/interview-compass/questions/result-' + index + '/', meta: { title: 'Result ' + index }, excerpt: 'Ranked result ' + index }) })) }; }`,
+    body: `export async function search(query, options) { if(options?.filters?.kind === 'docs') return {results:[]}; return { results: Array.from({ length: 103 }, (_, index) => ({ data: async () => ({ url: '/interview-compass/questions/result-' + index + '/', meta: { title: 'Result ' + index }, excerpt: 'Ranked result ' + index }) })) }; }`,
   }));
-  await page.goto('search/?q=ranked');
-  await expect(page.locator('#search-page-results > li')).toHaveCount(20);
-  await expect(page.locator('#search-page-status')).toContainText('43 条匹配结果');
+  await page.goto('search/?q=ranked&searchScope=questions');
+  await expect(page.locator('#search-page-results > li')).toHaveCount(50);
+  await expect(page.locator('#search-page-status')).toContainText('103 道问题');
   await page.getByRole('button', { name: '下一页' }).click();
-  await expect(page).toHaveURL(/q=ranked&page=2/);
-  await expect(page.locator('#search-page-results > li').first()).toContainText('Result 20');
+  await expect(page).toHaveURL(/q=ranked&searchScope=questions&page=2/);
+  await expect(page.locator('#search-page-results > li').first()).toContainText('Result 50');
   await page.getByRole('button', { name: '下一页' }).click();
   await expect(page.locator('#search-page-results > li')).toHaveCount(3);
   await page.goBack();
-  await expect(page).toHaveURL(/q=ranked&page=2/);
-  await expect(page.locator('#search-page-results > li').first()).toContainText('Result 20');
+  await expect(page).toHaveURL(/q=ranked&searchScope=questions&page=2/);
+  await expect(page.locator('#search-page-results > li').first()).toContainText('Result 50');
   await page.getByRole('button', { name: '上一页' }).click();
-  await expect(page).toHaveURL(/\/search\/?\?q=ranked$/);
+  await expect(page).toHaveURL(/\/search\/?\?q=ranked&searchScope=questions$/);
   await expect(page.locator('#search-page-results > li').first()).toContainText('Result 0');
 });
 
 test('search renders untrusted metadata as text and discards unsafe destinations', async ({ page }) => {
   await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
     contentType: 'application/javascript',
-    body: `export async function search() { return { results: [
+    body: `export async function search(query, options) { if(options?.filters?.kind === 'docs') return {results:[]}; return { results: [
       { data: async () => ({ url: '/interview-compass/questions/safe/', meta: { title: '<img src=x onerror="window.searchXss = true">Safe result' }, excerpt: '<img src=x onerror="window.searchXss = true">safe excerpt' }) },
       { data: async () => ({ url: 'https://example.com/phishing', meta: { title: 'External result' }, excerpt: 'external' }) },
       { data: async () => ({ url: 'javascript:window.searchXss = true', meta: { title: 'Script result' }, excerpt: 'script' }) },
@@ -411,7 +415,7 @@ test('search renders untrusted metadata as text and discards unsafe destinations
     ] }; }`,
   }));
   await page.goto('./');
-  await page.getByRole('searchbox').fill('safe');
+  await page.locator('#site-search').fill('safe');
   await expect(page.locator('.search-results')).toContainText('safe excerpt');
   await expect(page.locator('.search-results')).toContainText('<img src=x onerror="window.searchXss = true">Safe result');
   await expect(page.locator('.search-results .search-result')).toHaveCount(1);
@@ -422,20 +426,20 @@ test('search renders untrusted metadata as text and discards unsafe destinations
 test('search reports an index failure in the active language', async ({ page }) => {
   await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
     contentType: 'application/javascript',
-    body: `export async function search() { throw new Error('index unavailable'); }`,
+    body: `export async function search(query, options) { if(options?.filters?.kind === 'docs') return {results:[]}; throw new Error('index unavailable'); }`,
   }));
   await page.goto('en/');
-  await page.getByRole('searchbox').fill('failure');
+  await page.locator('#site-search').fill('failure');
   await expect(page.locator('.search-results')).toContainText('Search is unavailable. Try again.');
 });
 
 test('Escape hides results and ignores an in-flight response', async ({ page }) => {
   await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
     contentType: 'application/javascript',
-    body: `export async function search(query) { await new Promise(resolve => setTimeout(resolve, 450)); return { results: [{ data: async () => ({ url: '/interview-compass/questions/late/', meta: { title: query }, excerpt: query }) }] }; }`,
+    body: `export async function search(query, options) { if(options?.filters?.kind === 'docs') return {results:[]}; await new Promise(resolve => setTimeout(resolve, 450)); return { results: [{ data: async () => ({ url: '/interview-compass/questions/late/', meta: { title: query }, excerpt: query }) }] }; }`,
   }));
   await page.goto('./');
-  const search = page.getByRole('searchbox');
+  const search = page.locator('#site-search');
   await search.fill('late');
   await page.waitForTimeout(220);
   await page.keyboard.press('Escape');
@@ -446,10 +450,10 @@ test('Escape hides results and ignores an in-flight response', async ({ page }) 
 test('clearing the query hides and invalidates an in-flight response', async ({ page }) => {
   await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
     contentType: 'application/javascript',
-    body: `export async function search(query) { window.searchStarted = true; await new Promise(resolve => setTimeout(resolve, 500)); return { results: [{ data: async () => ({ url: '/interview-compass/questions/late/', meta: { title: query }, excerpt: query }) }] }; }`,
+    body: `export async function search(query, options) { if(options?.filters?.kind === 'docs') return {results:[]}; window.searchStarted = true; await new Promise(resolve => setTimeout(resolve, 500)); return { results: [{ data: async () => ({ url: '/interview-compass/questions/late/', meta: { title: query }, excerpt: query }) }] }; }`,
   }));
   await page.goto('./');
-  const search = page.getByRole('searchbox');
+  const search = page.locator('#site-search');
   const results = page.locator('.search-results');
   await search.fill('late');
   await page.waitForFunction(() => Boolean((window as Window & { searchStarted?: boolean }).searchStarted));
@@ -463,10 +467,10 @@ test('clearing the query hides and invalidates an in-flight response', async ({ 
 test('a slow result-data lookup cannot replace results for a newer query', async ({ page }) => {
   await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
     contentType: 'application/javascript',
-    body: `export async function search(query) { return { results: [{ data: async () => { if (query === 'slow') { window.slowDataStarted = true; await new Promise(resolve => setTimeout(resolve, 500)); } return { url: '/interview-compass/questions/' + query + '/', meta: { title: query }, excerpt: query }; } }] }; }`,
+    body: `export async function search(query, options) { if(options?.filters?.kind === 'docs') return {results:[]}; return { results: [{ data: async () => { if (query === 'slow') { window.slowDataStarted = true; await new Promise(resolve => setTimeout(resolve, 500)); } return { url: '/interview-compass/questions/' + query + '/', meta: { title: query }, excerpt: query }; } }] }; }`,
   }));
   await page.goto('./');
-  const search = page.getByRole('searchbox');
+  const search = page.locator('#site-search');
   const results = page.locator('.search-results');
   await search.fill('slow');
   await page.waitForFunction(() => Boolean((window as Window & { slowDataStarted?: boolean }).slowDataStarted));
@@ -480,10 +484,10 @@ test('a slow result-data lookup cannot replace results for a newer query', async
 test('a slower earlier query cannot replace results for the current query', async ({ page }) => {
   await page.route('**/interview-compass/pagefind/pagefind.js', (route) => route.fulfill({
     contentType: 'application/javascript',
-    body: `export async function search(query) { await new Promise(resolve => setTimeout(resolve, query === 'slow' ? 700 : 20)); return { results: [{ data: async () => ({ url: '/interview-compass/questions/' + query + '/', meta: { title: query }, excerpt: query }) }] }; }`,
+    body: `export async function search(query, options) { if(options?.filters?.kind === 'docs') return {results:[]}; await new Promise(resolve => setTimeout(resolve, query === 'slow' ? 700 : 20)); return { results: [{ data: async () => ({ url: '/interview-compass/questions/' + query + '/', meta: { title: query }, excerpt: query }) }] }; }`,
   }));
   await page.goto('./');
-  const search = page.getByRole('searchbox');
+  const search = page.locator('#site-search');
   await search.fill('slow');
   await page.waitForTimeout(250);
   await search.fill('fast');
@@ -565,12 +569,13 @@ test('mobile layout keeps the main content within the viewport', async ({ page, 
     const dimensions = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
     expect(dimensions.scroll).toBeLessThanOrEqual(dimensions.client + 1);
   }
-  await expect(page.getByRole('searchbox')).toBeVisible();
+  await expect(page.locator('#site-search')).toBeVisible();
 });
 
 test('matrix provides anchored expectations in both locales without page overflow', async ({ page }) => {
   for (const prefix of ['', 'en/']) {
     await page.goto(`${prefix}capability-model/`);
+    await page.locator('.reference-disclosure > summary').click();
     const matrix = page.locator('.capability-matrix');
     await expect(matrix.locator('tbody tr')).toHaveCount(6);
     await expect(matrix.locator('tbody td')).toHaveCount(48);
@@ -597,6 +602,7 @@ test('stage profiles explain evaluation lenses, evidence limits, and conditional
 
 test('native filters share inset Lucide chevrons and keep keyboard filtering', async ({ page }) => {
   await page.goto('questions/');
+  if (!await page.locator('#advanced-filters > summary').isVisible()) await page.locator('[data-discovery-facets] > summary').click();
   await page.locator('#advanced-filters > summary').click();
   const control = page.locator('.select-control').filter({ has: page.locator('select[name="capability"]') });
   await expect(control.locator('svg')).toHaveAttribute('stroke-width', '1.75');
@@ -627,6 +633,7 @@ test('capability leaf reveals questions in bounded reading batches', async ({ pa
   const first = await page.locator('#question-list > li:visible a').first().getAttribute('href');
   await page.locator('#question-list > li:visible a').first().click();
   await expect(page.locator('[data-reading-return]').first()).toBeVisible();
+  await page.locator('.question-relevance > summary').click();
   await expect(page.locator('.question-fit')).toBeVisible();
   await page.locator('[data-reading-return]').first().click();
   await expect(page).toHaveURL(original);
@@ -639,6 +646,7 @@ test('capability leaf reveals questions in bounded reading batches', async ({ pa
 
 test('return link restores the saved reading position and expanded filter groups', async ({ page }) => {
   await page.goto('questions/?role=backend&page=2');
+  if (!await page.locator('#advanced-filters > summary').isVisible()) await page.locator('[data-discovery-facets] > summary').click();
   await page.locator('#advanced-filters > summary').click();
   await page.evaluate(() => scrollTo(0, 650));
   const first = page.locator('#question-list > li:visible a').first();

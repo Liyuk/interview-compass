@@ -66,6 +66,7 @@ function read(): BrowseQuery {
     if (query.page === 1) corrected.searchParams.delete('page'); else corrected.searchParams.set('page', String(query.page));
     history.replaceState(null, '', corrected);
   }
+  if (!query.q && document.body.dataset.routeType === 'questions' && !new URL(location.href).searchParams.has('searchScope')) query.searchScope = 'questions';
   query.target = getTargetContext();
   keyword.value = query.q; scope.value = query.searchScope; sort.value = query.sort;
   for (const select of facetSelects) select.value = query.facets[select.name as FacetKey] ?? '';
@@ -113,7 +114,7 @@ function renderGroup(target: HTMLElement, group: ResultGroup, query: BrowseQuery
 }
 const discovery = createDiscovery({
   catalog: async (query, kind) => kind === 'docs'
-    ? query.searchScope === 'docs' ? createPagefindAdapter(await loadIndex())(query, kind) : { results: [] }
+    ? createCatalogAdapter(JSON.parse(document.querySelector('#discovery-documents')?.textContent ?? '[]'))(query, kind)
     : createCatalogAdapter(await loadCatalog())(query, kind),
   pagefind: async (query, kind) => createPagefindAdapter(await loadIndex(), await loadReadingMap())(query, kind),
 });
@@ -136,7 +137,7 @@ function chips(query: BrowseQuery) {
   for (const select of facetSelects) {
     if (!select.value) continue;
     const button = document.createElement('button'); button.type = 'button';
-    button.textContent = select.selectedOptions[0]?.dataset.countLabel ?? select.value;
+    button.textContent = `${select.closest('label')?.querySelector('span')?.textContent ?? select.name}：${select.selectedOptions[0]?.dataset.countLabel ?? select.value}`;
     button.setAttribute('aria-label', `${en ? 'Remove filter: ' : '移除筛选：'}${button.textContent}`);
     button.onclick = () => { delete query.facets[select.name as FacetKey]; query.page = 1; write(query); void render(); select.focus(); };
     target.append(button);
@@ -164,10 +165,22 @@ async function render() {
     if (query.page !== group.page) { query.page = group.page; write(query, false); }
     const total = result.docs.total + result.questions.total;
     status.textContent = en ? `${result.questions.total} questions · ${result.docs.total} documents · Page ${group.page} of ${pageCount}` : `${result.questions.total} 道问题 · ${result.docs.total} 篇文档 · 第 ${group.page} / ${pageCount} 页`;
-    pagination.hidden = pageCount <= 1;
+    pagination.hidden = query.searchScope === 'all' || pageCount <= 1;
+    for (const kind of ['docs','questions'] as const) {
+      const link = document.querySelector<HTMLAnchorElement>(`[data-discovery-group="${kind}"]`)!;
+      link.hidden = query.searchScope !== 'all' || result[kind].total === 0;
+      link.href = serializeBrowseQuery({...query,searchScope:kind,page:1},new URL(location.href));
+      link.textContent = en ? `View all ${result[kind].total} ${kind === 'docs' ? 'documents' : 'questions'}` : `查看全部${result[kind].total}${kind === 'docs' ? '篇文档' : '道题目'}`;
+    }
+    if (query.searchScope === 'all') status.textContent = en ? `${result.questions.total} questions · ${result.docs.total} documents · Previewing up to 5 in each group` : `${result.questions.total} 道问题 · ${result.docs.total} 篇文档 · 每组最多预览 5 条`;
     previous.disabled = group.page <= 1; next.disabled = group.page >= pageCount;
     document.querySelector('#page-status')!.textContent = en ? `Page ${group.page} of ${pageCount}` : `第 ${group.page} / ${pageCount} 页`;
-    empty.hidden = total > 0;
+    empty.hidden = query.searchScope === 'docs' ? result.docs.total > 0 : result.questions.total > 0;
+    empty.querySelector('[data-library-empty-message]')!.textContent = query.searchScope === 'docs'
+      ? (en ? 'No documents match. Try fewer keywords.' : '没有匹配的文档，可以减少关键词。')
+      : query.target.preference.mode === 'target' && Object.keys(query.facets).length
+        ? (en ? 'Your target and page filters have no matching questions. Clear filters or view all questions.' : '当前目标与页面筛选没有交集。可以清除页面条件，或查看全部题目。')
+        : (en ? 'No questions match. Change the keywords or page filters.' : '没有匹配题目，可以调整关键词或页面条件。');
     chips(query); void refreshCounts(query);
     // ReadingNavigation consumes the resolved order without refetching all result bodies.
     list.dataset.readingOrder = JSON.stringify(result.questions.ids);

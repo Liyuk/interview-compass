@@ -34,6 +34,7 @@ export function createKnowledgeRegistry(input: RegistryInput): RegistryResult {
   const ordered = (items: KnowledgeNode[]) => items.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   return { ok: true, registry: {
     relations: (id, locale) => relations.index.forPage(id, locale),
+    pages: locale => nodes.filter(node => node.locale === locale && Boolean(node.href)).map(node => ({...node})),
     page: (id, locale) => byId.get(key(id, locale)),
     navigation(id, locale) {
       const current = byId.get(key(id, locale));

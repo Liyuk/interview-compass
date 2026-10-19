@@ -7,4 +7,5 @@ const headings: ArticleHeading[] = Astro.locals.starlightRoute.headings
   .filter(item => item.depth >= 2 && item.depth <= 3)
   .map(item => ({ id: item.slug, label: item.text, level: item.depth as 2 | 3, sectionKey: handbookSections.find(section => section.anchors[locale] === item.slug)?.sectionKey ?? item.slug }));
 ---
+<span id="starlight__on-this-page" class="sr-only" aria-hidden="true" data-pagefind-ignore />
 <ArticleOutline headings={headings} locale={locale} />

@@ -5,7 +5,7 @@ import { parseBrowseQuery } from '../src/lib/discovery/query';
 
 it('filters every candidate before selecting the visible page', async () => {
   const catalog = createCatalogAdapter(Array.from({ length: 60 }, (_, i) => ({ id: `q${i + 1}`, title: `Question ${i + 1}`, url: `/questions/q${i + 1}/`, profiles: i >= 20 && i < 40 ? ['frontend:senior-engineer'] : [], facets: {} })));
-  const query = parseBrowseQuery(new URL('https://example.com/questions/?profileRole=frontend&profileStage=senior-engineer'), { base: '/', locale: 'en' }).query;
+  const query = parseBrowseQuery(new URL('https://example.com/questions/?searchScope=questions&profileRole=frontend&profileStage=senior-engineer'), { base: '/', locale: 'en' }).query;
   const result = await createDiscovery({ catalog, pagefind: catalog }).search(query);
   expect(result.questions.total).toBe(20);
   expect(result.questions.items.map(item => item.id)).toEqual(['q21','q22','q23','q24','q25','q26','q27','q28','q29','q30','q31','q32','q33','q34','q35','q36','q37','q38','q39','q40']);
@@ -33,4 +33,18 @@ it('counts a facet against the other conditions while allowing its own alternati
   ]), pagefind: createCatalogAdapter([]) });
   const query = parseBrowseQuery(new URL('https://example.com/?topic=cache&format=design'), { base: '/', locale: 'en' }).query;
   expect(await discovery.facetCounts(query, 'topic', ['cache', 'db'])).toEqual({ cache: 1, db: 1 });
+});
+
+it('previews both content groups and lets a document-only view browse without keywords', async () => {
+  const catalog=createCatalogAdapter([
+    {id:'guide',kind:'docs',title:'Guide',url:'/handbook/'},
+    ...Array.from({length:12},(_,i)=>({id:`q${i}`,title:`Q ${i}`,url:`/questions/q${i}/`})),
+  ]);
+  const query=parseBrowseQuery(new URL('https://example.com/search/'),{base:'/',locale:'en'}).query;
+  const discovery=createDiscovery({catalog,pagefind:catalog});
+  const all=await discovery.search(query);
+  expect(all.docs.items.map(item=>item.id)).toEqual(['guide']);
+  expect(all.questions.items).toHaveLength(5);
+  expect(all.questions.total).toBe(12);
+  expect((await discovery.search({...query,searchScope:'docs'})).docs.total).toBe(1);
 });

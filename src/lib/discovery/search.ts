@@ -1,7 +1,7 @@
 import { getPageWindow } from '../search-pagination';
 import type { BrowseQuery, FacetKey } from './types';
 export type ResultKind = 'docs' | 'questions';
-export interface DiscoveryItem { id: string; title: string; url: string; excerpt?: string; sections?: { title: string; url: string }[]; profiles?: string[]; facets?: Record<string, string[]> }
+export interface DiscoveryItem { id: string; kind?: ResultKind; title: string; url: string; excerpt?: string; sections?: { title: string; url: string }[]; profiles?: string[]; facets?: Record<string, string[]> }
 export interface Candidate { id: string; data(): Promise<DiscoveryItem> }
 export interface CandidateSet { results: Candidate[]; counts?: Record<string, Record<string, number>> }
 export type DiscoveryAdapter = (query: BrowseQuery, kind: ResultKind) => Promise<CandidateSet>;
@@ -25,8 +25,8 @@ export function createDiscovery(adapters: DiscoveryAdapters) {
     async function group(kind: ResultKind): Promise<ResultGroup> {
       const enabled = query.searchScope === 'all' || query.searchScope === kind;
       const candidates = enabled ? await adapter(query, kind) : { results: [] };
-      const pageSize = options.pageSize ?? 50;
-      const window = getPageWindow(candidates.results.length, query.page, pageSize);
+      const pageSize = options.pageSize ?? (query.searchScope === 'all' ? 5 : 50);
+      const window = getPageWindow(candidates.results.length, query.searchScope === 'all' ? 1 : query.page, pageSize);
       const items = await Promise.all(candidates.results.slice(window.start, window.end).map(result => result.data()));
       return { items, total: candidates.results.length, page: window.page, pageSize, pageCount: window.pageCount, ids: candidates.results.map(item => item.id) };
     }

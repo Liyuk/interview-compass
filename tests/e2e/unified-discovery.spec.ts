@@ -51,3 +51,11 @@ test('invalid filters and pages are removed instead of leaving a misleading addr
   await expect(page.locator('[data-discovery-results] > li')).toHaveCount(50);
   await expect(page).not.toHaveURL(/topic=|page=/);
 });
+
+test('document browsing without keywords works with the search engine unavailable', async ({ page }) => {
+  await page.route('**/pagefind/**',route=>route.abort());
+  await page.goto('questions/?searchScope=docs&profile=all');
+  await expect(page.locator('#document-results').getByRole('link',{name:'使用说明',exact:true})).toBeVisible();
+  await expect(page.locator('#discovery-error')).toBeHidden();
+  await expect(page.locator('[data-discovery-results] > li')).toHaveCount(0);
+});

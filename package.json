@@ -24,7 +24,9 @@
     "report:stage-coverage": "node scripts/stage-coverage-report.mjs",
     "check:stage-coverage": "node scripts/stage-coverage-report.mjs --require-complete",
     "check": "astro check",
-    "ci": "npm run check && npm run check:content && npm run check:stage-coverage && npm run test:unit && npm run build && npm run check:size && npm run test:e2e"
+    "ci": "npm run check && npm run check:content && npm run check:stage-coverage && npm run test:unit && npm run build && npm run check:shell && npm run check:knowledge-output && npm run check:size && npm run test:e2e",
+    "check:shell": "node scripts/check-site-shell.mjs",
+    "check:knowledge-output": "node scripts/check-knowledge-output.mjs"
   },
   "dependencies": {
     "@astrojs/starlight": "0.42.6",
