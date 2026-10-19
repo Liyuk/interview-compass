@@ -1,4 +1,6 @@
 # 全站交互与用户动线重新设计
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../../architecture/current-state.md).
+
 
 状态：待用户审阅。取代旧 wiki 规范中「内页移除顶栏」「所有内页常驻全站知识侧栏」两项决定。
 

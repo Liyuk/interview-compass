@@ -1,4 +1,6 @@
 # 全站交互与用户动线改造验收
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../architecture/current-state.md).
+
 
 ## 用户目标与实现
 

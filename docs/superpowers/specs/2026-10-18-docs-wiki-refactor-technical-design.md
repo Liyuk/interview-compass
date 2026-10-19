@@ -1,4 +1,6 @@
 # 文档型 Wiki 重构技术方案与测试契约
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../../architecture/current-state.md).
+
 
 日期：2026-10-18。状态：用户已确认技术方案及S1–S7测试边界；实施计划待审阅。
 

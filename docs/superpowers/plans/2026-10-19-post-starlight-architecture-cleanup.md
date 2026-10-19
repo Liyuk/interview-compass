@@ -80,7 +80,7 @@
 - [x] **Step 2: Correct product and design docs** so every present-tense stack/rendering/module claim matches the architecture map and executable config. Link to the map from the README.
 - [x] **Step 3: Verify the claims** against `package.json`, `astro.config.mjs`, `src/content.config.ts`, `src/lib/routes.ts`, `src/layouts/SiteLayout.astro`, `scripts/`, and the public data endpoints.
 - [x] **Step 4: Run** `git diff --check` and a targeted stale-claim search across current docs.
-- [x] **Step 5: Commit** as `docs: document current site architecture` (`pending`).
+- [x] **Step 5: Commit** as `docs: document current site architecture` (`ec9f578`).
 
 ### Task 4: Mark Starlight-era plans and reviews as historical
 
@@ -88,11 +88,11 @@
 - Modify historical files containing Starlight claims under `docs/planning/`, `docs/reviews/`, and `docs/superpowers/{plans,specs}/`.
 - Create: `docs/architecture/README.md` to explain how dated records and immutable machine snapshots should be read; it will link to, not duplicate, the canonical current map.
 
-- [ ] **Step 1: Inventory text records** with `git grep -Iil starlight HEAD -- docs` and classify narrative records versus machine snapshots.
-- [ ] **Step 2: Add a short standard historical notice** to narrative records: date-stamped historical record, its status is not current architecture, and link to `docs/architecture/current-state.md`. Preserve original findings and decisions.
-- [ ] **Step 3: Add the historical-record index** in `docs/architecture/README.md`; leave machine-generated compatibility/resource snapshots byte-for-byte unchanged where their capture metadata already identifies them as historical, and link them from the index or relevant review notice.
-- [ ] **Step 4: Verify** every remaining textual Starlight reference under docs is clearly in a historical record or captured snapshot; no old spec is presented as active guidance.
-- [ ] **Step 5: Commit** as `docs: label Starlight-era records as historical`.
+- [x] **Step 1: Inventory text records** with `git grep -Iil starlight HEAD -- docs` and classify narrative records versus machine snapshots.
+- [x] **Step 2: Add a short standard historical notice** to narrative records: date-stamped historical record, its status is not current architecture, and link to `docs/architecture/current-state.md`. Preserve original findings and decisions.
+- [x] **Step 3: Add the historical-record index** in `docs/architecture/README.md`; leave machine-generated compatibility/resource snapshots byte-for-byte unchanged where their capture metadata already identifies them as historical, and link them from the index or relevant review notice.
+- [x] **Step 4: Verify** every remaining textual Starlight reference under docs is clearly in a historical record or captured snapshot; no old spec is presented as active guidance.
+- [x] **Step 5: Commit** as `docs: label Starlight-era records as historical` (`pending`).
 
 ### Task 5: Clean active design notes and confirm module ownership
 
@@ -101,10 +101,10 @@
 - Create: `.impeccable/mocks/README.md` to identify generated mock and prompt folders as historical design exploration, not current implementation guidance.
 - Modify: `docs/architecture/current-state.md` if the ownership audit finds a missing active source boundary.
 
-- [ ] **Step 1: Classify the matching `.impeccable` text files** as accepted/current, rejected alternative, or screenshot metadata. Preserve current accepted visual direction and user-supplied reference assets.
-- [ ] **Step 2: Remove stale Starlight claims from the current direction notes** and add a clear historical label to abandoned rerolls and candidate prompts. Keep accepted mock images and user-supplied reference assets.
-- [ ] **Step 3: Check active source module consumers** with import, route, and script searches. Do not remove modules with an observed consumer or public data contract.
-- [ ] **Step 4: Verify** current design notes contain no present-tense Starlight claim and the architecture map's module ownership matches actual consumers.
+- [x] **Step 1: Classify the matching `.impeccable` text files** as accepted/current, rejected alternative, or screenshot metadata. Preserve current accepted visual direction and user-supplied reference assets.
+- [x] **Step 2: Remove stale Starlight claims from the current direction notes** and add a clear historical label to abandoned rerolls and candidate prompts. Keep accepted mock images and user-supplied reference assets.
+- [x] **Step 3: Check active source module consumers** with import, route, and script searches. Do not remove modules with an observed consumer or public data contract.
+- [x] **Step 4: Verify** current design notes contain no present-tense Starlight claim and the architecture map's module ownership matches actual consumers.
 - [ ] **Step 5: Commit** as `docs: clean stale design direction and verify module ownership`.
 
 ### Task 6: Full site acceptance

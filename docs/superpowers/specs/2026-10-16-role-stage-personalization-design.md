@@ -1,4 +1,6 @@
 # 岗位阶段模型与全站个性化设计
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../../architecture/current-state.md).
+
 
 日期：2026-10-16
 

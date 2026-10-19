@@ -1,4 +1,6 @@
 # Consistent board navigation
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../architecture/current-state.md).
+
 
 The user approved the in-chat direction: global navigation switches boards; the left sidebar lists the active board; the right outline lists article chapters. The homepage is the entry surface. Content lists and articles share the same sidebar presence and mobile disclosure label.
 

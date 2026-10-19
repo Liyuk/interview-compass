@@ -1,4 +1,6 @@
 # Interview Compass 产品技术方案与实施顺序
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../architecture/current-state.md).
+
 
 日期：2026-10-14。状态：用户确认 Astro + Starlight、Radix 设计约束、双语首发、comp-first 和首轮 TDD 接缝。当前站点已包含内容校验、索引、搜索、多视角入口和 Pages 部署；后续按覆盖审计扩充题目与能力说明。
 

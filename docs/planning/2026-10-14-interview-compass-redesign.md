@@ -1,4 +1,6 @@
 # Interview Compass 重构方案
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../architecture/current-state.md).
+
 
 > 产品边界（2026-10-14 更新）：Interview Compass 是启发式问题库。每题说明客观问题、考察意图、潜在推论、上下文追问、决策与利弊分析，并提供四档证据参考。站点不写标准答案、示范回答或招聘判定，也不自动评分。四档规则见[使用说明](../../src/content/docs/handbook.mdx)。
 

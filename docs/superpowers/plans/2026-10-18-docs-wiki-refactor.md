@@ -1,4 +1,6 @@
 # Docs Wiki Refactor Implementation Plan
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../../architecture/current-state.md).
+
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans. User selected Native execution and approved the technical specification and seven test seams. Implement vertical slices in this session, then one independent review-agent audit.
 

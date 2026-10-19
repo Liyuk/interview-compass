@@ -1,4 +1,6 @@
 # 文档型 Wiki：站点结构与多级阅读设计
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../../architecture/current-state.md).
+
 
 日期：2026-10-18。状态：V2设计修订稿，尚未实施。
 

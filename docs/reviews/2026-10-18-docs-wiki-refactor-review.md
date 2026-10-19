@@ -1,4 +1,6 @@
 # Docs / Wiki refactor acceptance
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../architecture/current-state.md).
+
 
 Specification: `docs/superpowers/specs/2026-10-18-docs-wiki-refactor-technical-design.md`.
 Plan: `docs/superpowers/plans/2026-10-18-docs-wiki-refactor.md`.

@@ -1,4 +1,6 @@
 # 准备指南与题库的信息架构方案
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../../architecture/current-state.md).
+
 
 状态：已按用户“执行完”的指令实施。实现与验收见 `docs/reviews/2026-10-19-preparation-guide.md`。
 日期：2026-10-19

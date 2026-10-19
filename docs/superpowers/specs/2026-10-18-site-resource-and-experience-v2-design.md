@@ -1,4 +1,6 @@
 # Interview Compass：资源、功能覆盖与 V2 重构设计
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../../architecture/current-state.md).
+
 
 日期：2026-10-18。状态：完整设计提案，尚未实施。
 

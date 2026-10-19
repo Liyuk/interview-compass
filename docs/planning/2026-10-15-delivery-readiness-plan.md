@@ -1,4 +1,6 @@
 # Delivery Readiness Implementation Plan
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../architecture/current-state.md).
+
 
 > **For agentic workers:** Implement inline in this task; keep the question bank unchanged in size and preserve bilingual parity.
 
