@@ -125,6 +125,19 @@ test('mobile page load does not cause a large layout shift', async ({ browser, b
   await context.close();
 });
 
+test('handbook breadcrumb and article spacing stays stable across tablet breakpoint', async ({ page }) => {
+  for (const width of [801, 800, 790, 761]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('handbook/');
+    const spacing = await page.evaluate(() => {
+      const breadcrumb = document.querySelector('.handbook-crumbs')!.getBoundingClientRect();
+      const main = document.querySelector('.handbook-reading-frame main')!.getBoundingClientRect();
+      return main.top - breadcrumb.bottom;
+    });
+    expect(spacing, `unexpected gap at ${width}px`).toBe(24);
+  }
+});
+
 test('mobile home renders its collapsed navigation before first paint', async ({ browser, baseURL }) => {
   const context = await browser.newContext({ ...devices['iPhone 13'], baseURL });
   const page = await context.newPage();
