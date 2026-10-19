@@ -30,6 +30,16 @@ it('rejects a rendered article outline that points to no chapter', async () => {
   } finally {await rm(root,{recursive:true,force:true});}
 });
 
+it('does not require a retired plugin-namespaced UI id from the old anchor snapshot', async () => {
+  const root=await mkdtemp(join(tmpdir(),'compass-legacy-disclosure-'));
+  try {
+    const baseline={base:'/app/',pages:[{url:'/app/guide/',anchorSet:'guide'}],anchorSets:{guide:['intro','legacy-plugin__disclosure-control']}};
+    await mkdir(join(root,'guide'));
+    await writeFile(join(root,'guide/index.html'),'<h2 id="intro">Intro</h2><details><summary>On this page</summary></details>');
+    expect((await checkKnowledgeOutput({root,baseline})).failures).toEqual([]);
+  } finally { await rm(root,{recursive:true,force:true}); }
+});
+
 it('checks translated chapter destinations and referenced resources', async () => {
   const root=await mkdtemp(join(tmpdir(),'compass-translations-'));
   try {

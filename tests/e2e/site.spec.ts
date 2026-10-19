@@ -30,8 +30,9 @@ test('primary navigation separates goals, questions, methods, guide, categories 
 test('handbook uses the shared knowledge rail, TOC, search, language and footer', async ({ page }) => {
   await page.goto('handbook/');
   await expect(page.locator('#_top')).toHaveCount(1);
-  await expect(page.locator('#starlight__on-this-page')).toHaveCount(0);
-  await expect(page.locator('details[data-wiki-outline] > summary')).toHaveText('本页目录');
+  const outlineSummary = page.locator('details[data-wiki-outline] > summary');
+  await expect(outlineSummary).toHaveText('本页目录');
+  await expect(outlineSummary).not.toHaveAttribute('id');
   if ((page.viewportSize()?.width ?? 1280) <= 760) await page.locator('[data-wiki-disclosure] > summary').click();
   const zhSidebar = page.getByRole('navigation', { name: '板块目录' });
   await expect(zhSidebar.getByRole('link', { name: '使用说明' })).toHaveAttribute('aria-current', 'page');

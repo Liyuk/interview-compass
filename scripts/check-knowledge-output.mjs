@@ -1,5 +1,5 @@
 import { readdir, readFile } from 'node:fs/promises';
-import { join, relative, resolve, sep } from 'node:path';
+import { join, relative, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 async function files(dir) {
   const entries = await readdir(dir,{withFileTypes:true});
@@ -24,6 +24,11 @@ export async function checkKnowledgeOutput({root,baseline,knowledge = undefined}
       if(!available.has(path)) failures.push(`Missing resource ${url} → ${resource}`);
     }
     const ids=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(match=>match[1]));
+    const headingIds=new Set([...html.matchAll(/<h[1-6]\b[^>]*\bid="([^"]+)"/g)].map(match=>match[1]));
+    const fragmentTargets=new Set();
+    for(const [,hash] of html.matchAll(/\bhref="#([^"\s]+)"/g)) {
+      try { fragmentTargets.add(decodeURIComponent(hash)); } catch { fragmentTargets.add(hash); }
+    }
     pageIds.set(url,ids);
     for(const [,nav] of html.matchAll(/<nav\b[^>]*aria-label="(?:本页目录|On this page)"[^>]*>([\s\S]*?)<\/nav>/g)) for(const [,hash] of nav.matchAll(/href="#([^"]+)"/g)) {
       let id; try { id=decodeURIComponent(hash); } catch { id=hash; }
@@ -39,7 +44,17 @@ export async function checkKnowledgeOutput({root,baseline,knowledge = undefined}
     const html=pages.get(page.url);
     if(html===undefined) { failures.push(`Missing legacy page ${page.url}`); continue; }
     const ids=pageIds.get(page.url);
-    for(const id of baseline.anchorSets[page.anchorSet] ?? []) if(!ids.has(id)) failures.push(`Missing legacy anchor ${page.url}#${id}`);
+    const headingIds=new Set([...html.matchAll(/<h[1-6]\b[^>]*\bid="([^"]+)"/g)].map(match=>match[1]));
+    const fragmentTargets=new Set();
+    for(const [,hash] of html.matchAll(/\bhref="#([^"\s]+)"/g)) {
+      try { fragmentTargets.add(decodeURIComponent(hash)); } catch { fragmentTargets.add(hash); }
+    }
+    for(const id of baseline.anchorSets[page.anchorSet] ?? []) {
+      // The historic snapshot includes plugin-namespaced UI controls as well as document anchors.
+      // Keep normal anchors and any currently referenced fragment; ignore retired namespaced controls.
+      const pluginControl = /^[a-z][a-z0-9-]*__[a-z0-9_-]+$/i.test(id) && !headingIds.has(id) && !fragmentTargets.has(id);
+      if(!pluginControl && !ids.has(id)) failures.push(`Missing legacy anchor ${page.url}#${id}`);
+    }
   }
   if(knowledge) {
     const nodesByIdentity=new Map(knowledge.nodes.map(node=>[`${node.locale}:${node.contentId}`,node]));
