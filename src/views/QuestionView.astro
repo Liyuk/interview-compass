@@ -92,6 +92,11 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
 
   <div data-pagefind-body>
     <p class="sr-only">{keywords.join(' ')}</p>
+    <meta data-pagefind-filter={`capability:${record.primaryCapability}`} />
+    <meta data-pagefind-filter={`domain:${record.primaryCapability.split('.')[0]}`} />
+    {record.responsibilityScopes.map(facetId => <meta data-pagefind-filter={`scope:${facetId}`} />)}
+    {record.careerTracks.map(facetId => <meta data-pagefind-filter={`track:${facetId}`} />)}
+    {(record.formats ?? []).map(facetId => <meta data-pagefind-filter={`format:${facetId}`} />)}
     {record.scenarios.map((facetId) => <meta data-pagefind-filter={`scenario:${facetId}`} />)}
     {record.topics.map((facetId) => <meta data-pagefind-filter={`topic:${facetId}`} />)}
     {record.roles.map((facetId) => <meta data-pagefind-filter={`role:${facetId}`} />)}

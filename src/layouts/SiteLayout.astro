@@ -25,7 +25,7 @@ const hasSidebar = presentation.kind === 'section' || presentation.kind === 'art
 const crumbs = breadcrumbsFor(route, locale, base);
 ---
 <!doctype html>
-<html lang={locale} data-pagefind-filter="locale[lang]">
+<html lang={locale} data-pagefind-filter="locale[lang], kind[data-search-kind]" data-search-kind={route.type === 'question' ? 'questions' : 'docs'}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,15 +36,16 @@ const crumbs = breadcrumbsFor(route, locale, base);
     <title>{route.type === 'home' ? 'Interview Compass' : `${title} · Interview Compass`}</title>
   </head>
   <body data-route-type={route.type} data-page-kind={presentation.kind}>
+    <span hidden data-pagefind-sort="title[data-sort-title]" data-sort-title={title} />
     <a class="skip-link" href="#main">{en ? 'Skip to content' : '跳到正文'}</a>
     <SiteMasthead locale={locale} active={active} route={route} wiki={route.type !== 'home'} />
     {route.type === 'home' ? <div class="page-frame">
-      <main id="main" class="main-content"><slot /></main>
+      <main id="main" class="main-content" data-pagefind-body><slot /></main>
     </div> : <div class="page-frame wiki-page-frame">
       <Breadcrumbs crumbs={crumbs} locale={locale} />
       <div class:list={['wiki-reading-grid', { 'has-section-nav': hasSidebar, 'has-outline': outline.length > 0 }]}>
         {hasSidebar && <DocumentNavigation route={route} locale={locale} />}
-        <main id="main" class="main-content"><slot />{hasSidebar && <ArticleRelations route={route} locale={locale} />}</main>
+        <main id="main" class="main-content" data-pagefind-body={route.type !== 'question'} data-pagefind-ignore={['search', 'questions', 'not-found'].includes(route.type) ? 'all' : undefined}><slot />{hasSidebar && <ArticleRelations route={route} locale={locale} />}</main>
         <WikiOutline items={outline} locale={locale} />
       </div>
     </div>}

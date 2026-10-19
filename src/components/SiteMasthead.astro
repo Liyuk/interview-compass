@@ -83,7 +83,9 @@ const nav = siteNavigationFor(route, locale, base);
   import { parseBrowseQuery, serializeBrowseQuery } from '../lib/discovery/query';
   import { translateArticleHash, type SectionTranslation } from '../lib/article-sections';
   import { initTargetSelector } from '../lib/target-selector';
-  import { pagefindFilters, withLinkPreference } from '../lib/target-preferences';
+  import { createDiscovery } from '../lib/discovery/search';
+  import { createPagefindAdapter } from '../lib/discovery/pagefind-adapter';
+  import { withLinkPreference } from '../lib/target-preferences';
   import { getTargetContext, subscribeTarget } from '../lib/target-state';
   import { safeSearchResultHref } from '../lib/search-records';
 
@@ -148,11 +150,13 @@ const nav = siteNavigationFor(route, locale, base);
     }
     try {
       pagefind ??= await import(/* @vite-ignore */ `${base}/pagefind/pagefind.js`) as PagefindIndex;
-      const response = await pagefind.search(normalizedQuery, { filters: pagefindFilters(lang, getTargetContext()) });
+      const adapter = createPagefindAdapter(pagefind);
+      const query = parseBrowseQuery(new URL(location.href), { base, locale: lang === 'en' ? 'en' : 'zh-CN' }).query;
+      query.q = normalizedQuery; query.target = getTargetContext(); query.page = 1;
+      const response = await createDiscovery({ catalog: adapter, pagefind: adapter }).search(query, { pageSize: 8 });
       if (request !== activeSearch) return;
-      const rankedResults = response.results.slice(0, 8);
-      const items = await Promise.all(rankedResults.map((item) => item.data()));
-      if (request !== activeSearch) return;
+      const items = [...response.docs.items.map(item => ({ ...item, group: lang === 'en' ? 'Document' : '文档' })), ...response.questions.items.map(item => ({ ...item, group: lang === 'en' ? 'Question' : '题目' }))];
+
       const links = items.flatMap((item) => {
         const href = safeSearchResultHref(item.url, { origin: window.location.origin, basePath: base });
         if (!href) return [];
@@ -162,7 +166,7 @@ const nav = siteNavigationFor(route, locale, base);
         if (getTargetContext().hasLink) linkUrl.search = withLinkPreference(linkUrl.searchParams, getTargetContext().preference).toString();
         link.href = `${linkUrl.pathname}${linkUrl.search}${linkUrl.hash}`;
         const title = document.createElement('strong');
-        title.textContent = item.meta?.title || item.url;
+        title.textContent = `${item.group} · ${item.title}`;
         const excerpt = document.createElement('span');
         excerpt.textContent = new DOMParser().parseFromString(item.excerpt ?? '', 'text/html').body.textContent ?? '';
         link.append(title, excerpt);
@@ -190,13 +194,17 @@ const nav = siteNavigationFor(route, locale, base);
     for (const [name, value] of params) { const hidden = document.createElement('input'); hidden.type = 'hidden'; hidden.name = name; hidden.value = value; hidden.dataset.profileFormValue = ''; form.append(hidden); }
   });
   const initialQuery = new URLSearchParams(location.search).get('q');
-  const isSearchPage = document.body.dataset.routeType === 'search' || location.pathname.startsWith(`${base}/search/`);
-  if (input && initialQuery) { input.value = initialQuery; if (!isSearchPage) void search(initialQuery); }
+  if (input && initialQuery) input.value = initialQuery;
   subscribeTarget((_context, reset) => { if (reset) { activeSearch++; if (results) { results.replaceChildren(); results.hidden = true; } if (input?.value.trim()) void search(input.value); } });
   input?.addEventListener('input', () => {
     window.clearTimeout(timer);
     if (!input.value.trim()) { void search(''); return; }
     timer = window.setTimeout(() => void search(input.value), 160);
+  });
+  document.addEventListener('pointerdown', event => {
+    if (event.target instanceof Node && !form?.contains(event.target) && !results?.contains(event.target)) {
+      activeSearch++; window.clearTimeout(timer); if (results) results.hidden = true;
+    }
   });
   document.addEventListener('keydown', (event) => {
     if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); input?.focus(); }
