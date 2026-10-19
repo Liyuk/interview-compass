@@ -45,7 +45,7 @@ const crumbs = breadcrumbsFor(route, locale, base);
     <SiteMasthead locale={locale} active={active} route={route} wiki={route.type !== 'home'} />
     {route.type === 'home' ? <div class="page-frame">
       <main id="main" class="main-content" data-pagefind-body><slot /></main>
-    </div> : <div class="page-frame wiki-page-frame">
+    </div> : <div class="page-frame wiki-page-frame" id={route.type === 'guide' ? '_top' : undefined}>
       <Breadcrumbs crumbs={crumbs} locale={locale} />
       <div class:list={['wiki-reading-grid', { 'has-section-nav': hasSidebar, 'has-outline': outline.length > 0 }]}>
         {hasSidebar && <DocumentNavigation route={route} locale={locale} />}
@@ -53,7 +53,7 @@ const crumbs = breadcrumbsFor(route, locale, base);
           {hasReadingTools && route.type !== 'question' && <EditorialNavigation route={route} locale={locale} />}
           {route.type === 'question' && <ReadingNavigation locale={locale} questionId={route.questionId} />}
           {['question', 'collections', 'questions', 'search'].includes(route.type) && <CurrentCollection locale={locale} questionId={route.type === 'question' ? route.questionId : undefined} />}</main>
-        <WikiOutline items={outline} locale={locale} />
+        <WikiOutline items={outline} locale={locale} legacySummaryId={route.type === 'guide' ? 'starlight__on-this-page' : undefined} />
       </div>
     </div>}
     <SiteFooter locale={locale} />
