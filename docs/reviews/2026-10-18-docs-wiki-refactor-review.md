@@ -39,4 +39,26 @@ Two batched visual rounds covered seven representative surfaces at 320, 390, 768
 
 ## Final execution and independent review
 
-Full CI and one independent read-only whole-branch review are in progress. Final counts, reviewed head and any resolved findings will be recorded here before delivery.
+An independent read-only reviewer audited the complete committed range `ce2493c..4e8ce5a`, surrounding callers, the approved spec and plan, and actual production-preview interactions. Three P2 findings were confirmed and fixed in one TDD pass:
+
+| Finding | Reproduction / regression | Evidence |
+| --- | --- | --- |
+| Explicit all-content choice reset to questions | Change content type on the question route, then reload | `an explicit all-content selection survives question-route reloads`: RED on reset; GREEN on desktop and mobile |
+| Existing return links lost the source after moving to another question | Open results page 2, move to next question, switch language | `all return links retain the original results after moving and translating`: RED on bare route; GREEN on both devices |
+| Filters remained disabled after ordinary recovery | Catalog 503, recover through document browsing, return to questions | `successful browsing restores filters after recovering without the retry button`: RED on disabled selector; GREEN on both devices |
+
+No findings were declined or deferred. The existing filter-combination test now waits for the observable loaded count and results rather than parsing temporary loading text. A prior run accidentally reused an unrelated server on port 5027; it is excluded from acceptance evidence. Final validation uses this worktree's production preview on port 18565.
+
+The public-feed audit inspected both indexes and all 2,668 individual localized question JSON files: 1,334 identities per locale, stable compact index fields, IDs/locales, signal/source arrays, evaluation levels 1–4 and 24 localized dedicated analyses (12 questions). Zero shape failures. These analysis counts remain separate from the 1,334 applicability reviews.
+
+Final verified implementation commit: `a43ae94dbcf4b127702474efa48e01c7c7280a9f`. Final release command: `PLAYWRIGHT_PORT=18565 npm run ci` — exit 0.
+
+- Typecheck: 0 errors, 0 warnings, 6 hints.
+- Content: 2,668 localized records / 1,334 published identities; applicability review complete with 0 pending / 0 empty reviewed profiles.
+- Unit tests: 172 passed across 33 files.
+- Production build and real Pagefind index: passed; reading identity map contains 2,668 localized entries.
+- Shell and knowledge output gates: 3,464 pages, 0 failures in either gate; baseline URLs/anchors preserved.
+- Output size: 226,947,147 bytes, below the 220 MiB gate.
+- Browser tests: 227 passed, 1 existing desktop skip for a mobile-only viewport assertion, 0 failed (57.6 seconds).
+
+The first review-fix suite caught an interaction between explicit content type and language switching. Route defaults now live in the shared URL codec; both all-content reload and translated paginated question browsing pass, followed by the complete green CI run. Public APIs, deployment scope and content authoring remain as recorded above.
