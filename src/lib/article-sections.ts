@@ -7,7 +7,7 @@ export function translateArticleHash(hash: string, from: Locale, to: Locale, sec
   const section = sections.find(item => item.anchors[from] === anchor);
   return section?.anchors[to] ? `#${section.anchors[to]}` : '';
 }
-export const handbookSections: SectionTranslation[] = [
+export const guideSections: SectionTranslation[] = [
   ['targets', '岗位与阶段目标', 'role-and-stage-targets'],
   ['organization', '问题如何组织', 'how-questions-are-organized'],
   ['entry', '怎样进入', 'ways-in'],

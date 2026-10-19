@@ -3,14 +3,14 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import SectionTranslations from '../components/docs/SectionTranslations.astro';
 import * as zh from '../content/guide/zh-CN.md';
 import * as en from '../content/guide/en.md';
-import { guideHeadings, guideSections, type GuideDocument } from '../lib/guide-content';
+import { guideHeadings, guideSectionsFor, type GuideDocument } from '../lib/guide-content';
 import type { Locale } from '../lib/taxonomy';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const docs = { 'zh-CN': zh as unknown as GuideDocument, en: en as unknown as GuideDocument };
 const doc = docs[locale];
-const sections = guideSections(docs);
+const sections = guideSectionsFor(docs);
 const headings = guideHeadings(doc, locale, sections);
 const { title, description } = doc.frontmatter;
 const Content = doc.Content as any;
