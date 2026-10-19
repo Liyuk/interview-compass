@@ -1,4 +1,6 @@
 ---
+import SectionTranslations from '../docs/SectionTranslations.astro';
+import { handbookSections } from '../../lib/article-sections';
 import SiteMasthead from '../SiteMasthead.astro';
 import Breadcrumbs from '../Breadcrumbs.astro';
 import { breadcrumbsFor } from '../../lib/routes';
@@ -10,4 +12,5 @@ const crumbs = breadcrumbsFor({ type: 'guide' }, locale, import.meta.env.BASE_UR
 ---
 
 <SiteMasthead locale={locale} active="guide" route={{ type: 'guide' }} wiki />
+<SectionTranslations sections={handbookSections} />
 <div class="page-frame handbook-crumbs"><Breadcrumbs crumbs={crumbs} locale={locale} /></div>

@@ -8,12 +8,14 @@ export default defineConfig({
     starlight({
       title: 'Interview Compass',
       pagefind: false,
+      tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 3 },
       disable404Route: true,
       customCss: ['./src/styles/starlight.css'],
       components: {
         PageFrame: './src/components/starlight/PageFrame.astro',
         Header: './src/components/starlight/Header.astro',
         Footer: './src/components/starlight/Footer.astro',
+        TableOfContents: './src/components/starlight/TableOfContents.astro',
         Sidebar: './src/components/starlight/Sidebar.astro',
       },
       defaultLocale: 'root',

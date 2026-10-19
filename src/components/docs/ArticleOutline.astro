@@ -1,0 +1,47 @@
+---
+import type { Locale } from '../../lib/taxonomy';
+import { createOutline, type ArticleHeading } from '../../lib/knowledge/outline';
+import OutlineTree from './OutlineTree.astro';
+interface Props { headings: ArticleHeading[]; locale: Locale }
+const { headings, locale } = Astro.props;
+const result = createOutline(headings);
+if (result.ok === false) throw new Error(`Invalid article outline: ${JSON.stringify(result.diagnostics)}`);
+const label = locale === 'en' ? 'On this page' : '本页目录';
+---
+{result.nodes.length > 0 && <details class="wiki-outline" open data-wiki-outline>
+  <summary aria-expanded="true"><span>{label}</span><span aria-hidden="true">⌄</span></summary>
+  <nav aria-label={label}><OutlineTree nodes={result.nodes} /></nav>
+</details>}
+<script is:inline>
+{
+  const root = document.currentScript?.previousElementSibling;
+  if (root?.matches('[data-wiki-outline]')) {
+    const summary = root.querySelector('summary');
+    const media = matchMedia('(max-width: 760px)');
+    const sync = () => { root.open = !media.matches; summary?.setAttribute('aria-expanded', String(root.open)); };
+    sync(); media.addEventListener('change', sync);
+    root.addEventListener('toggle', () => summary?.setAttribute('aria-expanded', String(root.open)));
+    root.addEventListener('keydown', event => { if (event.key === 'Escape' && media.matches && root.open) { root.open = false; summary?.focus(); } });
+    const links = [...root.querySelectorAll('[data-outline-link]')];
+    const sections = links.map(link => document.getElementById(link.getAttribute('href').slice(1))).filter(Boolean);
+    if ('IntersectionObserver' in window) {
+      const update = () => {
+        let current = sections[0];
+        for (const section of sections) if (section.getBoundingClientRect().top <= 140) current = section;
+        for (const link of links) {
+          if (link.getAttribute('href') === `#${current?.id}`) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        }
+      };
+      const observer = new IntersectionObserver(update, { rootMargin: '-5% 0px -65% 0px' });
+      sections.forEach(section => observer.observe(section));
+      update();
+    }
+  }
+}
+</script>
+<style is:global>
+.wiki-outline ol ol { padding-inline-start: 12px; margin-block: 6px 4px; border-inline-start: 1px solid var(--line); }
+.wiki-outline a[aria-current="location"] { color: var(--red); font-weight: 650; }
+[data-section-key], .anchor-alias { scroll-margin-top: 24px; }
+</style>

@@ -1,4 +1,7 @@
 ---
+import SectionTranslations from '../components/docs/SectionTranslations.astro';
+import SectionHeading from '../components/docs/SectionHeading.astro';
+import type { ArticleHeading } from '../lib/knowledge/outline';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Icon from '../components/Icon.astro';
 import { pathFor } from '../lib/routes';
@@ -95,7 +98,7 @@ const growthLenses = en ? [
   ['思维', '如何拆解、建模、比较方案，并依据反证更新判断。'],
   ['韧性', '受挫后如何恢复行动、寻求支持，并改变下一次尝试。'],
 ];
-const outline = [
+const chapters = [
   { id: 'core-method-heading', label: en ? 'Compare, challenge, execute, and verify' : '比较、挑战、执行，再核验证据' },
   { id: 'card-anatomy-heading', label: en ? 'From a real question to bounded evidence' : '从真实问题到有边界的证据' },
   { id: 'interviewer-framework-title', label: en ? 'Use questions to gather comparable evidence' : '用问题收集可比较的证据' },
@@ -103,9 +106,21 @@ const outline = [
   { id: 'reverse-framework-title', label: en ? 'Use reverse questions for mutual due diligence' : '用反向提问做双向尽调' },
   { id: 'framework-sources-title', label: en ? 'Further reading' : '参考资料' },
 ];
+const outline: ArticleHeading[] = chapters.flatMap(chapter => {
+  const heading: ArticleHeading = { ...chapter, level: 2, sectionKey: chapter.id };
+  const children: ArticleHeading[] = chapter.id === 'core-method-heading'
+    ? coreSteps.map(([label], index) => ({ id: `core-step-${index + 1}`, sectionKey: `core-step-${index + 1}`, label, level: 3 }))
+    : chapter.id === 'interviewer-framework-title'
+      ? interviewerSteps.map((step, index) => ({ id: `interviewer-step-${index + 1}`, sectionKey: `interviewer-step-${index + 1}`, label: step.title, level: 3 }))
+      : [];
+  return [heading, ...children];
+});
+const headingFor = (id: string) => outline.find(item => item.id === id)!;
+
 ---
 
 <SiteLayout locale={locale} route={{ type: 'framework' }} description={en ? 'How Interview Compass structures questions, interviewer follow-ups, candidate stories, and two-way due diligence.' : '说明 Interview Compass 如何组织面试官追问、候选人经历表达与双向尽调问题。'} outline={outline}>
+  <SectionTranslations sections={outline.map(item => ({ sectionKey: item.sectionKey, anchors: { 'zh-CN': item.id, en: item.id } }))} />
   <header class="framework-hero">
     <p class="eyebrow">{en ? 'HOW TO ASK · HOW TO ANSWER · HOW TO CHOOSE' : '如何提问 · 如何回答 · 如何判断'}</p>
     <h1 class="page-title">{en ? 'Questioning framework' : '提问框架'}</h1>
@@ -114,8 +129,8 @@ const outline = [
   </header>
 
   <section class="framework-core" aria-labelledby="core-method-heading">
-    <div class="framework-section-heading"><span>00A</span><div><p class="eyebrow">{en ? 'THE CORE VIEWPOINT' : '本站的核心判断线索'}</p><h2 id="core-method-heading">{en ? 'Compare, challenge, execute, and verify' : '比较、挑战、执行，再核验证据'}</h2><p>{en ? 'The same reasoning applies to technical, product, operations, hiring, and promotion questions. The evidence changes with the role; the inquiry stays contextual.' : '这套思路贯穿技术、产品、运营、招聘与晋升问题。证据随岗位和责任变化，判断始终要回到具体背景。'}</p></div></div>
-    <ol class="framework-core-steps">{coreSteps.map(([title, text], index) => <li><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol>
+    <div class="framework-section-heading"><span>00A</span><div><p class="eyebrow">{en ? 'THE CORE VIEWPOINT' : '本站的核心判断线索'}</p><SectionHeading heading={headingFor('core-method-heading')} /><p>{en ? 'The same reasoning applies to technical, product, operations, hiring, and promotion questions. The evidence changes with the role; the inquiry stays contextual.' : '这套思路贯穿技术、产品、运营、招聘与晋升问题。证据随岗位和责任变化，判断始终要回到具体背景。'}</p></div></div>
+    <ol class="framework-core-steps">{coreSteps.map(([, text], index) => <li><span>{String(index + 1).padStart(2, '0')}</span><div><SectionHeading heading={headingFor(`core-step-${index + 1}`)} /><p>{text}</p></div></li>)}</ol>
     <div class="growth-lenses"><h3>{en ? 'Four lenses for sustained growth' : '四项持续成长观察视角'}</h3><div>{growthLenses.map(([title, text]) => <article><strong>{title}</strong><p>{text}</p></article>)}</div></div>
     <nav class="framework-core-links" aria-label={en ? 'Explore questions through this method' : '沿这套方法继续浏览'}>
       <a href={pathFor({ type: 'collection', id: 'interviewer-evidence' }, locale, base)}>{en ? 'Interviewer evidence set' : '面试官取证精选'}</a>
@@ -125,20 +140,20 @@ const outline = [
   </section>
 
   <section class="framework-card-anatomy" aria-labelledby="card-anatomy-heading">
-    <div class="framework-section-heading"><span>00</span><div><p class="eyebrow">{en ? 'HOW A QUESTION CARD IS BUILT' : '一道题如何形成'}</p><h2 id="card-anatomy-heading">{en ? 'From a real question to bounded evidence' : '从真实问题到有边界的证据'}</h2><p>{en ? 'Each card is designed to help someone ask, clarify, and reason. Its inference is a hypothesis to check, not a conclusion about a person.' : '每张题卡帮助提问、补足背景并进行判断。潜在推论只是待核实的假设，不是对人的结论。'}</p></div></div>
+    <div class="framework-section-heading"><span>00</span><div><p class="eyebrow">{en ? 'HOW A QUESTION CARD IS BUILT' : '一道题如何形成'}</p><SectionHeading heading={headingFor('card-anatomy-heading')} /><p>{en ? 'Each card is designed to help someone ask, clarify, and reason. Its inference is a hypothesis to check, not a conclusion about a person.' : '每张题卡帮助提问、补足背景并进行判断。潜在推论只是待核实的假设，不是对人的结论。'}</p></div></div>
     <ol class="card-anatomy-flow">{cardSteps.map(([title, text], index) => <li><span>{String(index + 1).padStart(2, '0')}</span><strong>{title}</strong><p>{text}</p></li>)}</ol>
   </section>
 
   <section class="framework-section" aria-labelledby="interviewer-framework-title">
-    <div class="framework-section-heading"><span>01</span><div><p class="eyebrow">{en ? 'INTERVIEWER' : '面试官视角'}</p><h2 id="interviewer-framework-title">{en ? 'Use questions to gather comparable evidence' : '用问题收集可比较的证据'}</h2><p>{en ? 'A strong interview is planned around role requirements. Follow-ups clarify the same evidence dimensions without forcing identical stories.' : '好的面试先围绕岗位要求设计。追问要澄清同一类证据，但不要求每个人讲出完全相同的经历。'}</p></div></div>
+    <div class="framework-section-heading"><span>01</span><div><p class="eyebrow">{en ? 'INTERVIEWER' : '面试官视角'}</p><SectionHeading heading={headingFor('interviewer-framework-title')} /><p>{en ? 'A strong interview is planned around role requirements. Follow-ups clarify the same evidence dimensions without forcing identical stories.' : '好的面试先围绕岗位要求设计。追问要澄清同一类证据，但不要求每个人讲出完全相同的经历。'}</p></div></div>
     <ol class="framework-step-list">
-      {interviewerSteps.map((step, index) => <li><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}
+      {interviewerSteps.map((step, index) => <li><span>{String(index + 1).padStart(2, '0')}</span><div><SectionHeading heading={headingFor(`interviewer-step-${index + 1}`)} /><p>{step.text}</p></div></li>)}
     </ol>
     <div class="framework-note"><strong>{en ? 'Keep the inference bounded' : '控制推论边界'}</strong><p>{en ? 'Interview answers are evidence with limits. Gaps may reflect memory, access, role boundaries, or a poorly framed question. Clarify before drawing conclusions; do not infer intent or character from one response.' : '面试回答是有边界的证据。信息缺口可能来自记忆、权限、职责边界或问题本身不清楚。先追问澄清再下判断，不要凭单次回答推断动机或人格。'}</p></div>
   </section>
 
   <section class="framework-section" aria-labelledby="candidate-framework-title">
-    <div class="framework-section-heading"><span>02</span><div><p class="eyebrow">{en ? 'CANDIDATE · ANSWERING' : '候选人 · 回答问题'}</p><h2 id="candidate-framework-title">{en ? 'Turn an experience into a traceable causal story' : '把经历讲成可核验的因果链'}</h2><p>{en ? 'STAR is a useful memory aid, but a strong answer also makes choices, evidence, attribution, and learning visible.' : 'STAR 可以帮助回忆，但有说服力的回答还要呈现判断、证据、个人贡献和复盘。'}</p></div></div>
+    <div class="framework-section-heading"><span>02</span><div><p class="eyebrow">{en ? 'CANDIDATE · ANSWERING' : '候选人 · 回答问题'}</p><SectionHeading heading={headingFor('candidate-framework-title')} /><p>{en ? 'STAR is a useful memory aid, but a strong answer also makes choices, evidence, attribution, and learning visible.' : 'STAR 可以帮助回忆，但有说服力的回答还要呈现判断、证据、个人贡献和复盘。'}</p></div></div>
     <ol class="answer-structure">
       {answerSteps.map(([title, text], index) => <li><span>{String(index + 1).padStart(2, '0')}</span><strong>{title}</strong><p>{text}</p></li>)}
     </ol>
@@ -146,7 +161,7 @@ const outline = [
   </section>
 
   <section class="framework-section" aria-labelledby="reverse-framework-title">
-    <div class="framework-section-heading"><span>03</span><div><p class="eyebrow">{en ? 'CANDIDATE · TWO-WAY CHOICE' : '候选人 · 双向选择'}</p><h2 id="reverse-framework-title">{en ? 'Use reverse questions for mutual due diligence' : '用反向提问做双向尽调'}</h2><p>{en ? 'Choose a few questions whose answers could change your decision. Ask for examples and compare the answer with what you heard from other interviewers.' : '优先选择那些答案可能改变你决定的问题。请对方举例，并对照不同面试官提供的信息是否一致。'}</p></div></div>
+    <div class="framework-section-heading"><span>03</span><div><p class="eyebrow">{en ? 'CANDIDATE · TWO-WAY CHOICE' : '候选人 · 双向选择'}</p><SectionHeading heading={headingFor('reverse-framework-title')} /><p>{en ? 'Choose a few questions whose answers could change your decision. Ask for examples and compare the answer with what you heard from other interviewers.' : '优先选择那些答案可能改变你决定的问题。请对方举例，并对照不同面试官提供的信息是否一致。'}</p></div></div>
     <div class="reverse-question-grid">
       {reverseQuestions.map((item, index) => <article><span>{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}
     </div>
@@ -155,7 +170,7 @@ const outline = [
   </section>
 
   <section class="framework-sources" aria-labelledby="framework-sources-title">
-    <h2 id="framework-sources-title">{en ? 'Further reading' : '参考资料'}</h2>
+    <SectionHeading heading={headingFor('framework-sources-title')} />
     <p>{en ? 'These sources support structured, job-related assessment practices; they do not validate this site’s question bank or scoring anchors.' : '这些资料用于参考结构化、岗位相关的评估实践，不代表本站题库或评分锚点已经过效度验证。'}</p>
     <ul>
       <li><a href="https://www.opm.gov/policy-data-oversight/assessment-and-selection/other-assessment-methods/structured-interviews/" target="_blank" rel="noreferrer">U.S. Office of Personnel Management · Structured Interviews</a></li>

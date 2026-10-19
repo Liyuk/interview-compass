@@ -1,0 +1,8 @@
+---
+import type { ArticleHeading } from '../../lib/knowledge/outline';
+interface Props { heading: ArticleHeading }
+const { heading } = Astro.props;
+const Tag = `h${heading.level}` as 'h2' | 'h3' | 'h4';
+---
+{heading.legacyIds?.filter(id => id !== heading.id).map(id => <span id={id} class="anchor-alias" aria-hidden="true"></span>)}
+<Tag id={heading.id} data-section-key={heading.sectionKey}>{heading.label}</Tag>

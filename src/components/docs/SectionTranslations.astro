@@ -1,0 +1,6 @@
+---
+import type { SectionTranslation } from '../../lib/article-sections';
+interface Props { sections: SectionTranslation[] }
+const { sections } = Astro.props;
+---
+<script type="application/json" id="article-section-translations" set:html={JSON.stringify(sections).replace(/</g, '\\u003c')} />

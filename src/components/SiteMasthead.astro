@@ -80,6 +80,7 @@ const nav = siteNavigationFor(route, locale, base);
 
 <script>
   import '../lib/target-dom';
+  import { translateArticleHash, type SectionTranslation } from '../lib/article-sections';
   import { initTargetSelector } from '../lib/target-selector';
   import { pagefindFilters, withLinkPreference } from '../lib/target-preferences';
   import { getTargetContext, subscribeTarget } from '../lib/target-state';
@@ -98,14 +99,26 @@ const nav = siteNavigationFor(route, locale, base);
   const languageLink = document.querySelector<HTMLAnchorElement>('.language-switch a');
   if (languageLink) {
     const transferableParams = ['q', 'role', 'scope', 'track', 'scenario', 'topic', 'format', 'capability', 'page', 'targetRole', 'targetStage', 'profile', 'profileRole', 'profileStage'];
-    const current = new URL(window.location.href);
-    const target = new URL(languageLink.href, current);
-    for (const key of transferableParams) {
-      const value = current.searchParams.get(key);
-      if (value !== null) target.searchParams.set(key, value);
-    }
-    if (current.hash) target.hash = current.hash;
-    languageLink.href = target.href;
+    const syncLanguageLink = () => {
+      const current = new URL(window.location.href);
+      const target = new URL(languageLink.href, current);
+      for (const key of transferableParams) {
+        const value = current.searchParams.get(key);
+        if (value !== null) target.searchParams.set(key, value);
+        else target.searchParams.delete(key);
+      }
+      const data = document.getElementById('article-section-translations');
+      if (data) {
+        let sections: SectionTranslation[] = [];
+        try { sections = JSON.parse(data.textContent ?? '[]'); } catch { /* Unmapped sections fall back to the translated page. */ }
+        const from = lang === 'en' ? 'en' : 'zh-CN';
+        target.hash = translateArticleHash(current.hash, from, from === 'en' ? 'zh-CN' : 'en', sections);
+      } else target.hash = current.hash;
+      languageLink.href = target.href;
+    };
+    syncLanguageLink();
+    languageLink.addEventListener('click', syncLanguageLink);
+    window.addEventListener('hashchange', syncLanguageLink);
   }
   type SearchData = { url: string; meta?: { title?: string }; excerpt?: string };
   type SearchResult = { url: string; data: () => Promise<SearchData> };
