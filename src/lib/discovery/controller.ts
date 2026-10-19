@@ -29,6 +29,14 @@ let version = 0;
 let catalog: DiscoveryItem[] | undefined;
 let catalogPending: Promise<DiscoveryItem[]> | undefined;
 let index: PagefindIndex | undefined;
+let readingMap: Promise<Record<string, string>> | undefined;
+async function loadReadingMap() {
+  readingMap ??= fetch(`${base}/data/discovery/reading-map.v1.json`).then(async response => {
+    if (!response.ok) throw Error('reading-map');
+    const payload = await response.json(); if (payload.version !== 1 || !payload.ids || typeof payload.ids !== 'object') throw Error('reading-map-version'); return payload.ids as Record<string, string>;
+  }).catch(error => { readingMap = undefined; throw error; });
+  return readingMap;
+}
 let pageCount = 1;
 let lastQuery: BrowseQuery;
 const labels = JSON.parse(document.querySelector('#library-capability-labels')?.textContent ?? '{}') as Record<string, string>;
@@ -105,7 +113,7 @@ const discovery = createDiscovery({
   catalog: async (query, kind) => kind === 'docs'
     ? query.searchScope === 'docs' ? createPagefindAdapter(await loadIndex())(query, kind) : { results: [] }
     : createCatalogAdapter(await loadCatalog())(query, kind),
-  pagefind: async (query, kind) => createPagefindAdapter(await loadIndex())(query, kind),
+  pagefind: async (query, kind) => createPagefindAdapter(await loadIndex(), await loadReadingMap())(query, kind),
 });
 async function refreshCounts(query: BrowseQuery) {
   const request = version;
@@ -159,7 +167,7 @@ async function render() {
     empty.hidden = total > 0;
     chips(query); void refreshCounts(query);
     // ReadingNavigation consumes the resolved order without refetching all result bodies.
-    list.dataset.readingOrder = JSON.stringify(result.questions.items.map(item => new URL(item.url, location.origin).pathname.match(/\/questions\/([^/]+)\/$/)?.[1]).filter(Boolean));
+    list.dataset.readingOrder = JSON.stringify(result.questions.ids);
     updateTargetDom();
   } catch {
     if (request !== version) return;

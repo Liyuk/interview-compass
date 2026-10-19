@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "astro dev",
     "build:site": "astro build && node scripts/copy-legal-files.mjs",
-    "build:search": "pagefind --site dist --output-subdir pagefind",
+    "build:search": "pagefind --site dist --output-subdir pagefind && node scripts/build-search-reading-map.mjs",
     "build": "npm run build:site && npm run build:search",
     "preview": "astro preview",
     "test": "vitest run",

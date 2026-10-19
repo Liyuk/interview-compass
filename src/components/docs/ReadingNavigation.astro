@@ -1,0 +1,13 @@
+---
+import type { Locale } from '../../lib/taxonomy';
+interface Props { locale: Locale; questionId: string }
+const { locale, questionId } = Astro.props;
+const en = locale === 'en';
+---
+<nav class="reading-session" aria-label={en ? 'Current reading' : '本次阅读'} data-reading-navigation data-current-question={questionId} hidden data-pagefind-ignore>
+  <h2>{en ? 'Continue this set' : '继续本次阅读'}</h2>
+  <p data-reading-position role="status"></p>
+  <div class="journey-links"><a data-reading-previous hidden>{en ? 'Previous question' : '上一题'}</a><a data-session-return>{en ? 'Back to this set' : '返回本次集合'}</a><a data-reading-next hidden>{en ? 'Next question' : '下一题'}</a></div>
+  <p data-reading-endpoint></p>
+</nav>
+<style>.reading-session { margin-block: 2rem; padding-block: 1rem; border-block: 1px solid var(--line); } h2 { font-size: 1.1rem; }</style>
