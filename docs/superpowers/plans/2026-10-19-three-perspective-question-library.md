@@ -122,15 +122,15 @@
 - Create: `docs/core-question-candidates.md`
 - Read: `src/lib/question-collections.ts`, `src/data/question-specific-analyses.json`, `src/lib/taxonomy.ts`, and paired question records
 
-- [ ] Build a candidate pool from the 31 IDs in four existing question sets, the 12 IDs with reviewed bilingual analyses, and other scenario questions only where their evidence potential is concrete.
-- [ ] Select 100–150 IDs across all eight domains, with 30–50 assigned to each perspective; confirm every selected ID has one published Chinese and one English record.
-- [ ] For each candidate, record ID, proposed perspective, domain, selection rationale, current bilingual/content risks, and whether that perspective is inferred or manually reviewed.
+- [x] Build a candidate pool from the 31 IDs in four existing question sets, the 12 IDs with reviewed bilingual analyses, and other scenario questions only where their evidence potential is concrete.
+- [x] Select 100 IDs across all eight domains, with 35/35/30 assigned to the three proposed primary site audiences; confirm every selected ID has one published Chinese and one English record.
+- [x] For each candidate, record ID, proposed primary audience, current inferred respondent perspective, domain, selection rationale, and current bilingual/content risks.
 - [ ] Review perspective assignment and semantic question wording against both locales; remove candidates whose primary perspective cannot be established without changing the prompt.
-- [ ] Run a small script or checker to verify list uniqueness, counts, domain coverage, perspective balance, and paired IDs.
-- [ ] Open a standalone candidate-list PR; make no question content or tier changes.
+- [x] Run `node scripts/check-core-question-candidates.mjs` to verify list uniqueness, audience counts, domain coverage, and paired published IDs.
+- [x] Open a standalone candidate-list PR; make no question content or tier changes.
 - [ ] Stop and wait for the user's review of the candidate list. Do not start Phase D until approved.
 
-**Audit finding (2026-10-19):** The Phase A migration baseline contains 13 interviewer and 26 manager assignments, while 1,261/1,334 assignments are low-confidence. The current one-value `perspective` field conflates question respondent with site audience. See `docs/reviews/2026-10-19-core-perspective-pool-audit.md`. Do not fabricate a balanced list; get a direction on respondent-only classification, corpus expansion, or separate multi-valued audiences before continuing Task 5.
+**Audit finding (2026-10-19):** The Phase A migration baseline contains 13 interviewer and 26 manager assignments, while 1,261/1,334 respondent-perspective assignments are low-confidence. The current `perspective` metadata is not sufficient to identify site audiences. The Phase C draft therefore lists proposed primary site audiences separately and preserves the inferred respondent value per question. See `docs/reviews/2026-10-19-core-perspective-pool-audit.md` and `docs/reviews/2026-10-19-core-question-source-pool.md`.
 
 ## Phase D — Rewrite Approved Core Questions (one PR per batch)
 

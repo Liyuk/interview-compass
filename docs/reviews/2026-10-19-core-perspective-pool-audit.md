@@ -12,18 +12,14 @@ The existing `interviewer-evidence` collection does not resolve this: it include
 
 The concrete source pool confirms the distinction: 31 unique IDs across four curated sets plus 12 reviewed-analysis IDs, with one overlap. In the `interviewer-evidence` set, six of eight entries currently have candidate respondent perspective. See `docs/reviews/2026-10-19-core-question-source-pool.md` for the IDs and counts.
 
-## Recommendation
+## Candidate-list proposal
 
-Keep respondent perspective explicit and exclusive only where the question itself supports it. Model site audiences as a separate, multi-valued discovery relationship so the same question may serve candidate preparation, interviewer evidence gathering, and manager assessment without being duplicated or mislabeled.
+The Phase C draft now lists 100 unique IDs under three primary site audiences (candidate 35, interviewer 35, manager 30) and keeps the migration's respondent perspective visible per row. All 100 still have inferred, unreviewed respondent metadata. The draft does not change question content or persist audience tags.
 
-For the core set, select by quality and usefulness from the existing corpus. Do not impose equal per-audience counts until an editorial review shows that each group has enough distinct questions. If 30–50 interviewer-answer prompts remain a firm requirement, authoring new prompts is a separate content expansion and should be planned explicitly.
+This separates the equal audience entrances from the current answerer classification for the purpose of review. If approved, a following schema/navigation PR should store site audiences separately from respondent perspective and validate audience metadata before any record is marked core. The same question may be linked from more than one reading path without duplicating its record.
 
-## Decision needed before Task 5
+## Review gate
 
-Choose one direction before a candidate list is assembled:
-
-1. Keep `perspective` as the person answering; remove the 30–50 minimum for each group and select only supported records.
-2. Keep the equal minimum; expand the corpus with new interviewer- and manager-answer prompts in a separately reviewed content phase.
-3. Separate respondent perspective from multi-valued site audiences, then define core counts against the intended relationship.
+Review `docs/core-question-candidates.md` and confirm that its 35/35/30 counts represent the three intended site audiences. Remove or reassign any ID whose bilingual wording, evidence potential, respondent perspective, or primary audience is inaccurate. Do not start Phase D until the list is approved.
 
 No question text, perspective metadata, or quality tier was changed during this audit.
