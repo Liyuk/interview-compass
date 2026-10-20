@@ -3,14 +3,14 @@ questionId: f-frontline-management-weakest-member-correction
 kind: question
 status: published
 locale: en
-title: Among the people you lead, what is the most specific behavioral correction you made for the weakest performer in the past month?
-question: Among the people you lead, who performs best and who performs worst? For the weakest performer, what is the most specific behavioral correction you made in the past month, and what happened?
-intent: See whether you actually manage weak performance rather than avoid it and can name concrete actions that can be checked.
+title: "How do you address a specific performance gap while protecting employee privacy?"
+question: "Without identifying the employee, describe a recent case where someone on your team was not meeting an important expectation. What specific feedback or correction did you provide, and what happened afterward?"
+intent: "Assess whether you address performance gaps with specific evidence, fair expectations, follow-up, and appropriate confidentiality."
 signals:
-  - Names specific behavior and events, not a vague "we talked"
-  - Explains how the correction was made, including the facts, the expectation, the timing, and the person's response
-  - Says how it was followed up to see whether it worked and what the next step is
-  - Also has specific feedback and growth arrangements for the strong, not only attention on the weak
+  - "Describes an observable work example and the expectation that was not met, without revealing identifying details."
+  - "Explains how feedback was delivered, including the evidence shared and the employee’s perspective."
+  - "Sets a clear next step and follow-up point, then evaluates progress against the expectation."
+  - "Describes appropriate support and escalation if the gap persists while limiting disclosure to those who need to know."
 primaryCapability: people-organization.frontline-management
 topics: [management, feedback]
 roles:

@@ -11,13 +11,10 @@ intent: >-
   Tests virtual-memory and page-fault fundamentals, along with your ability to identify working-set churn from system
   measures and application behavior.
 signals:
-  - Distinguishes major from minor faults and explains their performance implications
-  - Connects working set, available memory, mappings, paging activity, and tail latency
-  - Proposes comparative observations that distinguish application-access hypotheses
-  - Verifies the source of pressure before choosing an application- or system-level mitigation
-  - Forms testable technical hypotheses from inputs, mechanisms, and failure symptoms
-  - Compares implementation paths and their correctness, performance, security, or maintenance cost
-  - Names tests or operational measures that cover edge cases
+  - "Distinguishes major from minor faults and explains their performance implications."
+  - "Connects working set, available memory, mappings, paging activity, and tail latency over the same time window."
+  - "Proposes comparative observations that distinguish application-access changes from host memory pressure."
+  - "Verifies the source and scope of pressure before choosing an application- or system-level mitigation."
 primaryCapability: professional.computer-science
 topics:
   - operating-systems

@@ -3,7 +3,7 @@ questionId: wave17-domain-015
 kind: question
 status: published
 locale: en
-title: When a business entity is renamed or split, how can historical metrics remain interpretable?
+title: "When a business entity splits, how can historical metrics remain interpretable?"
 question: >-
   A product line splits into two business units. Old orders belong to the previous organization, while future
   orders use the new structure. How would you represent organization versions and historical views?

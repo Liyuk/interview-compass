@@ -3,13 +3,14 @@ questionId: bulk-f-manager-coach-without-taking-over
 kind: question
 status: published
 locale: zh-CN
-title: 关键决策质量下降时怎样安排复核而不收回授权
-question: 一位刚获得决策权的负责人连续两次忽略了用户迁移风险，直接收回权限可能让团队回到事事等你拍板。你会怎样增加保障并保留有效授权？
-intent: 考察授权后的风险分级、反馈和决策护栏。
+title: "授权决策遗漏用户迁移风险后，怎样增加复核但不接管？"
+question: "你刚授权的一名负责人连续两次忽略用户迁移风险，直接收回权限可能让团队重新事事等你拍板。你会怎样查明原因、增加适度保障，并保留有意义的决策权？"
+intent: "判断管理者能否查明授权决策遗漏用户风险的原因，设置有期限且与风险相称的保障，并明确恢复或调整授权所需的证据。"
 signals:
-  - 还原两次迁移判断所用的信息、风险和授权，区分能力缺口、上下文缺失与边界不清。
-  - 为高影响决定设置有期限的复核与支持，保留低风险范围内的真实决策权。
-  - 明确哪些证据支持放宽、维持或收紧保障，并检查风险、等待和负责人独立性的变化。
+  - "还原两次迁移决策时掌握的信息、用户影响、风险判断和授权边界。"
+  - "先区分能力不足、上下文缺失、权限不清或流程缺陷，再选择支持措施。"
+  - "按影响设置有负责人和期限的复核，同时保留负责人处理低风险决策的权力。"
+  - "说明哪些风险结果和审批等待证据支持放宽、维持或收紧保障。"
 primaryCapability: people-organization.frontline-management
 topics:
   - management
@@ -51,7 +52,9 @@ source:
     url: https://github.com/monzo/progression-framework
   - attribution: original
     label: Interview Compass coverage-led original expansion batch 2026-10-17 C
-followUps: []
+followUps:
+  - "如果负责人决策前没有拿到用户影响数据，你会怎样调整流程？"
+  - "用哪些证据和复查日期判断可以把决策权交还负责人，而不是长期增加审批？"
 relatedQuestions: []
 perspective: candidate
 perspectiveReview: inferred

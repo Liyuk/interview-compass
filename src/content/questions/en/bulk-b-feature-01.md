@@ -52,11 +52,9 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion to 1,500 — Batch B
 followUps:
-  - If two teams get different values under the same name, how would you locate the definition mismatch?
-  - When the definition changes, how would you keep historical trends and model inputs interpretable?
-  - What evidence would justify reuse, and when should two feature definitions remain separate?
-  - If real-time updates are too costly, which approximate refresh strategies could be acceptable?
-  - How would you communicate a feature's data cutoff to model consumers?
+  - "What evidence would justify reusing the definition, and when should the teams keep separate features?"
+  - "If the definition changes, how would you keep historical trends and model inputs interpretable?"
+  - "What data cutoff and freshness guarantee should each consumer receive?"
 relatedQuestions:
   - questionId: b-feature-model-time-semantics
     relation: >-

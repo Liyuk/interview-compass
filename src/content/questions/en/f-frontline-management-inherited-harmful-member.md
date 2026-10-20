@@ -3,8 +3,8 @@ questionId: f-frontline-management-inherited-harmful-member
 kind: question
 status: published
 locale: en
-title: You inherit an employee transferred from another team whose behavior has long harmed the team. What do you do?
-question: You inherit an employee, transferred from another team or left over on yours, whose behavior has long harmed the team, such as shifting blame, stirring up relationships, or passive resistance. How do you judge the situation, what do you do, and how do you protect the team?
+title: "How would you assess and address concerns about a team member you have just inherited?"
+question: "After taking over a team, several people raise concerns about one member’s collaboration, including blame shifting or resistance to agreed work. How would you verify what is happening, address any confirmed behavior, and protect the team while you learn more?"
 intent: See how you treat long-standing problem behavior without labeling someone in advance and without letting it keep harming the team.
 signals:
   - Judges from specific behavior and facts they observe themselves, not only from what a predecessor or others say
@@ -36,8 +36,8 @@ formats:
   - behavioral
   - case
 followUps:
-  - They are in fact technically strong and the team depends on them. How do you weigh that?
-  - You find the earlier assessment of them was inaccurate. What do you do?
+  - "How would you distinguish firsthand observations from inherited opinions, and what would you document?"
+  - "What would you do if the concern is not supported by your own evidence, or if the behavior continues after clear expectations and support?"
 source:
   - attribution: original
     label: The author's interview sequence, taking over a problem employee

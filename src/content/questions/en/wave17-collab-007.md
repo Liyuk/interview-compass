@@ -9,15 +9,10 @@ question: >-
   needs. How would you compress technical detail into decision-ready information?
 intent: Assesses whether the candidate organizes complexity around audience impact, options, and decision timing.
 signals:
-  - Translates risks into user impact, timing, cost, and reversibility
-  - Presents evidence-based options and a clear decision request
-  - >-
-    Identify the stakeholders’ goals, evidence, decision rights, and core disagreement in “Turning technical
-    risk into decision-ready information.”
-  - >-
-    Compare communication or negotiation options and explain how you would present risk, handle objections,
-    and reach an actionable agreement.
-  - State who confirms the decision, how unresolved risks are recorded, and how commitments will be checked.
+  - "Summarizes each material risk in terms of affected customer outcome, likelihood or evidence, and schedule impact."
+  - "Separates work the team can control from dependencies and states the cost or reversibility of each option."
+  - "Presents a small set of feasible choices and recommends one, explaining resource needs and remaining risk."
+  - "Asks the authorized decision-maker to decide by a stated date and records unresolved risks and commitments."
 primaryCapability: collaboration.communication
 topics:
   - communication

@@ -7,8 +7,10 @@ title: How would you allocate a reduced budget across channels at different matu
 question: "Five channels have different levels of maturity, so their short-term returns are not directly comparable. How would you allocate baseline funding, exploration budget, and review dates?"
 intent: Assess how the response evaluates maturity, risk, and learning budget in a portfolio, makes constraints explicit, and uses evidence to justify a decision.
 signals:
-  - Identifies the stakeholders, constraints, and risks relevant to maturity, risk, and learning budget in a portfolio.
-  - Proposes evidence or a review point that could confirm or change the decision.
+  - "Classifies channels by maturity, evidence quality, spend level, and the time needed to observe meaningful outcomes."
+  - "Protects baseline funding for channels with repeatable returns while reserving a defined, capped amount for learning in less mature channels."
+  - "Accounts for concentration risk and opportunity cost instead of ranking channels only by incomparable short-term returns."
+  - "Sets separate review dates and evidence thresholds for mature and exploratory channels, including conditions to reallocate or stop funding."
 primaryCapability: delivery.capacity-planning
 topics:
   - resource-allocation

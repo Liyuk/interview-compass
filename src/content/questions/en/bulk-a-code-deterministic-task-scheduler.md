@@ -44,9 +44,9 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 C
 followUps:
-  - >-
-    Design and implement a task pool that caps concurrency, supports cancellation, and does not abandon work already
-    started during shutdown.
+  - "If cancellation races with a worker starting a task, which outcome is valid and how is it reported?"
+  - "When shutdown begins during a retry delay, should the task retry, remain queued, or become canceled? What evidence would tests assert?"
+  - "How would you prove the scheduler closes without leaking workers or abandoning work that has already started?"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

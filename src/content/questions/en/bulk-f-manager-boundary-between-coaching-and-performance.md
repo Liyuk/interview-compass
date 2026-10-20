@@ -3,17 +3,14 @@ questionId: bulk-f-manager-boundary-between-coaching-and-performance
 kind: question
 status: published
 locale: en
-title: Allocate visible assignments and growth opportunities fairly
-question: >-
-  Two team members want to lead a customer presentation, but these opportunities have historically gone to the
-  most confident speaker. How would you assign this opportunity and check for longer-term access bias?
-intent: Examines whether developmental opportunities have transparent criteria, purpose, and fairness review.
+title: "How do you distinguish coaching from a performance issue that needs formal action?"
+question: "A team member misses an important expectation more than once. They say they need coaching, while the team depends on the work. How would you clarify the standard, understand the cause, provide support, and decide when a formal performance process is needed?"
+intent: "Assess whether the manager distinguishes a skill or context gap that can be coached from a sustained failure to meet clear expectations, while giving fair support and protecting team commitments."
 signals:
-  - Clarifies assignment requirements and learning goals rather than relying on affinity.
-  - Asks candidates to outline a preparation plan and provides needed support.
-  - Reviews past opportunity distribution and feedback, using rotation or split roles where appropriate.
-  - Clarifies capability goals, risk, and support for the opportunity.
-  - Explains allocation and offers different but meaningful growth paths.
+  - "States the role expectation and specific observed gap, separating facts from assumptions about motivation."
+  - "Checks whether the person understands the standard and whether workload, tools, authority, or skill contributed."
+  - "Agrees on relevant support, observable improvement, and a review date."
+  - "Explains when continued gaps require a formal process and how the manager will communicate and document it fairly."
 primaryCapability: people-organization.frontline-management
 topics:
   - management
@@ -47,4 +44,8 @@ relatedQuestions: []
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended
+followUps:
+  - "What evidence would distinguish a training need from a repeated performance gap after expectations are clear?"
+  - "If the team’s delivery is at risk during the coaching period, what temporary support or ownership change would you make?"
+
 ---

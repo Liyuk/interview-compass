@@ -12,8 +12,7 @@ signals:
   - 试验异步、代表制或重新划分边界。
 primaryCapability: people-organization.team-design
 topics:
-  - management
-  - management
+  - "management"
 roles:
   - manager
   - engineering

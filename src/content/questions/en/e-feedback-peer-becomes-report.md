@@ -7,10 +7,9 @@ title: How would you give feedback after a peer becomes your direct report?
 question: You have just taken over a team, and a former peer is now your direct report. Their delivery is strong, but they repeatedly interrupt others in reviews. How would you prepare for and conduct your first feedback conversation?
 intent: Assess whether you can separate a changed relationship, observable behavior, and role impact while setting clear expectations respectfully.
 signals:
-  - Cites verifiable behavior and its effect on discussion or the team instead of labeling personality
-  - Asks how the person sees the role change and behavior before clarifying the new expectation
-  - Agrees on observable actions and a review date, applying the same standard consistently
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in feedback boundaries and support after a role transition.
+  - "Cites verifiable behavior and its effect on discussion or the team instead of labeling personality."
+  - "Asks how the person sees the role change before clarifying the new expectation and the reason for it."
+  - "Agrees on observable actions and a review date, applying the same standard consistently."
 primaryCapability: collaboration.feedback
 topics:
   - feedback
@@ -40,9 +39,8 @@ source:
   - attribution: original
     label: Interview Compass coverage-led original expansion batch 2026-10-17 C
 followUps:
-  - If they believe you are using your new authority to retaliate for an earlier disagreement, how would you respond and verify the concern?
-  - Would you apply the same standard if a lower-performing team member showed the same behavior?
-  - A former peer has become your report, and a quality issue arises. How would you clarify the new role, facts, and support without leaning on the old relationship?
+  - "If they believe your new authority is retaliation for an earlier disagreement, what facts would you check and how would you respond?"
+  - "What would you do if the behavior continues after the expectation and review date were agreed?"
 perspective: manager
 perspectiveReview: inferred
 qualityTier: extended

@@ -31,8 +31,8 @@ scenarios:
 formats:
   - knowledge
 followUps:
-  - Have you hit a problem related to isolation levels in a project?
-  - If the business tolerates a little inconsistency, how would you choose?
+  - "Describe one concurrency anomaly you encountered: what read/write sequence produced it, and which business invariant was violated?"
+  - "Which database and isolation behavior did you verify, and how did that evidence affect your choice?"
 source:
   - attribution: inspired
     label: JavaGuide's notes on databases and concurrency

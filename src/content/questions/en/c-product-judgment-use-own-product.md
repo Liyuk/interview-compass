@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: en
 title: "How do you make using your own product produce feedback that actually drives improvement?"
-question: "The team wants to 'use our own product more,' but the last experience night produced only scattered impressions. How would you design it so self-use becomes a feedback loop that runs from a real task to a verified fix?"
+question: "The team wants to “use our own product more,” but the last product-use session produced only scattered impressions. How would you design a feedback loop from a real task to a verified fix?"
 intent: "Understand whether you can turn a slogan into a mechanism with an entry and an exit, and check that it works using observable signals."
 signals:
   - "The unit of experience is finishing a real task, not browsing a page"

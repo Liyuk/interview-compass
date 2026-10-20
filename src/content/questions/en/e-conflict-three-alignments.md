@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: en
 title: "When two teams blame each other, which facts and agreements do you check first?"
-question: "Both teams say the other is not cooperating and the project is stuck. Would you first clarify shared goals, responsibility boundaries, and delivery commitments? What else would you verify?"
+question: "Both teams say the other is not cooperating and the project is stuck. How would you investigate what is happening, understand each team’s account, and decide what information or agreement is needed next?"
 intent: See how you restate “uncooperative” as goals, facts, and decision rights, which can actually be discussed.
 signals:
   - Separates the shared goal from each side’s own goal

@@ -3,8 +3,8 @@ questionId: f-manager-of-managers-employee-backlash
 kind: question
 status: published
 locale: en
-title: A strategic change you are driving, beneficial in the long run, draws a public joint protest from many employees. The CEO presses you. Do you hold or compromise?
-question: A strategic change you are driving, beneficial to the company in the long run, draws a public joint protest from many employees, even affecting the company's reputation, and the CEO is pressing you. Do you hold or compromise, and what specific steps do you take?
+title: "How would you respond when employees publicly oppose a strategic change?"
+question: "A strategic change you are leading draws a public petition from many employees, and the CEO is pressing you for a response. How would you verify the concerns, reassess the change and its effects, and decide whether to continue, modify, pause, or reverse it?"
 intent: "Assess whether you re-test strategic evidence, acknowledge harm, and protect employee voice under public opposition and executive pressure, while explaining trade-offs and executing responsibly when the decision still holds."
 signals: ["Collect concrete impacts and new facts; distinguish design flaws, unfair distribution, execution failures, poor communication, and principled disagreement.", "Re-test goals, evidence, distribution of benefits, and risk assumptions; state what would justify pausing, changing, or reversing the decision.", "Acknowledge real errors and impact publicly, explain what changes and why, and protect good-faith dissent from retaliation.", "Give the CEO facts, options, and reputation/talent risks; if the decision stands, explain why, remedies, and review mechanisms."]
 weakAnswer: "Treating opposition as ignorance or sabotage and forcing the change—or abandoning it based on volume—without checking facts, protecting voice, or explaining how evidence changes the choice."
@@ -28,7 +28,9 @@ careerTracks:
   - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
-followUps: ["If the goal is sound but implementation harm is concentrated on one group, would you change the goal, path, or remedy—and why?", "How would you respond if an executive asks you to blame the petition on a few “negative employees”?"]
+followUps:
+  - "If the goal remains valid but implementation harms one group disproportionately, what would you change and how would you verify the remedy?"
+  - "How would you protect good-faith dissent while explaining your recommendation and any decision that remains in force?"
 source:
   - attribution: original
     label: "The author's leveled interview framework, senior manager"

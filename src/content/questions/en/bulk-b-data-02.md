@@ -4,10 +4,7 @@ kind: question
 status: published
 locale: en
 title: How would you preserve consistent service-quality analysis when support cases are merged or split?
-question: >-
-  Support agents merge duplicate tickets and sometimes split a complex issue into several cases.
-  When modeling service-quality data, how would you define the issue, ticket, contact, and
-  resolution?
+question: "Support agents merge duplicate tickets and sometimes split a complex issue into several cases. When modeling service-quality data, how would you define the issue, ticket, communication contact, and resolution?"
 intent: >-
   Understand whether the candidate chooses analytical objects that are not distorted by workflow
   operations while preserving operational history.

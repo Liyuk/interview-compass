@@ -49,10 +49,10 @@ formats:
   - case
   - planning
 followUps:
-  - If the experiment cannot be repeated, what analysis can help?
-  - How would you include long-term network effects in guardrails?
-  - How can assignment affect content supply?
-  - How would you judge whether cluster-experiment sample size is sufficient?
+  - "If the experiment cannot be repeated, what exposure or network-structure data could still bound spillover?"
+  - "How would you include longer-term network effects in user-experience guardrails?"
+  - "What changes if invitations also increase supply or activity for users in the control group?"
+  - "How would you choose between user-level and cluster-level assignment when networks cross clusters?"
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 D

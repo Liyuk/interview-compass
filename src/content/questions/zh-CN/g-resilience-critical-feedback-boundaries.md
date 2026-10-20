@@ -24,7 +24,9 @@ careerTracks:
   - senior-manager
 scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
-followUps: ["如果批评事实错误但语气很强烈，怎样先处理交付再澄清？","何时需要第三方介入？"]
+followUps:
+  - "如果批评内容有事实错误但表达尖锐，你会怎样先核实事实，再单独沟通反馈方式？"
+  - "在什么情况下，你会请经理或中立第三方协助恢复有效协作？"
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：韧性与恢复"}]
 perspective: candidate
 perspectiveReview: inferred

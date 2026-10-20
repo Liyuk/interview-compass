@@ -3,8 +3,8 @@ questionId: a-ai-engineering-traceable-release
 kind: question
 status: published
 locale: zh-CN
-title: 线上回答出现了错误引用，但当时的提示词、模型版本和检索结果都没有完整记录。你会补哪些观测信息，才能既排查问题又控制敏感数据暴露？
-question: 线上回答出现了错误引用，但当时的提示词、模型版本和检索结果都没有完整记录。你会补哪些观测信息，才能既排查问题又控制敏感数据暴露？
+title: "线上回答出现错误引用或质量退化时，怎样观测并控制敏感数据暴露？"
+question: "线上回答出现错误引用或质量退化，但提示词和检索上下文可能包含敏感数据，默认不能记录原文。你会补充哪些观测信息来区分检索、模型和工具故障，同时控制数据暴露？"
 intent: 考察你能否建立足够的追踪证据，同时明确日志保留、脱敏与访问边界。
 signals:
   - 用关联ID和模型、提示、索引、工具及参数版本重建请求路径。
@@ -37,7 +37,9 @@ scenarios:
 formats:
   - debugging
   - case
-followUps: []
+followUps:
+  - "不保留提示词原文时，哪些安全摘要仍能帮助诊断错误引用？"
+  - "什么情况下可以临时采集敏感内容，由谁访问，并在何时删除？"
 source:
   - attribution: inspired
     label: atryx AI 工程题库的主题覆盖；题面为本站独立编写

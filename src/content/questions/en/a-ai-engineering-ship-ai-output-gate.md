@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: en
 title: "What justifies shipping something an AI produced?"
-question: "You ask an AI to review a configuration or generate a piece of code. How do you decide whether it can go live?"
+question: "An AI coding assistant proposes a change to application code that would reach production after review. How would you decide whether the change is safe to merge and release?"
 intent: "Understand how you set verification and human gates according to risk level."
 signals:
   - "Separates low-risk drafts from actions that affect users, money, or privacy"

@@ -33,8 +33,8 @@ formats:
   - behavioral
   - coding
 followUps:
-  - You say you care about code quality. What specific changes in the past month made code clearer?
-  - How do you now catch this kind of problem before you commit?
+  - "What input escaped validation, and what failure or user impact did it cause?"
+  - "Which test or boundary check now catches the same class of input before release?"
 source:
   - attribution: original
     label: The author's leveled interview framework, junior engineer

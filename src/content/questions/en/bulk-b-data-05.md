@@ -7,10 +7,10 @@ title: The company wants one definition of an “active customer.” How would y
 question: Business units use an “active customer” metric, but some define it by payment, others by usage, and others by likelihood to renew. How would you decide which definitions should be standardized and which should remain distinct concepts?
 intent: Assess whether the candidate balances cross-team comparability with local business meaning instead of assuming that a shared label measures the same thing.
 signals:
-  - Asks which decision, entity, time window, and exclusion rules the metric serves
-  - Identifies same-name/different-meaning and different-name/same-meaning cases
-  - Proposes governance for a shared core definition alongside business-specific derivatives
-  - Clarifies the facts, stakeholders, and ownership boundaries involved in shared semantics and use-case boundaries across systems.
+  - "Asks which decision, entity, time window, and exclusion rules the metric serves."
+  - "Identifies same-name/different-meaning and different-name/same-meaning cases."
+  - "Proposes governance for a shared core definition alongside business-specific derivatives."
+  - "Assigns an owner and version to each definition and specifies how source systems and reconciliations keep shared and derived metrics explainable."
 primaryCapability: domain-modeling.data-model
 topics:
   - data-modeling

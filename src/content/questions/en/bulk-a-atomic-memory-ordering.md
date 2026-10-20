@@ -4,14 +4,13 @@ kind: question
 status: published
 locale: en
 title: Atomics and Memory Visibility
-question: >-
-  Two threads use a flag to signal that data is ready. Why might declaring only the flag atomic
-  still fail to guarantee visibility of the data?
-intent: Tests whether atomicity is distinguished from memory ordering and synchronization.
+question: "Assume C++20: one thread writes a non-atomic payload and then stores `ready = true` with `memory_order_relaxed`; another thread observes `ready` with a relaxed load and reads the payload. Why is the atomic flag alone insufficient, and what synchronization would make the handoff safe?"
+intent: "Assess whether the respondent distinguishes atomicity from inter-thread ordering and can explain the language-level rule that makes the payload write visible."
 signals:
-  - Separates atomic access from ordering across variables
-  - Mentions happens-before or an equivalent synchronization relation
-  - Explains the need for matching release/acquire semantics or a lock
+  - "Explains that relaxed atomic operations make the flag access atomic but do not create a synchronizes-with or happens-before relation for the payload."
+  - "Identifies the unsynchronized non-atomic payload access as a data race under the stated C++ scenario."
+  - "Proposes a correct release-store/acquire-load handoff or a mutex protecting both publication and reading."
+  - "Explains how a concurrency test or sanitizer can help find errors while noting that test success alone does not prove correctness."
 primaryCapability: professional.computer-science
 topics:
   - concurrency

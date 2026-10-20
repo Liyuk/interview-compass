@@ -12,13 +12,10 @@ intent: >-
   Assess whether you can express promotion eligibility, stacking order, funding ownership, and settlement
   details as consistent, testable rules that can be explained to customers.
 signals:
-  - Defines eligible products and customers, and distinguishes stackable from mutually exclusive offers.
-  - Specifies calculation order, ties between rules, and rounding behavior.
-  - Gives operations, engineering, support, and finance a shared way to configure and explain an order.
-  - Records each offer’s source, funding owner, and calculation details for historical review and refunds.
-  - >-
-    Explains how to detect conflicting rules before release and validate product, contract, and regional
-    exceptions.
+  - "Defines eligible products and customers, and distinguishes stackable from mutually exclusive offers."
+  - "Specifies calculation order, equal-priority conflict handling, and rounding behavior."
+  - "Records each offer’s funding owner and rule version so operations, support, and finance can explain the amount."
+  - "Tests product, contract, and regional exceptions, including partial refunds and historical reconciliation."
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization
@@ -49,13 +46,9 @@ scenarios:
 formats:
   - case
 followUps:
-  - How should the system detect and handle rules with equal priority or conflicting settings?
-  - For a partial refund, how would you calculate the amount returned for each discount and subsidy?
-  - >-
-    If a customer disputes the amount, how would you reconstruct the calculation using the rules that were
-    active at the time?
-  - How could conflicting campaign settings be detected before release?
-  - For a partial refund, how would you determine the amount reversed for each discount and subsidy?
+  - "How should equal-priority or contradictory rules be detected and resolved before release?"
+  - "For a partial refund, how would you calculate the reversal for each discount and subsidy?"
+  - "If a customer disputes an amount later, how would you reconstruct the calculation from the rule version active at purchase?"
 source:
   - attribution: original
     label: Written from common e-commerce promotion rule scenarios

@@ -61,15 +61,10 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion to 1,500 — Batch C
 followUps:
-  - >-
-    If leadership accepts only the original date, what scope alternatives and risk-acceptance choices would
-    you present?
-  - When should the adapter become a supported solution, and when must it be removed?
-  - >-
-    A critical dependency team says it has no capacity this quarter, but the project still marks the interface
-    as on track. How would you update status, options, and communication?
-  - How would you prevent “parallel development” from concealing final integration risk?
-  - When should the supplier issue be escalated, and when should the approach change?
+  - "If the dependency team has no capacity this quarter, how would you verify that constraint and update the project options?"
+  - "What evidence would make you stop relying on the vendor’s next promised date?"
+  - "Which parts of the recovery remain under your team’s control, and how would you communicate that boundary?"
+  - "How would you expose final integration risk while parallel work is progressing?"
 relatedQuestions: []
 perspective: candidate
 perspectiveReview: inferred

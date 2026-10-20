@@ -3,15 +3,14 @@ questionId: bulk-f-manager-boundary-between-coaching-and-performance
 kind: question
 status: published
 locale: zh-CN
-title: 如何公平分配高曝光任务和成长机会
-question: 团队中有两位成员都希望承担客户展示任务，过去这类机会总是给表达最自信的人。你会怎样分配这次机会，并检查团队长期是否存在机会偏差？
-intent: 考察成长机会分配是否有透明标准、发展目的和公平复核。
+title: "怎样区分适合辅导的能力缺口与需要正式处理的绩效问题？"
+question: "一名成员不止一次未达到重要工作期待。对方认为需要辅导，而团队交付又依赖这项工作。你会怎样澄清标准、了解原因、提供支持，并判断何时需要进入正式绩效流程？"
+intent: "判断管理者能否区分可通过辅导改善的技能或情境缺口与持续未达到明确期待的情况，在公平支持成员的同时保护团队承诺。"
 signals:
-  - 明确任务要求与学习目标，而非依据个人亲疏。
-  - 让候选人说明准备计划并提供必要支持。
-  - 回看过去机会的分布和反馈，必要时轮换或拆分机会。
-  - 明确机会对应的能力目标、风险和可用支持。
-  - 说明分配依据并提供不同但有价值的成长路径。
+  - "说明岗位期待和观察到的具体差距，把事实与对动机的猜测分开。"
+  - "确认成员是否理解标准，并核实工作量、工具、授权或技能是否造成差距。"
+  - "共同约定相关支持、可观察的改善表现和复查日期。"
+  - "说明差距持续时何时进入正式流程，以及怎样公平沟通和记录。"
 primaryCapability: people-organization.frontline-management
 topics:
   - management
@@ -45,4 +44,8 @@ relatedQuestions: []
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended
+followUps:
+  - "期待已经讲清后，哪些证据能区分培训需要与持续的绩效差距？"
+  - "辅导期间团队交付面临风险时，你会提供什么临时支持或调整责任？"
+
 ---

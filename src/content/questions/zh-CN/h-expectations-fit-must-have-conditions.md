@@ -39,10 +39,7 @@ scenarios:
 formats:
   - behavioral
 followUps:
-  - 你过去有没有因为这些条件做过取舍？
-  - 如果实际情况与你的预期不同，你会怎么处理？
-  - 如果这是你的第一份全职工作，前两年最希望获得什么学习机会？哪些工作条件是必须满足的？
-  - 对你的第一份工作，你最希望在前两年学到什么？有哪些你明确不想要的工作方式？
+  - "哪些一两项条件是你可持续做好这份工作的必要条件，哪些可以在进一步了解岗位后再协商？"
 source:
   - attribution: original
     label: Interview Compass editorial

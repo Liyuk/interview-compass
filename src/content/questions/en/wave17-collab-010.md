@@ -3,7 +3,7 @@ questionId: wave17-collab-010
 kind: question
 status: published
 locale: en
-title: A resource dispute has no additional budget. How do you negotiate an executable arrangement?
+title: "Two departments disagree about permanent ownership of an operational responsibility. How do you negotiate a workable arrangement?"
 question: >-
   Two departments each expect the other to own ongoing operations. They can help temporarily, but no team will take
   permanent ownership. How would you negotiate handoff and capacity?

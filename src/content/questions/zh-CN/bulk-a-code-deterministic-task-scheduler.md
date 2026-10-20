@@ -42,7 +42,9 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 C
 followUps:
-  - 请设计并实现一个任务池：限制最大并发、支持任务取消，并保证关闭时不会丢弃已经开始的工作。
+  - "取消与 worker 开始执行同时发生时，哪些结果有效，调用方怎样获知？"
+  - "重试等待期间开始关闭调度器，任务应重试、留在队列还是取消？测试应核验什么？"
+  - "怎样证明调度器关闭时不会泄漏 worker，也不会丢弃已经开始的工作？"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

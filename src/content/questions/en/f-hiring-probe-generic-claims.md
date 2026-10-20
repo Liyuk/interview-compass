@@ -4,21 +4,16 @@ kind: question
 status: published
 locale: en
 title: Probe self-assessments and project outcomes for verifiable evidence
-question: >-
-  A candidate says they care about code quality or learn quickly, or describes a project with impressive
-  outcomes. How would you probe for specific behavior, constraints, metric definitions, and results to
-  distinguish slogans, polished storytelling, and real impact while remaining fair?
+question: "A candidate says they care about code quality or learn quickly, or describes an impressive project outcome. How would you probe for specific behavior, the metric definition and evidence, and alternative explanations while giving the candidate a fair chance to clarify?"
 intent: >-
   Examines whether you can turn broad claims and impressive outcomes into verifiable facts, individual
   contribution, and evidence of change without equating eloquence with capability or missing evidence with
   dishonesty.
 signals:
-  - Asks about recent behavior, the original problem, constraints, choices, and personal responsibility
-  - Checks outcome definitions, comparison groups, time windows, and alternative explanations
-  - >-
-    Distinguishes unclear communication, missing evidence, unfavorable results, and confirmed deliberate
-    fabrication
-  - Uses consistent role-relevant follow-ups and gives the candidate a fair chance to clarify and add evidence
+  - "Asks for a recent example, the original problem and constraints, the candidate’s specific actions, and their decision authority."
+  - "For a claimed outcome, clarifies the metric definition, baseline or comparison, time window, and the candidate’s contribution."
+  - "Distinguishes a communication gap, unavailable evidence, an unfavorable result, and evidence of deliberate fabrication instead of treating them as equivalent."
+  - "Uses consistent role-relevant prompts, checks alternative explanations, and gives the candidate an opportunity to clarify or add evidence."
 primaryCapability: people-organization.hiring
 topics:
   - hiring
@@ -42,13 +37,8 @@ formats:
   - behavioral
   - case
 followUps:
-  - >-
-    If the candidate uses a different metric definition than you expected, how would you verify it without
-    leading them?
-  - >-
-    How would you assess role-relevant potential when the candidate lacks a direct example but shows intent to
-    learn?
-  - How do you avoid being swayed by fluent storytelling or impressive numbers?
+  - "If the candidate uses a different metric definition than you expected, how would you verify it without leading them?"
+  - "How would you assess role-relevant potential when the candidate lacks a direct example but shows intent to learn?"
 source:
   - attribution: original
     label: The author's leveled interview framework, interviewer follow-ups

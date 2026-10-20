@@ -40,12 +40,9 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 C
 followUps:
-  - 如果某些规则需要读取前后行，如何避免重新载入全部输入？
-  - 调用方在读取中途取消时，底层文件或网络资源由谁关闭？
-  - 如何防止压缩炸弹耗尽 CPU 或磁盘？
-  - 怎样让解析器支持取消、超时和背压？
-  - 引用链过长时怎样避免递归溢出？
-  - 多个来源都参与同一值时怎样显示？
+  - "CSV 字段或带引号的记录跨越输入块时，解析器怎样保证内容和行号正确？"
+  - "遇到格式错误的行时，依据什么决定继续或终止，如何说明被跳过的内容？"
+  - "调用方取消或压缩输入异常膨胀时，怎样释放资源并限制内存和 CPU？"
 relatedQuestions: []
 perspective: candidate
 perspectiveReview: inferred

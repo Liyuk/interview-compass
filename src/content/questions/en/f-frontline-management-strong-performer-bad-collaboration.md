@@ -11,17 +11,14 @@ intent: >-
   Assess whether you weigh individual output, team impact, behavioral standards, and support or accountability
   together.
 signals:
-  - Use specific events to describe delivery contribution and collaboration cost.
-  - State behavior expectations and impact on team outcomes rather than judging personality.
-  - Set change goals, support, review timing, and consequences if behavior persists.
-  - >-
-    Clarifies the facts, stakeholders, and ownership boundaries involved in behavioral impact, business value,
-    and balanced feedback.
+  - "Uses specific incidents to describe the person’s delivery contribution and the collaboration cost."
+  - "States behavior expectations and connects the observed conduct to concrete effects on review quality, team participation, or shared delivery."
+  - "Sets a change goal, support, review date, and proportionate next step if the behavior continues."
+  - "Checks whether colleagues can raise concerns and complete shared work after the intervention, while protecting fair process for the individual."
 primaryCapability: people-organization.frontline-management
 topics:
-  - management
-  - feedback
-  - management
+  - "management"
+  - "feedback"
 roles:
   - manager
   - engineering

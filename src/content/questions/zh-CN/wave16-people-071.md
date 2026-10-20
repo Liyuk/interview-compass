@@ -12,8 +12,7 @@ signals:
   - 重设共同结果与团队责任边界。
 primaryCapability: people-organization.manager-of-managers
 topics:
-  - management
-  - management
+  - "management"
 roles:
   - manager
   - engineering

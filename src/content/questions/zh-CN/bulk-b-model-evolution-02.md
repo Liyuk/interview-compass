@@ -3,7 +3,7 @@ questionId: bulk-b-model-evolution-02
 kind: question
 status: published
 locale: zh-CN
-title: 供应商把“已交付”状态重新拆成“已发出”和“已签收”，如何处理历史数据的统计规则？
+title: "供应商拆分交付状态后，如何保留历史含义？"
 question: 供应商 API 将过去单一的“已交付”状态拆为“已发出”和“已签收”，但历史数据没有区分依据。你会如何更新领域模型、对外接口约定和相关报表？
 intent: 考察候选人是否区分新增信息与可从旧数据推导的信息，并清楚呈现历史数据的证据边界。
 signals:

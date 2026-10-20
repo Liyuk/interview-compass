@@ -15,8 +15,7 @@ signals:
   - Notifies decision-makers of impact, evidence, and temporary authority limits
 primaryCapability: work-responsibility.ownership
 topics:
-  - execution
-  - execution
+  - "execution"
 roles:
   - manager
   - engineering

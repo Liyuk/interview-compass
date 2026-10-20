@@ -3,24 +3,14 @@ questionId: bulk-f-manager-coach-without-taking-over
 kind: question
 status: published
 locale: en
-title: When delegated decisions miss expectations, add review without taking authority back
-question: >-
-  You delegate decisions to a lead or team, but outcomes repeatedly miss expectations and important risks are
-  overlooked. How would you distinguish capability, information, goal, or authority-boundary issues, adjust
-  review, and define when to relax or withdraw authority?
-intent: >-
-  Examines risk-based review, feedback, capability development, and delegation boundaries without taking back
-  every decision after one failure.
+title: "How would you add review after a delegated decision misses a user risk, without taking over?"
+question: "A lead you recently empowered makes two decisions that overlook user-migration risks. Taking authority back could make the team wait for your approval again. How would you understand the misses, add proportionate safeguards, and preserve meaningful decision ownership?"
+intent: "Assess whether the manager diagnoses why a delegated user-risk decision failed, adds time-bound safeguards, and defines evidence for restoring or changing the delegation."
 signals:
-  - >-
-    Reconstruct information, risks, and authority in the two migration decisions, separating capability
-    gaps, missing context, and unclear boundaries.
-  - >-
-    Set time-bound review and support for high-impact decisions while retaining genuine authority within
-    low-risk boundaries.
-  - >-
-    Specify evidence for relaxing, retaining, or tightening safeguards and examine risk, waiting, and the
-    leader’s independence.
+  - "Reconstruct the information available, user impact, risk assessment, and decision boundary for both migration decisions."
+  - "Distinguish a capability gap from missing context, unclear authority, or a flawed process before choosing support."
+  - "Add review proportional to impact with a clear owner, duration, and low-risk decisions the lead still owns."
+  - "Define evidence for relaxing, maintaining, or tightening safeguards, including risk outcomes and approval waits."
 primaryCapability: people-organization.frontline-management
 topics:
   - management
@@ -63,10 +53,8 @@ source:
   - attribution: original
     label: Interview Compass coverage-led original expansion batch 2026-10-17 C
 followUps:
-  - >-
-    If the same issue happens again, what evidence would help distinguish capability, motivation, and system
-    conditions?
-  - How can a review remain coaching with an exit condition instead of becoming permanent approval?
+  - "What would you change if the lead had not been given the user-impact data before deciding?"
+  - "Which evidence and review date would let you return the decision to the lead without a permanent approval gate?"
 relatedQuestions: []
 perspective: candidate
 perspectiveReview: inferred

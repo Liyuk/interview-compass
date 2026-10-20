@@ -692,7 +692,7 @@
   {
     "questionId": "a-ai-engineering-ship-ai-output-gate",
     "reviewStatus": "reviewed",
-    "fingerprint": "24a6a828fda9a9c625a3ce18b82836f10c5e257ae7dbc9380bfeca5a32a31daa",
+    "fingerprint": "77d01c2b3b8da50b0a12ff75397d419c882f59058c0bc4429e9be29a370c18a4",
     "rationale": {
       "zh": "初级也应验证自己采用的AI产物；正式上线与风险接受按授权，高阶段建立质量机制。",
       "en": "Juniors validate AI artifacts they use; authorized higher stages govern release and quality."
@@ -843,7 +843,7 @@
   {
     "questionId": "a-ai-engineering-traceable-release",
     "reviewStatus": "reviewed",
-    "fingerprint": "c51b4f7ea352ee628bab958fd95cc07d327f95263f7e6f2769bb1f8352feae5a",
+    "fingerprint": "307bb40d50029b5fa60310f2497b840a23a4f4c836ab586b22f5c1e68d4b07db",
     "rationale": {
       "zh": "独立技术人员需保留最小可复现证据；高阶段统筹可追溯版本与日志权限，不默认记录全部内容。",
       "en": "Independent engineers retain minimal reproducible evidence; higher stages govern traceability and access."
@@ -2083,7 +2083,7 @@
   {
     "questionId": "a-computer-science-memory-growth-vs-leak",
     "reviewStatus": "reviewed",
-    "fingerprint": "f583e24ae9d468a49c12015020b91dd107d5025ffe113960427ed6c9c3c5c4c1",
+    "fingerprint": "071883b51d918f43e799671f5ea4c0c6d6be639a2fa1c75be2fcf8abdc7d75a4",
     "rationale": {
       "zh": "运行时内存诊断适合独立技术数据贡献，移除通用业务运营；高阶段校准剖析成本与止损。",
       "en": "Runtime memory diagnosis fits independent technical-data roles rather than generic business operations."
@@ -2555,7 +2555,7 @@
   {
     "questionId": "a-debugging-api-works-locally-frontend-disagrees",
     "reviewStatus": "reviewed",
-    "fingerprint": "baf5d9b845c8bb8c9bf12a7ebc6476c3bb5a79d1ba53a7db23f313c0f1f2d4b4",
+    "fingerprint": "5df0786b1f55cbbf90e74e8fa165c520c5f288b30eb414b307b211cff673c2cf",
     "rationale": {
       "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
       "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
@@ -3302,7 +3302,7 @@
   {
     "questionId": "a-engineering-systems-build-vs-open-source",
     "reviewStatus": "reviewed",
-    "fingerprint": "d042ef8e32b5661bfd5447625750313d44afd57c0cd60bbd867f22f53263ca0c",
+    "fingerprint": "0156eebe18ddca4e334f082e321f5675e8ca96b2974a58a5fa4b20aa117cb9d4",
     "rationale": {
       "zh": "独立专业人员可尽调并提出选型；采购预算和重大承诺由授权者决策，不以偏好代替总成本。",
       "en": "Independent specialists investigate sourcing; authorized owners approve procurement and commitments."
@@ -3380,7 +3380,7 @@
   {
     "questionId": "a-engineering-systems-ci-untrusted-change",
     "reviewStatus": "reviewed",
-    "fingerprint": "7b06647dd27ae9e7e36a61248e67ad5067a7aa69ca7ec6cae1c9ba693f71aaf4",
+    "fingerprint": "6eed2bb20bdef6ef5a4e4d023227c3db33d8edbe1eeb25bb0e48930c69d6e7d3",
     "rationale": {
       "zh": "不可信构建属于各技术数据流水线职责，移除通用业务运营映射；高阶段治理发布权限。",
       "en": "Untrusted builds fit technical-data pipelines rather than generic business operations."
@@ -7387,7 +7387,7 @@
   {
     "questionId": "a-system-design-large-file-upload",
     "reviewStatus": "reviewed",
-    "fingerprint": "db53b6b005b052c7ee6b01db385db1455cc89267c72af7401f372e2a076093b3",
+    "fingerprint": "d66bdbbc95002c8b2cb6362305474bc75d2fe87364ff6d388696ea880196a0a9",
     "rationale": {
       "zh": "大文件上传涉及各端与数据AI摄取；独立阶段澄清契约，高阶段统筹容量和滥用边界。",
       "en": "Independent technical-data roles design uploads with growing capacity and abuse governance."
@@ -9479,7 +9479,7 @@
   {
     "questionId": "b-business-context-whole-then-part",
     "reviewStatus": "reviewed",
-    "fingerprint": "a6161e1b106094c9262e5482b766f9baa743e3bb6d9502079ecbe827f0ef6f4b",
+    "fingerprint": "39f1b480253024fd86af87ec48feffffdfb700c10109e9d869feb0eeb37c96a0",
     "rationale": {
       "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
       "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
@@ -9914,7 +9914,7 @@
   {
     "questionId": "b-commercial-rules-promotion-stacking",
     "reviewStatus": "reviewed",
-    "fingerprint": "1a44b7651a0971c98fccd9d637cc48e23502f530658e65a8c818feb4f5073257",
+    "fingerprint": "f3960fe484dcfabb33eeca89d5ecfd02fc79cececc21c2eed9f5b8ea331cc97a",
     "rationale": {
       "zh": "优惠计算解释跨展示实现和结算；独立人员负责自身环节，高阶段统一规则与历史核验。",
       "en": "Promotion calculations span display and settlement; independent contributors own links and higher stages align history."
@@ -12455,7 +12455,7 @@
   {
     "questionId": "bulk-a-atomic-memory-ordering",
     "reviewStatus": "reviewed",
-    "fingerprint": "fd4c78bd57ae48980540ca16958aeef9a36842b0f5e841d5a51dc89dd0d43bb9",
+    "fingerprint": "fb385fa629045480655648cc70e54ea9e3c3f4d7c1729a59e455e53ac2d7a05c",
     "rationale": {
       "zh": "原子内存顺序适合实际多线程或本地推理贡献者；专业阶段说明保证，不默认业务管理者需掌握底层原语。",
       "en": "Atomic ordering fits multithreaded or native-inference IC work, not universal business-manager primitives."
@@ -12651,7 +12651,7 @@
   {
     "questionId": "bulk-a-backend-idempotency-key-scope",
     "reviewStatus": "reviewed",
-    "fingerprint": "9f077c7685dd9d463a97072e22f66762403fd182b10619fa91ca06f91d087773",
+    "fingerprint": "05d7ad723a17f743a2b914650fb5d1f87ce59ed8e1548301c70b486975d223aa",
     "rationale": {
       "zh": "安全重试标识需要调用端与执行端共同约定；独立阶段校验范围，高阶段治理过期和冲突。",
       "en": "Independent client-executor roles define retry keys with growing expiry and conflict governance."
@@ -14041,7 +14041,7 @@
   {
     "questionId": "bulk-a-flaky-test-triage",
     "reviewStatus": "reviewed",
-    "fingerprint": "aac180b2964f27043f0e8292743250b173f5cc3d31a0a8294e9da1351bda7d92",
+    "fingerprint": "8ebfad10257b7f62e3a53a5c5cf6a52f8bafa7bcd37b65ede8af655f58f508aa",
     "rationale": {
       "zh": "不稳定测试定位适合独立技术数据贡献；移除通用业务运营默认映射，不用无限重跑掩盖产品缺陷。",
       "en": "Flaky-test diagnosis fits technical-data contributors rather than generic business operations."
@@ -14879,7 +14879,7 @@
   {
     "questionId": "bulk-a-language-compiler-optimization-observable",
     "reviewStatus": "reviewed",
-    "fingerprint": "693645a7e016c1a42397045210daafd40f5deca13bd73c2b9cdf074e25edc4da",
+    "fingerprint": "09472a213e1a1a02bf62664a1268699989ed41b1b2235d6997953d0940047815",
     "rationale": {
       "zh": "优化可观察语义适合相关语言专业贡献；按语言约定解释，不将源码顺序直接当执行保证。",
       "en": "Optimization semantics fit language IC practice under actual language guarantees."
@@ -14995,7 +14995,7 @@
   {
     "questionId": "bulk-a-language-type-erasure-api",
     "reviewStatus": "reviewed",
-    "fingerprint": "b7d99e5f6ace1cd9280e7184c24d8af3ec1ca02c479772f46ac326d0e1183f57",
+    "fingerprint": "2325c30ac778b888d8f0cdce1c976ba0692d45754757d9a40c57e34619228c20",
     "rationale": {
       "zh": "泛型擦除只适合采用相关类型模型的专业贡献工作；不把某语言限制当全部岗位共同要求。",
       "en": "Type erasure fits relevant language IC work rather than a universal limitation."
@@ -15181,7 +15181,7 @@
   {
     "questionId": "bulk-a-oncall-alert-ownership-gap",
     "reviewStatus": "reviewed",
-    "fingerprint": "1874445ad94f61062b6c4659b4a1b6ee5960d47637a42f2514c13caf3cd0d0f2",
+    "fingerprint": "5c1b6a67130a096665619deedcbd9f858d02e59c2e514cbd25af1bd02039d23a",
     "rationale": {
       "zh": "承担值班责任的各阶段可还原交接和本人行动；初级确认升级，高阶段设计跨班机制，不以告警发出等同处理。",
       "en": "On-call participants at each stage trace handoffs; juniors acknowledge and escalate while higher stages design mechanisms."
@@ -15265,7 +15265,7 @@
   {
     "questionId": "bulk-a-page-fault-working-set",
     "reviewStatus": "reviewed",
-    "fingerprint": "f701ad6ccb570930567115735396d27d7f2f64c761305325b70b6d904392e2d0",
+    "fingerprint": "9cd4e87fcc4d3df9f88eb9534d68754995d35d26f11f3842f9b9b8dfdcf4ab2c",
     "rationale": {
       "zh": "工作集缺页适合相关系统运行的独立贡献；高阶段衡量剖析风险，不把所有磁盘IO归因换页。",
       "en": "Independent system-runtime contributors diagnose faults without attributing all disk I/O to swapping."
@@ -17106,7 +17106,7 @@
   {
     "questionId": "bulk-b-data-02",
     "reviewStatus": "reviewed",
-    "fingerprint": "a6816d9ca11a48a54a23509ff770009d5b450a04dfeaa27f4ae37b1547c7c722",
+    "fingerprint": "74472965f0850cf081e63ac6f32dfdc1bf4a2f18cf9c67017ee67e4e36f8bbc7",
     "rationale": {
       "zh": "服务工单与真实问题分析适合后台数据AI支持系统；独立阶段保留关系，高阶段统一质量定义。",
       "en": "Ticket and problem analysis fits backend, data, and AI support systems with growing metric ownership."
@@ -17228,7 +17228,7 @@
   {
     "questionId": "bulk-b-data-05",
     "reviewStatus": "reviewed",
-    "fingerprint": "7318eb1f4b32b67a1c9091e6445ee00f26471d96772b311b89b4194b1f42cc70",
+    "fingerprint": "035065d896c7c3911bba750756fb759aaa9bde376f7e3435d6e77a99ce529ca2",
     "rationale": {
       "zh": "各技术方向都可能消费有效客户定义；独立阶段澄清用途，高阶段协调共享与专属边界。",
       "en": "Technical consumers clarify valid-customer purpose; higher stages align shared and local semantics."
@@ -17487,7 +17487,7 @@
   {
     "questionId": "bulk-b-feature-04",
     "reviewStatus": "reviewed",
-    "fingerprint": "a42a72187784e2db4067164a0d6cfcec77acf7274ba319de38847b6af22435b6",
+    "fingerprint": "6e080e4fa88501c3a99100ba0db0abaa426747eca09675a812912a7e46a169a6",
     "rationale": {
       "zh": "独立消费者可判断时效对自己任务的影响；高阶段统一分级承诺，不以技术实时性作为唯一标准。",
       "en": "Independent consumers assess task-level freshness; higher stages align graded commitments."
@@ -19000,7 +19000,7 @@
   {
     "questionId": "bulk-d-recovery-plan-after-missed-milestone",
     "reviewStatus": "reviewed",
-    "fingerprint": "1354099cfce9e2641fb8a80bf1990dba20d7b54089bd74eac2abde5fd325eb43",
+    "fingerprint": "17161ea392b0156164e67daae1fb318a80e4a6dd052551fb8aef81f2e5b230c3",
     "rationale": {
       "zh": "服务交接的工具、权限和运行证据适用于独立技术负责人；管理阶段额外确认容量和预算，不以按期上线自动结项。",
       "en": "Tools, permissions, and operating evidence in handoffs fit independent technical owners. Managers additionally confirm capacity and budgets; timely launch does not close the project."
@@ -19793,7 +19793,7 @@
   {
     "questionId": "bulk-e-remote-collaboration-information-gap",
     "reviewStatus": "reviewed",
-    "fingerprint": "5532c81c88c09b1e3834b41cd9bdbcbb2bd3fdacf1893327ed0f08070b397858",
+    "fingerprint": "12c627bd3beab63ae583b8337f9aa290dab0113315378efc75ca3536645d7dd7",
     "rationale": {
       "zh": "本题核验“绘制请求、响应、决策和返工的等待链。”。按实际岗位与权限比较沟通、理解确认和后续行动；个人清晰表达、跨方协作与管理反馈的范围分别核验，不把话术流利当作证据。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question examines “Maps the waiting chain across requests, responses, decisions, and rework.”. Compare communication, understanding checks, and follow-up within the actual role and authority; distinguish personal clarity, cross-party coordination, and managerial feedback rather than reward polished delivery alone. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -20143,7 +20143,7 @@
   {
     "questionId": "bulk-f-manager-boundary-between-coaching-and-performance",
     "reviewStatus": "reviewed",
-    "fingerprint": "7ccdf1770fba2cab7f0a15e5034c8be46d6415517a5c0e5ff52c5ba7434b2c41",
+    "fingerprint": "fa7d07ade637f5b08e22696072e87d3e48866b3747e7a98e28e1f75598a72634",
     "rationale": {
       "zh": "展示机会分配涉及团队发展责任；两阶段检查任务标准、支持和长期分布，不以自信或曝光度代替能力。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
       "en": "Presentation opportunity allocation concerns team development. Both stages examine task criteria, support, and distribution over time rather than confidence or exposure. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
@@ -20196,7 +20196,7 @@
   {
     "questionId": "bulk-f-manager-coach-without-taking-over",
     "reviewStatus": "reviewed",
-    "fingerprint": "1b54da965c5d7ca8bc79bacddad4315173363b559486b54363d5522381aa3cdf",
+    "fingerprint": "776918c339e4253be02d7123beaf3d802e6d40adf82250bbf4081036870759cf",
     "rationale": {
       "zh": "风险保障与负责人正式授权由管理者校准；一线指导小组责任，组织层培养经理，不以两次失误一概收权。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
       "en": "Managers calibrate safeguards and formal delegation. First-line scope coaches group leads; organizational scope develops managers without reclaiming all authority after two mistakes. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
@@ -22267,7 +22267,7 @@
   {
     "questionId": "bulk1000-a-001-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "09fdc17bd4f62e1d5ad2a5cf9babf996bf3227ad20489679f0426b6420477486",
+    "fingerprint": "b2b3ca48bf6a1a8bebb3b4674c6e015d8104fde75051b619ca7f224cc45f4fd3",
     "rationale": {
       "zh": "NUMA定位主要面向服务数据AI运行环境，移除一般客户端映射；高级阶段验证局部性，不机械绑核。",
       "en": "NUMA diagnosis chiefly fits server, data, and AI runtimes rather than generic mobile work."
@@ -22385,7 +22385,7 @@
   {
     "questionId": "bulk1000-a-004-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "4e6b68fb1d0d49b204417be633d47d464bc5a20236996615d35fce4c852a92e8",
+    "fingerprint": "5c7308fda1855067f4fb54c28541b1926312e9dcd2c067f6431cde9403fe3355",
     "rationale": {
       "zh": "HTTP3路径迁移主要面向网络客户端与服务端；数据仅在相关采集传输职责适用，不用会话在线代替请求成功。",
       "en": "HTTP/3 migration fits client-server transport; data applies only to related collection responsibilities."
@@ -22446,7 +22446,7 @@
   {
     "questionId": "bulk1000-a-005-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "e566a5ff186256929152c061fb2089869485a96ee448b75bbc18adddffda36c2",
+    "fingerprint": "93cc907e3e83c9b6a70129e03453940f8e55dd910301a95a0a7dc644e7ffa198",
     "rationale": {
       "zh": "持久化写序适合独立本地存储数据后台AI贡献；高阶段协调恢复协议，不把写入返回等同持久化。",
       "en": "Independent local-storage and data-service contributors reason about durability with growing recovery ownership."
@@ -22507,7 +22507,7 @@
   {
     "questionId": "bulk1000-a-010-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "03a0135cc3f5bba2413c954af1ef964ede8336381cc8bee8aba357b76cb713bf",
+    "fingerprint": "abd423ec0cc94873d01f9f0dc9bfdbaffd6f3f441dac556ac5fc0cc55a46c347",
     "rationale": {
       "zh": "跨租户尾延迟适合各相关技术链路与数据；移除一般业务运营标签，管理阶段核验隔离及止损。",
       "en": "Technical-data roles diagnose tenant tail latency; generic business operations is excluded."
@@ -22578,7 +22578,7 @@
   {
     "questionId": "bulk1000-a-013-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "eaa021d6a35aba1596541b459adccb9b5974299fbad1546dba5182fd65ddfded",
+    "fingerprint": "609e0c2b40d5cba981483bc05375749e66101d12e782f37bfc824bdf50d53059",
     "rationale": {
       "zh": "峰值丢失重复适合跨端独立技术数据贡献；移除业务运营默认映射，高阶段校验链路保护。",
       "en": "Independent technical-data contributors trace peak loss and duplication; generic operations is excluded."
@@ -22649,7 +22649,7 @@
   {
     "questionId": "bulk1000-a-014-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "08e75e60e361a913f69364967fdec14c3c7ac7568a6190e9523663edccddd44d",
+    "fingerprint": "3864c2ec5d74bedcbd30a08ab598031d7688d0d17fe5e66eee2db10f9799dcad",
     "rationale": {
       "zh": "多租户长作业公平调度需高级后台AI数据责任；比较配额和隔离，不由租户数量直接推选方案。",
       "en": "Multi-tenant job fairness needs senior backend-AI and data judgment."
@@ -22696,7 +22696,7 @@
   {
     "questionId": "bulk1000-a-015-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "17554f9362f0245e1bf411a9d079fbfe35d70fb22f6b51abfdb4f44694bcd7be",
+    "fingerprint": "0ecd042a5a1e3ed5cea73842ee6f0265d433f921957bda702e690e1f3d83524e",
     "rationale": {
       "zh": "独立存储后台AI数据贡献者可比较热点策略；高阶段协调写序与迁移，不把缓存当写入序保证。",
       "en": "Independent storage contributors assess hotspots without treating caches as write-order guarantees."
@@ -23052,7 +23052,7 @@
   {
     "questionId": "bulk1000-a-024-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "a3e268e3efc9b2ae131e198b97800c021f5c363dac4d73105395da7b8d5d4c78",
+    "fingerprint": "03f8dc250bd2a344285f0e745fda06a69e431c4cf9ba359fb2a11eb35912afa0",
     "rationale": {
       "zh": "独立技术数据产品可核验线上分群与部署差异；高阶段调整评价和发布，保留不能确定的因果边界。",
       "en": "Independent technical-data and product roles test deployment and segment differences with causal limits."
@@ -23113,7 +23113,7 @@
   {
     "questionId": "bulk1000-b-027-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "b1b09b52faa3044782c7ef94988d58f9501404896a5a63185d31b8b1a05d896d",
+    "fingerprint": "063787a089602006714e862f18005770002275f3e4b0d1113c469e5f35f08edb",
     "rationale": {
       "zh": "相邻市场价值链需高级专业尽调；分析贡献与批准进入市场的权力分开。",
       "en": "Adjacent-market value chains require senior due diligence, distinct from authority to enter the market."
@@ -23203,7 +23203,7 @@
   {
     "questionId": "bulk1000-b-028-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "2d09244f160cf9a184d0304cd02a4023fa43438d080fbfced6a9fb78d9135fd3",
+    "fingerprint": "22948de5b1a4ad5be0553a16c00cb360f8afd47b5bbe2e37aedf5eac1266bae7",
     "rationale": {
       "zh": "独立项目参与者可提出状态语义和样例；高级协调多团队定义，管理确认使用与责任。",
       "en": "Independent contributors propose state semantics; seniors align teams and managers confirm governance."
@@ -23436,7 +23436,7 @@
   {
     "questionId": "bulk1000-b-032-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "677f8829ccaad24f27e6772c0399755f7de5198c8f7e22c5a1c3ee11536bd2eb",
+    "fingerprint": "55786c096aa05b6aec49a3c7e28fee27377222f374467c197baa4b981d7b046a",
     "rationale": {
       "zh": "事实粒度和重复计数可从初级具体样例检验；高阶段协调跨系统定义，不要求初级治理全链路。",
       "en": "Juniors test grain and duplication through examples; higher stages coordinate systems."
@@ -23563,7 +23563,7 @@
   {
     "questionId": "bulk1000-b-035-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "ddf61b0d2b7935704db68637cf79c5331f2efa93e75232fa0242e543c5dbcbf3",
+    "fingerprint": "9aaef6de5e86c52aad6b2b256a115efb985839d1d1af21744580b5ca0af279ed",
     "rationale": {
       "zh": "默认值和兼容契约适合独立数据AI后台实现；高阶段处理共享定义和失效策略。",
       "en": "Independent data, AI, and backend implementers define defaults; higher stages govern shared contracts."
@@ -24245,7 +24245,7 @@
   {
     "questionId": "bulk1000-d-052-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "498b4cd473264f124c1cd45ed5bbdb3523bc09a186180c6a22f259a194f47c71",
+    "fingerprint": "291d87b403187ae081ebed15914ef31b7077e4b2e817b1580e963506d2e33406",
     "rationale": {
       "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
       "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
@@ -24995,7 +24995,7 @@
   {
     "questionId": "bulk1000-e-065-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "7f79f0d10710a51821cc11273938f8eaf238b66901b9e0c72b8df52541fee196",
+    "fingerprint": "68113b52e300754029e1f8f0caa15acf8ef646be292a83d54185d22532581228",
     "rationale": {
       "zh": "本题核验“识别“远程交接丢失关键上下文”中相关方的目标、证据、决策权和主要分歧。”。按实际岗位与权限比较沟通、理解确认和后续行动；个人清晰表达、跨方协作与管理反馈的范围分别核验，不把话术流利当作证据。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question examines “Identify the stakeholders’ goals, evidence, decision rights, and core disagreement in “Critical context lost in a remote handoff.””. Compare communication, understanding checks, and follow-up within the actual role and authority; distinguish personal clarity, cross-party coordination, and managerial feedback rather than reward polished delivery alone. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -25090,7 +25090,7 @@
   {
     "questionId": "bulk1000-e-067-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "6c2771d5b4ab0bb91fbd6ecc8bd0dc6faf0df9d171fe573311695789e8646ca1",
+    "fingerprint": "c2a9d56b65bb0d617f6b4953cdca84bcaf6e7cb034ef096dfb870b35c6549107",
     "rationale": {
       "zh": "本题考察“识别“产品与安全对上线门槛意见不一”中相关方的目标、证据、决策权和主要分歧。”。按角色核验立场、事实、选项和承诺；各阶段可从本人协作到跨方机制展示，不预设有权替其他团队承诺或重新分配资源。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question examines “Identify the stakeholders’ goals, evidence, decision rights, and core disagreement in “Product and security disagree on the launch threshold.””. Verify interests, facts, options, and commitments in role context, from personal collaboration to cross-party mechanisms; do not assume authority to commit another team or reallocate resources. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -25264,7 +25264,7 @@
   {
     "questionId": "bulk1000-e-069-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "91c13b67e4d856240c05fcafed2a8ae89ca691e6bc496fd55e3cbab3987473de",
+    "fingerprint": "f8ff097e9c1db51eb41eed30d03b14b6b16e86696fb29b475276f80ef847b079",
     "rationale": {
       "zh": "本题通过“识别“没有职权时推动统一指标”中相关方的目标、证据、决策权和主要分歧。”核验影响他人决定的事实、选择与跟进。按岗位权限观察本人证据、协作路径或治理机制，不把没有管理权等同无法推动，也不默认可以代他人授权。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question uses “Identify the stakeholders’ goals, evidence, decision rights, and core disagreement in “Influencing a shared metric without authority.”” to verify evidence, choices, and follow-up in influencing decisions. Assess personal evidence, collaboration paths, or governance within authority; lacking management power does not prevent influence or permit granting authority to others. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -26165,7 +26165,7 @@
   {
     "questionId": "bulk1000-g-086-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "3a14943c602cc80bd6bd123f256189195f2b76cc0e004a554c974bf4863950ef",
+    "fingerprint": "08ea0f58dc24f38f8baa568ba7d727c2e7572816092d6bef37a298fc71317976",
     "rationale": {
       "zh": "本题核验“还原“决策结果好但过程依赖偶然”发生时的目标、原先假设、可用支持与真实阻碍。”，题面未限定正式组织权限；保留多个责任阶段，分别追问本人调整、团队支持或机制变化，不按事件规模直接给分。 技术子岗位复核：已按题意核验为技术岗位通用的学习、自驱、复盘或恢复判断；保留原阶段责任边界，不要求初级有组织决策权。",
       "en": "The question examines “Reconstruct the goal, prior assumptions, available support, and actual obstacles behind “A good outcome produced by a fragile decision process.””. It assumes no fixed organizational authority; retain multiple responsibility stages and probe personal adjustment, team support, or mechanisms without scoring event scale. Technical subrole review: Reviewed as shared technical learning, initiative, reflection, or recovery judgment, retaining stage-specific responsibility and junior authority limits."
@@ -26249,7 +26249,7 @@
   {
     "questionId": "bulk1000-g-090-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "532499bb4fb80abc4bfa3c0d233d7d76945117d1733297c774dfc3b483fc34ed",
+    "fingerprint": "b5465028037098be8bfedd39cf8c636771184a87eb9bf7e758c61ccf3025ad40",
     "rationale": {
       "zh": "本题核验“还原“没有明确指令时设定工作方向”发生时的目标、原先假设、可用支持与真实阻碍。”，题面未限定正式组织权限；保留多个责任阶段，分别追问本人调整、团队支持或机制变化，不按事件规模直接给分。 技术子岗位复核：已按题意核验为技术岗位通用的学习、自驱、复盘或恢复判断；保留原阶段责任边界，不要求初级有组织决策权。",
       "en": "The question examines “Reconstruct the goal, prior assumptions, available support, and actual obstacles behind “Setting direction without explicit instructions.””. It assumes no fixed organizational authority; retain multiple responsibility stages and probe personal adjustment, team support, or mechanisms without scoring event scale. Technical subrole review: Reviewed as shared technical learning, initiative, reflection, or recovery judgment, retaining stage-specific responsibility and junior authority limits."
@@ -26337,7 +26337,7 @@
   {
     "questionId": "bulk1000-g-091-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "ead1ad6942df6a2b86501bffe1e44ee07facb390dc4bbe231c20b7e75ba0544e",
+    "fingerprint": "940e0fd1c876f5985ed833a55612d3b01e9be6215f3d5c4d25bba14fc01dc04a",
     "rationale": {
       "zh": "本题核验“还原“长期目标被即时事务不断打断”发生时的目标、原先假设、可用支持与真实阻碍。”，题面未限定正式组织权限；保留多个责任阶段，分别追问本人调整、团队支持或机制变化，不按事件规模直接给分。 技术子岗位复核：已按题意核验为技术岗位通用的学习、自驱、复盘或恢复判断；保留原阶段责任边界，不要求初级有组织决策权。",
       "en": "The question examines “Reconstruct the goal, prior assumptions, available support, and actual obstacles behind “Long-term goals repeatedly displaced by urgent work.””. It assumes no fixed organizational authority; retain multiple responsibility stages and probe personal adjustment, team support, or mechanisms without scoring event scale. Technical subrole review: Reviewed as shared technical learning, initiative, reflection, or recovery judgment, retaining stage-specific responsibility and junior authority limits."
@@ -26425,7 +26425,7 @@
   {
     "questionId": "bulk1000-h-092-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "46e597c0425c617b1c00f4cc6c8da95bf5f19958cc969251bcb4bfb95ba5917b",
+    "fingerprint": "a37550307d20ca4982fb236b198de2c05ed6a337e40ba5cbad33151c52fa0406",
     "rationale": {
       "zh": "本题通过“在“关键数据迁移没有负责人，怎样明确责任？”中区分可核实事实、推测、本人行为和其他团队责任。”核验对实际结果的责任。各阶段均可在本人权限内识别缺口、保护和升级；阶段提高后追问依赖协调、授权及持续机制，不把无边界补位当作优秀。 技术子岗位复核：已核验为相关技术岗位共通的责任、诚实、贡献归因、边界或双向适配；沿用原阶段范围，个人止损和升级不等于擅自取得审批权。",
       "en": "The question uses “For “No one owns a critical data migration. How do you clarify responsibility?”, inventory the data scope, migration steps, rollback conditions, and affected people or systems.” to examine responsibility for actual outcomes. Every stage can recognize gaps, protect users, and escalate within authority; higher stages also explain coordination, delegation, and durable mechanisms rather than unlimited personal takeover. Technical subrole review: Reviewed as shared technical responsibility, honesty, attribution, boundaries, or mutual fit, retaining stage limits and authorization boundaries."
@@ -26600,7 +26600,7 @@
   {
     "questionId": "bulk1000-h-094-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "62caace4f57b47af9c0848fbe029d0888fede53dfa406e8b92414f023ea6b8b3",
+    "fingerprint": "e654c7a60bfba6df80fbaaaacc4626b69dfa2a33d2a3aefbfe536ad2a72d730c",
     "rationale": {
       "zh": "本题核验“在“发现早期报告遗漏了重要风险”中区分可核实事实、推测、本人行为和他人责任。”及如实更正的行动，是各阶段共同责任；初级关注披露和保护，管理阶段进一步核验信息上行、决策复核和纠偏机制。 技术子岗位复核：已核验为相关技术岗位共通的责任、诚实、贡献归因、边界或双向适配；沿用原阶段范围，个人止损和升级不等于擅自取得审批权。",
       "en": "The question examines “Separate verifiable facts, assumptions, personal actions, and others’ responsibilities in “A material risk was omitted from an early report.”” and truthful correction as shared responsibilities. Entry-level evidence concerns disclosure and protection; management also examines upward information flow, decision review, and correction mechanisms. Technical subrole review: Reviewed as shared technical responsibility, honesty, attribution, boundaries, or mutual fit, retaining stage limits and authorization boundaries."
@@ -26695,7 +26695,7 @@
   {
     "questionId": "bulk1000-h-095-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "b3e96cc7d2f119ccafa141a873495048a3f0967fd4088bf01e0f6afe88b1649b",
+    "fingerprint": "c72ce844b63c134873bde75a90f880d0d3c19dab080d048331eeeb839184c2f2",
     "rationale": {
       "zh": "本题核验“在“压力下要求美化实验结果”中区分可核实事实、推测、本人行为和他人责任。”及如实更正的行动，是各阶段共同责任；初级关注披露和保护，管理阶段进一步核验信息上行、决策复核和纠偏机制。 技术子岗位复核：已核验为相关技术岗位共通的责任、诚实、贡献归因、边界或双向适配；沿用原阶段范围，个人止损和升级不等于擅自取得审批权。",
       "en": "The question examines “Separate verifiable facts, assumptions, personal actions, and others’ responsibilities in “Pressure to make experiment results look better.”” and truthful correction as shared responsibilities. Entry-level evidence concerns disclosure and protection; management also examines upward information flow, decision review, and correction mechanisms. Technical subrole review: Reviewed as shared technical responsibility, honesty, attribution, boundaries, or mutual fit, retaining stage limits and authorization boundaries."
@@ -26790,7 +26790,7 @@
   {
     "questionId": "bulk1000-h-097-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "f31a516884ff5306e6a6029cbc6928e68f2d5f9abb048751240cb81ecdb1b715",
+    "fingerprint": "203181886553fa7f0e146b9e1fe94b651cc815502761cf903742f3ca606eb18e",
     "rationale": {
       "zh": "本题核验“在“职责外风险应否介入”中区分可核实事实、推测、本人行为和他人责任。”。边界、风险报告与授权意识是跨阶段要求；初级聚焦识别、保护和求助，管理者进一步核验授权及纠偏机制。 技术子岗位复核：已核验为相关技术岗位共通的责任、诚实、贡献归因、边界或双向适配；沿用原阶段范围，个人止损和升级不等于擅自取得审批权。",
       "en": "The question examines “Separate verifiable facts, assumptions, personal actions, and others’ responsibilities in “Whether to intervene in a risk outside your remit.””. Boundaries, risk reporting, and authority awareness span stages; entry-level evidence concerns recognition, protection, and help, while managers also explain delegation and correction mechanisms. Technical subrole review: Reviewed as shared technical responsibility, honesty, attribution, boundaries, or mutual fit, retaining stage limits and authorization boundaries."
@@ -26951,7 +26951,7 @@
   {
     "questionId": "bulk1000-h-099-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "904661fa0eec60e3fe430ce016d7fd16ad2182e3be2e1b17466071e4879b753d",
+    "fingerprint": "e54291391eef19a3b68dbe696f192aa615803a820e9bfeb208ec37f462266a6f",
     "rationale": {
       "zh": "本题通过“在“团队文化要求与个人底线冲突”中区分可核实事实、推测、本人行为和他人责任。”核实双方诉求、岗位条件与可协商安排，适用于各阶段；按实际责任核验，不把偏好相同或忍受透支当作匹配。 技术子岗位复核：已核验为相关技术岗位共通的责任、诚实、贡献归因、边界或双向适配；沿用原阶段范围，个人止损和升级不等于擅自取得审批权。",
       "en": "The question uses “Separate verifiable facts, assumptions, personal actions, and others’ responsibilities in “Team norms conflict with personal boundaries.”” to verify mutual goals, role conditions, and negotiable arrangements across stages; assess actual responsibility rather than shared preferences or tolerance of overwork. Technical subrole review: Reviewed as shared technical responsibility, honesty, attribution, boundaries, or mutual fit, retaining stage limits and authorization boundaries."
@@ -27035,7 +27035,7 @@
   {
     "questionId": "bulk1000-h-100-v1",
     "reviewStatus": "reviewed",
-    "fingerprint": "4b613612263bc94fba2d493ea9231127820f12322a42cbd526af744c9b2fb653",
+    "fingerprint": "56dfccdb6b3d802bf904d381515f3fe1893d5a4f2cc64a72d6e75d904e5c39b6",
     "rationale": {
       "zh": "本题核验“在“授权范围模糊时如何升级”中区分可核实事实、推测、本人行为和他人责任。”。边界、风险报告与授权意识是跨阶段要求；初级聚焦识别、保护和求助，管理者进一步核验授权及纠偏机制。 技术子岗位复核：已核验为相关技术岗位共通的责任、诚实、贡献归因、边界或双向适配；沿用原阶段范围，个人止损和升级不等于擅自取得审批权。",
       "en": "The question examines “Separate verifiable facts, assumptions, personal actions, and others’ responsibilities in “Escalating when delegated authority is unclear.””. Boundaries, risk reporting, and authority awareness span stages; entry-level evidence concerns recognition, protection, and help, while managers also explain delegation and correction mechanisms. Technical subrole review: Reviewed as shared technical responsibility, honesty, attribution, boundaries, or mutual fit, retaining stage limits and authorization boundaries."
@@ -28247,7 +28247,7 @@
   {
     "questionId": "c-market-economics-free-tier-conversion-cost",
     "reviewStatus": "reviewed",
-    "fingerprint": "556e875e146329f86666883eefcafca87c63ea36de5bf12743168515ec607bad",
+    "fingerprint": "5223885e654589410e99d525657bb40ab71c460a04d5fd0d0a389e8867b13486",
     "rationale": {
       "zh": "免费层推理和支持成本直接关联技术责任；高阶段确认商业边界，不以活跃量直接当价值。",
       "en": "Inference and support costs directly involve technical owners; higher stages set business boundaries rather than equating activity with value."
@@ -28379,7 +28379,7 @@
   {
     "questionId": "c-marketing-brand-search-vs-demand-capture",
     "reviewStatus": "reviewed",
-    "fingerprint": "1d6a86539ee6509008713f629af9891dec72555c819b5fa488eaf591e2f892fb",
+    "fingerprint": "75d64f31644489a53402284e9b03dbffa52426dd7880e4afe8d33f7f219ac0cb",
     "rationale": {
       "zh": "品牌创造需求与搜索截获转化保留市场产品数据参照，不默认所有技术岗位需做媒体预算模型。",
       "en": "Brand demand creation versus search capture remains marketing-product-data reference, not a universal engineering media-budget model."
@@ -28682,7 +28682,7 @@
   {
     "questionId": "c-metrics-causality-business-result-attribution",
     "reviewStatus": "reviewed",
-    "fingerprint": "9b0887af5cfe040b72a6791e42aa70f17bfe0d9ff418c2646e9ace496e98d6af",
+    "fingerprint": "f101087f12e834c82c2d9bfa02bd460c6d2efa9e80695258aa7e03545d9ac8a2",
     "rationale": {
       "zh": "每个阶段都可说明本人项目的结果、对比与未知；初级不需组织级收入，高阶段需要更充分的影响和归因证据。",
       "en": "Every stage can explain project outcomes, comparisons, and unknowns. Juniors need no organizational revenue; higher stages require stronger impact and attribution."
@@ -28781,7 +28781,7 @@
   {
     "questionId": "c-metrics-causality-campaign-net-lift",
     "reviewStatus": "reviewed",
-    "fingerprint": "b73b4e7ce20a10af8974aa91d4eaacc4241fb6e466b366553c2016bc1abff79d",
+    "fingerprint": "6d9f36e276c8e6521c147e708660c887a0786060590d5c48fe04de955193c914",
     "rationale": {
       "zh": "产品活动留存的对照与选择偏差也适用于独立技术实验参与；高阶段调整投入，不把同期上升直接算作个人功劳。",
       "en": "Retention controls and selection bias also fit independent technical experiment participants. Higher stages adjust investment without attributing concurrent gains to personal effort."
@@ -30568,7 +30568,7 @@
   {
     "questionId": "c-outcomes-leading-indicators-validation-window",
     "reviewStatus": "reviewed",
-    "fingerprint": "ce3d442f1b1d0b752c83aeb50ed9672ab6708962ebc1b97873ba20067f3a34a3",
+    "fingerprint": "066800a43d5155ee8fc4b416dd320b96b0b347e975151b187a4986da1ab18ad0",
     "rationale": {
       "zh": "独立技术人员可解释领先信号与最终结果的假设；高阶段决定阶段投入，保留最终回看。",
       "en": "Independent engineers explain leading-signal hypotheses; higher stages stage investment while retaining final outcome review."
@@ -30909,7 +30909,7 @@
   {
     "questionId": "c-outcomes-scaling-cohort-reproducibility",
     "reviewStatus": "reviewed",
-    "fingerprint": "44791b494cfd6c43ecd3a23832bf503d23b97ce04b3baa048774db4197167adc",
+    "fingerprint": "00aec3f65a9c1612b9595e5f6ac00f1b4c008ea3566dcb1a78aab93da817f59a",
     "rationale": {
       "zh": "复制条件涉及工具、能力和流程，适合高级技术与业务协作；不把一次试点成功当普遍效果。",
       "en": "Replication involves tools, capability, and process, fitting senior technical-business collaboration rather than universalizing a pilot."
@@ -31825,7 +31825,7 @@
   {
     "questionId": "c-prioritization-stop-work-early-evidence",
     "reviewStatus": "reviewed",
-    "fingerprint": "c43eca35dc4b53c787b913abc00118d8681853bfcba21c2527c1e924d000f012",
+    "fingerprint": "8cdb5b92100b8a2e1754ac303baf63f151d1fd2ed298d247510de7e3cf753f12",
     "rationale": {
       "zh": "独立探索参与者也能核对学习证据与追加能力是否针对真因；高阶段作投入决定，不把沉没成本当继续依据。",
       "en": "Independent exploration participants can check learning and whether additions address causes. Higher stages decide investment rather than relying on sunk cost."
@@ -32166,7 +32166,7 @@
   {
     "questionId": "c-prioritization-topk-constrained-release",
     "reviewStatus": "reviewed",
-    "fingerprint": "f33008f91e21e05f5987a69cf917410fa9b4a833379d64efc60c8fa1f7e75cae",
+    "fingerprint": "da3c0db69631739a0b87bbfb278b5e778cb9d34cb7a176a15235bc9f05ae944c",
     "rationale": {
       "zh": "多类不可延期工作冲突适合高级专业或项目负责人比较；正式安全、合规与客户风险需授权，不能为凑三项擅降底线。",
       "en": "Competing release constraints fit senior specialist or project judgment. Safety, compliance, and customer risk need authority, not waived to meet a three-item quota."
@@ -32419,7 +32419,7 @@
   {
     "questionId": "c-product-judgment-foresight-or-just-early",
     "reviewStatus": "reviewed",
-    "fingerprint": "bb5b5f4da8653ed1d0e2408ace709d0f030479db484a9920cdc7fc04f9184b0d",
+    "fingerprint": "05065319f20c4661af07236eb01fdaec8a1eb2b3cf89a7deebd4c81e06bd5e60",
     "rationale": {
       "zh": "各阶段可解释自己判断的先验依据与反证；不要求初级有行业预测成功，也不把早做当领先。",
       "en": "Every stage can explain grounds and counterevidence without junior industry-forecast achievements or equating early with leading."
@@ -33243,7 +33243,7 @@
   {
     "questionId": "c-product-judgment-three-levels-of-bar",
     "reviewStatus": "reviewed",
-    "fingerprint": "6d3d82fa381f5e59acd07ac5931c2faaff098e53ec55df6cc19e5f56f9b812ca",
+    "fingerprint": "684d32e722cb8aede1cfabcef31fb74f202287a60f18d61c9fcd997b6ff4ddff",
     "rationale": {
       "zh": "各阶段均可比较局部外部和内部基线；无法获得可靠行业数据时说明限制，不因头衔默认掌握全行业。",
       "en": "Every stage compares local baselines and states inaccessible industry evidence rather than assuming omniscience from titles."
@@ -33338,7 +33338,7 @@
   {
     "questionId": "c-product-judgment-twenty-four-month-shift",
     "reviewStatus": "reviewed",
-    "fingerprint": "0787e0bdb7ae4b760ea302c43cb20fdeed9d23aa5c63285a0735076cc3610bea",
+    "fingerprint": "53325b095093b7a8a88e1ece33b0b939ed9a2fde88fcc2d7fcfe1713b3415428",
     "rationale": {
       "zh": "技术趋势与公司选择适合高级专业判断；基于尽调和真实行动，不强求预测淘汰公司或禁止可靠资料。",
       "en": "Senior specialists assess technology and company choices through evidence and actions, not forced elimination predictions or banned sources."
@@ -33410,7 +33410,7 @@
   {
     "questionId": "c-product-judgment-use-own-product",
     "reviewStatus": "reviewed",
-    "fingerprint": "b003cae10fbd06219c02a534783544a6a6b53cfcbb9d56d3cb5d009bb8cf47d8",
+    "fingerprint": "a8be8db616dcbcfa1912f0f72d54b1e51958fe709a185bae4f004235159c8187",
     "rationale": {
       "zh": "初级也可按真实任务反馈并验证修复；高阶段建立闭环，不要求初级主导组织体验机制。",
       "en": "Juniors can report real tasks and verify fixes; higher stages establish organization feedback loops."
@@ -35105,7 +35105,7 @@
   {
     "questionId": "d-operations-campaign-landing",
     "reviewStatus": "reviewed",
-    "fingerprint": "7d2a7dc3570cc69eb40a8c1904e022864b6c97e071bf037ac02dcbf02df1b299",
+    "fingerprint": "2f1d04985195a4b6676fcfb91302238fced08852062dc04cd4355e78328f4c12",
     "rationale": {
       "zh": "既定策略下的执行检查可由初级在指导下完成；独立和高级阶段增加跨方准备，仍保留运营市场产品专业范围。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
       "en": "Execution checks under an agreed strategy fit juniors with guidance. Higher stages add cross-party readiness within operations, marketing, and product scope. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
@@ -35213,7 +35213,7 @@
   {
     "questionId": "d-operations-customer-escalation-severity-routing",
     "reviewStatus": "reviewed",
-    "fingerprint": "50301764bdf8ff034e1d59fea5450cdb428fa3e3c8664adfca836c4a70ffaedc",
+    "fingerprint": "5507d107140ee843a562f59b06959b1c7da9b3f8c450d050e17c8c69f31bd869",
     "rationale": {
       "zh": "客户问题严重度队列与技术支持直接相关，适合高级技术与运营负责人；正式服务承诺和分级权限需确认，客户身份不等于影响。",
       "en": "Customer severity queues directly affect technical support and suit senior technical and operating owners. Confirm service and triage authority; customer rank does not define impact."
@@ -35366,7 +35366,7 @@
   {
     "questionId": "d-operations-experiment-guardrails",
     "reviewStatus": "reviewed",
-    "fingerprint": "0271f709cf176ebcf5b388f197a879915c84b3f9e142bd79179aa4833c8a2451",
+    "fingerprint": "3f08284fc4e18d251d29497705bc6ee541fcd02ed542e4b3230fdc7852ea8d2a",
     "rationale": {
       "zh": "线上实验的测量与停止条件也属于独立技术交付责任；高阶段建设跨团队护栏，业务和技术叫停权需明确。",
       "en": "Measurement and stopping rules for live experiments also concern independent technical delivery. Higher stages build guardrails with explicit business and technical stop authority."
@@ -35851,7 +35851,7 @@
   {
     "questionId": "d-pmo-correlated-dependency-escalation",
     "reviewStatus": "reviewed",
-    "fingerprint": "f265cc7ca19dde0391e78c05579d2aae9c4de30c305f287bf245c87a5ade477b",
+    "fingerprint": "df8a0285dcbd51f1e5fa6afb628254f04be573eacc1532c7446dc163094f61c0",
     "rationale": {
       "zh": "共同依赖风险适合高级专业或项目负责人汇总；组合资源决定由实际决策者承担，不把各项目绿色当风险相互独立。",
       "en": "Shared dependency risk fits senior specialist or project aggregation. Actual owners decide portfolio resources; green projects do not imply independent risks."
@@ -39327,7 +39327,7 @@
   {
     "questionId": "e-conflict-three-alignments",
     "reviewStatus": "reviewed",
-    "fingerprint": "e035e54f4c25d4eb2784b44b1811bae96d125165b0333cf065a77ec72f33aeb1",
+    "fingerprint": "1cfcba565e0963b58b19b07d0764705789f921075fedacdd96a4afb9a18669bc",
     "rationale": {
       "zh": "本题考察“区分共同目标与各自目标”。按角色核验立场、事实、选项和承诺；各阶段可从本人协作到跨方机制展示，不预设有权替其他团队承诺或重新分配资源。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question examines “Separates the shared goal from each side’s own goal”. Verify interests, facts, options, and commitments in role context, from personal collaboration to cross-party mechanisms; do not assume authority to commit another team or reallocate resources. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -39605,7 +39605,7 @@
   {
     "questionId": "e-feedback-align-on-one-on-one",
     "reviewStatus": "reviewed",
-    "fingerprint": "0516fb55671eeb8037d4a5e5c76f3c054be91018ac50abc5b3a5e197ba753c42",
+    "fingerprint": "1d9a188645cec21f01e358b8d25808a74c258d0470e3badb596cdb100b60d24f",
     "rationale": {
       "zh": "本题核验“先问对方的期望，再给建议”。按实际岗位与权限比较沟通、理解确认和后续行动；个人清晰表达、跨方协作与管理反馈的范围分别核验，不把话术流利当作证据。 技术子岗位复核：题意涉及直属下属、经营授权或管理者授权机制，技术子岗只补正式管理阶段。",
       "en": "The question examines “Asks for their expectation before giving advice”. Compare communication, understanding checks, and follow-up within the actual role and authority; distinguish personal clarity, cross-party coordination, and managerial feedback rather than reward polished delivery alone. Technical subrole review: Direct reports and managerial delegation apply only to technical management stages."
@@ -39711,7 +39711,7 @@
   {
     "questionId": "e-feedback-correct-misunderstanding",
     "reviewStatus": "reviewed",
-    "fingerprint": "bc7973c4dd3c2deeb741ec5232c5863f80a9effd7cd96040d399ae4754ba6a3a",
+    "fingerprint": "876dff2e03410ecdb2b9e4d5d27b83ffe32cf90ea3806fa99c3287651f793136",
     "rationale": {
       "zh": "本题核验“区分对方案的评价与对人的评价，并指出触发误解的具体表述”。按实际岗位与权限比较沟通、理解确认和后续行动；个人清晰表达、跨方协作与管理反馈的范围分别核验，不把话术流利当作证据。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question examines “Separates critique of the proposal from judgment of the person and identifies wording that caused confusion”. Compare communication, understanding checks, and follow-up within the actual role and authority; distinguish personal clarity, cross-party coordination, and managerial feedback rather than reward polished delivery alone. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -39963,7 +39963,7 @@
   {
     "questionId": "e-feedback-peer-becomes-report",
     "reviewStatus": "reviewed",
-    "fingerprint": "bef9df4f80347e30016f0e9a5057109e0118bdf16469ec9f3dce6a52160bbff1",
+    "fingerprint": "95dd33511598d870a764d2d68ada9d40b0a1ffaf7cc4e7972c60a12e6b733e22",
     "rationale": {
       "zh": "题面明确原同事成为直属下属，核心是新管理权限下的反馈、公平与支持，只匹配管理路径，不把一般同伴反馈等同正式管理。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The premise explicitly makes a former peer a direct report. It tests feedback, fairness, and support under new managerial authority and applies to management rather than ordinary peer feedback. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -40947,7 +40947,7 @@
   {
     "questionId": "e-negotiation-capacity-swap",
     "reviewStatus": "reviewed",
-    "fingerprint": "9ae898adf80815e568e8a898121ec7888320d68869f429adf8c1737bfc914b6a",
+    "fingerprint": "7694d27c7f669d402aabf4350c90c62bf6774893c51dd41c647a8370a77f5141",
     "rationale": {
       "zh": "本题考察“核对两项承诺的业务影响、关键路径和可以调整的范围”。按角色核验立场、事实、选项和承诺；各阶段可从本人协作到跨方机制展示，不预设有权替其他团队承诺或重新分配资源。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question examines “Checks business impact, critical paths, and adjustable scope for both commitments”. Verify interests, facts, options, and commitments in role context, from personal collaboration to cross-party mechanisms; do not assume authority to commit another team or reallocate resources. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -42860,7 +42860,7 @@
   {
     "questionId": "exp1500-a-023",
     "reviewStatus": "reviewed",
-    "fingerprint": "953aea35f9a8f5027f4c0c17d28c94e75e238f070aeca1b4a46d9843af441887",
+    "fingerprint": "e43010663f14a1ed5444d1a5fafee36126886195cb9e384479ce09e5970915b0",
     "rationale": {
       "zh": "跨重启有界去重适合独立后台数据AI实现；高阶段明确误判损失，不将概率结构当唯一答案。",
       "en": "Restart-safe deduplication fits independent backend, data, and AI IC work with explicit error costs."
@@ -43458,7 +43458,7 @@
   {
     "questionId": "exp1500-a-034",
     "reviewStatus": "reviewed",
-    "fingerprint": "8b28ef835c0b721d1df888f2f2e2b6e10bd4e90c3c10c5d9a5c66b8773faef31",
+    "fingerprint": "d238812d92d488c8e3ca9f9ea1f61a16db769ae35c1e8088f4bd41d773fa1365",
     "rationale": {
       "zh": "制品来源验证适合独立各技术数据流水线；移除业务运营映射，高阶段治理签名与发布授权。",
       "en": "Artifact provenance fits technical-data pipelines rather than generic business operations."
@@ -46186,7 +46186,7 @@
   {
     "questionId": "exp1500-b-029",
     "reviewStatus": "reviewed",
-    "fingerprint": "ea40b2ffb9ceeef68921a90205efa28ad10556fc99f556523f33d6ccff8037dd",
+    "fingerprint": "23211d0ec46d3e1a0c5b454dc1080ec8899d78ac52bb806b2cf3bf77bc7debe9",
     "rationale": {
       "zh": "跨CRM合同和设备身份的置信映射需高级判断；隐私与误合并风险按证据和授权处理。",
       "en": "Cross-CRM, contract, and device mapping needs senior confidence and privacy judgment."
@@ -48893,7 +48893,7 @@
   {
     "questionId": "exp1500-c-003",
     "reviewStatus": "reviewed",
-    "fingerprint": "6f3ee55d85d4ae4b09a258f75a2d09aedb285b542fe02303f8e2ed2e44066d1a",
+    "fingerprint": "e4166a1a74035a81509d9edc296779db5fb718a6b368bc39265a7b08464171a1",
     "rationale": {
       "zh": "移动引导与权限体验适合客户端前端及通用工程；高阶段协调长期结果，不把当天设置完成当成功。",
       "en": "Mobile onboarding and permissions fit mobile, frontend, and general engineering beyond same-day completion."
@@ -49045,7 +49045,7 @@
   {
     "questionId": "exp1500-c-005",
     "reviewStatus": "reviewed",
-    "fingerprint": "16b4874f06f8a2193ee2204819a85f6c41b218f4b31ea1fc0ecb5279b4528f20",
+    "fingerprint": "5bd689e5efbd08f64064948b7882c68cabfb8d5f4d5f4c29ef8c8f6bb120dcc8",
     "rationale": {
       "zh": "费用信息与取消退款涉及端到端技术产品质量；高阶段确认扩量，不以短期支付增长掩盖预期落差。",
       "en": "Fee clarity and cancellations involve end-to-end technical quality beyond short-term payment gains."
@@ -49136,7 +49136,7 @@
   {
     "questionId": "exp1500-c-006",
     "reviewStatus": "reviewed",
-    "fingerprint": "072a401e40de15ba2b71644f164a1d092cb551a9b9f6136d34c22b261b9b621d",
+    "fingerprint": "2bfa2d11ecd4d17717cb0cb00fd3c36618fd54394d871c9860664f90d635e9cf",
     "rationale": {
       "zh": "绕行表格和人工流程需技术核验权限与成本；高阶段调整模型，不先把行为归咎用户习惯。",
       "en": "Engineers verify permissions and costs behind workarounds; higher stages adjust models rather than blame habits."
@@ -49734,7 +49734,7 @@
   {
     "questionId": "exp1500-c-015",
     "reviewStatus": "reviewed",
-    "fingerprint": "10aaccc245e9b6b6a85d94a06c27266901d7134bee46c8600236106471ed912b",
+    "fingerprint": "e58ad69ec164766cf8e0246ae95c9f19a4aa1c07bf4674f9e4553d5b5eab45c9",
     "rationale": {
       "zh": "新方向与已公布客户承诺冲突需要领域或管理责任比较；技术角色核验切换代价，正式合同和对外重谈由有权人决定。",
       "en": "New direction conflicting with customer commitments needs domain or management judgment. Engineers evidence switching costs; authorized owners renegotiate contracts and promises."
@@ -51441,7 +51441,7 @@
   {
     "questionId": "exp1500-c-040",
     "reviewStatus": "reviewed",
-    "fingerprint": "cc9996a29e8f69009981114f553a65ffa079b8d34dd4fade04f30e61f32115b1",
+    "fingerprint": "737ca7222040e37f8fd8df0be255ab53d02fb9bc81c4b074b59fdb7410f23920",
     "rationale": {
       "zh": "身份服务自建采购需要高级技术比较生命周期、迁移与退出；合同和资金批准仍按权限。",
       "en": "Identity build-versus-buy needs senior lifecycle and exit judgment with explicit contract and funding authority."
@@ -52091,7 +52091,7 @@
   {
     "questionId": "exp1500-c-048",
     "reviewStatus": "reviewed",
-    "fingerprint": "29bc73ca515b844f1bc00920548e26716ac4bd99a5f9403f101e6f50c66c6560",
+    "fingerprint": "29fc58809b252804c1797fbc52fc5ff8c1d40ba4e9713670c615d2a7b0fe1ced",
     "rationale": {
       "zh": "渠道分成、回收周期和客户归属保留产品市场数据参照，不能仅凭低获客成本认定更优。",
       "en": "Channel share, payback, and customer ownership remain product-marketing-data reference; lower acquisition cost alone is insufficient."
@@ -52132,7 +52132,7 @@
   {
     "questionId": "exp1500-c-050",
     "reviewStatus": "reviewed",
-    "fingerprint": "da2a758385f1ea715edf1a9883deb5fca0edbf4d0bfd61897e1b3f8e909d7875",
+    "fingerprint": "75015933d06071ae088dadb6e37f387d17e195edbf510119198238f0dd1244e5",
     "rationale": {
       "zh": "大客户定制的维护与路线图代价需要高级技术判断；商业集中度与定价由相应负责人确认。",
       "en": "Senior engineers assess custom-work maintenance and roadmap costs; relevant business owners confirm concentration and pricing decisions."
@@ -52491,7 +52491,7 @@
   {
     "questionId": "exp1500-c-055",
     "reviewStatus": "reviewed",
-    "fingerprint": "4e31fa5e5a6f28322df56cad45ab4449087779898bf07359503f621943b2e48e",
+    "fingerprint": "8658829e4ee919e98f96677d120cdc9d25b5ee11b2a6055a58de2a3e8789feab",
     "rationale": {
       "zh": "账面收入与回款风险保留商业职能和管理参照；不把财务核算与销售激励权限要求给全部工程岗位。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
       "en": "Revenue and cash-collection risk remain business and management reference, not universal engineering accounting or sales-incentive authority. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
@@ -53796,7 +53796,7 @@
   {
     "questionId": "exp1500-d-019",
     "reviewStatus": "reviewed",
-    "fingerprint": "465c30837a7b92cdbf2853b14dc6a4802a6c5e8b2c46e21082148d03bab841c3",
+    "fingerprint": "552afd482d0cdabcb51991fc0073edcc3b442692f3153f1992050409f37e9cc0",
     "rationale": {
       "zh": "旧机型与移动灰度风险主要面向客户端及通用工程，运营提供业务影响；不扩展成所有前后端和AI专业的移动知识要求。",
       "en": "Mobile rollout risk on older devices chiefly fits mobile and general engineering, with operational input, not universal mobile expertise for web, backend, or AI roles."
@@ -54558,7 +54558,7 @@
   {
     "questionId": "exp1500-d-029",
     "reviewStatus": "reviewed",
-    "fingerprint": "880a604d65c19d2bcaeee030f58806ab62b5d04514aafd1a6eb349410ae546c9",
+    "fingerprint": "1d9eeb78667f54bad0ae9eff64ae34a033387644d3b2d9acef8e691d5995650d",
     "rationale": {
       "zh": "跨项目产能冲突需要高级技术或PMO归并依赖；管理阶段决定资源，避免把未经确认的计划当已承诺容量。",
       "en": "Cross-project capacity conflicts need senior technical or PMO dependency aggregation. Managers decide resources; unconfirmed plans are not committed capacity."
@@ -55304,7 +55304,7 @@
   {
     "questionId": "exp1500-d-039",
     "reviewStatus": "reviewed",
-    "fingerprint": "11e93f20e5490e01048a18e32e44b558522b3f7a71daec24f154d3c238c24919",
+    "fingerprint": "630c7fd2357cf31522b32f4f8fdafb9127df1a5636d1e3181f3acf33fc91b997",
     "rationale": {
       "zh": "依赖漏洞与兼容风险适用于独立相关技术负责人；高阶段统筹紧急发布，审批和风险接受始终依据实际授权。",
       "en": "Dependency vulnerabilities and compatibility risk fit independent relevant technical owners. Higher stages coordinate emergency releases with approval and risk acceptance tied to actual authority."
@@ -56379,7 +56379,7 @@
   {
     "questionId": "exp1500-d-057",
     "reviewStatus": "reviewed",
-    "fingerprint": "ef743e34db2ab344fde6481af40ab2ef267b65fbd2324e4b544afa0f7b83834e",
+    "fingerprint": "32ee09fecd3b882c2aa4b8a227b7be752cfcfa68078bbd2734ae0236e7a91a76",
     "rationale": {
       "zh": "退款规则变化需要工具、权限和异常流程同步，技术人员按所属接口参与；政策解释和正式批准仍归有权角色。",
       "en": "Refund-rule changes need coordinated tools, permissions, and exceptions. Engineers contribute within their interface; policy interpretation and approval remain with authorized roles."
@@ -56636,7 +56636,7 @@
   {
     "questionId": "exp1500-d-061",
     "reviewStatus": "reviewed",
-    "fingerprint": "1b7fb0623af2309bd26be379e7f92bc97274140636da8bee4be63c127fcbe917",
+    "fingerprint": "44a3af3a330dd18f5b7d25a8c44a14f2304dfcba1b226d177fe89fb2323328f6",
     "rationale": {
       "zh": "数据规则、延迟和来源冲突也是独立技术判断，适用于数据生产与消费角色；预算取舍由相应决策者负责。",
       "en": "Conflicting definitions, delays, and sources also concern independent technical judgment in producers and consumers. Relevant decision owners retain budget authority."
@@ -58896,7 +58896,7 @@
   {
     "questionId": "exp1500-e-031",
     "reviewStatus": "reviewed",
-    "fingerprint": "f95fcb2b25c8a38c2cbce28aeceba99d8c22cec20e65ac337d067dcb8d113766",
+    "fingerprint": "3ed781cb66b763982888cf794565b20e6855bafa47ae02067f95a5a40257c4fc",
     "rationale": {
       "zh": "本题考察“比较缩小范围、分阶段和降低非关键要求的影响。”。按角色核验立场、事实、选项和承诺；各阶段可从本人协作到跨方机制展示，不预设有权替其他团队承诺或重新分配资源。 技术子岗位复核：独立技术人员在接口、工具、客户或研究依赖中可准备协商证据；合同价格与服务范围批准仍按授权。",
       "en": "The question examines “Compares reduced scope, phasing, and relaxed noncritical requirements.”. Verify interests, facts, options, and commitments in role context, from personal collaboration to cross-party mechanisms; do not assume authority to commit another team or reallocate resources. Technical subrole review: Independent engineers negotiate evidence around interfaces, tools, customers, or research dependencies; contracts and prices remain authorized decisions."
@@ -59871,7 +59871,7 @@
   {
     "questionId": "exp1500-e-047",
     "reviewStatus": "reviewed",
-    "fingerprint": "fc8b659eefff6f36ff33805f85a97c8bacefba8a560de266a4cfa33d1d3f9068",
+    "fingerprint": "92a94571ccb10ff233b8365f9c26e284be3a548548a04e66fcfe92bea76db047",
     "rationale": {
       "zh": "本题通过“公平呈现直觉背后的假设及分析的不确定性。”核验影响他人决定的事实、选择与跟进。按岗位权限观察本人证据、协作路径或治理机制，不把没有管理权等同无法推动，也不默认可以代他人授权。 技术子岗位复核：独立技术参与者可影响目标、采用和证据路径；只能推进与升级，不由技术身份自动获得跨部门资源权。",
       "en": "The question uses “Fairly states assumptions behind intuition and uncertainty in analysis.” to verify evidence, choices, and follow-up in influencing decisions. Assess personal evidence, collaboration paths, or governance within authority; lacking management power does not prevent influence or permit granting authority to others. Technical subrole review: Independent technical contributors influence goals, adoption, and evidence without automatic cross-functional resource authority."
@@ -60154,7 +60154,7 @@
   {
     "questionId": "exp1500-e-051",
     "reviewStatus": "reviewed",
-    "fingerprint": "aa8978acd9a132e40a7e071fcede26c44024754d87fb1553916012648f0cc53e",
+    "fingerprint": "c1a3c152d59173e1e9d5152ef55dba42a6a09bf8092ececd7446e3550a7744ae",
     "rationale": {
       "zh": "本题通过“明确事实、影响和判断置信度。”核验影响他人决定的事实、选择与跟进。按岗位权限观察本人证据、协作路径或治理机制，不把没有管理权等同无法推动，也不默认可以代他人授权。 技术子岗位复核：完整报告风险与代价适用于各技术阶段；初级及时提供自己所知，高阶段协调团队行动和承诺。",
       "en": "The question uses “States facts, impact, and confidence.” to verify evidence, choices, and follow-up in influencing decisions. Assess personal evidence, collaboration paths, or governance within authority; lacking management power does not prevent influence or permit granting authority to others. Technical subrole review: Technical stages report risks and costs within knowledge; higher stages coordinate team commitments."
@@ -60366,7 +60366,7 @@
   {
     "questionId": "exp1500-e-054",
     "reviewStatus": "reviewed",
-    "fingerprint": "224049cb47241c7b8fffb410d0f1a2c64103e0a80f458110b4a534f5d65bafd8",
+    "fingerprint": "586203504e3cdd955788741488a3bb82ca32c875e74d69b0c27161912f0ac493",
     "rationale": {
       "zh": "本题核验“请求具体情境、行为差异和影响对象。”。按实际岗位与权限比较沟通、理解确认和后续行动；个人清晰表达、跨方协作与管理反馈的范围分别核验，不把话术流利当作证据。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question examines “Requests concrete situations, behavioral gaps, and affected people.”. Compare communication, understanding checks, and follow-up within the actual role and authority; distinguish personal clarity, cross-party coordination, and managerial feedback rather than reward polished delivery alone. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -60636,7 +60636,7 @@
   {
     "questionId": "exp1500-e-059",
     "reviewStatus": "reviewed",
-    "fingerprint": "2a05ce6bc560b5bb20cb8c9538476dd472b21ff3e5d9ceb269dea60ff535f355",
+    "fingerprint": "9f9a05454e07f3bc8821544b81df135f00eee982cb1427163c34ee29035691db",
     "rationale": {
       "zh": "本题核验“承认表达造成的误解，不把责任推给接收者。”。按实际岗位与权限比较沟通、理解确认和后续行动；个人清晰表达、跨方协作与管理反馈的范围分别核验，不把话术流利当作证据。 技术子岗位复核：高级技术导师可帮助理解成长证据与期待，管理者承担正式评价；不得把辅导当作拥有晋升或绩效裁决权。",
       "en": "The question examines “Acknowledges the misunderstanding without blaming the recipient.”. Compare communication, understanding checks, and follow-up within the actual role and authority; distinguish personal clarity, cross-party coordination, and managerial feedback rather than reward polished delivery alone. Technical subrole review: Senior technical mentors can clarify growth evidence; managers own formal evaluation rather than mentors assuming personnel authority."
@@ -62388,7 +62388,7 @@
   {
     "questionId": "exp1500-f-036",
     "reviewStatus": "reviewed",
-    "fingerprint": "9402ab27c098186cb1dcd749ebbf2014fc9c4a3a8774e9c654da1c5815f83cd6",
+    "fingerprint": "c7d4c157a914a71733464fa7cd3d459b494bb41ff022380f6fec471a6a139a45",
     "rationale": {
       "zh": "供应商预算和签约越界需要有权管理者纠偏；阶段区别是本团队授权和跨负责人的预算治理，不默认任何技术人可批准合同。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
       "en": "Budget and contracting overreach require authorized management correction. Distinguish team delegation from budget governance across leaders; technical expertise does not authorize contracts. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
@@ -63018,7 +63018,7 @@
   {
     "questionId": "exp1500-g-001",
     "reviewStatus": "reviewed",
-    "fingerprint": "ec1ecac37656c0d06771e73666298e1c46e7fcaed47c409742bb5d0035240e2b",
+    "fingerprint": "e4e1c5b6fb532f4faf0c772bc2d3c3af70607efdf8e4f8409dbf9e14b5a853c6",
     "rationale": {
       "zh": "移动崩溃修复后的学习迁移可从本人补测到跨项目发布机制，保留同题与不同贡献范围。 技术子岗位复核：题面明确移动平台、设备、系统或商店流程，保留客户端专项及通用工程参考，不扩为所有后端与AI的必备经验。",
       "en": "Learning from a mobile crash can range from personal checks to cross-project release practices while retaining the same question. Technical subrole review: Mobile platform, device, system, or store scenarios remain mobile-specialty and general engineering reference, without universal backend-AI experience requirements."
@@ -63134,7 +63134,7 @@
   {
     "questionId": "exp1500-g-006",
     "reviewStatus": "reviewed",
-    "fingerprint": "ea406cd7d8a0b1ff07aa529982d5338e99d2fbbb68defdc8ad4f0fe38baa26b9",
+    "fingerprint": "955960a92360bbd52d4ea2a213a04e5782e81b763b9fea66abd4e6d250bf794a",
     "rationale": {
       "zh": "无障碍评审经验可以从本人实现检查扩展到组件和评审实践，阶段改变的是影响方式。 技术子岗位复核：题面明确移动平台、设备、系统或商店流程，保留客户端专项及通用工程参考，不扩为所有后端与AI的必备经验。",
       "en": "Accessibility review learning can range from personal implementation checks to component and review practices; stages change the influence mechanism. Technical subrole review: Mobile platform, device, system, or store scenarios remain mobile-specialty and general engineering reference, without universal backend-AI experience requirements."
@@ -63370,7 +63370,7 @@
   {
     "questionId": "exp1500-g-018",
     "reviewStatus": "reviewed",
-    "fingerprint": "9d04e179ef2bac7dd0acc3c00daa175068d69dc196ed2fb7442da221e710f754",
+    "fingerprint": "1d05d730087ee019905a7465b9e13ffb5e77f40ba5c4b5f67ea1ef9e507508eb",
     "rationale": {
       "zh": "本题核验“对照目标、基线（改动前的参照状态或数值）和新增副作用（重复执行、越权等额外影响）。”，题面未限定正式组织权限；保留多个责任阶段，分别追问本人调整、团队支持或机制变化，不按事件规模直接给分。 技术子岗位复核：题面明确移动平台、设备、系统或商店流程，保留客户端专项及通用工程参考，不扩为所有后端与AI的必备经验。",
       "en": "The question examines “Compares goals, baseline, and new side effects.”. It assumes no fixed organizational authority; retain multiple responsibility stages and probe personal adjustment, team support, or mechanisms without scoring event scale. Technical subrole review: Mobile platform, device, system, or store scenarios remain mobile-specialty and general engineering reference, without universal backend-AI experience requirements."
@@ -64383,7 +64383,7 @@
   {
     "questionId": "exp1500-g-041",
     "reviewStatus": "reviewed",
-    "fingerprint": "70c4e2c625c23bfe45d7a6d77d5729c9f6ab49d6fb6fea54f705fcf357271701",
+    "fingerprint": "40fb7fb42a2e103737d5577d75ec56aebaeb98aaaab9e1eec91ff4adbed509bc",
     "rationale": {
       "zh": "本题核验“识别当前压力和原方法未奏效的证据。”，题面未限定正式组织权限；保留多个责任阶段，分别追问本人调整、团队支持或机制变化，不按事件规模直接给分。 技术子岗位复核：已按题意核验为技术岗位通用的学习、自驱、复盘或恢复判断；保留原阶段责任边界，不要求初级有组织决策权。",
       "en": "The question examines “Recognizes rising strain and evidence that the current approach is not working.”. It assumes no fixed organizational authority; retain multiple responsibility stages and probe personal adjustment, team support, or mechanisms without scoring event scale. Technical subrole review: Reviewed as shared technical learning, initiative, reflection, or recovery judgment, retaining stage-specific responsibility and junior authority limits."
@@ -65600,7 +65600,7 @@
   {
     "questionId": "exp1500-h-019",
     "reviewStatus": "reviewed",
-    "fingerprint": "98f72318b20f2c5f580df7dd4b7b8ce8fed516d355d52fe541d1446897900672",
+    "fingerprint": "33f5cc0387d660b0f75e08798faa5fb4a6535e4120d7aa4d020b3172824554e0",
     "rationale": {
       "zh": "本题通过“说明自己的决定或产出如何进入结果链路。”区分本人、协作者与环境作用。各阶段都需要真实归因，阶段只改变本人应承担的判断、实现或授权范围，不按团队规模推断个人能力。 技术子岗位复核：个人贡献、继承基础和同期变化的证据问题可跨技术阶段；初级只说明自身执行与观察，高阶段增加协调和决策，不要求虚构商业所有权。",
       "en": "The question uses “Explains how personal decisions or outputs entered the outcome chain.” to distinguish personal, collaborator, and environmental contribution. Truthful attribution spans stages; stage changes expected judgment, implementation, or delegation, not a score inferred from team size. Technical subrole review: Attribution and inherited baselines span technical stages, with junior personal evidence and increasing coordination rather than invented business ownership."
@@ -65851,7 +65851,7 @@
   {
     "questionId": "exp1500-h-023",
     "reviewStatus": "reviewed",
-    "fingerprint": "47a7a098184442fc88536b562de53a6463b443fc3024fd7f9ec42ec488d303c6",
+    "fingerprint": "92607d81ba22e936f561fa52384d374452b130282f6b9de6e357d670dea89613",
     "rationale": {
       "zh": "本题通过“追踪能力可用性、采用情况和具体用例。”区分本人、协作者与环境作用。各阶段都需要真实归因，阶段只改变本人应承担的判断、实现或授权范围，不按团队规模推断个人能力。 技术子岗位复核：数据平台的间接价值也涉及技术生产消费方；按真实采用和决策证据说明个人边界，不冒领业务全部收益。",
       "en": "The question uses “Tracks capability availability, adoption, and specific use cases.” to distinguish personal, collaborator, and environmental contribution. Truthful attribution spans stages; stage changes expected judgment, implementation, or delegation, not a score inferred from team size. Technical subrole review: Indirect platform value spans technical producers and consumers with bounded attribution to actual adoption."
@@ -66940,7 +66940,7 @@
   {
     "questionId": "f-frontline-management-conflict-with-report",
     "reviewStatus": "reviewed",
-    "fingerprint": "ab482bdd5fc55a32d8d4eb82b06513706cae13654960eba321fcd613c9d8358e",
+    "fingerprint": "157bf5e011a4cb4f496d0194fc9d4aba0c13d227ebbf606310b71cd361ffbdef",
     "rationale": {
       "zh": "题面明确下属与管理者冲突，限定两管理阶段；核验异议事实、决定依据与关系修复，不从反对推断动机。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
       "en": "The question explicitly concerns conflict with a report, so it targets management. Verify dissent, decision grounds, and repair without inferring motives from disagreement. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
@@ -67046,7 +67046,7 @@
   {
     "questionId": "f-frontline-management-inherited-harmful-member",
     "reviewStatus": "reviewed",
-    "fingerprint": "e22751e6dc40521cb439fbfeb0b8d0805a7a4d5880faa62b6364ffc0c5e31587",
+    "fingerprint": "a3f10e20582ffaf1fff0965c61babb3d553bee29507fda5ff7848ec9d86bee2a",
     "rationale": {
       "zh": "长期行为问题的正式处理需要管理责任；两阶段按具体行为与支持证据判断，不沿用前任标签。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
       "en": "Formal handling of persistent behavior issues requires management. Both stages use concrete behavior and support evidence rather than inherited labels. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
@@ -67325,7 +67325,7 @@
   {
     "questionId": "f-frontline-management-policy-rollout-pushback",
     "reviewStatus": "reviewed",
-    "fingerprint": "cea3ad175fa04380efbedead62b77dfe878138cfa81038af5f48d771ac747326",
+    "fingerprint": "cf82d1a892e7f1e03aa1ae3ad1c7ecb527d12d262d0b577b04a6b8f6e61e8110",
     "rationale": {
       "zh": "制度试行和调整需管理者说明授权与代价；高阶段通过负责人检查执行差异，不从反对直接推断抗拒变化。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
       "en": "Policy trials and changes require managers to explain authority and costs. Higher scope checks implementation through leaders without inferring resistance from disagreement alone. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
@@ -67563,7 +67563,7 @@
   {
     "questionId": "f-frontline-management-strong-performer-bad-collaboration",
     "reviewStatus": "reviewed",
-    "fingerprint": "fb912e8ca6e47e208975888305a5ae5e7edf80ccb05e9d39ed435e3bc61d8fc8",
+    "fingerprint": "15db81a2b19c226e11594c2586ddeac42664bc75720f4f1d80c79d1ad68e4d00",
     "rationale": {
       "zh": "题目要求采取管理行动和设定后果，限定管理责任；高级专业人员可供评审事实，但不默认承担人事处理。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
       "en": "The question asks for management action and consequences, so it targets managers. Specialists may contribute review evidence without assuming personnel authority. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
@@ -67758,7 +67758,7 @@
   {
     "questionId": "f-frontline-management-unreasonable-demands",
     "reviewStatus": "reviewed",
-    "fingerprint": "89f37f8ec44e2e741ce73a0ff1fd2ab00972cca0fd8d874215f50cf7da2061f8",
+    "fingerprint": "848d6e510d208ec91c0ec1cf2f8d38ec77dbfd6e7ff37e2e04f6d8b0ff7eb6a2",
     "rationale": {
       "zh": "保护容量与调整承诺需要有权管理者协调；两阶段以业务目标和事实比较选项，不预设任何一方天然不合理。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
       "en": "Protecting capacity and changing commitments need authorized management coordination. Both stages compare goals and facts without presuming either side unreasonable. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
@@ -67818,7 +67818,7 @@
   {
     "questionId": "f-frontline-management-weakest-member-correction",
     "reviewStatus": "reviewed",
-    "fingerprint": "fb79dcf4e130238661f41cee2902a7391c563833e8b4d1a3ef5c261afd98ec14",
+    "fingerprint": "a420b1661bd3e9474a5f33af77c32b509907d16cef66166aa07fa68746a98144",
     "rationale": {
       "zh": "具体成员的反馈与行为改进需要管理经历；组织阶段说明对经理的反馈责任，不要求公开可识别的人事信息。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
       "en": "Feedback and behavior improvement for a member require management experience. Organizational scope explains feedback to managers without exposing identifiable personnel information. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
@@ -67871,7 +67871,7 @@
   {
     "questionId": "f-frontline-management-workload-fairness",
     "reviewStatus": "reviewed",
-    "fingerprint": "5011d4349f45ff72537cdd4e8cc4f4160953b7a6e8218a60a6392a8d915adde4",
+    "fingerprint": "4b457d889aefe04168f43bff59309eaa35ec6cd932e759592fc75e11df2885a2",
     "rationale": {
       "zh": "工作负荷核验与预期调整属于人员管理；两个阶段检验容量、隐性职责与支持，不以表达差异推断欺骗。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
       "en": "Workload verification and expectation changes concern people management. Both stages examine capacity, hidden duties, and support without inferring deception from expression. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
@@ -68780,7 +68780,7 @@
   {
     "questionId": "f-hiring-headcount-trade-offs",
     "reviewStatus": "reviewed",
-    "fingerprint": "58c7ad7a82460cf29cc6a8cc9394e7742fb7e486759e12dad6cd47f4245e6047",
+    "fingerprint": "c75505fbd753efd8f3392f1c6f9ea43ca8bd5b1ada1230ab290e79274c2f6f91",
     "rationale": {
       "zh": "五个团队竞争两个高级负责人名额，核心是跨团队招聘组合与组织资源取舍，限定组织管理阶段。 通用管理责任明确适用于技术管理岗位；技术子岗位的专业参与范围另按题意登记，不运行时继承父岗位。",
       "en": "Five teams competing for two leadership hires concerns a multi-team hiring portfolio and organizational resource trade-offs, so it targets organizational leadership. Generic management responsibility explicitly includes technical managers; specialist participation is recorded for this question rather than inherited at runtime."
@@ -69030,7 +69030,7 @@
   {
     "questionId": "f-hiring-probe-generic-claims",
     "reviewStatus": "reviewed",
-    "fingerprint": "6a4120ae43b47fb38082b0dc6be548159c2ad40ca0c859978d2caa076d1c08fd",
+    "fingerprint": "f43fc0e733cecd49b04895f5a71486d4e5f94db5dcca1c6aab6a94b600e9da57",
     "rationale": {
       "zh": "把学习或质量口号追问成行为证据适用于受训的独立面试官及更高责任；不要求其负责整套招聘政策。 通用管理责任明确适用于技术管理岗位；技术子岗位的专业参与范围另按题意登记，不运行时继承父岗位。",
       "en": "Turning learning or quality slogans into behavioral evidence suits trained independent interviewers and higher responsibilities, without requiring ownership of the entire hiring policy. Generic management responsibility explicitly includes technical managers; specialist participation is recorded for this question rather than inherited at runtime."
@@ -69678,7 +69678,7 @@
   {
     "questionId": "f-manager-of-managers-cost-cutting-restructure",
     "reviewStatus": "reviewed",
-    "fingerprint": "3ecc32a37bbe21073471378ce89ee6f551442f0fa502fa5ec39210bae0f596cc",
+    "fingerprint": "5297f446e7d84d7e07f102bf32fed512c19934d0a82a5bbeb9bf180a91f9d236",
     "rationale": {
       "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
       "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
@@ -69785,7 +69785,7 @@
   {
     "questionId": "f-manager-of-managers-employee-backlash",
     "reviewStatus": "reviewed",
-    "fingerprint": "c972ce26c27d269248c4a01684a29f7c7f6322b454e800856f2b89dd4572de81",
+    "fingerprint": "c08f59ea3b7ba370abd8afa93febed45e56224f39e6a98d216001829263411d0",
     "rationale": {
       "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
       "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
@@ -71106,7 +71106,7 @@
   {
     "questionId": "g-learning-transfer-new-domain-practice-loop",
     "reviewStatus": "reviewed",
-    "fingerprint": "8564f29b0ac2b6e7e1db0062ce4732224228feb785975f5e31e33e6e8381aec1",
+    "fingerprint": "fee761ca72e5e9b6705879a8df6a571d54d9346af46e914b75474eaa2fc2dfbb",
     "rationale": {
       "zh": "进入陌生领域并参与决策的学习路径是通用能力，按本人任务、团队支持或组织配置区分证据。 技术子岗位复核：已按题意核验为技术岗位通用的学习、自驱、复盘或恢复判断；保留原阶段责任边界，不要求初级有组织决策权。",
       "en": "Learning a new domain to participate in decisions is general capability, with evidence differing across personal tasks, team support, and organizational allocation. Technical subrole review: Reviewed as shared technical learning, initiative, reflection, or recovery judgment, retaining stage-specific responsibility and junior authority limits."
@@ -71991,7 +71991,7 @@
   {
     "questionId": "g-resilience-rebuild-after-strategy-reversal",
     "reviewStatus": "reviewed",
-    "fingerprint": "8ff4a0b5614f9aa81e898507bde7ad31fbf7a3964ef0d3d50e10887cbd8b5dc0",
+    "fingerprint": "aedc5f8f117d198b3bed9afecd5bd6ec579cc7d137b6a5a74b8e7b8390f0e05e",
     "rationale": {
       "zh": "题面要求实际带领团队经历方向取消，保留高级专业负责人和管理阶段，不要求初级证明团队恢复责任。 技术子岗位复核：已按题意核验为技术岗位通用的学习、自驱、复盘或恢复判断；保留原阶段责任边界，不要求初级有组织决策权。",
       "en": "The premise involves leading a team through a canceled direction; retain senior professional and management stages rather than require entry-level ownership of team recovery. Technical subrole review: Reviewed as shared technical learning, initiative, reflection, or recovery judgment, retaining stage-specific responsibility and junior authority limits."
@@ -72440,7 +72440,7 @@
   {
     "questionId": "g-resilience-repeated-rejection",
     "reviewStatus": "reviewed",
-    "fingerprint": "97c4345e13e767c52cf70537a76dd0ca9ce4b38a66272440581f4bb9017c76ce",
+    "fingerprint": "cd769b6ab9b2ac17cb795c4c69eac4e67f4ca74002661b9df992cd33b49493c4",
     "rationale": {
       "zh": "本题核验“复原否决理由、当时可得证据和自己可能忽略的假设”，题面未限定正式组织权限；保留多个责任阶段，分别追问本人调整、团队支持或机制变化，不按事件规模直接给分。 技术子岗位复核：已按题意核验为技术岗位通用的学习、自驱、复盘或恢复判断；保留原阶段责任边界，不要求初级有组织决策权。",
       "en": "The question examines “Reconstructs the reasons for rejection, available evidence, and assumptions they may have missed”. It assumes no fixed organizational authority; retain multiple responsibility stages and probe personal adjustment, team support, or mechanisms without scoring event scale. Technical subrole review: Reviewed as shared technical learning, initiative, reflection, or recovery judgment, retaining stage-specific responsibility and junior authority limits."
@@ -73620,7 +73620,7 @@
   {
     "questionId": "g-structured-reflection-mistake-lesson-or-gain",
     "reviewStatus": "reviewed",
-    "fingerprint": "c3399f824c32cac77f4d5a23e84cf561107ee79983a8ccd18618b90f03a6fa0e",
+    "fingerprint": "51032a823731844d8a42b69aca9723b31666c96d354485c77d2948cf4767b918",
     "rationale": {
       "zh": "本题核验“说明当时的判断依据，而不是只描述结果不好”，题面未限定正式组织权限；保留多个责任阶段，分别追问本人调整、团队支持或机制变化，不按事件规模直接给分。 技术子岗位复核：已按题意核验为技术岗位通用的学习、自驱、复盘或恢复判断；保留原阶段责任边界，不要求初级有组织决策权。",
       "en": "The question examines “Explains the reasoning at the time and the specific action they owned”. It assumes no fixed organizational authority; retain multiple responsibility stages and probe personal adjustment, team support, or mechanisms without scoring event scale. Technical subrole review: Reviewed as shared technical learning, initiative, reflection, or recovery judgment, retaining stage-specific responsibility and junior authority limits."
@@ -75744,7 +75744,7 @@
   {
     "questionId": "h-integrity-correct-forecast-after-new-evidence",
     "reviewStatus": "reviewed",
-    "fingerprint": "8ed65d5aee26c4e1ecdd73b2024f880c87eeb36e866852751ab86ed1ac9e9f0e",
+    "fingerprint": "dc41a133fbcd51a75970e13ce0a57ebf2608c719214737f5e355d087ebaa69a9",
     "rationale": {
       "zh": "本题核验“保留原预测、实验设计与已知局限。”及如实更正的行动，是各阶段共同责任；初级关注披露和保护，管理阶段进一步核验信息上行、决策复核和纠偏机制。 技术子岗位复核：这些题核验指标、事实更正、协作结果与对外表达；技术人员可按自身证据和升级处理，不要求拥有财务、合同或经营审批权。",
       "en": "The question examines “Preserve the original forecast, experiment design, and known limitations.” and truthful correction as shared responsibilities. Entry-level evidence concerns disclosure and protection; management also examines upward information flow, decision review, and correction mechanisms. Technical subrole review: These cases test factual correction, metrics, outcomes, and external claims within technical evidence and escalation, not presumed financial or contractual authority."
@@ -76230,7 +76230,7 @@
   {
     "questionId": "h-integrity-early-bad-news",
     "reviewStatus": "reviewed",
-    "fingerprint": "e3599efd268369ee451acdcb1fec2ad6b684175e8c372177dd2c9185d31d4f9c",
+    "fingerprint": "385d8437e7a2db91c1e33940946144050b7cf51fd31d014d332ebd9f77d7a629",
     "rationale": {
       "zh": "本题核验“在还有调整空间时主动同步，而不是等到截止前”及如实更正的行动，是各阶段共同责任；初级关注披露和保护，管理阶段进一步核验信息上行、决策复核和纠偏机制。 技术子岗位复核：已核验为相关技术岗位共通的责任、诚实、贡献归因、边界或双向适配；沿用原阶段范围，个人止损和升级不等于擅自取得审批权。",
       "en": "The question examines “Raises it while there is still room to adjust, not just before the deadline” and truthful correction as shared responsibilities. Entry-level evidence concerns disclosure and protection; management also examines upward information flow, decision review, and correction mechanisms. Technical subrole review: Reviewed as shared technical responsibility, honesty, attribution, boundaries, or mutual fit, retaining stage limits and authorization boundaries."
@@ -76828,7 +76828,7 @@
   {
     "questionId": "h-ownership-result-below-expectation",
     "reviewStatus": "reviewed",
-    "fingerprint": "c5004c19eca06877f9ea47346f9bebd36e8ceff96af80abcab36295b8b75d427",
+    "fingerprint": "8adac615bb6ff354cfa919de5c2abadfa98afeb8cfc810477c2318038124d813",
     "rationale": {
       "zh": "本题通过“区分当时合理的前提与被忽略的信号”核验对实际结果的责任。各阶段均可在本人权限内识别缺口、保护和升级；阶段提高后追问依赖协调、授权及持续机制，不把无边界补位当作优秀。 技术子岗位复核：已核验为相关技术岗位共通的责任、诚实、贡献归因、边界或双向适配；沿用原阶段范围，个人止损和升级不等于擅自取得审批权。",
       "en": "The question uses “Separates reasonable assumptions at the time, unvalidated hypotheses, missed signals, and external effects” to examine responsibility for actual outcomes. Every stage can recognize gaps, protect users, and escalate within authority; higher stages also explain coordination, delegation, and durable mechanisms rather than unlimited personal takeover. Technical subrole review: Reviewed as shared technical responsibility, honesty, attribution, boundaries, or mutual fit, retaining stage limits and authorization boundaries."
@@ -79813,7 +79813,7 @@
   {
     "questionId": "next-domain-053",
     "reviewStatus": "reviewed",
-    "fingerprint": "f4ea946bc187212a10ffdeb11a41c088589f6e3e76beabb16c017322919baf11",
+    "fingerprint": "79055fb0ac6ad7607058f280c44398583a9f696f914b008ea2796ef893cfb208",
     "rationale": {
       "zh": "支付授权扣款与收入事件适合独立后台数据贡献；不同报表用途可对照而无需数值相等。",
       "en": "Independent backend-data contributors distinguish authorization and revenue for different reporting purposes."
@@ -80680,7 +80680,7 @@
   {
     "questionId": "next-people-075",
     "reviewStatus": "reviewed",
-    "fingerprint": "dd4929fee62a5243766a4526853e65afe4b249a85185e749594a8a60b0ef9afa",
+    "fingerprint": "9d898bd0e083c417a86652ac5361dd5423f61e3a00db94606eab2a72ba63e025",
     "rationale": {
       "zh": "代理职责、薪酬认可和正式任命属于有权管理者的过渡安排；高阶段校准多个负责人的承诺和公平性。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
       "en": "Acting duties, compensation recognition, and appointment require authorized management transition arrangements. Higher scope calibrates commitments and fairness across leaders. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
@@ -80733,7 +80733,7 @@
   {
     "questionId": "next-people-076",
     "reviewStatus": "reviewed",
-    "fingerprint": "c850f129d6ec14773e370099af9ed03ca0337eeb046515b2c80a81c59739f131",
+    "fingerprint": "f7dc648861013f3c8fe09d9e93e059684204968631c9fd6d4c236fd5153c3a95",
     "rationale": {
       "zh": "在发放offer压力下决定证据门槛是招聘责任者的取舍；专业贡献者可给评估证据，但本题聚焦正式录用流程与风险接受。 通用管理责任明确适用于技术管理岗位；技术子岗位的专业参与范围另按题意登记，不运行时继承父岗位。",
       "en": "Setting evidence thresholds under offer pressure is a hiring-owner trade-off. Specialists can contribute evidence, but this question focuses on formal hiring process and risk acceptance. Generic management responsibility explicitly includes technical managers; specialist participation is recorded for this question rather than inherited at runtime."
@@ -81046,7 +81046,7 @@
   {
     "questionId": "next-product-035",
     "reviewStatus": "reviewed",
-    "fingerprint": "56e9470cb3e633062d1308662c59249e8caad43cec964b796468ed1abcd2727e",
+    "fingerprint": "ff88ed727438d6066bd37c6d334948d6ff2c213d312d2e5471e52c7d11c55e9f",
     "rationale": {
       "zh": "多团队平台投入需高级技术核验重复成本和采用；高阶段协调顺序，不能用未来收益叠加直接证明价值。",
       "en": "Senior engineers validate repeated costs and adoption; higher stages sequence investments rather than adding speculative future benefits."
@@ -82787,7 +82787,7 @@
   {
     "questionId": "wave16-collab-037",
     "reviewStatus": "reviewed",
-    "fingerprint": "0f1311ff732db4091d8890cff2e626055930dd7b587dea64b79107b33d3abd21",
+    "fingerprint": "970c4b3bd5718560ec5176842f117815e817d10ef9750d62e49ecbb3f5a4be28",
     "rationale": {
       "zh": "本题考察“用时间线和证据重建真实交互。”。按角色核验立场、事实、选项和承诺；各阶段可从本人协作到跨方机制展示，不预设有权替其他团队承诺或重新分配资源。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question examines “Reconstruct interactions with a timeline and evidence.”. Verify interests, facts, options, and commitments in role context, from personal collaboration to cross-party mechanisms; do not assume authority to commit another team or reallocate resources. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -83150,7 +83150,7 @@
   {
     "questionId": "wave16-d-056",
     "reviewStatus": "reviewed",
-    "fingerprint": "7e34dc00336025437278f0b110dcd18f3693b018fbd4a83a9acdaa361fb794ce",
+    "fingerprint": "4ee63c8879d3422d5a2e64989f1530e1c949d1d3f50dc1e0c77358f265e26653",
     "rationale": {
       "zh": "导出撤权续传涉及各端和数据任务；独立阶段验证下载许可，高阶段治理产物清理与审计。",
       "en": "Independent export contributors verify continued access with growing cleanup and audit governance."
@@ -83282,7 +83282,7 @@
   {
     "questionId": "wave16-d-058",
     "reviewStatus": "reviewed",
-    "fingerprint": "37a856f7a8a338a3e0d9b3358ba0651cefdc1cb67b4a1893fcab9a6e7ee68e7f",
+    "fingerprint": "e31cb8b5b0b151f59a3abf8c58828833ec7ad0c78f58302b6177297359a5e3ae",
     "rationale": {
       "zh": "不同时间指标需独立数据技术产品澄清；高阶段治理调节，不强制两个用途数字相等。",
       "en": "Independent data-technical and product roles reconcile distinct time-based metrics."
@@ -85703,7 +85703,7 @@
   {
     "questionId": "wave16-product-028",
     "reviewStatus": "reviewed",
-    "fingerprint": "0da5d3c544fe659cf180013c10d75100b80f6b32988608d09d4f6036662037df",
+    "fingerprint": "a967ed673c86f7ffccc0277a74189f15034dcfba0427a5bf19ecc58de9562435",
     "rationale": {
       "zh": "独立技术负责人可承诺验证阶段并说明未知；正式日期和客户重谈按授权，不因销售承诺编造确定性。",
       "en": "Independent engineers commit validation and state unknowns; authorized owners renegotiate rather than invent certainty."
@@ -85993,7 +85993,7 @@
   {
     "questionId": "wave17-collab-002",
     "reviewStatus": "reviewed",
-    "fingerprint": "7e11c4d05df74571c884423367bed3df1e46d65a8313b521c173b9c577743cc4",
+    "fingerprint": "f91aac9889af1af86f6f4527a01ebb72d942b51fd1a1769d649b6dc928e2cfc1",
     "rationale": {
       "zh": "本题通过“陈述证据强度、影响范围和剩余不确定性”核验影响他人决定的事实、选择与跟进。按岗位权限观察本人证据、协作路径或治理机制，不把没有管理权等同无法推动，也不默认可以代他人授权。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question uses “States evidence strength, impact scope, and remaining uncertainty” to verify evidence, choices, and follow-up in influencing decisions. Assess personal evidence, collaboration paths, or governance within authority; lacking management power does not prevent influence or permit granting authority to others. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -86358,7 +86358,7 @@
   {
     "questionId": "wave17-collab-007",
     "reviewStatus": "reviewed",
-    "fingerprint": "b6b6a2b9c3a95316d3ff81765a5834fd4a08a7914023e699611180ff7f2529ff",
+    "fingerprint": "19066e67bf6c7bef8ec91c7d66b8465c6018027b70c7783e5cb2ca5019f919e4",
     "rationale": {
       "zh": "本题核验“把风险翻译成用户影响、日期、成本和可逆（可以安全撤回）性”。按实际岗位与权限比较沟通、理解确认和后续行动；个人清晰表达、跨方协作与管理反馈的范围分别核验，不把话术流利当作证据。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question examines “Translates risks into user impact, timing, cost, and reversibility”. Compare communication, understanding checks, and follow-up within the actual role and authority; distinguish personal clarity, cross-party coordination, and managerial feedback rather than reward polished delivery alone. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -86850,7 +86850,7 @@
   {
     "questionId": "wave17-collab-015",
     "reviewStatus": "reviewed",
-    "fingerprint": "4af85f417a251149e4ef0a093af8b85c7ffe73ed4aa46c8e5f50f596e470ce9d",
+    "fingerprint": "5c8f892e91288dc19f21cf2ad675729b2e0790de755b14f4b54edd4a957adbaf",
     "rationale": {
       "zh": "本题考察“区分共同结果指标和团队可控的过程指标”。按角色核验立场、事实、选项和承诺；各阶段可从本人协作到跨方机制展示，不预设有权替其他团队承诺或重新分配资源。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question examines “Separates the shared outcome from controllable process measures”. Verify interests, facts, options, and commitments in role context, from personal collaboration to cross-party mechanisms; do not assume authority to commit another team or reallocate resources. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -89164,7 +89164,7 @@
   {
     "questionId": "wave18-asking-001",
     "reviewStatus": "reviewed",
-    "fingerprint": "1193c9078a69f22773c4dcc59e6175204aa0a6102f3e1c3b6735b729bc06b2f8",
+    "fingerprint": "7d2faaf2f895ea3d882d9c7c41b80f15518115fc88fef215809065e708bd48ff",
     "rationale": {
       "zh": "本题核验“追问用户目前怎样完成任务、哪里受阻，以及受影响的人群。”。按实际岗位与权限比较沟通、理解确认和后续行动；个人清晰表达、跨方协作与管理反馈的范围分别核验，不把话术流利当作证据。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
       "en": "The question examines “Ask how users complete the task today, where they get stuck, and who is affected.”. Compare communication, understanding checks, and follow-up within the actual role and authority; distinguish personal clarity, cross-party coordination, and managerial feedback rather than reward polished delivery alone. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
@@ -90180,7 +90180,7 @@
   {
     "questionId": "wave18-attrib-005",
     "reviewStatus": "reviewed",
-    "fingerprint": "bf491901fbc08868b5dcc57d676dcb38d0c25f807c5d374afc049b9dff14175b",
+    "fingerprint": "cd97029a514a1df770c14d841cc37fc90a61f1bd059a5114d31d671ab4e5c219",
     "rationale": {
       "zh": "本题通过“明确“设计产物中的个人贡献与共同决策”涉及的事实、对象和责任边界。”区分本人、协作者与环境作用。各阶段都需要真实归因，阶段只改变本人应承担的判断、实现或授权范围，不按团队规模推断个人能力。 技术子岗位复核：题意围绕设计界面和作品，相关客户端工程可说明实现与性能贡献；不推广为全部后台AI的视觉作品要求。",
       "en": "The question uses “Clarifies the facts, stakeholders, and ownership boundaries involved in individual design contribution and shared decision-making.” to distinguish personal, collaborator, and environmental contribution. Truthful attribution spans stages; stage changes expected judgment, implementation, or delegation, not a score inferred from team size. Technical subrole review: UI-design portfolios also fit relevant client contributions, not universal backend-AI visual-portfolio requirements."
@@ -90319,7 +90319,7 @@
   {
     "questionId": "wave18-attrib-008",
     "reviewStatus": "reviewed",
-    "fingerprint": "b0d5e11e1efda62f50c8ad55854eef6a5a0df05c6714b2ae572ac445048f2010",
+    "fingerprint": "33416809e8c046adb304fa808735642be1decb3298bb6ad392773a86869de53d",
     "rationale": {
       "zh": "本题通过“明确“事实记录、功劳分配与组织信任”涉及的事实、对象和责任边界。”区分本人、协作者与环境作用。各阶段都需要真实归因，阶段只改变本人应承担的判断、实现或授权范围，不按团队规模推断个人能力。 技术子岗位复核：个人贡献、继承基础和同期变化的证据问题可跨技术阶段；初级只说明自身执行与观察，高阶段增加协调和决策，不要求虚构商业所有权。",
       "en": "The question uses “Clarifies the facts, stakeholders, and ownership boundaries involved in factual records, credit allocation, and organizational trust.” to distinguish personal, collaborator, and environmental contribution. Truthful attribution spans stages; stage changes expected judgment, implementation, or delegation, not a score inferred from team size. Technical subrole review: Attribution and inherited baselines span technical stages, with junior personal evidence and increasing coordination rather than invented business ownership."
@@ -91883,7 +91883,7 @@
   {
     "questionId": "wave18-design-002",
     "reviewStatus": "reviewed",
-    "fingerprint": "e29fbddfd62388f2a62bc3cd3c5b859985ec2953cc2c0dacc3f6aa94cf6629ee",
+    "fingerprint": "6561924047ab327077d78f291ee588ad41a7e222126df8f5d8d6e7fb4b74f3b6",
     "rationale": {
       "zh": "配置的信息架构适合设计前端客户端与通用工程；呈现边界和真正权限控制需分别验证。",
       "en": "Configuration information architecture fits design, frontend, mobile, and general engineering; display and authorization differ."
@@ -91944,7 +91944,7 @@
   {
     "questionId": "wave18-design-004",
     "reviewStatus": "reviewed",
-    "fingerprint": "b0fd79907be086d221a6f252a188bb4f02c549ebf1e4e645c901c33877543dd9",
+    "fingerprint": "ee01b3d0e46bd715499c80b4ddcfc2aea1795d2dabe806e414c541569c8c1643",
     "rationale": {
       "zh": "本题通过“识别“设计评审中的用户证据与偏好边界”涉及的对象、约束和风险。”核验影响他人决定的事实、选择与跟进。按岗位权限观察本人证据、协作路径或治理机制，不把没有管理权等同无法推动，也不默认可以代他人授权。 技术子岗位复核：颜色布局和信息层级的验证主要适合设计与客户端工程；不要求无关后台AI岗位有视觉决策经验。",
       "en": "The question uses “Identifies the stakeholders, constraints, and risks relevant to user evidence and preference boundaries in design reviews.” to verify evidence, choices, and follow-up in influencing decisions. Assess personal evidence, collaboration paths, or governance within authority; lacking management power does not prevent influence or permit granting authority to others. Technical subrole review: Visual hierarchy validation chiefly fits design and client engineering rather than unrelated backend-AI roles."
@@ -92007,7 +92007,7 @@
   {
     "questionId": "wave18-design-005",
     "reviewStatus": "reviewed",
-    "fingerprint": "1d945d9623fcab85e19a5d837b3376d9a1375de18f6830e201011babd66004f2",
+    "fingerprint": "93f7f7ef630c95f0257ff44a8039639f3d351d4ca4c4fcad02677dd780a6ab9d",
     "rationale": {
       "zh": "公共组件状态与无障碍成本主要适合设计、前端、客户端及产品协作，保留这些岗位参照，不泛化成后端或AI专业要求。",
       "en": "Shared component states and accessibility costs chiefly fit design, frontend, mobile, and product collaboration, not general backend or AI requirements."
@@ -92199,7 +92199,7 @@
   {
     "questionId": "wave18-feedback-005",
     "reviewStatus": "reviewed",
-    "fingerprint": "8518cc62f16bee6591af6d4c4845bbbcff7de86ecc6b40205a86b7638be08354",
+    "fingerprint": "da57f25231021bceb1d75db3ae64920032fed1cb0a6a208a424ba49a79f910af",
     "rationale": {
       "zh": "本题核验“明确“反馈偏好与可核验事实之间的关系”涉及的事实、对象和责任边界。”。按实际岗位与权限比较沟通、理解确认和后续行动；个人清晰表达、跨方协作与管理反馈的范围分别核验，不把话术流利当作证据。 技术子岗位复核：独立技术同事也可进行行为反馈、辅导和跨团队沟通；个人支持与正式问责或人员决定分开。",
       "en": "The question examines “Clarifies the facts, stakeholders, and ownership boundaries involved in the relationship between feedback preferences and verifiable facts.”. Compare communication, understanding checks, and follow-up within the actual role and authority; distinguish personal clarity, cross-party coordination, and managerial feedback rather than reward polished delivery alone. Technical subrole review: Independent peers can provide behavioral feedback and support, distinct from formal accountability and personnel decisions."
@@ -92524,7 +92524,7 @@
   {
     "questionId": "wave18-market-001",
     "reviewStatus": "reviewed",
-    "fingerprint": "7cd8a887368ecff98368912a37d4f530abcd2ead550440d2ddd5c670856e47fc",
+    "fingerprint": "b2dd07d8e06e36cd2ed9b80b039abe3a2d0c6a2d498f3a552385a57243b84af8",
     "rationale": {
       "zh": "行为差异化报价保留市场产品参考；独立阶段提出验证与披露，高阶段承担政策和风险决策。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
       "en": "Behavioral pricing remains marketing-product reference with growing disclosure and policy ownership. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
@@ -92619,7 +92619,7 @@
   {
     "questionId": "wave18-market-003",
     "reviewStatus": "reviewed",
-    "fingerprint": "f714eea0648dc537a8a82e629ee42162c918434da41a0c4d662ff0e36deae43f",
+    "fingerprint": "027b1f7ad7e59391f9635752337ab01141f66ee6e76be418cf05a76132a78fa0",
     "rationale": {
       "zh": "品牌合作难归因渠道保留市场和产品参照；技术读者可全部浏览，但不把媒体领先指标作为所有工程岗位分级要求。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
       "en": "Hard-to-attribute brand channels remain marketing and product reference. Engineers may consult all browsing without media indicators becoming universal role requirements. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
@@ -92714,7 +92714,7 @@
   {
     "questionId": "wave18-market-004",
     "reviewStatus": "reviewed",
-    "fingerprint": "f7ad8dab90dc95648b741fd3921c88f41f6d4c7a5c88a54011dc17c4f47929c6",
+    "fingerprint": "cbdf59840e0179de0a06ae43829d8cfc2feec04680dcc40429918a48d6321b64",
     "rationale": {
       "zh": "商机结算接口保留市场产品参考，独立阶段澄清定义与回传；改商业契约需授权。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
       "en": "Lead-settlement interfaces remain marketing-product reference; contributors clarify definitions and authorized owners amend contracts. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
@@ -92809,7 +92809,7 @@
   {
     "questionId": "wave18-market-005",
     "reviewStatus": "reviewed",
-    "fingerprint": "32791b44793f42ec296a21e1bbd9b7ce5eddfdb88c83c40b94106d0d4f91ff9d",
+    "fingerprint": "129bb0be50d747d44bab1a5c80462a76a233192ff99856b4dbef40d9fcfa1df5",
     "rationale": {
       "zh": "这是市场渠道组合的投入与探索问题，保留市场专业及管理责任参照；不因技术主线而强行扩展到所有工程岗位。 作者收敛工程师受众后复核：作为业务理解与跨职能协作拓展题使用，按本人贡献与授权判断，不等于要求担任原职能岗位。",
       "en": "This is a marketing-channel investment and exploration question. Retain marketing and management reference scope without extending it to every engineering role. Reviewed after the author narrowed the audience to engineers: use as business-understanding and cross-functional context, judging personal contribution and mandate rather than requiring the original functional role."
@@ -93940,7 +93940,7 @@
   {
     "questionId": "wave18-succession-010",
     "reviewStatus": "reviewed",
-    "fingerprint": "f95ee7a61c2eccbd06b2b17bc96c814d5c085b643eeeeb7acb81b351b00c143a",
+    "fingerprint": "d0a0afc6d658e1bd1c2ac2d33833e1103135961812408e599d26e1ae77269ca2",
     "rationale": {
       "zh": "是否介入继任者机制需由有监督责任者决定；一线可监督小组负责人，组织层监督管理者，依据风险和结果而非偏好。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
       "en": "Intervening in a successor’s methods requires supervisory responsibility. First-line scope can oversee group leads; organizational scope oversees managers using risk and outcomes rather than preference. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."

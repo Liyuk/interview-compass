@@ -14,23 +14,15 @@ intent: >-
   See whether you treat a hiring plan as a set of trade-offs rather than the sum of each team's request, and
   can say what was given up.
 signals:
-  - >-
-    Starts from the organizational problem or risk each role would address, not from who asks loudest or which
-    team is largest
-  - >-
-    Separates gaps that call for hiring from those better met by development, reassignment, temporary
-    delegation, or a smaller goal
-  - States the basis for the ranking, when deferred roles will be revisited, and what is explicitly given up
-  - >-
-    Tells the teams left out the basis and the review date, without disclosing personnel details that should
-    stay private
-  - Validates capacity gaps, outcome risk, and duration.
-  - Compares reprioritization, scope changes, internal mobility, and hiring by cost and timing.
+  - "Starts from the organizational problem and risk each role would address, using comparable evidence rather than advocacy volume or team size."
+  - "Distinguishes gaps that require hiring from those better addressed through development, internal mobility, temporary delegation, or a smaller goal."
+  - "Explains the ranking, what is deferred or forgone, and when deferred needs will be reviewed."
+  - "Tells teams that do not receive a slot the decision basis and review point without disclosing confidential personnel information."
 primaryCapability: people-organization.hiring
 topics:
-  - hiring
-  - resource-allocation
-  - prioritization
+  - "hiring"
+  - "resource-allocation"
+  - "prioritization"
 roles:
   - manager
   - engineering

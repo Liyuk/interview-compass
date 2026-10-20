@@ -53,12 +53,9 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 A
 followUps:
-  - >-
-    【What if critical alert context is lost during on-call handoff?】An alert fires before shift change but does not meet
-    escalation criteria. The next responder lacks earlier investigation context and the incident grows. How would you
-    design handoff?
-  - Which facts should machine-generated context preserve?
-  - Who remains accountable if the next responder has not acknowledged?
+  - "Which handoff facts must the system preserve when an alert is still being investigated?"
+  - "Who owns an alert until the next responder acknowledges it, and what should trigger escalation?"
+  - "How would you test that the revised handoff catches missed acknowledgments without creating duplicate responses?"
 perspectiveReview: inferred
 qualityTier: extended
 perspective: candidate

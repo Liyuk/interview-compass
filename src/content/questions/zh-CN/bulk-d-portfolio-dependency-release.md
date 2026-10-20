@@ -3,7 +3,7 @@ questionId: bulk-d-portfolio-dependency-release
 kind: question
 status: published
 locale: zh-CN
-title: 跨项目接口接口约定变化如何组织兼容发布
+title: "跨项目接口约定变化后，如何组织兼容发布？"
 question: 一个依赖平台接口的项目已进入集成期，上游团队通知字段语义将在本季度改版，但无法长期同时支持两种格式。你会怎样判断兼容策略、迁移顺序和各项目的发布边界？
 intent: 考察跨项目契约管理、迁移编排和对下游承诺的保护。
 signals:

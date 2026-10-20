@@ -11,16 +11,10 @@ intent: >-
   Assess whether you combine learning goals, low-risk practice, and corrective feedback into a verifiable
   transfer path.
 signals:
-  - Identify essential concepts, roles, and material risks.
-  - Choose real but reversible work to test understanding.
-  - Check assumptions with domain experts and record changes in understanding.
-  - >-
-    Reconstruct the goal, prior assumptions, available support, and actual obstacles behind “Transferring
-    knowledge into an unfamiliar field.”
-  - Identify which feedback or results changed your understanding and what concrete adjustment followed.
-  - >-
-    Use later behavior, artifacts, or outcomes to check whether learning, recovery, or self-direction
-    persisted.
+  - "Identifies the concepts, decision owners, and domain risks that matter for the roadmap decisions due within three months."
+  - "Chooses a staged practice task with bounded risk and clear review by a domain expert before influencing a higher-impact decision."
+  - "Checks assumptions with domain experts and records what evidence changed their understanding."
+  - "Uses a work product or observed decision to demonstrate transfer, and identifies remaining gaps before taking broader ownership."
 primaryCapability: learning-adaptation.learning-transfer
 topics:
   - learning

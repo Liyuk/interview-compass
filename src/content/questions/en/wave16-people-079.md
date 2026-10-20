@@ -12,8 +12,7 @@ signals:
   - Check whether the management chain punishes bad-news messengers.
 primaryCapability: people-organization.manager-of-managers
 topics:
-  - management
-  - management
+  - "management"
 roles:
   - manager
   - engineering

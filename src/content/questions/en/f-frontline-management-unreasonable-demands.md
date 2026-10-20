@@ -3,14 +3,14 @@ questionId: f-frontline-management-unreasonable-demands
 kind: question
 status: published
 locale: en
-title: The business side makes unreasonable, squeezing demands of the team. How do you handle it?
-question: The business side makes unreasonable, squeezing demands of the team, such as impossibly short timelines or constant overtime. Do you protect the team or coordinate more neutrally? How do you judge whether the demand is truly unreasonable, and how do you move the whole thing forward?
-intent: See how you make a reasoned trade-off between business pressure and what the team can bear, rather than always absorbing it or always resisting.
+title: "How do you respond when business requests exceed the team’s current capacity?"
+question: "The business requests a short timeline and sustained overtime from your team. How would you clarify the goal and constraints, assess the impact on capacity and delivery risk, and negotiate a workable path forward?"
+intent: "Assess how you use evidence to balance business outcomes with team capacity, and communicate the costs and trade-offs of available options."
 signals:
-  - First verifies the business's real goal and source of pressure and judges whether the demand is truly unreasonable
-  - Uses facts to show the team's real capacity and the consequences of continued overdraft, not only dissatisfaction
-  - Offers options such as cutting scope, delaying, or adding resources, with the cost of each
-  - Says where they stand between protecting the team and supporting the business and how it is explained to the team
+  - "Clarifies the business outcome, deadline driver, and which parts of the request are fixed or negotiable."
+  - "Estimates team capacity and identifies the likely quality, schedule, and sustainability risks of the requested workload."
+  - "Offers alternatives such as reducing scope, changing sequence or timing, or adding resources, and explains the trade-offs."
+  - "Communicates the agreed decision and unresolved risks to both the team and business stakeholders, then checks whether the plan remains viable."
 primaryCapability: people-organization.frontline-management
 topics: [management, resource-allocation, negotiation]
 roles:

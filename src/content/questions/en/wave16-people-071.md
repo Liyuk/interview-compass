@@ -12,8 +12,7 @@ signals:
   - Reset shared outcomes and team accountability.
 primaryCapability: people-organization.manager-of-managers
 topics:
-  - management
-  - management
+  - "management"
 roles:
   - manager
   - engineering

@@ -42,10 +42,10 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion to 1,500 — Batch C/D
 followUps:
-  - 如果恢复自动服务会再次影响用户，你会用什么小流量验证？
-  - 如何处理人工表格中已完成、重复或状态不明的记录？
-  - 哪些例外应该保留人工判断并留下理由？
-  - 如何验证自动化没有把少数高损失案例隐藏在平均指标里？
+  - "如果恢复自动服务可能再次影响用户，你会用什么小流量验证和回退标准？"
+  - "如何对账表格中已完成、重复或状态不明的记录？"
+  - "哪些例外仍需人工判断，每次决定应如何留痕？"
+  - "怎样检查平均成功率没有掩盖少数高损失案例？"
 relatedQuestions: []
 perspective: candidate
 perspectiveReview: inferred

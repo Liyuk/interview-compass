@@ -64,20 +64,10 @@ source:
     label: GitHub 技术面试与工程体系调研；题目为本站独立编写
     url: https://github.com/yangshun/tech-interview-handbook
 followUps:
-  - >-
-    If backups cannot be rewritten item by item immediately, how would you prevent restored data from
-    returning to production?
-  - How would you demonstrate that anonymized records cannot be reidentified through linked data?
-  - >-
-    【When can soft-deleted records be physically purged?】A customer requests account deletion, while finance
-    must retain some transactions and analytics systems hold copies. How would you define deletion semantics
-    and verify scope?
-  - How would you prevent deleted data from reappearing after backup restoration?
-  - How would you prove anonymization is irreversible?
-  - >-
-    【How do you propagate data deletion and prove it is complete?】After a customer requests deletion, the
-    source database, CDC pipeline, and downstream indexes, caches, or materialized views may still retain old
-    values. How would you define deletion semantics, design propagation, and prove cleanup is complete?
+  - "If backups cannot be rewritten immediately, how would you prevent restored data from returning to production?"
+  - "What evidence would show that anonymized records cannot be reidentified through linked data?"
+  - "How would you track deletion completion across source data, caches, analytics, and downstream copies?"
+  - "Which verified retention requirements justify retaining a restricted transaction record, and for how long?"
 relatedQuestions: []
 perspective: candidate
 perspectiveReview: inferred

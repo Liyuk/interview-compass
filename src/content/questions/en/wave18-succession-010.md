@@ -9,12 +9,10 @@ question: >-
   delivery is stable. What evidence would guide your intervention?
 intent: "Assess whether the response compares a successor’s new approach with the existing system and uses results and risks to decide whether to support, test, or intervene."
 signals:
-  - >-
-    Clarifies the facts, stakeholders, and ownership boundaries involved in outcome evidence, team adaptation,
-    and managerial autonomy.
-  - Confirm delegated scope and non-negotiable risk boundaries.
-  - Ask about evidence, trade-offs, and reversibility.
-  - Choose support or retrospective review without reclaiming all ownership.
+  - "Confirms the successor’s decision scope and non-negotiable customer, compliance, or operational risk boundaries."
+  - "Asks the successor to explain the evidence, trade-offs, and reversibility behind the changes in meetings, delegation, or tracking."
+  - "Checks delivery, team feedback, workload, and decision quality over an agreed observation period, interpreting a temporary satisfaction dip in context."
+  - "Offers coaching or a retrospective when evidence warrants it, while leaving decisions within the agreed scope with the successor."
 primaryCapability: people-organization.delegation-succession
 roles:
   - manager

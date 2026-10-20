@@ -12,8 +12,7 @@ signals:
   - 观察承诺稳定度与团队自主性变化。
 primaryCapability: people-organization.delegation-succession
 topics:
-  - management
-  - management
+  - "management"
 roles:
   - manager
   - engineering

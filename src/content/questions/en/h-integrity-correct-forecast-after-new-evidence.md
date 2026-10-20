@@ -9,11 +9,10 @@ question: >-
   overall lift and harm to one segment. How would you correct the conclusion?
 intent: Assess whether you promptly correct a public judgment, present counterevidence, and own follow-through.
 signals:
-  - Preserve the original forecast, experiment design, and known limitations.
-  - Explain what the new evidence changes and which decisions are affected.
-  - Notify affected people and state the basis for stopping, rolling back, or testing further.
-  - Separates the original judgment, new evidence, and changed conclusion
-  - Revises actions, affected decisions, and follow-up verification
+  - "Shares the revised forecast promptly and preserves the previous estimate and its assumptions for comparison."
+  - "Names the new evidence, explains how it changes the estimate, and distinguishes verified facts from remaining uncertainty."
+  - "Describes the decision or plan that should change and the remaining risks, without hiding an unfavorable result."
+  - "Sets a follow-up point to compare the forecast with actual results and improve future estimates."
 primaryCapability: work-responsibility.integrity
 topics:
   - ethics

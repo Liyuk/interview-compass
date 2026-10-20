@@ -32,8 +32,7 @@ scenarios:
   - hiring
   - promotion
 formats:
-  - behavioral
-  - behavioral
+  - "behavioral"
 followUps:
   - 若没有人适合接任，如何限制风险？
   - 如何避免“临时”安排无限期延长？

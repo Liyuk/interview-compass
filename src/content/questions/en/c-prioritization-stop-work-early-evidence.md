@@ -9,9 +9,10 @@ question: >-
   one more feature will fix it. How would you judge evidence for further investment and stopping?
 intent: Assess whether you use explicit value assumptions, learning goals, and opportunity cost to make trade-offs.
 signals:
-  - Compare original success criteria with results and sample representativeness.
-  - Test whether the proposed feature addresses a verified cause or intuition.
-  - Compare expected learning from more investment with alternatives.
+  - "Compares the original success threshold, actual completion, and sample representativeness over time."
+  - "Tests whether the proposed feature addresses a verified cause of low completion and estimates the cost of learning more."
+  - "Defines an explicit continue, change, pause, or stop threshold, including the evidence and decision date for each."
+  - "Compares further investment with the best alternative use of the team and records the decision owner."
 primaryCapability: value-direction.prioritization
 topics:
   - prioritization

@@ -32,8 +32,7 @@ scenarios:
   - hiring
   - promotion
 formats:
-  - behavioral
-  - behavioral
+  - "behavioral"
 followUps:
   - When should hiring pause instead of compromising?
   - Who bears the different costs of a bad hire and an extended vacancy?

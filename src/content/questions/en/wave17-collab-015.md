@@ -11,11 +11,10 @@ intent: >-
   Assesses whether the candidate translates shared intent into a common result definition while retaining
   controllable team measures.
 signals:
-  - Separates the shared outcome from controllable process measures
-  - Defines time semantics, exclusions, and data sources
-  - Locates whether the disagreement concerns goals, risk tolerance, or terminology.
-  - Turns abstract positions into scenarios, boundaries, and acceptance evidence.
-  - Identifies who decides any remaining trade-off.
+  - "Defines the shared outcome, such as time to full resolution, alongside process measures each team can control."
+  - "Specifies start and end events, exclusions, data sources, and treatment of reopened or unresolved cases for each measure."
+  - "Identifies which remaining differences concern the desired outcome, risk tolerance, or metric terminology, and resolves definitions using examples."
+  - "Names who can decide unresolved trade-offs and how the agreed definitions will be documented and reviewed."
 primaryCapability: collaboration.negotiation
 topics:
   - negotiation
@@ -50,12 +49,8 @@ source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 C
 followUps:
-  - >-
-    【How do you prevent late disputes when delivery and acceptance define “done” differently?】A project is
-    submitted on time, but the approver says key scenarios are missing while the project owner says
-    requirements are complete. How would you clarify evidence, ownership, and remaining risk?
-  - If the original acceptance criteria were ambiguous, who resolves the dispute?
-  - How do you turn this dispute into a reusable acceptance template?
+  - "If each partner optimizes its own response time but customers still wait for full resolution, which shared measure and responsibilities would you propose?"
+  - "Who has authority to approve a metric definition when agreement cannot be reached?"
 relatedQuestions: []
 perspective: candidate
 perspectiveReview: inferred

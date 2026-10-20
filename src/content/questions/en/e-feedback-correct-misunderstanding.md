@@ -12,14 +12,9 @@ intent: >-
   Assess whether you can repair communication when feedback triggers defensiveness without withdrawing a
   necessary factual judgment.
 signals:
-  - >-
-    Separates critique of the proposal from judgment of the person and identifies wording that caused
-    confusion
-  - Checks what the other person heard and listens to their concern before restating a position
-  - Moves the discussion toward verifiable evidence, a specific revision, and a follow-up check
-  - >-
-    Clarifies the facts, stakeholders, and ownership boundaries involved in shared accountability and
-    fact-finding in cross-team feedback.
+  - "Separates critique of the proposal from judgment of the person and identifies wording that caused confusion."
+  - "Checks what the other person heard and listens to their concern before restating a position."
+  - "Moves the discussion toward verifiable evidence, a specific revision, and a follow-up check."
 primaryCapability: collaboration.feedback
 topics:
   - feedback

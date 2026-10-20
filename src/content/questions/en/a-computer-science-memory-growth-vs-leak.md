@@ -58,13 +58,9 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 C
 followUps:
-  - >-
-    If memory grows under low traffic and temporarily resets after a restart, how would you plan sampling and
-    experiments?
-  - If heap object counts fall but process memory does not, what would you inspect next?
-  - >-
-    Process memory keeps growing while heap-object samples stay stable and container RSS increases. How would you
-    distinguish off-heap allocation, fragmentation, and caches?
+  - "If memory grows under low traffic and temporarily falls after a restart, how would you plan sampling and experiments?"
+  - "If heap-object counts fall but process memory does not, what native-allocation, mapped-page, or cache evidence would you inspect?"
+  - "How would you verify a fix under reproducible load and define the conditions for stable memory?"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

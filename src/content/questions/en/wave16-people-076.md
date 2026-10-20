@@ -12,8 +12,7 @@ signals:
   - Track commitment stability and team autonomy.
 primaryCapability: people-organization.delegation-succession
 topics:
-  - management
-  - management
+  - "management"
 roles:
   - manager
   - engineering

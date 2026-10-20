@@ -3,7 +3,7 @@ questionId: wave18-attrib-010
 kind: question
 status: published
 locale: en
-title: How would you describe your contribution when you inherited a successful system?
+title: "How would you describe your incremental contribution to a mature process that continued to improve?"
 question: You inherited a mature process and results improved further. How would you separate the foundation you received, your new decisions, and the natural trend?
 intent: "Assess whether the response distinguishes inherited results, the candidate’s additional work, and changes that may have happened anyway."
 signals:

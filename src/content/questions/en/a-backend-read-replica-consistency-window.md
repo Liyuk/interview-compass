@@ -3,7 +3,7 @@ questionId: a-backend-read-replica-consistency-window
 kind: question
 status: published
 locale: en
-title: What API contract should handle stale reads from replicas after a write?
+title: "What API contract should handle stale reads from replicas after a write?"
 question: >-
   A user updates account settings and refreshes immediately, but a read replica returns the old value. Reading from the
   primary adds load, while waiting for replication may time out. How would you design the experience?
@@ -41,14 +41,9 @@ formats:
   - debugging
   - case
 followUps:
-  - How do version tokens avoid hiding concurrent updates?
-  - Which queries can explicitly accept eventual consistency?
-  - >-
-    【How does read-your-writes consistency change replica routing?】A user refreshes immediately after an update and
-    sometimes sees stale data. The system uses asynchronous replicas and cannot switch globally to strong consistency.
-    How would you define and implement the required consistency?
-  - Is session affinity sufficient when the same user acts across devices?
-  - How would you bound read waiting time?
+  - "How can version tokens prevent stale reads without hiding concurrent updates?"
+  - "Which reads can accept eventual consistency, and what user action makes that acceptable?"
+  - "How would you bound waiting and handle cross-device reads when session affinity is insufficient?"
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 G

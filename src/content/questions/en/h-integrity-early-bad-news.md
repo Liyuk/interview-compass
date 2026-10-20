@@ -13,11 +13,10 @@ intent: >-
   Explore whether you share bad news honestly while there are still options, and bring the facts,
   alternatives, and decision needed.
 signals:
-  - Raises it while there is still room to adjust, not just before the deadline
-  - Separates known facts from what is not yet verified
-  - Comes with alternative paths and the decision required
-  - States risk evidence, likelihood range, and impact.
-  - Offers mitigations within control and a reassessment time.
+  - "Raises the risk while there is still time to respond and identifies the evidence and affected commitment."
+  - "Separates verified facts, estimates, and unknowns, giving a range or confidence level only when supported."
+  - "Presents feasible mitigations and the decision or help needed from others."
+  - "Sets a reassessment time and updates stakeholders if the evidence or forecast changes."
 primaryCapability: work-responsibility.integrity
 topics:
   - communication

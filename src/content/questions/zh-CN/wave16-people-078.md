@@ -12,8 +12,7 @@ signals:
   - 采取可逆（可以安全撤回）措施并跟踪长期健康与产出。
 primaryCapability: people-organization.frontline-management
 topics:
-  - management
-  - management
+  - "management"
 roles:
   - manager
   - engineering
