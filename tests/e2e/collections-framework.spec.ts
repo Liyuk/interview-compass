@@ -51,7 +51,7 @@ test('questioning framework explains interviewer probes, candidate answers, and 
   await expect(page.locator('.framework-collection-link')).toHaveAttribute('href', /\/collections\/candidate-due-diligence\/$/);
   await page.goto('en/framework/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Interviewing guide');
-  await expect(page.getByRole('heading', { name: 'Compare, challenge, execute, and verify' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Compare options, test assumptions, and verify outcomes' })).toBeVisible();
   for (const lens of ['Learning', 'Self-direction', 'Thinking', 'Resilience']) await expect(page.locator('.growth-lenses').getByText(lens, { exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Use reverse questions for mutual due diligence' })).toBeVisible();
 });
