@@ -7,7 +7,7 @@ Interview Compass is a heuristic question library for job candidates, interviewe
 
 This site is designed for engineers across software, frontend, backend, mobile, AI, and data engineering, including individual-contributor and engineering-management tracks. Product, operations, design, and commercial topics help engineers build business understanding; they are not separate engineering job tracks. Assess each person’s actual contribution and authority without expecting them to own another function.
 
-## Choose a role and career stage
+## Role and stage targets
 
 Choose a role and level of responsibility to prepare for or assess, or browse all questions. Use the control in the upper-right corner to change your selection at any time. Lists, previews, counts, and search use reviewed role-and-stage combinations; topic and format filters narrow the results further. Clear the filters or browse all questions if no results match.
 
@@ -29,7 +29,7 @@ Roles, topics, responsibility scopes, career tracks, use cases, and question for
 - You are preparing by function: open Roles. External interviews, interviewer design, and promotion each have a separate entry under Use cases.
 - You want to combine conditions: stack filters in the question library. The address bar keeps your selection so you can share it.
 
-## Interviewing guide
+## Questioning methods
 
 Interviewers start with the role’s goals and responsibility scope, then use contrasting experiences, comparisons between options, causal probes, and hands-on details to verify experience and judgment. For setbacks or conflict, ask about the context, the person’s actions, outcomes, and what changed afterward. Follow-ups should fill context, test alternative explanations, and clarify contribution—not steer someone toward a model answer.
 
