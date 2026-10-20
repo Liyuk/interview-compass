@@ -3,16 +3,14 @@ questionId: bulk-a-page-fault-working-set
 kind: question
 status: published
 locale: zh-CN
-title: 缺页风暴与工作集
-question: 一台机器开始频繁发生 major page fault，同时磁盘 I/O 升高。你会怎样判断工作集变化、内存压力和应用访问模式各自的作用？
-intent: 考察虚拟内存缺页机制与系统级诊断。
+title: "常驻内存稳定但缺页和尾延迟上升，怎样定位原因？"
+question: "服务常驻内存保持稳定，但 major page fault、磁盘 I/O 和尾延迟同时上升。你会怎样区分工作集变化、内存映射行为、内存压力和应用访问模式？"
+intent: "判断回答者能否结合系统指标和应用行为，将工作集抖动与其他内存压力来源区分开来。"
 signals:
-  - 能区分 major 与 minor fault 的含义
-  - 会关联工作集、可用内存和换页活动
-  - 提出应用与系统两侧的对照观测
-  - 从输入、机制和故障表现中提出可验证的技术假设
-  - 比较实现路径及其正确性、性能、安全或维护代价
-  - 说明覆盖边界场景的测试或运行指标
+  - "区分 major 与 minor fault，并解释它们对延迟的不同影响。"
+  - "关联工作集、可用内存、映射变化、换页活动与尾延迟的时间线。"
+  - "设计对照观测以区分应用访问模式变化与主机内存压力。"
+  - "确认压力来源和影响范围后再选择应用层或系统层缓解措施。"
 primaryCapability: professional.computer-science
 topics:
   - operating-systems
@@ -50,7 +48,9 @@ source:
   - attribution: inspired
     label: GitHub 技术面试与工程体系调研；题目为本站独立编写
     url: https://github.com/yangshun/tech-interview-handbook
-followUps: []
+followUps:
+  - "常驻内存稳定时，哪些映射或工作集变化仍会增加 major fault？"
+  - "你会怎样设计实验，区分应用访问变化与主机内存压力？"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

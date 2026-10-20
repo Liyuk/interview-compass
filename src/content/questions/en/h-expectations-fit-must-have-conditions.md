@@ -41,14 +41,7 @@ scenarios:
 formats:
   - behavioral
 followUps:
-  - Have you made trade-offs over these conditions in the past?
-  - If reality differs from your expectations, how would you handle it?
-  - >-
-    If this is your first full-time role, what learning opportunities do you want in the first two years, and which
-    working conditions are essential?
-  - >-
-    For your first job, what do you most hope to learn in the first two years? Which ways of working do you clearly not
-    want?
+  - "Which one or two conditions are essential for you to do this work sustainably, and which could be negotiated after you learn more about the role?"
 source:
   - attribution: original
     label: Interview Compass editorial

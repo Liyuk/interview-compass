@@ -61,16 +61,9 @@ source:
   - attribution: original
     label: Interview Compass 原创扩充（2026-10-14）
 followUps:
-  - If tests pass alone but fail in a parallel suite, which shared state would you inspect first?
-  - When may a test be quarantined, who owns the fix, and when must quarantine be reviewed?
-  - >-
-    If operating cost exceeds the budget while core reliability targets remain fixed, how would you rebalance the
-    trade-offs?
-  - >-
-    A test passes alone but fails occasionally when the suite runs in parallel, and a rerun may pass. How would you find
-    order dependence or shared state?
-  - If failure occurs only in CI, how would you distinguish machine load from configuration differences?
-  - Can serializing the test be a temporary mitigation, and when must the root cause still be fixed?
+  - "If a test passes alone but fails intermittently in the parallel suite, how would you test whether shared state or ordering explains the failure?"
+  - "If failure occurs only in CI, what evidence would distinguish machine load from configuration differences?"
+  - "When is temporary quarantine or serialization justified, and what owner, safeguards, and deadline should accompany it?"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

@@ -4,15 +4,12 @@ kind: question
 status: published
 locale: en
 title: Runtime Effects of Type Erasure
-question: >-
-  A library’s generic type information is unavailable at runtime, causing reflection or
-  serialization to behave unexpectedly. Explain which runtime behaviors erasure affects and how you
-  might redesign the API.
+question: "Choose a language whose generic type information is unavailable at runtime. A library encounters unexpected reflection or serialization behavior. Explain which language-specific runtime behaviors erasure affects and how you might redesign the API."
 intent: Tests generic compilation models and runtime type-information boundaries.
 signals:
-  - Describes the difference between compile-time generics and runtime representation
-  - Identifies relevant reflection, overload, or serialization limits
-  - Suggests explicit type tokens or an API redesign
+  - "Names the language and distinguishes compile-time generic information from runtime representation."
+  - "Explains which reflection, overload, or serialization behavior is affected in that language."
+  - "Proposes a suitable alternative, such as explicit type tokens or a different API contract, and names its trade-offs."
 primaryCapability: professional.computer-science
 topics:
   - programming-languages

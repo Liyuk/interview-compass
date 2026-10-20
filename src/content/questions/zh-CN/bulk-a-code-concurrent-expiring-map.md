@@ -44,7 +44,9 @@ source:
     label: GitHub 技术面试与工程体系调研；题目为本站独立编写
     url: https://github.com/yangshun/tech-interview-handbook
 followUps:
-  - 读取过期映射是否应续期？删除与过期清理同时发生时，需要保证什么行为？
+  - "读取已过期条目是否应续期？条目在读取过程中到期时，调用方应观察到什么行为？"
+  - "删除与过期清理同时发生时应保证什么不变量，你会怎样测试？"
+  - "持续写入时，怎样证明过期条目最终被回收且内存保持有界？"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

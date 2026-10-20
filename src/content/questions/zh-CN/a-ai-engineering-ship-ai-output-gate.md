@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: zh-CN
 title: "AI 生成的东西，凭什么能上线？"
-question: "让 AI 帮你审核一段配置，或生成一段代码，你怎样决定它能不能上线？"
+question: "AI 编程助手提出了一项将进入生产环境的应用代码改动。你会怎样判断这项改动是否可以合并和发布？"
 intent: "了解你如何依据风险分级，设定验证方式与人工门禁。"
 signals:
   - "区分低风险草稿与影响用户、资金、隐私的操作"

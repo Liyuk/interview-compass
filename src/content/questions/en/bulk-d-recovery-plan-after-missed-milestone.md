@@ -3,16 +3,14 @@ questionId: bulk-d-recovery-plan-after-missed-milestone
 kind: question
 status: published
 locale: en
-title: Hand off project outcomes to an operations team
-question: >-
-  A new service launches on schedule, but the project team is moving to other goals; on-call ownership,
-  documentation, cost monitoring, and follow-up improvements have no clear owners. How would you determine
-  whether the project is ready to hand off?
-intent: Examines ownership closure between delivery completion and sustainable operations.
+title: "How would you recover a project after a critical milestone is missed?"
+question: "A critical milestone is missed because an external dependency arrives late, and the original date is no longer credible. How would you establish the facts, reset scope and sequencing, renegotiate commitments, and track recovery?"
+intent: "Assess whether the respondent separates the cause and impact of a missed milestone from assumptions, then creates a feasible recovery plan with clear owners and evidence."
 signals:
-  - Defines post-launch service expectations, SLOs, or support boundaries.
-  - Verifies the receiving team has context, tools, authority, and budget.
-  - Creates a residual-issues list and an approval condition for moving into steady-state operations.
+  - "Reconstruct the baseline, dependency commitment, actual delay, and downstream impact before attributing responsibility."
+  - "Compare scope, sequence, staffing, and date options, including which commitments need approval to change."
+  - "Assign owners and near-term checkpoints for critical-path work and unresolved risks."
+  - "Use evidence such as dependency completion, defect rate, or customer impact to decide whether the revised plan is recovering."
 primaryCapability: delivery.project-management
 topics:
   - execution
@@ -46,4 +44,8 @@ source:
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended
+followUps:
+  - "What would you communicate now to stakeholders who still expect the original date?"
+  - "Which new evidence would make you replan again or stop the remaining scope?"
+
 ---

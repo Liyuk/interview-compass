@@ -13,13 +13,10 @@ intent: >-
   Assesses whether you can build a testable mechanism linking leading signals to outcomes while controlling
   the risk of acting too early.
 signals:
-  - Explain the behavior mechanism linking a leading indicator to the final outcome
-  - Check whether it can be gamed, is delayed, or measures activity alone
-  - Set a short-term investment gate and a date to review the final outcome
-  - Agree how to narrow or change the plan if the signal stops predicting results
-  - >-
-    Clarifies the facts, stakeholders, and ownership boundaries involved in interim evidence and investment
-    gates for a long-term technical change.
+  - "Explains the behavior or system mechanism linking the leading indicator to the delayed outcome."
+  - "Checks whether the indicator is timely, representative, and resistant to gaming or short-lived activity spikes."
+  - "Sets a bounded investment gate and a date to compare the indicator with the eventual business outcome."
+  - "Names evidence that would invalidate the proxy and trigger narrowing, changing, or stopping investment."
 primaryCapability: value-direction.business-outcomes
 topics:
   - metrics

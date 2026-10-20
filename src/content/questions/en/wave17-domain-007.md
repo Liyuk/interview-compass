@@ -3,7 +3,7 @@ questionId: wave17-domain-007
 kind: question
 status: published
 locale: en
-title: A customer bought a plan but cannot use one included capability. Where should entitlement come from?
+title: "How should contracts and entitlements represent seats, features, and regional limits?"
 question: >-
   An enterprise plan includes seats, feature modules, and regional restrictions. The customer adds and removes seats
   mid-term. How would you model the contract, entitlements, usage, and change history?

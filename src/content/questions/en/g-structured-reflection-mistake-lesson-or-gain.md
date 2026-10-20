@@ -4,20 +4,15 @@ kind: question
 status: published
 locale: en
 title: 'A judgment or operational mistake: ownership, system causes, and changed behavior'
-question: >-
-  Tell me about a mistaken judgment or operational error that led to a poor outcome. How do you see your
-  responsibility, the system conditions that allowed it, and a specific later action that shows what you
-  changed?
+question: "Describe a consequential mistake or unexpected failure you were responsible for. How did you identify its causes and your part in it, reduce the impact, and change your future practice?"
 intent: >-
   Assesses whether you can face a mistake without deflecting or over-blaming yourself, separate personal
   judgment from system gaps, and show learning through later observable behavior.
 signals:
-  - Explains the reasoning at the time and the specific action they owned
-  - >-
-    Separates personal error from system conditions such as review, permissions, rollback, or missing
-    information
-  - Describes detection, reporting, containment, and any change in others’ trust
-  - Names a later situation where behavior changed rather than making a vague claim of growth
+  - "Reconstructs the event, expected outcome, actual impact, and conditions or signals that were known at the time."
+  - "States their own decision or omission and distinguishes it from contributing system conditions without shifting or exaggerating blame."
+  - "Describes timely containment or repair and how affected people were informed."
+  - "Names a specific change to their practice or the surrounding system and evidence that would show it prevents recurrence."
 primaryCapability: learning-adaptation.structured-reflection
 topics:
   - learning

@@ -7,9 +7,10 @@ title: "What should you confirm before launching a planned campaign?"
 question: "The promotion strategy is set and you are responsible for execution. What goals, rules, resources, risks, and acceptance criteria would you confirm before launch?"
 intent: See how you turn strategy into an execution checklist covering goals, audience, resources, impact on existing users, and how it will be verified.
 signals:
-  - Confirms the target metric and how success is judged
-  - Checks the effect on existing business and user entitlements
-  - Fixes when pilot, acceptance, and launch checks happen
+  - "Confirms the campaign objective, audience, success metric, baseline, and guardrails."
+  - "Checks eligibility, calculation order, exclusions, existing entitlements, and how exceptions are handled."
+  - "Verifies owners, budget, inventory or service capacity, dependencies, and contingency resources."
+  - "Defines risk controls, launch acceptance checks, monitoring owner, and rollback or stop conditions."
 primaryCapability: delivery.operational-execution
 topics:
   - operations

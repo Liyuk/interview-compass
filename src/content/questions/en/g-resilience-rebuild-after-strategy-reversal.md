@@ -13,17 +13,10 @@ intent: >-
   Assesses whether you can acknowledge real loss, identify reusable work, and redirect the team toward new
   controllable goals.
 signals:
-  - Separate invalidated assumptions from reusable learning
-  - Acknowledge impact without rushing to reframe failure
-  - Confirm new goals, rationale, and stop-work items with stakeholders
-  - Set short-cycle milestones and monitor team recovery
-  - >-
-    Reconstruct the goal, prior assumptions, available support, and actual obstacles behind “Recovering work
-    rhythm after a major setback.”
-  - Identify which feedback or results changed your understanding and what concrete adjustment followed.
-  - >-
-    Use later behavior, artifacts, or outcomes to check whether learning, recovery, or self-direction
-    persisted.
+  - "Separates assumptions invalidated by the strategy change from evidence, assets, or learning that remain reusable."
+  - "Acknowledges the team’s concrete losses and workload impact without minimizing or prematurely reframing them."
+  - "Confirms the new direction, decision rationale, and work that should stop with the responsible stakeholders."
+  - "Sets near-term goals and review points, then checks workload and team capacity as momentum rebuilds."
 primaryCapability: learning-adaptation.resilience-recovery
 topics:
   - resilience

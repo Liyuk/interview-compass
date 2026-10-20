@@ -48,11 +48,8 @@ formats:
   - case
   - behavioral
 followUps:
-  - When should you intervene if the new lead makes a high-risk mistake?
-  - How do you prevent delegation from appearing nominal?
-  - >-
-    You hand a team to a new manager, but a business leader still brings daily issues directly to you, eroding
-    the new manager’s authority. How would you reset the interface?
+  - "Which decisions remain with you, and what risk would trigger your agreed escalation boundary?"
+  - "How would you respond when a partner bypasses the new lead, while preserving the lead’s authority?"
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 F

@@ -10,14 +10,10 @@ question: >-
   cadence?
 intent: Examines communication-system diagnosis rather than simply adding meetings.
 signals:
-  - Maps the waiting chain across requests, responses, decisions, and rework.
-  - Separates response-time, context-quality, and unclear decision-right issues.
-  - Tests a concrete protocol and compares rework or waiting signals.
-  - Define which topics need synchronous discussion and which can be decided asynchronously.
-  - Set proposal, objection windows, decision owners, and records.
-  - Track decision time and participation from edge time zones.
-  - Keeps decisions, context, owners, and deadlines in a durable record.
-  - Sets escalation or live-discussion rules for high-risk ambiguity.
+  - "Maps the wait from request through context, response, decision, and rework, locating the longest avoidable delay."
+  - "Separates missing context, response-time expectations, and unclear decision rights using concrete examples."
+  - "Defines proposal and objection windows, decision owners, durable records, and a synchronous escalation rule for high-risk ambiguity."
+  - "Tracks decision time, rework, and participation across time zones to review whether the protocol improves outcomes."
 primaryCapability: collaboration.communication
 topics:
   - communication

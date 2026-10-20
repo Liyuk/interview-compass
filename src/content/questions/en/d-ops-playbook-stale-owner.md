@@ -45,11 +45,9 @@ source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 H
 followUps:
-  - If local practices have diverged, how would you separate shared controls from legitimate regional differences?
-  - If no one reads the updated playbook, how would you change publication or training?
-  - 【How do you restore runbook reliability when owners and commands are obsolete?】During an incident, an operator follows a runbook whose command depends on a retired service, and the named owner has left. How would you repair the runbook and keep it valid?
-  - Which runbooks should trigger review automatically after each release?
-  - How do you preserve accuracy without creating an approval bottleneck?
+  - "If regions have different practices, how would you separate mandatory safety steps from legitimate local procedures?"
+  - "What evidence from a frontline drill would show that the updated steps are usable and safe?"
+  - "Which system or policy changes should automatically trigger playbook review, and who owns that review?"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

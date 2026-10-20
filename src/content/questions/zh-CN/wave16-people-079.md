@@ -12,8 +12,7 @@ signals:
   - 检查管理链路是否惩罚提出坏消息的人。
 primaryCapability: people-organization.manager-of-managers
 topics:
-  - management
-  - management
+  - "management"
 roles:
   - manager
   - engineering

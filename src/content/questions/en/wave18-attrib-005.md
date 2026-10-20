@@ -9,14 +9,10 @@ question: >-
   would you present your original judgment, adopted work, and rejected ideas?
 intent: "Assess whether the response accurately explains how a design changed from proposal to launch and distinguishes individual proposals, team changes, and the final decision."
 signals:
-  - >-
-    Clarifies the facts, stakeholders, and ownership boundaries involved in individual design contribution and
-    shared decision-making.
-  - Describes personal actions and others’ contributions by phase.
-  - States shared causation and uncertainty where attribution is not individual.
-  - Supports the story with concrete prototypes, flows, or decision records rather than only polished screens
-  - Explains personal ownership and the division of work with product, research, and engineering partners
-  - Separates verified outcomes, reasonable inferences, and changes that cannot be attributed
+  - "Describes the original design judgment and evidence before showing how research, operations, and engineering changed the proposal."
+  - "Identifies which parts of the final design they personally owned, which were adopted from partners, and which ideas were not used."
+  - "Supports the account with prototypes, flows, or decision records that show the work and handoffs by phase."
+  - "Separates measured outcomes, plausible contribution, and results that cannot be individually attributed from the available evidence."
 primaryCapability: work-responsibility.attribution
 roles:
   - design

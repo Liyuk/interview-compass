@@ -47,13 +47,9 @@ formats:
   - planning
   - case
 followUps:
-  - If some consumers cannot upgrade together, how would you stage migration and set the revocation gate?
-  - If a credential is known to be exposed, which steps should happen in parallel or earlier?
-  - >-
-    【How can key rotation prevent old credentials from remaining valid?】Several services use one signing key and cannot
-    all go offline during rotation. How would you stage old and new keys and verify every caller has switched?
-  - How can clock skew affect key-validity windows?
-  - How would you bypass the normal gradual migration after a compromise?
+  - "If a credential is confirmed compromised, which rotation steps should happen immediately, even before the full migration plan?"
+  - "How would clock skew or delayed clients affect the overlap window and revocation gate?"
+  - "What evidence proves every consumer switched, and what safe recovery remains if one does not?"
 source:
   - attribution: inspired
     label: DNXLabs DevOps 题库的主题覆盖；题面为本站独立编写

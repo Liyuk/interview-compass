@@ -12,8 +12,7 @@ signals:
   - Test asynchronous, representative, or boundary changes.
 primaryCapability: people-organization.team-design
 topics:
-  - management
-  - management
+  - "management"
 roles:
   - manager
   - engineering

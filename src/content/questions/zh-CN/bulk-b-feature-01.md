@@ -45,10 +45,9 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion to 1,500 — Batch B
 followUps:
-  - 两个团队各自实现后数不一样，你怎样定位差异出在哪个细节？
-  - 这个定义改动之后，历史趋势还能和以前比较吗？
-  - 如果实时更新成本过高，哪些近似刷新策略可接受？
-  - 怎样向模型消费者说明特征值的截止时点？
+  - "什么证据足以支持复用同一定义？出现什么差异时应保留独立特征？"
+  - "定义变化后，怎样保持历史趋势和模型输入仍可解释？"
+  - "应向各消费方说明什么数据截止时点和新鲜度保证？"
 relatedQuestions:
   - questionId: b-feature-model-time-semantics
     relation: 同样关注特征的定义，但关注点从时间点的正确性转到定义细节的完整性。

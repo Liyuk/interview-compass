@@ -31,8 +31,8 @@ scenarios:
 formats:
   - knowledge
 followUps:
-  - 你在项目里遇到过和隔离级别有关的问题吗？
-  - 如果业务允许少量不一致，你会怎么选？
+  - "说一次你遇到的并发异常：具体读写顺序是什么，违反了哪条业务不变量？"
+  - "你核实了哪种数据库及其隔离行为，这些证据如何影响你的选择？"
 source:
   - attribution: inspired
     label: JavaGuide 的数据库与并发知识整理

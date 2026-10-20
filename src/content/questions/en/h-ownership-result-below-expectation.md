@@ -6,18 +6,15 @@ locale: en
 title: >-
   After the module you owned launched, the result came in well below expectations. How do you describe your
   own share of the responsibility?
-question: >-
-  Describe a project or module you owned that fell short of its commitment. How did external dependencies and
-  unvalidated assumptions affect the result? How do you explain your judgment, responsibility, and recovery
-  actions, and what would you validate earlier next time?
+question: "Describe a project or module you owned that fell short of its commitment. How did dependencies and unvalidated assumptions affect the result, what was your responsibility, and how did you recover and improve your validation for next time?"
 intent: >-
   Assess whether, when an outcome falls short, you can reconstruct the information and causal factors without
   shifting all responsibility outward or overclaiming blame, then take corrective action and improve.
 signals:
-  - Separates reasonable assumptions at the time, unvalidated hypotheses, missed signals, and external effects
-  - Explains personal decisions and actions without deflecting or claiming the whole team’s responsibility
-  - Protects affected people, proposes recovery, and clarifies ownership of dependencies
-  - Names assumptions, escalation conditions, or exit signals to validate earlier next time
+  - "Separates assumptions that were reasonable at the time from unvalidated hypotheses, missed signals, and external dependency effects."
+  - "Explains personal decisions and actions without deflecting responsibility or claiming sole responsibility for a shared outcome."
+  - "Describes immediate recovery, affected people informed, and how owners and dates for dependencies were clarified."
+  - "Names assumptions, escalation triggers, or exit signals to validate earlier next time and evidence that recovery is working."
 primaryCapability: work-responsibility.ownership
 topics:
   - execution

@@ -3,13 +3,13 @@ questionId: e-feedback-align-on-one-on-one
 kind: question
 status: published
 locale: en
-title: A report keeps asking for more central projects
-question: A team member keeps saying they want more central projects. How do you find out what they actually want?
+title: "A direct report keeps asking for work with broader impact"
+question: "A direct report says they want to work on more high-impact initiatives. How would you understand what kind of growth they want and agree on a concrete next step?"
 intent: See how you align at the start on what each side wants from the conversation instead of filling gaps with your own assumptions.
 signals:
-  - Asks for their expectation before giving advice
-  - Distinguishes a promotion wish from a wish for more challenging work
-  - Records their request and the concrete support you can give
+  - "Asks what broader impact means to the person before proposing an assignment."
+  - "Distinguishes interest in promotion, scope, challenge, visibility, or a different kind of work using examples."
+  - "Agrees on a realistic opportunity, support, and a time to review whether it matches the person’s goal."
 primaryCapability: collaboration.feedback
 topics:
   - feedback

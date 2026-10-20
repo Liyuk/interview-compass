@@ -14,8 +14,7 @@ signals:
   - Make contribution assessment and conflict escalation transparent.
 primaryCapability: people-organization.team-design
 topics:
-  - management
-  - management
+  - "management"
 roles:
   - manager
   - engineering

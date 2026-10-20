@@ -7,8 +7,10 @@ title: How would you evaluate revenue and fairness risks from segment-specific p
 question: Marketing proposes behavior-based discounts that may raise revenue, but customers can compare offers. How would you define pricing rules, disclosure, and risk monitoring?
 intent: Assess how the response evaluates commercial benefits and fairness boundaries of differentiated pricing, makes constraints explicit, and uses evidence to justify a decision.
 signals:
-  - Identifies the stakeholders, constraints, and risks relevant to commercial benefits and fairness boundaries of differentiated pricing.
-  - Proposes evidence or a review point that could confirm or change the decision.
+  - "Defines the customer behaviors and eligibility rules for each discount, including how offers change when behavior or segment membership changes."
+  - "Explains what customers will be told and checks whether the rules create unequal treatment, privacy, or regulatory concerns."
+  - "Estimates revenue and margin effects alongside customer complaints, conversion changes, and movement between segments."
+  - "Runs a bounded test with comparison criteria, monitoring owners, and conditions to pause or withdraw the pricing rule."
 primaryCapability: domain-modeling.commercial-rules
 topics:
   - commercialization

@@ -55,8 +55,10 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion to 1,500 — Batch C/D
 followUps:
-  - If restoring automation could harm users again, what low-volume validation would you use?
-  - How would you reconcile spreadsheet entries that are complete, duplicated, or have unknown status?
+  - "If restoring automation could harm users again, what low-volume validation and rollback criteria would you use?"
+  - "How would you reconcile spreadsheet entries that are complete, duplicated, or have unknown status?"
+  - "Which exceptions still require human judgment, and how will each decision be recorded?"
+  - "How would you check that average success does not hide a small number of high-loss cases?"
 relatedQuestions: []
 perspective: candidate
 perspectiveReview: inferred

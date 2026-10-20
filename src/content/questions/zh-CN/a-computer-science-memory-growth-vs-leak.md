@@ -3,8 +3,8 @@ questionId: a-computer-science-memory-growth-vs-leak
 kind: question
 status: published
 locale: zh-CN
-title: 一个长时间运行的进程内存持续增长，但没人能指出明显的泄漏。你怎样区分真正的泄漏、正常的缓存增长和内存碎片？
-question: 一个长时间运行的进程内存持续增长，但没人能指出明显的泄漏。你怎样区分真正的泄漏、正常的缓存增长和内存碎片？
+title: "如何诊断进程持续增长的内存占用？"
+question: "一个长期运行的进程内存持续增长，但堆快照中的对象数量变化不大。你怎样用证据区分真实泄漏、缓存保留、内存碎片或原生内存增长？"
 intent: 了解你对内存管理的理解，以及能否用观察而不是猜测来区分几种解释。
 signals:
   - 对齐负载、堆、原生分配、映射页与进程总内存的时间曲线。
@@ -54,9 +54,9 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 C
 followUps:
-  - 低流量下仍逐日增长、重启后暂时恢复时，你会怎样安排采样和实验？
-  - 堆对象数量下降但进程内存没有回落时，下一步检查什么？
-  - 服务内存占用持续增长，堆对象采样基本稳定，但容器 RSS 不断增加。你会怎样区分堆外分配、碎片和缓存？
+  - "低流量下内存仍增长、重启后暂时回落时，你会怎样安排采样和实验？"
+  - "堆对象数量下降但进程内存没有回落时，你会检查哪些原生分配、映射页或缓存证据？"
+  - "如何在可复现负载下验证修复，并界定内存稳定的观察条件？"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

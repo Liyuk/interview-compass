@@ -48,22 +48,9 @@ source:
     label: GitHub 技术面试与工程体系调研；题目为本站独立编写
     url: https://github.com/yangshun/tech-interview-handbook
 followUps:
-  - >-
-    If input volume grows tenfold while the memory budget stays fixed, which assumption or design would you revisit
-    first?
-  - >-
-    If older clients or dependencies cannot upgrade together, how would you preserve compatibility and define an exit
-    date?
-  - If the issue appears only in a few time windows and is hard to reproduce locally, what evidence would you add first?
-  - >-
-    If the launch date is fixed and validation time shrinks, which release gates and rollback conditions would you
-    define?
-  - >-
-    If operating cost exceeds the budget while core reliability targets remain fixed, how would you rebalance the
-    trade-offs?
-  - >-
-    Should reading an expired entry renew it? How would you define observable behavior when deletion races with expiry
-    cleanup?
+  - "Should reading an expired entry renew it, and how would callers observe an entry that expires during a read?"
+  - "What should happen when deletion races with expiration cleanup, and which invariant would your test assert?"
+  - "How would you demonstrate that expired entries are eventually reclaimed and memory remains bounded under sustained writes?"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

@@ -11,8 +11,7 @@ signals:
   - 同步决策人、客户影响、证据和临时授权范围
 primaryCapability: work-responsibility.ownership
 topics:
-  - execution
-  - execution
+  - "execution"
 roles:
   - manager
   - engineering

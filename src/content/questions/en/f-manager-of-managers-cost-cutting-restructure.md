@@ -3,8 +3,8 @@ questionId: f-manager-of-managers-cost-cutting-restructure
 kind: question
 status: published
 locale: en
-title: The industry matures or declines and the company demands cost reduction and efficiency. How do you merge architectures and redundant organizations while keeping the team from being just a cost center?
-question: The industry matures or declines and the company stops investing heavily, demanding extreme cost reduction and efficiency. How do you carry out architecture mergers and the adjustment of redundant organizations, treat people fairly in the process, and turn the technical team from a cost center into an amplifier of effectiveness?
+title: "How would you reduce costs while protecting critical capabilities and treating people fairly?"
+question: "The company sets a cost-reduction target during a market downturn. How would you clarify the financial and service constraints, compare changes to architecture, scope, operations, and staffing, and protect affected people while showing whether the changes improve business outcomes?"
 intent: "Assess whether you make evidence-based capability trade-offs under cost or restructuring pressure, treat affected employees lawfully and respectfully, and demonstrate results through business outcomes rather than slogans."
 signals: ["Break down required financial targets, cost structure, capability dependencies, and service risks; validate redundancy and irreplaceable skills or systems.", "Compare consolidation, scope reduction, automation, attrition, and layoffs by savings, transition cost, and risk rather than assuming layoffs work best.", "Own employee communication, confidentiality, compliance, support, and redeployment responsibilities while acknowledging unavoidable harm.", "Plan continuity and post-change measures for total cost, delivery, reliability, workload, and business impact with review points."]
 weakAnswer: "Cutting headcount uniformly from an org chart and treating savings as success while ignoring system risk, skill concentration, employee process, and actual utility after the change."
@@ -28,7 +28,9 @@ careerTracks:
   - senior-manager
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
-followUps: ["If the required cuts would remove critical on-call coverage, how would you quantify and present that trade-off?", "If costs fall but incidents and key departures rise after restructuring, what would you verify first and when would you change course?"]
+followUps:
+  - "Which capabilities or service risks would you verify before proposing a reduction, and how would you test whether they are truly redundant?"
+  - "After a change, what evidence would show that total cost improved without unacceptable reliability, workload, or customer impact?"
 source:
   - attribution: original
     label: "The author's leveled interview framework, senior manager"

@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: en
 title: A direct report comes into conflict with you. How do you handle it?
-question: A direct report comes into conflict with you, for example by opposing your decision openly or being unhappy with how you manage. How do you handle it, and how do you tell whether they are right or challenging your authority?
+question: "A direct report openly disagrees with one of your decisions or raises concerns about your management. How would you understand the disagreement, assess its evidence, and decide what to change or uphold?"
 intent: See how you treat conflict from a report, whether you listen to what is reasonable in it, and whether you hold a decision when needed.
 signals:
   - First works out the specific point of disagreement and the basis behind it, rather than getting defensive
@@ -36,8 +36,8 @@ formats:
   - behavioral
   - case
 followUps:
-  - They oppose you openly in front of everyone. How do you handle it on the spot?
-  - Afterwards you find they were actually right. What do you do?
+  - "If the disagreement happens in front of the team, how would you respond in the moment and return to the substance afterward?"
+  - "What evidence would lead you to revise your decision, and how would you explain it if you still upheld it?"
 source:
   - attribution: original
     label: The author's interview sequence, conflict with a report

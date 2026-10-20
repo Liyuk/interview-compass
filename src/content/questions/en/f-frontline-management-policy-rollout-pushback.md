@@ -3,14 +3,14 @@ questionId: f-frontline-management-policy-rollout-pushback
 kind: question
 status: published
 locale: en
-title: You are rolling out a new policy and front-line staff complain heavily. How do you handle it?
-question: You are rolling out a new policy and front-line staff complain heavily. How do you judge which complaints are reasonable and which are just resistance to change, how do you adjust, and how do you make the policy actually take hold?
-intent: See how you treat resistance during a policy rollout, neither suppressing it outright nor giving up a valuable change under pressure.
+title: "How do you respond to front-line feedback during a policy rollout?"
+question: "You are rolling out a new policy and front-line staff raise substantial concerns. How do you determine whether the issues come from the policy design, implementation conditions, or the change itself; decide what to adjust; and check whether the policy works as intended?"
+intent: "Assess whether you investigate front-line feedback, distinguish policy and implementation problems from transition costs, and evaluate the change using evidence."
 signals:
-  - First listens for what the complaints actually are and separates flaws in the policy design, problems in how it is carried out, and instinctive resistance to change
-  - Is willing to change the policy for the reasonable parts and says what was changed
-  - Explains the purpose and the cost of the policy to staff instead of only issuing requirements
-  - Sets a trial period and review metrics and judges by results whether the policy works
+  - "Collects specific examples and distinguishes policy-design problems, implementation constraints, and concerns about the change."
+  - "Checks the evidence with affected staff and relevant owners before deciding whether to revise the policy or its rollout."
+  - "Explains the policy purpose, trade-offs, and any changes made, including what cannot be changed and why."
+  - "Defines a review period and observable outcomes, then uses them to decide whether to continue or adjust the rollout."
 primaryCapability: people-organization.frontline-management
 topics: [management, communication, feedback]
 roles:

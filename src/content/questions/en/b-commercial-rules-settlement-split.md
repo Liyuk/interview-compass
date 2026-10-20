@@ -48,12 +48,10 @@ formats:
   - case
   - artifact-review
 followUps:
-  - Does a tier apply to the whole amount or only to the part above the threshold, and how do you make sure everyone reads it the same way?
-  - Which sample cases would you use to confirm all three parties agree?
-  - If a refund crosses settlement periods, which period records the reversal and how would you explain it?
-  - If original split details are missing, how would you reconstruct them while separating inference from fact?
-  - If old transactions must be recomputed after a rule change, how would you identify the scope and prevent duplicate reversals?
-  - An order uses a platform coupon, a member discount, and a channel subsidy; a later refund may cover only some items. How would you define discount allocation, refund reversals, and reconciliation ownership?
+  - "Does each tier apply to the full amount or only the amount above its threshold, and how would you make that rule unambiguous?"
+  - "Which boundary and partial-refund examples would let product, engineering, and finance verify the same result?"
+  - "If a refund crosses settlement periods, which record receives the reversal and who owns reconciliation?"
+  - "If source details are missing or rules change, how would you separate verified facts from reconstruction and prevent duplicate reversals?"
 relatedQuestions: []
 source:
   - attribution: original

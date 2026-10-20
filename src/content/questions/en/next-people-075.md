@@ -32,8 +32,7 @@ scenarios:
   - hiring
   - promotion
 formats:
-  - behavioral
-  - behavioral
+  - "behavioral"
 followUps:
   - How do you limit risk if no one is ready to succeed?
   - How do you prevent an interim arrangement from becoming indefinite?

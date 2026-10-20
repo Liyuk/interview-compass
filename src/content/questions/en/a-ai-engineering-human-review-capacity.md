@@ -43,15 +43,10 @@ formats:
   - case
   - planning
 followUps:
-  - >-
-    If high-risk requests arrive in a short burst, would you rate-limit, defer, degrade, or temporarily add
-    review capacity, and why?
-  - If reviewers frequently disagree, would you first improve the rubric, evidence interface, or training?
-  - If the backlog shrinks while the miss rate rises, how would you decide whether to expand automation?
-  - When should the feature be paused instead of lowering review coverage?
-  - How would you prevent reviewer fatigue from turning approval into a reflexive click?
-  - How would high-risk cases remain covered when the review queue is overloaded?
-  - How would you prevent reviewers from rubber-stamping outputs due to automation bias?
+  - "When high-risk requests arrive in a burst, what temporary control protects them without exceeding reviewer capacity?"
+  - "If reviewers disagree, what evidence would tell you whether to change the rubric, evidence interface, or training?"
+  - "If backlog falls while the miss rate rises, what threshold would make you pause or narrow automation?"
+  - "How would you detect reviewer fatigue or automation bias before it weakens oversight?"
 source:
   - attribution: inspired
     label: atryx AI 工程题库的主题覆盖；题面为本站独立编写

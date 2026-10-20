@@ -41,7 +41,10 @@ source:
   - attribution: inspired
     label: System Design Primer：扩展与容量权衡
     url: https://github.com/donnemartin/system-design-primer
-followUps: []
+followUps:
+  - "网络分区期间，你会选择允许有限超额、拒绝请求还是按区域降级？边界由什么风险决定？"
+  - "实例数或区域数变化时，怎样保持租户配额稳定且不按实例数重复放大？"
+  - "配额调整如何平滑生效，并留下可核对的审计记录？"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

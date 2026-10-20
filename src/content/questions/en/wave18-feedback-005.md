@@ -9,11 +9,10 @@ question: >-
   would you clarify feedback preferences and evidence?
 intent: "Assess whether the response adapts its communication when someone reacts defensively to specific feedback while preserving honest, actionable expectations."
 signals:
-  - >-
-    Clarifies the facts, stakeholders, and ownership boundaries involved in the relationship between feedback
-    preferences and verifiable facts.
-  - Clarifies the colleague’s goal and separates intent from impact.
-  - Co-designs language that protects quality while inviting questions.
+  - "Asks the colleague what “direct” feedback should look like and which forms of delivery make it harder to hear."
+  - "Uses a specific quality example and observable criteria, separating the work issue from judgments about the person."
+  - "Checks how the feedback landed and invites the colleague to identify missing context or evidence."
+  - "Agrees on a feedback format and a follow-up check to see whether the quality issue and working relationship improve."
 primaryCapability: collaboration.feedback
 roles:
   - manager

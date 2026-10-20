@@ -3,7 +3,7 @@ questionId: wave18-attrib-010
 kind: question
 status: published
 locale: zh-CN
-title: 你把一个成功项目的结果归功于前任设计的机制，怎样说明自己的增量价值？
+title: "成熟流程持续改善时，怎样说明自己的增量贡献？"
 question: 你接手前已有一套成熟流程，后来指标继续改善。你会怎样区分继承的基础、自己新增的判断和自然趋势？
 intent: "看你能否区分接手前已有的成果、自己新增的工作和同期自然变化。"
 signals:

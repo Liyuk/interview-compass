@@ -50,19 +50,9 @@ source:
     label: GitHub 技术面试与工程体系调研；题目为本站独立编写
     url: https://github.com/yangshun/tech-interview-handbook
 followUps:
-  - >-
-    If input volume grows tenfold while the memory budget stays fixed, which assumption or design would you revisit
-    first?
-  - >-
-    If older clients or dependencies cannot upgrade together, how would you preserve compatibility and define an exit
-    date?
-  - If the issue appears only in a few time windows and is hard to reproduce locally, what evidence would you add first?
-  - >-
-    If the launch date is fixed and validation time shrinks, which release gates and rollback conditions would you
-    define?
-  - >-
-    If operating cost exceeds the budget while core reliability targets remain fixed, how would you rebalance the
-    trade-offs?
+  - "How should the parser handle a multibyte UTF-8 character split across chunks and report its source position?"
+  - "When a malformed or truncated record is found, what recovery rule preserves later records without inventing data?"
+  - "What limit should apply to an unusually long line, and how should cancellation release buffers and the input resource?"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

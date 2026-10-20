@@ -15,8 +15,7 @@ signals:
   - Plans practice, evidence sources, and regular review points
 primaryCapability: learning-adaptation.self-direction
 topics:
-  - learning
-  - learning
+  - "learning"
 roles:
   - engineering
   - frontend

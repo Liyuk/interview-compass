@@ -32,8 +32,7 @@ scenarios:
   - hiring
   - promotion
 formats:
-  - behavioral
-  - behavioral
+  - "behavioral"
 followUps:
   - 什么时候应暂停招聘而非妥协？
   - 谁承担误招与空缺延迟的不同成本？

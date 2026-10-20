@@ -9,9 +9,10 @@ question: >-
   customer commitment. How would you validate and sequence platform investments?
 intent: Assesses portfolio thinking, demand validation, and opportunity-cost reasoning.
 signals:
-  - Identify real duplicated costs, users, and alternatives.
-  - Set adoption evidence, reuse thresholds, and stop conditions.
-  - Compare sequencing with the cost of delaying other work.
+  - "Identify real duplicated costs, users, and alternatives."
+  - "Set adoption evidence, reuse thresholds, and stop conditions."
+  - "Compare sequencing with the cost of delaying other work."
+  - "Distinguish hard constraints, deferrable goals, and risks that become irreversible if action is delayed."
 primaryCapability: value-direction.investment-choices
 topics:
   - resource-allocation

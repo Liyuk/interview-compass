@@ -4,12 +4,12 @@ kind: question
 status: published
 locale: en
 title: When should one transaction count as an order, revenue, and cash?
-question: Payment is authorized but not captured, and goods are not fulfilled. The business report counts an order, while finance records no revenue yet. How would you design cross-domain metric semantics?
+question: "Payment is authorized but not captured, and goods are not fulfilled. The business report counts an order, while finance records no revenue yet. How would you define and reconcile order, payment, revenue, and cash metrics across domains?"
 intent: Assesses boundaries and mappings between business events and financial recognition.
 signals:
-  - Separate intent, order, payment, fulfillment, and recognized-revenue events.
-  - Define purpose and timing for each report.
-  - Reconcile cross-domain aggregates instead of forcing identical values.
+  - "Separates order intent, payment authorization, capture or charge, settlement, fulfillment, and recognized revenue as distinct events."
+  - "Defines which event and timing each metric represents, making clear that authorization is not cash received."
+  - "Documents status transitions, partial fulfillment, refunds, and reconciliation rules for business and finance reports."
 primaryCapability: domain-modeling.data-model
 topics:
   - data-modeling

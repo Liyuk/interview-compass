@@ -12,8 +12,7 @@ signals:
   - Take reversible action and track sustained health and output.
 primaryCapability: people-organization.frontline-management
 topics:
-  - management
-  - management
+  - "management"
 roles:
   - manager
   - engineering

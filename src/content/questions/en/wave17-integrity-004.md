@@ -15,8 +15,7 @@ signals:
   - Proposes remediation, ownership transfer, and a stop condition
 primaryCapability: work-responsibility.ownership
 topics:
-  - execution
-  - execution
+  - "execution"
 roles:
   - operations
   - engineering

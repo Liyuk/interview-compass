@@ -11,8 +11,7 @@ signals:
   - 提出可承担的补救、责任转交及停止条件
 primaryCapability: work-responsibility.ownership
 topics:
-  - execution
-  - execution
+  - "execution"
 roles:
   - operations
   - engineering

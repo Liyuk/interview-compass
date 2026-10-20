@@ -3,8 +3,8 @@ questionId: c-metrics-causality-campaign-net-lift
 kind: question
 status: published
 locale: zh-CN
-title: 活动期间次日留存上升了。你怎样判断这是活动带来的净增量，而不是原本就会发生的变化？
-question: 活动期间次日留存上升了。你怎样判断这是活动带来的净增量，而不是原本就会发生的变化？
+title: "活动期间留存上升且产品流程也改版，怎样判断活动的净增量？"
+question: "营销活动期间留存上升，但同期上线了新的产品流程，而且参与活动的人可能本来就更活跃。你会怎样建立可信对照、估算活动净增量并说明结论边界？"
 intent: 了解你如何为一个增长结果找到合理的对照，并说明结论能支持到哪里。
 signals:
   - 确认次日留存的事件、用户群与统计周期，比较对照或同期自然趋势是否可比。
@@ -49,7 +49,9 @@ source:
   - attribution: derived
     label: Liyuk 博客：产品判断、Top-K 与规划方法；题目为本站重新组织
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
-followUps: []
+followUps:
+  - "如果无法随机分配，你会用什么对照或时间/人群证据估算增量，仍有哪些不确定性？"
+  - "若领先指标改善但业务结果没有改善，你会依据什么决定继续、调整或停止？"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

@@ -39,11 +39,9 @@ source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 G
 followUps:
-  - If only a few keys are hot, is a full cache warm-up necessary?
-  - If the origin is already overloaded, which requests should degrade, queue, or fail clearly?
-  - 【How do you diagnose a second overload after cache recovery?】After cache nodes recover, requests stampede to the database and exhaust its connection pool. Traffic still surges periodically after scaling. How would you distinguish warm-up, request coalescing, rate limiting, and query regression?
-  - How do you keep warm-up from causing another stampede?
-  - Which cache data should not be preloaded in bulk?
+  - "If only a few keys are hot, how would you warm them without loading the whole cache at once?"
+  - "If the origin is already overloaded, which requests should be queued, degraded, or rejected, and how would clients learn that?"
+  - "What measures would show that coalescing, randomized expiry, or gradual warm-up reduced amplification without serving unacceptable stale data?"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

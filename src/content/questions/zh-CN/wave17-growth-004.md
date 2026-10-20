@@ -11,8 +11,7 @@ signals:
   - 安排实践、旁证来源和定期复盘节点
 primaryCapability: learning-adaptation.self-direction
 topics:
-  - learning
-  - learning
+  - "learning"
 roles:
   - engineering
   - frontend

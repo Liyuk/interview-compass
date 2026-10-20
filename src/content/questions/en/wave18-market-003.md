@@ -11,10 +11,10 @@ intent: >-
   Assess how the response evaluates learning value and stop rules for hard-to-attribute channels, makes
   constraints explicit, and uses evidence to justify a decision.
 signals:
-  - >-
-    Identifies the stakeholders, constraints, and risks relevant to learning value and stop rules for
-    hard-to-attribute channels.
-  - Proposes evidence or a review point that could confirm or change the decision.
+  - "States the learning question the partnership can answer even when short-term sales attribution is unavailable."
+  - "Chooses leading indicators tied to that question, such as qualified audience engagement or attributable follow-up actions, and defines how they will be captured."
+  - "Uses a comparison, holdout, or staged test where feasible to distinguish partnership effects from baseline demand."
+  - "Sets a review period, investment cap, and stop or continue criteria based on learning value and downstream evidence."
 primaryCapability: value-direction.prioritization
 topics:
   - growth-experiments

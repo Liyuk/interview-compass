@@ -43,13 +43,9 @@ formats:
   - system-design
   - case
 followUps:
-  - Should retries use remaining budget or reset the timeout?
-  - How do you handle downstream work that cannot be canceled?
-  - >-
-    A request passes through several services. No individual call times out, yet the total response often
-    exceeds the user’s wait limit. How would you design deadline propagation?
-  - If a downstream service cannot cancel work, how can the caller limit the damage?
-  - Should an asynchronous task inherit the request deadline or use an independent completion deadline?
+  - "Should a retry use the remaining end-to-end budget or reset the timeout, and what failure could each choice cause?"
+  - "If downstream work cannot be canceled, how can the caller stop wasting resources after the response is no longer useful?"
+  - "When should an asynchronous task receive a separate completion deadline from the initiating request?"
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 H

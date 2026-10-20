@@ -3,7 +3,7 @@ questionId: wave17-collab-010
 kind: question
 status: published
 locale: zh-CN
-title: 资源争议没有新增预算，怎样谈出双方都能执行的安排？
+title: "两个部门对长期运营责任归属有分歧，怎样协商出可执行的安排？"
 question: 两个部门都认为另一方应承担一项长期运营工作，短期可以临时帮忙，但没有团队愿意接长期责任。你会怎样谈定交接和容量？
 intent: 考察能否把临时协助与长期责任分开，明确资源、服务边界和退出条件。
 signals:

@@ -42,11 +42,9 @@ formats:
   - planning
   - case
 followUps:
-  - Where are you most afraid of being wrong three years from now?
-  - Which things must start now or it will be too late in three years?
-  - 【How do you calibrate a three-to-five-year plan against a half-year plan?】How do you calibrate a three-to-five-year plan against a half-year plan? After six months, what signals tell you whether the direction should change?
-  - If you find after six months that you are far behind, where do you doubt first?
-  - Which half-year results do not actually say whether the long-term direction is right?
+  - "Which assumption in the direction is least certain, and what evidence over the next six months could change it?"
+  - "Which capability needs to begin now because it has a long lead time, and what is the smallest useful first step?"
+  - "What short-term result would be a misleading signal about whether the long-term direction is right?"
 source:
   - attribution: original
     label: 'The author''s interview sequence: a three-to-five-year technical plan'

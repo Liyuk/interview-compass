@@ -44,11 +44,9 @@ source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 G
 followUps:
-  - If mobile offline downloads need a longer window, how would you balance availability and exposure risk?
-  - How would you prevent links from being retained accidentally in proxy caches, browser history, or analytics systems?
-  - 【How do you bound access after permissions are revoked from an issued download link?】A service shares sensitive reports with signed URLs valid for 24 hours. A removed user can still access an old link; shorter expiry adds load. How would you design revocation and access checks?
-  - How can revocation be immediate when a CDN caches content?
-  - Who owns audit responsibility when a link is forwarded across organizations?
+  - "If offline downloads need a longer window, which resource, user, and device constraints can limit the added exposure?"
+  - "How can revocation work when a CDN or browser has cached the file or URL?"
+  - "What access and expiry evidence should be logged without putting the signed secret in logs?"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

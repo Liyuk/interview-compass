@@ -3,7 +3,7 @@ questionId: next-product-038
 kind: question
 status: published
 locale: zh-CN
-title: 实验期间外部政策同时变化，结果还能判断结果受哪些因素影响吗？
+title: "实验期间外部政策同时变化，结果还能支持哪些结论？"
 question: 随机实验运行期间平台同时调整了收费政策，处理组和对照组受到影响程度不同。你会如何判断实验结果还能支持什么结论？
 intent: 考察实验干预、外部变化和因果解释边界。
 signals:

@@ -9,11 +9,10 @@ question: >-
   would you lead a review and create a shared fix?
 intent: Assesses cross-team fact reconstruction, shared accountability, and systemic improvement.
 signals:
-  - Reconstruct interactions with a timeline and evidence.
-  - Separate defect ownership, control gaps, and coordination mechanisms.
-  - Create verifiable actions with owners on both sides.
-  - Organizes immediate containment and a shared timeline first
-  - Bases accountability on responsibilities, evidence, and system conditions
+  - "Builds a shared incident timeline from logs, interface contracts, and each team’s account before assigning causes."
+  - "Separates the initiating defect, caller behavior, missing controls, and gaps in cross-team coordination."
+  - "Assigns immediate containment and durable corrective actions to named owners on both sides, with due dates."
+  - "Defines evidence to verify the fix and a review point to determine whether the same failure can recur."
 primaryCapability: collaboration.conflict-navigation
 topics:
   - conflict-resolution

@@ -3,12 +3,8 @@ questionId: c-product-judgment-twenty-four-month-shift
 kind: question
 status: published
 locale: en
-title: "How do you assess your company’s opportunities and risks from a technology shift?"
-question: >-
-  Drawing on available material and direct observation, which kinds of companies do you think this
-  technology will affect most over the next two years? Explain your own judgment and evidence rather than
-  only repeating industry reports. What does it mean for your company, and what have you done to test or
-  respond to it?
+title: "How do you assess your company’s opportunities and risks from a technology shift you choose?"
+question: "Choose one technology shift you have followed. Based on available material and direct observation, which types of companies may be most affected over the next two years? Explain your evidence and inference, what it could mean for your company, and what you have done to test or respond."
 intent: See whether you hold a specific, checkable view of industry change and have already acted on it, rather than restating a trend.
 signals:
   - >-
@@ -42,8 +38,8 @@ careerTracks:
 scenarios: [interview, promotion, hiring]
 formats: [case, behavioral]
 followUps:
-  - If your judgment is right, what is your company's most fragile link today?
-  - Whom have you told about this view, and how did they react?
+  - "Which assumption in your view is most uncertain, and what evidence would change your company’s response?"
+  - "What action have you personally taken, and which decisions required someone else’s authorization?"
 source:
   - attribution: original
     label: "The author's leveled interview framework, senior manager"

@@ -13,13 +13,10 @@ intent: >-
   Assesses whether you can evaluate a free product through conversion, acquisition, retention, and service
   costs instead of treating activity as business value.
 signals:
-  - Clarify whether the tier serves acquisition, experience, network effects, or conversion
-  - Break down cost, paid conversion, and retention contribution by user segment
-  - Consider limits, capability tiers, or target-user restrictions and their side effects
-  - Propose a comparison method to measure incremental value from the free tier
-  - Separates direct revenue, acquisition, ecosystem contribution, and brand value.
-  - Measures marginal service cost alongside long-term conversion and network effects.
-  - Defines free-tier boundaries, service levels, and evidence for its contribution.
+  - "Separates the free tier’s intended role—acquisition, activation, network value, or conversion—and states which users it serves."
+  - "Measures marginal inference and support cost alongside paid conversion, retention, and any defensible indirect value by segment."
+  - "Compares a control or policy change to estimate incremental contribution instead of crediting all active users to the free tier."
+  - "Sets usage, service-level, or eligibility limits with evidence that would trigger expansion, narrowing, or removal."
 primaryCapability: value-direction.market-economic-judgment
 topics:
   - commercialization
@@ -48,12 +45,9 @@ formats:
   - case
   - planning
 followUps:
-  - >-
-    If free users do not pay directly but improve the ecosystem, how would you validate that indirect
-    contribution?
-  - How would you estimate the long-term cost of limits that could harm reputation?
-  - If ecosystem value cannot be monetized directly, which proxy evidence could help?
-  - How would you prevent a few high-demand free users from creating unbounded support cost?
+  - "Which users’ indirect ecosystem contribution can be observed or tested, and which parts remain hypotheses?"
+  - "If you limit free usage, how would you track service cost, conversion, and affected-user experience together?"
+  - "What evidence would lead you to expand, narrow, or stop the free tier?"
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 B

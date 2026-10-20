@@ -9,12 +9,10 @@ question: >-
   outages from general dissatisfaction. How would you design severity and escalation?
 intent: Assess whether you use impact, urgency, scope, and service commitments to prioritize work.
 signals:
-  - Define objective severity by impact, affected customers, and business blockage.
-  - Separate response targets, resolution goals, and update cadence.
-  - Assign authority, escalation paths, and a review of misclassification.
-  - Separate customer identity, contract tier, and actual impact severity.
-  - Define escalation channels, evidence requirements, and capacity limits.
-  - Review whether escalation improves outcomes or merely changes order.
+  - "Defines severity using user impact, scope, urgency, and safety or data risk, separately from account value."
+  - "Sets response and update targets that fit each severity while distinguishing them from resolution promises."
+  - "Names who can set or change severity, how evidence and capacity constraints are recorded, and when to escalate."
+  - "Reviews misclassification, displaced work, and customer outcomes to verify the model improves response."
 primaryCapability: delivery.operational-execution
 topics:
   - operations
@@ -44,14 +42,9 @@ formats:
   - case
   - behavioral
 followUps:
-  - Who may lower a severity level raised by a customer?
-  - How do you prevent major accounts from receiving hidden rule bypasses?
-  - >-
-    【What if escalated complaints bypass queues and destabilize the team?】Sales or executives can mark customer issues
-    as top priority, preventing support from handling ordinary but high-risk incidents. How would you define escalation
-    rules?
-  - How should safety or data-security incidents bypass normal priority?
-  - How would you show leaders which other risks were displaced?
+  - "Who may lower a severity rating, and what evidence must be recorded?"
+  - "How should an urgent safety or data-security incident bypass normal queues without making every executive request top priority?"
+  - "How would you show which other risks or customers were delayed by an escalation?"
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 J

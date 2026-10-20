@@ -3,13 +3,13 @@ questionId: e-feedback-align-on-one-on-one
 kind: question
 status: published
 locale: zh-CN
-title: 下属总说想做更核心的项目
-question: 你发现下属最近总说想做更核心的项目，你会怎样确认他真正想要的是什么？
+title: "直属下属持续希望参与影响范围更大的项目"
+question: "一名直属下属表示希望参与影响更大的项目。你会怎样了解他想要哪种成长，并共同确定一个具体的下一步？"
 intent: 了解你如何在对话开头先确认“想聊什么”，避免用自己的假设去填补对方没说清楚的部分。
 signals:
-  - 先问对方的期望，再给建议
-  - 区分晋升诉求与手头任务的挑战
-  - 记录对方诉求以及你能提供的具体支持
+  - "在提出任务前，先了解对方所说的“影响更大”具体指什么。"
+  - "通过事例区分晋升、职责范围、挑战、曝光度或工作类型等不同诉求。"
+  - "共同确定现实可行的机会、所需支持，以及复查机会是否符合目标的时间。"
 primaryCapability: collaboration.feedback
 topics:
   - feedback

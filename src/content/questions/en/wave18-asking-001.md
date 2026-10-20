@@ -29,7 +29,7 @@ scenarios:
   - hiring
   - promotion
 formats:
-  - behavioral
+  - "case"
 source:
   - attribution: original
     label: Interview Compass coverage-led original expansion batch 2026-10-17 C

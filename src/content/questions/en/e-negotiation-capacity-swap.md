@@ -7,9 +7,9 @@ title: How do you negotiate a bounded capacity swap when both teams are short-st
 question: Two teams have committed to quarterly goals, and a critical skill turns out to be held by only one engineer. Both request priority access. How would you negotiate an executable allocation while making the unmet side aware of the cost and review conditions?
 intent: Assess whether you can turn a resource dispute into a verifiable arrangement around outcomes, capacity, and time windows.
 signals:
-  - Checks business impact, critical paths, and adjustable scope for both commitments
-  - Offers allocation by time, deliverable, or shared risk while naming what cannot be met simultaneously
-  - Confirm the authorized decision owner, support window, handoff requirements, and signals for reallocating resources.
+  - "Checks business impact, critical paths, available capacity, and adjustable scope for both commitments."
+  - "Offers time-bounded allocation options and states which outcomes cannot be met at the same time."
+  - "Confirms the authorized decision owner, support window, handoff needs, and evidence that would trigger reallocation."
 primaryCapability: collaboration.negotiation
 topics:
   - negotiation
@@ -45,11 +45,9 @@ source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 J
 followUps:
-  - If both sides call their project the top priority, who should make the trade-off and on what evidence?
-  - If the engineer expects context switching to slow both teams, how would you revise the arrangement?
-  - 【How do you negotiate a capacity exchange when two teams can help each other?】The platform team lacks testing capacity while product lacks data analysis support. Both have quarterly commitments, and no budget is available. How would you negotiate a fair, executable exchange?
-  - If value is hard to quantify, how do you lower trial risk?
-  - How do you prevent a resource exchange from becoming a lasting favor debt?
+  - "If both sides call their project the top priority, who has authority to make the trade-off and what evidence should they use?"
+  - "If context switching slows both teams, how would you reduce the switching cost or revise the allocation?"
+  - "How would you make a temporary exchange reversible and prevent it from becoming an untracked ongoing obligation?"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

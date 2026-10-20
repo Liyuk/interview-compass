@@ -3,8 +3,8 @@ questionId: a-engineering-systems-ci-untrusted-change
 kind: question
 status: published
 locale: zh-CN
-title: 外部贡献者提交代码后，自动检查流程会读取测试凭证并构建发布包。你会怎样检查流水线中的信任边界？
-question: 仓库允许外部贡献者提交代码，自动检查与构建流程会读取测试凭证并构建发布包。你会怎样检查流水线中的信任边界和凭证暴露风险？
+title: "如何隔离不可信代码的执行、凭证和发布制品？"
+question: "仓库接受外部贡献，CI 会运行构建脚本、复用缓存、读取测试凭证并生成发布制品。你会怎样隔离不可信执行、凭证权限和缓存边界，防止代码读取秘密或污染受信任制品？"
 intent: 了解你能否区分不可信代码与受保护环境，并限制凭证和发布权限。
 signals:
   - 追踪fork代码、依赖脚本和构建步骤的执行权限，区分检查与受信任发布。
@@ -40,7 +40,9 @@ scenarios:
 formats:
   - case
   - planning
-followUps: []
+followUps:
+  - "如果必须共享缓存，怎样避免外部贡献者写入受信任发布任务会消费的数据？"
+  - "哪些检查可以在不可信环境运行，哪些必须在受保护环境中重新执行？"
 source:
   - attribution: inspired
     label: DNXLabs DevOps 题库的主题覆盖；题面为本站独立编写

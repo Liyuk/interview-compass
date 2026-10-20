@@ -12,8 +12,7 @@ signals:
   - 确保贡献评估和冲突升级路径透明。
 primaryCapability: people-organization.team-design
 topics:
-  - management
-  - management
+  - "management"
 roles:
   - manager
   - engineering

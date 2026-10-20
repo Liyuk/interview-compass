@@ -50,12 +50,9 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 C
 followUps:
-  - If a rule needs neighboring rows, how can you avoid reloading all input?
-  - If the caller cancels mid-read, who closes the underlying file or network resource?
-  - If the compressed input expands unexpectedly, how do you cap CPU and disk use?
-  - How should parsing support cancellation, timeouts, and backpressure?
-  - How do you prevent recursive overflow on long reference chains?
-  - How should diagnostics show values derived from multiple sources?
+  - "If a CSV field or quoted record spans input chunks, how would the parser preserve correctness and line numbers?"
+  - "When should the parser continue after a malformed row, and how should it report what it skipped?"
+  - "If the caller cancels or compressed input expands unexpectedly, how do you release resources and cap memory and CPU?"
 relatedQuestions: []
 perspective: candidate
 perspectiveReview: inferred

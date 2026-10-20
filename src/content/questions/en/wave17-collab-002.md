@@ -11,10 +11,10 @@ intent: >-
   Assesses whether the candidate uses evidence and options to influence while preserving commitments,
   relationships, and room to correct course.
 signals:
-  - States evidence strength, impact scope, and remaining uncertainty
-  - Offers concrete options to retain, narrow, or stop, with a communication approach
-  - States how new evidence differs and which decisions are affected.
-  - Discusses options and costs with stakeholders early.
+  - "States what the new user evidence shows, how strong it is, and what uncertainty remains."
+  - "Explains which prior decision or external commitment may need to change and the likely user or delivery impact."
+  - "Presents proportionate options, their costs, and what additional evidence would distinguish them."
+  - "Raises the issue with decision-makers early, asks for a specific review decision, and plans a factual update to affected parties."
 primaryCapability: collaboration.stakeholder-influence
 topics:
   - communication

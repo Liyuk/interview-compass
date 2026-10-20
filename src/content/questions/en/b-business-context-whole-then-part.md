@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: en
 title: When you explain a business, how do you cover the whole first and then the part you own?
-question: When you explain a business, how do you first lay out the whole and then the position and value of the part you own within it? How does someone without a whole-picture view tell it, and what is the difference?
+question: "When explaining a business, how do you describe the whole system first, then locate the part you own and explain its value and limits?"
 intent: See whether you can build the whole picture first and then place your own work inside it, rather than describing only your own module.
 signals:
   - Uses a few sentences to give the whole business first, covering who the users are, how value arises, and the main stages

@@ -13,12 +13,10 @@ intent: >-
   Assesses whether you can identify conditions behind pilot success and validate generalization limits through
   staged expansion.
 signals:
-  - Compare populations, workflows, capabilities, and external conditions
-  - Identify key mechanisms and local factors behind the outcome
-  - Scale in stages while retaining controls or explicit stop points
-  - State where the approach is replicable and where it needs new validation or redesign
-  - Identifies people, process, and incentive conditions behind pilot success
-  - Adapts scope to team differences and verifies effects
+  - "Compares pilot and target contexts by population, workflow, capabilities, and external conditions."
+  - "Identifies which mechanism produced the result and which local support or incentives were essential."
+  - "Scales in stages with a comparison or stop point that can reveal harm in a specific region or segment."
+  - "States where the result is likely to transfer, where redesign is needed, and how effects will be verified."
 primaryCapability: value-direction.business-outcomes
 topics:
   - metrics

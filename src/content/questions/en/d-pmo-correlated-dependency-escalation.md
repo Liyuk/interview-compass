@@ -9,12 +9,10 @@ question: >-
   would tell you to change the portfolio instead of following up project by project?
 intent: Assess whether you aggregate shared dependency risk and turn it into resource and decision actions.
 signals:
-  - Identify shared dependencies, overlapping critical paths, and correlated risk.
-  - Compare single-project delays with total portfolio value loss.
-  - Set portfolio escalation thresholds, decision ownership, and communication after replanning.
-  - Presents demand, capacity, dates, impact, and confidence consistently.
-  - Separates portfolio trade-offs from execution details teams can adjust themselves.
-  - Records the decision owner, options, impact, and follow-up checkpoints.
+  - "Maps the shared dependency, projects’ critical-path dates, and confidence in each delivery estimate."
+  - "Quantifies correlated portfolio exposure—value at risk, shared capacity, and which outcomes fail together."
+  - "Sets an observable trigger for portfolio action, such as dependency slippage or aggregate capacity shortfall, and names the decision owner."
+  - "Compares reprioritization or scope options and records the impact, owners, and review checkpoints."
 primaryCapability: delivery.project-management
 topics:
   - planning

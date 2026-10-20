@@ -9,11 +9,10 @@ question: >-
   started and the customer planned a migration around it. How would you handle timing and commitment?
 intent: Assesses uncertainty communication, commitment boundaries, and validation planning.
 signals:
-  - List unvalidated assumptions and external decision dependencies.
-  - Commit to validation stages rather than a false release date.
-  - Set update cadence and alternatives if support is not feasible.
-  - States current facts, unknowns, and decision process.
-  - Offers a commitment to validation or an update, not an unsupported outcome.
+  - "Lists the unvalidated technical assumptions and external decisions that could affect support for the platform."
+  - "Separates current facts, unknowns, and the validation stages, and commits only to a dated validation update rather than an unsupported release outcome."
+  - "Explains how the customer’s migration plan is affected and offers an alternative path if validation fails or support is delayed."
+  - "Sets an update cadence and names who will communicate any change in feasibility or timing."
 primaryCapability: value-direction.product-judgment
 topics:
   - product-thinking

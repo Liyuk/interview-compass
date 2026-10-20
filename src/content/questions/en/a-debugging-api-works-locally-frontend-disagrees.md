@@ -4,7 +4,7 @@ kind: question
 status: published
 locale: en
 title: Your endpoint works in local tests, but during integration the frontend says it errors or returns nothing. How do you locate the problem and show where it is?
-question: Your endpoint works in local tests, but during integration a frontend colleague insists it errors or returns nothing. What means do you use to locate the problem, and how do you produce evidence the other person will accept?
+question: "Your endpoint works in local tests, but during integration a frontend teammate reports errors or missing data. How do you locate the cause and produce evidence both sides can verify?"
 intent: See whether you locate a cross-team problem with tools and facts rather than argument, and can explain your process.
 signals:
   - First reproduces what the other person sees and confirms the request, environment, and parameters really match

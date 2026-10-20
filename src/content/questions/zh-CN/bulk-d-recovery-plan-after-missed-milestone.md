@@ -3,13 +3,14 @@ questionId: bulk-d-recovery-plan-after-missed-milestone
 kind: question
 status: published
 locale: zh-CN
-title: 项目结束后如何把成果交接给运营团队
-question: 一个新服务按计划上线，但负责项目的团队即将转去其他目标；值班、知识库、成本监控和后续改进都还没有明确接手人。你会如何判断项目是否具备交接条件？
-intent: 考察能否明确项目交付后的运维负责人、支持范围和未解决事项。
+title: "关键里程碑错过后，怎样制定可执行的恢复计划？"
+question: "一个关键里程碑因外部依赖延迟而错过，原定日期已不可信。你会怎样还原事实、重新安排范围和顺序、协商调整承诺并跟踪恢复情况？"
+intent: "判断回答者能否先区分里程碑错过的原因、影响与未经证实的假设，再制定责任清楚且有证据检查点的恢复计划。"
 signals:
-  - 明确上线后的服务标准、SLO 或支持边界。
-  - 验证接手方掌握上下文、工具、权限和预算。
-  - 建立遗留问题清单及从项目期转入常规运营的批准条件。
+  - "先还原原基线、依赖承诺、实际延误和下游影响，再讨论责任归属。"
+  - "比较范围、顺序、人力和日期选项，并明确哪些承诺变更需要谁批准。"
+  - "为关键路径工作和未决风险指定负责人及近期检查点。"
+  - "用依赖完成情况、缺陷率或客户影响等证据判断恢复是否生效。"
 primaryCapability: delivery.project-management
 topics:
   - execution
@@ -43,4 +44,8 @@ source:
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended
+followUps:
+  - "仍按原日期安排工作的相关方，你会如何及时说明变化？"
+  - "出现什么新证据时，你会再次重排计划或停止剩余范围？"
+
 ---

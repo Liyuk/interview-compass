@@ -47,12 +47,10 @@ source:
   - attribution: original
     label: Interview Compass 原创扩充（2026-10-14）
 followUps:
-  - 【What configuration should instances use when a feature-flag control plane fails?】When the control plane is unavailable, some services hold stale config while new instances have none. A flag controls high-risk writes. How would you define local cache, defaults, and failure behavior?
-  - Which flags should not depend on live access to a central control plane?
-  - How do you verify an emergency disable takes effect within its target window?
-  - 【A new feature depends on a remote feature-flag service, but when its control plane is unavailable, user requests block too. How would you design defaults, caching, and an emergency kill path?】A new feature depends on a remote feature-flag service, but when its control plane is unavailable, user requests block too. How would you design defaults, caching, and an emergency kill path?
-  - If one tenant must disable a risky feature immediately while others continue, how would you isolate configuration?
-  - How would you verify that a config-service failure cannot block the whole site or trigger a cascade?
+  - "For a high-risk write flag, what should an existing instance and a new instance do when the control plane is unavailable?"
+  - "Which flag types can safely use stale local configuration, and which require fail-closed behavior?"
+  - "How would you verify an emergency disable reaches every relevant instance within its target window?"
+  - "How can one tenant disable a risky feature without blocking unaffected tenants or the whole request path?"
 perspective: candidate
 perspectiveReview: inferred
 qualityTier: extended

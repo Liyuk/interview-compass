@@ -49,14 +49,10 @@ formats:
   - case
   - behavioral
 followUps:
-  - How do you distinguish anonymous aggregates from derived data still linkable to a person?
-  - How can you prove downstream systems completed disposition after withdrawal?
-  - >-
-    【How should consent state vary by purpose and time?】A user permits product analytics but rejects ad
-    targeting, then later withdraws consent. Several data pipelines sync with delay. How would you model
-    consent and constrain downstream use?
-  - How should aggregates created before withdrawal be handled?
-  - How does the system distinguish unknown from explicit denial?
+  - "How would you distinguish anonymous aggregates from derived data that can still be linked to a person?"
+  - "What evidence would prove that each downstream consumer completed the required action after withdrawal?"
+  - "How should aggregates created before withdrawal be handled when their purpose or re-identification risk differs?"
+  - "How should the system represent unknown consent separately from explicit denial?"
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15
