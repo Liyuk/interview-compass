@@ -10,16 +10,13 @@ question: >-
   Choose an outcome delivered by several teams that you need to explain in a review or promotion case. What
   problem did you define, which key judgments did you make, and what actions did you drive? Which
   contributions belong to others, and what evidence supports your account?
-intent: >-
-  Explore whether you can clearly separate personal contribution from team results and support it with
-  checkable facts rather than adjectives.
-signals:
-  - >-
-    Separates personal problem framing, judgment, influence, and delivery from joint work, others’
-    contributions, and unknowns
-  - Uses documents, decision records, artifacts, metrics, or collaborator feedback to verify contribution
-  - Explains what evidence can and cannot prove, and corrects misattribution
-  - Stays open to differing feedback and calibrates the account against facts
+intent: "Assess whether you explain your problem framing, judgment, and actions in a team result while identifying others’ contributions and supporting your account with verifiable facts."
+signals: ["State your problem ownership, key judgment, implementation/collaboration actions, and result separately.", "Name collaborators’ contributions to proposal, decisions, execution, and verification.", "Provide documents, records, artifacts, or collaborator feedback and distinguish fact from interpretation.", "Explain what might differ without your involvement without overstating the counterfactual."]
+anchors:
+  notPassing: "Describes participation without a personal action."
+  passing: "Names personal action and acknowledges team work."
+  excellent: "Uses verifiable facts to distinguish personal and shared outcomes."
+  exceptional: "Tests counterfactual and causal limits, handles disagreements, and recognizes collaboration that cannot be precisely allocated."
 primaryCapability: work-responsibility.attribution
 topics:
   - ethics
@@ -36,25 +33,19 @@ roles:
   - mobile
   - ai-engineer
 responsibilityScopes:
-  - individual
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - promotion
   - interview
   - self-reflection
 formats:
   - behavioral
-followUps:
-  - What would have been different without you, and what evidence supports that judgment?
-  - If a collaborator describes your role less favorably than you do, how would you verify the difference?
-  - >-
-    If records are incomplete or collaborators disagree about attribution, how would you reconstruct the facts
-    and calibrate the account?
-  - Is there a contribution for which no record exists? How would you add evidence or explain the limitation?
+followUps: ["Which part would most likely differ without you, and what evidence supports that?", "If collaborators disagree about contribution shares, how would you calibrate instead of competing for credit?"]
+weakAnswer: "Claiming all team outcomes personally or using “we all did it” to avoid explaining the judgment you owned."
 source:
   - attribution: derived
     label: 职场发展问题：晋升与面试前的完整自查清单
@@ -75,7 +66,8 @@ source:
   - attribution: original
     label: 'The author''s interview sequence: probing actual contribution and output'
 relatedQuestions: []
-perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspective: "candidate"
+perspectiveReview: "reviewed"
+qualityTier: "core"
+
 ---
