@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：接收新的人和事"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

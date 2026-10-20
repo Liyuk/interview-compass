@@ -25,4 +25,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["跨团队事故由谁担任指挥，依据是什么？","怎样避免把所有边界故障都升级给平台团队？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微服务"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

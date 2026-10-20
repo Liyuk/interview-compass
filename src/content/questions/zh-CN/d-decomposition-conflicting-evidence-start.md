@@ -27,4 +27,7 @@ scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: []
 source: [{"attribution": "inspired", "label": "FDE 问题拆解主题参考；题面与情境为本站独立编写", "url": "https://github.com/pingananth/fde-decomp-interview-guide"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -21,4 +21,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["共享依赖升级导致单一子应用故障时如何止损？","如何避免共享平台成为发布瓶颈？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微前端"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

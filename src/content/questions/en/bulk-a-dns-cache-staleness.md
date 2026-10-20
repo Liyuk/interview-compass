@@ -57,4 +57,7 @@ followUps:
   - How would you confirm that long-idle clients have left the old nodes?
   - Why should failover not rely on DNS alone?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -44,4 +44,7 @@ source:
     label: Interview Compass coverage-led original expansion batch 2026-10-17 C
 followUps:
   - 测试发现键盘用户无法完成核心设置流程，但触屏操作正常，发布日期已对外承诺。你会怎样评估影响、选择修复范围并沟通上线条件？
+perspectiveReview: inferred
+qualityTier: extended
+perspective: candidate
 ---

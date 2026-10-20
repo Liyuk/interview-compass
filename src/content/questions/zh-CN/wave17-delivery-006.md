@@ -44,4 +44,7 @@ relatedQuestions:
   - questionId: prioritization-limited-resources
     relation: 规划条件变化
     contrast: 从目标不变时重新调整计划，转为规划开始前主动选择最重要的工作。
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

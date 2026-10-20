@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的系统设计题：人与 AI 协作写作"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

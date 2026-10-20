@@ -59,4 +59,7 @@ source:
   - attribution: original
     label: 'The author''s interview sequence: whether a causal argument is solid'
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

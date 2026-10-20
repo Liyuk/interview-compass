@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, cross-region data compliance"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

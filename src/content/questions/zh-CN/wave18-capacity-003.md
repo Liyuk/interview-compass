@@ -36,4 +36,7 @@ source:
 topics:
   - resource-allocation
   - execution
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

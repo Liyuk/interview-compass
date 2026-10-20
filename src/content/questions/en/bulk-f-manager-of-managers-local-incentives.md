@@ -41,4 +41,7 @@ source:
     label: 为什么需要管理管理者，以及什么样的人适合这段责任
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/managing-managers-and-leader-profile/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

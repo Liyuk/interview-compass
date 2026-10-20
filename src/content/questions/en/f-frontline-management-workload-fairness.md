@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, assessing workload reasonably"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

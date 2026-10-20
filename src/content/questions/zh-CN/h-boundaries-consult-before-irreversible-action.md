@@ -41,4 +41,7 @@ source:
 followUps:
   - 如果等待授权本身会扩大损害，什么最小动作可以先执行？
   - 怎样保存证据以便后续区分原始数据、脚本影响和恢复动作？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: how a funnel is built"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

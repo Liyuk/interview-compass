@@ -8,13 +8,13 @@ question: >-
   As an important project enters promotion review, two contributors both say they proposed the key solution.
   The project record contains the final decision but not the discussion. As a participant or lead, how would
   you reconstruct events, describe contributions, and handle what remains uncertain?
-intent: >-
-  Assess whether under scarce opportunities and personal incentives you can use evidence rather than volume to
-  define contribution and state uncertainty honestly.
-signals:
-  - Distinguishes problem framing, solution development, decision-making, execution, and outcomes
-  - Cross-checks verifiable artifacts and participant accounts while identifying record gaps
-  - Avoids assigning joint results to one person and proposes fair wording or better future records
+intent: "Assess whether under promotion or resource-review incentives you reconstruct different contributions from evidence, represent shared work fairly, and state uncertainty honestly."
+signals: ["Distinguish problem framing, proposal, key decision, execution, collaboration, and outcomes.", "Cross-check documents, decision history, artifacts, or participants and mark record gaps.", "Do not assign team outcomes to one person; when evidence is incomplete, state the credible range instead of relying on volume.", "Propose fair representation, independent calibration, and future contribution records."]
+anchors:
+  notPassing: "Uses memory or authority to decide credit."
+  passing: "Finds records and separates contribution types."
+  excellent: "Cross-checks individual and team contributions and discloses uncertainty."
+  exceptional: "Manages conflicts of interest and evidence gaps through independent review and better records without letting scarce rewards distort attribution."
 primaryCapability: work-responsibility.attribution
 topics:
   - promotion
@@ -34,18 +34,18 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - hiring
 formats:
   - behavioral
+weakAnswer: "Claiming all project outcomes because you are a candidate, or hiding verifiable personal contribution to appear modest."
 source:
   - attribution: original
     label: Interview Compass 原创题目扩充批次 600–626
-followUps:
-  - >-
-    If the review is short and only one document can be submitted, how would you compress it without hiding
-    the dispute?
-  - If you are also a promotion candidate, who should independently calibrate attribution?
+followUps: ["If review time is short and one document is required, how would you compress the case without hiding a disputed point?", "If you are also a promotion candidate, who should independently calibrate attribution?"]
+perspective: "candidate"
+perspectiveReview: "reviewed"
+qualityTier: "core"
+
 ---

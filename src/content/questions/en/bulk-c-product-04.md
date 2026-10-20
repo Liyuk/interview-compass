@@ -45,4 +45,7 @@ source:
     label: 产品概览作为决策模型：事实、推断与待验证问题
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/09/product-overview-is-a-decision-model/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

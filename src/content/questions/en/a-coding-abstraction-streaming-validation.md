@@ -57,4 +57,7 @@ followUps:
   - How do you prevent recursive overflow on long reference chains?
   - How should diagnostics show values derived from multiple sources?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

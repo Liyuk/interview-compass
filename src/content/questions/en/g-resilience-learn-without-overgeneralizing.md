@@ -26,4 +26,7 @@ scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["How would you get independent calibration if key reviewers cannot provide more detail?","What evidence would make you stop defending the original proposal?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：韧性与恢复"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -37,4 +37,7 @@ source:
 topics:
   - product-thinking
   - commercialization
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -36,4 +36,7 @@ source:
   - attribution: inspired
     label: 'Tech Interview Handbook: interview process and behavioral evidence'
     url: https://github.com/yangshun/tech-interview-handbook
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

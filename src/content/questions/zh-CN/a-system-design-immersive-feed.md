@@ -31,4 +31,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的系统设计题：沉浸式信息流"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

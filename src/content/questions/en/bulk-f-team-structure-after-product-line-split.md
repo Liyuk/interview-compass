@@ -45,4 +45,7 @@ source:
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/01/team-growth-is-not-expansion/zh.md
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -48,4 +48,7 @@ followUps:
   - 【读查询变快但写入成本显著增加时，怎样决定索引取舍？】新增复合索引让核心查询耗时下降一半，但写入延迟和存储费用上升，后台批量更新也更容易超时。你会如何判断是否保留该索引？
   - 索引创建期间怎样评估锁和复制延迟风险？
   - 何时应修改查询或数据模型而不是继续堆索引？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -33,4 +33,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, grievances during policy rollout"
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

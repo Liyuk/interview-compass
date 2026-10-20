@@ -51,4 +51,7 @@ followUps:
   - 怎样确认训练数据没有使用预测时点之后才能知道的信息？
   - 如果线上和训练环境无法共用同一段计算代码，如何持续验证两边结果一致？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: your own model and the industry's model"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

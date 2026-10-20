@@ -49,4 +49,7 @@ followUps:
     If an owner fears correction will hurt customer trust or launch timing, how would you compare short- and
     long-term effects?
   - What evidence would justify keeping the claim, and what would require withdrawing it immediately?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

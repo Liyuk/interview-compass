@@ -46,4 +46,7 @@ source:
 followUps:
   - If there is too little data to estimate incident likelihood, what low-cost evidence would you gather?
   - If the team explicitly defers the work, what record and monitoring signal would you leave?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

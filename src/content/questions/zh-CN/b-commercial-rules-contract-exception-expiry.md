@@ -43,4 +43,7 @@ followUps:
   - 如果例外必须续期但业务负责人无法及时确认，系统如何处理？
   - 如何发现散落在代码中的历史客户特判？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -37,4 +37,7 @@ source:
     url: https://zhuanlan.zhihu.com/p/66575222
   - attribution: original
     label: "作者的面试提问套路"
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

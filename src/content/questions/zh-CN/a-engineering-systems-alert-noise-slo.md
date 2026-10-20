@@ -40,4 +40,7 @@ source:
   - attribution: inspired
     label: DNXLabs DevOps 题库的主题覆盖；题面为本站独立编写
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

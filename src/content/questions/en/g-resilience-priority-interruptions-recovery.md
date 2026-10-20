@@ -26,4 +26,7 @@ scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["How would you escalate when every requester considers their work urgent?","How would you tell whether an adjustment merely shifts the load to someone else?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：韧性与恢复"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

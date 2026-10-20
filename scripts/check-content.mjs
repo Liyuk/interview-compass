@@ -2,12 +2,11 @@ import { readFile, glob } from 'node:fs/promises';
 import * as yaml from 'js-yaml';
 import { createHash } from 'node:crypto';
 import { applicabilityFingerprintInput, validateApplicability } from '../src/lib/question-applicability.ts';
-import { crossDomainPaths, domains, taxonomy } from '../src/lib/taxonomy.ts';
+import { questionSchema, validateBilingualPairs, validateNoDuplicateTitles, validateQuestionRelationships } from '../src/lib/content-model.ts';
+import { questionQualityWarnings } from '../src/lib/question-quality.ts';
+import { crossDomainPaths, domains } from '../src/lib/taxonomy.ts';
 import { questionCollections, validateQuestionCollections } from '../src/lib/question-collections.ts';
 
-const facets = ['topics', 'roles', 'responsibilityScopes', 'careerTracks', 'scenarios', 'formats'];
-const required = ['questionId', 'kind', 'status', 'locale', 'title', 'question', 'intent', 'signals', 'primaryCapability', ...facets, 'source'];
-const provenance = new Set(['adapted', 'derived', 'inspired', 'original']);
 const forbidden = /^(answer|sampleAnswer|rubric|scorecard|recommendation|score)$/i;
 const errors = [];
 const records = [];
@@ -17,52 +16,28 @@ for await (const path of glob('src/content/questions/**/*.md')) {
   const source = await readFile(path, 'utf8');
   const match = source.match(/^---\s*\n([\s\S]*?)\n---/);
   if (!match) { fail('missing YAML frontmatter'); continue; }
-  const data = yaml.load(match[1]);
+  let data;
+  try { data = yaml.load(match[1]); } catch (error) { fail(`invalid YAML: ${error.message}`); continue; }
   if (!data || typeof data !== 'object') { fail('frontmatter must be an object'); continue; }
-  const missing = required.filter((key) => data[key] === undefined || data[key] === null);
-  if (missing.length) { fail(`missing fields ${missing.join(', ')}`); continue; }
-  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(data.questionId)) fail('questionId must be stable kebab-case');
-  if (data.kind !== 'question' || !['draft', 'published'].includes(data.status) || !['zh-CN', 'en'].includes(data.locale)) fail('invalid kind, status, or locale');
-  if (!path.includes(`/${data.locale}/`)) fail(`file is not under the ${data.locale} directory`);
-  if (!taxonomy.capabilities.includes(data.primaryCapability)) fail(`unknown primary capability ${data.primaryCapability}`);
-  for (const facet of facets) {
-    if (!Array.isArray(data[facet]) || data[facet].some((id) => !taxonomy[facet].includes(id))) fail(`unknown or malformed ${facet} value`);
+  const parsed = questionSchema.safeParse(data);
+  if (!parsed.success) {
+    fail(parsed.error.issues.map((issue) => `${issue.path.join('.') || 'record'}: ${issue.message}`).join('; '));
+    continue;
   }
-  if (!Array.isArray(data.signals) || data.signals.length === 0 || data.signals.some((item) => typeof item !== 'string' || !item.trim())) fail('signals must be a non-empty list of strings');
-  if (!Array.isArray(data.source) || data.source.length === 0) fail('source must declare provenance');
-  else for (const item of data.source) {
-    if (!provenance.has(item.attribution)) fail(`unknown source attribution ${item.attribution}`);
-    else if (item.attribution !== 'original' && !item.url) fail(`${item.attribution} source needs a url`);
-  }
+  const record = parsed.data;
+  if (!path.includes(`/${record.locale}/`)) fail(`file is not under the ${record.locale} directory`);
   if (Object.keys(data).some((key) => forbidden.test(key))) fail('public question content cannot contain answers or hiring judgments');
-  records.push({ ...data, path });
+  records.push({ ...record, path });
 }
 
 const published = records.filter((record) => record.status === 'published');
+const contractRecords = published.map(({ path: _path, ...record }) => record);
 const grouped = new Map();
 for (const record of published) grouped.set(record.questionId, [...(grouped.get(record.questionId) ?? []), record]);
-for (const [id, pair] of grouped) {
-  for (const locale of ['zh-CN', 'en']) {
-    const matches = pair.filter((record) => record.locale === locale);
-    if (matches.length !== 1) errors.push(`${id}: expected exactly one ${locale} translation, found ${matches.length}`);
-  }
-  if (new Set(pair.map((record) => record.primaryCapability)).size > 1) errors.push(`${id}: primary capability differs between locales`);
-  for (const facet of facets) {
-    const values = pair.map((record) => [...record[facet]].sort().join('|'));
-    if (new Set(values).size > 1) errors.push(`${id}: ${facet} differs between locales`);
-  }
-}
-const wording = new Map();
-for (const record of published) {
-  for (const relation of record.relatedQuestions ?? []) {
-    if (!published.some((candidate) => candidate.questionId === relation.questionId && candidate.locale === record.locale)) {
-      errors.push(`${record.questionId}: missing ${record.locale} related question ${relation.questionId}`);
-    }
-  }
-  const key = `${record.locale}:${record.question.replace(/\s+/g, ' ').trim().toLowerCase()}`;
-  if (wording.has(key) && wording.get(key) !== record.questionId) errors.push(`duplicate ${record.locale} wording in ${wording.get(key)} and ${record.questionId}`);
-  wording.set(key, record.questionId);
-}
+errors.push(...validateBilingualPairs(contractRecords));
+errors.push(...validateQuestionRelationships(contractRecords));
+errors.push(...validateNoDuplicateTitles(contractRecords));
+const qualityWarnings = questionQualityWarnings(published);
 
 const publishedIds = new Set(published.map((record) => record.questionId));
 const analysesPath = 'src/data/question-specific-analyses.json';
@@ -148,4 +123,8 @@ if (errors.length) {
   process.exit(1);
 }
 const ids = new Set(published.map((record) => record.questionId));
+const warningCounts = new Map();
+for (const warning of qualityWarnings) warningCounts.set(warning.code, (warningCounts.get(warning.code) ?? 0) + 1);
+console.log(`Question quality warnings: ${qualityWarnings.length} (${[...warningCounts].map(([code, count]) => `${code} ${count}`).join(', ') || 'none'}).`);
+for (const warning of qualityWarnings.slice(0, 12)) console.log(`  ${warning.questionId} (${warning.locale}): ${warning.message}`);
 console.log(`Validated ${records.length} question records (${ids.size} published questions, bilingual).`);

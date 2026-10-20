@@ -68,4 +68,7 @@ followUps:
     conditions?
   - How can a review remain coaching with an exit condition instead of becoming permanent approval?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

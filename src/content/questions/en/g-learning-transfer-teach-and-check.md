@@ -45,4 +45,7 @@ source:
 followUps:
   - If people can repeat the steps but still use old habits in an incident, how would you locate the barrier?
   - How would you tell that the method itself does not fit the team rather than training being insufficient?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

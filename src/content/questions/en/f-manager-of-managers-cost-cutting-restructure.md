@@ -5,12 +5,14 @@ status: published
 locale: en
 title: The industry matures or declines and the company demands cost reduction and efficiency. How do you merge architectures and redundant organizations while keeping the team from being just a cost center?
 question: The industry matures or declines and the company stops investing heavily, demanding extreme cost reduction and efficiency. How do you carry out architecture mergers and the adjustment of redundant organizations, treat people fairly in the process, and turn the technical team from a cost center into an amplifier of effectiveness?
-intent: See how you handle organizational contraction responsibly, meeting the cost goal while protecting people and long-term capability.
-signals:
-  - First uses data to identify true redundancy and critical capabilities that cannot be cut, rather than cutting across the board
-  - Communicates honestly with affected people, follows policy and compliance, and does what it can to offer options such as transfers
-  - Says how the stability of key systems and team morale are kept after merging
-  - Turns cost cutting into outcomes that make the business more efficient and shows value with measurable results
+intent: "Assess whether you make evidence-based capability trade-offs under cost or restructuring pressure, treat affected employees lawfully and respectfully, and demonstrate results through business outcomes rather than slogans."
+signals: ["Break down required financial targets, cost structure, capability dependencies, and service risks; validate redundancy and irreplaceable skills or systems.", "Compare consolidation, scope reduction, automation, attrition, and layoffs by savings, transition cost, and risk rather than assuming layoffs work best.", "Own employee communication, confidentiality, compliance, support, and redeployment responsibilities while acknowledging unavoidable harm.", "Plan continuity and post-change measures for total cost, delivery, reliability, workload, and business impact with review points."]
+weakAnswer: "Cutting headcount uniformly from an org chart and treating savings as success while ignoring system risk, skill concentration, employee process, and actual utility after the change."
+anchors:
+  notPassing: "Promises a budget or headcount cut without a baseline, capability protections, or employee considerations."
+  passing: "Quantifies major costs, compares at least two options, and identifies a continuity or people risk."
+  excellent: "Uses capability and risk evidence to assess savings and transition costs, supports employees through process, and sets outcome measures."
+  exceptional: "Explicitly compares near-term savings with long-term capability and reliability, protects critical controls and dignity, and revises the plan from staged evidence."
 primaryCapability: people-organization.manager-of-managers
 topics: [management, resource-allocation, planning, ethics]
 roles:
@@ -22,14 +24,16 @@ roles:
   - ai-engineer
 responsibilityScopes: [organization]
 careerTracks:
+  - team-manager
   - senior-manager
-  - executive
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
-followUps:
-  - Among those asked to be cut is a key member you think is very important. What do you do?
-  - System stability declines after the cuts. How do you explain it upward?
+followUps: ["If the required cuts would remove critical on-call coverage, how would you quantify and present that trade-off?", "If costs fall but incidents and key departures rise after restructuring, what would you verify first and when would you change course?"]
 source:
   - attribution: original
     label: "The author's leveled interview framework, senior manager"
+perspective: "manager"
+perspectiveReview: "reviewed"
+qualityTier: "core"
+
 ---

@@ -4,18 +4,12 @@ kind: question
 status: published
 locale: en
 title: How do you value a one-time sale that creates ongoing service obligations?
-question: >-
-  A product is sold once but requires long-term support and upgrades. Revenue is growing while the
-  service queue accumulates. How would you decide whether these sales still create value?
-intent: >-
-  Assess whether you analyze revenue, ongoing service obligations, customer outcomes, and capacity
-  cost across one value chain.
+question: A product is sold once but requires long-term support and upgrades. Revenue is growing while the service queue accumulates. How would you decide whether these sales still create value?
+intent: Assess whether you analyze revenue, ongoing service obligations, customer outcomes, and capacity cost across one value chain.
 signals:
   - Separates one-time revenue, fulfillment obligations, ongoing support cost, and customer value.
   - Compares service burden, renewal, and expansion across customers or product versions.
-  - >-
-    Proposes verifiable changes to pricing, service boundaries, product quality, or sales
-    qualification.
+  - Proposes verifiable changes to pricing, service boundaries, product quality, or sales qualification.
 primaryCapability: domain-modeling.business-context
 topics:
   - product-thinking
@@ -36,7 +30,6 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - operations-review
@@ -48,4 +41,13 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass 原创扩充（2026-10-14）
+perspective: candidate
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: Compares contract revenue with list price while ignoring ongoing support, delivery capacity, and customer outcomes.
+anchors:
+  notPassing: Counts one-time revenue but ignores fulfillment, support, and service capacity.
+  passing: Includes ongoing service costs and explains the continuing value received by customers.
+  excellent: Compares net contribution, renewal outcomes, and service burden across customers or plans.
+  exceptional: Uses segment evidence to adjust pricing, commitments, or service design and checks actual delivery outcomes.
 ---

@@ -31,4 +31,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：推荐系统的成本
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

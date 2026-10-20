@@ -42,4 +42,7 @@ source:
   - attribution: inspired
     label: DevOps Interview Questions：制品管理与发布
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -21,4 +21,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["How would you connect journeys while minimizing personal data?","Who should maintain cross-team dashboards?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微前端"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -39,4 +39,7 @@ source:
   - attribution: inspired
     label: System Design Primer：跨区域系统设计
     url: https://github.com/donnemartin/system-design-primer
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

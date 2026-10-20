@@ -40,4 +40,7 @@ source:
 followUps:
   - 如果赞助人要求你先上线再观察，你会怎样说明不可逆（可以安全撤回）影响与可逆步骤？
   - 如果后续数据证明暂停造成了重大机会成本，你会如何复盘当时的判断？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

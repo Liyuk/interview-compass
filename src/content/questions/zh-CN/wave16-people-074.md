@@ -39,4 +39,7 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 D
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -69,4 +69,7 @@ followUps:
   - 如果旧结果存在明显错误，怎样兼顾历史真实性与纠错要求？
   - 如何让后续趋势分析选择适当版本并保持可比？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -43,4 +43,7 @@ source:
     label: 职场发展问题：晋升与面试前的完整自查清单
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

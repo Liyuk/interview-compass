@@ -41,4 +41,7 @@ source:
     label: 筛选人和面试官到底在看什么（基础：从现象推回原理）
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

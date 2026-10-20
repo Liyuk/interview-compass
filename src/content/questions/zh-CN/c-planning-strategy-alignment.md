@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：战略目标是否一致"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

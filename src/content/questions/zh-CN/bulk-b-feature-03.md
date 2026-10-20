@@ -38,4 +38,7 @@ source:
   - attribution: inspired
     label: dataskew-io/data-engineering-interview-questions：特征所有权与下游影响
     url: https://github.com/dataskew-io/data-engineering-interview-questions
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

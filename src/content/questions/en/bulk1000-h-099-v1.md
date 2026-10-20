@@ -53,4 +53,7 @@ source:
     label: Liyuk 博客：责任、贡献归属与工作边界；题目为本站重新组织
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

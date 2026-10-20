@@ -26,4 +26,7 @@ scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["如果继续实验的成本超过潜在收益，如何处理证据不足？","怎样防止把“未证明无效”解释成“已经证明有效”？"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 C"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -37,4 +37,7 @@ formats:
 source:
   - attribution: original
     label: 原创：测试数据治理与隔离
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

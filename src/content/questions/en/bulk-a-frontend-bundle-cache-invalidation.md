@@ -54,4 +54,7 @@ followUps:
   - 【Static assets still show old content after ETags are added, while clearing caches causes a traffic spike. How would you design HTTP cache validation and invalidation?】Static assets still show old content after ETags are added, while clearing caches causes a traffic spike. How would you design HTTP cache validation and invalidation?
   - If HTML must update immediately while hashed assets can be cached long-term, how should deployment coordinate them?
   - How would you diagnose inconsistent behavior across browser cache, service worker, and CDN layers?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

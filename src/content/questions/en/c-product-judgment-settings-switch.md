@@ -34,4 +34,7 @@ source:
   - attribution: derived
     label: "Product sense: how engineering and product talk through whether a feature is worth building"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/03/product-judgment-for-engineers/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

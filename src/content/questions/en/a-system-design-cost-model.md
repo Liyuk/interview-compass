@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: cost estimation from an engineering view"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

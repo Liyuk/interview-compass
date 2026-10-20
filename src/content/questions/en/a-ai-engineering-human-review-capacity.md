@@ -69,4 +69,7 @@ relatedQuestions:
     contrast: >-
       This question focuses on routing individual outputs and review capacity; the related question focuses on
       overall speed, review, and high-value customer outcomes.
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

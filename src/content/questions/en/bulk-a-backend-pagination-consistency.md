@@ -52,4 +52,7 @@ followUps:
   - >-
     A cursor-paginated list changes as records are added, deleted, and updated. The product requires no duplicates or
     missed matching records. How would you define the semantics?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

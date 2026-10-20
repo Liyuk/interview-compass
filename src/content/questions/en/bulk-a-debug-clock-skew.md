@@ -54,4 +54,7 @@ followUps:
   - If a global time order cannot be established, how would you represent “happened before”?
   - How would you tell whether the observed order came from clock skew, message delay, or a business rule?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

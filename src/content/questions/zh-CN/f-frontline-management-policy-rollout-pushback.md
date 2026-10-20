@@ -33,4 +33,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：制度推进中的底层怨言"
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

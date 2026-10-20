@@ -38,4 +38,7 @@ source:
   - attribution: inspired
     label: DevOps Interview Questions：环境与部署自动化
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

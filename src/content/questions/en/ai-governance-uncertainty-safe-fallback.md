@@ -57,4 +57,7 @@ followUps:
   - How should the system degrade safely if its low-confidence estimate is itself unreliable?
   - How should excessive refusal be evaluated if users turn to riskier channels?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

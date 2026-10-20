@@ -38,4 +38,7 @@ source:
     url: https://www.hipeople.io/glossary/stress-interview
   - attribution: original
     label: "作者的面试提问套路"
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

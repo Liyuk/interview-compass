@@ -58,4 +58,7 @@ followUps:
   - If a near-term deal needs a demo, how would you separate it from a long-term product commitment?
   - What new evidence would change your decision to defer?
 relatedQuestions: []
+perspectiveReview: inferred
+qualityTier: extended
+perspective: candidate
 ---

@@ -57,4 +57,7 @@ followUps:
   - >-
     If old statements used a different rule, how would you preserve facts and handle the
     discrepancy?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

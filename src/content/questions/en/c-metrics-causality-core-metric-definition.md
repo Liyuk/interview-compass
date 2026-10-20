@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: definition of the core metric"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

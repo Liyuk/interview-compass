@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：低迷期的交付与团队稳定"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

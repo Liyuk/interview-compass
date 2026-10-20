@@ -37,4 +37,7 @@ source:
     url: https://zhuanlan.zhihu.com/p/66575222
   - attribution: original
     label: "The author's interview sequence"
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

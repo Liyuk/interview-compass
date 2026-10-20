@@ -45,4 +45,7 @@ source:
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
 relatedQuestions: []
+perspectiveReview: inferred
+qualityTier: extended
+perspective: candidate
 ---

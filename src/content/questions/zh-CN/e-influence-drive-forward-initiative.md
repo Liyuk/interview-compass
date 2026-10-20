@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：推动前瞻性的事"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

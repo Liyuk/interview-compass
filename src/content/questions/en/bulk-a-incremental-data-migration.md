@@ -38,4 +38,7 @@ source:
   - attribution: inspired
     label: System Design Primer：数据迁移与演进
     url: https://github.com/donnemartin/system-design-primer
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

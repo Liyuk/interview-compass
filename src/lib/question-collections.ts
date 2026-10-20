@@ -4,6 +4,7 @@ import type { Bilingual } from './taxonomy';
 export type CuratedQuestionSet = {
   id: string;
   kind: 'question-set';
+  reviewedCore?: boolean;
   title: Bilingual;
   purpose: Bilingual;
   audience: Bilingual;
@@ -42,7 +43,8 @@ const questionSet = (
   purpose: Bilingual,
   audience: Bilingual,
   entries: CuratedQuestionSet['entries'],
-): CuratedQuestionSet => ({ id, kind: 'question-set', title, purpose, audience, entries });
+  reviewedCore = false,
+): CuratedQuestionSet => ({ id, kind: 'question-set', title, purpose, audience, entries, ...(reviewedCore ? { reviewedCore: true } : {}) });
 const candidateGuide = (
   id: string,
   title: Bilingual,
@@ -65,6 +67,36 @@ export const questionCollections: readonly QuestionCollection[] = [
       entry('bulk-g-recovery-after-public-mistake', '用真实挫折观察复盘、恢复和后续改进。', 'Uses a setback to examine reflection, recovery, and follow-through.'),
       entry('h-attribution-team-vs-personal', '说明团队结果中的个人贡献，并避免夸大归因。', 'Clarifies individual contribution without overstating attribution.'),
     ]),
+  questionSet('core-candidate-preparation', b('候选人准备 · 核心题', 'Candidate preparation · Core questions'),
+    b('从技术判断、业务语境、责任取舍到贡献复盘，练习说明事实、本人行动和可核验结果。', 'Practice explaining facts, personal actions, and verifiable outcomes across technical judgment, business context, responsibility, and reflection.'),
+    b('准备面试或晋升的工程师。', 'Engineers preparing for an interview or promotion.'), [
+      entry('a-databases-read-replica-stale-read', '先说明一致性目标，再解释读副本陈旧数据的取舍。', 'Start with consistency expectations, then explain the trade-offs of stale replica reads.'),
+      entry('b-business-context-whole-then-part', '从用户任务链路建立整体业务理解，再定位局部问题。', 'Build a whole-flow understanding of the user task before diagnosing one part.'),
+      entry('d-capacity-resources-and-scope', '说明资源和责任范围怎样共同影响可交付结果。', 'Explain how resources and responsibility scope shape deliverable outcomes.'),
+      entry('e-communication-risk-update-without-certainty', '在事实不完整时说明已知、未知、行动和更新节点。', 'Separate knowns, unknowns, actions, and update timing when facts are incomplete.'),
+      entry('bulk-g-recovery-after-public-mistake', '复盘公开失误后的承担、修复和后续改变。', 'Reflect on ownership, repair, and subsequent changes after a visible mistake.'),
+      entry('h-attribution-ai-assisted-work-disclosure', '准确说明工具协助、个人判断、验证和结果责任。', 'Clarify tool assistance, personal judgment, verification, and outcome responsibility.'),
+    ], true),
+  questionSet('core-interviewer-evidence', b('面试官校准 · 核心题', 'Interviewer calibration · Core questions'),
+    b('用一组已逐题复核的问题练习验证简历主张、追问实际行动、校准证据，并减少印象判断。', 'Use question-by-question reviewed prompts to verify claims, probe actual actions, calibrate evidence, and reduce impression-based judgments.'),
+    b('设计结构化面试或校准招聘判断的面试官。', 'Interviewers designing structured interviews or calibrating hiring decisions.'), [
+      entry('a-ai-engineering-eval-disagreement', '校准对 AI 工程评估的分歧，先找证据与标准差异。', 'Calibrate disagreement in AI engineering evaluations by examining evidence and standards.'),
+      entry('a-ai-engineering-resume-claim-verification', '把简历中的 AI 项目主张拆成可验证的责任和证据。', 'Turn AI project claims on a résumé into verifiable responsibility and evidence.'),
+      entry('a-ai-engineering-agent-duplicate-side-effect', '用重复副作用情境检验候选人对代理可靠性的判断。', 'Use duplicate side effects to examine judgment about agent reliability.'),
+      entry('exp1500-f-022', '围绕岗位要求与观察证据校准面试官的不同结论。', 'Calibrate differing interviewer conclusions against role requirements and observed evidence.'),
+      entry('g-structured-reflection-project-failure', '追问失败项目中的决策、归因和后续学习。', 'Probe decisions, attribution, and learning in a failed project.'),
+      entry('h-attribution-team-vs-personal', '要求候选人区分个人贡献和团队共同结果。', 'Ask candidates to distinguish personal contribution from shared team outcomes.'),
+    ], true),
+  questionSet('core-manager-evaluation', b('管理者评估与带团队 · 核心题', 'Manager evaluation and team leadership · Core questions'),
+    b('围绕团队责任、人员发展、授权与继任，检验管理判断如何转成清楚的机制和结果。', 'Examine how management judgment becomes clear mechanisms and outcomes across team responsibility, development, delegation, and succession.'),
+    b('承担一线管理、组织设计或管理者发展的负责人。', 'Leaders responsible for frontline management, team design, or manager development.'), [
+      entry('f-frontline-management-absence-test', '检验团队机制在负责人暂时缺席时是否仍能运转。', 'Check whether team mechanisms continue to work when the lead is temporarily absent.'),
+      entry('f-frontline-management-conflict-with-report', '处理与下属的冲突时区分事实、影响和管理责任。', 'Separate facts, impact, and management responsibility in conflict with a report.'),
+      entry('f-growth-development-coach-new-lead', '为新任负责人设置循序渐进的责任和成长证据。', 'Set progressive responsibility and growth evidence for a new lead.'),
+      entry('f-delegation-succession-decision-rights', '把决定权限、上下文、边界和升级条件同步交代清楚。', 'Align decision authority with context, boundaries, and escalation conditions.'),
+      entry('f-delegation-succession-frontline-leaver', '关键负责人离开时兼顾连续性、交接负担和团队支持。', 'Balance continuity, handoff load, and team support when a key lead leaves.'),
+      entry('f-delegation-succession-internal-external-fairness', '用责任需求和时间约束公平比较内部培养与外部招聘。', 'Compare internal development and external hiring fairly against responsibility needs and timing.'),
+    ], true),
   questionSet('technical-selected', b('技术精选', 'Technical essentials'),
     b('从基础、编码、调试、系统设计到工程体系和 AI，按解决问题的顺序练习。', 'Practice in sequence from fundamentals and coding through debugging, system design, engineering systems, and AI.'),
     b('工程、前端、后端、客户端、数据和 AI 工程岗位候选人。', 'Candidates in engineering, frontend, backend, mobile, data, and AI engineering.'), [
@@ -140,10 +172,14 @@ export function validateQuestionCollections(collections: readonly QuestionCollec
   const errors: string[] = [];
   const ids = new Set<string>();
   const byQuestion = new Map<string, Set<string>>();
+  const tierByQuestion = new Map<string, Set<string>>();
   for (const record of records) if (record.status === 'published') {
     const locales = byQuestion.get(record.questionId) ?? new Set<string>();
     locales.add(record.locale);
     byQuestion.set(record.questionId, locales);
+    const tiers = tierByQuestion.get(record.questionId) ?? new Set<string>();
+    tiers.add(record.qualityTier);
+    tierByQuestion.set(record.questionId, tiers);
   }
 
   for (const collection of collections) {
@@ -162,6 +198,7 @@ export function validateQuestionCollections(collections: readonly QuestionCollec
         if (!hasBilingualText(item.rationale)) fail(`entry ${item.questionId} needs a bilingual rationale`);
         const locales = byQuestion.get(item.questionId);
         for (const locale of ['zh-CN', 'en']) if (!locales?.has(locale)) fail(`missing ${locale} question ${item.questionId}`);
+        if (collection.reviewedCore && !tierByQuestion.get(item.questionId)?.has('core')) fail(`reviewed core path includes non-core question ${item.questionId}`);
       }
     } else {
       if (!collection.sections.length) fail('candidate guide has no sections');

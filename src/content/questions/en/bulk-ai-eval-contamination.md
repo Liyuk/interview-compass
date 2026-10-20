@@ -40,4 +40,7 @@ source:
     label: Landed AI Engineer Interview：评测集与数据质量
     url: https://github.com/landedjobs/awesome-ai-engineer-interview
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

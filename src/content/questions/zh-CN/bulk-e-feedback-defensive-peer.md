@@ -46,4 +46,7 @@ source:
     label: Interview Compass Original Expansion Batch 2026-10-16 C
 followUps:
   - 同事说你在会议上打断他，但你记得自己是在补充关键事实。你会怎样了解影响并决定是否改变行为？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

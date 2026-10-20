@@ -43,4 +43,7 @@ followUps:
   - 什么情况下沉默会构成误导？
   - 如何避免把团队贡献完全归为集体而抹去个人责任？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

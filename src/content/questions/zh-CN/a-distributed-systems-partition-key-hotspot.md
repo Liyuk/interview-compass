@@ -38,4 +38,7 @@ source:
 followUps:
   - 如果热点键不能被拆分且查询必须保持排序，你有哪些折中？
   - 如何避免加盐后的写入分散让读取和去重更复杂？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

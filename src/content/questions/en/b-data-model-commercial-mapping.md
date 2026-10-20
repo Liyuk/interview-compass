@@ -31,4 +31,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: mapping commercial concepts into a data model"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -33,4 +33,7 @@ source:
   - attribution: adapted
     label: "工程师为什么需要产品判断：从需求到用户问题的三层追问"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

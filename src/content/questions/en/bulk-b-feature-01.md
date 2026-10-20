@@ -65,4 +65,7 @@ relatedQuestions:
     contrast: >-
       This question is about window, deduplication, exclusions, and missing values; the related one is about
       cutoff time and information leakage.
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

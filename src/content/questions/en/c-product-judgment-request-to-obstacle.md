@@ -33,4 +33,7 @@ source:
   - attribution: adapted
     label: "Why engineers need product judgment: three layers of probing from request to user problem"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

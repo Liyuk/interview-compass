@@ -43,4 +43,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: avoiding and optimizing after personal errors"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

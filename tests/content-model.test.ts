@@ -6,6 +6,8 @@ const question = (locale: 'zh-CN' | 'en', overrides: Record<string, unknown> = {
   kind: 'question',
   status: 'published',
   locale,
+  perspective: 'candidate',
+  perspectiveReview: 'inferred',
   title: locale === 'zh-CN' ? '有限资源下如何取舍？' : 'How do you prioritize under limited capacity?',
   question: locale === 'zh-CN' ? '资源只够做两项时，你会如何制定下一季度规划？' : 'How would you plan next quarter if capacity only allowed two initiatives?',
   intent: locale === 'zh-CN' ? '了解你如何说明目标、取舍依据与暂缓项。' : 'Understand how you explain goals, trade-offs, and deferred work.',
@@ -22,6 +24,45 @@ const question = (locale: 'zh-CN' | 'en', overrides: Record<string, unknown> = {
 });
 
 describe('question content contract', () => {
+  it('accepts a perspective and review state and defaults missing quality tier to extended', () => {
+    expect(parseQuestionRecord(question('zh-CN'))).toMatchObject({
+      perspective: 'candidate',
+      perspectiveReview: 'inferred',
+      qualityTier: 'extended',
+    });
+    expect(parseQuestionRecord(question('en', {
+      perspective: 'interviewer',
+      perspectiveReview: 'reviewed',
+      qualityTier: 'core',
+      signals: ['Defines evidence', 'Tests alternatives', 'Connects the decision to outcomes'],
+      followUps: ['What evidence changed the decision?', 'What alternative did you reject?'],
+      weakAnswer: 'Relies on an unsupported general claim.',
+      anchors: { notPassing: 'No evidence', passing: 'One relevant example', excellent: 'Compares evidence', exceptional: 'Builds a repeatable method' },
+    }))).toMatchObject({ perspective: 'interviewer', qualityTier: 'core' });
+  });
+
+  it('rejects unknown perspective, review-state, and quality-tier values', () => {
+    expect(() => parseQuestionRecord(question('zh-CN', { perspective: 'reviewer' }))).toThrow(/perspective/i);
+    expect(() => parseQuestionRecord(question('zh-CN', { perspectiveReview: 'auto' }))).toThrow(/perspectiveReview/i);
+    expect(() => parseQuestionRecord(question('zh-CN', { qualityTier: 'gold' }))).toThrow(/qualityTier/i);
+  });
+
+  it('requires complete question-specific evidence fields for core questions', () => {
+    const core = {
+      perspective: 'candidate', perspectiveReview: 'reviewed', qualityTier: 'core',
+      signals: ['Signal one', 'Signal two', 'Signal three'],
+      followUps: ['First probe', 'Second probe'],
+      weakAnswer: 'A claim without a concrete example.',
+      anchors: { notPassing: 'No evidence', passing: 'Basic evidence', excellent: 'Compared evidence', exceptional: 'Repeatable impact' },
+    };
+    expect(() => parseQuestionRecord(question('zh-CN', { ...core, signals: ['Only one'] }))).toThrow(/3.*4|signals/i);
+    expect(() => parseQuestionRecord(question('zh-CN', { ...core, followUps: ['Only one'] }))).toThrow(/2.*3|followUps/i);
+    expect(() => parseQuestionRecord(question('zh-CN', { ...core, weakAnswer: undefined }))).toThrow(/weakAnswer/i);
+    expect(() => parseQuestionRecord(question('zh-CN', { ...core, anchors: undefined }))).toThrow(/anchors/i);
+    expect(() => parseQuestionRecord(question('zh-CN', { ...core, perspectiveReview: 'inferred' }))).toThrow(/reviewed/i);
+    expect(parseQuestionRecord(question('zh-CN', core))).toMatchObject({ qualityTier: 'core' });
+  });
+
   it('requires a prompt, intent, signals, and exactly one known primary capability', () => {
     expect(parseQuestionRecord(question('zh-CN'))).toMatchObject({ questionId: 'prioritization-under-limited-capacity' });
     expect(() => parseQuestionRecord(question('zh-CN', { intent: '' }))).toThrow(/intent/i);
@@ -62,6 +103,49 @@ describe('question content contract', () => {
   it('keeps one primary capability across both languages', () => {
     const errors = validateBilingualPairs([question('zh-CN'), question('en', { primaryCapability: 'delivery.capacity-planning' })]);
     expect(errors).toContainEqual(expect.stringMatching(/capability differs/i));
+  });
+
+  it('keeps perspective, review state, and tier aligned across bilingual records', () => {
+    expect(validateBilingualPairs([
+      question('zh-CN'),
+      question('en', { perspective: 'interviewer' }),
+    ])).toContainEqual(expect.stringMatching(/perspective differs/i));
+    expect(validateBilingualPairs([
+      question('zh-CN'),
+      question('en', { perspectiveReview: 'reviewed', qualityTier: 'core',
+        signals: ['One', 'Two', 'Three'], followUps: ['One', 'Two'], weakAnswer: 'Weak.',
+        anchors: { notPassing: 'One', passing: 'Two', excellent: 'Three', exceptional: 'Four' } }),
+    ])).toContainEqual(expect.stringMatching(/quality tier differs/i));
+  });
+
+  it('requires bilingual core signals and follow-ups to have matching counts', () => {
+    const core = (locale: 'zh-CN' | 'en', overrides: Record<string, unknown> = {}) => question(locale, {
+      perspectiveReview: 'reviewed', qualityTier: 'core',
+      signals: ['Signal one', 'Signal two', 'Signal three'],
+      followUps: ['First probe', 'Second probe'],
+      weakAnswer: 'An unsupported general claim.',
+      anchors: { notPassing: 'No evidence', passing: 'Basic evidence', excellent: 'Compared evidence', exceptional: 'Repeatable impact' },
+      ...overrides,
+    });
+    const errors = validateBilingualPairs([
+      core('zh-CN'),
+      core('en', { signals: ['Signal one', 'Signal two', 'Signal three', 'Signal four'] }),
+    ]);
+
+    expect(errors).toContainEqual(expect.stringMatching(/signals count differs/i));
+    expect(validateBilingualPairs([
+      core('zh-CN'),
+      core('en', { followUps: ['First probe', 'Second probe', 'Third probe'] }),
+    ])).toContainEqual(expect.stringMatching(/followUps count differs/i));
+  });
+
+  it('limits core career tracks and responsibility scopes to two values', () => {
+    expect(() => parseQuestionRecord(question('zh-CN', {
+      perspectiveReview: 'reviewed', qualityTier: 'core',
+      signals: ['One', 'Two', 'Three'], followUps: ['One', 'Two'], weakAnswer: 'No evidence.',
+      anchors: { notPassing: 'One', passing: 'Two', excellent: 'Three', exceptional: 'Four' },
+      careerTracks: ['individual-contributor', 'team-manager', 'senior-manager'],
+    }))).toThrow(/at most 2 career tracks/i);
   });
 
   it('does not require draft questions to be indexed or translated', () => {

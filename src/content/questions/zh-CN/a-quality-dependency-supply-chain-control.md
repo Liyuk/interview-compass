@@ -25,4 +25,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["尚无补丁但服务正被扫描利用时，怎样选择临时控制？","如何证明所有实例都已修复？"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 D"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

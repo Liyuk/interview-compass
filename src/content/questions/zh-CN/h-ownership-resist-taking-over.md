@@ -42,4 +42,7 @@ source:
 followUps:
   - 如果把责任交回去会使近期目标面临延期，你会怎样协商范围和风险接受者？
   - 如何判断自己是在提供必要帮助，还是在掩盖组织缺少能力或授权？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

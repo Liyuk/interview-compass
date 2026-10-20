@@ -71,4 +71,7 @@ followUps:
     order dependence or shared state?
   - If failure occurs only in CI, how would you distinguish machine load from configuration differences?
   - Can serializing the test be a temporary mitigation, and when must the root cause still be fixed?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -55,4 +55,7 @@ followUps:
   - If an external write completed but its response was lost, what should cancellation mean?
   - How would you verify cleanup also runs after abnormal exits?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

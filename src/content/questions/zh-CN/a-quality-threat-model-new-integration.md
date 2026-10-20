@@ -25,4 +25,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["时间有限时，如何选择必须验证的攻击路径？","哪些风险需要设计变更而非增加监控？"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 D"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

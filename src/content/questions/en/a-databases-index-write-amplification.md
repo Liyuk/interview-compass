@@ -48,4 +48,7 @@ followUps:
   - 【How do you decide on an index when reads improve but write cost rises?】A composite index halves latency for a core query, but write latency and storage cost rise, and batch updates time out more often. How would you decide whether to keep it?
   - How do you assess lock and replication-lag risk during index creation?
   - When should you change query or data model instead of adding indexes?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

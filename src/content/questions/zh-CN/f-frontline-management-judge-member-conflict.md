@@ -12,7 +12,9 @@ signals:
   - 说明什么情况下直接裁决，什么情况下让双方自己解决，并给出依据
   - 处理之后跟进关系是否恢复，而不是当场平息就结束
 primaryCapability: people-organization.frontline-management
-topics: [management, conflict-resolution]
+topics:
+  - management
+  - conflict-resolution
 roles:
   - manager
   - engineering
@@ -20,16 +22,31 @@ roles:
   - backend
   - mobile
   - ai-engineer
-responsibilityScopes: [team]
+responsibilityScopes:
+  - team
 careerTracks:
   - team-manager
   - senior-manager
-scenarios: [interview, hiring, self-reflection]
-formats: [behavioral, case]
+scenarios:
+  - interview
+  - hiring
+  - self-reflection
+formats:
+  - behavioral
+  - case
 followUps:
   - 两个人各执一词，你又无法核实，怎么办？
   - 其中一个人是你信任的老员工，你怎么保持公平？
 source:
   - attribution: original
-    label: "作者的面试提问套路：员工之间的冲突与判断"
+    label: 作者的面试提问套路：员工之间的冲突与判断
+perspective: manager
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 按资历、关系或第一印象选边，没有分别收集和核对双方信息。
+anchors:
+  notPassing: 依据关系或第一印象站队，没有分别核对事实。
+  passing: 分别听取双方说法，标明事实、解释与诉求。
+  excellent: 根据证据和风险选择由双方协商或由经理裁决。
+  exceptional: 告知依据与责任人，回访冲突影响并检查是否存在流程原因。
 ---

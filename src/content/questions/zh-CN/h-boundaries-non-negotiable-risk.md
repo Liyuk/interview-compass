@@ -47,4 +47,7 @@ source:
     label: 二线管理的治理底线：安全、公平与权力如何被约束
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/governance-boundaries-for-managers/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -22,4 +22,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["如果某个子应用错过事件，页面如何恢复一致？","什么时候应该使用共享 API 而不是事件？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微前端"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

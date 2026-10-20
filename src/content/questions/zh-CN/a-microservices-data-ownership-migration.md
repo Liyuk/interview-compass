@@ -23,4 +23,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["过渡期双写出现分歧时，谁的值为准？","如何证明所有旧客户端已迁移？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微服务"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

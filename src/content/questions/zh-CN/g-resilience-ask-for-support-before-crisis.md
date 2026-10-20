@@ -26,4 +26,7 @@ scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["如果求助被拒绝但风险在累积，下一步怎样保护交付？","如何避免把求助描述成对同事能力的否定？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：韧性与恢复"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

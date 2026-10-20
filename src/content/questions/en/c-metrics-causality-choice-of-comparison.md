@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: who it is compared against"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -47,4 +47,7 @@ followUps:
   - When could silence become misleading?
   - How do you avoid erasing individual accountability in collective credit?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -51,4 +51,7 @@ followUps:
     If older applications lack the risk result available at the time, how would you represent what cannot be
     reproduced?
   - Which changes require a new rule version, and which only correct input data?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

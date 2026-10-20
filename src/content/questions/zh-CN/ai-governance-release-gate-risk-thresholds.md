@@ -45,4 +45,7 @@ formats:
 followUps:
   - 业务方要求按期发布时，什么证据可以支持例外？
   - 样本量太小而无法证明低风险时，你会怎样决策？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

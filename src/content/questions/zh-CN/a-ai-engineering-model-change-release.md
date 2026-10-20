@@ -26,4 +26,7 @@ scenarios: ["interview", "hiring"]
 formats: ["planning", "case"]
 followUps: []
 source: [{"attribution": "inspired", "label": "atryx AI 工程题库的主题覆盖；题面为本站独立编写", "url": "https://github.com/atryx/ai-engineer-interview-questions"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -36,4 +36,7 @@ source:
   - attribution: inspired
     label: "ai-engineering-interview-questions：评估工程师题单（仅作主题启发，题面为原创）"
     url: https://github.com/ayushbishtdev/ai-engineering-interview-questions/blob/main/questions/03-ai-evaluation-engineer.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

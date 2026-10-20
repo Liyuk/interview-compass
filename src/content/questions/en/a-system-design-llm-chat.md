@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's system design question, large-model chat"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

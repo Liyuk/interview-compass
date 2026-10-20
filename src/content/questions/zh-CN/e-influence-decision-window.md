@@ -41,4 +41,7 @@ source:
 followUps:
   - 如果高层只接受“是或否”，你怎样用最少信息说明条件式决定？
   - 会前哪些信息应异步提供，哪些必须留到现场讨论？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

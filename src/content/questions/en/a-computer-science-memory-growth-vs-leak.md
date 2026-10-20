@@ -65,4 +65,7 @@ followUps:
   - >-
     Process memory keeps growing while heap-object samples stay stable and container RSS increases. How would you
     distinguish off-heap allocation, fragmentation, and caches?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

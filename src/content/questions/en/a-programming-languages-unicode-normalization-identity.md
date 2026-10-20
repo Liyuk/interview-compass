@@ -54,4 +54,7 @@ followUps:
     If existing accounts were created under an older rule, how would you roll out a new
     normalization policy compatibly?
   - How would you prevent homoglyphs from being used for impersonation or audit confusion?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

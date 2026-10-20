@@ -43,4 +43,7 @@ source:
   - attribution: derived
     label: 资源不足时，怎样不让团队靠透支运转
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/working-under-resource-constraints/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

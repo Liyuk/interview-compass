@@ -50,4 +50,7 @@ followUps:
   - Which actions qualify as active, and why?
   - Should historical monthly-active counts be recomputed after identity merges?
 relatedQuestions: []
+perspectiveReview: inferred
+qualityTier: extended
+perspective: candidate
 ---

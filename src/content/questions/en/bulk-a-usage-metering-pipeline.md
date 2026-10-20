@@ -52,4 +52,7 @@ followUps:
   - >-
     Last month’s usage arrives this month. The contract bills monthly and paid invoices cannot be silently
     overwritten. How would you handle adjustments and notification?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

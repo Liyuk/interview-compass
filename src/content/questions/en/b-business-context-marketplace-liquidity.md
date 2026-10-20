@@ -7,11 +7,13 @@ title: Which side should you address first when a two-sided market has users but
 question: >-
   Visits and registrations are growing, but match success is falling. Demand concentrates in a few regions while
   suppliers are scattered. How would you find the liquidity bottleneck and choose where to invest first?
-intent: Assess whether you segment supply and demand density, wait time, match quality, and cold-start cost.
-signals:
-  - Break down the matching funnel by region, category, time, and participant side.
-  - Separate insufficient volume, geographic mismatch, quality mismatch, and response latency.
-  - Compare targeted supply acquisition, demand aggregation, and narrowing the market.
+intent: "Assess whether you break aggregate marketplace growth into local supply-demand matching problems, locate liquidity bottlenecks by place, category, or time, and choose an investment using match outcomes and unit economics."
+signals: ["Segment exposure, response, match, conversion, and wait time by geography, category, time, and marketplace side.", "Distinguish insufficient volume, geographic mismatch, quality mismatch, low intent, and response latency.", "Compare supply incentives, demand concentration, market narrowing, and matching improvements by cost and cold-start effects.", "Set local liquidity measures and monitor retention and supply concentration after incentives are removed."]
+anchors:
+  notPassing: "Uses aggregate volume without local segmentation."
+  passing: "Breaks down the funnel by at least one market dimension and identifies a side-specific constraint."
+  excellent: "Compares supply, demand, and cold-start investments and validates them through match outcomes."
+  exceptional: "Sets post-incentive sustainability thresholds and controls, quantifies concentration and network effects, and stages market expansion."
 primaryCapability: value-direction.market-economic-judgment
 topics:
   - commercialization
@@ -27,7 +29,6 @@ responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
-  - individual-contributor
   - team-manager
   - senior-manager
 scenarios:
@@ -37,10 +38,13 @@ scenarios:
 formats:
   - case
   - behavioral
-followUps:
-  - Which real supply-demand problems can short-term subsidies hide?
-  - Which measures show that a local market has sustainable liquidity?
+followUps: ["When incentives raise match rate, what evidence shows the market has developed organic liquidity?", "If the market is too fragmented, how would you compare narrowing coverage with adding supply?"]
+weakAnswer: "Using total registrations or visits to declare liquidity and applying broad subsidies without measuring local matches, wait times, or dependence on incentives."
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15
+perspective: "candidate"
+perspectiveReview: "reviewed"
+qualityTier: "core"
+
 ---

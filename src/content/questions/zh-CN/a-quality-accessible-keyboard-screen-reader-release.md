@@ -47,4 +47,7 @@ source:
   - attribution: original
     label: Interview Compass 原创题目扩充批次 600–626
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

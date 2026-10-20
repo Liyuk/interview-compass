@@ -36,4 +36,7 @@ formats:
 source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-17 B
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

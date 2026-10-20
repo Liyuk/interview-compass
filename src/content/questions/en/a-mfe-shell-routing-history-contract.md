@@ -22,4 +22,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["Who should own global navigation and 404 handling?","How would you prevent one child app’s route change from breaking other teams?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微前端"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

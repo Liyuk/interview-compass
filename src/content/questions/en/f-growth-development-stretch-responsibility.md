@@ -44,4 +44,7 @@ source:
   - attribution: derived
     label: 如何设计新人、骨干与负责人三条成长路径
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/06/growth-paths-for-newcomers-core-and-leads/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

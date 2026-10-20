@@ -41,4 +41,7 @@ source:
   - attribution: inspired
     label: DevOps Interview Questions：CI/CD 系统与迁移
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

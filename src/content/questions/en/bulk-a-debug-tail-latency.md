@@ -39,4 +39,7 @@ source:
   - attribution: inspired
     label: System Design Primer：性能与延迟分析
     url: https://github.com/donnemartin/system-design-primer
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

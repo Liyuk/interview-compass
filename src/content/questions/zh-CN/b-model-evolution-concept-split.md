@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "基于模型演进中常见的概念拆分问题原创编写"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

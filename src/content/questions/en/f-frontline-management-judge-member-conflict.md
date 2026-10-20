@@ -12,7 +12,9 @@ signals:
   - Says when to rule directly and when to let the two resolve it, with the basis
   - Follows up afterwards on whether the relationship recovered, rather than stopping once things calm down
 primaryCapability: people-organization.frontline-management
-topics: [management, conflict-resolution]
+topics:
+  - management
+  - conflict-resolution
 roles:
   - manager
   - engineering
@@ -20,16 +22,31 @@ roles:
   - backend
   - mobile
   - ai-engineer
-responsibilityScopes: [team]
+responsibilityScopes:
+  - team
 careerTracks:
   - team-manager
   - senior-manager
-scenarios: [interview, hiring, self-reflection]
-formats: [behavioral, case]
+scenarios:
+  - interview
+  - hiring
+  - self-reflection
+formats:
+  - behavioral
+  - case
 followUps:
   - The two give conflicting accounts and you cannot verify either. What do you do?
   - One of them is a long-serving employee you trust. How do you stay fair?
 source:
   - attribution: original
-    label: "The author's interview sequence, conflict between employees and how to judge it"
+    label: The author's interview sequence, conflict between employees and how to judge it
+perspective: manager
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: Takes sides based on tenure, relationships, or first impressions without hearing and checking both accounts.
+anchors:
+  notPassing: Takes sides based on relationships or first impressions without checking facts separately.
+  passing: Hears each account and separates facts, interpretations, and requests.
+  excellent: Chooses negotiation or a managerial decision based on evidence and risk.
+  exceptional: Explains the basis and owner, follows up on impact, and checks for process causes.
 ---

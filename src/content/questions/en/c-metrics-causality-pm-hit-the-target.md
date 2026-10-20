@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: hitting a metric from a product manager's view"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

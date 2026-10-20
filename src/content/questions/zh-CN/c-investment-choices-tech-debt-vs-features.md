@@ -43,4 +43,7 @@ source:
   - attribution: inspired
     label: em-interviews 工程领导面试题
     url: https://github.com/kaushikb9/em-interviews/blob/main/README.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

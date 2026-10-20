@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：研发效能的度量"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

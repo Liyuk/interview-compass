@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: how the industry is developing in a technical area"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

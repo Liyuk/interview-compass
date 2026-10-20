@@ -43,4 +43,7 @@ source:
   - attribution: derived
     label: 招聘与职业关系（一）：技术招聘，从“招到人”到建立长期判断
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/01/technical-hiring-long-term-judgment/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

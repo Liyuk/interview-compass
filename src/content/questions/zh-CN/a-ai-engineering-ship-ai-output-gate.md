@@ -37,4 +37,7 @@ source:
   - attribution: derived
     label: "把 AI 能力放进工程组织前，先定义哪些边界（授权边界）"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/research/2026/08/ai-engineering-capability-boundaries/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

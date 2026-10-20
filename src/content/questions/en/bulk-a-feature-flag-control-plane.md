@@ -53,4 +53,7 @@ followUps:
   - 【A new feature depends on a remote feature-flag service, but when its control plane is unavailable, user requests block too. How would you design defaults, caching, and an emergency kill path?】A new feature depends on a remote feature-flag service, but when its control plane is unavailable, user requests block too. How would you design defaults, caching, and an emergency kill path?
   - If one tenant must disable a risky feature immediately while others continue, how would you isolate configuration?
   - How would you verify that a config-service failure cannot block the whole site or trigger a cascade?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

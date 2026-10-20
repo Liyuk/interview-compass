@@ -22,4 +22,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["How should a page recover consistency if an app misses an event?","When should a shared API be used instead of an event?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微前端"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

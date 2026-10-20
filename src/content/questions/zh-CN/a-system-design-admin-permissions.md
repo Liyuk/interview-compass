@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的系统设计题：运营后台的权限系统"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

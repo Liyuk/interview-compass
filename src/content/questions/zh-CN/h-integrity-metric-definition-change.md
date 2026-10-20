@@ -43,4 +43,7 @@ source:
 followUps:
   - 如果决策者已经依据原结果承诺预算或晋升，你会怎样安排复核？
   - 如果无法完整还原旧规则，你会如何表达结论的不确定性？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

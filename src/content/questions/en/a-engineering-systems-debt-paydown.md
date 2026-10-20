@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, technical debt"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

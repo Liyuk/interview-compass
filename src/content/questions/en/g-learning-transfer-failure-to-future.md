@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: what a failure leaves for the future"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

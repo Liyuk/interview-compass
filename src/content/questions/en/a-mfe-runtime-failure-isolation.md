@@ -22,4 +22,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["If shell failure cannot be isolated, what is the minimum viable entry point?","How would you keep automatic retries from amplifying downstream failures?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微前端"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -25,4 +25,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["How would you assign or retire a package nobody wants to maintain?","How would you handle consumers that cannot upgrade in sync?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：Monorepo"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

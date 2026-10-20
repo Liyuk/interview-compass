@@ -45,4 +45,7 @@ source:
 followUps:
   - If the experiment is faster but misses a high-impact risk once, how would you adjust the control?
   - Who should help distinguish necessary controls from historical habits?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

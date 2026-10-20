@@ -48,4 +48,7 @@ followUps:
   - 【How do you prevent retry amplification when a webhook receiver fails?】After a partner endpoint fails, the platform retries at fixed intervals. At recovery, request volume spikes to ten times normal. How would you change backoff, jitter, queue isolation, and replay?
   - How do you keep one tenant from blocking all callback queues?
   - What does backoff change for ordered events?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -33,4 +33,7 @@ source:
   - attribution: derived
     label: "技术规划，本质上是业务分析与竞品分析：优化极限与停止条件"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2025/11/technical-planning-business-and-competitive-analysis/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

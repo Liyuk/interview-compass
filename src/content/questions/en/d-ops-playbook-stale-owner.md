@@ -50,4 +50,7 @@ followUps:
   - 【How do you restore runbook reliability when owners and commands are obsolete?】During an incident, an operator follows a runbook whose command depends on a retired service, and the named owner has left. How would you repair the runbook and keep it valid?
   - Which runbooks should trigger review automatically after each release?
   - How do you preserve accuracy without creating an approval bottleneck?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

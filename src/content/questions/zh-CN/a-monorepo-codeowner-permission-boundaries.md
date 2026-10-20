@@ -25,4 +25,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["如何避免维护团队被所有变更审批拖慢？","怎样验证机器人凭证只具有必要范围？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：Monorepo"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

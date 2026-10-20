@@ -57,4 +57,7 @@ followUps:
   - How should usage crossing two tiers be allocated?
   - Which period should a negative adjustment offset?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

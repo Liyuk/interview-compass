@@ -54,4 +54,7 @@ relatedQuestions:
       Same resource constraint, with a different condition: resources fall instead of choosing only two
       initiatives.
     contrast: Focuses more on adjusting a plan and adapting when constraints change.
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

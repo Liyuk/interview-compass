@@ -57,4 +57,7 @@ followUps:
   - Which messages need immediate announcement and which should not interrupt?
   - How do you prevent duplicate announcements?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

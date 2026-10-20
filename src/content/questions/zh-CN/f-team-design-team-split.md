@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：组织调整"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

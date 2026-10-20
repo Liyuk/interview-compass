@@ -33,4 +33,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：技术收益
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---
