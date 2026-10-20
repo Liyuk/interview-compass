@@ -66,7 +66,7 @@ followUps:
   - Which needs should remain at the product layer?
   - How can you detect an API that only serves one exception?
 relatedQuestions: []
-perspective: interviewer
 perspectiveReview: inferred
 qualityTier: extended
+perspective: candidate
 ---

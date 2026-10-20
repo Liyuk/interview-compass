@@ -55,6 +55,13 @@ describe('inferQuestionPerspective', () => {
     ))).toMatchObject({ perspective: 'candidate', confidence: 'low' });
   });
 
+  it('does not treat an intent about assessing a candidate as an interviewer prompt', () => {
+    expect(inferQuestionPerspective(pair(
+      { question: '一次促销提高了成交量，但新增客户的首单长期亏损。你会如何判断是否继续？', intent: '考察候选人是否能从名义销售额下钻到单位经济。', scenarios: ['interview', 'operations-review'] },
+      { question: 'A promotion increases sales, but new customers remain unprofitable. How would you decide whether to continue?', intent: 'Assess whether the candidate moves beyond headline sales to unit economics.', scenarios: ['interview', 'operations-review'] },
+    ))).toMatchObject({ perspective: 'candidate', confidence: 'low' });
+  });
+
   it('produces the same assignment regardless of bilingual record order', () => {
     const records = pair(
       { question: '作为面试官，你会如何追问？', scenarios: ['hiring'] },
@@ -120,6 +127,26 @@ describe('question quality migration', () => {
     const rerun = spawnSync('node', [script, '--root', root, '--write'], { encoding: 'utf8' });
     expect(rerun.status).toBe(0);
     for (const locale of ['zh-CN', 'en']) expect(await readFile(join(root, 'src/content/questions', locale, 'test-question.md'), 'utf8')).toMatch(/perspective: manager[\s\S]*perspectiveReview: reviewed/);
+  });
+
+  it('recomputes inferred assignments after the rule changes but leaves reviewed assignments intact', async () => {
+    const root = await fixtureRoot();
+    const script = new URL('../scripts/migrate-question-quality.mjs', import.meta.url).pathname;
+    expect(spawnSync('node', [script, '--root', root, '--write'], { encoding: 'utf8' }).status).toBe(0);
+    for (const locale of ['zh-CN', 'en']) {
+      const file = join(root, 'src/content/questions', locale, 'test-question.md');
+      const source = await readFile(file, 'utf8');
+      const changed = source
+        .replace('perspective: interviewer', 'perspective: candidate')
+        .replace(locale === 'zh-CN' ? '作为面试官，你会如何追问候选人？' : 'As an interviewer, how would you probe a candidate?', locale === 'zh-CN' ? '解释数据库隔离级别及其取舍。' : 'Explain database isolation levels and their trade-offs.')
+        .replace(locale === 'zh-CN' ? '考察意图' : 'Decide what evidence matters.', locale === 'zh-CN' ? '了解题目意图' : 'Assess whether the candidate can explain trade-offs.');
+      await writeFile(file, changed);
+    }
+    const rerun = spawnSync('node', [script, '--root', root, '--write'], { encoding: 'utf8' });
+    expect(rerun.status).toBe(0);
+    for (const locale of ['zh-CN', 'en']) expect(await readFile(join(root, 'src/content/questions', locale, 'test-question.md'), 'utf8')).toMatch(/perspective: candidate[\s\S]*perspectiveReview: inferred/);
+    const report = JSON.parse(await readFile(join(root, 'docs/reviews/2026-10-19-question-perspective-migration.json'), 'utf8'));
+    expect(report.lowConfidence).toHaveLength(1);
   });
 
   it('continues to report inferred low-confidence assignments after metadata has been written', async () => {

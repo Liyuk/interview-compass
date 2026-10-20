@@ -16,7 +16,7 @@ export interface PerspectiveInference {
   reasons: string[];
 }
 
-const interviewerText = /面试官|设计面试|评估候选人|评价候选人|候选人表现|面试问题|面试流程|面试评价|追问候选人|考察候选人|interviewer|design(?:ing)? an interview|assess(?:ing)? candidates?|evaluate candidates?|interview questions?|interview process|probe candidates?/i;
+const interviewerText = /面试官|设计面试|面试流程|面试评价|面试时你会问候选人|追问候选人|interviewer|as an interviewer|interview design|design(?:ing)? an interview|interview loop|interviewer evidence|hiring calibration|what would you ask (?:a |the )?candidate/i;
 const managerText = /团队管理者|作为管理者|管理团队|带团队|下属|员工|团队成员|绩效对话|辅导成员|团队诊断|team manager|people manager|as a manager|manage (?:a|the|your) team|direct reports?|coach(?:ing)? (?:a|your) (?:team member|report)|performance conversation|team diagnosis/i;
 const candidateText = /请描述你|请举例|结合你的经历|回顾你|讲一个你|你的经历|你做出的|你负责的|你主导的|describe a time you|tell me about a time|your experience|you made|you led|you owned|what did you do/i;
 
@@ -33,7 +33,7 @@ export function inferQuestionPerspective(pair: readonly PerspectiveQuestionInput
   const reasons: string[] = [];
 
   if (interviewerMatches && !managerMatches) {
-    reasons.push('Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent.');
+    reasons.push('Explicit interviewer-facing wording identifies the interviewer as the respondent.');
     return { perspective: 'interviewer', confidence: 'high', reasons };
   }
   if (managerMatches && !interviewerMatches) {

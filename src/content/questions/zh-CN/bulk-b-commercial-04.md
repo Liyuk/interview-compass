@@ -57,7 +57,7 @@ followUps:
   - 当新套餐帮助低预算用户但造成收入蚕食时，怎样设定取舍？
   - 如何区分套餐替代与原有需求自然变化？
 relatedQuestions: []
-perspective: interviewer
 perspectiveReview: inferred
 qualityTier: extended
+perspective: candidate
 ---

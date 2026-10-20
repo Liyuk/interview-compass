@@ -18,8 +18,14 @@ function parseArgs(args) {
 function frontmatter(source, fields) {
   const match = source.match(/^(---\s*\n)([\s\S]*?)(\n---)/);
   if (!match) throw new Error('missing YAML frontmatter');
-  const additions = Object.entries(fields).map(([key, value]) => `${key}: ${value}`).join('\n');
-  return `${match[1]}${match[2]}${match[2].endsWith('\n') ? '' : '\n'}${additions}${match[3]}${source.slice(match[0].length)}`;
+  const lines = match[2].split('\n');
+  for (const [key, value] of Object.entries(fields)) {
+    const fieldLine = new RegExp(`^${key}:`);
+    const index = lines.findIndex((line) => fieldLine.test(line));
+    if (index === -1) lines.push(`${key}: ${value}`);
+    else lines[index] = `${key}: ${value}`;
+  }
+  return `${match[1]}${lines.join('\n')}${match[3]}${source.slice(match[0].length)}`;
 }
 
 function getExistingPairValue(pair, field, id) {
@@ -51,23 +57,23 @@ async function run() {
     const locales = new Set(pair.map(({ data }) => data.locale));
     if (pair.length !== 2 || !locales.has('zh-CN') || !locales.has('en')) throw new Error(`${id}: expected exactly one record per locale`);
     const inference = inferQuestionPerspective(pair.map(({ data }) => data));
-    const existingPerspective = getExistingPairValue(pair, 'perspective', id);
+    const existingReview = getExistingPairValue(pair, 'perspectiveReview', id);
+    const hasReviewedPerspective = existingReview === 'reviewed';
+    const existingPerspective = hasReviewedPerspective ? getExistingPairValue(pair, 'perspective', id) : undefined;
     const perspective = existingPerspective ?? inference.perspective;
     const existingTier = getExistingPairValue(pair, 'qualityTier', id);
     const qualityTier = existingTier ?? 'extended';
-    const existingReview = getExistingPairValue(pair, 'perspectiveReview', id);
     const perspectiveReview = existingReview ?? 'inferred';
-    const assignedBy = existingPerspective ? 'existing' : 'inference';
 
-    assignments.push({ questionId: id, perspective, perspectiveReview, qualityTier, confidence: existingPerspective ? 'existing' : inference.confidence, reasons: inference.reasons });
-    if (perspectiveReview !== 'reviewed' && inference.confidence === 'low') lowConfidence.push({ questionId: id, perspective, reasons: inference.reasons });
+    assignments.push({ questionId: id, perspective, perspectiveReview, qualityTier, confidence: hasReviewedPerspective ? 'reviewed' : inference.confidence, reasons: hasReviewedPerspective ? ['Human-reviewed; migration preserves assignment.'] : inference.reasons });
+    if (!hasReviewedPerspective && inference.confidence === 'low') lowConfidence.push({ questionId: id, perspective, reasons: inference.reasons });
 
     for (const file of pair) {
       const missing = {};
-      if (file.data.perspective === undefined) missing.perspective = perspective;
+      if (file.data.perspective === undefined || (!hasReviewedPerspective && file.data.perspective !== perspective)) missing.perspective = perspective;
       if (file.data.perspectiveReview === undefined) missing.perspectiveReview = perspectiveReview;
       if (file.data.qualityTier === undefined) missing.qualityTier = qualityTier;
-      if (Object.keys(missing).length) changes.push({ ...file, missing, assignedBy });
+      if (Object.keys(missing).length) changes.push({ ...file, missing });
     }
   }
 

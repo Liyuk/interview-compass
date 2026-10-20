@@ -44,7 +44,7 @@ source:
   - attribution: inspired
     label: dataskew-io/data-engineering-interview-questions：特征新鲜度、成本与业务价值
     url: https://github.com/dataskew-io/data-engineering-interview-questions
-perspective: interviewer
 perspectiveReview: inferred
 qualityTier: extended
+perspective: candidate
 ---

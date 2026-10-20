@@ -49,7 +49,7 @@ followUps:
   - 如何避免让参与者猜出团队希望听到的结论？
   - 哪些行为证据仍不足以证明上线后的持续使用？
 relatedQuestions: []
-perspective: interviewer
 perspectiveReview: inferred
 qualityTier: extended
+perspective: candidate
 ---

@@ -41,7 +41,7 @@ source:
     label: 指标字典模板：使指标能复算并支持共同决策
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
-perspective: interviewer
 perspectiveReview: inferred
 qualityTier: extended
+perspective: candidate
 ---

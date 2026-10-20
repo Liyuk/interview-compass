@@ -25,7 +25,7 @@
 ## Review Focus
 
 - A Chinese and English pair receives different inferred perspective — test pair-level inference and pair consistency.
-- A rerun overwrites a human correction — test idempotent, fill-missing-only migration behavior.
+- A rerun overwrites a human correction — test that inferred values are recalculated while reviewed corrections persist.
 - A weak or structurally invalid extended record blocks the build — test warnings versus hard schema errors separately.
 - A core question has translated fields with mismatched counts — test strict bilingual parity for signals, followUps, and anchors.
 - A core question is mislabeled as human-reviewed — test that core validation requires reviewed perspective metadata and complete required content.
@@ -64,13 +64,13 @@
 
 **Interfaces:**
 - `inferQuestionPerspective(pair: readonly QuestionRecord[]): { perspective: Perspective; confidence: 'high' | 'low'; reasons: string[] }` returns one assignment for the bilingual pair.
-- The migration reads both locales for each question ID, applies the same inferred value to each missing `perspective`, sets `perspectiveReview: inferred` and `qualityTier: extended`, and records evidence and confidence in the report.
-- Migration mode fills missing fields only. It preserves manually supplied values, refuses inconsistent existing bilingual values, and supports `--check` (report changes without writing) and `--write`.
+- The migration reads both locales for each question ID, applies the same inferred value to both records, sets `perspectiveReview: inferred` and `qualityTier: extended`, recalculates records still marked `inferred`, preserves `reviewed` assignments, and records evidence and confidence in the report.
+- Migration mode fills missing fields, recalculates `perspective` for records still marked `inferred`, and preserves assignments marked `reviewed`. It refuses inconsistent bilingual review/tier values and supports `--check` (report changes without writing) and `--write`.
 
 - [x] Write failing inference tests for candidate narrative prompts, interviewer design prompts, manager review prompts, mixed/ambiguous prompts, and bilingual input ordering.
 - [x] Run `npm run test:unit -- tests/question-perspective.test.ts` and confirm inference cases fail before implementation.
-- [x] Implement pair-level inference using explicit semantic evidence from question text, `scenarios`, and existing `roles`/`careerTracks`; do not infer candidate solely from second-person grammar.
-- [x] Write failing migration tests proving `--check` is read-only, `--write` fills both locales identically, and reruns preserve manual edits.
+- [x] Implement pair-level inference using explicit respondent-facing wording; do not infer from scenario tags, mentions of candidates, or second-person grammar alone.
+- [x] Write failing migration tests proving `--check` is read-only, `--write` fills both locales identically, reruns recalculate inferred values, and reviewed manual corrections persist.
 - [x] Implement the YAML-frontmatter migration and JSON report with low-confidence IDs and reasons.
 - [x] Run migration in `--check` mode, review its report, then apply `--write` to the 2,668 existing records.
 - [x] Run the migration in `--check` mode again and confirm it reports no pending changes.
@@ -189,7 +189,7 @@
 
 - Spec coverage: tasks 1–3 cover the data contract, migration confidence, strict core checks, bilingual parity, and extended warnings; task 4 covers editorial standards; task 5 covers the candidate review gate; tasks 6–8 cover approved content and reader experience.
 - Gate integrity: Task 5 explicitly stops before content edits; Task 6 consumes only the user-approved list.
-- Data risk: migration fills only missing fields, operates at bilingual-ID level, reports low confidence, and is checked for idempotence before writing.
+- Data risk: migration operates at bilingual-ID level, recalculates only machine-inferred perspective, preserves reviewed values, reports low confidence, and is checked for idempotence before writing.
 - Verification coverage: schema edge cases, pair consistency, checker warning/error behavior, content tests, build, E2E, locale parity, stable routes, and mobile widths are assigned to owning tasks.
 - Delivery boundaries: Phase A, B, C, each content batch, and presentation work have independent PR boundaries; no task merges a PR or updates `main`.
 

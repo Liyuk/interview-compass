@@ -43,7 +43,7 @@ source:
     label: GitHub 数据工程与 AI 工程题目主题调研；题目为本站独立编写
     url: https://github.com/dataskew-io/data-engineering-interview-questions
 relatedQuestions: []
-perspective: interviewer
 perspectiveReview: inferred
 qualityTier: extended
+perspective: candidate
 ---

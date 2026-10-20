@@ -2,8 +2,8 @@
   "recordCount": 2668,
   "questionCount": 1334,
   "counts": {
-    "candidate": 1270,
-    "interviewer": 38,
+    "candidate": 1295,
+    "interviewer": 13,
     "manager": 26
   },
   "lowConfidence": [
@@ -1681,6 +1681,13 @@
       ]
     },
     {
+      "questionId": "bulk-a-oncall-alert-ownership-gap",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "bulk-a-page-fault-working-set",
       "perspective": "candidate",
       "reasons": [
@@ -1800,7 +1807,21 @@
       ]
     },
     {
+      "questionId": "bulk-b-commercial-02",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "bulk-b-commercial-03",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
+      "questionId": "bulk-b-commercial-04",
       "perspective": "candidate",
       "reasons": [
         "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
@@ -1814,6 +1835,13 @@
       ]
     },
     {
+      "questionId": "bulk-b-context-02",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "bulk-b-context-03",
       "perspective": "candidate",
       "reasons": [
@@ -1821,7 +1849,35 @@
       ]
     },
     {
+      "questionId": "bulk-b-context-04",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
+      "questionId": "bulk-b-data-01",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "bulk-b-data-02",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
+      "questionId": "bulk-b-data-03",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
+      "questionId": "bulk-b-data-05",
       "perspective": "candidate",
       "reasons": [
         "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
@@ -1849,7 +1905,21 @@
       ]
     },
     {
+      "questionId": "bulk-b-feature-04",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "bulk-b-model-evolution-01",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
+      "questionId": "bulk-b-model-evolution-02",
       "perspective": "candidate",
       "reasons": [
         "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
@@ -1863,7 +1933,21 @@
       ]
     },
     {
+      "questionId": "bulk-c-metrics-02",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "bulk-c-metrics-03",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
+      "questionId": "bulk-c-metrics-04",
       "perspective": "candidate",
       "reasons": [
         "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
@@ -1877,6 +1961,13 @@
       ]
     },
     {
+      "questionId": "bulk-c-metrics-06",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "bulk-c-product-02",
       "perspective": "candidate",
       "reasons": [
@@ -1884,7 +1975,28 @@
       ]
     },
     {
+      "questionId": "bulk-c-product-03",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "bulk-c-product-04",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
+      "questionId": "bulk-c-product-05",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
+      "questionId": "bulk-c-product-06",
       "perspective": "candidate",
       "reasons": [
         "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
@@ -2143,7 +2255,21 @@
       ]
     },
     {
+      "questionId": "bulk-growth-03",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "bulk-growth-04",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
+      "questionId": "bulk-growth-05",
       "perspective": "candidate",
       "reasons": [
         "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
@@ -2157,6 +2283,13 @@
       ]
     },
     {
+      "questionId": "bulk-growth-07",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "bulk-growth-08",
       "perspective": "candidate",
       "reasons": [
@@ -2164,7 +2297,21 @@
       ]
     },
     {
+      "questionId": "bulk-growth-09",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "bulk-growth-10",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
+      "questionId": "bulk-growth-11",
       "perspective": "candidate",
       "reasons": [
         "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
@@ -2395,6 +2542,13 @@
       ]
     },
     {
+      "questionId": "bulk1000-d-052-v1",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "bulk1000-d-053-v1",
       "perspective": "candidate",
       "reasons": [
@@ -2585,6 +2739,13 @@
     },
     {
       "questionId": "bulk1000-h-092-v1",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
+      "questionId": "bulk1000-h-093-v1",
       "perspective": "candidate",
       "reasons": [
         "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
@@ -3417,6 +3578,13 @@
       ]
     },
     {
+      "questionId": "design-accessibility-deadline-tradeoff",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
       "questionId": "design-engineering-handoff-behavior-contract",
       "perspective": "candidate",
       "reasons": [
@@ -3467,6 +3635,13 @@
     },
     {
       "questionId": "design-research-recruitment-representativeness",
+      "perspective": "candidate",
+      "reasons": [
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
+      ]
+    },
+    {
+      "questionId": "design-system-adoption-exceptions",
       "perspective": "candidate",
       "reasons": [
         "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
@@ -11093,12 +11268,12 @@
     },
     {
       "questionId": "bulk-a-oncall-alert-ownership-gap",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11273,12 +11448,12 @@
     },
     {
       "questionId": "bulk-b-commercial-02",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11293,12 +11468,12 @@
     },
     {
       "questionId": "bulk-b-commercial-04",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11313,12 +11488,12 @@
     },
     {
       "questionId": "bulk-b-context-02",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11333,22 +11508,22 @@
     },
     {
       "questionId": "bulk-b-context-04",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
       "questionId": "bulk-b-data-01",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11363,22 +11538,22 @@
     },
     {
       "questionId": "bulk-b-data-03",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
       "questionId": "bulk-b-data-05",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11413,12 +11588,12 @@
     },
     {
       "questionId": "bulk-b-feature-04",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11433,12 +11608,12 @@
     },
     {
       "questionId": "bulk-b-model-evolution-02",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11453,12 +11628,12 @@
     },
     {
       "questionId": "bulk-c-metrics-02",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11473,12 +11648,12 @@
     },
     {
       "questionId": "bulk-c-metrics-04",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11493,12 +11668,12 @@
     },
     {
       "questionId": "bulk-c-metrics-06",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11513,12 +11688,12 @@
     },
     {
       "questionId": "bulk-c-product-03",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11533,22 +11708,22 @@
     },
     {
       "questionId": "bulk-c-product-05",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
       "questionId": "bulk-c-product-06",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11923,12 +12098,12 @@
     },
     {
       "questionId": "bulk-growth-03",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11943,12 +12118,12 @@
     },
     {
       "questionId": "bulk-growth-05",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11963,12 +12138,12 @@
     },
     {
       "questionId": "bulk-growth-07",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -11983,12 +12158,12 @@
     },
     {
       "questionId": "bulk-growth-09",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -12003,12 +12178,12 @@
     },
     {
       "questionId": "bulk-growth-11",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -12353,12 +12528,12 @@
     },
     {
       "questionId": "bulk1000-d-052-v1",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -12643,12 +12818,12 @@
     },
     {
       "questionId": "bulk1000-h-093-v1",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -13913,12 +14088,12 @@
     },
     {
       "questionId": "design-accessibility-deadline-tradeoff",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -14003,12 +14178,12 @@
     },
     {
       "questionId": "design-system-adoption-exceptions",
-      "perspective": "interviewer",
+      "perspective": "candidate",
       "perspectiveReview": "inferred",
       "qualityTier": "extended",
-      "confidence": "high",
+      "confidence": "low",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "No explicit respondent perspective is evident; candidate is a provisional default for general interview prompts."
       ]
     },
     {
@@ -17198,7 +17373,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {
@@ -17218,7 +17393,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {
@@ -18448,7 +18623,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {
@@ -18498,7 +18673,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {
@@ -18508,7 +18683,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {
@@ -18518,7 +18693,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {
@@ -18558,7 +18733,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {
@@ -18568,7 +18743,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {
@@ -18958,7 +19133,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {
@@ -20038,7 +20213,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {
@@ -20048,7 +20223,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {
@@ -20708,7 +20883,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {
@@ -20768,7 +20943,7 @@
       "qualityTier": "extended",
       "confidence": "high",
       "reasons": [
-        "Explicit interview-design wording or hiring scenario identifies the interviewer as the respondent."
+        "Explicit interviewer-facing wording identifies the interviewer as the respondent."
       ]
     },
     {

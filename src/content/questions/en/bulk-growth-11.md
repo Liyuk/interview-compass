@@ -40,7 +40,7 @@ source:
   - attribution: inspired
     label: 品牌与增长面试工具：用户洞察、细分和体验主题
     url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
-perspective: interviewer
 perspectiveReview: inferred
 qualityTier: extended
+perspective: candidate
 ---

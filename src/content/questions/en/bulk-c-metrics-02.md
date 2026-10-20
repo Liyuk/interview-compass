@@ -52,7 +52,7 @@ followUps:
   - If randomization is unavailable, which quasi-experimental designs could still help?
   - How would you prevent channel optimization from relabeling organic conversions as paid?
 relatedQuestions: []
-perspective: interviewer
 perspectiveReview: inferred
 qualityTier: extended
+perspective: candidate
 ---
