@@ -1,5 +1,5 @@
 import { z } from 'astro/zod';
-import { hasTaxonomyId, type FacetKind } from './taxonomy';
+import { hasTaxonomyId, type FacetKind } from './taxonomy.ts';
 
 export const provenanceKinds = ['adapted', 'derived', 'inspired', 'original'] as const;
 
@@ -114,6 +114,12 @@ export const questionSchema = z.object({
     if (record.perspectiveReview !== 'reviewed') {
       context.addIssue({ code: 'custom', path: ['perspectiveReview'], message: 'Core questions require a reviewed perspective' });
     }
+    if (record.careerTracks.length > 2) {
+      context.addIssue({ code: 'custom', path: ['careerTracks'], message: 'Core questions may list at most 2 career tracks' });
+    }
+    if (record.responsibilityScopes.length > 2) {
+      context.addIssue({ code: 'custom', path: ['responsibilityScopes'], message: 'Core questions may list at most 2 responsibility scopes' });
+    }
   }
 });
 
@@ -138,6 +144,16 @@ export function validateBilingualPairs(inputs: readonly unknown[]): string[] {
     const [first, ...rest] = pair;
     for (const other of rest) {
       if (other.primaryCapability !== first.primaryCapability) errors.push(`Primary capability differs between locales for ${questionId}`);
+      if (other.perspective !== first.perspective) errors.push(`Perspective differs between locales for ${questionId}`);
+      if (other.perspectiveReview !== first.perspectiveReview) errors.push(`Perspective review state differs between locales for ${questionId}`);
+      if (other.qualityTier !== first.qualityTier) errors.push(`Quality tier differs between locales for ${questionId}`);
+      for (const facet of facetFields) {
+        if ([...other[facet]].sort().join('|') !== [...first[facet]].sort().join('|')) errors.push(`${facet} differs between locales for ${questionId}`);
+      }
+      if (first.qualityTier === 'core' || other.qualityTier === 'core') {
+        if (other.signals.length !== first.signals.length) errors.push(`Core signals count differs between locales for ${questionId}`);
+        if ((other.followUps?.length ?? 0) !== (first.followUps?.length ?? 0)) errors.push(`Core followUps count differs between locales for ${questionId}`);
+      }
     }
   }
   return errors;

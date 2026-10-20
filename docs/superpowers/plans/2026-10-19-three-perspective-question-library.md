@@ -87,15 +87,15 @@
 **Interfaces:**
 - Astro collection parsing and `check:content` consume the same `questionSchema` and bilingual validation helpers.
 - Core paired records must match on `perspective`, `perspectiveReview`, and `qualityTier`; core English/Chinese signals, followUps, and anchors must have equal counts.
-- Extended records emit warnings for detectable editorial defects including no followUps, followUps beginning with `【`, suspicious template-like intent, and short intent; warnings do not fail the command.
+- Extended records emit warnings for detectable editorial defects including no followUps, followUps beginning with `【`, identical intent reused by three or more question IDs, and short intent; warnings do not fail the command. Title-echo cases remain an editorial review rule because generic string similarity would produce false positives.
 - Schema shape, invalid enum, duplicate/missing bilingual record, invalid source, and broken relationship remain hard errors.
 
-- [ ] Add checker tests showing an extended editorial defect is reported as a warning with exit status 0, while invalid perspective or malformed fields fail.
-- [ ] Add pair tests for tier/perspective mismatch and core count mismatch across locales.
-- [ ] Run the focused checker tests and observe failures before implementation.
-- [ ] Reuse the shared question model and bilingual helpers from `content-model.ts` in `check-content.mjs`; keep existing taxonomy, source-ledger, collection, and applicability validation.
-- [ ] Generate a baseline report with exact warning counts and a small sample of IDs per warning type.
-- [ ] Run `npm run check:content`, `npm run check`, `npm run test:unit`, and `npm run build`.
+- [x] Add checker tests showing an extended editorial defect is reported as a warning with exit status 0, while invalid perspective or malformed fields fail.
+- [x] Add pair tests for tier/perspective mismatch and core count mismatch across locales.
+- [x] Run the focused checker tests and observe failures before implementation.
+- [x] Reuse the shared question model and bilingual helpers from `content-model.ts` in `check-content.mjs`; keep existing taxonomy, source-ledger, collection, and applicability validation.
+- [x] Generate a baseline report with exact warning counts and a small sample of IDs per warning type.
+- [x] Run `npm run check:content`, `npm run check`, `npm run test:unit`, and `npm run build`.
 
 **Phase A review gate:** Open a standalone PR with schema, migration, and report. Do not begin content rewriting in this PR.
 

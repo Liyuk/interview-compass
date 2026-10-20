@@ -105,6 +105,49 @@ describe('question content contract', () => {
     expect(errors).toContainEqual(expect.stringMatching(/capability differs/i));
   });
 
+  it('keeps perspective, review state, and tier aligned across bilingual records', () => {
+    expect(validateBilingualPairs([
+      question('zh-CN'),
+      question('en', { perspective: 'interviewer' }),
+    ])).toContainEqual(expect.stringMatching(/perspective differs/i));
+    expect(validateBilingualPairs([
+      question('zh-CN'),
+      question('en', { perspectiveReview: 'reviewed', qualityTier: 'core',
+        signals: ['One', 'Two', 'Three'], followUps: ['One', 'Two'], weakAnswer: 'Weak.',
+        anchors: { notPassing: 'One', passing: 'Two', excellent: 'Three', exceptional: 'Four' } }),
+    ])).toContainEqual(expect.stringMatching(/quality tier differs/i));
+  });
+
+  it('requires bilingual core signals and follow-ups to have matching counts', () => {
+    const core = (locale: 'zh-CN' | 'en', overrides: Record<string, unknown> = {}) => question(locale, {
+      perspectiveReview: 'reviewed', qualityTier: 'core',
+      signals: ['Signal one', 'Signal two', 'Signal three'],
+      followUps: ['First probe', 'Second probe'],
+      weakAnswer: 'An unsupported general claim.',
+      anchors: { notPassing: 'No evidence', passing: 'Basic evidence', excellent: 'Compared evidence', exceptional: 'Repeatable impact' },
+      ...overrides,
+    });
+    const errors = validateBilingualPairs([
+      core('zh-CN'),
+      core('en', { signals: ['Signal one', 'Signal two', 'Signal three', 'Signal four'] }),
+    ]);
+
+    expect(errors).toContainEqual(expect.stringMatching(/signals count differs/i));
+    expect(validateBilingualPairs([
+      core('zh-CN'),
+      core('en', { followUps: ['First probe', 'Second probe', 'Third probe'] }),
+    ])).toContainEqual(expect.stringMatching(/followUps count differs/i));
+  });
+
+  it('limits core career tracks and responsibility scopes to two values', () => {
+    expect(() => parseQuestionRecord(question('zh-CN', {
+      perspectiveReview: 'reviewed', qualityTier: 'core',
+      signals: ['One', 'Two', 'Three'], followUps: ['One', 'Two'], weakAnswer: 'No evidence.',
+      anchors: { notPassing: 'One', passing: 'Two', excellent: 'Three', exceptional: 'Four' },
+      careerTracks: ['individual-contributor', 'team-manager', 'senior-manager'],
+    }))).toThrow(/at most 2 career tracks/i);
+  });
+
   it('does not require draft questions to be indexed or translated', () => {
     expect(validateBilingualPairs([question('zh-CN', { status: 'draft' })])).toEqual([]);
   });
