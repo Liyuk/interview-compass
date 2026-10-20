@@ -1,6 +1,6 @@
 import { glob, readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve, relative } from 'node:path';
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 import { inferQuestionPerspective } from '../src/lib/question-perspective.ts';
 
 function parseArgs(args) {
