@@ -89,6 +89,7 @@ describe('question quality migration', () => {
     const check = spawnSync('node', [script, '--root', root, '--check'], { encoding: 'utf8' });
     expect(check.status).toBe(0);
     expect(check.stdout).toMatch(/2 records pending/i);
+    expect(check.stdout).not.toContain('"lowConfidence"');
     expect(await readFile(zhPath, 'utf8')).toBe(before);
 
     const write = spawnSync('node', [script, '--root', root, '--write'], { encoding: 'utf8' });
@@ -133,7 +134,7 @@ describe('question quality migration', () => {
     expect(write.status).toBe(0);
     const report = JSON.parse(await readFile(join(root, 'docs/reviews/2026-10-19-question-perspective-migration.json'), 'utf8'));
     expect(report.lowConfidence).toHaveLength(1);
-    const check = spawnSync('node', [script, '--root', root, '--check'], { encoding: 'utf8' });
+    const check = spawnSync('node', [script, '--root', root, '--check', '--details'], { encoding: 'utf8' });
     expect(check.status).toBe(0);
     expect(check.stdout).toMatch(/1 low-confidence assignments/i);
   });

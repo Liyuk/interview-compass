@@ -4,9 +4,10 @@ import yaml from 'js-yaml';
 import { inferQuestionPerspective } from '../src/lib/question-perspective.ts';
 
 function parseArgs(args) {
-  const options = { mode: undefined, root: process.cwd() };
+  const options = { mode: undefined, root: process.cwd(), details: false };
   for (let index = 0; index < args.length; index += 1) {
     if (args[index] === '--check' || args[index] === '--write') options.mode = args[index].slice(2);
+    else if (args[index] === '--details') options.details = true;
     else if (args[index] === '--root' && args[index + 1]) options.root = resolve(args[++index]);
     else throw new Error(`Unknown or incomplete argument: ${args[index]}`);
   }
@@ -83,7 +84,7 @@ async function run() {
     await mkdir(resolve(root, 'docs/reviews'), { recursive: true });
     await writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`);
     console.log(`Wrote ${relative(root, reportPath)}.`);
-  } else {
+  } else if (options.details) {
     console.log(JSON.stringify({ counts, lowConfidence }, null, 2));
   }
 }
