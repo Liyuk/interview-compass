@@ -9,24 +9,22 @@ const base=import.meta.env.BASE_URL;
 const route:RouteRef={type:article==='capabilities'?'guide-capabilities':article==='direction'?'guide-direction':'preparation'};
 const link=(type:RouteRef['type'])=>pathFor({type} as RouteRef,locale,base);
 const steps: {route:RouteRef;zh:string;en:string;description:string;english:string}[]=[
- {route:{type:'guide'},zh:'从这里开始',en:'Start here',description:'了解站点用途、证据参考与一题的读法。',english:'Understand the library, evidence references, and how to read a question.'},
- {route:{type:'guide-capabilities'},zh:'理解能力框架',en:'Understand the capability framework',description:'先看懂能力、责任阶段与判断证据之间的关系。',english:'Connect capabilities, responsibility stages, and observable evidence.'},
- {route:{type:'guide-direction'},zh:'确定准备方向',en:'Choose your preparation direction',description:'理解岗位和目标阶段，再选择求职、晋升或面试官场景。',english:'Understand roles and target responsibility, then choose your preparation context.'},
- {route:{type:'capability-model'},zh:'理解角色要求',en:'Understand role expectations',description:'对照真实责任与证据要求，按需查阅完整模型。',english:'Read role-specific responsibility and evidence expectations; consult the full model as needed.'},
- {route:{type:'framework'},zh:'提问与准备方法',en:'Interviewing and preparation',description:'选择候选人、面试官或双向尽调的阅读方法。',english:'Guidance for candidates and interviewers, including questions to help candidates assess a role.'},
- {route:{type:'browse'},zh:'分类与查阅',en:'Categories and reference',description:'理解分类边界，按能力、岗位、主题或场景探索。',english:'Understand category boundaries and explore capabilities, roles, topics, and contexts.'},
+ {route:{type:'guide-direction'},zh:'确定准备方向',en:'Choose your preparation direction',description:'先明确目标岗位、责任阶段和面试场景。',english:'First identify the target role, responsibility stage, and interview context.'},
+ {route:{type:'site-approach'},zh:'整体思路',en:'Overall approach',description:'理解候选人、面试官和管理者各自关注什么，再找到自己的位置。',english:'Understand what candidates, interviewers, and managers need to learn, then find your position.'},
+ {route:{type:'framework'},zh:'提问与准备方法',en:'Interviewing and preparation',description:'把准备方向转成具体练习，并用证据复盘回答。',english:'Turn your preparation direction into focused practice and review answers with evidence.'},
 ];
 const outline=article==='capabilities' ? [{id:'framework-overview',label:en?'Capabilities, responsibility, evidence':'能力、责任与证据'},{id:'capability-domains',label:en?'Eight capability domains':'八个能力域'},{id:'using-the-framework',label:en?'Use the framework':'如何使用框架'}] : article==='direction' ? [{id:'choose-role',label:en?'Understand the role':'理解岗位'},{id:'choose-responsibility',label:en?'Choose target responsibility':'确定目标责任'},{id:'choose-context',label:en?'Choose the context':'选择使用场景'},{id:'start-preparing',label:en?'Start preparing':'开始准备'}] : [{id:'reading-route',label:en?'Recommended reading':'推荐阅读顺序'},{id:'reference-reading',label:en?'Read as needed':'按需查阅'},{id:'start-preparing',label:en?'Start preparing':'开始准备'}];
 ---
 <SiteLayout locale={locale} route={route} outline={outline} description={en?'Understand capabilities and role expectations, choose your preparation direction, and start with relevant questions.':'理解能力与角色要求，确定准备方向，再进入相关方法与问题清单。'}>
  <h1 class="page-title">{titleFor(route,locale)}</h1>
  {!article ? <>
-  <p class="intro">{en?'Begin with the framework, understand the responsibility you want to prepare for, and use a focused set of questions to examine your experience. You can enter at any step.':'先理解能力框架和目标责任，再用一组相关问题审视真实经历。可以按顺序阅读，也可以从需要的章节开始。'}</p>
+  <p class="intro">{en?'You do not need to read every guide before practicing. Set a target, understand what the interview is trying to learn, then work through relevant questions and review your evidence.':'不必读完所有说明再开始练习。先确定目标，理解面试各方想判断什么，再进入相关题目，用真实经历和证据复盘。'}</p>
   <h2 id="reading-route">{en?'Recommended reading':'推荐阅读顺序'}</h2>
   <ol class="preparation-reading-list">{steps.map(step=><li><a href={pathFor(step.route,locale,base)}>{en?step.en:step.zh}</a><p>{en?step.english:step.description}</p></li>)}</ol>
-  <h2 id="reference-reading">{en?'Read as needed':'按需查阅'}</h2>
-  <p>{en?'The full stage matrix, evidence dimensions, and cross-company mapping are references. Start from the work and responsibility in your role; consult detailed tables when they answer a concrete question.':'完整阶段矩阵、评价维度和跨公司职级映射供深入查阅。先从岗位实际工作与责任出发，遇到具体问题时再查表。'}</p>
-  <p><a href={link('capability-model')}>{en?'Role and stage requirements':'岗位与阶段要求'}</a> · <a href={pathFor({type:'capability-model-mapping'},locale,base)}>{en?'Cross-company mapping':'跨公司职级映射'}</a></p>
+  <h2 id="reference-reading">{en?'References when you need them':'遇到具体问题时再查'}</h2>
+  <p>{en?'The capability framework, role-stage model, and category index provide detail when you need it. External repositories are optional supplements for targeted study; they are not prerequisites for using this site.':'能力框架、岗位阶段模型和分类索引用于回答具体问题时查阅。外部仓库只是定向补充资料，不是使用本站或开始练习的前置要求。'}</p>
+  <p><a href={link('guide-capabilities')}>{en?'Capability framework':'能力框架'}</a> · <a href={link('capability-model')}>{en?'Role and stage requirements':'岗位与阶段要求'}</a> · <a href={link('browse')}>{en?'Category index':'分类索引'}</a></p>
+  <p class="supplementary-link"><span>{en?'Optional external reading':'可选外部资料'}</span><a href={pathFor({type:'guide-resources'},locale,base)}>{en?'External interview resources':'外部面试资料参考'}</a><small>{en?'CS fundamentals, project deep dives, and behavioral interview prompts.':'计算机基础、项目深挖与行为面试题的外部参考。'}</small></p>
   <h2 id="start-preparing">{en?'Start preparing':'开始准备'}</h2>
   <p>{en?'Already know your direction? Browse the library, choose a curated set, or search directly. Your current target is always available in the upper-right corner.':'已经明确准备方向？可以直接进入题库、选择精选题单或搜索。右上角随时可以查看和修改当前目标。'}</p>
   <p class="journey-links"><a href={link('questions')}>{en?'Open the question library':'进入面试题库'}</a><a href={link('collections')}>{en?'Choose a curated set':'选择精选题单'}</a><a href={link('search')}>{en?'Search all content':'全站搜索'}</a></p>
@@ -60,5 +58,6 @@ const outline=article==='capabilities' ? [{id:'framework-overview',label:en?'Cap
 </SiteLayout>
 <style>
  .preparation-reading-list { padding-inline-start:1.5rem; } .preparation-reading-list li { padding:.65rem 0; } .preparation-reading-list a { font-weight:650; } .preparation-reading-list p { margin:.35rem 0 0; color:var(--muted); }
+ .supplementary-link { display:grid; gap:.25rem; margin-block:1.25rem; padding:1rem; border:1px solid var(--line); border-radius:var(--radius-md, 12px); } .supplementary-link span,.supplementary-link small { color:var(--muted); font-size:.9rem; } .supplementary-link a { font-weight:650; }
  .preparation-domains > div { padding:1rem 0; border-bottom:1px solid var(--line); } .preparation-domains dt { font-weight:650; } .preparation-domains dd { margin:.5rem 0 0; line-height:1.8; }
 </style>

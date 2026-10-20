@@ -10,7 +10,7 @@ export type Crumb = { label: string; href?: string };
 
 export type RouteRef =
   | { type: 'home' }
-  | { type: 'preparation' | 'guide-capabilities' | 'guide-direction' }
+  | { type: 'preparation' | 'guide-capabilities' | 'guide-direction' | 'guide-resources' }
   | { type: 'not-found' }
   | { type: 'browse' }
   | { type: 'questions' }
@@ -18,6 +18,7 @@ export type RouteRef =
   | { type: 'collections' }
   | { type: 'collection'; id: string }
   | { type: 'framework' }
+  | { type: 'site-approach' }
   | { type: 'capabilities' }
   | { type: 'domain'; domain: string }
   | { type: 'leaf'; domain: string; leaf: string }
@@ -64,6 +65,7 @@ export function pathFor(ref: RouteRef, locale: Locale, base = ''): string {
       case 'preparation': return `${root}/guide/`;
       case 'guide-capabilities': return `${root}/guide/capabilities/`;
       case 'guide-direction': return `${root}/guide/direction/`;
+      case 'guide-resources': return `${root}/guide/resources/`;
       case 'home': return `${root}/`;
       case 'not-found': return locale === 'en' ? `${root}/404/` : `${root}/404.html`;
       case 'browse': return `${root}/browse/`;
@@ -72,6 +74,7 @@ export function pathFor(ref: RouteRef, locale: Locale, base = ''): string {
       case 'collections': return `${root}/collections/`;
       case 'collection': return `${root}/collections/${ref.id}/`;
       case 'framework': return `${root}/framework/`;
+      case 'site-approach': return `${root}/approach/`;
       case 'capabilities': return `${root}/capabilities/`;
       case 'capability-model': return `${root}/capability-model/`;
       case 'role-stage-model': return `${root}/capability-model/roles/${ref.role}/`;
@@ -113,6 +116,7 @@ export function titleFor(ref: RouteRef, locale: Locale): string {
     case 'preparation': return locale === 'en' ? 'Preparation guide' : '准备指南';
     case 'guide-capabilities': return locale === 'en' ? 'Understand the capability framework' : '理解能力框架';
     case 'guide-direction': return locale === 'en' ? 'Choose your preparation direction' : '确定准备方向';
+    case 'guide-resources': return locale === 'en' ? 'External interview resources' : '外部面试资料参考';
     case 'home': return pick(labels.home, locale);
     case 'not-found': return locale === 'en' ? 'Page not found' : '页面不存在';
     case 'browse': return pick(labels.browse, locale);
@@ -124,6 +128,7 @@ export function titleFor(ref: RouteRef, locale: Locale): string {
       return collection ? pick(collection.title, locale) : ref.id;
     }
     case 'framework': return pick(labels.framework, locale);
+    case 'site-approach': return locale === 'en' ? 'Overall approach' : '整体思路';
     case 'capabilities': return pick(labels.capabilities, locale);
     case 'capability-model': return pick(labels.capabilityModel, locale);
     case 'role-stage-model': return `${facetLabel('roles', ref.role, locale)} · ${pick(labels.capabilityModel, locale)}`;
@@ -148,10 +153,10 @@ export function parentOf(ref: RouteRef): RouteRef | undefined {
   switch (ref.type) {
     case 'home': return undefined;
     case 'preparation': return { type: 'home' };
-    case 'guide-capabilities': case 'guide-direction': return { type: 'preparation' };
+    case 'guide-capabilities': case 'guide-direction': case 'guide-resources': return { type: 'preparation' };
     case 'not-found': return { type: 'home' };
     case 'questions': return { type: 'home' };
-    case 'browse': case 'guide': case 'framework': return { type:'preparation' };
+    case 'browse': case 'guide': case 'framework': case 'site-approach': return { type:'preparation' };
     case 'capabilities': case 'roles': case 'topics': return {type:'browse'};
     case 'scenarios': return {type:'guide-direction'};
     case 'search': return { type: 'home' };

@@ -1,0 +1,195 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { pathFor, type RouteRef } from '../lib/routes';
+import type { Locale } from '../lib/taxonomy';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const route: RouteRef = { type: 'site-approach' };
+const outline = en ? [
+  { id: 'why-this-site', label: 'Why this site exists' },
+  { id: 'work-to-outcome', label: 'From a real goal to an outcome' },
+  { id: 'eight-lenses', label: 'Eight lenses on the work' },
+  { id: 'candidate-perspective', label: 'Candidate: prepare with evidence' },
+  { id: 'interviewer-perspective', label: 'Interviewer: gather useful evidence' },
+  { id: 'management', label: 'Manager: design the conditions' },
+  { id: 'people-judgment', label: 'People, judgment, and fit' },
+  { id: 'read-the-room', label: 'Understand each participant’s purpose' },
+  { id: 'how-to-use', label: 'Start from your role' },
+] : [
+  { id: 'why-this-site', label: '为什么做这个站点' },
+  { id: 'work-to-outcome', label: '从真实目标到实际结果' },
+  { id: 'eight-lenses', label: '观察工作的八个维度' },
+  { id: 'candidate-perspective', label: '候选人：用证据准备面试、晋升和答辩' },
+  { id: 'interviewer-perspective', label: '面试官：收集有效证据' },
+  { id: 'management', label: '管理者：设计做成事情的条件' },
+  { id: 'people-judgment', label: '识人、判断与匹配' },
+  { id: 'read-the-room', label: '理解参与者的目的，找到自己的位置' },
+  { id: 'how-to-use', label: '按自己的角色开始' },
+];
+const steps = en ? [
+  ['Start with the goal and the facts', 'Who needs what, what is happening now, and which constraints, baselines, or dependencies matter?'],
+  ['Find the real problem and define the bar', 'Separate symptoms from causes. Define what success means, how it will be measured, what benchmark matters, and what would count as enough.'],
+  ['Compare choices, including stopping', 'Make feasible paths visible. Compare value, quality, cost, risk, reversibility, and opportunity cost; explain what not to do and why.'],
+  ['Set up people, roles, authority, and resources', 'Match the work to the right capabilities and decision rights. Make capacity, dependencies, and the support needed from other teams or leaders explicit.'],
+  ['Coordinate execution and adapt', 'Set priorities and a working cadence. Share decision-relevant information, handle conflict, escalate when needed, and intervene at the right level.'],
+  ['Verify outcomes and contribution', 'Compare with the baseline and agreed bar. Separate team outcomes from personal contribution, check other causes, and name costs or side effects.'],
+  ['Learn, recover, and choose what comes next', 'Review missed assumptions and setbacks, show what changed in later work, and check whether the role, organization, and personal goals can keep fitting.'],
+] : [
+  ['从目标和事实开始', '谁需要什么、现状是什么？哪些约束、基线和依赖会影响结果？'],
+  ['找到真正的问题，定义标准', '把表象和原因分开。说清什么算成功、如何验证、对标什么，以及做到什么程度就够了。'],
+  ['比较选择，也包括停止', '列出可行路径，比较价值、质量、成本、风险、可逆性和机会成本；说明哪些事不做，以及为什么。'],
+  ['安排人员、角色、权限和资源', '让工作与合适的能力和决策权匹配，并明确产能、依赖，以及需要其他团队或上级提供的支持。'],
+  ['协同执行并及时调整', '设定优先级和工作节奏，让影响决策的信息及时同步；处理冲突，在需要时升级，并在合适的层级介入。'],
+  ['核实结果和贡献', '对照基线与约定标准，区分团队结果和个人贡献，检查其他可能原因，并交代成本与副作用。'],
+  ['学习、恢复，再决定下一步', '复盘错误假设与挫折，说明后续工作有哪些变化，并检查岗位、组织和个人诉求能否持续匹配。'],
+];
+const lenses = en ? [
+  ['A', 'Technical craft', 'Can the person reason from fundamentals, design and implement a sound solution, and meet an appropriate quality bar?'],
+  ['B', 'Business and domain understanding', 'Can they model users, workflows, rules, and the context that gives the work meaning?'],
+  ['C', 'Value and direction', 'Can they identify what matters, set priorities, compare with alternatives or competitors, and stop low-value work?'],
+  ['D', 'Delivery and operations', 'Can they turn intent into milestones, manage capacity and dependencies, and close the loop on execution?'],
+  ['E', 'Collaboration and influence', 'Can they make information actionable, resolve differences about facts or goals, and secure commitments across boundaries?'],
+  ['F', 'People and organization', 'Can they shape teams and roles around business goals, hire, assign, coach, retain, and build a system that does not depend on constant heroics?'],
+  ['G', 'Learning and adaptation', 'Can they learn across domains, recover from setbacks, use feedback, and show a change in later decisions?'],
+  ['H', 'Professional responsibility', 'Can they own their part, represent evidence honestly, manage emotion professionally, respect boundaries, and assess mutual fit?'],
+] : [
+  ['A', '专业与技术实践', '能否从原理出发，设计并实现可靠方案，达到合适的质量标准？'],
+  ['B', '业务与领域理解', '能否理解使用者、工作流程、规则，以及事情为何重要？'],
+  ['C', '价值判断与方向', '能否分辨重点、设定优先级、对比替代方案或竞品，并停止低价值工作？'],
+  ['D', '交付与持续运作', '能否把意图拆成里程碑，管理产能与依赖，并把执行闭环？'],
+  ['E', '协作、沟通与影响', '能否让信息可供行动，拆解事实或目标上的分歧，并跨边界取得承诺？'],
+  ['F', '人才与组织建设', '能否依业务目标设计团队和岗位，做好招聘、安排、辅导、保留人才，建立不靠持续救火的工作系统？'],
+  ['G', '学习、适应与成长', '能否跨领域迁移知识、从挫折中恢复、使用反馈，并在后续决策中体现改变？'],
+  ['H', '职业责任与工作方式', '能否承担自己的部分、如实呈现证据、职业化地管理情绪、尊重边界，并判断双方是否匹配？'],
+];
+---
+<SiteLayout locale={locale} route={route} outline={outline} description={en ? 'The thinking behind Interview Compass: understand a real goal, make the work happen, and examine outcomes with evidence.' : 'Interview Compass 的站点思路：理解真实目标，把事情做成，再用证据检查结果与贡献。'}>
+  <header class="approach-hero">
+    <p class="eyebrow">{en ? 'THE THINKING BEHIND INTERVIEW COMPASS' : 'INTERVIEW COMPASS'}</p>
+    <h1 class="page-title">{en ? 'Overall approach' : '整体思路'}</h1>
+    <p class="approach-thesis">{en ? 'Make the work happen. Then understand what made it work.' : '先把事情做成，再看清它为什么能成。'}</p>
+    <p class="intro">{en ? 'The site serves three perspectives: candidates, interviewers, and managers. Candidates are the primary audience: use the library to prepare for interviews, promotion conversations, and defenses with evidence from your own work. Interviewers and managers can use the same framework to make and support decisions.' : '站点有三个视角：候选人、面试官和管理者。候选人是主要服务对象，可以用题库从自己的经历里找证据，准备面试、晋升沟通和答辩；面试官和管理者也能用同一套框架做判断、推动事情。'}</p>
+  </header>
+
+  <section id="why-this-site">
+    <h2>{en ? 'Why this site exists' : '为什么做这个站点'}</h2>
+    <p>{en ? 'A polished story or a successful launch is not enough to judge the work. The same result can come from different decisions, team contributions, constraints, and luck. A useful conversation reconstructs the path from the goal to the outcome and makes the evidence inspectable.' : '一段讲得漂亮的经历，或一个成功上线的项目，都不足以说明工作做得如何。同一个结果可能来自不同判断、团队贡献、限制条件，甚至运气。真正有用的交流，要能还原从目标到结果的过程，让依据可以被检查。'}</p>
+    <p>{en ? 'That is why the library is organized around questions, evidence, and follow-ups rather than model answers. The questions help people explain their own work and help interviewers test what they need to know without pretending every person or context is identical.' : '所以这里的内容以问题、证据和追问为主，不提供一套标准答案。问题帮助当事人讲清自己的工作，也帮助面试官核实需要了解的内容，而不是假设每个人、每种情境都一样。'}</p>
+  </section>
+
+  <section id="work-to-outcome">
+    <h2>{en ? 'From a real goal to an outcome' : '从真实目标到实际结果'}</h2>
+    <p>{en ? 'The sequence below is a reasoning path, not a script. In practice, teams revisit earlier steps as facts change.' : '下面是一条思考路径，不是要求照念的话术。实际工作中，事实变了，就要回头重新判断。'}</p>
+    <ol class="approach-steps">{steps.map(([title, description], index) => <li><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{title}</h3><p>{description}</p></div></li>)}</ol>
+    <aside class="approach-callout"><strong>{en ? 'The through-line is execution.' : '贯穿始终的是把事情做成。'}</strong><p>{en ? 'A good explanation shows what needed to change, why this path was chosen, how people made it happen, what the result cost, and what the team learned.' : '有说服力的经历要讲清楚：什么需要改变，为什么选这条路，大家如何把它推进，结果付出了什么代价，以及团队学到了什么。'}</p></aside>
+  </section>
+
+  <section id="eight-lenses">
+    <h2>{en ? 'Eight lenses on the work' : '观察工作的八个维度'}</h2>
+    <p>{en ? 'The domains are different lenses on the same work, not eight boxes a person must check. A project may require several at once; role scope changes what evidence is appropriate.' : '八个能力域是观察同一份工作的不同视角，不是要求一个人逐格打勾。完成一个项目可能同时需要多个维度；责任范围不同，合适的证据也会不同。'}</p>
+    <dl class="approach-lenses">{lenses.map(([letter, title, description]) => <div><dt><span>{letter}</span>{title}</dt><dd>{description}</dd></div>)}</dl>
+  </section>
+
+  <section id="candidate-perspective" class="candidate-perspective">
+    <p class="eyebrow">{en ? 'PERSPECTIVE 1 · CANDIDATE' : '视角一 · 候选人'}</p>
+    <h2>{en ? 'Use the site to prepare your evidence, not memorize answers' : '用站点整理证据，不是背标准答案'}</h2>
+    <p>{en ? 'Most people who arrive here are preparing to be a candidate. Start from the role and decision you care about, then use the questions to find and explain evidence from work you have actually done. The library is a map for preparation, not a checklist you need to finish.' : '大多数来这里的人，是为了准备自己作为候选人的那一面。先从目标岗位和这次要争取的机会出发，再用题目找到真实经历里的证据，把自己的判断和贡献讲明白。题库是准备地图，不是必须刷完的清单。'}</p>
+    <ol class="candidate-steps">
+      <li><strong>{en ? 'Choose a target.' : '先定目标。'}</strong>{en ? 'Pick the role, responsibility scope, and context: an external interview, promotion review, or project/technical defense. A title alone does not tell you what evidence the decision requires.' : '选清岗位、目标责任范围和场景：外部面试、晋升评审，还是项目/技术答辩。职位名称本身不能说明这次判断需要什么证据。'}</li>
+      <li><strong>{en ? 'Translate the target into work.' : '把目标还原成工作。'}</strong>{en ? 'What outcomes does the role own? Which technical fundamentals, business understanding, collaboration, or leadership decisions matter? Use the role and capability pages to identify the expected scope.' : '这个角色要对什么结果负责？哪些技术基础、业务理解、协作或管理判断最重要？通过岗位和能力页面看清预期责任范围。'}</li>
+      <li><strong>{en ? 'Choose real examples.' : '挑真实经历。'}</strong>{en ? 'For each example, explain the business or user need, challenge, your responsibility, the result, and your part in producing it. Compare the alternatives, pros and cons, cost, benchmark or competitor, and what you deliberately did not do. Use the same discipline for technical choices: fundamentals, quality bar, failure modes, and trade-offs.' : '每段经历都要讲清业务或用户需求、挑战、本人责任、结果，以及自己如何促成结果。补上备选方案、利弊、成本、对标标准或竞品，以及有意没做什么。技术选择也用同一套逻辑：原理、质量标准、失败风险和取舍。'}</li>
+      <li><strong>{en ? 'Check what the result proves.' : '检查结果能证明什么。'}</strong>{en ? 'Separate team outcome from your contribution. State the evidence, its limits, side effects, and other possible causes. A failed or delayed project can still show sound judgment if you explain what changed in your later work.' : '把团队结果和个人贡献分开，说明证据、边界、副作用和其他可能原因。项目失败或延期也可以体现好的判断，前提是讲清后来做法有什么改变。'}</li>
+      <li><strong>{en ? 'Practice the conversation and assess fit.' : '练习交流，也判断是否匹配。'}</strong>{en ? 'Use questions to find gaps, then practice answering follow-ups in your own words. Ask the interviewer about real responsibilities, standards, support, and constraints; compare those answers with what you need and what the organization can sustain.' : '用题目找到经历中的缺口，再用自己的话练习追问。也要向面试官了解真实责任、标准、支持和约束，并对照个人诉求判断组织能否持续匹配。'}</li>
+    </ol>
+    <p>{en ? 'The goal is not to sound flawless. It is to help the other person understand your decisions and evidence, notice what you still need to learn, and decide whether the role fits both sides.' : '目标不是把自己讲得毫无缺点，而是让对方听懂你的判断和证据，看见你还要补什么，也让你判断这份工作是否适合双方。'}</p>
+    <p class="approach-links"><a href={pathFor({ type: 'preparation' }, locale, base)}>{en ? 'Follow the preparation guide' : '按准备指南确定方向'}</a><a href={pathFor({ type: 'collection', id: 'core-candidate-preparation' }, locale, base)}>{en ? 'Practice candidate questions' : '练习候选人精选题'}</a><a href={pathFor({ type: 'collection', id: 'technical-selected' }, locale, base)}>{en ? 'Review technical questions' : '复习技术精选题'}</a><a href={pathFor({ type: 'collection', id: 'candidate-due-diligence' }, locale, base)}>{en ? 'Prepare questions for the employer' : '准备反向提问'}</a></p>
+    <p class="approach-links"><a href={pathFor({ type: 'topic', id: 'operating-systems' }, locale, base)}>{en ? 'Operating systems' : '操作系统'}</a><a href={pathFor({ type: 'topic', id: 'computer-networks' }, locale, base)}>{en ? 'Computer networks' : '计算机网络'}</a><a href={pathFor({ type: 'topic', id: 'databases' }, locale, base)}>{en ? 'Databases' : '数据库'}</a></p>
+  </section>
+
+  <section id="interviewer-perspective">
+    <p class="eyebrow">{en ? 'PERSPECTIVE 2 · INTERVIEWER' : '视角二 · 面试官'}</p>
+    <h2>{en ? 'Design questions around the decision you need to make' : '围绕要做的判断设计问题'}</h2>
+    <p>{en ? 'Start with the role’s outcomes and responsibility scope. Decide which evidence would change your assessment, then use questions and follow-ups to gather it. Keep the criteria comparable while allowing candidates to show different paths; separate observed facts from interpretation, and do not turn one answer into a verdict on someone’s character.' : '从岗位结果和责任范围开始，先想清楚什么证据会影响判断，再用问题和追问把它收集出来。标准要可比较，也要允许候选人用不同路径展示能力；把观察到的事实和自己的解释分开，不用单次回答给人品行下定论。'}</p>
+    <p class="approach-links"><a href={pathFor({ type: 'framework' }, locale, base)}>{en ? 'Read the interviewing method' : '阅读提问方法'}</a><a href={pathFor({ type: 'collection', id: 'core-interviewer-evidence' }, locale, base)}>{en ? 'Browse interviewer questions' : '查看面试官取证题单'}</a></p>
+  </section>
+
+  <section id="management">
+    <p class="eyebrow">{en ? 'PERSPECTIVE 3 · MANAGER' : '视角三 · 管理者'}</p>
+    <h2>{en ? 'Design the conditions for results' : '设计做成事情的条件'}</h2>
+    <p>{en ? 'Management is more than assigning tasks and checking status. Start from the business goal, then decide which capabilities and roles are needed, how responsibilities should be divided, and where teams need clear interfaces. A useful structure reduces unowned work and unnecessary overlap while giving people room to own outcomes.' : '管理不只是分派任务和追进度。要先看业务目标，再判断需要哪些能力和岗位、责任如何划分、团队之间需要什么接口。好的组织设计会减少无人负责和不必要的重叠，同时给人足够空间对结果负责。'}</p>
+    <ul>
+      <li><strong>{en ? 'Resources and upward support:' : '资源与向上争取支持：'}</strong>{en ? 'Summarize the goal, evidence, key risk, and decision needed. Make capacity, dependencies, trade-offs, and the cost of delay concrete; ask for the sponsorship or top-down decision that can unblock the work.' : '把目标、证据、关键风险和需要的决策提炼出来。说清产能、依赖、取舍和延误成本，提出能解除阻塞的支持或自上而下决策。'}</li>
+      <li><strong>{en ? 'Operating mechanisms:' : '运作机制：'}</strong>{en ? 'Choose meeting, reporting, and information-sharing rhythms that help the right people decide. Make priorities visible, handle cross-team conflict, and manage work across levels without pulling every decision upward.' : '选择能让合适的人及时决策的会议、汇报和信息同步节奏。让优先级可见，处理跨团队冲突，做好多层级管理，也避免所有决策都被上收。'}</li>
+      <li><strong>{en ? 'Hiring and using people:' : '选人与用人：'}</strong>{en ? 'Define the role before selecting a person. Match difficult work with capability, motivation, support, and authority; agree what good looks like and when a manager should coach, intervene, or step back.' : '先定义岗位，再选合适的人。让有挑战的工作匹配相应能力、动机、支持和权限；说清什么是做好，以及管理者何时辅导、介入或放手。'}</li>
+      <li><strong>{en ? 'Retaining and developing people:' : '留人与育人：'}</strong>{en ? 'Notice high performance and potential through sustained evidence. Choose development paths for different strengths, provide meaningful scope and resources, coach against observable gaps, and handle improvement plans or role transitions fairly, consistently, and through the organization’s established process.' : '用持续的证据识别高绩效和潜力，根据不同特点设计成长路径，给出有意义的责任和资源；针对可观察的差距设定辅导与改进安排，公平一致地依照组织流程处理绩效、转岗或离开。'}</li>
+    </ul>
+  </section>
+
+  <section id="people-judgment">
+    <h2>{en ? 'People, judgment, and fit' : '识人、判断与匹配'}</h2>
+    <p>{en ? 'Questions about humility, ego, maturity, resilience, or professionalism should not become personality labels. Look at behavior over time: how someone responds to disagreement, updates a view when evidence changes, credits others, owns mistakes, regulates emotion, and treats commitments.' : '谦卑、自我感、成熟度、韧性或职业操守，不该被简化成性格标签。要看一段时间里的行为：如何面对不同意见，证据变化时是否修正观点，是否承认他人贡献、承担错误、管理情绪并遵守承诺。'}</p>
+    <p>{en ? 'Confidence or a strong ego is not automatically a problem; the question is whether capability is real and whether the person can learn, collaborate, and keep the impact of that style within healthy bounds. Fit is also mutual: compare what the person needs, what the organization can offer, and whether that match can last as the work changes.' : '自信或较强的自我感不自动等于问题；要看能力是否扎实，也要看这个人能否学习、协作，并把自身风格带来的影响控制在健康范围内。匹配也是双向的：对照个人的诉求、组织能提供的条件，以及工作变化后这种匹配能否持续。'}</p>
+    <p>{en ? 'Setbacks belong in the same evidence-based view. A failed project does not settle the question by itself; examine the decisions, constraints, response, recovery, and whether learning changed later behavior.' : '挫折也应放在同一套证据视角里看。项目失败本身不能定论；要检查当时的判断、限制条件、应对和恢复过程，以及学到的东西是否改变了后续行为。'}</p>
+  </section>
+
+  <section id="read-the-room">
+    <h2>{en ? 'Understand each participant’s purpose, then find your position' : '理解不同参与者的目的，再找到自己的位置'}</h2>
+    <p>{en ? 'An interview, promotion review, or project defense is a decision process. The people in the room may share a broad goal, but they do not all own the same question. Before choosing what to explain, work out what decision is being made, who will make or shape it, and what evidence each person needs.' : '面试、晋升评审和项目答辩，都是一个决策过程。现场的人可能有共同的大目标，但他们各自要确认的问题并不相同。决定讲什么之前，先弄清楚这次要做什么决定、谁负责或影响这个决定，以及每个人需要什么证据。'}</p>
+    <dl class="purpose-grid">
+      <div><dt>{en ? 'Candidate in an interview' : '求职面试中的候选人'}</dt><dd>{en ? 'The interviewer is testing evidence against the role; the hiring manager is also weighing the team’s needs, risks, and working context. Show how your decisions and contribution fit the work, and use your questions to assess the role and support available.' : '面试官在核实你是否有岗位所需的证据；招聘经理还要判断团队需要、风险和实际工作环境。你要说明自己的判断和贡献如何对应这份工作，也要借提问了解岗位和组织能提供的支持。'}</dd></div>
+      <div><dt>{en ? 'Promotion candidate' : '晋升评审中的申请人'}</dt><dd>{en ? 'Reviewers are looking for sustained responsibility at the next scope, not one unusually successful project. Connect repeated decisions and attributable outcomes to the expectations of that scope; clarify what remains outside your ownership.' : '评审者要确认你是否持续承担了更大范围的责任，而不是只看某个特别成功的项目。把反复承担的判断、可归因结果和目标范围的要求连起来，也说明哪些事情仍不在你的职责之内。'}</dd></div>
+      <div><dt>{en ? 'Project or technical defense' : '项目或技术答辩中的汇报者'}</dt><dd>{en ? 'Reviewers need to judge whether the problem was worth solving, whether the choices were sound, what the result proves, and what decision or support is needed now. Make the baseline, alternatives, cost, risks, ownership, and open questions easy to inspect.' : '评审者要判断问题是否值得解决、方案选择是否合理、结果能证明什么，以及现在需要什么决策或支持。把基线、备选方案、成本、风险、责任归属和未决问题讲清楚，便于核验。'}</dd></div>
+      <div><dt>{en ? 'Manager or senior sponsor' : '直属管理者或更高层支持者'}</dt><dd>{en ? 'They need a concise view of progress, risk, dependencies, and the choice in front of them. State the impact of waiting, what your team can do, and the specific resource, decision, or sponsorship that would change the outcome.' : '他们需要快速看清进展、风险、依赖和眼前要做的选择。说明等待的影响、团队可以自行完成什么，以及哪项资源、决策或背书会改变结果。'}</dd></div>
+    </dl>
+    <h3>{en ? 'A practical way to respond' : '回应时可以这样组织'}</h3>
+    <ol class="response-steps">
+      <li>{en ? 'Name the decision and its criteria. If they are unclear, ask what the group needs to decide and by when.' : '先确认要做的决定和判断标准；如果不清楚，就直接问这次要决定什么、何时需要结论。'}</li>
+      <li>{en ? 'Read the participants’ responsibilities and incentives without assuming hidden motives. Separate the decision owner, evidence gatherers, affected partners, and people who can unblock resources.' : '根据参与者的职责理解他们关注什么，不猜测隐藏动机；区分决策者、收集证据的人、受影响的合作方，以及能协调资源的人。'}</li>
+      <li>{en ? 'Choose evidence that answers their question. Explain your own role, trade-offs, results, and limits; do not claim work owned by the team.' : '挑能回答对方问题的证据，讲清自己的角色、取舍、结果和边界，不把团队完成的工作都归到自己名下。'}</li>
+      <li>{en ? 'Surface conflicts or missing support early. State the trade-off, ask for the needed clarification or decision, and confirm the next step.' : '尽早说出目标冲突或支持缺口，讲明取舍，提出需要的澄清或决策，并确认下一步。'}</li>
+    </ol>
+    <p>{en ? 'Reading purpose is not performing for an audience. It helps you put the right evidence in front of the people responsible for a decision, while also checking whether their expectations and the organization’s offer fit your own goals.' : '理解对方目的，不是迎合每个人的偏好。它是把合适的证据交给需要做判断的人，同时也借此核对对方的期待和组织能提供的条件，是否符合自己的目标。'}</p>
+  </section>
+
+  <section id="how-to-use">
+    <h2>{en ? 'Start from your role' : '按自己的角色开始'}</h2>
+    <p>{en ? 'The library is a growing reference, not an exhaustive encyclopedia or an automatic verdict on a person. Follow the preparation guide if you are a candidate; use the interviewing method to structure an assessment; use the management questions to examine how a team creates the conditions for sustained results.' : '题库是一份持续整理的参考，不是包罗一切的百科，也不会自动替人下结论。候选人可以先按准备指南确定方向；面试官可以用提问方法设计评估；管理者可以从管理题目出发，检查团队如何建立持续产出所需的条件。'}</p>
+    <p class="approach-links"><a href={pathFor({ type: 'preparation' }, locale, base)}>{en ? 'Candidate: prepare for a role' : '候选人：准备目标岗位'}</a><a href={pathFor({ type: 'framework' }, locale, base)}>{en ? 'Interviewer: plan the conversation' : '面试官：设计面试交流'}</a><a href={pathFor({ type: 'collection', id: 'core-manager-evaluation' }, locale, base)}>{en ? 'Manager: assess and lead a team' : '管理者：评估与带团队'}</a></p>
+  </section>
+</SiteLayout>
+<style>
+  .approach-hero { padding: 1.5rem 0 1rem; }
+  .approach-hero .eyebrow { color: var(--muted); font-size: .78rem; font-weight: 700; letter-spacing: .09em; }
+  .approach-hero h1 { max-width: 22ch; line-height: 1.18; }
+  .approach-thesis { margin-top: -.35rem; font-size: 1.35rem; font-weight: 700; line-height: 1.4; }
+  .approach-hero .intro { max-width: 72ch; font-size: 1.12rem; }
+  section { margin-top: 3rem; scroll-margin-top: 2rem; }
+  section > p { max-width: 78ch; line-height: 1.85; }
+  .approach-steps { display: grid; gap: .25rem; list-style: none; padding: 0; }
+  .approach-steps li { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+  .approach-steps li > span { color: var(--accent); font-weight: 750; font-variant-numeric: tabular-nums; }
+  .approach-steps h3 { margin: 0; font-size: 1.04rem; }
+  .approach-steps p { margin: .4rem 0 0; color: var(--muted); line-height: 1.75; }
+  .approach-callout { margin-top: 1.5rem; padding: 1.2rem 1.35rem; border-left: 3px solid var(--accent); background: var(--surface, #f7f5f1); }
+  .approach-callout p { margin: .4rem 0 0; line-height: 1.8; }
+  .approach-lenses { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .75rem 1.5rem; }
+  .approach-lenses > div { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+  .approach-lenses dt { display: flex; gap: .65rem; align-items: center; font-weight: 700; }
+  .approach-lenses dt span { display: inline-grid; width: 1.8rem; aspect-ratio: 1; place-items: center; border-radius: 50%; color: var(--accent); background: var(--surface, #f7f5f1); }
+  .approach-lenses dd { margin: .55rem 0 0 2.45rem; color: var(--muted); line-height: 1.75; }
+  .purpose-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem 1.5rem; }
+  .purpose-grid > div { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+  .purpose-grid dt { font-weight: 700; }
+  .purpose-grid dd { margin: .5rem 0 0; color: var(--muted); line-height: 1.75; }
+  .response-steps { padding-inline-start: 1.4rem; }
+  .candidate-steps { padding-inline-start: 1.4rem; }
+  .candidate-steps li { padding-inline-start: .25rem; }
+  .candidate-perspective { padding: 1.5rem; margin-inline: -1.5rem; border-radius: 1rem; background: var(--surface, #f7f5f1); }
+  @media(max-width: 700px) { .purpose-grid { grid-template-columns: 1fr; } }
+  section li { line-height: 1.8; margin-block: .65rem; }
+  .approach-links { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: 1.25rem; }
+  .approach-links a { font-weight: 650; }
+  @media(max-width: 700px) { .approach-lenses { grid-template-columns: 1fr; } .approach-steps li { gap: .5rem; } }
+</style>

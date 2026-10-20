@@ -34,9 +34,12 @@ async function build(): Promise<KnowledgeRegistry> {
     add({type:'guide'},'guide',preparation);
     add({type:'guide-capabilities'},'guide',preparation);
     add({type:'guide-direction'},'guide',preparation);
+    add({type:'site-approach'},'guide',preparation);
     const stages = add({type:'capability-model'},'stage-reference',preparation);
     add({type:'framework'},'method',preparation);
     const browse = add({type:'browse'},'index',preparation);
+    const supplementary = group('supplementary-guides', '补充资料', 'Supplementary resources', preparation);
+    add({type:'guide-resources'},'guide',supplementary);
     const questions = add({ type: 'questions' }, 'index');
     add({ type: 'search' }, 'index', undefined, true);
     const collections = add({ type: 'collections' }, 'index', questions);

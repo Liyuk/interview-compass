@@ -1,0 +1,60 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { pathFor, titleFor } from '../lib/routes';
+import type { Locale } from '../lib/taxonomy';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const en = locale === 'en';
+const base = import.meta.env.BASE_URL;
+const route = { type: 'guide-resources' as const };
+const outline = [
+  { id: 'start-with-a-gap-map', label: en ? 'Start with a gap map' : '先做差距地图' },
+  { id: 'cs-foundations', label: en ? 'CS foundations' : '计算机基础' },
+  { id: 'project-and-behavioral', label: en ? 'Projects and behavioral stories' : '项目与行为故事' },
+  { id: 'practice-loop', label: en ? 'A practical preparation loop' : '可执行的准备闭环' },
+  { id: 'source-boundaries', label: en ? 'How to use external sources' : '外部资料的使用边界' },
+];
+---
+<SiteLayout locale={locale} route={route} outline={outline} description={en ? 'Optional external references for computer science foundations, project deep dives, and behavioral interview questions.' : '计算机基础、项目深挖和行为面试题的可选外部资料参考。'}>
+  <h1 class="page-title">{titleFor(route, locale)}</h1>
+  <p class="intro">{en ? 'This is an optional reference shelf. Start with the preparation path and question library; come here only when you have a specific gap to fill. A repository can suggest topics and prompts, but cannot replace your own reasoning.' : '这是一份可选的补充资料索引。先按准备指南确定方向、进入题库练习；有明确知识或表达缺口时，再来挑选外部材料。仓库可以提示主题和追问角度，但不能代替自己的判断。'}</p>
+
+  <h2 id="start-with-a-gap-map">{en ? 'Start with a gap map' : '先做差距地图'}</h2>
+  <p>{en ? 'Write down the target role, level, and interview format. Mark each area as “can explain”, “can apply”, or “not yet clear”. For campus hiring, a useful map often includes core CS, coding, project explanation, collaboration, and motivation. Pick a small number of gaps to work on first.' : '先写下目标岗位、责任阶段和面试形式，再把知识标成“能讲清”“能应用”“还不确定”。校招准备通常会涉及计算机基础、编程、项目表达、协作经历和求职动机。先挑少数真正影响目标的缺口，不必把所有资料从头刷完。'}</p>
+  <p><a href={pathFor({ type: 'guide-direction' }, locale, base)}>{en ? 'Choose a preparation direction' : '确定准备方向'}</a> · <a href={pathFor({ type: 'questions' }, locale, base)}>{en ? 'Browse this site’s question library' : '浏览本站题库'}</a></p>
+
+  <h2 id="cs-foundations">{en ? 'CS foundations: use a checklist, then learn the concepts' : '计算机基础：先查覆盖，再学清概念'}</h2>
+  <p>{en ? 'For operating systems, networks, computer architecture, databases, and object-oriented design, use a topic map to find omissions. Then explain the concept in your own words, trace a concrete example, and connect it to a project or a design choice.' : '操作系统、网络、计算机组成原理、数据库和面向对象设计，可以先用主题索引检查遗漏，再回到课程笔记或可靠教材把原理学透。准备时尝试自己解释概念、推演具体例子，并联系到项目中的实际选择。'}</p>
+  <ul>
+    <li><strong><a href="https://github.com/JayrajSinh16/CS-Fundamentals-Interview" target="_blank" rel="noreferrer">CS Fundamentals Interview ↗</a></strong> — {en ? 'A campus-placement-oriented checklist spanning networks, DBMS, OOP, OS, computer architecture, and REST. Use it to map coverage and select topics; verify explanations against course materials and authoritative references.' : '面向校园招聘复习的主题索引，覆盖网络、DBMS、面向对象、操作系统、计算机组成和 REST。适合查覆盖、找待复习主题；具体原理请结合课程资料和可靠参考核对。'}</li>
+    <li><strong><a href="https://github.com/jwasham/coding-interview-university" target="_blank" rel="noreferrer">Coding Interview University ↗</a></strong> — {en ? 'A broad, multi-month study plan for software-engineering interviews, with algorithms, data structures, systems topics, testing, and practice. Select relevant sections; it is not a short campus checklist and does not aim to cover every SQL or frontend topic.' : '面向软件工程面试的长期学习计划，涉及算法、数据结构、系统知识、测试和练习。按目标选章节即可；它范围很广，不是短期校招清单，也不覆盖所有 SQL 或前端主题。'}</li>
+  </ul>
+
+  <h2 id="project-and-behavioral">{en ? 'Project stories, collaboration, and career narrative' : '项目表达、协作经历与职业叙事'}</h2>
+  <p>{en ? 'Prepare a few real examples, not polished scripts. For a project, make the chain visible: user or business need → challenge and constraints → your role → options and trade-offs → why you chose one → execution → measurable result and learning. For behavioral questions, include what you noticed, what you did, and how the outcome changed.' : '准备几段真实经历，不要背一套看似完美的台词。讲项目时把链条讲清：用户或业务需要 → 挑战与约束 → 自己的职责 → 备选方案与取舍 → 选择依据 → 如何推动落地 → 结果和复盘。回答行为题时，也要说清你观察到了什么、采取了什么行动、结果发生了什么变化。'}</p>
+  <ul>
+    <li><strong><a href="https://github.com/alexeygrigorev/ai-engineering-field-guide/blob/main/interview/questions/03-project-deep-dive.md" target="_blank" rel="noreferrer">Project Deep Dive Interview ↗</a></strong> — {en ? 'Useful prompts for project context, ownership, architecture, alternatives, trade-offs, communication, challenges, and debugging. The examples are AI-engineering-oriented; adapt the question structure to coursework, internships, personal projects, or other domains.' : '可借鉴它对项目背景、个人职责、架构、备选方案、取舍、沟通、挑战和排障的追问。示例偏 AI 工程；可以迁移提问结构到课程项目、实习、个人项目或其他领域。'}</li>
+    <li><strong><a href="https://github.com/zapplyjobs/interview-handbook-2026" target="_blank" rel="noreferrer">Interview Handbook 2026 ↗</a></strong> — {en ? 'A new-grad-oriented source of prompts about teamwork, conflict, communication, adaptability, motivation, and values. Use the categories to build a story bank and practice concise answers; do not memorize sample scripts or treat them as validated hiring criteria.' : '面向应届生的题目分类，涉及团队合作、冲突、沟通、适应力、动机和价值观。可用来建立自己的故事库并练习简洁表达；不要照背示例，也不要把它当作经过验证的录用标准。'}</li>
+    <li><strong><a href="https://github.com/DPP-2026/dpp-interview-prep/blob/main/07-behavioral-realtime.md" target="_blank" rel="noreferrer">Behavioral &amp; Real-Time Interview Questions ↗</a></strong> — {en ? 'An optional source for mentoring, onboarding, documentation, and knowledge-transfer prompts. It assumes professional team experience, so translate examples to a class team, club, lab, internship, or open-source work; formal mentoring experience is not required.' : '补充导师辅导、入职引导、文档和知识传递相关的行为题。内容偏有工作经验的 DevOps/平台团队；学生可换成课程小组、社团、实验室、实习或开源协作，不需要硬凑正式带教经历。'}</li>
+  </ul>
+  <p>{en ? 'For project answers, this site’s “Overall approach” page offers a broader lens: distinguish what mattered from what did not, identify the benchmark, explain the cost of the choice, and show how you helped produce the outcome.' : '项目题还可以结合本站的“整体思路”：判断哪些事情真正重要、哪些没有必要，对标对象和成功标准是什么，选择付出了什么成本，以及自己如何促成结果。'}</p>
+  <p><a href={pathFor({ type: 'site-approach' }, locale, base)}>{en ? 'Read the site’s overall approach' : '阅读本站「整体思路」'}</a> · <a href={pathFor({ type: 'framework' }, locale, base)}>{en ? 'Read interview and preparation methods' : '阅读提问与准备方法'}</a></p>
+
+  <h2 id="practice-loop">{en ? 'A practical preparation loop' : '可执行的准备闭环'}</h2>
+  <ol>
+    <li>{en ? 'Choose a target role and a small set of relevant topics.' : '确定目标岗位，圈定少量相关主题。'}</li>
+    <li>{en ? 'Study one concept or story, then close the notes and explain it aloud.' : '学习一个概念或整理一段经历，然后合上资料，自己讲一遍。'}</li>
+    <li>{en ? 'Practice follow-up questions: why this choice, what alternatives, what cost, what evidence, and what would change your mind?' : '练习追问：为什么这样选？还有什么方案？代价是什么？证据是什么？什么情况会让你改变判断？'}</li>
+    <li>{en ? 'Get a mock interview or peer review, record specific gaps, and revise only those gaps.' : '做一次模拟面试或同伴互评，记下具体缺口，只针对缺口修改。'}</li>
+  </ol>
+  <p>{en ? 'If time is short, prioritize explaining fundamentals clearly, solving representative problems, and telling a small number of specific stories. A complete-looking checklist is less useful than being able to reason through a relevant question.' : '时间有限时，优先把基础讲清、练会有代表性的题、准备少量具体故事。清单全部打勾，不如面对相关问题时能讲出推理过程。'}</p>
+
+  <h2 id="source-boundaries">{en ? 'Use external sources with clear boundaries' : '外部资料的使用边界'}</h2>
+  <p>{en ? 'These are community-maintained resources, not employer policies or guarantees of interview coverage. Repositories can change, and missing license information does not grant permission to republish their material. Follow the links to the originals, write your own notes, and verify technical claims against dependable references.' : '这些是社区维护的资料，不是企业官方面试政策，也不能保证覆盖实际面试范围。仓库内容可能变化；没有标注许可证也不代表可以转载。请访问原文、自己整理笔记，并用可靠资料核对技术结论。'}</p>
+  <p class="journey-links"><a href={pathFor({ type: 'questions' }, locale, base)}>{en ? 'Practice with the question library' : '进入题库练习'}</a><a href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'Choose a curated set' : '选择精选题单'}</a></p>
+</SiteLayout>
+<style>
+  ul, ol { padding-inline-start: 1.5rem; }
+  li { margin-block: .7rem; line-height: 1.8; }
+  p { line-height: 1.85; }
+</style>

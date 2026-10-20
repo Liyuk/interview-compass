@@ -9,8 +9,8 @@ export function pagePresentationFor(route: RouteRef): { kind: 'home' | 'discover
     case 'question': case 'collection': return { kind: 'article', section };
     case 'path': return { kind: 'article', section };
     case 'scenarios': return { kind: 'section', section };
-    case 'preparation': case 'guide-capabilities': case 'guide-direction':
-    case 'framework': return { kind: 'article', section };
+    case 'preparation': case 'guide-capabilities': case 'guide-direction': case 'guide-resources':
+    case 'framework': case 'site-approach': return { kind: 'article', section };
     case 'guide': return { kind: 'article', section };
     case 'capability-model': case 'capability-model-stage': case 'capability-model-dimension': case 'capability-model-mapping': case 'role-stage-model': return { kind: 'section', section };
     case 'not-found': return { kind: 'discovery', section: null };
