@@ -20535,10 +20535,10 @@
   {
     "questionId": "bulk-g-growth-goal-without-promotion-slot",
     "reviewStatus": "reviewed",
-    "fingerprint": "820668ebaa1254c72d0daf65f13c95dd0b88026c22d2f0c53cd688de63f97340",
+    "fingerprint": "c3dd85d6f8ba44676a0abfcf579677e738ad61b32767134e06369f08d4ca0270",
     "rationale": {
-      "zh": "题面是从产品研发横向转为可靠性工程专业岗，按工程专业四阶段使用；不将通用管理画像等同目标技术岗位。 技术子岗位复核：已按题意核验为技术岗位通用的学习、自驱、复盘或恢复判断；保留原阶段责任边界，不要求初级有组织决策权。",
-      "en": "The premise is a lateral move from product engineering to reliability IC work; use the four engineering IC stages rather than treat generic management as the target technical role. Technical subrole review: Reviewed as shared technical learning, initiative, reflection, or recovery judgment, retaining stage-specific responsibility and junior authority limits."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -20591,10 +20591,10 @@
   {
     "questionId": "bulk-g-growth-path-specialist-vs-manager",
     "reviewStatus": "reviewed",
-    "fingerprint": "4f494330f68db6fc808f546a6fadc1f93426941fa3889784845545e4d5894373",
+    "fingerprint": "64d81656e7b0cd5301d9bb3aef04ccafbb4dd0d00f6940108ac830bb744350ce",
     "rationale": {
-      "zh": "本题核验“辨析动机、日常工作比例和承担的困难类型。”，题面未限定正式组织权限；保留多个责任阶段，分别追问本人调整、团队支持或机制变化，不按事件规模直接给分。 技术子岗位复核：已按题意核验为技术岗位通用的学习、自驱、复盘或恢复判断；保留原阶段责任边界，不要求初级有组织决策权。",
-      "en": "The question examines “Distinguishes motivation, daily work mix, and the kinds of difficulty one wants to own.”. It assumes no fixed organizational authority; retain multiple responsibility stages and probe personal adjustment, team support, or mechanisms without scoring event scale. Technical subrole review: Reviewed as shared technical learning, initiative, reflection, or recovery judgment, retaining stage-specific responsibility and junior authority limits."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -20604,15 +20604,13 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "manager",
         "stageIds": [
-          "manager-manager",
-          "manager-organization"
+          "manager-manager"
         ]
       },
       {
@@ -20622,8 +20620,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -20633,8 +20630,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -20644,8 +20640,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -20655,8 +20650,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -38026,10 +38020,10 @@
   {
     "questionId": "e-communication-correction-to-external-audience",
     "reviewStatus": "reviewed",
-    "fingerprint": "fa2b0e0938526fef9a59c565152685381b596b8351e1b246960ea69e1867e0d2",
+    "fingerprint": "fbeacea051d65dd9eb1970c9b75de4c5e2c7fc65e2ece96d43689dc52d853fd9",
     "rationale": {
-      "zh": "本题核验“确认错误事实、传播范围和客户决策影响。”。按实际岗位与权限比较沟通、理解确认和后续行动；个人清晰表达、跨方协作与管理反馈的范围分别核验，不把话术流利当作证据。 技术子岗位复核：独立技术参与者可核验证据、影响和替代动作；正式对外承诺和风险批准需相关授权，不要求初级主导客户或研究决策。",
-      "en": "The question examines “Verify the error, distribution, and customer decision impact.”. Compare communication, understanding checks, and follow-up within the actual role and authority; distinguish personal clarity, cross-party coordination, and managerial feedback rather than reward polished delivery alone. Technical subrole review: Independent technical participants assess evidence and options; external promises and risk approvals require authority."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -38039,8 +38033,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -38050,15 +38043,13 @@
           "marketing-independent",
           "marketing-senior",
           "marketing-expert",
-          "marketing-manager",
-          "marketing-organization"
+          "marketing-manager"
         ]
       },
       {
         "roleId": "manager",
         "stageIds": [
-          "manager-manager",
-          "manager-organization"
+          "manager-manager"
         ]
       },
       {
@@ -38067,8 +38058,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -38077,8 +38067,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -38087,8 +38076,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -38097,8 +38085,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -38107,8 +38094,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -38116,10 +38102,10 @@
   {
     "questionId": "e-communication-customer-impact-notice",
     "reviewStatus": "reviewed",
-    "fingerprint": "bbaaeb4b6e5e38586050652f2241301e0e186a977e34e6d2b7627797ccfb1715",
+    "fingerprint": "da03f981611c2af3598dfe550f0c81f3053f32fbae69dd8141b58f1fc995e023",
     "rationale": {
-      "zh": "本题核验“说明已确认事实、可能影响和未知范围，不夸大也不隐瞒。”。按实际岗位与权限比较沟通、理解确认和后续行动；个人清晰表达、跨方协作与管理反馈的范围分别核验，不把话术流利当作证据。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
-      "en": "The question examines “States confirmed facts, possible impact, and unknown scope without exaggerating or concealing.”. Compare communication, understanding checks, and follow-up within the actual role and authority; distinguish personal clarity, cross-party coordination, and managerial feedback rather than reward polished delivery alone. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -38129,8 +38115,7 @@
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
@@ -38140,8 +38125,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -38151,15 +38135,13 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "manager",
         "stageIds": [
-          "manager-manager",
-          "manager-organization"
+          "manager-manager"
         ]
       },
       {
@@ -38169,8 +38151,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -38180,8 +38161,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -38191,8 +38171,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -38202,8 +38181,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -38563,10 +38541,10 @@
   {
     "questionId": "e-communication-risk-update-without-certainty",
     "reviewStatus": "reviewed",
-    "fingerprint": "71b87d63471d875d0f3d31244ba775d8fc8e2302b853650f53a89fde32d2435e",
+    "fingerprint": "21e43bafb35ebc394b5a4a99308237ade02ed1995d81f0463ecd33b6c90e09fa",
     "rationale": {
-      "zh": "本题核验“区分已验证事实、当前假设和仍未知的部分。”。按实际岗位与权限比较沟通、理解确认和后续行动；个人清晰表达、跨方协作与管理反馈的范围分别核验，不把话术流利当作证据。 技术子岗位复核：沟通、分歧、协商和影响路径同样适用于相关技术子岗位；保留原已审阶段，建议与求助不等于有权承诺资源或考核他人。",
-      "en": "The question examines “Separate verified facts, current hypotheses, and unknowns.”. Compare communication, understanding checks, and follow-up within the actual role and authority; distinguish personal clarity, cross-party coordination, and managerial feedback rather than reward polished delivery alone. Technical subrole review: Communication, disagreement, negotiation, and influence apply across relevant technical roles, retaining reviewed stages and authority limits."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -38576,15 +38554,13 @@
           "pmo-independent",
           "pmo-senior",
           "pmo-expert",
-          "pmo-manager",
-          "pmo-organization"
+          "pmo-manager"
         ]
       },
       {
         "roleId": "manager",
         "stageIds": [
-          "manager-manager",
-          "manager-organization"
+          "manager-manager"
         ]
       },
       {
@@ -38594,8 +38570,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -38605,8 +38580,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -38616,8 +38590,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -38627,8 +38600,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -38638,8 +38610,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -38649,8 +38620,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -61758,10 +61728,10 @@
   {
     "questionId": "exp1500-f-022",
     "reviewStatus": "reviewed",
-    "fingerprint": "733dd80b23b5590276e79dc351893d1fb1b5c26deb276388242b1d0056af927f",
+    "fingerprint": "af378d6b105d5b71280f439c3ed2154db97578912e57537356bdca621c8767e0",
     "rationale": {
-      "zh": "冲突反馈的招聘校准适合两管理阶段：一线核验具体岗位证据，组织层建立负责人和面试流程的校准机制。 通用管理责任明确适用于技术管理岗位；技术子岗位的专业参与范围另按题意登记，不运行时继承父岗位。",
-      "en": "Hiring calibration fits both management stages: verify evidence for a specific role at first-line scope and calibrate leaders and interview processes at organizational scope. Generic management responsibility explicitly includes technical managers; specialist participation is recorded for this question rather than inherited at runtime."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -67996,10 +67966,10 @@
   {
     "questionId": "f-growth-development-coach-high-potential-quiet-contributor",
     "reviewStatus": "reviewed",
-    "fingerprint": "48ea5cabf4188fbc33b8ae9a732f24eec480837f6f41ddbf88b2f70ed2f3ec05",
+    "fingerprint": "7656bc519a694c866530baf246b3fe462e55f34b6850ff23183c96d35c8d0e77",
     "rationale": {
-      "zh": "高级专业评审者可识别可靠性等低曝光贡献，管理者负责成长机会校准；不让演示频率替代影响证据。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Senior specialist reviewers can identify low-visibility contributions such as reliability; managers calibrate opportunities. Presentation frequency does not replace impact evidence. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -68012,8 +67982,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68021,8 +67989,6 @@
       {
         "roleId": "product",
         "stageIds": [
-          "product-senior",
-          "product-expert",
           "product-manager",
           "product-organization"
         ]
@@ -68030,8 +67996,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68039,8 +68003,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68048,8 +68010,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68057,8 +68017,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68068,10 +68026,10 @@
   {
     "questionId": "f-growth-development-coach-new-lead",
     "reviewStatus": "reviewed",
-    "fingerprint": "ae1028a35b339fd26141c8b122cb19393711728e9ff2cb0740eca04da8413089",
+    "fingerprint": "a8a8f53e478bbf724dba06d7006d71a2dc05f58cda949870858121947d7c04d5",
     "rationale": {
-      "zh": "指导小组长从亲自执行到带人涉及管理转变；一线培养小组责任，组织层培养可独立管理团队的负责人。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Coaching a new lead from doing work to enabling others concerns management transition. First-line scope develops group responsibility; organizational scope develops independent team managers. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -68121,10 +68079,10 @@
   {
     "questionId": "f-growth-development-concrete-milestone",
     "reviewStatus": "reviewed",
-    "fingerprint": "f76ad0f75084e7a9576008cb2e5086571a29f09cda7b8692d0dbb0b5d9b2a7ca",
+    "fingerprint": "85b84e19fcedd5746017b2816e935a64a9793e22bf601367028e366f0883b7d4",
     "rationale": {
-      "zh": "独立贡献者也可帮助同伴明确成长情境与下一轮练习；高级和管理阶段增加带教与机会责任，不要求拥有绩效权。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Independent contributors can help peers clarify growth context and next practice. Senior and management stages add mentoring and opportunity responsibilities without assuming performance authority. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -68137,9 +68095,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68147,9 +68102,6 @@
       {
         "roleId": "product",
         "stageIds": [
-          "product-independent",
-          "product-senior",
-          "product-expert",
           "product-manager",
           "product-organization"
         ]
@@ -68157,9 +68109,6 @@
       {
         "roleId": "operations",
         "stageIds": [
-          "operations-independent",
-          "operations-senior",
-          "operations-expert",
           "operations-manager",
           "operations-organization"
         ]
@@ -68167,9 +68116,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68177,9 +68123,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68187,9 +68130,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68197,9 +68137,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68209,10 +68146,10 @@
   {
     "questionId": "f-growth-development-fatigue-and-inertia",
     "reviewStatus": "reviewed",
-    "fingerprint": "78985ae690ac4efd114e17178f98123ff4bda4fb3a71e44b52cb3de2739edf45",
+    "fingerprint": "373bc2803b511f41636263f5c27942eb951c8e32f0bd6af8d0567e4f097522d2",
     "rationale": {
-      "zh": "负荷、状态和工作预期的管理支持需要实际人员责任；两阶段核验事实和支持机制，不以懒惰标签替代调查。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Support for workload, state, and expectations requires people responsibility. Both stages verify facts and support mechanisms rather than using laziness labels. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -68262,10 +68199,10 @@
   {
     "questionId": "f-growth-development-inconsistent-performance",
     "reviewStatus": "reviewed",
-    "fingerprint": "8aa6e4079940f3737929393a4bd2dd5c0735cfe4831ed74c11417a0fd66f68ad",
+    "fingerprint": "ce304d4cff31aaf1bea5958a14f54b1e8a30e9b9324c24940d6d72b68c831a6f",
     "rationale": {
-      "zh": "是否进入正式绩效处理的判断涉及管理授权；分别核验成员或管理者的新职责、支持质量和足够观察周期。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Judging whether formal performance action is needed involves management authority. Examine the contributor’s or manager’s new duties, support, and adequate observation period. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -68315,10 +68252,10 @@
   {
     "questionId": "f-growth-development-legacy-system-market-value",
     "reviewStatus": "reviewed",
-    "fingerprint": "06dc15620e9bd7c6b665d46c9b06274e936592a1c07f8bbe6cef5bba1376258c",
+    "fingerprint": "1da43f3bf1c040dd3cebd8b5fa437905da255d02fc60791c16c8bc25046f04c6",
     "rationale": {
-      "zh": "技术带头人可比较老系统维护与实践演进的专业成长路径；管理者承担轮岗、容量和人员承诺，不要求技术人预测个人市场价值。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Technical leads can compare maintenance and evolving-practice growth paths. Managers own rotation, capacity, and staffing commitments; practitioners need not predict personal market value. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -68331,8 +68268,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68340,8 +68275,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68349,8 +68282,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68358,8 +68289,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68367,8 +68296,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68378,10 +68305,10 @@
   {
     "questionId": "f-growth-development-newcomer-ramp",
     "reviewStatus": "reviewed",
-    "fingerprint": "f81dbe44808e82ed2945c8493886ea3ab9937797bc5e80e9f9e8e541a4a6ad4d",
+    "fingerprint": "623495680ac5a9ee6f054c4ec6d5fd5492111410729ce22eb8ef72ade0b34de5",
     "rationale": {
-      "zh": "新人带教不只由直属管理者承担，高级专业导师可设计任务和反馈；放开生产权限与正式职责仍需有权负责人确认。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Onboarding is not limited to direct managers: senior specialist mentors can design tasks and feedback. Authorized owners confirm production access and formal responsibility. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -68394,8 +68321,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68403,8 +68328,6 @@
       {
         "roleId": "product",
         "stageIds": [
-          "product-senior",
-          "product-expert",
           "product-manager",
           "product-organization"
         ]
@@ -68412,8 +68335,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68421,8 +68342,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68430,8 +68349,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68439,8 +68356,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -68734,10 +68649,10 @@
   {
     "questionId": "f-hiring-candidate-promise-honesty",
     "reviewStatus": "reviewed",
-    "fingerprint": "ca5c73315be889a7996ad1a2e3dd88f66746e6887512960edd8f19406f9726dc",
+    "fingerprint": "56cb612c43c2b00b6bfbad5f3823614af1d0ee322a5bbec6bbaf9f63beaae7cf",
     "rationale": {
-      "zh": "真实岗位承诺和招聘流程由管理者负责；一线修正本岗位描述，组织层核验跨负责人的授权与沟通一致性。 通用管理责任明确适用于技术管理岗位；技术子岗位的专业参与范围另按题意登记，不运行时继承父岗位。",
-      "en": "Managers own truthful role commitments and process. First-line managers correct the specific role description; organizational leaders verify consistency across leaders and mandates. Generic management responsibility explicitly includes technical managers; specialist participation is recorded for this question rather than inherited at runtime."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -68787,10 +68702,10 @@
   {
     "questionId": "f-hiring-cross-functional-joint-interview",
     "reviewStatus": "reviewed",
-    "fingerprint": "b49aa9ce494afda7bfe78493696b11acc085cce1a067d21ee7ec536fb93ca121",
+    "fingerprint": "4204b449b2b8ef45d90ad3c0c966afdb49a5f9b711429f28c7a820e07f8d86bf",
     "rationale": {
-      "zh": "题目设计负责人联合情境面试，属于管理选拔；一线可设计相关岗位协作评估，组织层校准多负责人共同结果和公平规则。 通用管理责任明确适用于技术管理岗位；技术子岗位的专业参与范围另按题意登记，不运行时继承父岗位。",
-      "en": "Designing joint leadership scenarios concerns management selection. First-line scope can assess role collaboration; organizational scope calibrates shared outcomes and fair rules across leaders. Generic management responsibility explicitly includes technical managers; specialist participation is recorded for this question rather than inherited at runtime."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -69026,10 +68941,10 @@
   {
     "questionId": "f-hiring-lead-leveling-evidence",
     "reviewStatus": "reviewed",
-    "fingerprint": "f7c4a58968038dc092236110e2d35fa13f6ec0b1de6eecc0fba007659d2be15f",
+    "fingerprint": "b5791a050c8201ae7e5611745e8b94118e25f9f02a120ec175f69a82455d2ac9",
     "rationale": {
-      "zh": "负责人定级需按岗位授权和责任证据校准；一线参与相应负责人选拔，组织层比较跨团队复杂度，最终批准不由头衔自动决定。 通用管理责任明确适用于技术管理岗位；技术子岗位的专业参与范围另按题意登记，不运行时继承父岗位。",
-      "en": "Leader leveling depends on mandate and responsibility evidence. First-line scope participates in relevant selection; organizational scope compares cross-team complexity, with approval governed by authority rather than titles. Generic management responsibility explicitly includes technical managers; specialist participation is recorded for this question rather than inherited at runtime."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -69646,10 +69561,10 @@
   {
     "questionId": "f-manager-of-managers-bypass-the-lead",
     "reviewStatus": "reviewed",
-    "fingerprint": "159105f0b68e5dcbf06266b33f545d728fe520518115656a6c3db798b60d57b2",
+    "fingerprint": "49831cc431c6c68f357c8872c472034a1a223deecca12d07eb7feacf2d22bcac",
     "rationale": {
-      "zh": "题目明确多团队上级考虑越过一线负责人，限定组织阶段；核验必要介入与授权损害的取舍。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "The question explicitly concerns a multi-team supervisor bypassing first-line leaders, targeting organizational scope and trade-offs between intervention and delegation harm. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -69746,10 +69661,10 @@
   {
     "questionId": "f-manager-of-managers-conflicting-local-optima",
     "reviewStatus": "reviewed",
-    "fingerprint": "a27f89cb7c492539b6da329f86e4fe974da6a4327ef7085b997b7ed9b7235f02",
+    "fingerprint": "76259d684f1e2c0b61c212422154c2674d100698f117014d3bf8316d58cbd72f",
     "rationale": {
-      "zh": "题面明确作为二线纠正整体目标受损，限定组织管理；不能仅凭各队局部达标判定有效。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "The scenario explicitly concerns a second-line leader correcting harm to overall goals, so targets organizational scope rather than local target attainment. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -70265,10 +70180,10 @@
   {
     "questionId": "f-mom-calibration-evidence",
     "reviewStatus": "reviewed",
-    "fingerprint": "13f412a05d539c5f87aee8adf8224a79121e1b1cbb01cd0e46c0a6a6e84257ed",
+    "fingerprint": "23eb3e03951f0a018745f99f222dd1b4181d08923b57e01e3afe3c9e84f0a3a6",
     "rationale": {
-      "zh": "多个一线经理的评价框架校准明确是二线责任；保留岗位差异，不把共同原则改成所有人同一指标。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Calibrating evaluation across first-line managers is explicitly second-line responsibility, preserving role differences rather than imposing identical metrics. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -71691,10 +71606,10 @@
   {
     "questionId": "g-learning-transfer-unfamiliar-domain",
     "reviewStatus": "reviewed",
-    "fingerprint": "9b5a6c0726100da8ae294ad99575a0b469048d55d98c9a54013707d191570142",
+    "fingerprint": "143698783730141d62fcb1903d59e3f68d92a4dd9e1398b54e5af864ab98c9cb",
     "rationale": {
-      "zh": "陌生领域的知识地图与应用验证适用于各阶段，分别观察本人学习与所承担责任的适配。 技术子岗位复核：已按题意核验为技术岗位通用的学习、自驱、复盘或恢复判断；保留原阶段责任边界，不要求初级有组织决策权。",
-      "en": "Knowledge mapping and applied validation in unfamiliar domains span stages, with evidence calibrated to personal learning and actual responsibility. Technical subrole review: Reviewed as shared technical learning, initiative, reflection, or recovery judgment, retaining stage-specific responsibility and junior authority limits."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -71704,8 +71619,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -71715,8 +71629,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -71726,8 +71639,7 @@
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
@@ -71737,8 +71649,7 @@
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       },
       {
@@ -71748,8 +71659,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -71759,8 +71669,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -71770,8 +71679,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -71781,8 +71689,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
