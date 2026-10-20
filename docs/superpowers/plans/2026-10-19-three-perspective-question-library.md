@@ -130,6 +130,8 @@
 - [ ] Open a standalone candidate-list PR; make no question content or tier changes.
 - [ ] Stop and wait for the user's review of the candidate list. Do not start Phase D until approved.
 
+**Audit finding (2026-10-19):** The Phase A migration baseline contains 13 interviewer and 26 manager assignments, while 1,261/1,334 assignments are low-confidence. The current one-value `perspective` field conflates question respondent with site audience. See `docs/reviews/2026-10-19-core-perspective-pool-audit.md`. Do not fabricate a balanced list; get a direction on respondent-only classification, corpus expansion, or separate multi-valued audiences before continuing Task 5.
+
 ## Phase D — Rewrite Approved Core Questions (one PR per batch)
 
 ### Task 6: Rewrite one approved batch of 20–30 question IDs at a time
