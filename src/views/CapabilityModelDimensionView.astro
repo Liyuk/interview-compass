@@ -21,7 +21,7 @@ const paths = [
   },
   {
     id: 'management',
-    title: en ? 'Management path branches from Senior Engineer' : '管理路径从高级工程师处分叉',
+    title: en ? 'Engineering management is a separate career track' : '管理路径从高级工程师处分叉',
     note: en ? 'People management is a separate path, with its own progression through managers and teams.' : '人员管理是独立路径，后续通过管理者和团队扩大责任范围。',
     stages: progression.stages.filter(({ stage }) => stage.track !== 'ic'),
   },
@@ -29,7 +29,7 @@ const paths = [
 const route: RouteRef = { type: 'capability-model-dimension', dimension: dimensionId };
 const outline = paths.map(path => ({ id: `${path.id}-path-heading`, label: path.title }));
 ---
-<SiteLayout locale={locale} route={route} description={en ? `Stage expectations for ${progression.name}.` : `${progression.name}在六个发展阶段的行为要求。`} outline={outline}>
+<SiteLayout locale={locale} route={route} description={en ? `How ${progression.name} develops across career stages.` : `${progression.name}在六个发展阶段的行为要求。`} outline={outline}>
   <header class="model-detail-header"><p class="eyebrow">{en ? 'Dimension progression' : '能力维度变迁'}</p><h1 class="page-title">{progression.name}</h1><p class="intro">{en ? 'Expectations change in scope, autonomy, ambiguity, and leverage. A higher stage means a different level of impact, not simply more tasks.' : '要求随责任范围、自主性、问题模糊度与影响杠杆变化。阶段提升意味着影响方式发生变化，不只是承担更多任务。'}</p></header>
   {paths.map((path) => (
     <section class="progression-path" aria-labelledby={`${path.id}-path-heading`}>

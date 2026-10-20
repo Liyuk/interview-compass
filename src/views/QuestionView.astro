@@ -224,7 +224,7 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
     <summary>{en ? 'Question context and related views' : '适用范围与相关索引'}</summary>
   <div class="question-fit" aria-label={en ? 'Question relevance' : '适用范围'}>
     {context.filter((group) => ['roles', 'responsibilityScopes', 'careerTracks'].includes(group.kind)).map((group) => <p><strong>{pick(facetMeta[group.kind].name, locale)}</strong><span>{group.ids.map((id) => facetLabel(group.kind, id, locale)).join(en ? ' · ' : '、')}</span></p>)}
-    <p class="band-text">{en ? 'Select questions for the responsibility you actually hold or seek. These labels are not universal stage requirements.' : '按目标岗位和实际责任选题；这些标签不表示所有阶段都必须掌握。'} <a href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Stage expectations' : '查看阶段要求'}</a></p>
+    <p class="band-text">{en ? 'Choose questions for the responsibilities you have or are working toward. These labels are not universal requirements for a career stage.' : '按目标岗位和实际责任选题；这些标签不表示所有阶段都必须掌握。'} <a href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Career-stage model' : '查看阶段要求'}</a></p>
   </div>
   <nav class="question-context-nav" aria-label={en ? 'Explore related views' : '按相关维度继续查找'}>
     <span>{en ? 'Explore this question through:' : '按相关维度继续查找：'}</span>

@@ -1,9 +1,9 @@
 {
   "dimensionNames": {
-    "business-results": "Business results",
+    "business-results": "Business outcomes",
     "domain-expertise": "Domain expertise",
     "team-influence": "Team influence",
-    "human-competitive-advantage": "Human competitive advantage"
+    "human-competitive-advantage": "Human skills and judgment"
   },
   "stages": [
     {
@@ -12,7 +12,7 @@
       "nextStageIds": [
         "mid-level-engineer"
       ],
-      "name": "Junior Engineer",
+      "name": "Junior Software Engineer",
       "summary": "Completes bounded work with clear goals and guidance, understands the user and intended outcome, verifies the output, and communicates promptly.",
       "dimensions": {
         "business-results": [
@@ -272,7 +272,7 @@
       "nextStageIds": [
         "senior-engineer"
       ],
-      "name": "Mid-level Engineer",
+      "name": "Software Engineer",
       "summary": "Owns a feature or component end to end, delivers reliably, follows operational feedback, and supports peers when relevant to the role.",
       "dimensions": {
         "business-results": [
@@ -541,7 +541,7 @@
         "staff-engineer",
         "engineering-manager"
       ],
-      "name": "Senior Engineer",
+      "name": "Senior Software Engineer",
       "summary": "Clarifies ambiguous problems, weighs cross-component options, and drives project outcomes while making authority and decision boundaries explicit when proposing plans or pivots.",
       "dimensions": {
         "business-results": [
@@ -817,7 +817,7 @@
       "id": "staff-engineer",
       "track": "ic",
       "nextStageIds": [],
-      "name": "Experienced Senior Engineer",
+      "name": "Staff Software Engineer",
       "summary": "Creates sustained professional value in a critical domain or across teams, scaling impact through reusable practices and collaboration without assuming company-wide governance or formal succession duties.",
       "dimensions": {
         "business-results": [
@@ -1396,7 +1396,7 @@
       "id": "manager-of-managers",
       "track": "manager-of-managers",
       "nextStageIds": [],
-      "name": "Manager of Managers",
+      "name": "Multi-team Engineering Leader",
       "summary": "Within actual authority, leads managers to deliver across teams and is accountable for resource direction and organizational capability; strategy, budget, and reorganization authority depend on the role mandate.",
       "dimensions": {
         "business-results": [

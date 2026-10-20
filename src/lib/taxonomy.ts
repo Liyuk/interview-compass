@@ -143,7 +143,7 @@ export const domains: readonly Domain[] = [
     description: { zh: '如何让团队与管理者持续产出，而不依赖个人补位。', en: 'How teams and managers keep producing without depending on one person filling gaps.' },
     leaves: [
       leaf('frontline-management', '一线管理', 'Frontline management', '带团队交付、1-on-1 与可预期的产出。', 'Leading a team to deliver, one-on-ones, and predictable output.'),
-      leaf('manager-of-managers', '二线管理', 'Manager of managers', '通过负责人带多个团队，并约束权力与资源。', 'Leading several teams through managers, with checks on power and resources.'),
+      leaf('manager-of-managers', '二线管理', 'Multi-team leadership', '通过负责人带多个团队，并约束权力与资源。', 'Leading several teams through managers, with checks on power and resources.'),
       leaf('team-design', '团队设计', 'Team design', '目标、结构与能力配置。', 'Goals, structure, and capability mix.'),
       leaf('hiring', '招聘', 'Hiring', '岗位缺口、面试设计与长期判断。', 'Role gaps, interview design, and long-term judgment.'),
       leaf('growth-development', '培养与成长', 'Growth and development', '成长路径、辅导与绩效证据。', 'Growth paths, coaching, and performance evidence.'),

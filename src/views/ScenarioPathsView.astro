@@ -17,16 +17,16 @@ const paths = en ? [
       { title: 'Choose the role and scope you want', text: 'Start from the actual work and responsibility, then narrow the library to your role.', links: [{ label: 'Explore roles', href: pathFor({ type: 'roles' }, locale, base) }] },
       { title: 'Build evidence from past work', text: 'Pick a real event, clarify your own responsibility, decisions, constraints, and verifiable results.', links: [{ label: 'Practice behavioral questions', href: questionPath({ scenario: 'interview', format: 'behavioral' }) }] },
       { title: 'Practice technical and case questions', text: 'Use the format that matches the interview round; explain assumptions and trade-offs as you work.', links: [{ label: 'Coding', href: questionPath({ scenario: 'interview', format: 'coding' }) }, { label: 'System design', href: questionPath({ scenario: 'interview', format: 'system-design' }) }, { label: 'Cases', href: questionPath({ scenario: 'interview', format: 'case' }) }] },
-      { title: 'Prepare questions for the employer', text: 'Check the real work, decision rights, dependencies, support, and how success is judged.', links: [{ label: 'Role due diligence', href: pathFor({ type: 'collection', id: 'candidate-due-diligence' }, locale, base) }] },
-      { title: 'Review the conversation', text: 'Separate what you know from what you inferred; decide what to clarify or practice next.', links: [{ label: 'Questioning framework', href: pathFor({ type: 'framework' }, locale, base) }] },
+      { title: 'Ask the employer questions', text: 'Clarify the day-to-day work, decision-making authority, dependencies, support, and how success is measured.', links: [{ label: 'Questions to assess the role', href: pathFor({ type: 'collection', id: 'candidate-due-diligence' }, locale, base) }] },
+      { title: 'Review the conversation', text: 'Separate what you learned from what you inferred, then decide what to clarify or practice next.', links: [{ label: 'Interviewing guide', href: pathFor({ type: 'framework' }, locale, base) }] },
     ],
   },
   {
     id: 'interviewer', title: 'Hiring interviewer', summary: 'Turn role requirements into a consistent, evidence-based interview loop.',
     steps: [
       { title: 'Define the role profile and success context', text: 'Describe the work, decision rights, expected results, organizational stage, and constraints. Separate requirements from preferences.', links: [{ label: 'Explore roles', href: pathFor({ type: 'roles' }, locale, base) }, { label: 'Product judgment', href: questionPath({ scenario: 'hiring', topic: 'product-thinking', format: 'case' }) }, { label: 'Operating workflows', href: questionPath({ scenario: 'hiring', topic: 'operations', format: 'case' }) }] },
-      { title: 'Map evidence to interview rounds', text: 'Decide which round observes which capability; remove duplicate questions and leave room for engineering depth, business understanding, collaboration, and engineering-management evidence.', links: [{ label: 'Questioning framework', href: pathFor({ type: 'framework' }, locale, base) }, { label: 'Engineering management', href: questionPath({ scenario: 'hiring', track: 'team-manager' }) }] },
-      { title: 'Choose lead questions and follow-ups', text: 'Use comparable, job-related prompts. Probe the baseline, alternatives, personal decisions and hands-on actions, outcomes, and other plausible causes.', links: [{ label: 'Behavioral questions', href: questionPath({ scenario: 'hiring', format: 'behavioral' }) }, { label: 'Case questions', href: questionPath({ scenario: 'hiring', format: 'case' }) }] },
+      { title: 'Assign evidence to interview rounds', text: 'Decide which round assesses which capability. Remove duplicate questions and leave room to assess technical depth, business understanding, collaboration, and engineering management.', links: [{ label: 'Interviewing guide', href: pathFor({ type: 'framework' }, locale, base) }, { label: 'Engineering management', href: questionPath({ scenario: 'hiring', track: 'team-manager' }) }] },
+      { title: 'Choose core questions and follow-ups', text: 'Use comparable, job-related questions. Probe the baseline, alternatives, the candidate’s decisions and actions, the outcomes, and other plausible causes.', links: [{ label: 'Behavioral questions', href: questionPath({ scenario: 'hiring', format: 'behavioral' }) }, { label: 'Case questions', href: questionPath({ scenario: 'hiring', format: 'case' }) }] },
       { title: 'Calibrate evidence across interviewers', text: 'Agree what would count as evidence at this responsibility scope. Keep observed facts, interpretations, and unanswered questions separate.', links: [{ label: 'Evidence and follow-up method', href: pathFor({ type: 'framework' }, locale, base) }, { label: 'Stage capability model', href: pathFor({ type: 'capability-model' }, locale, base) }] },
       { title: 'Review the process and decision', text: 'Check whether each round added useful evidence, treated candidates consistently, and resolved the most important uncertainty in the role profile.', links: [{ label: 'Hiring questions', href: pathFor({ type: 'scenario', id: 'hiring' }, locale, base) }] },
     ],
@@ -34,10 +34,10 @@ const paths = en ? [
   {
     id: 'promotion-candidate', title: 'Promotion candidate', summary: 'Organize sustained evidence around the next responsibility scope and your career track.',
     steps: [
-      { title: 'Clarify the target responsibility', text: 'Choose the professional-contributor, team-manager, or manager-of-managers path; level labels alone are not the standard.', links: [
+      { title: 'Clarify the target responsibility', text: 'Choose the individual-contributor, first-line management, or multi-team leadership track. Job titles alone do not define the expectations.', links: [
         { label: 'Professional contributor', href: questionPath({ scenario: 'promotion', track: 'individual-contributor' }) },
         { label: 'First-line manager', href: questionPath({ scenario: 'promotion', track: 'team-manager' }) },
-        { label: 'Manager of managers', href: questionPath({ scenario: 'promotion', track: 'senior-manager' }) },
+        { label: 'Multi-team leader', href: questionPath({ scenario: 'promotion', track: 'senior-manager' }) },
       ] },
       { title: 'Collect sustained outcomes and decisions', text: 'Show the baseline, time span, constraints, choices, and what changed because of your work.', links: [{ label: 'Promotion questions', href: pathFor({ type: 'scenario', id: 'promotion' }, locale, base) }] },
       { title: 'Separate your contribution from the team result', text: 'Include collaboration, dependencies, counterevidence, and conditions that affected the outcome.', links: [{ label: 'Review evidence questions', href: questionPath({ scenario: 'promotion', format: 'artifact-review' }) }] },
@@ -47,7 +47,7 @@ const paths = en ? [
   {
     id: 'promotion-reviewer', title: 'Promotion reviewer', summary: 'Make a fair decision from responsibility, sustained evidence, and context.',
     steps: [
-      { title: 'Clarify the target scope and track', text: 'Agree what responsibility changes at the target stage and what evidence period is relevant.', links: [{ label: 'Review stage expectations', href: pathFor({ type: 'capability-model' }, locale, base) }] },
+      { title: 'Clarify the target scope and track', text: 'Agree on how responsibility changes at the target stage and what period of evidence is relevant.', links: [{ label: 'Review career-stage expectations', href: pathFor({ type: 'capability-model' }, locale, base) }] },
       { title: 'Read the evidence against the work', text: 'Look for sustained outcomes, decisions, and behaviors; account for opportunity and authority.', links: [{ label: 'Promotion evidence questions', href: questionPath({ scenario: 'promotion', format: 'artifact-review' }) }] },
       { title: 'Test attribution and missing context', text: 'Ask what the person owned, what the team or environment contributed, and what could change the interpretation.', links: [{ label: 'Behavioral evidence questions', href: questionPath({ scenario: 'promotion', format: 'behavioral' }) }] },
       { title: 'Give actionable development feedback', text: 'Name the evidence gap, the work that could close it, the support required, and a review point.', links: [{ label: 'Promotion review questions', href: pathFor({ type: 'scenario', id: 'promotion' }, locale, base) }] },
@@ -58,7 +58,7 @@ const paths = en ? [
     steps: [
       { title: 'Choose a goal or evidence gap', text: 'Start with a decision, experience, or capability you want to understand better.', links: [{ label: 'Browse reflection questions', href: pathFor({ type: 'scenario', id: 'self-reflection' }, locale, base) }] },
       { title: 'Find questions that fit', text: 'Use role, topic, and responsibility filters to select only relevant prompts.', links: [{ label: 'Open reflection questions', href: questionPath({ scenario: 'self-reflection' }) }] },
-      { title: 'Check evidence and missing context', text: 'Compare your account with the question’s signals; note what is factual, what is inferred, and what still needs verification.', links: [{ label: 'Read the questioning methods', href: pathFor({ type: 'framework' }, locale, base) }] },
+      { title: 'Check evidence and missing context', text: 'Compare your account with the question’s signals. Separate facts from inferences and note what still needs verification.', links: [{ label: 'Read the interviewing guide', href: pathFor({ type: 'framework' }, locale, base) }] },
       { title: 'Choose what to verify next', text: 'Identify one comparison, outcome, or responsibility detail that would make your judgment more reliable.', links: [{ label: 'Read the guide', href: pathFor({ type: 'guide' }, locale, base) }] },
     ],
   },
@@ -135,9 +135,9 @@ const paths = en ? [
 ];
 ---
 
-<SiteLayout locale={locale} route={{ type: 'scenarios' }} description={en ? 'Choose a goal and follow a practical path through questions, frameworks, roles, and stage expectations.' : '按求职、招聘、晋升、训练或复盘目标进入题库，沿任务路径查找对应问题与方法。'}>
+<SiteLayout locale={locale} route={{ type: 'scenarios' }} description={en ? 'Choose a goal and follow a practical path through questions, guides, roles, and career-stage expectations.' : '按求职、招聘、晋升、训练或复盘目标进入题库，沿任务路径查找对应问题与方法。'}>
   <h1 class="page-title">{en ? 'Choose a goal' : '按目标开始'}</h1>
-  <p class="intro scenario-intro">{en ? 'Choose what you need to do now. Each path connects the question bank with relevant role, evidence, and preparation tools. The same questions remain available through independent views such as role, topic, responsibility scope, and format.' : '选择你现在要完成的事。每条路径把问题库与相关岗位、证据整理和准备工具连起来；同一道题仍可按岗位、主题、责任范围和题型等独立维度查找。'}</p>
+  <p class="intro scenario-intro">{en ? 'Choose what you need to do. Each path brings together relevant questions, role guidance, and preparation tools. You can also browse the same questions by role, topic, responsibility scope, or format.' : '选择你现在要完成的事。每条路径把问题库与相关岗位、证据整理和准备工具连起来；同一道题仍可按岗位、主题、责任范围和题型等独立维度查找。'}</p>
 
   <section class="scenario-path-list" aria-label={en ? 'Goal-based task paths' : '按目标组织的任务路径'}>
     {paths.map((path) => <details class="scenario-path" id={path.id}>

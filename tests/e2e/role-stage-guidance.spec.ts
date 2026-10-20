@@ -32,7 +32,7 @@ test('one question changes evidence by stage and carries the selection into the 
   await expect(page.locator('[data-stage-select]')).toHaveValue('senior-engineer');
   await expect(page.locator('[data-stage-field="scope"]')).toContainText('complex');
   await page.getByRole('button', { name: 'Generate AI analysis prompt' }).click();
-  await expect(page.getByLabel('AI analysis prompt')).toHaveValue(/AI engineering · Senior Engineer/);
+  await expect(page.getByLabel('AI analysis prompt')).toHaveValue(/AI engineering · Senior Software Engineer/);
   const width = await page.evaluate(() => ({ body: document.documentElement.scrollWidth, viewport: innerWidth }));
   expect(width.body).toBeLessThanOrEqual(width.viewport);
 });

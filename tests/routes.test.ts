@@ -65,7 +65,7 @@ describe('route model', () => {
 
   it('gives a question the canonical trail Home > Questions > Domain > Leaf > Question', () => {
     const crumbs = breadcrumbsFor(question, 'en', base);
-    expect(crumbs.map((crumb) => crumb.label)).toEqual(['Home', 'Question bank', 'Delivery and ongoing operations', 'Capacity and dependencies', '调整计划']);
+    expect(crumbs.map((crumb) => crumb.label)).toEqual(['Home', 'Question library', 'Delivery and ongoing operations', 'Capacity and dependencies', '调整计划']);
     expect(crumbs.at(-1)?.href).toBeUndefined();
     expect(crumbs[2].href).toBe('/interview-compass/en/capabilities/delivery/');
   });
@@ -93,7 +93,7 @@ describe('route model', () => {
     expect(activeNavFor({ type: 'search' })).toBe('questions');
     expect(activeNavFor({ type: 'framework' })).toBe('framework');
     expect(activeNavFor({ type: 'guide' })).toBe('guide');
-    expect(breadcrumbsFor({ type: 'framework' }, 'en').map((crumb) => crumb.label)).toEqual(['Home', 'Preparation guide', 'Questioning framework']);
+    expect(breadcrumbsFor({ type: 'framework' }, 'en').map((crumb) => crumb.label)).toEqual(['Home', 'Preparation guide', 'Interviewing guide']);
     expect(activeNavFor(question)).toBe('questions');
     expect(activeNavFor({ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' })).toBe('capabilities');
     expect(activeNavFor({ type: 'scenario', id: 'promotion' })).toBe('scenarios');

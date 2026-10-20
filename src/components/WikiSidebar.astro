@@ -16,7 +16,7 @@ interface Props {
 
 const { route, locale, base = '', idPrefix = 'wiki', mobileDisclosure = true, section } = Astro.props;
 const group = section === 'browse' ? 'category-browsing' : section === 'stages' ? 'capabilities-and-stages' : section === 'goals' ? 'question-library' : section === 'methods' || section === 'guide' ? 'methods-and-guide' : undefined;
-const sections = wikiNavigationFor(route, locale, base).filter(item => !group || item.key === group).map(item => section === 'goals' ? { ...item, items: item.items.filter(link => link.key === 'paths').map(link => ({ ...link, current: route.type === 'scenarios', label: locale === 'en' ? 'Goal paths' : '目标路径' })) } : item);
+const sections = wikiNavigationFor(route, locale, base).filter(item => !group || item.key === group).map(item => section === 'goals' ? { ...item, items: item.items.filter(link => link.key === 'paths').map(link => ({ ...link, current: route.type === 'scenarios', label: locale === 'en' ? 'Browse by goal' : '目标路径' })) } : item);
 const navId = `${idPrefix}-knowledge-navigation`;
 const label = locale === 'en' ? 'Knowledge navigation' : '知识导航';
 const summaryLabel = locale === 'en' ? 'Browse knowledge' : '浏览知识目录';

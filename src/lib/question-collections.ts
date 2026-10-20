@@ -134,8 +134,8 @@ export const questionCollections: readonly QuestionCollection[] = [
       entry('f-growth-development-inconsistent-performance', '讨论如何区分持续责任能力与偶发结果。', 'Distinguishes sustained responsibility from isolated outcomes.'),
       entry('wave18-attrib-011', '补足团队影响背后的个人关键判断和行动证据。', 'Makes personal decisions and actions visible within team impact.'),
     ]),
-  candidateGuide('candidate-due-diligence', b('岗位尽调', 'Role due diligence'),
-    b('把反向提问当作双向选择的尽调：确认真实工作、责任条件和组织支持，再决定是否接受岗位或晋升机会。', 'Use reverse questions for mutual due diligence: clarify real work, responsibility conditions, and organizational support before deciding on a role or promotion.'),
+  candidateGuide('candidate-due-diligence', b('岗位尽调', 'Questions to assess a role'),
+    b('把反向提问当作双向选择的尽调：确认真实工作、责任条件和组织支持，再决定是否接受岗位或晋升机会。', 'Ask about the actual work, responsibilities, and organizational support so you can make an informed decision about a role or promotion.'),
     b('外部求职候选人，以及正在准备内部晋升对话的人。', 'External candidates and people preparing for an internal promotion conversation.'), [
       {
         id: 'external-role', title: b('外部求职', 'External role'), prompts: [

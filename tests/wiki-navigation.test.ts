@@ -24,7 +24,7 @@ describe('wiki knowledge navigation', () => {
     expect(zh.map(section => section.label)).toEqual(['题库', '分类浏览', '能力与阶段', '方法与说明']);
     expect(en.map(section => section.label)).toEqual(['Question library', 'Browse categories', 'Capabilities and stages', 'Methods and guide']);
     expect(findItem(zh[0].items, 'questions')).toMatchObject({ label: '面试题库', href: pathFor({ type: 'questions' }, 'zh-CN', '/interview-compass') });
-    expect(findItem(en[0].items, 'questions')).toMatchObject({ label: 'Question bank', href: '/interview-compass/en/questions/' });
+    expect(findItem(en[0].items, 'questions')).toMatchObject({ label: 'Question library', href: '/interview-compass/en/questions/' });
   });
 
   it.each([

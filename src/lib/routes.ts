@@ -42,15 +42,15 @@ const text = (zh: string, en: string): Bilingual => ({ zh, en });
 const labels = {
   home: text('首页', 'Home'),
   browse: text('分类索引', 'Browse'),
-  questions: text('面试题库', 'Question bank'),
+  questions: text('面试题库', 'Question library'),
   capabilities: text('能力地图', 'Capability map'),
-  roles: text('岗位导航', 'Role paths'),
-  scenarios: text('目标路径', 'Goal paths'),
-  capabilityModel: text('阶段能力', 'Stage expectations'),
+  roles: text('岗位导航', 'Roles'),
+  scenarios: text('目标路径', 'Browse by goal'),
+  capabilityModel: text('阶段能力', 'Career-stage model'),
   topics: text('主题索引', 'Topics'),
   guide: text('使用说明', 'How to use'),
   collections: text('精选题单', 'Curated sets'),
-  framework: text('提问框架', 'Questioning framework'),
+  framework: text('提问框架', 'Interviewing guide'),
 };
 
 export const navLabel = (key: keyof typeof labels, locale: Locale) => pick(labels[key], locale);

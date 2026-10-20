@@ -22,7 +22,7 @@ const leaves = domain.leaves
   <p class="eyebrow">{en ? `DOMAIN ${domain.letter}` : `能力域 ${domain.letter}`}</p>
   <h1 class="page-title">{pick(domain.name, locale)}</h1>
   <p class="intro">{pick(domain.description, locale)}</p>
-  <p class="model-inline-link">{en ? 'See this capability domain in stage expectations.' : '查看这个能力域如何映射到阶段要求。'} <a href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'Open the capability model' : '打开能力模型'} <Icon name="arrow-right" size={16} /></a></p>
+  <p class="model-inline-link">{en ? 'See how this domain develops across career stages.' : '查看这个能力域如何映射到阶段要求。'} <a href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'View the career-stage model' : '打开能力模型'} <Icon name="arrow-right" size={16} /></a></p>
   <p class="reading-note">{en ? 'Choose a capability first. Each preview shows up to three questions; open it for focused batches.' : '先选一项能力。每类只预览三题，进入后按考察重点分批阅读；预览不代表重要性排名。'}</p>
   <p class="result-count"><TargetCount ids={leaves.flatMap(entry => entry.items.map(q => q.questionId))} locale={locale} unit /> · {leaves.length} {en ? 'capabilities' : '项能力'}</p>
   {leaves.map(({ leaf, items }) => (
