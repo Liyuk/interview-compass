@@ -14,7 +14,7 @@
 
 ## 候选人准备（35 个候选 ID）
 
-| 题目 ID 与双语题干 | 当前回答者视角（推断） | 能力域 | 入选理由 | 双语/内容风险 |
+| 题目 ID 与双语标题 | 当前回答者视角（推断） | 能力域 | 入选理由 | 双语/内容风险 |
 |---|---|---|---|---|
 | [a-databases-read-replica-stale-read](../src/content/questions/zh-CN/a-databases-read-replica-stale-read.md) / [EN](../src/content/questions/en/a-databases-read-replica-stale-read.md)<br>中：服务把读请求切到副本后，写入成功的用户偶尔读不到刚才的修改。你会怎样界定并处理这种陈旧读取？<br>EN: After reads move to replicas, users sometimes cannot see a change immediately after a successful write. How would you define and handle stale reads? | candidate（low） | professional | 要求说明具体经历、判断、取舍或问题处理，适合候选人练习回答。 判断目标：考察你能否把一致性需求落实到用户操作、复制延迟、读写路由和降级（关闭非核心功能以保住核心服务）策略。 | 回答者视角低置信，需人工核对；当前追问 2/2 |
 | [a-debugging-api-works-locally-frontend-disagrees](../src/content/questions/zh-CN/a-debugging-api-works-locally-frontend-disagrees.md) / [EN](../src/content/questions/en/a-debugging-api-works-locally-frontend-disagrees.md)<br>中：你的接口本地测试正常，联调时前端说它报错或没返回数据。你怎样快速定位并证明问题在哪？<br>EN: Your endpoint works in local tests, but during integration the frontend says it errors or returns nothing. How do you locate the problem and show where it is? | candidate（low） | professional | 要求说明具体经历、判断、取舍或问题处理，适合候选人练习回答。 判断目标：了解你是否会用工具和事实而不是争论来定位跨端问题，并能把过程讲清楚。 | 回答者视角低置信，需人工核对；当前追问 2/2 |
