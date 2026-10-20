@@ -4,11 +4,23 @@
 [![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
 [![Content: CC BY-NC-SA 4.0](https://img.shields.io/badge/content-CC_BY--NC--SA_4.0-lightgrey)](CONTENT-LICENSE.md)
 
-面向工程师与工程经理的双语面试 / 晋升问题库：从目标出发，用好问题而不是标准答案来准备。
+**先看清岗位，再讲清证据。**
 
-A bilingual interview and promotion question library for engineers and engineering managers: start from a goal, and prepare with good questions rather than model answers.
+**Know the role. Show the evidence.**
+
+一套面向候选人、面试官与管理者的双语面试和晋升参考。看懂岗位要解决什么、问题想判断什么，再用有上下文、能核实的经历说明能力与匹配度。
+
+A bilingual interview and promotion reference for candidates, interviewers, and hiring managers. Understand what the role needs and what a question is testing, then use contextual, checkable experience to explain capability and fit.
 
 **[打开中文站点](https://liyuk.github.io/interview-compass/)** · **[Open the English site](https://liyuk.github.io/interview-compass/en/)**
+
+## Built from practice
+
+这套方法来自十年工作的积累，也参考了部分头部互联网公司的筛选准则。近五年面试约 1,000 位候选人、辅导约 300 人；200+ 位管理者参加过培训。方法用于从初级到二线管理者的晋升，旧版曾有两三万阅读。
+
+The method draws on a decade of work and screening criteria from some leading internet companies. In the past five years, I have interviewed about 1,000 candidates and coached about 300 people. More than 200 managers have attended my training. The method has been used in promotions from junior roles to second-line management; an earlier version received roughly 20,000–30,000 reads.
+
+[Read the thinking behind the site](https://liyuk.github.io/interview-compass/approach/) · [Star the repository](https://github.com/Liyuk/interview-compass)
 
 ## What's inside
 
@@ -21,7 +33,7 @@ A bilingual interview and promotion question library for engineers and engineeri
 
 ## See it
 
-[![Interview Compass home: choose a preparation guide or a curated set](docs/assets/home.jpg)](https://liyuk.github.io/interview-compass/)
+[![Interview Compass homepage](docs/assets/home.jpg)](https://liyuk.github.io/interview-compass/)
 
 [![A question page on personal contribution within a team result, with intent and evidence](docs/assets/question.jpg)](https://liyuk.github.io/interview-compass/questions/h-attribution-team-vs-personal/)
 
@@ -29,11 +41,13 @@ A bilingual interview and promotion question library for engineers and engineeri
 
 ## About
 
-Interview Compass is a bilingual, question-first heuristic library for external interviews, hiring, promotion, and project reflection. Start from a goal or search directly; use questions to compare approaches, examine context and causality, and make contribution visible through evidence. It does not prescribe answers or automatically score people.
+Interview Compass is a bilingual reference for external interviews, hiring, promotion, and project reflection. Start with a role or goal, then use questions to compare approaches, examine context and causality, and make contribution visible through evidence. It does not prescribe answers or automatically score people.
 
-This repository contains the Interview Compass site and its source content. The site serves engineers and engineering managers. Product sense, operating workflows, design collaboration, and commercial reasoning expand engineering business understanding; they are not separate target careers.
+This repository contains the Interview Compass site and its source content. The site serves engineers, interviewers, and engineering managers. Product sense, operating workflows, design collaboration, and commercial reasoning expand engineering business understanding; they are not separate target careers.
 
 Maintainer reference: [current site architecture](docs/architecture/current-state.md). Dated plans, reviews, and design explorations record past decisions and should not be read as a description of the current implementation.
+
+If the site helps you prepare, interview, or make a hiring decision, please [star the repository](https://github.com/Liyuk/interview-compass) or [suggest a question](https://github.com/Liyuk/interview-compass/issues/new).
 
 ## Explore locally
 
