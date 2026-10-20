@@ -16,8 +16,8 @@ const dimensions = { 'business-results': en ? 'Business outcomes' : '业务结�
 ---
 <SiteLayout locale={locale} route={{ type: 'role-stage-model', role: roleId }} outline={outline}>
   <p class="eyebrow">{en ? 'ROLE AND RESPONSIBILITY' : '岗位与责任'}</p>
-  <h1 class="page-title">{facetLabel('roles', roleId, locale)} · {en ? 'Stage expectations' : '阶段能力'}</h1>
-  <p class="intro">{en ? 'Use target responsibility to interpret evidence. These editorial profiles are not company levels or years-of-experience rules. Professional contribution and engineering management are separate paths, determined by actual authority and accountability.' : '按目标责任理解证据。这是本站的编辑性参照，不是公司职级或工作年限规则。专业贡献与工程管理是两条路径，由实际权限和责任决定；不要求工程师兼任产品、运营或设计岗位。'}</p>
+  <h1 class="page-title">{facetLabel('roles', roleId, locale)} · {en ? 'Career-stage expectations' : '阶段能力'}</h1>
+  <p class="intro">{en ? 'Use the expected scope of responsibility to interpret evidence. These editorial profiles are not universal company levels or years-of-experience guidelines. Individual-contributor and engineering-management tracks differ in their authority and accountability.' : '按目标责任理解证据。这是本站的编辑性参照，不是公司职级或工作年限规则。专业贡献与工程管理是两条路径，由实际权限和责任决定；不要求工程师兼任产品、运营或设计岗位。'}</p>
   <nav class="role-switch-links" aria-label={en ? 'Compare roles' : '切换岗位'}>{audienceRoles.map(role => <a aria-current={role.id === roleId ? 'page' : undefined} href={pathFor({ type: 'role-stage-model', role: role.id }, locale, base)}>{facetLabel('roles', role.id, locale)}</a>)}</nav>
   <p class="model-note">{en ? 'The same question can reveal different evidence at different stages. The 1–4 score is calibrated within the target role and responsibility; a larger project or higher title does not automatically earn a higher score. ICs need not have direct reports.' : '同题在不同阶段要看不同证据。1–4 分应在目标岗位与责任要求下校准；项目更大或头衔更高不会自动得高分。专业贡献者不必拥有直属下属。'}</p>
   <nav class="stage-jump" aria-label={en ? 'Jump to a stage' : '定位目标阶段'}>{stages.map(stage => <a href={`#${stage.id}`}>{stage.name}</a>)}</nav>

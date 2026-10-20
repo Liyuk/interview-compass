@@ -13,7 +13,7 @@ const steps: {route:RouteRef;zh:string;en:string;description:string;english:stri
  {route:{type:'guide-capabilities'},zh:'理解能力框架',en:'Understand the capability framework',description:'先看懂能力、责任阶段与判断证据之间的关系。',english:'Connect capabilities, responsibility stages, and observable evidence.'},
  {route:{type:'guide-direction'},zh:'确定准备方向',en:'Choose your preparation direction',description:'理解岗位和目标阶段，再选择求职、晋升或面试官场景。',english:'Understand roles and target responsibility, then choose your preparation context.'},
  {route:{type:'capability-model'},zh:'理解角色要求',en:'Understand role expectations',description:'对照真实责任与证据要求，按需查阅完整模型。',english:'Read role-specific responsibility and evidence expectations; consult the full model as needed.'},
- {route:{type:'framework'},zh:'提问与准备方法',en:'Questioning and preparation methods',description:'选择候选人、面试官或双向尽调的阅读方法。',english:'Use methods for candidates, interviewers, and mutual due diligence.'},
+ {route:{type:'framework'},zh:'提问与准备方法',en:'Interviewing and preparation',description:'选择候选人、面试官或双向尽调的阅读方法。',english:'Guidance for candidates and interviewers, including questions to help candidates assess a role.'},
  {route:{type:'browse'},zh:'分类与查阅',en:'Categories and reference',description:'理解分类边界，按能力、岗位、主题或场景探索。',english:'Understand category boundaries and explore capabilities, roles, topics, and contexts.'},
 ];
 const outline=article==='capabilities' ? [{id:'framework-overview',label:en?'Capabilities, responsibility, evidence':'能力、责任与证据'},{id:'capability-domains',label:en?'Eight capability domains':'八个能力域'},{id:'using-the-framework',label:en?'Use the framework':'如何使用框架'}] : article==='direction' ? [{id:'choose-role',label:en?'Understand the role':'理解岗位'},{id:'choose-responsibility',label:en?'Choose target responsibility':'确定目标责任'},{id:'choose-context',label:en?'Choose the context':'选择使用场景'},{id:'start-preparing',label:en?'Start preparing':'开始准备'}] : [{id:'reading-route',label:en?'Recommended reading':'推荐阅读顺序'},{id:'reference-reading',label:en?'Read as needed':'按需查阅'},{id:'start-preparing',label:en?'Start preparing':'开始准备'}];
@@ -54,7 +54,7 @@ const outline=article==='capabilities' ? [{id:'framework-overview',label:en?'Cap
   <p>{en?'The target contains a role and stage. Interview, promotion and interviewer contexts are independent question filters. A context can change which questions are useful without changing your target.':'准备目标由岗位与阶段组成。求职、晋升和面试官等场景是独立筛选条件；切换场景可以改变问题清单，不必修改准备目标。'}</p>
   <p><a href={link('scenarios')}>{en?'Read preparation paths by context':'按使用场景阅读准备路径'}</a></p>
   <h2 id="start-preparing">{en?'Start preparing':'开始准备'}</h2>
-  <p>{en?'Use shared questioning methods alongside actual role requirements. Curated sets preserve their authored order; a target with no matching questions is explained rather than filled with unrelated material.':'把共用提问方法与实际角色要求结合起来。精选题单保留编辑顺序；目标没有匹配题目时会说明原因，不自动补入无关内容。'}</p>
+  <p>{en?'Use the interviewing guide alongside the requirements of the role. Curated sets keep their intended order; when no questions match a target, the page explains why instead of adding unrelated questions.':'把共用提问方法与实际角色要求结合起来。精选题单保留编辑顺序；目标没有匹配题目时会说明原因，不自动补入无关内容。'}</p>
   <p class="journey-links"><a href={link('framework')}>{en?'Read preparation methods':'阅读提问与准备方法'}</a><a href={link('questions')}>{en?'Open the question library':'进入面试题库'}</a><a href={link('collections')}>{en?'Choose a curated set':'选择精选题单'}</a></p>
  </>}
 </SiteLayout>

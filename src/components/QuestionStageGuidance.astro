@@ -12,7 +12,7 @@ const modelPaths = Object.fromEntries(roles.map(role => [role, pathFor({ type: '
 const data = { questionId: question.questionId, roles, primaryCapability: question.primaryCapability, signals: question.signals, formats: question.formats, modelPaths };
 ---
 <section class="question-stage-guidance detail-block" aria-labelledby="question-stage-heading" data-question-stage data-pagefind-ignore>
-  <h2 id="question-stage-heading">{en ? 'Same question, different stage expectations' : '同一道题，不同阶段看什么？'}</h2>
+  <h2 id="question-stage-heading">{en ? 'What changes across career stages?' : '同一道题，不同阶段看什么？'}</h2>
   <p>{en ? 'The question stays the same. Choose a target to compare responsibility, reasoning, and evidence. This changes the reading framework, not the question’s difficulty or your score.' : '题目不变，选择目标后比较责任、推理与证据要求。这会调整阅读框架，不给题目定难度，也不替你打分。'}</p>
   <AsyncStatus loading={en ? 'Loading stage model…' : '正在加载阶段模型…'} retry={en ? 'Retry stage model' : '重试阶段模型'} />
   <div class="stage-controls">

@@ -17,8 +17,8 @@ export const roleCraft: Record<string, RoleCraft> = {
       s('数据工程师', 'Data Engineer', b('独立完成分析、管线或模型任务，说明它支持哪个决策。', 'Own an analysis, pipeline, or model task and explain the decision it supports.'), b('选择适用方法，验证数据质量与偏差，区分相关性和因果结论。', 'Select fitting methods, validate quality and bias, and distinguish correlation from causation.')),
       s('高级数据工程师', 'Senior Data Engineer', b('解决跨口径或复杂数据问题，验证对决策和生产的实际作用。', 'Resolve complex data or definition conflicts and verify effects on decisions and production.'), b('比较分析或建模方案，处理时间语义、数据变化与验证偏差。', 'Compare analysis or modeling approaches and handle time semantics, data changes, and validation bias.')),
       s('资深数据工程师', 'Staff Data Engineer', b('对关键数据领域的方法、可信度和持续使用效果负责。', 'Own methods, trustworthiness, and sustained adoption in a critical data domain.'), b('建立跨团队可复用的数据标准、方法与演进机制，并验证采用效果。', 'Establish reusable data standards, methods, and evolution practices and validate adoption.')),
-      s('数据团队管理者', 'Data team manager', b('让团队的数据投入对应清晰业务决策并可靠交付。', 'Connect team data investments to clear business decisions and reliable delivery.'), b('校准分析、工程或建模工作的质量，配置能力并授权专业判断。', 'Calibrate analysis, engineering, or modeling quality, allocate skills, and delegate technical judgment.')),
-      s('数据组织管理者', 'Data organization leader', b('通过多个负责人配置数据能力，验证数据投入的组合价值。', 'Allocate data capability through multiple leaders and validate portfolio value.'), b('协调数据所有权、跨域口径与治理责任，培养专业和管理负责人。', 'Align data ownership, cross-domain definitions, and governance responsibilities while developing leaders.')),
+      s('数据团队管理者', 'Data Team Manager', b('让团队的数据投入对应清晰业务决策并可靠交付。', 'Connect team data investments to clear business decisions and reliable delivery.'), b('校准分析、工程或建模工作的质量，配置能力并授权专业判断。', 'Calibrate analysis, engineering, or modeling quality, allocate skills, and delegate technical judgment.')),
+      s('数据组织管理者', 'Multi-team Data Leader', b('通过多个负责人配置数据能力，验证数据投入的组合价值。', 'Allocate data capability through multiple leaders and validate portfolio value.'), b('协调数据所有权、跨域口径与治理责任，培养专业和管理负责人。', 'Align data ownership, cross-domain definitions, and governance responsibilities while developing leaders.')),
     ],
   },
   product: {
@@ -26,12 +26,12 @@ export const roleCraft: Record<string, RoleCraft> = {
     artifacts: b('用户研究、问题定义、方案对比、决策记录、上线验证和停止投入的依据', 'User research, problem definitions, option comparisons, decision records, launch validation, and stopping criteria'),
     risks: b('用户样本偏差、伪需求、指标替代、上线副作用和机会成本', 'Research bias, false demand, proxy metrics, launch side effects, and opportunity cost'),
     stages: [
-      s('初级产品经理', 'Associate product manager', b('在指导下澄清限定需求，跟踪一次交付是否解决原问题。', 'Clarify a bounded need with guidance and check whether delivery solves it.'), b('还原用户流程与约束，检查需求描述和验收条件的一致性。', 'Map user flows and constraints and check consistency between requirements and acceptance criteria.')),
-      s('产品经理', 'Product manager', b('独立定义产品问题、比较方案，验证用户或业务结果。', 'Independently define a product problem, compare options, and validate user or business outcomes.'), b('将研究、产品模型与实验连接起来，说明为什么选择某个解法。', 'Connect research, product models, and experiments and explain the chosen solution.')),
-      s('高级产品经理', 'Senior product manager', b('处理复杂产品决策，协调多个参与方并验证取舍的后果。', 'Handle complex product decisions, align stakeholders, and validate trade-off consequences.'), b('对比竞争或历史基线，分清用户分层、依赖和结果归因。', 'Compare competitive or historical baselines and distinguish segments, dependencies, and attribution.')),
-      s('资深产品专家', 'Principal product specialist', b('对关键产品领域的方向与长期机会组合负责。', 'Own direction and long-term opportunities in a critical product domain.'), b('建立持续发现和验证机制，调整领域模型与投资顺序，保留停止条件。', 'Establish continuous discovery and validation, evolve domain models and investment order, and retain stopping criteria.')),
-      s('产品团队管理者', 'Product team manager', b('通过团队持续形成有效产品决策与交付结果。', 'Build sustained product decision and delivery capability through a team.'), b('校准产品判断质量、授权边界及人才配置，不以亲自写需求数量衡量管理。', 'Calibrate product judgment, decision rights, and talent allocation rather than count personally written requirements.')),
-      s('产品组织管理者', 'Product organization leader', b('协调多产品方向、投入和组织能力，验证组合价值。', 'Align multi-product direction, investment, and organizational capability and validate portfolio value.'), b('通过产品负责人建设策略、组合复核与退出机制，并处理跨产品冲突。', 'Build strategy, portfolio review, and exit mechanisms through product leaders and resolve cross-product conflicts.')),
+      s('初级产品经理', 'Associate Product Manager', b('在指导下澄清限定需求，跟踪一次交付是否解决原问题。', 'Clarify a bounded need with guidance and check whether delivery solves it.'), b('还原用户流程与约束，检查需求描述和验收条件的一致性。', 'Map user flows and constraints and check consistency between requirements and acceptance criteria.')),
+      s('产品经理', 'Product Manager', b('独立定义产品问题、比较方案，验证用户或业务结果。', 'Independently define a product problem, compare options, and validate user or business outcomes.'), b('将研究、产品模型与实验连接起来，说明为什么选择某个解法。', 'Connect research, product models, and experiments and explain the chosen solution.')),
+      s('高级产品经理', 'Senior Product Manager', b('处理复杂产品决策，协调多个参与方并验证取舍的后果。', 'Handle complex product decisions, align stakeholders, and validate trade-off consequences.'), b('对比竞争或历史基线，分清用户分层、依赖和结果归因。', 'Compare competitive or historical baselines and distinguish segments, dependencies, and attribution.')),
+      s('资深产品专家', 'Principal Product Manager', b('对关键产品领域的方向与长期机会组合负责。', 'Own direction and long-term opportunities in a critical product domain.'), b('建立持续发现和验证机制，调整领域模型与投资顺序，保留停止条件。', 'Establish continuous discovery and validation, evolve domain models and investment order, and retain stopping criteria.')),
+      s('产品团队管理者', 'Product Team Manager', b('通过团队持续形成有效产品决策与交付结果。', 'Build sustained product decision and delivery capability through a team.'), b('校准产品判断质量、授权边界及人才配置，不以亲自写需求数量衡量管理。', 'Calibrate product judgment, decision rights, and talent allocation rather than count personally written requirements.')),
+      s('产品组织管理者', 'Multi-team Product Leader', b('协调多产品方向、投入和组织能力，验证组合价值。', 'Align multi-product direction, investment, and organizational capability and validate portfolio value.'), b('通过产品负责人建设策略、组合复核与退出机制，并处理跨产品冲突。', 'Build strategy, portfolio review, and exit mechanisms through product leaders and resolve cross-product conflicts.')),
     ],
   },
   operations: {
@@ -43,8 +43,8 @@ export const roleCraft: Record<string, RoleCraft> = {
       s('运营专员', 'Operations specialist', b('独立运行一项运营策略，跟踪效果与持续成本。', 'Run an operating strategy independently and track effectiveness and ongoing cost.'), b('选择分群、触点和流程方案，处理日常异常并验证闭环。', 'Choose segmentation, touchpoints, and workflows, handle anomalies, and verify closure.')),
       s('高级运营专业人员', 'Senior operations specialist', b('解决复杂运营问题，区分策略作用与外部变化。', 'Solve complex operating problems and distinguish strategy effects from external changes.'), b('比较运营机制与实验方案，识别效果衰减、资源冲突及用户副作用。', 'Compare mechanisms and experiments and identify decay, resource conflicts, and user side effects.')),
       s('资深运营专家', 'Principal operations specialist', b('建设跨团队可持续的运营体系，验证复制效益。', 'Build sustainable cross-team operating systems and verify replication benefits.'), b('设计策略演进、异常治理和标准化机制，明确统一与地方适配的边界。', 'Design strategy evolution, exception governance, and standards with clear local adaptation boundaries.')),
-      s('运营团队管理者', 'Operations team manager', b('对团队运营结果、运行容量与人员健康负责。', 'Own team operating results, capacity, and staff health.'), b('校准策略、排班、升级和质量机制，减少依赖个别人持续救火。', 'Calibrate strategy, staffing, escalation, and quality mechanisms and reduce dependence on individual firefighting.')),
-      s('运营组织管理者', 'Operations organization leader', b('统筹多业务运营组合，验证效率、质量和可持续性。', 'Coordinate multi-business operations and validate efficiency, quality, and sustainability.'), b('通过负责人处理区域或业务差异，建设运营治理与继任机制。', 'Address regional or business differences through leaders and establish governance and succession.')),
+      s('运营团队管理者', 'Operations Team Manager', b('对团队运营结果、运行容量与人员健康负责。', 'Own team operating results, capacity, and staff health.'), b('校准策略、排班、升级和质量机制，减少依赖个别人持续救火。', 'Calibrate strategy, staffing, escalation, and quality mechanisms and reduce dependence on individual firefighting.')),
+      s('运营组织管理者', 'Multi-team Operations Leader', b('统筹多业务运营组合，验证效率、质量和可持续性。', 'Coordinate multi-business operations and validate efficiency, quality, and sustainability.'), b('通过负责人处理区域或业务差异，建设运营治理与继任机制。', 'Address regional or business differences through leaders and establish governance and succession.')),
     ],
   },
   marketing: {
@@ -82,8 +82,8 @@ export const roleCraft: Record<string, RoleCraft> = {
       s('项目经理', 'Project manager', b('独立推进项目交付，明确完成口径和变化条件。', 'Own project delivery with clear completion criteria and change conditions.'), b('建立任务、依赖、风险和变更管理，协调承诺与可用容量。', 'Manage tasks, dependencies, risks, and changes and align commitments with capacity.')),
       s('高级项目/项目群经理', 'Senior project or program manager', b('处理复杂跨团队项目群中的目标与资源冲突。', 'Resolve goal and resource conflicts in complex cross-team programs.'), b('比较关键路径和重排方案，让决策者明确接受范围、时间和风险取舍。', 'Compare critical paths and resequencing and make scope, timing, and risk trade-offs explicit to decision owners.')),
       s('项目组合治理专家', 'Project portfolio governance specialist', b('对关键项目组合的治理质量和决策有效性负责。', 'Own governance quality and decision effectiveness for a critical project portfolio.'), b('建设组合复核、资源协调和退出机制，检查治理是否降低真实成本。', 'Build portfolio review, resource coordination, and exit mechanisms and check whether governance reduces real costs.')),
-      s('项目管理团队管理者', 'Project management team manager', b('建设团队交付协调和风险管理能力。', 'Build team capability in delivery coordination and risk management.'), b('校准项目负责人能力、升级边界与治理强度，不用会议数量代替效果。', 'Calibrate project leaders, escalation boundaries, and governance intensity without substituting meeting counts for outcomes.')),
-      s('项目管理组织管理者', 'Project management organization leader', b('通过负责人提升多团队组合交付与资源决策质量。', 'Improve multi-team portfolio delivery and resource decisions through leaders.'), b('治理组织级依赖、承诺冲突与能力缺口，明确 PMO 与业务决策者的权限。', 'Govern organizational dependencies, commitment conflicts, and capability gaps and clarify PMO and business decision rights.')),
+      s('项目管理团队管理者', 'Program Management Team Manager', b('建设团队交付协调和风险管理能力。', 'Build team capability in delivery coordination and risk management.'), b('校准项目负责人能力、升级边界与治理强度，不用会议数量代替效果。', 'Calibrate project leaders, escalation boundaries, and governance intensity without substituting meeting counts for outcomes.')),
+      s('项目管理组织管理者', 'Multi-team Program Leader', b('通过负责人提升多团队组合交付与资源决策质量。', 'Improve multi-team portfolio delivery and resource decisions through leaders.'), b('治理组织级依赖、承诺冲突与能力缺口，明确 PMO 与业务决策者的权限。', 'Govern organizational dependencies, commitment conflicts, and capability gaps and clarify PMO and business decision rights.')),
     ],
   },
   manager: {
@@ -92,7 +92,7 @@ export const roleCraft: Record<string, RoleCraft> = {
     risks: b('权责不清、评价偏差、短期透支、关键人依赖及利益冲突', 'Unclear accountability, assessment bias, short-term extraction, key-person dependency, and conflicts of interest'),
     stages: [
       s('一线管理者', 'First-line manager', b('对团队结果、人才和健康负责，并明确实际授权。', 'Own team outcomes, talent, and health within a clear mandate.'), b('建立招聘、绩效、发展和授权机制，确保团队成员能够承担结果。', 'Establish hiring, performance, development, and delegation practices that enable people to own outcomes.')),
-      s('管理管理者', 'Manager of managers', b('通过多个管理者建设组织能力并验证经营或服务结果。', 'Build organizational capability through managers and verify business or service outcomes.'), b('校准管理质量、组织设计、资源组合和继任风险，不靠越级代做维持结果。', 'Calibrate management quality, organization design, resource portfolios, and succession rather than routinely bypass managers.')),
+      s('管理管理者', 'Multi-team Engineering Leader', b('通过多个管理者建设组织能力并验证经营或服务结果。', 'Build organizational capability through managers and verify business or service outcomes.'), b('校准管理质量、组织设计、资源组合和继任风险，不靠越级代做维持结果。', 'Calibrate management quality, organization design, resource portfolios, and succession rather than routinely bypass managers.')),
     ],
   },
 };

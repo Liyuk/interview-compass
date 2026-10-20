@@ -51,7 +51,7 @@ const promotionLanes = [
   },
   {
     id: 'senior-manager',
-    title: en ? 'Manager-of-managers' : '管理管理者',
+    title: en ? 'Multi-team engineering leadership' : '管理管理者',
     scope: en ? 'Show durable outcomes through leaders, cross-team decisions, succession, and organizational health.' : '说明如何通过负责人取得持续结果，并处理跨团队决策、继任和组织健康。',
   },
 ];
@@ -63,7 +63,7 @@ const pageHref = (pageNumber: number) => pageNumber <= 1 ? listPath : `${listPat
 <SiteLayout locale={locale} route={route} description={en ? `Questions for ${label}, grouped by the capability each one examines.` : `${label}相关的问题，按主要能力分组。`}>
   <p class="eyebrow">{eyebrow}</p>
   <h1 class="page-title">{label}</h1>
-  {kind === 'roles' && <p class="model-note"><a href={pathFor({ type: 'role-stage-model', role: id }, locale, base)}>{en ? 'Compare this role’s stage expectations →' : '查看本岗位各阶段的责任与证据要求 →'}</a></p>}
+  {kind === 'roles' && <p class="model-note"><a href={pathFor({ type: 'role-stage-model', role: id }, locale, base)}>{en ? 'Compare expectations across career stages →' : '查看本岗位各阶段的责任与证据要求 →'}</a></p>}
   {kind === 'scenarios' && id === 'promotion' && pageWindow.page === 1 && <section class="promotion-guide" aria-labelledby="promotion-guide-heading">
     <div class="promotion-guide-intro">
       <div><p class="eyebrow">{en ? 'INTERNAL GROWTH' : '内部发展'}</p><h2 id="promotion-guide-heading">{en ? 'Prepare for promotion as a body of evidence' : '把晋升准备成一组持续证据'}</h2></div>
