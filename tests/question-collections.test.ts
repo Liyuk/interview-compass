@@ -71,6 +71,12 @@ describe('validateQuestionCollections', () => {
     ]);
   });
 
+  it('requires every question in a reviewed core path to be a reviewed core question', () => {
+    const reviewedCore = { ...generalSet, reviewedCore: true };
+    expect(validateQuestionCollections([reviewedCore], [question('zh-CN'), question('en')]))
+      .toContain('general-interview: reviewed core path includes non-core question measure-outcome');
+  });
+
   it('rejects incomplete bilingual copy and empty candidate prompt sections', () => {
     const invalid: QuestionCollection[] = [
       { ...generalSet, purpose: { zh: '', en: 'Purpose' } },

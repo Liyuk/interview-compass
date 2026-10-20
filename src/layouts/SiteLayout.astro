@@ -10,7 +10,7 @@ import CurrentCollection from '../components/docs/CurrentCollection.astro';
 import ArticleRelations from '../components/docs/ArticleRelations.astro';
 import DocumentNavigation from '../components/docs/DocumentNavigation.astro';
 import WikiOutline from '../components/WikiOutline.astro';
-import { activeNavFor, breadcrumbsFor, titleFor, type RouteRef } from '../lib/routes';
+import { activeNavFor, breadcrumbsFor, switchLocaleRoute, titleFor, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
 import { normalizeWikiOutline, type WikiOutlineItem } from '../lib/wiki-outline';
 
@@ -37,6 +37,10 @@ const crumbs = breadcrumbsFor(route, locale, base);
     <meta name="theme-color" content="#fbfaf8" />
     {redirectTo && <><meta http-equiv="refresh" content={`0;url=${redirectTo}`} /><link rel="canonical" href={redirectTo} /></>}
     <link rel="icon" type="image/svg+xml" href={`${publicBase}favicon.svg`} />
+    {route.type === 'question' && <>
+      <link rel="alternate" hreflang="zh-CN" href={switchLocaleRoute(route, 'zh-CN', base)} />
+      <link rel="alternate" hreflang="en" href={switchLocaleRoute(route, 'en', base)} />
+    </>}
     <title>{route.type === 'home' ? 'Interview Compass' : `${title} · Interview Compass`}</title>
   </head>
   <body data-route-type={route.type} data-page-kind={presentation.kind}>

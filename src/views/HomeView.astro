@@ -38,6 +38,16 @@ const entries = [
       <p class="hero-entry-note">{en ? `${facetDefinitions.topics.length} topics · ${audienceRoles.length} roles · ${domains.length} capability domains` : `${facetDefinitions.topics.length} 个主题 · ${audienceRoles.length} 类岗位 · ${domains.length} 个能力域`}</p>
     </nav>
   </section>
+  <section class="audience-entry-section" aria-labelledby="audience-entry-heading">
+    <div class="collection-section-heading"><div><p class="eyebrow">{en ? 'START WITH YOUR TASK' : '从你的目标开始'}</p><h2 id="audience-entry-heading" class="section-title">{en ? 'Choose how you will use the library' : '选择你使用题库的方式'}</h2></div><a href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'All curated sets' : '查看全部题单'} <Icon name="chevron-right" size={16} /></a></div>
+    <div class="audience-entry-grid">
+      {[
+        { id: 'candidate', collection: 'core-candidate-preparation', title: en ? 'Prepare as a candidate' : '候选人准备', text: en ? 'Explain your decisions, contribution, and results with checkable evidence.' : '用可核验的证据说明自己的判断、贡献与结果。' },
+        { id: 'interviewer', collection: 'core-interviewer-evidence', title: en ? 'Gather interview evidence' : '面试官取证', text: en ? 'Ask consistently, probe actions, and compare evidence against role needs.' : '统一问题标准，追问实际行动，并按岗位要求比较证据。' },
+        { id: 'manager', collection: 'core-manager-evaluation', title: en ? 'Evaluate and lead a team' : '管理者评估与带团队', text: en ? 'Examine responsibility, people decisions, delegation, and continuity.' : '审视团队责任、人员判断、授权和工作连续性。' },
+      ].map((entry) => <a class="audience-entry" data-core-audience={entry.id} href={pathFor({ type: 'collection', id: entry.collection }, locale, base)}><span class="audience-entry-label">{en ? 'REVIEWED CORE PATH' : '逐题复核核心题'}</span><strong>{entry.title}<Icon name="arrow-up-right" size={16} /></strong><span>{entry.text}</span><small>{en ? 'First question in one step' : '一步进入第一道题'}</small></a>)}
+    </div>
+  </section>
   <section class="engineering-expansion" aria-labelledby="engineering-expansion-heading">
     <h2 id="engineering-expansion-heading">{en ? 'Technical depth, with broader business understanding' : '技术是主线，业务理解是拓展'}</h2>
     <p>{en ? 'Product sense, operating workflows, and design collaboration help engineers understand why they build and how work creates value. These are capability perspectives, not separate job tracks.' : '产品 sense、运营工作流理解、设计协作，帮助工程师理解为什么做、怎样协作、如何产生业务价值；它们是能力视角，不是另外几套求职岗位。'}</p>
