@@ -677,3 +677,80 @@ test('return link restores the saved reading position and expanded filter groups
   await expect(page.locator('#advanced-filters')).toHaveAttribute('open', '');
   await expect.poll(() => page.evaluate(() => scrollY)).toBe(saved.y);
 });
+
+test('home gives three audience-specific core paths to the first question in one click', async ({ page }) => {
+  await page.goto('');
+  const paths = [
+    ['candidate', 'core-candidate-preparation'],
+    ['interviewer', 'core-interviewer-evidence'],
+    ['manager', 'core-manager-evaluation'],
+  ] as const;
+  for (const [audience, collection] of paths) {
+    const entry = page.locator(`[data-core-audience="${audience}"]`);
+    await expect(entry).toBeVisible();
+    await entry.click();
+    await expect(page).toHaveURL(new RegExp(`/collections/${collection}/$`));
+    await expect(page.locator('[data-core-question-path] a[data-core-question-link]').first()).toBeVisible();
+    await page.goto('');
+  }
+  await page.goto('en/');
+  await page.locator('[data-core-audience="candidate"]').click();
+  await expect(page).toHaveURL(/\/en\/collections\/core-candidate-preparation\/$/);
+  await expect(page.locator('[data-core-question-path] a[data-core-question-link]').first()).toBeVisible();
+});
+
+test('scenario pages put reviewed core questions before clearly labeled extended questions', async ({ page }) => {
+  await page.goto('scenarios/promotion/');
+  const core = page.locator('[data-core-first-section]');
+  await expect(core).toBeVisible();
+  await expect(core.locator('[data-core-question-link]').first()).toBeVisible();
+  await expect(core.locator('[data-question-tier="extended"]')).toHaveCount(0);
+  await expect(core.locator(':scope > [data-target-list] .question-list > li')).toHaveCount(6);
+  const remainingCore = core.locator('details.more-core-questions');
+  await expect(remainingCore).toBeVisible();
+  await remainingCore.locator('summary').click();
+  await expect(remainingCore.locator('[data-question-tier="extended"]')).toHaveCount(0);
+  await expect(remainingCore.locator('[data-core-question-link]').first()).toBeVisible();
+  await expect(page.getByText(/扩展题库.*未逐题复核|Extended library.*not reviewed question by question/i)).toBeVisible();
+  await expect(core.locator('[data-scenario-curated-sets] a').first()).toBeVisible();
+  await expect(page.getByRole('link', { name: '晋升沟通' })).toHaveAttribute('href', /collections\/promotion-dialogue\/$/);
+});
+
+test('question detail emphasizes evidence according to its reviewed respondent perspective', async ({ page }) => {
+  const cases = [
+    ['questions/h-attribution-ai-assisted-work-disclosure/', 'candidate'],
+    ['questions/f-hiring-lead-leveling-evidence/', 'interviewer'],
+    ['questions/f-delegation-succession-decision-rights/', 'manager'],
+  ] as const;
+  for (const [path, perspective] of cases) {
+    await page.goto(path);
+    await expect(page.locator(`[data-perspective-guide="${perspective}"]`)).toBeVisible();
+    await expect(page.locator('[data-perspective-guide] [data-perspective-evidence]')).not.toBeEmpty();
+    if (perspective === 'interviewer') await expect(page.locator('[data-perspective-guide] [data-perspective-evidence]')).toContainText('卓越');
+    if (perspective === 'manager') await expect(page.locator('[data-manager-feedback]')).toBeVisible();
+    await expect(page.locator('head link[rel="alternate"][hreflang="zh-CN"]')).toHaveAttribute('href', /questions\//);
+    await expect(page.locator('head link[rel="alternate"][hreflang="en"]')).toHaveAttribute('href', /en\/questions\//);
+  }
+});
+
+test('promotion paths keep readable card widths at the tablet breakpoint', async ({ page }) => {
+  await page.setViewportSize({ width: 768, height: 1024 });
+  await page.goto('scenarios/promotion/');
+  const columns = await page.locator('.promotion-lanes').evaluate((element) => getComputedStyle(element).gridTemplateColumns.trim().split(/\s+/).length);
+  expect(columns).toBeLessThanOrEqual(2);
+});
+
+test('a core question links to similar questions, containing sets, and the next question', async ({ page }) => {
+  await page.goto('questions/f-frontline-management-improvement-plan/');
+  await expect(page.locator('[data-core-continuation] [data-core-next]')).toBeVisible();
+  await expect(page.locator('[data-core-continuation] [data-curated-sets]')).toBeVisible();
+  await expect(page.locator('[data-reading-navigation] [data-reading-next]')).toBeHidden();
+  await page.goto('collections/core-candidate-preparation/');
+  await page.locator('[data-core-question-path] [data-core-question-link]').first().click();
+  const continuation = page.locator('[data-core-continuation]');
+  await expect(continuation).toBeVisible();
+  await expect(continuation.locator('[data-similar-core]').first()).toBeVisible();
+  await expect(continuation.locator('[data-core-next]')).toHaveAttribute('href', /questions\//);
+  await expect(continuation.locator('[data-containing-set]').first()).toHaveAttribute('href', /collections\/core-candidate-preparation\/$/);
+  await expect(page.locator('[data-reading-navigation] [data-reading-next]')).toBeVisible();
+});

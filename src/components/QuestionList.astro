@@ -4,8 +4,8 @@ import { pathFor } from '../lib/routes';
 import { tokensForQuestion } from '../lib/question-profile-data';
 import type { BrowseRecord } from '../lib/question-catalog';
 
-interface Props { questions: BrowseRecord[]; locale: Locale; showCapability?: boolean; emptyText?: string; limit?: number }
-const { questions, locale, showCapability = true, emptyText, limit = 0 } = Astro.props;
+interface Props { questions: BrowseRecord[]; locale: Locale; showCapability?: boolean; emptyText?: string; limit?: number; coreQuestionLinks?: boolean }
+const { questions, locale, showCapability = true, emptyText, limit = 0, coreQuestionLinks = false } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 ---
@@ -14,8 +14,8 @@ const base = import.meta.env.BASE_URL;
   ? <p class="empty-state">{emptyText ?? (en ? 'No published questions here yet.' : '这里暂时还没有已发布的问题。')}</p>
   : <ul class="question-list">
       {questions.map((q, index) => (
-        <li data-question-id={q.questionId} data-question-profiles={tokensForQuestion(q.questionId).join(' ')} hidden={limit > 0 && index >= limit}>
-          <a href={pathFor({ type: 'question', questionId: q.questionId, capability: q.primaryCapability, title: q.title }, locale, base)}>
+        <li data-question-id={q.questionId} data-question-tier={q.qualityTier} data-question-profiles={tokensForQuestion(q.questionId).join(' ')} hidden={limit > 0 && index >= limit}>
+          <a data-core-question-link={coreQuestionLinks ? '' : undefined} href={pathFor({ type: 'question', questionId: q.questionId, capability: q.primaryCapability, title: q.title }, locale, base)}>
             <span class="question-text">{q.question}</span>
             {showCapability && <span class="question-meta">{capabilityLabel(q.primaryCapability, locale)}</span>}
           </a>

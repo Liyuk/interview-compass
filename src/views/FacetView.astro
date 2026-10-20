@@ -7,6 +7,7 @@ import { domains, facetLabel, pick, type Locale } from '../lib/taxonomy';
 import { getQuestions } from '../lib/question-catalog';
 import { loadQuestions } from '../lib/site-data';
 import { pathFor } from '../lib/routes';
+import { questionCollections } from '../lib/question-collections';
 import { CATALOG_PAGE_SIZE, getPageWindow } from '../lib/search-pagination';
 
 type Kind = 'roles' | 'scenarios' | 'topics';
@@ -16,10 +17,23 @@ const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const filterKey = { roles: 'role', scenarios: 'scenario', topics: 'topic' }[kind] as 'role' | 'scenario' | 'topic';
 const questions = getQuestions(await loadQuestions(locale), { locale, [filterKey]: id });
-const pageWindow = getPageWindow(questions.length, requestedPage, CATALOG_PAGE_SIZE);
-const pageQuestions = questions.slice(pageWindow.start, pageWindow.end);
+const coreQuestions = kind === 'scenarios' ? questions.filter((q) => q.qualityTier === 'core') : [];
+const corePreviewQuestions = coreQuestions.slice(0, 6);
+const remainingCoreQuestions = coreQuestions.slice(corePreviewQuestions.length);
+const relevantCoreSets = kind === 'scenarios' ? questionCollections
+  .filter((collection) => collection.kind === 'question-set')
+  .map((collection) => ({ collection, matches: collection.entries.filter((entry) => coreQuestions.some((question) => question.questionId === entry.questionId)).length }))
+  .filter(({ matches }) => matches > 0)
+  .sort((a, b) => b.matches - a.matches || a.collection.id.localeCompare(b.collection.id))
+  .slice(0, 2) : [];
+const extendedQuestions = kind === 'scenarios' ? questions.filter((q) => q.qualityTier !== 'core') : questions;
+const pageWindow = getPageWindow(extendedQuestions.length, requestedPage, CATALOG_PAGE_SIZE);
+const pageQuestions = extendedQuestions.slice(pageWindow.start, pageWindow.end);
 const route = ({ roles: { type: 'role', id }, scenarios: { type: 'scenario', id }, topics: { type: 'topic', id } } as const)[kind];
 const label = facetLabel(kind, id, locale);
+const intro = kind === 'scenarios'
+  ? (en ? 'Start with reviewed core questions. The extended library remains available below for broader exploration.' : '先从逐题复核的核心题开始；下方仍保留扩展题库，供进一步浏览。')
+  : (en ? 'These are the same questions found in the library, grouped here by the capability each one mainly examines.' : '这些题与问题库里的是同一批，这里按各自主要考察的能力分组。');
 const groups = domains
   .map((domain) => ({ domain, items: pageQuestions.filter((q) => q.primaryCapability.startsWith(`${domain.id}.`)) }))
   .filter((group) => group.items.length > 0);
@@ -42,6 +56,7 @@ const promotionLanes = [
   },
 ];
 const promotionQuestionPath = `${pathFor({ type: 'questions' }, locale, base)}?scenario=promotion&track=`;
+const promotionDialoguePath = pathFor({ type: 'collection', id: 'promotion-dialogue' }, locale, base);
 const listPath = pathFor(route, locale, base);
 const pageHref = (pageNumber: number) => pageNumber <= 1 ? listPath : `${listPath}page/${pageNumber}/`;
 ---
@@ -70,10 +85,25 @@ const pageHref = (pageNumber: number) => pageNumber <= 1 ? listPath : `${listPat
         <li><strong>{en ? 'Evidence and gaps' : '证据与差距'}</strong><span>{en ? 'Separate verified facts from claims, include counterevidence, and name the next gap to close.' : '区分核验事实与主张，呈现反向证据，并说明下一步要补足的差距。'}</span></li>
       </ol>
     </div>
+    <p class="promotion-dialogue-link"><a href={promotionDialoguePath}>{en ? 'Questions to ask in a promotion conversation' : '晋升沟通时可以主动问什么'} <Icon name="arrow-right" size={16} /></a></p>
   </section>}
-  <p class="intro">{en ? 'These are the same questions found in the library, grouped here by the capability each one mainly examines.' : '这些题与问题库里的是同一批，这里按各自主要考察的能力分组。'}</p>
+  <p class="intro">{intro}</p>
   <p class="result-count"><TargetCount questions={questions} locale={locale} unit /></p>
-  {pageWindow.pageCount > 1 && <p class="band-text">{en ? `Questions ${pageWindow.start + 1}–${pageWindow.end} of ${questions.length} on this page.` : `本页为第 ${pageWindow.start + 1}–${pageWindow.end} 题，共 ${questions.length} 题。`}</p>}
+  {kind === 'scenarios' && pageWindow.page === 1 && coreQuestions.length > 0 && <section class="scenario-core-first" aria-labelledby="scenario-core-heading" data-core-first-section>
+    <div class="collection-section-heading"><h2 id="scenario-core-heading" class="section-title">{en ? 'Reviewed core questions' : '逐题复核的核心题'}</h2><span class="count">{coreQuestions.length}</span></div>
+    <p class="band-text">{en ? 'Each question below has a reviewed intent, signals, follow-ups, and evidence anchors.' : '每道题均已逐题复核考察意图、观察信号、追问和证据锚点。'}</p>
+    {relevantCoreSets.length > 0 && <nav class="scenario-curated-sets" aria-label={en ? 'Relevant curated question sets' : '相关精选题单'} data-scenario-curated-sets><strong>{en ? 'Curated paths for this scenario' : '适合此场景的精选题单'}</strong>{relevantCoreSets.map(({ collection, matches }) => <a href={pathFor({ type: 'collection', id: collection.id }, locale, base)}>{pick(collection.title, locale)} <span>· {matches} {en ? 'matching questions' : '道匹配题'}</span></a>)}</nav>}
+    <QuestionList questions={corePreviewQuestions} locale={locale} coreQuestionLinks />
+    {remainingCoreQuestions.length > 0 && <details class="more-core-questions">
+      <summary>{en ? `View all ${coreQuestions.length} reviewed core questions` : `查看全部 ${coreQuestions.length} 道已复核核心题`}</summary>
+      <QuestionList questions={remainingCoreQuestions} locale={locale} coreQuestionLinks />
+    </details>}
+  </section>}
+  {kind === 'scenarios' && extendedQuestions.length > 0 && <section aria-labelledby="scenario-extended-heading" data-extended-library>
+    <h2 id="scenario-extended-heading" class="section-title">{en ? 'Extended library · not reviewed question by question' : '扩展题库 · 尚未逐题复核'}</h2>
+    <p class="band-text">{en ? 'These questions remain useful for discovery, but have not received the same question-specific review as the core set.' : '这些问题可继续用于探索，但尚未接受与核心题同等的逐题内容复核。'}</p>
+  </section>}
+  {pageWindow.pageCount > 1 && <p class="band-text">{en ? `Extended questions ${pageWindow.start + 1}–${pageWindow.end} of ${extendedQuestions.length} on this page.` : `本页为扩展题库第 ${pageWindow.start + 1}–${pageWindow.end} 题，共 ${extendedQuestions.length} 题。`}</p>}
   {groups.map(({ domain, items }) => (
     <section class="leaf-section">
       <h2>{domain.letter} · {pick(domain.name, locale)}<TargetCount class="count" questions={items} /></h2>

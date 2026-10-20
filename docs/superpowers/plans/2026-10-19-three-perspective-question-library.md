@@ -146,8 +146,8 @@
 - [x] Keep IDs and URLs stable. Repair only verified merged follow-up residue, mismatched follow-ups, or obvious naming drift; do not alter canonical identity.
 - [x] Set `qualityTier: core` and `perspectiveReview: reviewed` only after bilingual editorial review.
 - [x] Run `npm run check:content`, `npm run test:unit`, `npm run check`, and `npm run build` for each batch.
-- [ ] Open a separate PR listing changed IDs and perspectives, with concise before/after reasoning for 2–3 questions.
-- [ ] Repeat until all approved candidates are complete; verify final count 100–150 and 30–50 in each approved primary site audience.
+- [x] Open a separate PR listing changed IDs and perspectives, with concise before/after reasoning for 2–3 questions. (PR #28–#32; batch 5 is PR #32.)
+- [x] Repeat until all approved candidates are complete; verify final count 100–150 and 30–50 in each approved primary site audience. (100 bilingual candidates: 35 candidate, 35 interviewer, 30 manager.)
 
 ## Phase E — Home, Scenarios, and Question Reading Paths (1–2 PRs)
 
@@ -159,10 +159,10 @@
 - Modify: `src/lib/question-collections.ts` only where links or core filtering require it
 - Modify: relevant unit and E2E tests under `tests/`
 
-- [ ] Add three first-level home entrances for candidate preparation, interviewer use, and manager evaluation/team leadership; each reaches its first core question within two clicks.
-- [ ] Place relevant curated sets first on scenario pages, link promotion to `promotion-dialogue`, and keep extended questions available behind a clear “not reviewed question by question” label.
-- [ ] Add tests asserting each entrance resolves to a localized core question set and that no extended question appears in the core-first section.
-- [ ] Run focused unit/E2E tests and inspect 390px and 768px screenshots in Chinese and English.
+- [x] Add three first-level home entrances for candidate preparation, interviewer use, and manager evaluation/team leadership; each reaches its first core question within two clicks.
+- [x] Place relevant curated sets first on scenario pages, link promotion to `promotion-dialogue`, and keep extended questions available behind a clear “not reviewed question by question” label.
+- [x] Add tests asserting each entrance resolves to a localized core question set and that no extended question appears in the core-first section.
+- [x] Run focused unit/E2E tests and inspect 390px and 768px screenshots in Chinese and English. (E2E covers desktop/mobile; 390px and 768px layouts were manually inspected.)
 
 ### Task 8: Adapt question detail emphasis and continuation links by perspective
 
@@ -171,21 +171,21 @@
 - Modify: `src/lib/question-feed.ts` and existing display helpers only if needed to serialize the new fields
 - Modify: question-view and E2E tests under `tests/`
 
-- [ ] Candidate view emphasizes intent, signals, and self-assessment anchors.
-- [ ] Interviewer view emphasizes followUps, weakAnswer, and evidence anchors.
-- [ ] Manager view emphasizes evidence gathering and feedback, reusing the same question content.
-- [ ] Show extended review status as one concise line and remove placeholder claims that suggest question-specific review.
-- [ ] Ensure search-entry detail pages show at least three meaningful next steps: similar core questions, containing curated sets, and next question.
-- [ ] Add bilingual `hreflang` links while preserving stable URL paths and current batch IDs.
-- [ ] Run question-detail unit/E2E tests and inspect 390px and 768px screenshots in Chinese and English.
+- [x] Candidate view emphasizes intent, signals, and self-assessment anchors.
+- [x] Interviewer view emphasizes followUps, weakAnswer, and evidence anchors.
+- [x] Manager view emphasizes evidence gathering and feedback, reusing the same question content.
+- [x] Show extended review status as one concise line and remove placeholder claims that suggest question-specific review.
+- [x] Ensure search-entry detail pages show at least three meaningful next steps: similar core questions, containing curated sets, and next question.
+- [x] Add bilingual `hreflang` links while preserving stable URL paths and current batch IDs.
+- [x] Run question-detail unit/E2E tests and inspect 390px and 768px screenshots in Chinese and English.
 
 ## Final Verification and Delivery
 
-- [ ] Run `npm run check:content`, `npm run check`, `npm run test:unit`, `npm run build`, and affected E2E coverage.
-- [ ] Verify 100–150 bilingual core IDs, 30–50 in each approved primary site audience, individually reviewed and bilingual-consistent respondent perspectives, all core fields and count parity, and no extended question removed.
-- [ ] Verify all three home entrances, search-entry next steps, localized `hreflang`, and mobile layouts in a real browser.
-- [ ] Open phase PRs only; do not merge or push directly to `main`.
-- [ ] Report each completed phase in Chinese with PR link, change summary, remaining issues, and decisions needed.
+- [x] Run `npm run check:content`, `npm run check`, `npm run test:unit`, `npm run build`, and affected E2E coverage.
+- [x] Verify 100 bilingual core IDs, 30–50 in each approved primary site audience, reviewed bilingual-consistent respondent perspectives, all core fields and count parity, and no extended question removed.
+- [x] Verify all three home entrances, search-entry next steps, localized `hreflang`, and mobile layouts in a real browser.
+- [x] Open phase PRs only; do not merge or push directly to `main`. (PR #32 contains the final question batch; Phase E is prepared as its own stacked PR.)
+- [x] Report each completed phase in Chinese with PR link, change summary, remaining issues, and decisions needed.
 
 ## Self-Review
 

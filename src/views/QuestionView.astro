@@ -13,6 +13,7 @@ import { questionEvaluation } from '../lib/question-evaluation';
 import { buildQuestionAnalysisPrompt } from '../lib/question-analysis-prompt';
 import { searchKeywords } from '../lib/search-keywords';
 import { loadAllRecords } from '../lib/site-data';
+import { questionCollections } from '../lib/question-collections';
 
 interface Props { locale: Locale; id: string }
 const { locale, id } = Astro.props;
@@ -30,8 +31,58 @@ const related = (record.relatedQuestions ?? []).flatMap((relation) => {
   const target = all.find((item) => item.questionId === relation.questionId && item.locale === locale && item.status === 'published');
   return target ? [{ ...relation, target }] : [];
 });
+const similarCoreQuestions = record.qualityTier === 'core' ? all
+  .filter((item) => item.locale === locale && item.status === 'published' && item.qualityTier === 'core' && item.questionId !== record.questionId)
+  .map((item) => ({
+    item,
+    score: (item.primaryCapability === record.primaryCapability ? 5 : 0)
+      + item.topics.filter((topic) => record.topics.includes(topic)).length * 2
+      + item.scenarios.filter((scenario) => record.scenarios.includes(scenario)).length,
+  }))
+  .filter(({ score }) => score > 0)
+  .sort((a, b) => b.score - a.score || a.item.questionId.localeCompare(b.item.questionId))
+  .slice(0, 3)
+  .map(({ item }) => item) : [];
+const nextCoreQuestion = similarCoreQuestions[0] ?? all.find((item) => item.locale === locale && item.status === 'published' && item.qualityTier === 'core' && item.questionId !== record.questionId);
+const containingQuestionSets = record.qualityTier === 'core' ? questionCollections.filter((collection) =>
+  collection.kind === 'question-set' && collection.entries.some((entry) => entry.questionId === record.questionId)) : [];
+const hasCoreContinuation = record.qualityTier === 'core';
+const showObjectiveSection = record.qualityTier !== 'core' || evaluation.specific;
+const perspectiveGuide = record.qualityTier === 'core' ? {
+  title: record.perspective === 'candidate'
+    ? (en ? 'Review your answer against evidence anchors' : '用证据锚点复核自己的回答')
+    : record.perspective === 'interviewer'
+      ? (en ? 'Probe for evidence consistently' : '围绕证据进行一致追问')
+      : (en ? 'Gather evidence for feedback and responsibility' : '为反馈和责任判断收集证据'),
+  note: record.perspective === 'candidate'
+    ? (en ? 'Use these anchors to check what you can support with evidence. They guide reflection; they are not an automatic score.' : '检查哪些内容能由证据支持。锚点用于复盘，不会自动给回答打分。')
+    : record.perspective === 'interviewer'
+      ? (en ? 'Ask the same evidence-focused follow-ups across candidates and relate observations to the role.' : '对不同候选人使用一致的证据追问，并把观察与岗位要求对应。')
+      : (en ? 'Connect observed evidence to the responsibility actually delegated, then give specific feedback and a next step.' : '把观察到的证据对应到实际授权的责任，再给出具体反馈和下一步。'),
+  items: record.perspective === 'candidate'
+    ? [
+        ...(record.anchors ? [
+          `${en ? 'Not passing' : '不通过'} · ${record.anchors.notPassing}`,
+          `${en ? 'Passing' : '通过'} · ${record.anchors.passing}`,
+          `${en ? 'Excellent' : '优秀'} · ${record.anchors.excellent}`,
+          `${en ? 'Exceptional' : '卓越'} · ${record.anchors.exceptional}`,
+        ] : []),
+      ]
+    : record.perspective === 'interviewer'
+      ? [
+          ...(record.followUps ?? []).map((item) => `${en ? 'Follow-up' : '追问'} · ${item}`),
+          ...(record.anchors ? [
+            `${en ? 'Not passing' : '不通过'} · ${record.anchors.notPassing}`,
+            `${en ? 'Passing' : '通过'} · ${record.anchors.passing}`,
+            `${en ? 'Excellent' : '优秀'} · ${record.anchors.excellent}`,
+            `${en ? 'Exceptional' : '卓越'} · ${record.anchors.exceptional}`,
+          ] : []),
+        ]
+      : record.signals,
+} : undefined;
 const chapters = [
-  { id: 'objective-h', label: evaluation.objectiveTitle },
+  ...(showObjectiveSection ? [{ id: 'objective-h', label: evaluation.objectiveTitle }] : []),
+  ...(perspectiveGuide ? [{ id: 'perspective-guide-h', label: perspectiveGuide.title }] : []),
   { id: 'intent-h', label: evaluation.intentTitle },
   { id: 'signals-h', label: en ? 'Signals worth noticing' : '值得观察的信号' },
   { id: 'context-h', label: evaluation.contextTitle },
@@ -43,6 +94,7 @@ const chapters = [
   ...(evaluation.highlightEvidence.length > 0 ? [{ id: 'highlight-evidence-h', label: en ? 'Evidence that could make a contribution visible' : '可以体现贡献的证据' }] : []),
   ...(record.background?.length ? [{ id: 'background-h', label: en ? 'Background to review' : '背景知识' }] : []),
   ...(related.length > 0 ? [{ id: 'related-h', label: en ? 'Related questions' : '相近的问题' }] : []),
+  ...(hasCoreContinuation ? [{ id: 'core-continuation-h', label: en ? 'Continue with related core questions' : '沿相关核心题继续阅读' }] : []),
 ];
 const outline: ArticleHeading[] = chapters.flatMap(chapter => [
   { ...chapter, sectionKey: chapter.id, level: 2 as const },
@@ -74,11 +126,18 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
     {record.scenarios.map((facetId) => <meta data-pagefind-filter={`scenario:${facetId}`} />)}
     {record.topics.map((facetId) => <meta data-pagefind-filter={`topic:${facetId}`} />)}
     {record.roles.map((facetId) => <meta data-pagefind-filter={`role:${facetId}`} />)}
-    <section class="detail-block" aria-labelledby="objective-h">
+    {showObjectiveSection && <section class="detail-block" aria-labelledby="objective-h">
       <details class={`analysis-review-status ${evaluation.specific ? 'is-reviewed' : 'is-shared'}`}><summary>{evaluation.reviewLabel}</summary><p>{evaluation.reviewNote}</p></details>
       <SectionHeading heading={headingFor('objective-h')} />
       <p class="intent-callout">{evaluation.objective}</p>
-    </section>
+    </section>}
+
+    {perspectiveGuide && <section class="core-perspective-guide" aria-labelledby="perspective-guide-h" data-perspective-guide={record.perspective}>
+      <div><p class="eyebrow">{en ? 'REVIEWED CORE QUESTION' : '逐题复核核心题'}</p><SectionHeading heading={headingFor('perspective-guide-h')} /><p class="core-perspective-note">{perspectiveGuide.note}</p></div>
+      <ul class="signal-list" data-perspective-evidence>{perspectiveGuide.items.map((item) => <li>{item}</li>)}</ul>
+      {record.weakAnswer && <p class="core-weak-answer"><strong>{en ? 'Weak evidence to watch for' : '需要留意的薄弱回答'}</strong> {record.weakAnswer}</p>}
+      {record.perspective === 'manager' && <div class="manager-feedback-guide" data-manager-feedback><strong>{en ? 'Turn observations into feedback' : '把观察转成反馈'}</strong><ol><li>{en ? 'Name the observed action and evidence.' : '指出观察到的行动和具体证据。'}</li><li>{en ? 'Connect it to the responsibility and impact.' : '对应到承担的责任和产生的影响。'}</li><li>{en ? 'Agree on a clear next step.' : '共同明确下一步行动。'}</li></ol></div>}
+    </section>}
 
     <section class="detail-block" aria-labelledby="intent-h">
       <SectionHeading heading={headingFor('intent-h')} />
@@ -243,6 +302,15 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
       </ul>
     </div>
   </section>
+  {hasCoreContinuation && <section class="core-continuation" aria-labelledby="core-continuation-h" data-core-continuation>
+    <SectionHeading heading={headingFor('core-continuation-h')} />
+    {nextCoreQuestion && <p class="core-next-question"><a data-core-next href={pathFor({ type: 'question', questionId: nextCoreQuestion.questionId, capability: nextCoreQuestion.primaryCapability, title: nextCoreQuestion.question }, locale, base)}>{en ? 'Continue to the next reviewed question' : '继续阅读下一道已复核核心题'} <Icon name="arrow-right" size={16} /></a></p>}
+    <div class="core-continuation-groups">
+      {similarCoreQuestions.length > 0 && <div><h3>{en ? 'Similar reviewed questions' : '相近的已复核问题'}</h3><ul>{similarCoreQuestions.map((item) => <li><a data-similar-core href={pathFor({ type: 'question', questionId: item.questionId, capability: item.primaryCapability, title: item.question }, locale, base)}>{item.question}</a></li>)}</ul></div>}
+      {containingQuestionSets.length > 0 && <div><h3>{en ? 'Curated sets containing this question' : '包含这道题的精选题单'}</h3><ul>{containingQuestionSets.map((collection) => <li><a data-containing-set href={pathFor({ type: 'collection', id: collection.id }, locale, base)}>{pick(collection.title, locale)}</a><span> · {pick(collection.purpose, locale)}</span></li>)}</ul></div>}
+      {containingQuestionSets.length === 0 && <div><h3>{en ? 'Browse curated paths' : '浏览精选题单'}</h3><ul><li><a data-curated-sets href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'Explore curated question sets' : '查看全部精选题单'}</a></li></ul></div>}
+    </div>
+  </section>}
   <aside class="journey-next"><h2>{en ? 'Where next?' : '接下来怎么用？'}</h2><p>{en ? 'Return to your chosen set, compare related questions, or choose a different goal.' : '回到选定的题单或结果继续阅读，也可以换一个目标重新选题。'}</p><div class="journey-links"><a data-reading-return href={pathFor({ type: 'questions' }, locale, base)}>{en ? 'Back to your results or question set' : '返回本次结果或题单'}</a><a href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'Curated sets' : '精选题单'}</a><a href={pathFor({ type: 'scenarios' }, locale, base)}>{en ? 'Choose a goal' : '目标路径'}</a><a href={pathFor({ type: 'leaf', domain: domain!.id, leaf: leaf!.id }, locale, base)}>{en ? 'More in this capability' : '同类能力问题'}</a></div></aside>
 </SiteLayout>
 
