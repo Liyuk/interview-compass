@@ -4,11 +4,31 @@
 [![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
 [![Content: CC BY-NC-SA 4.0](https://img.shields.io/badge/content-CC_BY--NC--SA_4.0-lightgrey)](CONTENT-LICENSE.md)
 
-面向工程师、面试官与管理者的双语面试 / 晋升参考库：先看清岗位目标与责任，再用问题、经历和证据判断能力与匹配度。
+**先看清岗位，再讲清证据。**
 
-A bilingual interview and promotion library for engineers, interviewers, and managers: understand the role and its responsibilities first, then use questions, experience, and evidence to assess capability and fit.
+中英双语的面试与晋升参考：把岗位要求、题目意图和可核实的证据连成一条线，候选人、面试官、管理者都能用。
+
+**Know the role. Show the evidence.**
+
+A bilingual interview and promotion reference that connects role expectations, question intent, and checkable evidence, for candidates, interviewers, and hiring managers.
 
 **[打开中文站点](https://liyuk.github.io/interview-compass/)** · **[Open the English site](https://liyuk.github.io/interview-compass/en/)**
+
+方法来自十年积累并参考部分头部互联网公司的筛选准则。
+
+- 近五年面试约 1,000 人；辅导约 300 人
+- 200+ 位管理者参加过培训
+- 用于初级到二线管理者晋升
+
+The method comes from ten years of accumulated practice and refers to screening criteria from some leading internet companies.
+
+- Interviewed about 1,000 people in the past five years; coached about 300 people
+- 200+ managers have attended training
+- Used for promotions from junior roles to second-line managers
+
+旧版约 2–3 万阅读。
+
+The earlier version had about 20–30k reads.
 
 ## What's inside
 
@@ -21,7 +41,7 @@ A bilingual interview and promotion library for engineers, interviewers, and man
 
 ## See it
 
-[![Interview Compass home: choose a preparation guide or a curated set](docs/assets/home.jpg)](https://liyuk.github.io/interview-compass/)
+[![Interview Compass home: Know the role. Show the evidence.](docs/assets/home.jpg)](https://liyuk.github.io/interview-compass/)
 
 [![A question page on personal contribution within a team result, with intent and evidence](docs/assets/question.jpg)](https://liyuk.github.io/interview-compass/questions/h-attribution-team-vs-personal/)
 
@@ -76,3 +96,5 @@ Role-specific models are in `src/content/role-stages/`. Each bilingual question 
 ## Deployment
 
 `.github/workflows/deploy.yml` runs the full CI sequence on pull requests, pushes to `main`, and manual dispatch: Astro type checks, content and source-ledger validation, complete stage-applicability coverage, unit tests, static build and Pagefind indexing, then desktop and mobile Chromium browser tests. It uploads a Pages artifact and deploys only from the repository's default branch (`main`); pull requests and feature branches verify the site without publishing it. The published site is at [liyuk.github.io/interview-compass](https://liyuk.github.io/interview-compass/), using GitHub Actions.
+
+觉得有用的话，欢迎在 GitHub 上点个 Star。If this helps, please ⭐ the repo.

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "author": "Liyuk",
-  "description": "A bilingual interview and promotion library focused on role expectations, evidence, and fit.",
+  "description": "A bilingual interview and promotion reference: know the role, show the evidence.",
   "type": "module",
   "engines": {
     "node": ">=24"
