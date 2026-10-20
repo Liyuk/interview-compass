@@ -1,11 +1,13 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join, relative, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
+/** @typedef {{nodes: {contentId: string, locale: string, href: string}[], edges: {from: string, to: string, locale: string}[]}} KnowledgeOutput */
 async function files(dir) {
   const entries = await readdir(dir,{withFileTypes:true});
   return (await Promise.all(entries.map(entry => entry.isDirectory() ? files(join(dir,entry.name)) : [join(dir,entry.name)]))).flat();
 }
-export async function checkKnowledgeOutput({root,baseline,knowledge = undefined}) {
+/** @param {{root: string, baseline: {base: string, pages: {url: string, anchorSet: string}[], anchorSets: Record<string, string[]>}, knowledge?: KnowledgeOutput}} options */
+export async function checkKnowledgeOutput({root,baseline,knowledge}) {
   const failures=[];
   const paths = await files(root);
   const available = new Set(paths.map(file=>relative(root,file).replaceAll('\\','/')));

@@ -13,11 +13,12 @@ it('filters every candidate before selecting the visible page', async () => {
 
 it('keeps document results independent of question targets and facets', async () => {
   const { createPagefindAdapter } = await import('../src/lib/discovery/pagefind-adapter');
-  const index = { search: async (_q: string | null, options: { filters: Record<string, string> }) => ({ results: [
+  const results: { id: string; filters: Record<string, string>; data: () => Promise<{ url: string; meta: { title: string } }> }[] = [
     { id: 'guide', filters: { kind: 'docs', locale: 'en' }, data: async () => ({ url: '/handbook/', meta: { title: 'Handbook' } }) },
     { id: 'q1', filters: { kind: 'questions', locale: 'en', profile: 'frontend:senior-engineer', topic: 'cache' }, data: async () => ({ url: '/questions/q1/', meta: { title: 'Cache' } }) },
     { id: 'q2', filters: { kind: 'questions', locale: 'en', topic: 'cache' }, data: async () => ({ url: '/questions/q2/', meta: { title: 'Other' } }) },
-  ].filter(item => Object.entries(options.filters).every(([key, value]) => item.filters[key] === value)) }) };
+  ];
+  const index = { search: async (_q: string | null, options: { filters: Record<string, string> }) => ({ results: results.filter(item => Object.entries(options.filters).every(([key, value]) => item.filters[key] === value)) }) };
   const query = parseBrowseQuery(new URL('https://example.com/search/?q=guide&topic=cache&profileRole=frontend&profileStage=senior-engineer'), { base: '/', locale: 'en' }).query;
   const adapter = createPagefindAdapter(index);
   const result = await createDiscovery({ catalog: adapter, pagefind: adapter }).search(query);
