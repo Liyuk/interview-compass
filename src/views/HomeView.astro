@@ -20,12 +20,12 @@ const entries = [
   { ref: { type: 'capability-model' } as const, title: en ? 'Stages' : '阶段', text: en ? 'Compare responsibility and evidence.' : '对照责任范围和行为要求。' },
 ];
 ---
-<SiteLayout locale={locale} route={{ type: 'home' }} description={en ? 'Learn to compare options, examine evidence, and explain your contribution through interview and promotion questions.' : '通过面试与晋升问题，学习比较思路、核实证据、发现并体现真实贡献。'}>
+<SiteLayout locale={locale} route={{ type: 'home' }} description={en ? 'Start with role goals, scope, and level. Use interview and promotion questions to clarify expectations, prepare stories, check evidence, and assess fit.' : '从岗位目标、责任范围和级别出发，用面试与晋升问题拆解要求、准备经历、核实证据并判断匹配度。'}>
   <div class="home-page">
   <section class="hero hero-compass" aria-labelledby="home-title">
     <div class="hero-copy">
-      <h1 id="home-title" class="page-title">{en ? 'Find the question. Understand what it reveals.' : '找到问题，也看懂它想了解什么。'}</h1>
-      <p class="intro">{en ? 'For engineers preparing for interviews, promotion, or technical management. Compare approaches, examine evidence, and explain your contribution—from technical depth to business understanding.' : '面向工程师的面试、晋升与技术管理。从技术深度到业务理解，用一小组相关问题，比较思路、核实证据、说明自己的贡献。'}</p>
+      <h1 id="home-title" class="page-title">{en ? 'Understand the role. Assess fit with evidence.' : '先看清岗位，再用证据判断匹配。'}</h1>
+      <p class="intro">{en ? 'For engineers preparing for interviews, promotion, or technical management. Clarify role goals, responsibility, and level first, then use questions and evidence to prepare stories, assess fit, and guide hiring conversations.' : '面向工程师的面试、晋升与技术管理。先厘清岗位目标、责任范围和级别，再用问题与证据准备表达、判断匹配，也帮助面试官和管理者校准招聘判断。'}</p>
       <div class="hero-actions">
         <a class="hero-primary" href={pathFor({ type: 'preparation' }, locale, base)}>{en ? 'Start with the preparation guide' : '从准备指南开始'} <Icon name="arrow-up-right" size={17} /></a>
         <a class="hero-secondary" href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'Curated sets' : '从精选题单开始'}</a>

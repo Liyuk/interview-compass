@@ -4,9 +4,9 @@
 [![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
 [![Content: CC BY-NC-SA 4.0](https://img.shields.io/badge/content-CC_BY--NC--SA_4.0-lightgrey)](CONTENT-LICENSE.md)
 
-面向工程师与工程经理的双语面试 / 晋升问题库：从目标出发，用好问题而不是标准答案来准备。
+面向工程师、面试官与管理者的双语面试 / 晋升参考库：先看清岗位目标与责任，再用问题、经历和证据判断能力与匹配度。
 
-A bilingual interview and promotion question library for engineers and engineering managers: start from a goal, and prepare with good questions rather than model answers.
+A bilingual interview and promotion library for engineers, interviewers, and managers: understand the role and its responsibilities first, then use questions, experience, and evidence to assess capability and fit.
 
 **[打开中文站点](https://liyuk.github.io/interview-compass/)** · **[Open the English site](https://liyuk.github.io/interview-compass/en/)**
 
@@ -29,9 +29,9 @@ A bilingual interview and promotion question library for engineers and engineeri
 
 ## About
 
-Interview Compass is a bilingual, question-first heuristic library for external interviews, hiring, promotion, and project reflection. Start from a goal or search directly; use questions to compare approaches, examine context and causality, and make contribution visible through evidence. It does not prescribe answers or automatically score people.
+Interview Compass is a bilingual heuristic library for external interviews, hiring, promotion, and project reflection. Start with a role or goal, then use questions to compare approaches, examine context and causality, and make contribution visible through evidence. It does not prescribe answers or automatically score people.
 
-This repository contains the Interview Compass site and its source content. The site serves engineers and engineering managers. Product sense, operating workflows, design collaboration, and commercial reasoning expand engineering business understanding; they are not separate target careers.
+This repository contains the Interview Compass site and its source content. The site serves engineers, interviewers, and engineering managers. Product sense, operating workflows, design collaboration, and commercial reasoning expand engineering business understanding; they are not separate target careers.
 
 Maintainer reference: [current site architecture](docs/architecture/current-state.md). Dated plans, reviews, and design explorations record past decisions and should not be read as a description of the current implementation.
 
