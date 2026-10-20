@@ -7,12 +7,25 @@ import { pathFor } from '../lib/routes';
 import { questionCollections } from '../lib/question-collections';
 import { pick } from '../lib/taxonomy';
 import { loadQuestions } from '../lib/site-data';
+import { getQuestionSpecificAnalysis } from '../lib/question-evaluation';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const questions = await loadQuestions(locale);
 const featured = ['general-interview', 'technical-selected', 'candidate-due-diligence'].flatMap((id) => questionCollections.find((item) => item.id === id) ?? []);
+const exampleQuestionId = 'a-ai-engineering-agent-duplicate-side-effect';
+const exampleQuestion = questions.find((question) => question.questionId === exampleQuestionId);
+const exampleAnalysis = getQuestionSpecificAnalysis(exampleQuestionId, locale);
+const exampleQuestionHref = exampleQuestion
+  ? pathFor({ type: 'question', questionId: exampleQuestion.questionId, capability: exampleQuestion.primaryCapability, title: exampleQuestion.title }, locale, base)
+  : pathFor({ type: 'questions' }, locale, base);
+const exampleEvidence = exampleAnalysis ? [
+  { label: en ? '1 · Needs verification' : '1 · 还需要核验', text: exampleAnalysis.anchors.notPassing },
+  { label: en ? '2 · Basic safe path' : '2 · 基本安全路径', text: exampleAnalysis.anchors.passing },
+  { label: en ? '3 · Handles trade-offs' : '3 · 能处理取舍', text: exampleAnalysis.anchors.excellent },
+  { label: en ? '4 · Owns recovery' : '4 · 能说明恢复责任', text: exampleAnalysis.anchors.exceptional },
+] : [];
 const entries = [
   { ref: { type: 'roles' } as const, title: en ? 'Roles' : '岗位', text: en ? 'Find questions relevant to your work.' : '按职能找到相关实践问题。' },
   { ref: { type: 'topics' } as const, title: en ? 'Topics' : '主题', text: en ? 'Explore a subject or working method.' : '查找技术、业务或方法主题。' },
@@ -20,17 +33,17 @@ const entries = [
   { ref: { type: 'capability-model' } as const, title: en ? 'Stages' : '阶段', text: en ? 'Compare responsibility and evidence.' : '对照责任范围和行为要求。' },
 ];
 ---
-<SiteLayout locale={locale} route={{ type: 'home' }} description={en ? 'Start with role goals, scope, and level. Use interview and promotion questions to clarify expectations, prepare stories, check evidence, and assess fit.' : '从岗位目标、责任范围和级别出发，用面试与晋升问题拆解要求、准备经历、核实证据并判断匹配度。'}>
+<SiteLayout locale={locale} route={{ type: 'home' }} description={en ? 'A bilingual interview and promotion reference built from practical experience. Know the role, show the evidence, and prepare stories that can be checked.' : '一套来自一线实践的双语面试与晋升参考：先看清岗位，再讲清证据，把经历整理成能够支撑判断的故事。'}>
   <div class="home-page">
   <section class="hero hero-compass" aria-labelledby="home-title">
     <div class="hero-copy">
-      <h1 id="home-title" class="page-title">{en ? 'Understand the role. Assess fit with evidence.' : '先看清岗位，再用证据判断匹配。'}</h1>
-      <p class="intro">{en ? 'For engineers preparing for interviews, promotion, or technical management. Clarify role goals, responsibility, and level first, then use questions and evidence to prepare stories, assess fit, and guide hiring conversations.' : '面向工程师的面试、晋升与技术管理。先厘清岗位目标、责任范围和级别，再用问题与证据准备表达、判断匹配，也帮助面试官和管理者校准招聘判断。'}</p>
+      <h1 id="home-title" class="page-title">{en ? 'Know the role. Show the evidence.' : '先看清岗位，再讲清证据。'}</h1>
+      <p class="intro">{en ? 'A practical method for interviews and promotion reviews. Candidates learn what a question is testing and how to support a story with evidence. Interviewers and hiring managers use the same material to align on the role, probe for evidence, and assess fit.' : '一套面试与晋升的识人方法。候选人用它看懂题目在考什么、讲出能被核实的经历；面试官和管理者用同一套材料对齐岗位要求、追问证据、判断匹配。'}</p>
       <div class="hero-actions">
-        <a class="hero-primary" href={pathFor({ type: 'preparation' }, locale, base)}>{en ? 'Start with the preparation guide' : '从准备指南开始'} <Icon name="arrow-up-right" size={17} /></a>
-        <a class="hero-secondary" href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'Curated sets' : '从精选题单开始'}</a>
+        <a class="hero-primary" href={pathFor({ type: 'preparation' }, locale, base)}>{en ? "I'm a candidate: prepare a story" : '我是候选人：从准备指南开始'} <Icon name="arrow-up-right" size={17} /></a>
+        <a class="hero-secondary" href={pathFor({ type: 'collection', id: 'core-interviewer-evidence' }, locale, base)}>{en ? "I'm hiring: gather evidence" : '我是面试官 / 管理者：从取证题单开始'} <Icon name="arrow-up-right" size={16} /></a>
       </div>
-      <p class="hero-count">{en ? `Library total: ${questions.length} questions · Chinese and English · Explore only what you need` : `题库总量 ${questions.length} 道 · 中英双语 · 按需选择，不必读完整库`}</p>
+      <p class="hero-count">{en ? `${questions.length} questions · Chinese and English · Start with one role or goal` : `${questions.length} 道题 · 中英双语 · 从一个岗位或目标开始`}</p>
     </div>
     <nav class="hero-entry-panel" aria-labelledby="entry-title">
       <div class="hero-entry-heading"><h2 id="entry-title">{en ? 'Already know what you need?' : '已经知道要找什么？'}</h2></div>
@@ -38,8 +51,17 @@ const entries = [
       <p class="hero-entry-note">{en ? `${facetDefinitions.topics.length} topics · ${audienceRoles.length} roles · ${domains.length} capability domains` : `${facetDefinitions.topics.length} 个主题 · ${audienceRoles.length} 类岗位 · ${domains.length} 个能力域`}</p>
     </nav>
   </section>
+  <section class="practice-proof" aria-label={en ? 'Method background and experience' : '方法来源与实践经验'}>
+    <p class="practice-proof-origin">{en ? 'A decade of work distilled into a method, informed by screening criteria from some leading internet companies.' : '来自十年工作的积累，也参考了部分头部互联网公司的筛选准则。'}</p>
+    <div class="practice-proof-facts">
+      <p><strong>{en ? '~1,000' : '约 1,000 位'}</strong><span>{en ? 'candidates interviewed in the past five years' : '候选人，近五年面试'}</span></p>
+      <p><strong>{en ? '~300' : '约 300 人'}</strong><span>{en ? 'coached in the past five years' : '近五年接受过辅导'}</span></p>
+      <p><strong>{en ? '200+' : '200+'}</strong><span>{en ? 'managers attended my training' : '位管理者参加过我的培训'}</span></p>
+    </div>
+    <p class="practice-proof-application">{en ? 'Used in promotions from junior roles through second-line management · Earlier version: roughly 20,000–30,000 reads' : '用于从初级到二线管理者的晋升 · 旧版曾有两三万阅读'}</p>
+  </section>
   <section class="audience-entry-section" aria-labelledby="audience-entry-heading">
-    <div class="collection-section-heading"><div><p class="eyebrow">{en ? 'START WITH YOUR TASK' : '从你的目标开始'}</p><h2 id="audience-entry-heading" class="section-title">{en ? 'Choose how you will use the library' : '选择你使用题库的方式'}</h2></div><a href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'All curated sets' : '查看全部题单'} <Icon name="chevron-right" size={16} /></a></div>
+    <div class="collection-section-heading"><div><p class="eyebrow">{en ? 'START WITH YOUR ROLE' : '从你的角色开始'}</p><h2 id="audience-entry-heading" class="section-title">{en ? 'Which side of the interview table are you on?' : '你坐在面试桌的哪一边？'}</h2></div><a href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'All curated sets' : '查看全部精选题单'} <Icon name="chevron-right" size={16} /></a></div>
     <div class="audience-entry-grid">
       {[
         { id: 'candidate', collection: 'core-candidate-preparation', title: en ? 'Prepare as a candidate' : '候选人准备', text: en ? 'Explain your decisions, contribution, and results with checkable evidence.' : '用可核验的证据说明自己的判断、贡献与结果。' },
@@ -48,16 +70,24 @@ const entries = [
       ].map((entry) => <a class="audience-entry" data-core-audience={entry.id} href={pathFor({ type: 'collection', id: entry.collection }, locale, base)}><span class="audience-entry-label">{en ? 'REVIEWED CORE PATH' : '逐题复核核心题'}</span><strong>{entry.title}<Icon name="arrow-up-right" size={16} /></strong><span>{entry.text}</span><small>{en ? 'First question in one step' : '一步进入第一道题'}</small></a>)}
     </div>
   </section>
-  <section class="engineering-expansion" aria-labelledby="engineering-expansion-heading">
-    <h2 id="engineering-expansion-heading">{en ? 'Technical depth, with broader business understanding' : '技术是主线，业务理解是拓展'}</h2>
-    <p>{en ? 'Product sense, operating workflows, and design collaboration help engineers understand why they build and how work creates value. These are capability perspectives, not separate job tracks.' : '产品 sense、运营工作流理解、设计协作，帮助工程师理解为什么做、怎样协作、如何产生业务价值；它们是能力视角，不是另外几套求职岗位。'}</p>
-    <div class="journey-links"><a href={pathFor({ type: 'topic', id: 'product-thinking' }, locale, base)}>{en ? 'Product judgment' : '产品判断'} <Icon name="arrow-up-right" size={16} /></a><a href={pathFor({ type: 'topic', id: 'operations' }, locale, base)}>{en ? 'Operating workflows' : '运营工作流'} <Icon name="arrow-up-right" size={16} /></a><a href={pathFor({ type: 'topic', id: 'product-discovery' }, locale, base)}>{en ? 'Discovery and design collaboration' : '需求与设计协作'} <Icon name="arrow-up-right" size={16} /></a></div>
+
+  <section class="question-demo" aria-labelledby="question-demo-heading">
+    <div class="question-demo-heading"><p class="eyebrow">{en ? 'ONE QUESTION, FOUR LEVELS OF EVIDENCE' : '一道题，看懂四档证据'}</p><h2 id="question-demo-heading">{en ? 'A refund times out. What would you do next?' : 'AI 助手退款超时后，怎样避免重复操作？'}</h2><p>{en ? 'The question is not a test of whether you can name idempotency. It asks how you handle an unknown outcome, user authorization, and recovery.' : '重点不只是能不能说出“幂等”，还要看你如何处理结果未知、用户授权和后续恢复。'}</p></div>
+    <ol class="question-demo-levels">{exampleEvidence.map((item) => <li><strong>{item.label}</strong><span>{item.text}</span></li>)}</ol>
+    <a class="question-demo-link" href={exampleQuestionHref}>{en ? 'Read the question analysis and follow-ups' : '查看完整题目分析与追问'} <Icon name="arrow-up-right" size={16} /></a>
+    <p class="question-demo-note">{en ? 'These anchors help explain differences in evidence. They are not a universal score or a substitute for role context.' : '证据锚点用于解释回答差异，不能脱离岗位上下文当成通用分数。'}</p>
   </section>
 
   <section class="home-featured" aria-labelledby="featured-title">
     <div class="collection-section-heading"><h2 id="featured-title" class="section-title">{en ? 'Start with a few questions' : '先看一小组问题'}</h2><a href={pathFor({ type: 'collections' }, locale, base)}>{en ? 'All curated sets' : '全部精选题单'} <Icon name="chevron-right" size={16} /></a></div>
     <div class="featured-collection-grid">{featured.map((collection) => <a class="featured-collection" href={pathFor({ type: 'collection', id: collection.id }, locale, base)}><strong>{pick(collection.title, locale)} <Icon name="arrow-up-right" size={15} /></strong><span>{pick(collection.purpose, locale)}</span>{collection.kind === 'question-set' && <TargetCount ids={collection.entries.map((entry: { questionId: string }) => entry.questionId)} locale={locale} unit />}</a>)}</div>
   </section>
-  <aside class="journey-next"><h2>{en ? 'A method behind the questions' : '问题背后，有一套判断方法'}</h2><p>{en ? 'Clarify the goal, compare approaches, ask about context and personal actions, then examine outcomes and other possible explanations. Use the guide to ask questions and reflect without relying on model answers.' : '明确目标，比较多种思路，追问背景和本人行动，再核实结果、代价与其他解释。用这套框架提问和复盘，形成自己的判断。'}</p><div class="journey-links"><a href={pathFor({ type: 'site-approach' }, locale, base)}>{en ? 'Read the thinking behind this site' : '了解站点思路'}</a><a href={pathFor({ type: 'framework' }, locale, base)}>{en ? 'Read the interviewing guide' : '了解提问方法'}</a><a href={pathFor({ type: 'questions' }, locale, base)}>{en ? 'Browse the full library' : '浏览全量题库'}</a></div></aside>
+  <aside class="journey-next"><h2>{en ? 'Why STAR alone can leave gaps' : 'STAR 能帮你组织故事，但还要讲清判断依据'}</h2><p>{en ? 'Situation, task, action, and result make a story easier to follow. They do not by themselves show what the question is testing, where your responsibility began, or whether the result can be attributed to your decisions. Start with the role, then connect intent, context, trade-offs, action, and checkable evidence.' : '情境、任务、行动、结果能帮听众跟上故事，但它们本身不会说明题目在判断什么、你的责任边界在哪里，也不能自动证明结果来自你的判断。先看岗位，再把题目意图、背景、取舍、行动和可核实的证据连起来。'}</p><div class="journey-links"><a href={pathFor({ type: 'site-approach' }, locale, base)}>{en ? 'Read the thinking behind this site' : '了解站点思路'}</a><a href={pathFor({ type: 'framework' }, locale, base)}>{en ? 'Read the interviewing guide' : '了解提问方法'}</a><a href={pathFor({ type: 'questions' }, locale, base)}>{en ? 'Browse the full library' : '浏览全量题库'}</a></div></aside>
+  <section class="engineering-expansion" aria-labelledby="engineering-expansion-heading">
+    <h2 id="engineering-expansion-heading">{en ? 'Technical depth, with broader business understanding' : '技术是主线，业务理解是拓展'}</h2>
+    <p>{en ? 'Product sense, operating workflows, and design collaboration help engineers understand why they build and how work creates value. These are capability perspectives, not separate job tracks.' : '产品 sense、运营工作流理解、设计协作，帮助工程师理解为什么做、怎样协作、如何产生业务价值；它们是能力视角，不是另外几套求职岗位。'}</p>
+    <div class="journey-links"><a href={pathFor({ type: 'topic', id: 'product-thinking' }, locale, base)}>{en ? 'Product judgment' : '产品判断'} <Icon name="arrow-up-right" size={16} /></a><a href={pathFor({ type: 'topic', id: 'operations' }, locale, base)}>{en ? 'Operating workflows' : '运营工作流'} <Icon name="arrow-up-right" size={16} /></a><a href={pathFor({ type: 'topic', id: 'product-discovery' }, locale, base)}>{en ? 'Discovery and design collaboration' : '需求与设计协作'} <Icon name="arrow-up-right" size={16} /></a></div>
+  </section>
+  <footer class="home-final-cta"><div><h2>{en ? 'Use one question to see how the method works.' : '先用一道题，看看这套方法怎么判断。'}</h2><p>{en ? 'Explore the open reference, then share what would make it more useful.' : '打开开源参考站试一道题；觉得有帮助，欢迎在 GitHub 点 Star 或提出改进建议。'}</p></div><div class="journey-links"><a href={pathFor({ type: 'questions' }, locale, base)}>{en ? 'Try a question' : '开始试题'} <Icon name="arrow-up-right" size={16} /></a><a href="https://github.com/Liyuk/interview-compass" target="_blank" rel="noreferrer">{en ? 'Star the repository' : '在 GitHub 点 Star'} <Icon name="arrow-up-right" size={16} /></a><a href="https://github.com/Liyuk/interview-compass/issues/new" target="_blank" rel="noreferrer">{en ? 'Suggest a question' : '建议补充题目'} <Icon name="arrow-up-right" size={16} /></a></div></footer>
   </div>
 </SiteLayout>

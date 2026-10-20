@@ -57,6 +57,13 @@
 .hero-primary { display: inline-flex; align-items: center; gap: 18px; min-height: 46px; padding: 0 17px; border: 1px solid var(--red); border-radius: 4px; background: var(--red); color: #fff; font-weight: 650; }
 .hero-primary:hover { background: #982b26; color: #fff; text-decoration: none; }
 .hero-count { color: var(--muted); font-size: 13px; }
+.practice-proof { margin: 0 0 32px; padding: 18px 0 20px; border-block: 1px solid var(--line); }
+.practice-proof-origin { margin: 0 0 14px; color: var(--ink); font-weight: 600; }
+.practice-proof-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 24px; }
+.practice-proof-facts p { display: grid; gap: 2px; margin: 0; }
+.practice-proof-facts strong { color: var(--red); font-size: 21px; line-height: 1.25; }
+.practice-proof-facts span, .practice-proof-application { color: var(--muted); font-size: 13px; line-height: 1.6; }
+.practice-proof-application { margin: 12px 0 0; }
 .hero-entry-panel { padding: 21px 22px 16px; border: 1px solid var(--line); border-top-color: var(--red); background: rgba(255,255,255,.78); }
 .hero-entry-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 .hero-entry-heading h2 { margin: 0; font-size: 17px; font-weight: 650; }
@@ -78,6 +85,20 @@
 .audience-entry strong { display: flex; justify-content: space-between; align-items: center; gap: 8px; color: var(--blue); font-size: 17px; }
 .audience-entry > span:not(.audience-entry-label) { color: var(--muted); font-size: 14px; line-height: 1.6; }
 .audience-entry small { margin-top: auto; color: var(--muted); font-size: 12px; }
+.question-demo { padding: 30px 0; border-bottom: 1px solid var(--line); }
+.question-demo-heading { max-width: 760px; }
+.question-demo-heading h2 { margin: 4px 0 8px; font-size: 24px; }
+.question-demo-heading > p:last-child { max-width: 72ch; margin: 0; color: var(--muted); line-height: 1.7; }
+.question-demo-levels { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 22px 0 15px; padding: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); list-style: none; }
+.question-demo-levels li { display: grid; align-content: start; gap: 8px; min-width: 0; min-height: 152px; padding: 15px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.56); }
+.question-demo-levels strong { color: var(--blue); font-size: 13px; }
+.question-demo-levels span { color: var(--muted); font-size: 13px; line-height: 1.65; }
+.question-demo-link { display: inline-flex; align-items: center; gap: 6px; font-weight: 650; }
+.question-demo-note { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
+.home-final-cta { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin: 36px 0 24px; padding: 22px; border: 1px solid var(--line); border-top: 2px solid var(--red); background: rgba(255,255,255,.66); }
+.home-final-cta h2 { margin: 0 0 6px; font-size: 20px; }
+.home-final-cta p { max-width: 58ch; margin: 0; color: var(--muted); line-height: 1.65; }
+.home-final-cta .journey-links { justify-content: flex-end; }
 .section-title { margin: 36px 0 12px; font-size: 22px; }
 .band { margin: 0 0 28px; }
 .band h2, .band h3 { margin: 0 0 4px; font-size: 18px; }
@@ -478,6 +499,13 @@ details[open] > .disclosure-summary > .site-icon { transform: rotate(90deg); }
 .hero-entry strong { justify-content: space-between; }
 .hero-entry-description { font-size: 13px; }
 @media (max-width: 760px) {
+  .practice-proof-facts { grid-template-columns: 1fr; gap: 10px; }
+  .practice-proof-facts p { grid-template-columns: minmax(90px, auto) 1fr; align-items: baseline; gap: 8px; }
+  .practice-proof-facts strong { font-size: 18px; }
+  .question-demo-levels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .question-demo-levels li { min-height: 0; }
+  .home-final-cta { align-items: flex-start; flex-direction: column; }
+  .home-final-cta .journey-links { justify-content: flex-start; }
   .home-page { display: flex; flex-direction: column; }
   .home-page .hero-compass { display: contents; }
   .home-page .hero-copy { order: 0; padding-top: 24px; }
