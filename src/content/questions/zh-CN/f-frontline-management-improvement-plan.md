@@ -3,8 +3,8 @@ questionId: f-frontline-management-improvement-plan
 kind: question
 status: published
 locale: zh-CN
-title: "成员持续未达到岗位要求时，怎样制定公平的改进计划？"
-question: "一位成员近期交付持续低于岗位要求，之前的反馈也没有带来改善。你会怎样制定并执行公平、可衡量的绩效改进计划？"
+title: 成员持续未达到岗位要求时，怎样制定公平的改进计划？
+question: 一位成员近期交付持续低于岗位要求，之前的反馈也没有带来改善。你会怎样制定并执行公平、可衡量的绩效改进计划？
 intent: 了解你能否把绩效改进做成真诚的、有支持的过程，而不是走形式的前奏，并守住公平和合规。
 signals:
   - 用具体事实对照已说明的岗位要求，核验目标、资源和支持，区分表现差距与管理条件。
@@ -38,17 +38,20 @@ formats:
   - behavioral
   - case
 followUps:
-  - 对方认为这是在逼他离职，你怎么回应？
-  - 改进期结束，目标只完成了一部分，你怎么判断？
-  - 【绩效改进计划如何避免变成突然的惩罚？】成员连续错过目标，但此前收到的反馈零散且标准不清。你需要建立正式改进计划。会怎样保证标准公平、支持具体并可核验？
-  - 若目标受团队依赖影响如何调整？
-  - 如何区分能力不足与目标冲突？
+  - 成员认为岗位标准事先没有说清楚，你会怎样核实并处理这段反馈？
+  - 目标受外部依赖影响而只完成一部分时，你怎样复核、调整并决定下一步？
 source:
   - attribution: original
     label: 作者的分级面试框架，一线技术经理
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 B
-perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspective: manager
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 把改进计划当作退出手续，目标事后设定，支持与反馈没有记录。
+anchors:
+  notPassing: 目标含糊或事后提高标准，把改进计划当作离职前奏。
+  passing: 对照岗位要求记录差距，并确认员工获得的资源和支持。
+  excellent: 约定可观察目标、期限、反馈频率及双方责任。
+  exceptional: 按一致证据复核进展，调整受依赖影响的目标，并遵循正式流程作决定。
 ---

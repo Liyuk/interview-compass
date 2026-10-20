@@ -12,7 +12,10 @@ signals:
   - 机制对所有人公开且一致，而不是针对某一个人
   - 同时与本人沟通原因和期待，并跟进行为是否改变
 primaryCapability: people-organization.frontline-management
-topics: [management, engineering-systems, feedback]
+topics:
+  - management
+  - engineering-systems
+  - feedback
 roles:
   - manager
   - engineering
@@ -20,20 +23,31 @@ roles:
   - backend
   - mobile
   - ai-engineer
-responsibilityScopes: [team]
+responsibilityScopes:
+  - team
 careerTracks:
   - team-manager
   - senior-manager
-  - individual-contributor
-scenarios: [interview, hiring, self-reflection]
-formats: [behavioral, case]
+scenarios:
+  - interview
+  - hiring
+  - self-reflection
+formats:
+  - behavioral
+  - case
 followUps:
   - 机制设好之后他仍然想办法绕过去，你怎么办？
   - 你怎样避免红黑榜之类的做法伤害团队氛围？
 source:
   - attribution: original
-    label: "作者的分级面试框架，高级工程师与小团队负责人"
-perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+    label: 作者的分级面试框架，高级工程师与小团队负责人
+perspective: manager
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 针对个人设置隐性门槛或公开羞辱，没有清楚、适用于全队的行为标准。
+anchors:
+  notPassing: 只做一次谈话或针对个人设隐性规则，没有一致标准。
+  passing: 指出测试/评审等具体行为标准及其质量影响。
+  excellent: 用公开一致的流程门槛配合沟通、申诉和例外处理。
+  exceptional: 检查机制是否改善质量而未制造规避或惩罚性指标，并据证据调整。
 ---

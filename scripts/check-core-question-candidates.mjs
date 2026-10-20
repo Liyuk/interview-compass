@@ -70,7 +70,7 @@ for (const [audience, expectedCount] of expectedAudiences) {
         if (record.questionId !== id || record.locale !== locale || record.status !== 'published') {
           errors.push(`${id} (${locale}): missing or unpublished paired record`);
         }
-        if (record.qualityTier !== 'extended') errors.push(`${id} (${locale}): candidate must not be marked core before approval`);
+        if (!['extended', 'core'].includes(record.qualityTier)) errors.push(`${id} (${locale}): invalid question quality tier`);
         pair.push(record);
         if (locale === 'zh-CN') domains.add(record.primaryCapability.split('.')[0]);
       } catch (error) {
@@ -79,9 +79,10 @@ for (const [audience, expectedCount] of expectedAudiences) {
     }
     if (pair.length === 2) {
       if (pair[0].perspective !== pair[1].perspective) errors.push(`${id}: bilingual respondent perspectives disagree`);
-      if (pair[0].perspectiveReview !== 'inferred' || pair[1].perspectiveReview !== 'inferred') {
-        errors.push(`${id}: respondent perspective was reviewed after candidate list generation; refresh its status`);
-      }
+      const pairState = pair.map((record) => `${record.qualityTier}:${record.perspectiveReview}`);
+      const isUnreviewedCandidate = pairState.every((state) => state === 'extended:inferred');
+      const isApprovedCore = pairState.every((state) => state === 'core:reviewed');
+      if (!isUnreviewedCandidate && !isApprovedCore) errors.push(`${id}: bilingual records must remain extended/inferred or advance together to core/reviewed`);
     }
   }
 }

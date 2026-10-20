@@ -12,7 +12,10 @@ signals:
   - Makes the mechanisms open and consistent for everyone, not aimed at one person
   - Also talks with the person about reasons and expectations and follows up on whether behavior changed
 primaryCapability: people-organization.frontline-management
-topics: [management, engineering-systems, feedback]
+topics:
+  - management
+  - engineering-systems
+  - feedback
 roles:
   - manager
   - engineering
@@ -20,20 +23,31 @@ roles:
   - backend
   - mobile
   - ai-engineer
-responsibilityScopes: [team]
+responsibilityScopes:
+  - team
 careerTracks:
   - team-manager
   - senior-manager
-  - individual-contributor
-scenarios: [interview, hiring, self-reflection]
-formats: [behavioral, case]
+scenarios:
+  - interview
+  - hiring
+  - self-reflection
+formats:
+  - behavioral
+  - case
 followUps:
   - After the mechanism is in place they still find ways around it. What do you do?
   - How do you keep things like leaderboards from hurting team morale?
 source:
   - attribution: original
-    label: "The author's leveled interview framework, senior engineer and small-team lead"
-perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+    label: The author's leveled interview framework, senior engineer and small-team lead
+perspective: manager
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: Sets a hidden bar for one person or publicly shames them without a clear standard applied to the whole team.
+anchors:
+  notPassing: Relies on one conversation or a hidden rule targeting one person, without a consistent standard.
+  passing: Names a concrete behavior standard for tests/reviews and its quality impact.
+  excellent: Uses transparent and consistent process gates with communication, appeal, and exception handling.
+  exceptional: Checks whether the mechanism improves quality without creating workarounds or punitive metrics, then adjusts from evidence.
 ---

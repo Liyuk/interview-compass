@@ -29,7 +29,6 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - hiring
@@ -44,6 +43,12 @@ source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15
 perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 只看总续约率并直接归因产品质量，没有校准 cohort 或比较客户分层。
+anchors:
+  notPassing: 看到续约比例下降就直接归因，没有统一分母或时间窗。
+  passing: 校准续约定义并按客户群拆分变化。
+  excellent: 结合使用、价值实现和服务成本检验多个原因。
+  exceptional: 用客户访谈/行为证据排除替代解释，并设定可回看的干预指标。
 ---

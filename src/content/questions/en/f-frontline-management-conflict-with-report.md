@@ -12,7 +12,10 @@ signals:
   - Says what can be adjusted as a result and what must stand, with the reason
   - Repairs the relationship afterwards and checks whether the conflict exposed a management problem
 primaryCapability: people-organization.frontline-management
-topics: [management, conflict-resolution, feedback]
+topics:
+  - management
+  - conflict-resolution
+  - feedback
 roles:
   - manager
   - engineering
@@ -20,19 +23,31 @@ roles:
   - backend
   - mobile
   - ai-engineer
-responsibilityScopes: [team]
+responsibilityScopes:
+  - team
 careerTracks:
   - team-manager
   - senior-manager
-scenarios: [interview, hiring, self-reflection]
-formats: [behavioral, case]
+scenarios:
+  - interview
+  - hiring
+  - self-reflection
+formats:
+  - behavioral
+  - case
 followUps:
   - They oppose you openly in front of everyone. How do you handle it on the spot?
   - Afterwards you find they were actually right. What do you do?
 source:
   - attribution: original
-    label: "The author's interview sequence, conflict with a report"
+    label: The author's interview sequence, conflict with a report
 perspective: manager
-perspectiveReview: inferred
-qualityTier: extended
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: Treats a report’s disagreement as insubordination and suppresses it before checking the evidence.
+anchors:
+  notPassing: Demands compliance or suppresses conflict without hearing the specific objection.
+  passing: Restates the other person’s evidence and separates factual disputes from decision disagreements.
+  excellent: Explains decision boundaries and adjustments while owning the judgment.
+  exceptional: Checks the relationship and process afterwards; corrects and repairs openly if the judgment was wrong.
 ---

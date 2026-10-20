@@ -7,12 +7,10 @@ title: AI 助手请求退款超时后，怎样避免重复操作或超出用户�
 question: AI 助手可以代表用户创建工单、退款或修改账户。它发起退款时发生超时，系统不知道退款是否已经完成；自动重试可能造成重复退款。你会怎样确认操作结果、控制重试，并确保操作仍在用户授权范围内？
 intent: 考察你能否把 AI 助手的判断与实际操作分开，并妥善处理超时后结果不明、重试和权限变化。
 signals:
-  - 区分查询信息的操作和会改变数据或产生费用的操作。
-  - 为每次操作保留唯一请求编号；说明怎样识别重复请求，或通过查询状态、人工确认来避免重复执行。
-  - 按操作权限和可能造成的损失设置确认要求。
-  - 说明超时、部分完成和结果暂时无法确认时，任务如何恢复或暂停。
-  - 区分“同一请求的网络重试”和“AI 助手重新决定再做一次”。
-  - 说明用户权限变化后，怎样停止尚未执行的操作并处理已经完成的部分。
+  - 区分可安全重试的查询与退款等有副作用操作，并说明各自的授权要求。
+  - 为单次用户意图设置幂等标识，说明服务如何识别同一请求的网络重试。
+  - 遇到超时、部分完成或未知状态时先核实结果；无法确认就暂停并对账。
+  - 用户授权变化后停止尚未执行的动作，并明确已完成部分的补偿责任。
 primaryCapability: professional.ai-engineering
 topics:
   - ai-engineering
@@ -31,7 +29,6 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - hiring
@@ -53,6 +50,12 @@ source:
     label: Interview Compass 原创扩充批次 2026-10-15 H
 relatedQuestions: []
 perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 把超时后一律重试，并把模型再次发起的退款当作网络重试处理。
+anchors:
+  notPassing: 把超时后重试视为安全，没有区分已完成、未完成和未知。
+  passing: 使用幂等键或状态查询防止退款重复执行。
+  excellent: 结合权限确认和副作用等级设计重试、暂停与人工确认。
+  exceptional: 处理权限变化和合作方不可查询状态，给出对账与恢复责任。
 ---

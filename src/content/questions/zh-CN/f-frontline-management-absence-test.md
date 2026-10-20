@@ -27,7 +27,6 @@ responsibilityScopes:
 careerTracks:
   - team-manager
   - senior-manager
-  - individual-contributor
 scenarios:
   - interview
   - promotion
@@ -48,7 +47,13 @@ source:
   - attribution: derived
     label: 职场发展问题：晋升与面试前的完整自查清单
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
-perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspective: manager
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 声称团队离开自己也能运转，却说不出哪些决定已被实际授权和检验。
+anchors:
+  notPassing: 只说团队“应该能自主”，没有描述自己离开时的判断实例。
+  passing: 指出团队能独立做的一项决定和仍依赖本人的一项。
+  excellent: 通过授权、上下文和事后复核减少关键判断依赖。
+  exceptional: 演练缺席场景并检查结果、升级边界及新增的团队能力。
 ---

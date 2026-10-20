@@ -4,13 +4,8 @@ kind: question
 status: published
 locale: en
 title: When renewal falls, how do you distinguish a value gap from a customer-mix shift?
-question: >-
-  Renewal fell by six percentage points this quarter, while the share of small customers among new accounts rose.
-  How would you segment customers, usage periods, and service cost to determine whether product value fell or the
-  customer mix changed?
-intent: >-
-  Assess whether you decompose a commercial outcome into customer composition, usage, value realization, and
-  service cost instead of attributing it to one rate.
+question: Renewal fell by six percentage points this quarter, while the share of small customers among new accounts rose. How would you segment customers, usage periods, and service cost to determine whether product value fell or the customer mix changed?
+intent: Assess whether you decompose a commercial outcome into customer composition, usage, value realization, and service cost instead of attributing it to one rate.
 signals:
   - Align the renewal denominator, observation window, contract status, and customer cohort.
   - Segment by customer size, usage depth, industry, and service effort; check where the change concentrates.
@@ -34,7 +29,6 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - hiring
@@ -49,6 +43,12 @@ source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15
 perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: Attributes aggregate renewal changes to product quality without aligning cohorts or comparing customer segments.
+anchors:
+  notPassing: Attributes a renewal-rate decline without a consistent denominator or time window.
+  passing: Aligns the renewal definition and segments the change by customer group.
+  excellent: Tests competing causes using usage, value realization, and service cost.
+  exceptional: Uses customer or behavioral evidence to rule out alternatives and sets a reviewable intervention measure.
 ---

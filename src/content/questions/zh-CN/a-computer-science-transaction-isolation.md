@@ -12,19 +12,24 @@ signals:
   - 比较锁、快照或冲突检测对吞吐、等待与重试的影响。
   - 用可重复的并发样例核验业务不变量，说明仅提高隔离仍不能解决的边界。
 primaryCapability: professional.computer-science
-topics: [databases, concurrency]
+topics:
+  - databases
+  - concurrency
 roles:
   - backend
   - engineering
   - data
   - ai-engineer
-responsibilityScopes: [individual]
+responsibilityScopes:
+  - individual
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
-scenarios: [interview, campus]
-formats: [knowledge]
+scenarios:
+  - interview
+  - campus
+formats:
+  - knowledge
 followUps:
   - 你在项目里遇到过和隔离级别有关的问题吗？
   - 如果业务允许少量不一致，你会怎么选？
@@ -33,6 +38,12 @@ source:
     label: JavaGuide 的数据库与并发知识整理
     url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
 perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 背诵隔离级别定义，却不能给出并发时间线或说明所用数据库的实际保证。
+anchors:
+  notPassing: 只背隔离级别名称，无法描述并发读写会发生什么。
+  passing: 用事务时间线说明一种异常及其业务后果。
+  excellent: 结合具体数据库实现比较保证、锁等待和重试代价。
+  exceptional: 用并发测试验证业务不变量，并指出提高隔离仍解决不了的条件。
 ---
