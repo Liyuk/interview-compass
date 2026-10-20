@@ -29,7 +29,8 @@ export function questionQualityWarnings(records: readonly QuestionRecord[]): Que
       : (record.intent.match(/[\p{L}\p{N}]+/gu) ?? []).length;
     if (intentLength < (record.locale === 'zh-CN' ? 20 : 12)) add('short-intent', `intent is short (${intentLength} ${record.locale === 'zh-CN' ? 'characters' : 'words'})`);
     const repeatedIds = intentIds.get(`${record.locale}:${normalize(record.intent)}`);
-    if ((repeatedIds?.size ?? 0) >= 3) add('repeated-intent', `same intent appears on ${repeatedIds.size} question IDs`);
+    const repeatedCount = repeatedIds?.size ?? 0;
+    if (repeatedCount >= 3) add('repeated-intent', `same intent appears on ${repeatedCount} question IDs`);
   }
   return warnings;
 }

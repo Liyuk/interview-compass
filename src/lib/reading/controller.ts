@@ -17,6 +17,13 @@ let session: ReturnType<typeof createReadingSession>;
 let pending: Promise<void> | undefined;
 const storage = browserReadingStorage();
 function message(value: string) { const node = document.querySelector('[data-collection-status]'); if (node) node.textContent = value; }
+function readingQuestions(payload: unknown): { questionId: string; question: string }[] {
+  if (typeof payload !== 'object' || payload === null || !('questions' in payload) || !Array.isArray(payload.questions)) throw Error('reading-index-version');
+  const questions = payload.questions.filter((item: unknown): item is { questionId: string; question: string } =>
+    typeof item === 'object' && item !== null && 'questionId' in item && typeof item.questionId === 'string' && 'question' in item && typeof item.question === 'string');
+  if (questions.length !== payload.questions.length) throw Error('reading-index-version');
+  return questions;
+}
 function linked(href: string): string {
   const url = new URL(href, location.origin);
   if (getTargetContext().hasLink) url.search = withLinkPreference(url.searchParams, getTargetContext().preference).toString();
@@ -77,9 +84,8 @@ async function init() {
   pending ??= (async () => {
     const response = await fetch(`${base.replace(/\/$/,'')}/data/questions/${locale}.json`);
     if (!response.ok) throw Error('reading-index');
-    const payload = await response.json();
-    if (!Array.isArray(payload.questions) || !payload.questions.every(item => typeof item.questionId === 'string' && typeof item.question === 'string')) throw Error('reading-index-version');
-    const result = createKnowledgeRegistry({nodes:payload.questions.map(item => ({contentId:`question:${item.questionId}`,locale,kind:'question',title:item.question,href:`${prefix}questions/${item.questionId}/`,missingTranslations:[en ? 'zh-CN' : 'en']}))});
+    const questions = readingQuestions(await response.json());
+    const result = createKnowledgeRegistry({nodes:questions.map(item => ({contentId:`question:${item.questionId}`,locale,kind:'question',title:item.question,href:`${prefix}questions/${item.questionId}/`,missingTranslations:[en ? 'zh-CN' : 'en']}))});
     if (result.ok === false) throw Error('reading-registry');
     registry = result.registry;
     session = createReadingSession(storage,registry,{base,locale});

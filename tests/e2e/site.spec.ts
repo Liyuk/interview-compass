@@ -322,7 +322,9 @@ test('search supports keyboard focus and finds a localized question', async ({ p
   await page.locator('#site-search').fill('资源只够做两项');
   await expect(page.locator('.search-results')).toBeVisible();
   await expect(page.locator('.search-results')).toContainText('资源只够做两项');
-  const allMatches = new URL(await page.locator('.search-all').getAttribute('href')!);
+  const searchAllHref = await page.locator('.search-all').getAttribute('href');
+  if (!searchAllHref) throw new Error('Expected the all-results link to have an href');
+  const allMatches = new URL(searchAllHref, page.url());
   expect(allMatches.pathname).toBe('/interview-compass/search/');
   expect(allMatches.searchParams.get('q')).toBe('资源只够做两项');
   await page.keyboard.press('Escape');
