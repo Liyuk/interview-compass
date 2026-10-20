@@ -2,7 +2,7 @@ import { expect, test } from './all-questions-fixture';
 
 test('preparation targets are engineering specializations while business expansion stays visible', async ({ page }) => {
   await page.goto('./');
-  await expect(page.locator('.hero-copy')).toContainText('面向工程师');
+  await expect(page.locator('.hero-copy')).toContainText('先看清岗位，再讲清证据');
   await expect(page.locator('.engineering-expansion')).toContainText('产品 sense、运营工作流理解、设计协作');
   await page.locator('[data-profile-trigger]').click();
   await page.locator('[data-edit-target]').click();
