@@ -19,7 +19,7 @@ test('primary navigation separates goals, questions, methods, guide, categories 
   if (await page.locator('.nav-toggle').isVisible()) await page.locator('.nav-toggle').click();
   await expect(page.locator('.primary-nav a')).toHaveText(['首页', '准备指南', '面试题库']);
   await page.locator('.primary-nav').getByRole('link', { name: '准备指南' }).click();
-  await page.locator('main').getByRole('link',{name:'分类与查阅',exact:true}).click();
+  await page.locator('main').getByRole('link',{name:'分类索引',exact:true}).click();
   await page.locator('.browse-index').getByRole('link', { name: /主题索引/ }).click();
   await expect(page).toHaveURL(/\/topics\/$/);
   await page.goto('en/');
