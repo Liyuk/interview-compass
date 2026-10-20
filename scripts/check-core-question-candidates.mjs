@@ -5,6 +5,8 @@ import * as yaml from 'js-yaml';
 const root = process.cwd();
 const candidatePath = resolve(root, 'docs/core-question-candidates.md');
 const content = await readFile(candidatePath, 'utf8');
+const migration = JSON.parse(await readFile(resolve(root, 'docs/reviews/2026-10-19-question-perspective-migration.json'), 'utf8'));
+const assignments = new Map(migration.assignments.map((item) => [item.questionId, item]));
 const expectedAudiences = new Map([
   ['候选人准备', 35],
   ['面试官取证', 35],
@@ -46,11 +48,19 @@ for (const [audience, expectedCount] of expectedAudiences) {
     const expectedZhPath = `../src/content/questions/zh-CN/${id}.md`;
     const expectedEnPath = `../src/content/questions/en/${id}.md`;
     if (zhLink !== expectedZhPath || enLink !== expectedEnPath) errors.push(`${id}: locale links do not match its stable ID`);
+    const row = section.split('\n').find((line) => line.startsWith('| [' + id + ']')) ?? '';
+    const listedPerspective = row.match(/\| ([a-z]+)（(high|low)） \|/);
+    const assignment = assignments.get(id);
+    if (!listedPerspective) errors.push(`${id}: missing inferred respondent perspective and confidence`);
+    else if (!assignment || listedPerspective[1] !== assignment.perspective || listedPerspective[2] !== assignment.confidence) {
+      errors.push(`${id}: listed respondent perspective/confidence differs from migration report`);
+    }
 
     const localeFiles = [
       ['zh-CN', 'src/content/questions/zh-CN/' + id + '.md'],
       ['en', 'src/content/questions/en/' + id + '.md'],
     ];
+    const pair = [];
     for (const [locale, path] of localeFiles) {
       try {
         const source = await readFile(resolve(root, path), 'utf8');
@@ -61,9 +71,16 @@ for (const [audience, expectedCount] of expectedAudiences) {
           errors.push(`${id} (${locale}): missing or unpublished paired record`);
         }
         if (record.qualityTier !== 'extended') errors.push(`${id} (${locale}): candidate must not be marked core before approval`);
+        pair.push(record);
         if (locale === 'zh-CN') domains.add(record.primaryCapability.split('.')[0]);
       } catch (error) {
         errors.push(`${id} (${locale}): ${error.message}`);
+      }
+    }
+    if (pair.length === 2) {
+      if (pair[0].perspective !== pair[1].perspective) errors.push(`${id}: bilingual respondent perspectives disagree`);
+      if (pair[0].perspectiveReview !== 'inferred' || pair[1].perspectiveReview !== 'inferred') {
+        errors.push(`${id}: respondent perspective was reviewed after candidate list generation; refresh its status`);
       }
     }
   }
