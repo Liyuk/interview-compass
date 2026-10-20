@@ -58,4 +58,7 @@ source:
 followUps:
   - With stable resident memory, what mapping or working-set changes could still increase major faults?
   - How would you design an experiment to separate application-access changes from host memory pressure?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

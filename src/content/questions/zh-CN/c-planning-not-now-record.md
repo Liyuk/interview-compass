@@ -35,4 +35,7 @@ source:
   - attribution: derived
     label: "技术规划，本质上是业务分析与竞品分析：把“暂不做”写成正式结论"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2025/11/technical-planning-business-and-competitive-analysis/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

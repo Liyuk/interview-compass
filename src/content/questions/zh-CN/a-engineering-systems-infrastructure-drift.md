@@ -45,4 +45,7 @@ source:
   - attribution: inspired
     label: DevOps Interview Questions：基础设施即代码
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

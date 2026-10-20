@@ -46,4 +46,7 @@ source:
     label: Engineering Decision Skills：metric-decision 示例
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/projects/2026/09/engineering-decision-skills/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

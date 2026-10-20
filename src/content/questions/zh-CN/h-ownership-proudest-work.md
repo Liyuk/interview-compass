@@ -36,4 +36,7 @@ source:
   - attribution: inspired
     label: Tech Interview Handbook 行为面试评价
     url: https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

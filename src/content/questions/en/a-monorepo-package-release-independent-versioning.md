@@ -25,4 +25,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["How should an emergency fix bypass the normal release cadence?","Which packages should share a version and which should release independently?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：Monorepo"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

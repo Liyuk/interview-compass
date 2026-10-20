@@ -31,4 +31,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：商业领域的数据模型映射
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

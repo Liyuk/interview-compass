@@ -61,4 +61,7 @@ source:
   - attribution: original
     label: 作者的面试提问套路：深挖实际贡献与产出
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -25,4 +25,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["Who should command a cross-team incident, and on what basis?","How would you avoid escalating every boundary failure to the platform team?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微服务"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, headcount and resource planning for ambiguous problems"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

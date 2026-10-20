@@ -48,4 +48,7 @@ followUps:
     If the review is short and only one document can be submitted, how would you compress it without hiding
     the dispute?
   - If you are also a promotion candidate, who should independently calibrate attribution?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

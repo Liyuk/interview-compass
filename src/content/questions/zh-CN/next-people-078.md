@@ -41,4 +41,7 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 B
 locale: zh-CN
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

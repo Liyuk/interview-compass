@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's system design question, collaborative documents"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

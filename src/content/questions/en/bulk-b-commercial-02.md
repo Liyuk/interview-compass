@@ -49,4 +49,7 @@ source:
   - attribution: inspired
     label: 品牌与增长面试工具：定价与促销经济主题
     url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

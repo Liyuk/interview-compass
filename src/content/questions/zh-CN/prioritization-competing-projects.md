@@ -36,4 +36,7 @@ relatedQuestions:
   - questionId: prioritization-limited-resources
     relation: 同一取舍主题
     contrast: 从多个项目组合的资源排序，收敛到单个团队如何规划一个季度。
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

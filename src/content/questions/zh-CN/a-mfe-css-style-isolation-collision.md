@@ -22,4 +22,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["弹层必须跨越 Shadow DOM 边界时，怎样处理？","怎样避免每个子应用重复维护一套视觉系统？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微前端"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

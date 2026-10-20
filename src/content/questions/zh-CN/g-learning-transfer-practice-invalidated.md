@@ -41,4 +41,7 @@ source:
 followUps:
   - 如果试验更快但遗漏了一次高影响风险，你会怎样调整控制点？
   - 谁需要参与判断哪些流程是约束、哪些只是历史习惯？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

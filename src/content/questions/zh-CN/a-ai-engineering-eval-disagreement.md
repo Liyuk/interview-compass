@@ -23,4 +23,7 @@ scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: ["如果分歧集中在少数高风险场景，你会怎样处理？"]
 source: [{"attribution": "inspired", "label": "atryx AI 工程题库的主题覆盖；题面为本站独立编写", "url": "https://github.com/atryx/ai-engineer-interview-questions"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

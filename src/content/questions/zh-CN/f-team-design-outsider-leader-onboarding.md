@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：空降负责人的融入"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

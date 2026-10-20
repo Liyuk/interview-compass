@@ -37,4 +37,7 @@ source:
   - attribution: inspired
     label: System Design Primer：故障模式与重试
     url: https://github.com/donnemartin/system-design-primer
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

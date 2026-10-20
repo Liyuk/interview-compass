@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's leveled interview framework, senior manager"
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

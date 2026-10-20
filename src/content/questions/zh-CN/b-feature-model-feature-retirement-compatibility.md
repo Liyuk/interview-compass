@@ -37,4 +37,7 @@ source:
 followUps:
   - 如果替代特征只在部分人群上等价，怎样决定逐步切换范围？
   - 如何确认下游没有隐式依赖，而不只搜索代码仓库？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

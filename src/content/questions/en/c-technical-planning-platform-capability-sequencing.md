@@ -25,4 +25,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["planning","case"]
 followUps: ["How would you compare investment in foundational work without immediate business benefits?","How would you avoid commitments beyond the ability to validate?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：客户端、框架、编译与技术规划"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：上升受阻时的团队调整"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

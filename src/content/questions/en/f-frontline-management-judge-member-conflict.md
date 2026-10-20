@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, conflict between employees and how to judge it"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

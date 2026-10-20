@@ -48,4 +48,7 @@ followUps:
   - 【离线评测提升但线上客群变化时，怎样控制模型发布风险？】新模型在固定评测集上得分更高，但即将进入的客户群与训练数据差异明显，人工复核需要数日。你会如何安排灰度、观察和扩量？
   - 高风险样本稀少时，如何建立上线信心？
   - 哪些实时信号可发现分布漂移？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -35,4 +35,7 @@ source:
   - attribution: inspired
     label: System Design Primer：索引与读写路径
     url: https://github.com/donnemartin/system-design-primer
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

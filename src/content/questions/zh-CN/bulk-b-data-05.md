@@ -49,4 +49,7 @@ source:
     label: Interview Compass coverage-led original expansion batch 2026-10-17 C
 followUps:
   - 销售、客服和数据团队用不同规则筛选有效客户，管理层希望统一指标。你会怎样厘清核心概念、适用场景和不能强行统一的边界？
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -50,4 +50,7 @@ followUps:
   - 【运行手册存在但负责人和命令已过期时，怎样恢复可用性？】事故时值班人员按照运行手册执行，却发现命令依赖已退役服务，文档标注的负责人也已离职。你会如何修复手册并确保其持续有效？
   - 哪些手册需要每次发布自动触发复核？
   - 如何在不制造文档审批瓶颈的前提下保证正确性？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

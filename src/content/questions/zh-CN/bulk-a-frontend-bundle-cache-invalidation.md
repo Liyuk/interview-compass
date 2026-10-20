@@ -54,4 +54,7 @@ followUps:
   - 【静态资源使用 ETag 后仍出现旧内容，清缓存后又导致流量峰值。你会怎样设计 HTTP 缓存验证与失效策略？】静态资源使用 ETag 后仍出现旧内容，清缓存后又导致流量峰值。你会怎样设计 HTTP 缓存验证与失效策略？
   - 如果 HTML 必须实时更新而带哈希静态资源可以长期缓存，如何配合部署？
   - 如何诊断浏览器缓存、Service Worker 和 CDN 三层行为不一致？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

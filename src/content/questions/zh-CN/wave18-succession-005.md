@@ -36,4 +36,7 @@ source:
 topics:
   - management
   - hiring
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

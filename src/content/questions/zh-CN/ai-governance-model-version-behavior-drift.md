@@ -25,4 +25,7 @@ careerTracks:
   - senior-manager
 formats: ["debugging","case"]
 followUps: ["如果供应商静默更新模型，你怎样及时发现并保留可追溯性？","哪些变化需要重新审批，而不是普通回归测试？"]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

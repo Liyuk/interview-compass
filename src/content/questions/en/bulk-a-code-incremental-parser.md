@@ -63,4 +63,7 @@ followUps:
   - >-
     If operating cost exceeds the budget while core reliability targets remain fixed, how would you rebalance the
     trade-offs?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

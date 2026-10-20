@@ -42,4 +42,7 @@ source:
 followUps:
   - 如果转化提升主要来自新用户，而老用户受损，你会怎样决定是否保留改动？
   - 哪些用户研究证据能区分“少退出”与“退出更困难”？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

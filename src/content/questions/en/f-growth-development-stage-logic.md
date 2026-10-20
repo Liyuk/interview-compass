@@ -35,4 +35,7 @@ source:
   - attribution: derived
     label: Blog post on designing growth paths for newcomers, core members, and leads
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/06/growth-paths-for-newcomers-core-and-leads/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

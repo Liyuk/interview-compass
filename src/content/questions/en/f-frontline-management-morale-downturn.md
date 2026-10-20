@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, delivery and team stability in a downturn"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

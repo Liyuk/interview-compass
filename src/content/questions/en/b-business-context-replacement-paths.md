@@ -35,4 +35,7 @@ source:
   - attribution: derived
     label: "How to write a product overview: competition as the user's alternative paths"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/09/product-overview-is-a-decision-model/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

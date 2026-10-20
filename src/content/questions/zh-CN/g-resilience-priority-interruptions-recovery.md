@@ -26,4 +26,7 @@ scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["当每个请求方都认为自己的事项最紧急时，如何决策升级？","如何判断调整只是把负荷转给别人？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：韧性与恢复"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

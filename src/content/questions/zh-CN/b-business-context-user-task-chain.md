@@ -33,4 +33,7 @@ source:
   - attribution: derived
     label: "工程师为什么需要产品判断：产品认知阶段与业务因果链"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -44,4 +44,7 @@ source:
     label: 指标字典模板：把定义变成可复算的协作接口
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-dictionary-template/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

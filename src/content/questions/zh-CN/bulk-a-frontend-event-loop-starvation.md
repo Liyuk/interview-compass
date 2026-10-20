@@ -33,4 +33,7 @@ source:
   - attribution: inspired
     label: Front-end Interview Handbook — JavaScript and frontend interview topics
     url: https://github.com/yangshun/front-end-interview-handbook/blob/main/README.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -39,4 +39,7 @@ source:
 followUps:
   - 如果取消一项后剩余商品不再满足套餐条件，价格应怎样处理？
   - 如何防止营销指标与实际结算采用不同的折扣分摊规则？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

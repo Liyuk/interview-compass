@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: checking the goal and reviewing after launch"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

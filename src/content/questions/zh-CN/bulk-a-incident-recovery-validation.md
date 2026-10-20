@@ -57,4 +57,7 @@ source:
     url: https://github.com/Liyuk/engineering-decision-skills
 followUps:
   - 一次事故已经恢复，你怎样确认复发风险真的降低了，而不是只是“做过修复”？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -43,4 +43,7 @@ followUps:
   - 如果无法做随机实验，哪些准实验设计仍有帮助？
   - 怎样避免渠道优化把自然转化搬到付费渠道名下？
 relatedQuestions: []
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

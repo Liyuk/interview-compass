@@ -37,4 +37,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: ROI and ARR from a product view"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

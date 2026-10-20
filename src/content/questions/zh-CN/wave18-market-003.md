@@ -39,4 +39,7 @@ source:
   - attribution: original
     label: Interview Compass coverage-led original expansion batch 2026-10-17 C
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

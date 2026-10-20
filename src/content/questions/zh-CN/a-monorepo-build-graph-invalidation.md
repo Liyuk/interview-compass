@@ -25,4 +25,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["远程缓存来自不可信提交时怎样防止污染构建？","怎样证明跳过某个任务是安全的？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：Monorepo"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

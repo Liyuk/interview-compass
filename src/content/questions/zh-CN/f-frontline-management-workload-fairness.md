@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：工作量的合理评估"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

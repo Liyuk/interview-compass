@@ -48,4 +48,7 @@ source:
     label: 作者的分级面试框架，一线技术经理
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 B
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -33,4 +33,7 @@ source:
   - attribution: inspired
     label: JavaGuide — backend, Java, database, concurrency, and distributed systems topics
     url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

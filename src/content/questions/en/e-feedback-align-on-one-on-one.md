@@ -37,4 +37,7 @@ source:
   - attribution: adapted
     label: 'A one-on-one is not a status meeting: aligning information, expectations, and decision rights'
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/one-on-ones-and-decision-rights/zh.md
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

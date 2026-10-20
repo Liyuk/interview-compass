@@ -59,4 +59,7 @@ followUps:
     design handoff?
   - Which facts should machine-generated context preserve?
   - Who remains accountable if the next responder has not acknowledged?
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -55,4 +55,7 @@ followUps:
   - 单个测试稳定通过，整套测试并行运行时偶发失败，而且重跑可能通过。你会怎样查找顺序依赖或共享状态？
   - 如果失败只发生在 CI（自动检查与构建流程），怎样判断是机器负载还是环境配置差异？
   - 将测试串行化可以暂时止损吗，何时必须修复根因？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

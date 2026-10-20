@@ -42,4 +42,7 @@ source:
     label: 技术规划作为业务与竞争分析：识别价值链上的位置
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2025/11/technical-planning-business-and-competitive-analysis/zh.md
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

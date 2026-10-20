@@ -41,4 +41,7 @@ source:
   - attribution: inspired
     label: Coding Interview University — computer science foundations
     url: https://github.com/jwasham/coding-interview-university/blob/main/README.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

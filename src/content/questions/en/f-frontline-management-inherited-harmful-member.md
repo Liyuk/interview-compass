@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, taking over a problem employee"
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -50,4 +50,7 @@ followUps:
   - >-
     How would you verify user-perceived consistency goals instead of only database replication
     metrics?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's system design question, the permission system of an operations back office"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

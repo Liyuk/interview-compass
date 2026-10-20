@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: the metric was met but the business did not improve"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -42,4 +42,7 @@ formats:
 source:
   - attribution: original
     label: 原创：依赖更新与漏洞响应机制
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

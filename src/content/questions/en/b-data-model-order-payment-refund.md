@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "Written from the boundary examples between domain modeling and professional implementation"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

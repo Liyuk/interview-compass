@@ -47,4 +47,7 @@ followUps:
     If the replacement is equivalent only for some populations, how would you choose a gradual
     rollout scope?
   - How would you detect implicit downstream dependencies beyond searching source repositories?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

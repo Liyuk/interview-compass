@@ -60,4 +60,7 @@ followUps:
     More participants completed tasks in testing, but support requests increased after launch. How would you
     examine sampling, task difficulty, error recovery, and user confidence?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

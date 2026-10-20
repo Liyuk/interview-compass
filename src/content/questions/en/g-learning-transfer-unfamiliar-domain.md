@@ -57,4 +57,7 @@ source:
     label: 评估潜力时，我们真正该看什么
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/02/evaluating-potential-with-care/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

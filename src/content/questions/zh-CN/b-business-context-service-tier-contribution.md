@@ -50,4 +50,7 @@ followUps:
   - 【高服务档位收入增加但毛利下降，怎样决定是否继续销售？】一个高价服务档位提高了签约金额，但客户成功团队投入的人工时数远超预估，续约并未改善。你会怎样判断它对不同客群是否仍有价值？
   - 哪些成本应按客户分摊，哪些属于固定能力投入？
   - 怎样避免短观察窗口把延迟续约价值误判为零？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

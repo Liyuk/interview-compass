@@ -60,4 +60,7 @@ followUps:
   - >-
     An incident is resolved. How do you confirm the risk of recurrence really dropped, rather than just that a fix was
     made?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

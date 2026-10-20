@@ -25,4 +25,7 @@ careerTracks:
   - senior-manager
 formats: ["planning","case"]
 followUps: ["How would you constrain continued use if evidence is insufficient and no short-term alternative exists?","How would you verify that configuration matches contractual commitments in the request path?"]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

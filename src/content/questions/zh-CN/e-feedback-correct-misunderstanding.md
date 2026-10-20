@@ -43,4 +43,7 @@ followUps:
   - 如果对方仍不同意你的证据标准，你会怎样记录分歧并继续推进决策？
   - 什么情况下你会承认原先的反馈方式不合适并调整？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

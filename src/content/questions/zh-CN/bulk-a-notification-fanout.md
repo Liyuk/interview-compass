@@ -40,4 +40,7 @@ source:
   - attribution: inspired
     label: System Design Primer：消息队列与扇出模式
     url: https://github.com/donnemartin/system-design-primer
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

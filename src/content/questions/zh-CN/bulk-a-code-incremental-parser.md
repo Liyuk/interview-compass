@@ -50,4 +50,7 @@ followUps:
   - 如果问题只在少数时间窗口出现且本地难以复现，你会先增加什么证据？
   - 如果上线日期固定而验证时间减少，你会定义哪些发布门槛和回退条件？
   - 如果运行成本超出预算但核心可靠性目标不变，你会如何重新权衡？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

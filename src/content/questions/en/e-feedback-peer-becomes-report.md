@@ -43,4 +43,7 @@ followUps:
   - If they believe you are using your new authority to retaliate for an earlier disagreement, how would you respond and verify the concern?
   - Would you apply the same standard if a lower-performing team member showed the same behavior?
   - A former peer has become your report, and a quality issue arises. How would you clarify the new role, facts, and support without leaning on the old relationship?
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

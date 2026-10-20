@@ -39,4 +39,7 @@ followUps:
 source:
   - attribution: original
     label: 基于领域建模与专业解题的边界判定示例原创编写
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

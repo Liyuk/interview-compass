@@ -41,4 +41,7 @@ source:
     label: 思维训练（四）：结构化思维实践
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/structured-thinking-practice/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: whether a failed project could have succeeded"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

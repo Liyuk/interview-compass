@@ -48,4 +48,7 @@ followUps:
   - 短期训练成本如何和长期收益比较？
   - 如何避免以少记录投诉改善指标？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

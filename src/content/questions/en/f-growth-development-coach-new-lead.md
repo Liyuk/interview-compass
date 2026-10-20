@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: coaching a newly appointed team lead"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

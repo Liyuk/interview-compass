@@ -36,4 +36,7 @@ source:
   - attribution: inspired
     label: System Design Primer：数据存储与访问模式
     url: https://github.com/donnemartin/system-design-primer
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

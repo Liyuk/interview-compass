@@ -50,4 +50,7 @@ followUps:
   - 【How do you decide whether to keep selling a high-service tier when margin falls?】A premium service tier increases contract value, but customer success hours far exceed plan and renewal has not improved. How would you judge its value across customer segments?
   - Which costs belong to a customer and which are fixed capability investment?
   - How do you avoid mistaking delayed renewal value for zero within a short window?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

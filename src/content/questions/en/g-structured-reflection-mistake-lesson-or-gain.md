@@ -53,4 +53,7 @@ source:
     label: 'The author''s interview sequence: how someone views their mistakes'
   - attribution: original
     label: 'The author''s interview sequence: incidents caused by personal reasons'
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

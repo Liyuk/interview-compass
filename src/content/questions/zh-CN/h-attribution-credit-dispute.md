@@ -41,4 +41,7 @@ source:
 followUps:
   - 如果评审时间很短且必须提交一份材料，你会如何压缩内容而不隐藏争议？
   - 如果你本人也是晋升候选人，谁来独立校准归属？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

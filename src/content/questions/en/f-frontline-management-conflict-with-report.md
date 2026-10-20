@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, conflict with a report"
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -50,4 +50,7 @@ source:
   - attribution: inspired
     label: System Design Primer：对象存储与内容分发
     url: https://github.com/donnemartin/system-design-primer
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

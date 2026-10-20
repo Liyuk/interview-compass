@@ -51,4 +51,7 @@ followUps:
     the boundary?
   - How would you keep tenant quotas stable when the number of instances or regions changes?
   - How can quota changes take effect smoothly and remain auditable?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

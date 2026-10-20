@@ -54,4 +54,7 @@ source:
     label: Interview Compass 原创扩充（2026-10-14）
   - attribution: original
     label: 本站原创
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

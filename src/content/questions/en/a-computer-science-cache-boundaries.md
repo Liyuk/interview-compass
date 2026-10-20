@@ -31,4 +31,7 @@ source:
   - attribution: derived
     label: "What screeners and interviewers are really looking for (fundamentals: knowing the limits of an answer)"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

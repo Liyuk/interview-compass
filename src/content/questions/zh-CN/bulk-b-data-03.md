@@ -36,4 +36,7 @@ source:
   - attribution: inspired
     label: dataskew-io/data-engineering-interview-questions：数据契约与数据所有权主题
     url: https://github.com/dataskew-io/data-engineering-interview-questions
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

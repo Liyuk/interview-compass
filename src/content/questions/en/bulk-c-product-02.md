@@ -83,4 +83,7 @@ followUps:
   - If renewal is explicitly tied to the feature, what additional evidence should inform the decision?
   - How could a service or configuration validate demand without hardening it into the product architecture?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

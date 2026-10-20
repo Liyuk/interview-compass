@@ -50,4 +50,7 @@ followUps:
   - 如果批评方式失礼，怎样同时处理内容和边界？
   - 什么信号说明需要暂停或调整工作量？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

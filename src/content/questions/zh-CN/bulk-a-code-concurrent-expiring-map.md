@@ -45,4 +45,7 @@ source:
     url: https://github.com/yangshun/tech-interview-handbook
 followUps:
   - 读取过期映射是否应续期？删除与过期清理同时发生时，需要保证什么行为？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

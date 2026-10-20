@@ -40,4 +40,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的系统设计题：钱怎么算，账务与计费
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

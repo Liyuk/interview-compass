@@ -54,4 +54,7 @@ source:
   - attribution: inspired
     label: 'PM Interview Project: A Decision You Got Wrong'
     url: https://github.com/deanpeters/The-Product-Manager-Interview-Project/blob/master/Questions/behavioral/A-Decision-You-Got-Wrong.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

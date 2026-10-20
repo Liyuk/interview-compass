@@ -34,4 +34,7 @@ source:
   - attribution: derived
     label: "Managing managers: finding, developing and handing over leads, and how HRBP, TA and the hiring lead divide the work"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/manager-of-managers-leadership-supply/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

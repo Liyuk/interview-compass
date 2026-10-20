@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：复盘后的改进是否被执行
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

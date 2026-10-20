@@ -47,4 +47,7 @@ followUps:
   - 低置信判断本身不可靠时，怎样触发安全退化？
   - 拒答过多导致用户转向更危险渠道时如何纳入评估？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

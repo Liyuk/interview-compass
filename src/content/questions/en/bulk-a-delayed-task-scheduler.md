@@ -40,4 +40,7 @@ source:
   - attribution: inspired
     label: System Design Primer：队列与分布式任务处理
     url: https://github.com/donnemartin/system-design-primer
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

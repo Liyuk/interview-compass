@@ -42,4 +42,7 @@ source:
     label: 团队成长不是扩张：效率、梯队与延续
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/01/team-growth-is-not-expansion/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

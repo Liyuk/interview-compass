@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, energy allocation and role focus"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

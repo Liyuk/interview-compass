@@ -79,4 +79,7 @@ followUps:
     source database, CDC pipeline, and downstream indexes, caches, or materialized views may still retain old
     values. How would you define deletion semantics, design propagation, and prove cleanup is complete?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

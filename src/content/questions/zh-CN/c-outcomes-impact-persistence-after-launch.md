@@ -27,4 +27,7 @@ scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["如果效果只对新用户持续，对老用户消失，结论如何变化？","怎样在上线前设计长期效果验证？"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 C"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -65,4 +65,7 @@ followUps:
   - How would you weigh helping budget-constrained users against revenue cannibalization?
   - How would you distinguish plan substitution from a natural change in demand?
 relatedQuestions: []
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

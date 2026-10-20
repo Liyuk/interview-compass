@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：让上司意识到事情的价值或问题"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

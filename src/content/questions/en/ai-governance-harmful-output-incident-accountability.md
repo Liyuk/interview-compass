@@ -28,4 +28,7 @@ careerTracks:
   - senior-manager
 formats: ["behavioral","case"]
 followUps: ["How would you prioritize governance changes when several small gaps combined?","When should affected users receive an explanation and remediation?"]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

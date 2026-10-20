@@ -50,4 +50,7 @@ followUps:
   - 【How do you negotiate a capacity exchange when two teams can help each other?】The platform team lacks testing capacity while product lacks data analysis support. Both have quarterly commitments, and no budget is available. How would you negotiate a fair, executable exchange?
   - If value is hard to quantify, how do you lower trial risk?
   - How do you prevent a resource exchange from becoming a lasting favor debt?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's system design question, human and AI co-writing"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

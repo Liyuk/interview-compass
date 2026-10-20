@@ -31,4 +31,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: the cost of a recommender system"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

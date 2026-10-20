@@ -40,4 +40,7 @@ source:
 followUps:
   - 如果副本延迟突增，哪些操作必须暂停分流？
   - 怎样验证用户可感知的一致性目标，而不仅是数据库复制指标？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

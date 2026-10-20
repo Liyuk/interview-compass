@@ -30,4 +30,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的系统设计题：音视频解码与播放"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：竞品对标
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

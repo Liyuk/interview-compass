@@ -47,4 +47,7 @@ followUps:
   - How would you build evaluation cases that expose duplicate evidence and contradictory documents?
   - If less context improves faithfulness but reduces coverage, how would you decide the trade-off?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

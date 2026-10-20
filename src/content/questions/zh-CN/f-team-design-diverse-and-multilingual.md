@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：多元与多语言团队"
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

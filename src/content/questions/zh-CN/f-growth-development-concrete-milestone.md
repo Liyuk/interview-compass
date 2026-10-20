@@ -44,4 +44,7 @@ source:
   - attribution: derived
     label: 成长里程碑：把“我想成长”聊成具体的样子
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/08/specific-growth-milestones/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

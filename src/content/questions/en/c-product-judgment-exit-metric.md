@@ -51,4 +51,7 @@ followUps:
     If conversion improves mainly for new users while existing users are harmed, how would you decide whether
     to keep the change?
   - What research would distinguish fewer exits from a harder-to-find exit?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

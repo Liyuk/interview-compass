@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：决策时的资源与协作范围
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

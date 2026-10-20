@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：失败的项目是否有成功的可能
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

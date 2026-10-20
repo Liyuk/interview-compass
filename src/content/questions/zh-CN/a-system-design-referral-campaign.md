@@ -46,4 +46,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的系统设计题：裂变类营销活动
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

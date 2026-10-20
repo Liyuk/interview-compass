@@ -37,4 +37,7 @@ source:
   - attribution: inspired
     label: System Design Primer：实时系统与一致性
     url: https://github.com/donnemartin/system-design-primer
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

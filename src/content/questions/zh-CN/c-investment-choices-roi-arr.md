@@ -45,4 +45,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：产品视角的 ROI 与 ARR
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

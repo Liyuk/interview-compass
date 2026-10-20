@@ -56,4 +56,7 @@ followUps:
   - 哪些需求应留在产品层？
   - 如何判断新增 API 只服务于单一特例？
 relatedQuestions: []
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

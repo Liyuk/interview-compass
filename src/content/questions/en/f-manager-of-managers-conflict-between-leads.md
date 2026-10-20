@@ -31,4 +31,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, conflict between first-line managers"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

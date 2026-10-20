@@ -41,4 +41,7 @@ source:
     label: Interview Compass 领域建模研究：概念演进与历史可解释性
     url: >-
       https://github.com/Liyuk/interview-compass/blob/main/docs/planning/2026-10-14-content-architecture-mece.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

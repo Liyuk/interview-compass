@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, breaking down vague problems and information sources"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

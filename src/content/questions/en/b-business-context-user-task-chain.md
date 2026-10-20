@@ -33,4 +33,7 @@ source:
   - attribution: derived
     label: "Why engineers need product judgment: stages of product awareness and the business causal chain"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

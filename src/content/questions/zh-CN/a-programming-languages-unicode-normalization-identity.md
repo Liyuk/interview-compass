@@ -40,4 +40,7 @@ source:
 followUps:
   - 如果既有账号按旧规则创建，变更规范化策略如何兼容？
   - 怎样防止同形异义字符被用于冒充账号或混淆审计记录？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

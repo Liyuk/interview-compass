@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：向上汇报与争取资源
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

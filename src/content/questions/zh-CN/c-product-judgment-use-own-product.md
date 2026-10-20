@@ -35,4 +35,7 @@ source:
   - attribution: adapted
     label: "先用自己的产品：开发者如何建立真实反馈回路"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/05/use-your-own-product-feedback-loop/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

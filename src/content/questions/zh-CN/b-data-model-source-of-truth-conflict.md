@@ -38,4 +38,7 @@ source:
 followUps:
   - 如果不同系统对“客户已流失”有合理但不同的定义，你会如何保留这些视图？
   - 迁移统一 ID 时如何处理重复、合并和无法自动判定的实体？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

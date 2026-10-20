@@ -48,4 +48,7 @@ followUps:
   - 哪些消息需要立即播报，哪些不应打断？
   - 如何避免同一消息被重复朗读？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

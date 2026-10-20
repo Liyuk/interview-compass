@@ -56,4 +56,7 @@ followUps:
   - 如何防止团队用“并行开发”掩盖最终集成风险？
   - 什么时候应升级供应商问题，什么时候应更换方案？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

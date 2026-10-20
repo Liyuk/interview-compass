@@ -47,4 +47,7 @@ source:
     label: Top K 问题：排序口径、必要条件与不做项
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

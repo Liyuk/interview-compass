@@ -43,4 +43,7 @@ source:
     label: Interview Compass Original Expansion Batch 2026-10-16 C
 followUps:
   - 请设计并实现一个任务池：限制最大并发、支持任务取消，并保证关闭时不会丢弃已经开始的工作。
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

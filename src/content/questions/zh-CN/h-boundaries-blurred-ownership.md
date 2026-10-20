@@ -42,4 +42,7 @@ source:
   - attribution: derived
     label: 一线技术管理的三种产出
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/frontline-engineering-management/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

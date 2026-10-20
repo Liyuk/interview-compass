@@ -53,4 +53,7 @@ followUps:
   - 【新功能依赖远程 Feature Flag 服务，但控制面不可用时用户请求也被阻塞。你会怎样设计默认值、缓存和紧急关闭路径？】新功能依赖远程 Feature Flag 服务，但控制面不可用时用户请求也被阻塞。你会怎样设计默认值、缓存和紧急关闭路径？
   - 如果某个租户必须立即关闭风险功能，而其他租户可继续使用，如何隔离配置？
   - 怎样验证配置服务故障不会导致全站同步阻塞或雪崩？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

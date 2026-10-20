@@ -56,4 +56,7 @@ followUps:
   - 如果渠道合同按线索付费而非成交付费，怎样控制激励错位？
   - 如何把销售周期的滞后纳入阶段性评估？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

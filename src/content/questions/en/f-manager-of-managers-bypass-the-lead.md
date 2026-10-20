@@ -38,4 +38,7 @@ source:
   - attribution: derived
     label: 管理管理者如何带团队，以及如何让权限和资源服务结果
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/manager-of-managers-management-and-authority/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

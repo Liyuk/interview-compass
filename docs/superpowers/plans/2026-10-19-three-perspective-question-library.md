@@ -67,13 +67,13 @@
 - The migration reads both locales for each question ID, applies the same inferred value to each missing `perspective`, sets `perspectiveReview: inferred` and `qualityTier: extended`, and records evidence and confidence in the report.
 - Migration mode fills missing fields only. It preserves manually supplied values, refuses inconsistent existing bilingual values, and supports `--check` (report changes without writing) and `--write`.
 
-- [ ] Write failing inference tests for candidate narrative prompts, interviewer design prompts, manager review prompts, mixed/ambiguous prompts, and bilingual input ordering.
-- [ ] Run `npm run test:unit -- tests/question-perspective.test.ts` and confirm inference cases fail before implementation.
-- [ ] Implement pair-level inference using explicit semantic evidence from question text, `scenarios`, and existing `roles`/`careerTracks`; do not infer candidate solely from second-person grammar.
-- [ ] Write failing migration tests proving `--check` is read-only, `--write` fills both locales identically, and reruns preserve manual edits.
-- [ ] Implement the YAML-frontmatter migration and JSON report with low-confidence IDs and reasons.
-- [ ] Run migration in `--check` mode, review its report, then apply `--write` to the 2,668 existing records.
-- [ ] Run the migration in `--check` mode again and confirm it reports no pending changes.
+- [x] Write failing inference tests for candidate narrative prompts, interviewer design prompts, manager review prompts, mixed/ambiguous prompts, and bilingual input ordering.
+- [x] Run `npm run test:unit -- tests/question-perspective.test.ts` and confirm inference cases fail before implementation.
+- [x] Implement pair-level inference using explicit semantic evidence from question text, `scenarios`, and existing `roles`/`careerTracks`; do not infer candidate solely from second-person grammar.
+- [x] Write failing migration tests proving `--check` is read-only, `--write` fills both locales identically, and reruns preserve manual edits.
+- [x] Implement the YAML-frontmatter migration and JSON report with low-confidence IDs and reasons.
+- [x] Run migration in `--check` mode, review its report, then apply `--write` to the 2,668 existing records.
+- [x] Run the migration in `--check` mode again and confirm it reports no pending changes.
 
 ### Task 3: Enforce core quality and report extended issues without breaking the corpus
 

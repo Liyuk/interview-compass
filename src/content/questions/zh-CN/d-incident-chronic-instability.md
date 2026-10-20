@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：系统反复出问题的根治"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

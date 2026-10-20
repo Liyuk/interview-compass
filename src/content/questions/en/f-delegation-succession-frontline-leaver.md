@@ -38,4 +38,7 @@ source:
   - attribution: derived
     label: 怎么留与怎么补：让一线负责人形成可持续的接班安排
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/sustaining-frontline-managers/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---
