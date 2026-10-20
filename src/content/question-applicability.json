@@ -1,17 +1,16 @@
 [
   {
     "questionId": "a-ai-engineering-agent-duplicate-side-effect",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "c2d0053fa5ca8c2a556a980e623292a5be1cb05fbae875f4c1b7939feaeeb157",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -21,7 +20,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -31,7 +29,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -41,7 +38,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -51,7 +47,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -62,11 +57,11 @@
   },
   {
     "questionId": "a-ai-engineering-eval-disagreement",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "3414ca201f9398d3cdea916584d2ab457afc379888cf3c566d9a2f9ad037a02d",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
@@ -544,11 +539,11 @@
   },
   {
     "questionId": "a-ai-engineering-resume-claim-verification",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "ed42b44a7241b2f694fd0d63b870b9c6f6d28acbcfc6f0ceeed47fa79dfe4be8",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
@@ -1242,11 +1237,11 @@
   },
   {
     "questionId": "a-coding-abstraction-defensive-edge-cases",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "3269de4a7de02c44b04bf00c8a21e5d00645f3d57554b8cb5ab4bf16f6cfdedf",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
@@ -2345,11 +2340,11 @@
   },
   {
     "questionId": "a-computer-science-transaction-isolation",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "60f2925e1bf3d7e0d4cc8dea7035d03ed881e4f2e105e57ff1e3223fbe7307e3",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
@@ -2494,17 +2489,16 @@
   },
   {
     "questionId": "a-databases-read-replica-stale-read",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "b4ceeab3b93fd506777052f1406d862ed181b67d4eb7275c5b125d001230d942",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
         "roleId": "backend",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -2514,7 +2508,6 @@
       {
         "roleId": "data",
         "stageIds": [
-          "data-entry",
           "data-independent",
           "data-senior",
           "data-expert",
@@ -2524,7 +2517,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -2534,7 +2526,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -2544,7 +2535,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -2554,7 +2544,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -2565,11 +2554,11 @@
   },
   {
     "questionId": "a-debugging-api-works-locally-frontend-disagrees",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "baf5d9b845c8bb8c9bf12a7ebc6476c3bb5a79d1ba53a7db23f313c0f1f2d4b4",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
@@ -4153,17 +4142,16 @@
   },
   {
     "questionId": "a-engineering-systems-schema-deploy-rollback",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "f8a696ff088c5b830503213ecf8787db09ad53b6ed0cd2684d7bdbf3d44232e3",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
         "roleId": "engineering",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -4173,7 +4161,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -4183,7 +4170,6 @@
       {
         "roleId": "data",
         "stageIds": [
-          "data-entry",
           "data-independent",
           "data-senior",
           "data-expert",
@@ -4193,7 +4179,6 @@
       {
         "roleId": "product",
         "stageIds": [
-          "product-entry",
           "product-independent",
           "product-senior",
           "product-expert",
@@ -4203,7 +4188,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -5265,17 +5249,16 @@
   },
   {
     "questionId": "a-monorepo-build-graph-invalidation",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "7c619ecddaef8f1d6e4c8aeba89c685dc6b0fa70ad76f10df32138195345b208",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
         "roleId": "engineering",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -5285,7 +5268,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -5295,7 +5277,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -5305,7 +5286,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -5315,7 +5295,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -5325,7 +5304,6 @@
       {
         "roleId": "data",
         "stageIds": [
-          "data-entry",
           "data-independent",
           "data-senior",
           "data-expert",
@@ -7157,17 +7135,16 @@
   },
   {
     "questionId": "a-system-design-cross-system-consistency",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "53b6649271b5195ac99ed0740bc165c66a180017d9a87356383d214569360ffb",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
         "roleId": "backend",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -7177,7 +7154,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -7187,7 +7163,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -7197,7 +7172,6 @@
       {
         "roleId": "data",
         "stageIds": [
-          "data-entry",
           "data-independent",
           "data-senior",
           "data-expert",
@@ -9000,17 +8974,16 @@
   },
   {
     "questionId": "b-business-context-renewal-risk-segmentation",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "1fe9a54ec25d454a1a3b7b159e47009892d4e6f32f332f9309fdaa4da628bb6f",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
         "roleId": "product",
         "stageIds": [
-          "product-entry",
           "product-independent",
           "product-senior",
           "product-expert",
@@ -9020,7 +8993,6 @@
       {
         "roleId": "operations",
         "stageIds": [
-          "operations-entry",
           "operations-independent",
           "operations-senior",
           "operations-expert",
@@ -9030,7 +9002,6 @@
       {
         "roleId": "data",
         "stageIds": [
-          "data-entry",
           "data-independent",
           "data-senior",
           "data-expert",
@@ -9040,7 +9011,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -9050,7 +9020,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -9060,7 +9029,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -9070,7 +9038,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -9080,7 +9047,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -9352,17 +9318,16 @@
   },
   {
     "questionId": "b-business-context-support-obligation",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "a113eab09c10c7ea68ce56fe469c039095f57129dd648f2a64d499b2bb9adcad",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
         "roleId": "product",
         "stageIds": [
-          "product-entry",
           "product-independent",
           "product-senior",
           "product-expert",
@@ -9372,7 +9337,6 @@
       {
         "roleId": "operations",
         "stageIds": [
-          "operations-entry",
           "operations-independent",
           "operations-senior",
           "operations-expert",
@@ -9382,7 +9346,6 @@
       {
         "roleId": "data",
         "stageIds": [
-          "data-entry",
           "data-independent",
           "data-senior",
           "data-expert",
@@ -9392,7 +9355,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -9402,7 +9364,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -9412,7 +9373,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -9422,7 +9382,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -9432,7 +9391,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
@@ -9535,11 +9493,11 @@
   },
   {
     "questionId": "b-business-context-user-task-chain",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "43ec2d719529619a7d9bd8cfaa8268e58d9891a6ba507af350375d949e775807",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
@@ -9606,11 +9564,11 @@
   },
   {
     "questionId": "b-business-context-whole-then-part",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "a6161e1b106094c9262e5482b766f9baa743e3bb6d9502079ecbe827f0ef6f4b",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
@@ -67290,11 +67248,11 @@
   },
   {
     "questionId": "f-frontline-management-absence-test",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "42bdc1b9ee790dd51ed53cba592ccc49ac32f09ed9bb6a30bc984001d5c48145",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {
@@ -67562,11 +67520,11 @@
   },
   {
     "questionId": "f-frontline-management-mechanism-over-confrontation",
-    "reviewStatus": "pending",
+    "reviewStatus": "reviewed",
     "fingerprint": "97de0a150832568bdc0935f832b3d7ab7465d18606acd3840f14fedd4fe3dbe1",
     "rationale": {
-      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
-      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+      "zh": "逐题核对核心题目的责任轨道与岗位/阶段组合。沿用此前已人工审阅的组合，仅保留仍落在当前岗位标签和职业轨道内的阶段；没有新增岗位或阶段组合。",
+      "en": "Reviewed this core question’s responsibility tracks against role/stage combinations. Preserved only previously human-reviewed combinations still within its current role tags and career tracks; no role or stage combinations were added."
     },
     "profiles": [
       {

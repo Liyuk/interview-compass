@@ -68,12 +68,12 @@
 | `f-frontline-management-absence-test` | team manager、senior manager | IC | 题目观察经理如何授权并检验团队独立决策。 |
 | `f-frontline-management-mechanism-over-confrontation` | team manager、senior manager | IC | 题目要求经理建立并维护团队一致的工程行为机制。 |
 
-以上核心标签按问题要求的责任范围收窄，题目页面仍可阅读，不等于禁止其他角色回答。16 个适用性指纹因此进入 pending；pending 不参与在线过滤，待适用性条目逐题复核后再恢复筛选。
+以上核心标签按问题要求的责任范围收窄，题目页面仍可阅读，不等于禁止其他角色回答。16 个适用性记录已逐题复核：沿用此前人工审阅的岗位—阶段组合，只保留仍符合当前岗位标签与职业轨道的组合，没有新增岗位或阶段组合。
 
 ## 校验与数据影响
 
 - 核心 schema 已要求 3–4 条信号、2–3 条追问、弱回答、四个固定锚点，以及 `perspectiveReview: reviewed`；双语 checker 对信号与追问检查数量一致。锚点对象使用固定四键，结构上无法构造合法的跨语言锚点数量差异，因此不另加伪造此类状态的测试。
-- 16 个题目的适用性指纹因岗位/轨道标签修订而更新为 pending；其余复核结果保留。pending 项不会启用线上过滤。
+- 16 个题目的适用性指纹因岗位/轨道标签修订而更新，并通过上述复核恢复为 reviewed；覆盖报告显示 1334 reviewed、0 pending、0 empty reviewed profiles。
 
 ## 决策记录
 
