@@ -107,10 +107,10 @@
 - Create: `docs/content-style-guide.md`
 - Modify: `README.md` only if a concise link is useful and matches the existing README structure
 
-- [ ] Draft paired Chinese/English guidance for intent, signals, followUps, weakAnswer, anchors, perspective, tag discipline, and translation parity.
-- [ ] Use verified repository examples and short excerpts; include three positive and three negative examples without introducing answer templates.
-- [ ] Check all referenced fields and count rules against the current Zod schema and Phase A checker.
-- [ ] Run `git diff --check` and review the bilingual document side by side.
+- [x] Draft paired Chinese/English guidance for intent, signals, followUps, weakAnswer, anchors, perspective, tag discipline, and translation parity.
+- [x] Use verified repository examples and short excerpts; include three positive and three negative examples without introducing answer templates.
+- [x] Check all referenced fields and count rules against the current Zod schema and Phase A checker.
+- [x] Run `git diff --check` and review the bilingual document side by side.
 
 **Phase B review gate:** Open a documentation-only PR.
 
