@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Typecheck and validate content
-        run: npm run check && npm run check:content && npm run check:stage-coverage
+        run: npm run check && npm run check:content && npm run check:stage-coverage && npm run check:core-candidates
 
   unit:
     runs-on: ubuntu-latest
