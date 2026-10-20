@@ -1,11 +1,9 @@
 import {expect,test} from '@playwright/test';
 
-test('a new visitor reads the capability framework before choosing a target',async({page})=>{
+test('a new visitor chooses a preparation direction before setting a target',async({page})=>{
  await page.goto('guide/');
  await expect(page.locator('#primary-navigation a')).toHaveCount(3);
  await expect(page.locator('[data-profile-dialog]')).not.toBeVisible();
- await page.locator('main').getByRole('link',{name:'理解能力框架',exact:true}).first().click();
- await expect(page.locator('main h1')).toHaveText('理解能力框架');
  await page.locator('main').getByRole('link',{name:'确定准备方向',exact:true}).first().click();
  await expect(page.locator('main h1')).toHaveText('确定准备方向');
  await page.getByRole('button',{name:'选择准备或评估目标',exact:true}).click();
@@ -14,6 +12,7 @@ test('a new visitor reads the capability framework before choosing a target',asy
  await page.locator('#profile-stage').selectOption('senior-engineer');
  await page.locator('[data-profile-apply]').click();
  await expect(page.locator('[data-profile-dialog]')).not.toBeVisible();
+ await expect(page.locator('[data-profile-label]')).toContainText('高级工程师');
  await page.locator('main').getByRole('link',{name:'进入面试题库',exact:true}).click();
  await expect(page.locator('[data-profile-label]')).toContainText('高级工程师');
 });
