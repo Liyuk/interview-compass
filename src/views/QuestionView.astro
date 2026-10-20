@@ -139,7 +139,7 @@ const provenanceLabel = { adapted: en ? 'Adapted from' : '改编自', derived: e
       {record.perspective === 'manager' && <div class="manager-feedback-guide" data-manager-feedback><strong>{en ? 'Turn observations into feedback' : '把观察转成反馈'}</strong><ol><li>{en ? 'Name the observed action and evidence.' : '指出观察到的行动和具体证据。'}</li><li>{en ? 'Connect it to the responsibility and impact.' : '对应到承担的责任和产生的影响。'}</li><li>{en ? 'Agree on a clear next step.' : '共同明确下一步行动。'}</li></ol></div>}
     </section>}
 
-    <section class="detail-block" aria-labelledby="intent-h">
+    <section class="detail-block" aria-labelledby="intent-h" id={!showObjectiveSection ? 'objective-h' : undefined}>
       <SectionHeading heading={headingFor('intent-h')} />
       <p>{evaluation.intent}</p>
     </section>
