@@ -7,22 +7,14 @@ title: An experiment improves the primary metric while complaints and refunds ri
 question: >-
   A checkout experiment improves payment completion, but complaints and refunds also increase. How would you
   judge whether the experiment succeeded, and how long would you wait before deciding?
-intent: >-
-  Understand whether the candidate evaluates primary, guardrail, and delayed negative outcomes within one
-  decision framework.
-signals:
-  - >-
-    Verify payment, complaint, and refund definitions, segments, and windows, separating immediate gains
-    from delayed harm.
-  - >-
-    Check samples, allocation, amounts, and task severity, comparing counts and rates rather than
-    treating concurrent change as causation.
-  - >-
-    Examine mechanisms and alternatives for gains, refunds, and trust losses, stating which outcomes
-    remain immature.
-  - >-
-    Use guardrails and risk to continue, limit, pause, or adjust, with follow-up windows and decision
-    authority.
+intent: "Assess whether you decide what to do when an experiment improves its primary metric but worsens refunds and complaints based on risk and outcome maturity, rather than significance alone or assuming every concurrent change is causal."
+signals: ["Validate definitions, denominators, task severity, random assignment, and sample representativeness for checkout, refunds, and complaints.", "Separate experiment effects from user/order mix and alternatives such as seasonality; inspect counts and rates by amount and people.", "Account for lagging refunds, duplicate charges, and trust loss, assessing whether the sample is mature enough.", "Use pre-set risk guardrails to continue, limit, pause, or roll back, with an owner and observation deadline."]
+weakAnswer: "Continuing because checkout completion is statistically significant while ignoring severity and lag of complaints/refunds, randomization quality, and stop authority."
+anchors:
+  notPassing: "Compares only the primary metric before and after without checking data quality or harms."
+  passing: "Validates assignment and primary/guardrail metrics and proposes a lag window."
+  excellent: "Analyzes sample, severity, alternatives, and delayed outcomes and chooses release status using explicit risk rules."
+  exceptional: "Quantifies tail-risk trade-offs, designs reversible rollout and monitoring triggers with owners, and states what new evidence changes the decision."
 primaryCapability: value-direction.metrics-causality
 topics:
   - metrics
@@ -43,7 +35,6 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - operations-review
@@ -56,11 +47,10 @@ source:
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-tiers-prioritize-decisions/zh.md
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 D
-followUps:
-  - How should short-term training cost compare with longer-term gains?
-  - How do you avoid improving metrics by under-recording complaints?
+followUps: ["If complaints are rare but each involves high amounts or duplicate charges, how would you set the guardrail?", "If refunds may still rise after the experiment ends, how would you decide whether to resume a full rollout?"]
 relatedQuestions: []
-perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspective: "candidate"
+perspectiveReview: "reviewed"
+qualityTier: "core"
+
 ---

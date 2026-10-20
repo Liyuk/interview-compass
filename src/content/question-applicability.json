@@ -8893,18 +8893,15 @@
   {
     "questionId": "b-business-context-marketplace-take-rate-change",
     "reviewStatus": "reviewed",
-    "fingerprint": "3fc19e688c4446642695ea329ffbd4b9ac606a675b30508a75002e4270807a41",
+    "fingerprint": "027b47806d6d619b157632bf15ce9bb9d2e87cac40e4ebe1b1d6cc2a9ae57650",
     "rationale": {
-      "zh": "佣金与供给长期反应保留产品市场数据参照；分阶段分析不代表拥有定价权。",
-      "en": "Commission and supply response remain product, marketing, and data reference; analysis does not imply pricing authority."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
         "roleId": "product",
         "stageIds": [
-          "product-independent",
-          "product-senior",
-          "product-expert",
           "product-manager",
           "product-organization"
         ]
@@ -8912,9 +8909,6 @@
       {
         "roleId": "marketing",
         "stageIds": [
-          "marketing-independent",
-          "marketing-senior",
-          "marketing-expert",
           "marketing-manager",
           "marketing-organization"
         ]
@@ -8922,9 +8916,6 @@
       {
         "roleId": "data",
         "stageIds": [
-          "data-independent",
-          "data-senior",
-          "data-expert",
           "data-manager",
           "data-organization"
         ]
@@ -8934,18 +8925,15 @@
   {
     "questionId": "b-business-context-price-increase-churn-risk",
     "reviewStatus": "reviewed",
-    "fingerprint": "00042e9c94865d8d3203f769397d6eda9bd900d8f741b06d4b6e2be6ae95017f",
+    "fingerprint": "1835dddeaca485d2fbeff28a3914a1e3a8aab104f01badbee1147e4edb0b5642",
     "rationale": {
-      "zh": "订阅提价的净收益与流失为相关商业职能参照，不作为每个工程阶段的调价责任。",
-      "en": "Subscription pricing and churn are business-role reference, not price-setting duties for every engineering stage."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
         "roleId": "product",
         "stageIds": [
-          "product-independent",
-          "product-senior",
-          "product-expert",
           "product-manager",
           "product-organization"
         ]
@@ -8953,9 +8941,6 @@
       {
         "roleId": "marketing",
         "stageIds": [
-          "marketing-independent",
-          "marketing-senior",
-          "marketing-expert",
           "marketing-manager",
           "marketing-organization"
         ]
@@ -8963,9 +8948,6 @@
       {
         "roleId": "data",
         "stageIds": [
-          "data-independent",
-          "data-senior",
-          "data-expert",
           "data-manager",
           "data-organization"
         ]
@@ -9058,10 +9040,10 @@
   {
     "questionId": "b-business-context-replacement-paths",
     "reviewStatus": "reviewed",
-    "fingerprint": "c18102453413f9c7e03da2e6a7dafe86337a656cb71072e1a5244c741556b49e",
+    "fingerprint": "beaf8bf1348cc63693967c86e8957254f952a1e1ae5c98f0ee8402cf46b07b43",
     "rationale": {
-      "zh": "各阶段都可从用户任务比较替代路径；初级在熟悉范围表达事实与假设，不要求制定市场战略。",
-      "en": "Every stage can compare task alternatives within familiar scope; juniors need not define market strategy."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -9071,8 +9053,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -9082,8 +9063,7 @@
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
@@ -9093,8 +9073,7 @@
           "marketing-independent",
           "marketing-senior",
           "marketing-expert",
-          "marketing-manager",
-          "marketing-organization"
+          "marketing-manager"
         ]
       },
       {
@@ -9104,8 +9083,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9115,8 +9093,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9126,8 +9103,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9137,8 +9113,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9148,8 +9123,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -9157,10 +9131,10 @@
   {
     "questionId": "b-business-context-revenue-recognition-vs-user-value",
     "reviewStatus": "reviewed",
-    "fingerprint": "f127458ecfef5d43664ec866b532dc9c792749e9471da4eb1e25c11d95859290",
+    "fingerprint": "b625eb5f165a8c46757cf7fcd2e3dbae47f41feb1e49866e8fb2760a9681f6b8",
     "rationale": {
-      "zh": "独立交易数据与服务系统参与者应区分签约和价值事件；财务确认须核验适用规则而非自行决定。",
-      "en": "Independent transaction and service contributors distinguish contract and value events; finance recognition follows verified rules."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -9169,8 +9143,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -9179,8 +9152,7 @@
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       },
       {
@@ -9189,8 +9161,7 @@
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
@@ -9199,8 +9170,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9209,8 +9179,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9219,8 +9188,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -9228,18 +9196,15 @@
   {
     "questionId": "b-business-context-service-tier-contribution",
     "reviewStatus": "reviewed",
-    "fingerprint": "0c3b16aae20a3e59edbc87bb875e7716bf14c60facdaedb8a6ebf50698e033f5",
+    "fingerprint": "25e23fe6a9aa1ab4012d301fdacc533d6641580ca04bb312247539e7b740aac7",
     "rationale": {
-      "zh": "独立技术贡献者可核算服务负担与客户结果；高阶段决定资源，正式改价按授权。",
-      "en": "Independent engineers assess service burden and outcomes; higher stages allocate resources and authorized owners price."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
         "roleId": "product",
         "stageIds": [
-          "product-independent",
-          "product-senior",
-          "product-expert",
           "product-manager",
           "product-organization"
         ]
@@ -9247,9 +9212,6 @@
       {
         "roleId": "operations",
         "stageIds": [
-          "operations-independent",
-          "operations-senior",
-          "operations-expert",
           "operations-manager",
           "operations-organization"
         ]
@@ -9257,9 +9219,6 @@
       {
         "roleId": "data",
         "stageIds": [
-          "data-independent",
-          "data-senior",
-          "data-expert",
           "data-manager",
           "data-organization"
         ]
@@ -9267,9 +9226,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -9277,9 +9233,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -9287,9 +9240,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -9297,9 +9247,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -9307,9 +9254,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -9402,17 +9346,15 @@
   {
     "questionId": "b-business-context-unit-economics-service-mix",
     "reviewStatus": "reviewed",
-    "fingerprint": "d0ae1ec9801ae73399f068764a5960c869a8a1cd70d5286b3a0d6acfcea9e013",
+    "fingerprint": "7ebd6e6ecb3b93b5a48b8345845b904ba39feac2cb10a53aa3cdec15bc162d1c",
     "rationale": {
-      "zh": "定制服务的交付与支持成本需要高级技术参与；经营组合决定按授权，不把稳定毛利率当成本未变。",
-      "en": "Senior engineers contribute delivery and support costs of custom work; authorized owners decide the mix rather than assuming stable margin means stable cost."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
         "roleId": "product",
         "stageIds": [
-          "product-senior",
-          "product-expert",
           "product-manager",
           "product-organization"
         ]
@@ -9420,8 +9362,6 @@
       {
         "roleId": "data",
         "stageIds": [
-          "data-senior",
-          "data-expert",
           "data-manager",
           "data-organization"
         ]
@@ -9429,8 +9369,6 @@
       {
         "roleId": "operations",
         "stageIds": [
-          "operations-senior",
-          "operations-expert",
           "operations-manager",
           "operations-organization"
         ]
@@ -9438,8 +9376,6 @@
       {
         "roleId": "marketing",
         "stageIds": [
-          "marketing-senior",
-          "marketing-expert",
           "marketing-manager",
           "marketing-organization"
         ]
@@ -9447,8 +9383,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -9456,8 +9390,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -9465,8 +9397,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -9474,8 +9404,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -9483,8 +9411,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -9652,10 +9578,10 @@
   {
     "questionId": "b-commercial-rules-bundle-discount-allocation",
     "reviewStatus": "reviewed",
-    "fingerprint": "d9526d88348e099a3f307d5f3529d33a403aac34c5f0cc5f01ed5455bacbce26",
+    "fingerprint": "d4e3fdd6312105f176bda48a532a3dedf3ca50318d2bd206f1678d110a155455",
     "rationale": {
-      "zh": "组合退款规则适合独立交易系统和数据参与者；规则分析不代替合同审批或财务确认。",
-      "en": "Bundle refunds fit independent transaction and data contributors, distinct from contract or finance approval."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -9664,8 +9590,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -9674,8 +9599,7 @@
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       },
       {
@@ -9684,8 +9608,7 @@
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
@@ -9694,8 +9617,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9704,8 +9626,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -9713,10 +9634,10 @@
   {
     "questionId": "b-commercial-rules-cancellation-fee",
     "reviewStatus": "reviewed",
-    "fingerprint": "5240d6cc84094eaf264fac0e50c60cf1c0e586ab4c11d8ce0432bb2130f8c554",
+    "fingerprint": "0147032bfdebd1d46c1d99e7558423e055f0d49cd3ae1602773526b52233d2a0",
     "rationale": {
-      "zh": "各端实现者需核对取消费来源与版本；冲突要升级，不能自行选择对业务有利的政策。",
-      "en": "Implementers across clients verify cancellation policy sources and escalate conflicts rather than choose opportunistically."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -9725,8 +9646,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -9735,8 +9655,7 @@
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
@@ -9745,8 +9664,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9755,8 +9673,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9765,8 +9682,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9775,8 +9691,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9785,8 +9700,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -17939,10 +17853,10 @@
   {
     "questionId": "bulk-c-metrics-02",
     "reviewStatus": "reviewed",
-    "fingerprint": "8e261d4723c550e3ebb7d3305a1a75130bb7127f1df8fa42587814b525b388ce",
+    "fingerprint": "1314788e2c313d674bd8da9753b7cf1aaf68193f934ed86f392b245ad010f031",
     "rationale": {
-      "zh": "多广告渠道增量与预算归因保留市场运营数据产品参照；不把媒体投放模型默认要求给每个工程岗位。",
-      "en": "Multi-ad-channel incrementality and budget attribution remain marketing, operations, data, and product reference, not universal engineering media-model requirements."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -17951,8 +17865,7 @@
           "marketing-independent",
           "marketing-senior",
           "marketing-expert",
-          "marketing-manager",
-          "marketing-organization"
+          "marketing-manager"
         ]
       },
       {
@@ -17961,8 +17874,7 @@
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
@@ -17971,8 +17883,7 @@
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       },
       {
@@ -17981,8 +17892,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       }
     ]
@@ -17990,10 +17900,10 @@
   {
     "questionId": "bulk-c-metrics-03",
     "reviewStatus": "reviewed",
-    "fingerprint": "c538b96a8a3a5994ac0f5d38116fbfc41ec08b908a967ab5d6084993297c8256",
+    "fingerprint": "6d0a5cff210e2fda48c75ea9ab7b6e0392b6846a9aa046a08b40c17358c5c190",
     "rationale": {
-      "zh": "支付实验的即时与滞后损害适用于独立技术参与者；管理阶段确认风险和扩量权限，不只看短期成功率。",
-      "en": "Immediate and delayed harm in payment experiments fits independent technical participants. Management confirms risk and scale authority rather than short-term success alone."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -18002,8 +17912,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -18012,8 +17921,7 @@
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       },
       {
@@ -18022,8 +17930,7 @@
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
@@ -18032,8 +17939,7 @@
           "marketing-independent",
           "marketing-senior",
           "marketing-expert",
-          "marketing-manager",
-          "marketing-organization"
+          "marketing-manager"
         ]
       },
       {
@@ -18042,8 +17948,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -18052,8 +17957,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -18062,8 +17966,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -18072,8 +17975,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -18082,8 +17984,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -18338,17 +18239,15 @@
   {
     "questionId": "bulk-c-product-02",
     "reviewStatus": "reviewed",
-    "fingerprint": "87cb1decc1f45dd15a4ad7ee8c0005eac4dd33dca2a2b5480eb62adbcb7a2e7d",
+    "fingerprint": "f0940a374ed0b171c339ac0536743d98e6113d6b3afd3fb1c917a6cabe151fee",
     "rationale": {
-      "zh": "大客户定制的复用和维护需高级技术判断；报价和承诺按授权，不把客户高价当投入充分证据。",
-      "en": "Senior engineers assess reuse and maintenance; authorized owners price and commit, not a high offer alone."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
         "roleId": "product",
         "stageIds": [
-          "product-senior",
-          "product-expert",
           "product-manager",
           "product-organization"
         ]
@@ -18356,8 +18255,6 @@
       {
         "roleId": "operations",
         "stageIds": [
-          "operations-senior",
-          "operations-expert",
           "operations-manager",
           "operations-organization"
         ]
@@ -18365,8 +18262,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -18374,8 +18269,6 @@
       {
         "roleId": "marketing",
         "stageIds": [
-          "marketing-senior",
-          "marketing-expert",
           "marketing-manager",
           "marketing-organization"
         ]
@@ -18383,8 +18276,6 @@
       {
         "roleId": "data",
         "stageIds": [
-          "data-senior",
-          "data-expert",
           "data-manager",
           "data-organization"
         ]
@@ -18392,8 +18283,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -18401,8 +18290,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -18410,8 +18297,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -18419,8 +18304,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -29241,10 +29124,10 @@
   {
     "questionId": "c-metrics-causality-competitor-benchmark",
     "reviewStatus": "reviewed",
-    "fingerprint": "1027e3756fc8794a2d1e4df261ff2c60a56d1b70ab9cc71e372b80799cf196e4",
+    "fingerprint": "839091f26fc4cda8e571b075cd5ccc22d377ce9da645c9a816590cdb3b00b0e9",
     "rationale": {
-      "zh": "各阶段都应先确认来源和可比范围；初级可解释局部性能或体验对比，高阶段说明竞争判断与投入，不因数据难取而编造。",
-      "en": "Every stage checks sources and comparability, from local performance or experience to competitive investment, without fabricating inaccessible data."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -29254,8 +29137,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -29265,8 +29147,7 @@
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
@@ -29276,8 +29157,7 @@
           "marketing-independent",
           "marketing-senior",
           "marketing-expert",
-          "marketing-manager",
-          "marketing-organization"
+          "marketing-manager"
         ]
       },
       {
@@ -29287,8 +29167,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -29298,8 +29177,7 @@
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       },
       {
@@ -29309,8 +29187,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -29320,8 +29197,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -29331,8 +29207,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -29342,8 +29217,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -32337,10 +32211,10 @@
   {
     "questionId": "c-prioritization-top-three-stop-two",
     "reviewStatus": "reviewed",
-    "fingerprint": "01b631593b95558be2feb45e558a72cfa27164c839f70d9e7fd3cb38361d014f",
+    "fingerprint": "7ae14a7dcd6b1f652b1967d6341154d0af38b951f062d9a96cc81ad4eced36eb",
     "rationale": {
-      "zh": "参与项目的初级也可解释最重要与可暂缓事项；评价判断依据和本人理解，不意味着其有权实际停止他人工作。",
-      "en": "Even juniors can explain priorities and deferrals in a project, judged by reasoning and understanding rather than assumed authority to stop others’ work."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -32350,8 +32224,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -32361,8 +32234,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -32372,15 +32244,13 @@
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
         "roleId": "manager",
         "stageIds": [
-          "manager-manager",
-          "manager-organization"
+          "manager-manager"
         ]
       },
       {
@@ -32390,8 +32260,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -32401,8 +32270,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -32412,8 +32280,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -32423,8 +32290,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -32780,10 +32646,10 @@
   {
     "questionId": "c-product-judgment-industry-leading-claim",
     "reviewStatus": "reviewed",
-    "fingerprint": "0a823e3d0ddf6de047c2da87a9e9a22fb1f1fc887839b539bd213a90fce3d9e8",
+    "fingerprint": "bf3e7dbfebce5d40cab6ab5872d99092f5126bb06778e6017d00433283027edd",
     "rationale": {
-      "zh": "任何阶段若声称领先都应说明对象与时间；范围按本人工作，不要求人人取得行业第一。",
-      "en": "Every leading claim needs comparisons and timing within scope, not industry-first achievements from everyone."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -32793,8 +32659,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -32804,8 +32669,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -32815,15 +32679,13 @@
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
         "roleId": "manager",
         "stageIds": [
-          "manager-manager",
-          "manager-organization"
+          "manager-manager"
         ]
       },
       {
@@ -32833,8 +32695,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -32844,8 +32705,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -32855,8 +32715,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -32866,8 +32725,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -69996,10 +69854,10 @@
   {
     "questionId": "f-manager-of-managers-conflict-between-leads",
     "reviewStatus": "reviewed",
-    "fingerprint": "648b4c884c3f6685a0f3e26c5dc09ad9c714f248d0b51655703b8af240b71b38",
+    "fingerprint": "ad346564ac68218144a9b37b42b5071f2ea7040248bf1224bba57426cb153e6c",
     "rationale": {
-      "zh": "多个一线管理者之间的冲突与升级习惯属于其上级的治理责任，限定管理管理者。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Conflict and escalation habits among first-line managers concern their supervisor’s governance responsibility, targeting a manager of managers. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -70102,10 +69960,10 @@
   {
     "questionId": "f-manager-of-managers-cost-cutting-restructure",
     "reviewStatus": "reviewed",
-    "fingerprint": "1159a5458a40ef018f60091a71e849f823f8f7c1835a0a363c6a55c7d327d411",
+    "fingerprint": "3ecc32a37bbe21073471378ce89ee6f551442f0fa502fa5ec39210bae0f596cc",
     "rationale": {
-      "zh": "跨架构、组织和人员的收缩取舍需组织管理授权；结果包含长期能力与过渡成本，不以削减人数证明价值。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Contraction across architecture, organization, and staffing requires organizational authority, considering long-term capability and transition cost rather than headcount cuts as value. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -70149,10 +70007,10 @@
   {
     "questionId": "f-manager-of-managers-decision-review",
     "reviewStatus": "reviewed",
-    "fingerprint": "bfa62c2975e4bb7aff39055277ccd2031a894076ecfe6270d971b184a5c0a1bb",
+    "fingerprint": "80501b7ae4fdfd9fb1ca3d8c474e73b08ec8ca8def22d2b4d6ce3028daef97b3",
     "rationale": {
-      "zh": "跨团队最终决定也可能是经授权的关键技术决策；领域专家与管理者均可讨论，但必须说明真实拍板范围与复核机制。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "A final cross-team decision can be an authorized critical technical decision. Domain experts and managers can discuss it, but must establish actual mandate and review mechanisms. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -70165,7 +70023,6 @@
       {
         "roleId": "pmo",
         "stageIds": [
-          "pmo-expert",
           "pmo-manager",
           "pmo-organization"
         ]
@@ -70173,7 +70030,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -70181,7 +70037,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -70189,7 +70044,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -70197,7 +70051,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -70205,7 +70058,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -70215,10 +70067,10 @@
   {
     "questionId": "f-manager-of-managers-employee-backlash",
     "reviewStatus": "reviewed",
-    "fingerprint": "727d0abebff4acaa6cf1f65edb394281747fae41977d60e7b4dc31df2226f508",
+    "fingerprint": "c972ce26c27d269248c4a01684a29f7c7f6322b454e800856f2b89dd4572de81",
     "rationale": {
-      "zh": "公司战略调整与CEO压力下的员工反对涉及组织治理责任；按事实复核方案，不默认原方案一定正确。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Employee opposition under company strategy and CEO pressure concerns organizational governance. Recheck the proposal from facts rather than presuming it correct. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -70262,10 +70114,10 @@
   {
     "questionId": "f-manager-of-managers-filtered-reporting",
     "reviewStatus": "reviewed",
-    "fingerprint": "ca68fe46fc6b9735226812dc01d4cecfc54e51199094b16a3e7b90422cbba9dc",
+    "fingerprint": "de10272da28e08e2509c161d337c4b2e98f9d887f816f43d51bd69abcd426d98",
     "rationale": {
-      "zh": "明确管理几位一线经理，信息过滤与激励调整属于二线责任；经核验的隐瞒与早期报风险分开判断。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Explicit supervision of first-line managers makes reporting and incentive design a second-line responsibility, separating verified concealment from early risk reporting. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {
@@ -70309,10 +70161,10 @@
   {
     "questionId": "f-manager-of-managers-goal-cascade-distortion",
     "reviewStatus": "reviewed",
-    "fingerprint": "2f0d711484e4e7a5824d7209341d899482c90a0b975754c2534044dd343b7408",
+    "fingerprint": "08915c21d2c61db4c70413b5ea445fd54f91057bc6ec79bbd010a58f3c4160c6",
     "rationale": {
-      "zh": "公司目标传到多团队后失真，需要通过负责人重建客户结果责任，限定组织管理阶段。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Distortion from company goals to team activity metrics requires restoring customer-outcome accountability through leaders, targeting organizational scope. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "逐题复核此题改写后的意图、观察信号及岗位/阶段适用范围；只保留先前人工审核且仍符合当前角色与责任轨道的组合，没有扩大阶段范围。",
+      "en": "Re-reviewed this question’s revised intent, evidence signals, and role/stage scope; retained only previously human-reviewed combinations that still fit the current role and responsibility tracks, without expanding stage coverage."
     },
     "profiles": [
       {

@@ -5,12 +5,14 @@ status: published
 locale: en
 title: A strategic change you are driving, beneficial in the long run, draws a public joint protest from many employees. The CEO presses you. Do you hold or compromise?
 question: A strategic change you are driving, beneficial to the company in the long run, draws a public joint protest from many employees, even affecting the company's reputation, and the CEO is pressing you. Do you hold or compromise, and what specific steps do you take?
-intent: See how you judge whether a decision still stands under public and senior pressure and handle it honestly and with restraint, rather than forcing it through or backing down on reflex.
-signals:
-  - First works out what exactly the opposition is, separating flaws in the design, gaps in communication, and resistance to change
-  - Is willing to change the reasonable parts and says openly what changed and why
-  - For what is still held, explains the purpose and the cost with facts and speaks directly with employees
-  - Does not denigrate or retaliate against employees and gives the CEO the real situation and options
+intent: "Assess whether you re-test strategic evidence, acknowledge harm, and protect employee voice under public opposition and executive pressure, while explaining trade-offs and executing responsibly when the decision still holds."
+signals: ["Collect concrete impacts and new facts; distinguish design flaws, unfair distribution, execution failures, poor communication, and principled disagreement.", "Re-test goals, evidence, distribution of benefits, and risk assumptions; state what would justify pausing, changing, or reversing the decision.", "Acknowledge real errors and impact publicly, explain what changes and why, and protect good-faith dissent from retaliation.", "Give the CEO facts, options, and reputation/talent risks; if the decision stands, explain why, remedies, and review mechanisms."]
+weakAnswer: "Treating opposition as ignorance or sabotage and forcing the change—or abandoning it based on volume—without checking facts, protecting voice, or explaining how evidence changes the choice."
+anchors:
+  notPassing: "Labels dissent as resistance or immediately retreats without fact-finding."
+  passing: "Identifies a concrete concern behind opposition and describes one possible adjustment and communication."
+  excellent: "Re-tests strategic assumptions and impact distribution, protects voice, and presents the CEO with transparent options and rationale."
+  exceptional: "Separates goal from implementation harm, reverses a disproven decision, and establishes remedies, independent feedback, and review while owning responsibility."
 primaryCapability: people-organization.manager-of-managers
 topics: [management, communication, conflict-resolution, ethics]
 roles:
@@ -22,17 +24,16 @@ roles:
   - ai-engineer
 responsibilityScopes: [organization]
 careerTracks:
+  - team-manager
   - senior-manager
-  - executive
 scenarios: [interview, hiring, self-reflection]
 formats: [behavioral, case]
-followUps:
-  - You find your earlier judgment was in fact flawed. How do you admit it openly?
-  - Key staff start resigning in a wave because of it. What do you do?
+followUps: ["If the goal is sound but implementation harm is concentrated on one group, would you change the goal, path, or remedy—and why?", "How would you respond if an executive asks you to blame the petition on a few “negative employees”?"]
 source:
   - attribution: original
     label: "The author's leveled interview framework, senior manager"
-perspective: manager
-perspectiveReview: inferred
-qualityTier: extended
+perspective: "manager"
+perspectiveReview: "reviewed"
+qualityTier: "core"
+
 ---

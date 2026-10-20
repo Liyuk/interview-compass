@@ -8,18 +8,14 @@ question: >-
   Brand advertising, search, and affiliate channels reach overlapping prospects, while the attribution
   platform assigns most conversions to the last click. How would you estimate each channel’s incremental
   contribution and state the limits of the conclusion?
-intent: >-
-  Assess whether the candidate distinguishes attribution allocation from causal incrementality and chooses
-  evidence suited to the decision.
-signals:
-  - >-
-    Clarify whether the decision allocates credit, evaluates budgets, or estimates incrementality;
-    attribution allocation is not causal contribution.
-  - Check audience overlap, exposure order, windows, spillovers, and selection bias.
-  - >-
-    Compare feasible controls, experiments, or robustness checks by cost and limits without assuming one
-    method always identifies the truth.
-  - State uncertainty, unidentified effects, and evidence that would change the budget recommendation.
+intent: "Assess whether you distinguish channel credit from causal incrementality, choose feasible evidence for the actual budget decision, and state overlap, spillover, and unidentified effects honestly."
+signals: ["Clarify whether the decision allocates reporting credit, optimizes marginal spend, or asks if demand is incremental; these require different evidence.", "Check channel overlap, exposure order, attribution windows, organic demand, brand spillover, and user self-selection.", "Compare randomized holdouts, geo tests, and quasi-experiments by feasibility, contamination risk, cost, and identification assumptions.", "Report ranges and sensitivity, state population or time limits, and name evidence that would change the budget."]
+weakAnswer: "Calling last-click or multi-touch allocation channel incrementality without validating overlap, organic conversion, or identification conditions."
+anchors:
+  notPassing: "Repeats platform attribution figures while conflating credit assignment with incrementality."
+  passing: "Identifies channel overlap and selects an experiment or comparison relevant to the budget decision."
+  excellent: "Checks assumptions and contamination and explains the incremental estimate, range, and population or time limits."
+  exceptional: "Triangulates evidence for robustness, separates identified from unidentified effects, and ties budget changes to thresholds for follow-up validation."
 primaryCapability: value-direction.metrics-causality
 topics:
   - metrics
@@ -36,7 +32,6 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - operations-review
@@ -48,11 +43,10 @@ source:
     url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
   - attribution: original
     label: Interview Compass Original Expansion to 1,500 — Batch C
-followUps:
-  - If randomization is unavailable, which quasi-experimental designs could still help?
-  - How would you prevent channel optimization from relabeling organic conversions as paid?
+followUps: ["If channels launch together and users move across them, how would you explain contamination of the experimental control?", "How would you tell leadership that an attribution model looks precise while causal conclusions remain limited?"]
 relatedQuestions: []
-perspectiveReview: inferred
-qualityTier: extended
-perspective: candidate
+perspectiveReview: "reviewed"
+qualityTier: "core"
+perspective: "candidate"
+
 ---

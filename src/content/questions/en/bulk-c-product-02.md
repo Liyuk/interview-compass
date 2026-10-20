@@ -5,22 +5,14 @@ status: published
 locale: en
 title: Should a high-value customer’s custom request be delivered once, productized, or declined?
 question: "A major customer will pay a high price for a custom feature, but reuse by other customers is uncertain. Ongoing maintenance, permissions, and data rules add cost, and sales has promised a delivery date. How would you compare a one-off build, productizing it, a service, or declining—and decide whether to invest?"
-intent: >-
-  Assess whether you bring the customer’s real obstacle, revenue certainty, reuse potential, ongoing
-  maintenance, and customer concentration risk into one verifiable investment decision.
-signals:
-  - >-
-    Verify tasks, payment and renewal, usage, alternatives, and sales promises, separating facts from
-    reuse assumptions.
-  - >-
-    Compare customization, configuration, shared capability, service, and refusal by revenue,
-    abstraction, data-permission maintenance, and roadmap cost.
-  - >-
-    Confirm pricing, resource, and commitment authority rather than treating a high offer or powerful
-    client as proof of value.
-  - >-
-    Set bounded validation, adoption evidence, and scale, productization, or stop conditions with
-    concentration and ongoing costs.
+intent: "Assess whether you can translate a major customer’s custom request into a user task and verifiable value, while accounting for reuse, maintenance, permissions, and roadmap cost and keeping sales commitments within clear decision authority."
+signals: ["Verify the task, current alternatives, and payment or renewal evidence; distinguish customer statements from validated need.", "Compare one-off customization, configuration, shared product capability, service, and refusal, including reuse, support, permission/data risk, and opportunity cost.", "Confirm commitment dates, price, resources, and decision authority; propose reversible validation without treating exploration as an approved roadmap promise.", "Set adoption, repeated demand, payback, and safety/quality gates to choose scale, productization, paid service, or stop."]
+weakAnswer: "Building immediately because the contract is large or sales promised it, without validating the task, ongoing cost, reuse evidence, or who can change the commitment."
+anchors:
+  notPassing: "Accepts or rejects based on one customer’s amount while ignoring task and lifecycle cost."
+  passing: "Validates the customer problem, compares custom and shared options, and considers at least one maintenance or roadmap cost."
+  excellent: "Separates evidence from reuse assumptions, includes commitments, authority, and total cost, and proposes reversible validation with decision gates."
+  exceptional: "Quantifies concentration, support, and security-risk sensitivity; uses actual adoption and payback criteria to productize, service, or stop while managing external commitments."
 primaryCapability: value-direction.product-judgment
 topics:
   - product-thinking
@@ -41,9 +33,7 @@ roles:
 responsibilityScopes:
   - team
   - multiple-teams
-  - organization
 careerTracks:
-  - individual-contributor
   - team-manager
   - senior-manager
 scenarios:
@@ -67,23 +57,10 @@ source:
     label: Interview Compass Original Expansion to 1,500 — Batch C
   - attribution: original
     label: Interview Compass Original Expansion to 1,500 — Batch E/F
-followUps:
-  - >-
-    If only one customer needs it but the deal has strategic showcase value, how would you quantify that extra
-    value?
-  - >-
-    If customer segments differ sharply in value and cost, how would you choose a target audience and
-    guardrails?
-  - >-
-    How do you prevent sales from presenting an exploratory option as a firm commitment before productization
-    is decided?
-  - >-
-    If the budget can fund only one direction, how would you compare opportunity cost and explain what is
-    being given up?
-  - If renewal is explicitly tied to the feature, what additional evidence should inform the decision?
-  - How could a service or configuration validate demand without hardening it into the product architecture?
+followUps: ["If the feature is a hard renewal condition for one customer but no others need it, how would you assess concentration risk and negotiating room?", "Which service or prototype could validate customer value fastest without shipping a supported product feature?"]
 relatedQuestions: []
-perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspective: "candidate"
+perspectiveReview: "reviewed"
+qualityTier: "core"
+
 ---

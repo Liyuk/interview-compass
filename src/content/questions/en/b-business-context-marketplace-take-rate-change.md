@@ -7,11 +7,14 @@ title: How do you assess a take-rate increase when supply falls but revenue init
 question: >-
   A marketplace raises commission by two points. Revenue rises short term, but some high-quality suppliers list
   less often; buyer conversion has not moved yet. How would you assess long-term impact?
-intent: Assess whether you analyze platform revenue, supply response, quality, and long-term network effects together.
-signals:
-  - Segment suppliers and measure listing frequency, price, and exit behavior.
-  - Estimate net revenue alongside conversion, retention, and supply quality.
-  - Compare rate, benefit, and audience options through tests.
+intent: "Assess whether you can judge the net effect of a take-rate change without treating short-term revenue as the conclusion, bringing supply response, marketplace experience, and long-term network health into a testable decision."
+signals: ["Define net revenue and the decision horizon; segment supplier fees, listings, pricing, exits, and service quality.", "Separate causal effects of the fee change from seasonality, category mix, competition, and concurrent policy changes, using a suitable comparison.", "Check buyer search success, conversion, repeat use, and lagging effects that may differ across both sides of the marketplace.", "Compare segment rates, benefit changes, or phased rollout with revenue, supply-quality, and concentration guardrails and stop conditions."]
+weakAnswer: "Concluding from aggregate commission revenue alone, or declaring failure from a few supplier exits without segmentation, a baseline, or the timing of buyer and supplier responses."
+anchors:
+  notPassing: "Cites short-term total revenue or anecdotes without defining net effect or supply quality."
+  passing: "Segments supplier behavior and buyer outcomes and proposes at least one suitable control or time comparison."
+  excellent: "Connects revenue, supply quality, buyer conversion, and retention; explains confounders and lag; proposes guarded action."
+  exceptional: "Uses pre-agreed thresholds to compare segments and alternatives, quantifies network damage and recovery cost, and defines when to expand, adjust, or reverse."
 primaryCapability: value-direction.market-economic-judgment
 topics:
   - commercialization
@@ -26,7 +29,6 @@ responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
-  - individual-contributor
   - team-manager
   - senior-manager
 scenarios:
@@ -36,13 +38,12 @@ scenarios:
 formats:
   - case
   - behavioral
-followUps:
-  - How do you keep aggregate volume from hiding supply-quality decline?
-  - Which changes could create long-term network damage that is hard to reverse?
+followUps: ["If high-quality suppliers also face fee cuts on a competing platform, how would you separate market movement from this policy’s effect?", "Which signs of supply loss would make you pause expansion even while revenue is still rising?"]
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 L
-perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspective: "candidate"
+perspectiveReview: "reviewed"
+qualityTier: "core"
+
 ---

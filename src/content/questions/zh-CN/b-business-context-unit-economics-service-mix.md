@@ -5,8 +5,14 @@ status: published
 locale: zh-CN
 title: 总毛利稳定但服务结构变化很大时，怎样判断增长质量？
 question: 公司毛利率保持稳定，但标准服务收入下降、高定制服务收入上升，实施和支持团队的工时也增长。你会如何判断业务增长是否健康？
-intent: 考察能否结合产品组合、成本动因、容量限制和单位经济性评估增长质量。
-signals: ["按服务组合拆分收入、人工成本、复用率、服务容量和交付周期。","指出整体毛利稳定是否掩盖某类服务或客户成本上升。","解释不同服务组合对贡献毛利和现金需求的影响。","提出调整服务组合的选项，以及验证其效果所需的数据。"]
+intent: "考察你能否穿透稳定的总体毛利，识别服务组合、交付负荷和可复用能力的变化，并把增长质量判断转成可观测的产品与经营选择。"
+signals: ["按服务档位和客户群拆分净收入、直接与共享工时、实施周期、复用率和支持负荷，明确成本分摊口径。", "检查总体毛利是否被高毛利档位或少数大客户掩盖，区分短期交付成本与长期维护义务。", "把服务结构与容量、客户结果、续约和现金需求联系起来，辨别相关性与增长来源。", "比较限制定制、调整价格、产品化或服务化等方案，提出可验证的转变条件。"]
+weakAnswer: "只引用总体毛利稳定，或将全部支持成本平均摊给客户，却没有核对不同服务的真实负荷、复用程度和后续维护责任。"
+anchors:
+  notPassing: "将总体毛利稳定视为增长健康，没有拆解服务组合或成本。"
+  passing: "按服务与客群拆分收入和主要工时，指出至少一种可能被掩盖的成本。"
+  excellent: "说明共享成本口径、容量与续约影响，区分直接证据和推断，并比较业务选项。"
+  exceptional: "用成本区间和敏感性分析支持产品组合决策，设计定制转产品的验证门槛、服务承诺及退出条件。"
 primaryCapability: value-direction.market-economic-judgment
 topics:
   - commercialization
@@ -28,7 +34,6 @@ responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
-  - individual-contributor
   - team-manager
   - senior-manager
 scenarios:
@@ -40,17 +45,7 @@ formats:
   - case
   - behavioral
   - system-design
-followUps:
-  - 哪些成本应归入单个客户或服务档位？
-  - 怎样判断定制服务正在形成可复用产品能力？
-  - 【平均毛利稳定但客群结构变化时，怎样判断增长质量？】公司整体毛利率保持稳定，但新客更多来自高支持成本行业；老客户收入占比下降。你会怎样判断增长是否可持续，并决定是否调整销售策略？
-  - 如何将共享支持团队成本分摊到客群？
-  - 观察窗口不足时怎样避免过早下结论？
-  - 一个企业产品的签约客户数持续上升，但新进入的客户规模更小、定制需求更多，支持成本增长快于收入。你会怎样拆解客户、价值链和服务成本，判断这是健康扩张还是增长质量下降？
-  - 如果定制客户带来的收入高但拖慢标准产品路线，你会怎样比较组合价值？
-  - 哪些成本应计入客户获取、交付或长期服务？
-  - 如果成本归因（判断结果由什么因素造成）存在争议，你怎样先做一个足以决策的近似模型？
-  - 哪些成本不应因为短期难以量化就被忽略？
+followUps: ["如果共享支持工时记录不完整，你会怎样估算成本区间，并避免把近似值包装成精确答案？", "怎样判断一个定制交付已足够重复，值得转成产品能力而不是继续人工服务？"]
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 E
@@ -61,7 +56,8 @@ source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 B
 relatedQuestions: []
-perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspective: "candidate"
+perspectiveReview: "reviewed"
+qualityTier: "core"
+
 ---
