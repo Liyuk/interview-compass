@@ -30,7 +30,6 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - operations-review
@@ -43,6 +42,12 @@ source:
   - attribution: original
     label: Interview Compass 原创扩充（2026-10-14）
 perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 只比较合同收入与标价，忽略持续支持投入、履约容量和客户得到的结果。
+anchors:
+  notPassing: 只看一次性收入，忽略履约、支持和服务容量。
+  passing: 纳入后续服务成本并说明客户获得的持续价值。
+  excellent: 比较客户或方案的净贡献、续费结果与服务负担。
+  exceptional: 据分层证据调整报价、承诺或服务设计，并复查实际履约结果。
 ---

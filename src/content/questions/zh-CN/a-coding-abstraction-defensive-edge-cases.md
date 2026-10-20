@@ -12,27 +12,39 @@ signals:
   - 说出之后具体改变了什么习惯，例如补测试或用检查清单，而不只是"更仔细"
   - 区分哪些该在边界处拦截，哪些交给内部约定，避免处处重复校验
 primaryCapability: professional.coding-abstraction
-topics: [programming-languages, debugging]
+topics:
+  - programming-languages
+  - debugging
 roles:
   - engineering
   - backend
   - frontend
   - mobile
   - ai-engineer
-responsibilityScopes: [individual]
+responsibilityScopes:
+  - individual
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
-scenarios: [interview, campus]
-formats: [behavioral, coding]
+scenarios:
+  - interview
+  - campus
+formats:
+  - behavioral
+  - coding
 followUps:
   - 你说注重代码质量，那最近一个月里你具体做过哪几处让代码更清晰的改动？
   - 这类问题你现在怎样在提交之前就发现？
 source:
   - attribution: original
-    label: "作者的分级面试框架，初级工程师"
+    label: 作者的分级面试框架，初级工程师
 perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 只承诺以后更仔细，却讲不出边界失误如何影响用户或怎样防止复发。
+anchors:
+  notPassing: 只说会多加校验，讲不出真实失误或边界。
+  passing: 描述一次输入边界导致的失败和影响。
+  excellent: 说明将校验放在何处、如何用测试覆盖同类边界。
+  exceptional: 用真实失误调整接口约定或共享检查，同时避免重复防御掩盖错误。
 ---

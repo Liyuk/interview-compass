@@ -12,27 +12,39 @@ signals:
   - Says what habit specifically changed afterwards, such as adding tests or using a checklist, not just "be more careful"
   - Separates what should be stopped at the boundary from what internal contracts cover, avoiding repeated checks everywhere
 primaryCapability: professional.coding-abstraction
-topics: [programming-languages, debugging]
+topics:
+  - programming-languages
+  - debugging
 roles:
   - engineering
   - backend
   - frontend
   - mobile
   - ai-engineer
-responsibilityScopes: [individual]
+responsibilityScopes:
+  - individual
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
-scenarios: [interview, campus]
-formats: [behavioral, coding]
+scenarios:
+  - interview
+  - campus
+formats:
+  - behavioral
+  - coding
 followUps:
   - You say you care about code quality. What specific changes in the past month made code clearer?
   - How do you now catch this kind of problem before you commit?
 source:
   - attribution: original
-    label: "The author's leveled interview framework, junior engineer"
+    label: The author's leveled interview framework, junior engineer
 perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: Promises to be more careful but cannot explain the user impact of a boundary failure or how to prevent recurrence.
+anchors:
+  notPassing: Says they would add more checks but cannot describe a real failure or boundary.
+  passing: Describes an input-boundary failure and its impact.
+  excellent: Explains where validation belongs and how tests cover similar boundaries.
+  exceptional: Uses the failure to improve an interface contract or shared check without redundant defenses hiding errors.
 ---

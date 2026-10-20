@@ -15,7 +15,7 @@
 - Keep question IDs, public URLs, sources, and all extended questions.
 - Add no standard answers, complete case studies, or extra applicability-boundary sections.
 - Candidate, interviewer, and manager are equal perspectives; perspective describes who uses/answers the prompt, not its capability domain.
-- Core is 100–150 bilingual question IDs, 30–50 per perspective, with 3–4 signals, 2–3 question-specific follow-ups, weakAnswer, and four question-specific anchors.
+- Core is 100–150 bilingual question IDs, 30–50 per approved primary site audience (candidate preparation, interviewer evidence, manager evaluation/team leadership), with 3–4 signals, 2–3 question-specific follow-ups, weakAnswer, and four question-specific anchors. Review respondent perspective independently rather than forcing its distribution.
 - Keep generated perspective assignments distinguishable from human-reviewed assignments.
 - Extended-content quality defects warn; malformed structure and invalid enumerations fail.
 - Keep every phase in its own pull request; open PRs only, do not merge, and do not push directly to main.
@@ -125,10 +125,10 @@
 - [x] Build a candidate pool from the 31 IDs in four existing question sets, the 12 IDs with reviewed bilingual analyses, and other scenario questions only where their evidence potential is concrete.
 - [x] Select 100 IDs across all eight domains, with 35/35/30 assigned to the three proposed primary site audiences; confirm every selected ID has one published Chinese and one English record.
 - [x] For each candidate, record ID, proposed primary audience, current inferred respondent perspective, domain, selection rationale, and current bilingual/content risks.
-- [ ] Review perspective assignment and semantic question wording against both locales; remove candidates whose primary perspective cannot be established without changing the prompt.
+- [x] Review perspective assignment and semantic question wording against both locales; approved list preserved candidate-generation respondent values as a snapshot. See the Phase D audience/perspective ruling in the batch record.
 - [x] Run `node scripts/check-core-question-candidates.mjs` to verify list uniqueness, audience counts, domain coverage, and paired published IDs.
 - [x] Open a standalone candidate-list PR; make no question content or tier changes.
-- [ ] Stop and wait for the user's review of the candidate list. Do not start Phase D until approved.
+- [x] Stop and wait for the user's review of the candidate list. Do not start Phase D until approved. User approved the 100-ID list and authorized batch rewriting on 2026-10-19.
 
 **Audit finding (2026-10-19):** The Phase A migration baseline contains 13 interviewer and 26 manager assignments, while 1,261/1,334 respondent-perspective assignments are low-confidence. The current `perspective` metadata is not sufficient to identify site audiences. The Phase C draft therefore lists proposed primary site audiences separately and preserves the inferred respondent value per question. See `docs/reviews/2026-10-19-core-perspective-pool-audit.md` and `docs/reviews/2026-10-19-core-question-source-pool.md`.
 
@@ -140,14 +140,14 @@
 - Modify: paired Markdown files for IDs in the user-approved `docs/core-question-candidates.md`
 - Modify: migration review metadata only for perspective assignments the user reviewed
 
-- [ ] Take the next 20–30 uncompleted IDs from the approved list; include candidates from each perspective as needed to retain the approved final balance.
-- [ ] Write a failing/fixture-level content check for each requested core invariant before the first content batch is marked core.
-- [ ] Rewrite the Chinese and English records together: one intent, 3–4 observable signals, 2–3 question-specific followUps, one weakAnswer, four question-specific anchors, and no invented sourcing.
-- [ ] Keep IDs and URLs stable. Repair only verified merged follow-up residue, mismatched follow-ups, or obvious naming drift; do not alter canonical identity.
-- [ ] Set `qualityTier: core` and `perspectiveReview: reviewed` only after bilingual editorial review.
-- [ ] Run `npm run check:content`, `npm run test:unit`, `npm run check`, and `npm run build` for each batch.
+- [x] Take the next 20–30 uncompleted IDs from the approved list; include candidates from each primary site audience as needed to retain the approved final balance. First batch: 20 IDs across the three primary site audiences.
+- [x] Write a failing/fixture-level content check for each requested core invariant before the first content batch is marked core. Existing content-model tests cover core-required fields, reviewed perspective, signals/follow-up counts, and strict four-anchor shape; a proposed anchor-count mismatch fixture was rejected as impossible under that schema.
+- [x] Rewrite the Chinese and English records together: one intent, 3–4 observable signals, 2–3 question-specific followUps, one weakAnswer, four question-specific anchors, and no invented sourcing.
+- [x] Keep IDs and URLs stable. Repair only verified merged follow-up residue, mismatched follow-ups, or obvious naming drift; do not alter canonical identity.
+- [x] Set `qualityTier: core` and `perspectiveReview: reviewed` only after bilingual editorial review.
+- [x] Run `npm run check:content`, `npm run test:unit`, `npm run check`, and `npm run build` for each batch.
 - [ ] Open a separate PR listing changed IDs and perspectives, with concise before/after reasoning for 2–3 questions.
-- [ ] Repeat until all approved candidates are complete; verify final count 100–150 and 30–50 per perspective.
+- [ ] Repeat until all approved candidates are complete; verify final count 100–150 and 30–50 in each approved primary site audience.
 
 ## Phase E — Home, Scenarios, and Question Reading Paths (1–2 PRs)
 
@@ -182,7 +182,7 @@
 ## Final Verification and Delivery
 
 - [ ] Run `npm run check:content`, `npm run check`, `npm run test:unit`, `npm run build`, and affected E2E coverage.
-- [ ] Verify 100–150 bilingual core IDs, 30–50 in each perspective, all core fields and count parity, and no extended question removed.
+- [ ] Verify 100–150 bilingual core IDs, 30–50 in each approved primary site audience, individually reviewed and bilingual-consistent respondent perspectives, all core fields and count parity, and no extended question removed.
 - [ ] Verify all three home entrances, search-entry next steps, localized `hreflang`, and mobile layouts in a real browser.
 - [ ] Open phase PRs only; do not merge or push directly to `main`.
 - [ ] Report each completed phase in Chinese with PR link, change summary, remaining issues, and decisions needed.

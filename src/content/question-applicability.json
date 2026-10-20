@@ -1,72 +1,11 @@
 [
   {
     "questionId": "a-ai-engineering-agent-duplicate-side-effect",
-    "reviewStatus": "reviewed",
-    "fingerprint": "640b8c8600d4fccae24d8cd1d491c21742d115e3bb8867d1460f3b436964a41c",
+    "reviewStatus": "pending",
+    "fingerprint": "c2d0053fa5ca8c2a556a980e623292a5be1cb05fbae875f4c1b7939feaeeb157",
     "rationale": {
-      "zh": "重复退款与授权需要各端独立实现者区分未知结果；高阶段治理工具契约，不能把超时当失败事实。",
-      "en": "Independent client and backend contributors distinguish unknown action outcomes; higher stages govern contracts."
-    },
-    "profiles": [
-      {
-        "roleId": "ai-engineer",
-        "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
-        ]
-      },
-      {
-        "roleId": "backend",
-        "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
-        ]
-      },
-      {
-        "roleId": "engineering",
-        "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
-        ]
-      },
-      {
-        "roleId": "frontend",
-        "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
-        ]
-      },
-      {
-        "roleId": "mobile",
-        "stageIds": [
-          "mid-level-engineer",
-          "senior-engineer",
-          "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
-        ]
-      }
-    ]
-  },
-  {
-    "questionId": "a-ai-engineering-eval-disagreement",
-    "reviewStatus": "reviewed",
-    "fingerprint": "f793a92da9061fe64f38601d0185524882be6acfe4492074843a8ee92cc37b57",
-    "rationale": {
-      "zh": "初级可核对给定样本与评审差异；高阶段建设评价准则，不以多数票直接证明模型质量。",
-      "en": "Juniors inspect supplied rating disagreements; higher stages establish criteria beyond majority votes."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
@@ -76,8 +15,68 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
+        ]
+      },
+      {
+        "roleId": "backend",
+        "stageIds": [
+          "junior-engineer",
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager"
+        ]
+      },
+      {
+        "roleId": "engineering",
+        "stageIds": [
+          "junior-engineer",
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager"
+        ]
+      },
+      {
+        "roleId": "frontend",
+        "stageIds": [
+          "junior-engineer",
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager"
+        ]
+      },
+      {
+        "roleId": "mobile",
+        "stageIds": [
+          "junior-engineer",
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager"
+        ]
+      }
+    ]
+  },
+  {
+    "questionId": "a-ai-engineering-eval-disagreement",
+    "reviewStatus": "pending",
+    "fingerprint": "3414ca201f9398d3cdea916584d2ab457afc379888cf3c566d9a2f9ad037a02d",
+    "rationale": {
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
+    },
+    "profiles": [
+      {
+        "roleId": "ai-engineer",
+        "stageIds": [
+          "junior-engineer",
+          "mid-level-engineer",
+          "senior-engineer",
+          "staff-engineer",
+          "engineering-manager"
         ]
       },
       {
@@ -87,8 +86,7 @@
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       },
       {
@@ -98,8 +96,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -109,8 +106,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       }
     ]
@@ -548,11 +544,11 @@
   },
   {
     "questionId": "a-ai-engineering-resume-claim-verification",
-    "reviewStatus": "reviewed",
-    "fingerprint": "8fe6dbffa93c4ae8f0b9a4ab4199f890e209f791ab7fac67b1298d240dfb7b38",
+    "reviewStatus": "pending",
+    "fingerprint": "ed42b44a7241b2f694fd0d63b870b9c6f6d28acbcfc6f0ceeed47fa79dfe4be8",
     "rationale": {
-      "zh": "各技术数据阶段可核验自己的AI使用贡献；不预设必须只能辅助，按任务风险和证据说明自动化边界。",
-      "en": "Technical-data stages evidence personal AI use; automation boundaries depend on task risk rather than mandatory assistance-only use."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
@@ -562,8 +558,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -573,8 +568,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -584,8 +578,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -595,8 +588,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -606,8 +598,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -617,8 +608,7 @@
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       }
     ]
@@ -1252,11 +1242,11 @@
   },
   {
     "questionId": "a-coding-abstraction-defensive-edge-cases",
-    "reviewStatus": "reviewed",
-    "fingerprint": "d276931d0d886f8775f63a990dcb2625e01cf9c79829221c90f3708da5aa0606",
+    "reviewStatus": "pending",
+    "fingerprint": "3269de4a7de02c44b04bf00c8a21e5d00645f3d57554b8cb5ab4bf16f6cfdedf",
     "rationale": {
-      "zh": "各技术阶段可解释边界校验与真实失误；管理阶段复盘自身判断及质量机制，不以当前写码量评分。",
-      "en": "Technical stages reflect on validation and mistakes; managers evidence judgment and quality mechanisms rather than coding volume."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
@@ -1266,8 +1256,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -1277,8 +1266,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -1288,8 +1276,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -1299,8 +1286,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -1310,8 +1296,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -2360,11 +2345,11 @@
   },
   {
     "questionId": "a-computer-science-transaction-isolation",
-    "reviewStatus": "reviewed",
-    "fingerprint": "320973ca081f329444daa494c1d934fba2808fae0ab397b845576c4240b89a22",
+    "reviewStatus": "pending",
+    "fingerprint": "60f2925e1bf3d7e0d4cc8dea7035d03ed881e4f2e105e57ff1e3223fbe7307e3",
     "rationale": {
-      "zh": "后台数据和AI持久化涉及隔离基础；初级用异常例子，高阶段核验具体数据库保证与代价。",
-      "en": "Backend-data and persistent-AI roles explain isolation with increasing database-specific judgment."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
@@ -2374,8 +2359,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -2385,8 +2369,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -2396,8 +2379,7 @@
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       },
       {
@@ -2407,8 +2389,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -2513,82 +2494,82 @@
   },
   {
     "questionId": "a-databases-read-replica-stale-read",
-    "reviewStatus": "reviewed",
-    "fingerprint": "ce8f6fab2a5f528ab072d0e11851c047020c99af2b3f2415732b408b800264de",
+    "reviewStatus": "pending",
+    "fingerprint": "b4ceeab3b93fd506777052f1406d862ed181b67d4eb7275c5b125d001230d942",
     "rationale": {
-      "zh": "副本陈旧读取需各端独立人员理解用户不变量；高阶段治理路由，不默认全部请求切主。",
-      "en": "Independent technical roles interpret stale reads; higher stages govern routing without universal primary reads."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
         "roleId": "backend",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "data",
         "stageIds": [
+          "data-entry",
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       },
       {
         "roleId": "engineering",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "frontend",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "mobile",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "ai-engineer",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
   },
   {
     "questionId": "a-debugging-api-works-locally-frontend-disagrees",
-    "reviewStatus": "reviewed",
-    "fingerprint": "74fd853d945934a60bc8bf51c989b273e18b7cbda55306840038c5136bb9dc8d",
+    "reviewStatus": "pending",
+    "fingerprint": "baf5d9b845c8bb8c9bf12a7ebc6476c3bb5a79d1ba53a7db23f313c0f1f2d4b4",
     "rationale": {
-      "zh": "各技术阶段均可复现跨端问题并给可核对证据；初级会求助，高阶段建设协作诊断机制。",
-      "en": "Every technical stage can reproduce integration failures; higher stages establish collaborative diagnosis."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
@@ -2598,8 +2579,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -2609,8 +2589,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -2620,8 +2599,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -2631,8 +2609,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -2642,8 +2619,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -4177,61 +4153,61 @@
   },
   {
     "questionId": "a-engineering-systems-schema-deploy-rollback",
-    "reviewStatus": "reviewed",
-    "fingerprint": "05cfd7cb06a0d4f81f36b97b74109bb699c01f1e08ecf254da2c15db9600918b",
+    "reviewStatus": "pending",
+    "fingerprint": "f8a696ff088c5b830503213ecf8787db09ad53b6ed0cd2684d7bdbf3d44232e3",
     "rationale": {
-      "zh": "独立后台数据技术人员设计兼容窗口，产品核验用户影响；移除通用业务运营实现要求。",
-      "en": "Independent backend-data engineers design compatibility; product verifies user impact and generic operations is excluded."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
         "roleId": "engineering",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "backend",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "data",
         "stageIds": [
+          "data-entry",
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       },
       {
         "roleId": "product",
         "stageIds": [
+          "product-entry",
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
         "roleId": "ai-engineer",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -5289,71 +5265,71 @@
   },
   {
     "questionId": "a-monorepo-build-graph-invalidation",
-    "reviewStatus": "reviewed",
-    "fingerprint": "dae4396725674726853b437f570e2a61047d680db35fce35e0e347fef190af23",
+    "reviewStatus": "pending",
+    "fingerprint": "7c619ecddaef8f1d6e4c8aeba89c685dc6b0fa70ad76f10df32138195345b208",
     "rationale": {
-      "zh": "各技术数据构建链可验证依赖图；高阶段管理缓存正确性，不把命中率当唯一成功指标。",
-      "en": "Independent technical-data build contributors verify dependencies; higher stages govern cache correctness."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
         "roleId": "engineering",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "frontend",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "backend",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "mobile",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "ai-engineer",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "data",
         "stageIds": [
+          "data-entry",
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       }
     ]
@@ -7181,51 +7157,51 @@
   },
   {
     "questionId": "a-system-design-cross-system-consistency",
-    "reviewStatus": "reviewed",
-    "fingerprint": "319515fc30c2a8e77d423c4539d196b4f6961d65860a01d459660cf2894557cc",
+    "reviewStatus": "pending",
+    "fingerprint": "53b6649271b5195ac99ed0740bc165c66a180017d9a87356383d214569360ffb",
     "rationale": {
-      "zh": "独立后台数据与AI状态实现可论证一致性；案例可推演并标假设，亲历声称需具体证据。",
-      "en": "Independent backend-data and AI roles reason about consistency; hypothetical reasoning must be labeled."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
         "roleId": "backend",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "engineering",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "ai-engineer",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "data",
         "stageIds": [
+          "data-entry",
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       }
     ]
@@ -9024,91 +9000,91 @@
   },
   {
     "questionId": "b-business-context-renewal-risk-segmentation",
-    "reviewStatus": "reviewed",
-    "fingerprint": "8b31113504053e2a9e1d9f70fb54857d8b9f0f16ec6c1b95c59faed905d400b5",
+    "reviewStatus": "pending",
+    "fingerprint": "1fe9a54ec25d454a1a3b7b159e47009892d4e6f32f332f9309fdaa4da628bb6f",
     "rationale": {
-      "zh": "独立贡献者可参与客户分层与证据核验；高阶段承担跨流程判断，不要求技术人员独自决定续约政策。",
-      "en": "Independent contributors investigate cohorts and evidence; higher stages own cross-process decisions without unilateral renewal policy."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
         "roleId": "product",
         "stageIds": [
+          "product-entry",
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
         "roleId": "operations",
         "stageIds": [
+          "operations-entry",
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
         "roleId": "data",
         "stageIds": [
+          "data-entry",
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       },
       {
         "roleId": "engineering",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "frontend",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "backend",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "mobile",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "ai-engineer",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -9376,91 +9352,91 @@
   },
   {
     "questionId": "b-business-context-support-obligation",
-    "reviewStatus": "reviewed",
-    "fingerprint": "5cd58fec78221973a1f2310b2a987527b70faa82eed047aa5accc17b2a5acbe7",
+    "reviewStatus": "pending",
+    "fingerprint": "a113eab09c10c7ea68ce56fe469c039095f57129dd648f2a64d499b2bb9adcad",
     "rationale": {
-      "zh": "支持升级的长期成本与技术质量相关；独立阶段可提供证据，高阶段协调承诺，不要求个人修改合同。",
-      "en": "Long-term support cost involves technical quality; independent contributors evidence it, with authorized commitment changes."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
         "roleId": "product",
         "stageIds": [
+          "product-entry",
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
         "roleId": "operations",
         "stageIds": [
+          "operations-entry",
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
         "roleId": "data",
         "stageIds": [
+          "data-entry",
           "data-independent",
           "data-senior",
           "data-expert",
-          "data-manager",
-          "data-organization"
+          "data-manager"
         ]
       },
       {
         "roleId": "engineering",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "frontend",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "backend",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "mobile",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
         "roleId": "ai-engineer",
         "stageIds": [
+          "junior-engineer",
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -9559,11 +9535,11 @@
   },
   {
     "questionId": "b-business-context-user-task-chain",
-    "reviewStatus": "reviewed",
-    "fingerprint": "10c42fc0bda4cdde873744b03132dffb3cee6c2ba3f0169e5f006a738a81d78a",
+    "reviewStatus": "pending",
+    "fingerprint": "43ec2d719529619a7d9bd8cfaa8268e58d9891a6ba507af350375d949e775807",
     "rationale": {
-      "zh": "初级也应解释自己模块的输入输出及用户任务；高阶段扩展因果和依赖，不以头衔替代证据。",
-      "en": "Juniors explain module inputs, outputs, and user tasks; higher stages expand dependencies and causal evidence."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
@@ -9573,8 +9549,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9584,8 +9559,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9595,8 +9569,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -9606,8 +9579,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9617,8 +9589,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9628,19 +9599,18 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
   },
   {
     "questionId": "b-business-context-whole-then-part",
-    "reviewStatus": "reviewed",
-    "fingerprint": "e4453a7bc79c29a7dcb21bd2f5ee68f5f47d0aee297bca84749c93404e9d3299",
+    "reviewStatus": "pending",
+    "fingerprint": "a6161e1b106094c9262e5482b766f9baa743e3bb6d9502079ecbe827f0ef6f4b",
     "rationale": {
-      "zh": "各阶段按实际了解说明局部与全局关系；初级可以承认未知，不要求拥有全业务决策权。",
-      "en": "Every stage explains local-to-whole relationships and unknowns without requiring junior business authority."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
@@ -9650,8 +9620,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9661,8 +9630,7 @@
           "product-independent",
           "product-senior",
           "product-expert",
-          "product-manager",
-          "product-organization"
+          "product-manager"
         ]
       },
       {
@@ -9672,15 +9640,13 @@
           "operations-independent",
           "operations-senior",
           "operations-expert",
-          "operations-manager",
-          "operations-organization"
+          "operations-manager"
         ]
       },
       {
         "roleId": "manager",
         "stageIds": [
-          "manager-manager",
-          "manager-organization"
+          "manager-manager"
         ]
       },
       {
@@ -9690,8 +9656,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9701,8 +9666,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9712,8 +9676,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       },
       {
@@ -9723,8 +9686,7 @@
           "mid-level-engineer",
           "senior-engineer",
           "staff-engineer",
-          "engineering-manager",
-          "manager-of-managers"
+          "engineering-manager"
         ]
       }
     ]
@@ -67328,11 +67290,11 @@
   },
   {
     "questionId": "f-frontline-management-absence-test",
-    "reviewStatus": "reviewed",
-    "fingerprint": "6ba587c50748cc55a4648c4cc5a6690bf7a7850cf3f5f402a144216d0b0b93e0",
+    "reviewStatus": "pending",
+    "fingerprint": "42bdc1b9ee790dd51ed53cba592ccc49ac32f09ed9bb6a30bc984001d5c48145",
     "rationale": {
-      "zh": "技术负责人离场也需验证关键判断的连续性；高级专业人员说明知识与判断迁移，管理者另说明人员授权和支持。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "A technical owner’s absence also tests continuity of judgment. Senior specialists explain knowledge transfer; managers additionally explain formal delegation and support. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
@@ -67345,8 +67307,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -67354,8 +67314,6 @@
       {
         "roleId": "product",
         "stageIds": [
-          "product-senior",
-          "product-expert",
           "product-manager",
           "product-organization"
         ]
@@ -67363,8 +67321,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -67372,8 +67328,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -67381,8 +67335,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -67390,8 +67342,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -67612,11 +67562,11 @@
   },
   {
     "questionId": "f-frontline-management-mechanism-over-confrontation",
-    "reviewStatus": "reviewed",
-    "fingerprint": "cf0d20e03fbaeaae99bbed09e6e24e1694b480b115614feccccd11f301910926",
+    "reviewStatus": "pending",
+    "fingerprint": "97de0a150832568bdc0935f832b3d7ab7465d18606acd3840f14fedd4fe3dbe1",
     "rationale": {
-      "zh": "质量评审机制可由高级技术带领者推动并获得授权；管理者负责团队标准和行为反馈，不暗中针对个人。 已明确核对技术通用及前端、后端、客户端、AI工程岗位的相应责任；不作运行时父岗位扩展。",
-      "en": "Senior technical leads can advance authorized quality-review mechanisms. Managers own team standards and behavior feedback without secretly targeting an individual. Relevant responsibilities were explicitly checked for general, frontend, backend, mobile, and AI engineering roles; no runtime parent-role expansion is used."
+      "zh": "仅按现有岗位与职业轨道生成的候选组合，尚未逐题审阅；不能用于上线过滤。",
+      "en": "Candidate combinations inferred from existing role and track tags; not yet reviewed for this question and not eligible for live filtering."
     },
     "profiles": [
       {
@@ -67629,8 +67579,6 @@
       {
         "roleId": "engineering",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -67638,8 +67586,6 @@
       {
         "roleId": "frontend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -67647,8 +67593,6 @@
       {
         "roleId": "backend",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -67656,8 +67600,6 @@
       {
         "roleId": "mobile",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]
@@ -67665,8 +67607,6 @@
       {
         "roleId": "ai-engineer",
         "stageIds": [
-          "senior-engineer",
-          "staff-engineer",
           "engineering-manager",
           "manager-of-managers"
         ]

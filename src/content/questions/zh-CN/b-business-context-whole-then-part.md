@@ -12,7 +12,9 @@ signals:
   - 说明这部分对全局结果的作用，并指出它不负责什么
   - 对全局中自己不了解的部分坦率说明
 primaryCapability: domain-modeling.business-context
-topics: [product-thinking, communication]
+topics:
+  - product-thinking
+  - communication
 roles:
   - engineering
   - product
@@ -22,13 +24,18 @@ roles:
   - backend
   - mobile
   - ai-engineer
-responsibilityScopes: [individual, team]
+responsibilityScopes:
+  - individual
+  - team
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
-scenarios: [interview, promotion, hiring]
-formats: [behavioral]
+scenarios:
+  - interview
+  - promotion
+  - hiring
+formats:
+  - behavioral
 followUps:
   - 如果全局中的某一环出了问题，你的部分会受到什么影响？
   - 全局里你最不了解的是哪一块？
@@ -36,6 +43,12 @@ source:
   - attribution: original
     label: 作者的面试提问套路：先讲全局，再讲自己的部分
 perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 用技术模块清单代替业务全貌，无法说明自己的工作连接到哪个用户或结果。
+anchors:
+  notPassing: 只讲个人模块，不说明用户、业务结果或依赖。
+  passing: 讲清业务目标和本人负责的环节。
+  excellent: 连接上下游依赖、结果指标和本人可影响的范围。
+  exceptional: 同时指出因果链中未验证的部分及自己不掌握的信息。
 ---
