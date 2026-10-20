@@ -1,4 +1,6 @@
 # Interview Compass 内容与用户动线实施计划
+> **Historical record:** This document records a plan or review from its date; its framework and implementation statements are not current. See the [current architecture](../../architecture/current-state.md).
+
 
 > 本计划由仓库维护者在当前任务内串行执行；每批先固定可观察行为，再实现并验收。
 

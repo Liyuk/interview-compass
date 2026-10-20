@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, building versus open source"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

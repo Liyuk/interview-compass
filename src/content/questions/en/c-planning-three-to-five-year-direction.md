@@ -52,4 +52,7 @@ source:
     label: 'The author''s interview sequence: a three-to-five-year technical plan'
   - attribution: original
     label: 'The author''s interview sequence: calibrating a long-term plan against a half-year plan'
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

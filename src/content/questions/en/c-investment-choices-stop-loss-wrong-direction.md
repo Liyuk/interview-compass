@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, cutting losses on a wrong direction"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -53,4 +53,7 @@ followUps:
   - How should urgent incidents bypass normal windows?
   - How do you avoid interpreting silence as agreement?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

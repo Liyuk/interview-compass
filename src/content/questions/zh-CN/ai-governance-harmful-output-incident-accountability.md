@@ -28,4 +28,7 @@ careerTracks:
   - senior-manager
 formats: ["behavioral","case"]
 followUps: ["如果损害来自多个小缺口叠加，怎样确定治理改动的优先级？","什么时候需要向受影响用户说明原因和补救？"]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -26,4 +26,7 @@ scenarios: ["interview","promotion","self-reflection"]
 formats: ["behavioral","case"]
 followUps: ["If the criticism is factually wrong but forcefully delivered, how would you address delivery first and clarify afterward?","When should a third party get involved?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：韧性与恢复"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

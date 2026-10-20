@@ -41,4 +41,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的系统设计题：大模型对话
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

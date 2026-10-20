@@ -31,4 +31,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's system design question, how money is counted, accounting and billing"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

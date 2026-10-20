@@ -40,4 +40,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's leveled interview framework, product track"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -38,4 +38,7 @@ source:
   - attribution: inspired
     label: 'The Product Manager Interview Project: prioritization and decision cards'
     url: https://github.com/deanpeters/The-Product-Manager-Interview-Project
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -38,4 +38,7 @@ topics:
   - planning
   - resource-allocation
   - business-planning
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

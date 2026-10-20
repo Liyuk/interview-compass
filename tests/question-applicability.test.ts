@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 import { getQuestions, type BrowseRecord } from '../src/lib/question-catalog';
 import { matchesTarget, applicabilityTokens, validateApplicability, candidateProfiles, type ApplicabilityEntry } from '../src/lib/question-applicability';
 

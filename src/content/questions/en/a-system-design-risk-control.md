@@ -33,4 +33,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's system design question, a risk control system"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -33,4 +33,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: project, choice, decision, pros and cons"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

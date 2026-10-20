@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: applying industry practice to the current business"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -1,9 +1,11 @@
 import type { TargetRoleOption } from './target-roles';
 import { allPreference, rememberedTarget, targetPreference } from './target-preferences';
-import { choosePreference, dismissTargetPrompt, getStoredPreference, getTargetContext, needsTargetPrompt, subscribeTarget } from './target-state';
+import { choosePreference, dismissTargetPrompt, getStoredPreference, getTargetContext, subscribeTarget } from './target-state';
 import { loadTargetRoles } from './target-roles-client';
+import { readTargetLabel, writeTargetLabel } from './target-label';
 
 const en = document.documentElement.lang === 'en';
+const locale = en ? 'en' : 'zh-CN';
 const trigger = document.querySelector<HTMLButtonElement>('[data-profile-trigger]');
 const label = trigger?.querySelector<HTMLElement>('[data-profile-label]');
 const dialog = document.querySelector<HTMLDialogElement>('[data-profile-dialog]');
@@ -19,7 +21,14 @@ function currentLabel() {
   const target = preference.mode === 'target' ? preference.target : undefined;
   const role = roles.find(item => item.id === target?.roleId);
   const stage = role?.stages.find(item => item.id === target?.stageId);
-  return target && role && stage ? `${role.name} · ${stage.name}` : (en ? 'All questions' : '全部题目');
+  const fallback = en ? 'All questions · Target' : '全部题目 · 准备目标';
+  if (target && role && stage) {
+    const text = `${role.name} · ${stage.name}`;
+    writeTargetLabel(locale, target.roleId, target.stageId, text);
+    return text;
+  }
+  // Roles load asynchronously: keep the last known label for a chosen target instead of flashing the fallback.
+  return (target ? readTargetLabel(locale, target.roleId, target.stageId) : undefined) ?? fallback;
 }
 
 function selectedRole() { return roles.find(role => role.id === roleSelect?.value); }
@@ -84,19 +93,39 @@ function containTab(event: KeyboardEvent) {
   }
 }
 
+function closeStatus() {
+  trigger?.setAttribute('aria-expanded', 'false');
+  const status = document.querySelector<HTMLElement>('#target-status-panel');
+  if (status) status.hidden = true;
+}
+
 async function openEditor() {
   if (!dialog || !roleSelect) return;
-  roles = await loadTargetRoles();
-  fillRoles();
-  const remembered = rememberedTarget(getTargetContext().preference) ?? rememberedTarget(getStoredPreference());
-  roleSelect.value = remembered?.roleId ?? '';
-  fillStages(remembered?.stageId ?? '');
+  closeStatus();
   if (!dialog.open) dialog.showModal();
-  roleSelect.focus();
+  const error = dialog.querySelector<HTMLElement>('[data-profile-error]');
+  const retry = dialog.querySelector<HTMLButtonElement>('[data-profile-retry]');
+  if (error) error.hidden = true;
+  if (retry) retry.hidden = true;
+  roleSelect.disabled = true;
+  if (applyButton) applyButton.disabled = true;
+  try {
+    roles = await loadTargetRoles();
+    fillRoles();
+    const remembered = rememberedTarget(getTargetContext().preference) ?? rememberedTarget(getStoredPreference());
+    roleSelect.value = remembered?.roleId ?? '';
+    fillStages(remembered?.stageId ?? '');
+    roleSelect.disabled = false;
+    if (dialog.open) roleSelect.focus();
+  } catch {
+    if (error) error.hidden = false;
+    if (retry) { retry.hidden = false; if (dialog.open) retry.focus(); }
+  }
 }
 
 export function initTargetSelector() {
   if (!dialog || !trigger || !roleSelect || !stageSelect) return;
+  dialog.querySelector('[data-profile-retry]')?.addEventListener('click', () => { void openEditor(); });
   roleSelect.addEventListener('change', () => fillStages(''));
   stageSelect.addEventListener('change', describe);
   applyButton?.addEventListener('click', () => {
@@ -116,12 +145,32 @@ export function initTargetSelector() {
     dismissTargetPrompt();
     focusTrigger();
   });
-  trigger.addEventListener('click', () => { void openEditor(); });
+  const status = document.querySelector<HTMLElement>('#target-status-panel');
+  trigger.addEventListener('click', () => {
+    if (!status) return;
+    const expanded = trigger.getAttribute('aria-expanded') !== 'true';
+    trigger.setAttribute('aria-expanded', String(expanded));
+    status.hidden = !expanded;
+  });
+  document.addEventListener('click', event => {
+    if (event.target instanceof Node && !document.querySelector('.target-status')?.contains(event.target)) closeStatus();
+    if (event.target instanceof Element && event.target.closest('[data-view-all-target], [data-adopt-target], [data-remove-link-target]')) closeStatus();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
+      closeStatus();
+      trigger.focus();
+    }
+  });
+  document.addEventListener('focusin', event => {
+    if (event.target instanceof Node && !document.querySelector('.target-status')?.contains(event.target)) closeStatus();
+  });
   window.addEventListener('compass-open-target', () => { void openEditor(); });
-  subscribeTarget(() => { if (label) label.textContent = currentLabel(); });
+  subscribeTarget(() => { if (label) label.textContent = currentLabel();
+  if (trigger) trigger.title = currentLabel(); });
   void loadTargetRoles().then(loaded => {
     roles = loaded;
     if (label) label.textContent = currentLabel();
-    if (needsTargetPrompt()) void openEditor();
+  if (trigger) trigger.title = currentLabel();
   }).catch(() => { /* The trigger still offers the dialog once the index can load. */ });
 }

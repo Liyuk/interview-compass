@@ -50,4 +50,7 @@ followUps:
   - 若原验收条件本身含糊，谁负责解决争议？
   - 怎样把本次争议变成下一项目可复用的验收模板？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

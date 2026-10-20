@@ -47,4 +47,7 @@ followUps:
   - 引用链过长时怎样避免递归溢出？
   - 多个来源都参与同一值时怎样显示？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

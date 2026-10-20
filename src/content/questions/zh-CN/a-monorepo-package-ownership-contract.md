@@ -25,4 +25,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["公共包没人愿意维护时，怎样决定归属或下线？","如何处理无法同步升级的消费者？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：Monorepo"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

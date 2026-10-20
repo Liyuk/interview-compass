@@ -45,4 +45,7 @@ followUps:
   - 哪些行为才算活跃，为什么？
   - 身份合并后历史月活是否回算？
 relatedQuestions: []
+perspectiveReview: inferred
+qualityTier: extended
+perspective: candidate
 ---

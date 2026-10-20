@@ -39,4 +39,7 @@ source:
 followUps:
   - 如果合同没有说明退款时恢复额度还是退现金，你会向谁确认什么？
   - 历史账单已按另一规则结算时，怎样保留事实并处理差异？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

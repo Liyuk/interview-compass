@@ -47,4 +47,7 @@ followUps:
 source:
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 J
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

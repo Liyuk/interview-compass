@@ -2,6 +2,7 @@
 import { wikiNavigationFor } from '../lib/wiki-navigation';
 import type { RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
+import type { PageSection } from '../lib/page-presentation';
 import WikiNavList from './WikiNavList.astro';
 
 interface Props {
@@ -10,10 +11,12 @@ interface Props {
   base?: string;
   idPrefix?: string;
   mobileDisclosure?: boolean;
+  section?: PageSection;
 }
 
-const { route, locale, base = '', idPrefix = 'wiki', mobileDisclosure = true } = Astro.props;
-const sections = wikiNavigationFor(route, locale, base);
+const { route, locale, base = '', idPrefix = 'wiki', mobileDisclosure = true, section } = Astro.props;
+const group = section === 'browse' ? 'category-browsing' : section === 'stages' ? 'capabilities-and-stages' : section === 'goals' ? 'question-library' : section === 'methods' || section === 'guide' ? 'methods-and-guide' : undefined;
+const sections = wikiNavigationFor(route, locale, base).filter(item => !group || item.key === group).map(item => section === 'goals' ? { ...item, items: item.items.filter(link => link.key === 'paths').map(link => ({ ...link, current: route.type === 'scenarios', label: locale === 'en' ? 'Goal paths' : '目标路径' })) } : item);
 const navId = `${idPrefix}-knowledge-navigation`;
 const label = locale === 'en' ? 'Knowledge navigation' : '知识导航';
 const summaryLabel = locale === 'en' ? 'Browse knowledge' : '浏览知识目录';
@@ -41,10 +44,11 @@ const summaryLabel = locale === 'en' ? 'Browse knowledge' : '浏览知识目录'
   </nav>}
 </aside>
 
-{mobileDisclosure && <script>
-  const sidebar = document.querySelector<HTMLElement>('[data-wiki-sidebar][data-mobile-disclosure="true"]');
-  const disclosure = sidebar?.querySelector<HTMLDetailsElement>('[data-wiki-disclosure]');
-  const summary = disclosure?.querySelector<HTMLElement>('summary');
+{mobileDisclosure && <script is:inline>
+{
+  const sidebar = document.querySelector('[data-wiki-sidebar][data-mobile-disclosure="true"]');
+  const disclosure = sidebar?.querySelector('[data-wiki-disclosure]');
+  const summary = disclosure?.querySelector('summary');
   const media = window.matchMedia('(max-width: 760px)');
 
   const syncExpanded = () => summary?.setAttribute('aria-expanded', String(Boolean(disclosure?.open)));
@@ -68,4 +72,5 @@ const summaryLabel = locale === 'en' ? 'Browse knowledge' : '浏览知识目录'
   disclosure?.querySelectorAll('nav a').forEach(link => link.addEventListener('click', () => {
     if (media.matches && disclosure.open) disclosure.open = false;
   }));
+}
 </script>}

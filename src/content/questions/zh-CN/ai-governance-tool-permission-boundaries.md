@@ -53,4 +53,7 @@ followUps:
   - 哪些操作可以批量授权，哪些必须逐项确认？
   - 如果模型对收件人判断错误，系统应承担哪些补救责任？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

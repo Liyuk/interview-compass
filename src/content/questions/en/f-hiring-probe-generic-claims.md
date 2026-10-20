@@ -58,4 +58,7 @@ source:
     label: Blog post on the pre-promotion and pre-interview self-check list
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -50,4 +50,7 @@ followUps:
   - 【两个团队都缺资源但能互相提供能力时，怎样谈资源交换？】平台团队短缺测试容量，产品团队短缺数据分析支持；双方都有季度承诺，管理层无法增加预算。你会如何谈一项公平且可执行的交换？
   - 若双方价值难以量化，怎样降低试行风险？
   - 如何避免交换资源变成持续的人情债？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

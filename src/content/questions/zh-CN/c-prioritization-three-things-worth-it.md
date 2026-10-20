@@ -46,4 +46,7 @@ source:
   - attribution: derived
     label: 博客《思维训练（一）：Top K 问题——先找到最重要的事》
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

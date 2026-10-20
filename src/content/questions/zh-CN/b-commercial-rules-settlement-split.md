@@ -61,4 +61,7 @@ source:
     label: 基于内容架构研究中的分成规则变更边界示例原创编写
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-17 B
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

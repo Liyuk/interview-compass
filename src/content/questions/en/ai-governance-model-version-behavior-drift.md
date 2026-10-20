@@ -25,4 +25,7 @@ careerTracks:
   - senior-manager
 formats: ["debugging","case"]
 followUps: ["How would you detect and trace a silent model update by a provider?","Which changes require renewed approval rather than routine regression tests?"]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

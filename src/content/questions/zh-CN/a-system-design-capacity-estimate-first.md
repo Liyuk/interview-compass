@@ -30,4 +30,7 @@ source:
   - attribution: inspired
     label: "system-design-primer：先澄清需求与容量再选组件的思路（题面为原创）"
     url: https://github.com/donnemartin/system-design-primer/blob/master/README.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

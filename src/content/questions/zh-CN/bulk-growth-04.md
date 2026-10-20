@@ -36,4 +36,7 @@ source:
   - attribution: inspired
     label: 品牌与增长面试工具：跨渠道执行与效果判断
     url: https://github.com/coryjburk/intv-playbook-marketing_brand-growth/
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

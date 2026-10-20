@@ -38,4 +38,7 @@ topics:
   - planning
   - resource-allocation
   - team-planning
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

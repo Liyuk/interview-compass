@@ -52,4 +52,7 @@ relatedQuestions:
   - questionId: wave17-delivery-006
     relation: 同样涉及资源约束，但改变了约束条件（资源减少而非只能选两项）。
     contrast: 更关注在约束变化下的方案调整与适应能力。
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

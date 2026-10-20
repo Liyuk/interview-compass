@@ -43,4 +43,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：漏斗如何作用于业务指标
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

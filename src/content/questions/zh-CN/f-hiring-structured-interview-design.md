@@ -48,4 +48,7 @@ source:
   - attribution: inspired
     label: 'Tech Interview Handbook: behavioral interview rubrics'
     url: https://github.com/yangshun/tech-interview-handbook/blob/main/apps/website/contents/behavioral-interview-rubrics.md
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -25,7 +25,6 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - campus
@@ -35,7 +34,18 @@ formats:
 source:
   - attribution: derived
     label: 博客《筛选人和面试官到底在看什么》
-    url: >-
-      https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+    url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: reviewed
+qualityTier: core
+followUps:
+  - 如果结果指标受其他团队或同期变化影响，你怎样说明自己的贡献？
+  - 哪些材料能让面试官复核你描述的过程和结果？
+weakAnswer: 把“用了某 AI 工具”写成效率成果，没有区分本人判断、AI产出和验证事实。
+anchors:
+  notPassing: 只列 AI 工具或宣称提效，没有具体任务和核验结果。
+  passing: 描述任务、本人动作、AI 参与环节及一个可核验结果。
+  excellent: 展示复核如何发现错误，并区分实际贡献与预期收益。
+  exceptional: 对比人工与 AI 方案的质量/成本，说明何时不应采用自动化。
 ---

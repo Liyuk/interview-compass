@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: a past conflict, then and now"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

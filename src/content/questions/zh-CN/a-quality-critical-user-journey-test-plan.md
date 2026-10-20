@@ -26,4 +26,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["端到端测试不稳定时，怎样既保留关键覆盖又降低误报？","覆盖率上升但漏掉真实故障，如何调整策略？"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 D"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

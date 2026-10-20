@@ -44,4 +44,7 @@ followUps:
   - 【How do you diagnose a second overload after cache recovery?】After cache nodes recover, requests stampede to the database and exhaust its connection pool. Traffic still surges periodically after scaling. How would you distinguish warm-up, request coalescing, rate limiting, and query regression?
   - How do you keep warm-up from causing another stampede?
   - Which cache data should not be preloaded in bulk?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

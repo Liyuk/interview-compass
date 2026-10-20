@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：判断小组长带人的质量
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -57,4 +57,7 @@ followUps:
   - 低流量下仍逐日增长、重启后暂时恢复时，你会怎样安排采样和实验？
   - 堆对象数量下降但进程内存没有回落时，下一步检查什么？
   - 服务内存占用持续增长，堆对象采样基本稳定，但容器 RSS 不断增加。你会怎样区分堆外分配、碎片和缓存？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

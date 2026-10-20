@@ -26,4 +26,7 @@ careerTracks:
   - senior-manager
 formats: ["case","planning"]
 followUps: ["How would you evaluate disparate impact when collecting group attributes is inappropriate?","If benefits are clear but disparity cannot be fixed quickly, how would you limit exposure?"]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

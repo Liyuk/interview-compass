@@ -49,4 +49,7 @@ source:
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

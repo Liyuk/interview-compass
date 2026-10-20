@@ -3,15 +3,9 @@ questionId: a-engineering-systems-schema-deploy-rollback
 kind: question
 status: published
 locale: en
-title: >-
-  The application can be rolled back, but a database migration removed an old field and the previous version
-  can no longer start. How would you redesign release order and rollback?
-question: >-
-  The application can be rolled back, but a database migration removed an old field and the previous version
-  can no longer start. How would you redesign release order and rollback?
-intent: >-
-  Assess whether you understand compatibility windows across application and data changes, and why rollback
-  does not restore every state.
+title: The application can be rolled back, but a database migration removed an old field and the previous version can no longer start. How would you redesign release order and rollback?
+question: The application can be rolled back, but a database migration removed an old field and the previous version can no longer start. How would you redesign release order and rollback?
+intent: Assess whether you understand compatibility windows across application and data changes, and why rollback does not restore every state.
 signals:
   - Maps old-new application and data combinations across expansion, cutover, and contraction.
   - Compares rollback, pause, feature disablement, and forward fixes with irreversible-state limits.
@@ -36,7 +30,6 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - hiring
@@ -46,11 +39,8 @@ formats:
   - case
   - behavioral
 followUps:
-  - >-
-    A release changes the data model. Reverting the application is quick, but the old version cannot read
-    newly written fields. How would you design rollout gates and recovery steps?
+  - A release changes the data model. Reverting the application is quick, but the old version cannot read newly written fields. How would you design rollout gates and recovery steps?
   - How would recovery work if the OS kills the app during migration?
-  - How would you handle several skipped versions after a long delay?
 source:
   - attribution: inspired
     label: DNXLabs DevOps 题库的主题覆盖；题面为本站独立编写
@@ -63,4 +53,13 @@ source:
     label: JavaGuide — backend, Java, database, concurrency, and distributed systems topics
     url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: Assumes reverting the application restores a removed schema and misses the irreversible migration step.
+anchors:
+  notPassing: Mentions rollback or backups without addressing compatibility between old and new apps and data.
+  passing: Explains release order through expand, migrate, and contract steps.
+  excellent: Lists mixed-version compatibility conditions, gates, and recovery when a field change is irreversible.
+  exceptional: Exercises interruption and rollback to verify data integrity and defines when old fields may be removed.
 ---

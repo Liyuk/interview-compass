@@ -1,0 +1,20 @@
+---
+import type { Locale } from '../../lib/taxonomy';
+import type { RouteRef } from '../../lib/routes';
+import { loadKnowledgeRegistry } from '../../lib/knowledge/site-registry';
+import { contentIdForRoute } from '../../lib/knowledge/definitions';
+interface Props { route: RouteRef; locale: Locale }
+const { route, locale } = Astro.props;
+const registry = await loadKnowledgeRegistry();
+const id = contentIdForRoute(route);
+const siblings = registry.navigation(id,locale).siblings.filter(item => item.contentId !== 'questions' && item.href && ['guide','method','concept','path','stage-reference','index'].includes(item.kind));
+const position = siblings.findIndex(item => item.contentId === id);
+const previous = position > 0 ? siblings[position-1] : undefined;
+const next = position >= 0 ? siblings[position+1] : undefined;
+const en = locale === 'en';
+---
+{(previous || next) && <nav class="editorial-navigation" aria-label={en ? 'Continue reading' : '继续阅读'} data-pagefind-ignore>
+  {previous && <a href={previous.href}><span>{en ? 'Previous page' : '上一页'}</span><strong>{previous.title}</strong></a>}
+  {next && <a href={next.href}><span>{en ? 'Next page' : '下一页'}</span><strong>{next.title}</strong></a>}
+</nav>}
+<style>.editorial-navigation { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; border-top: 1px solid var(--line); margin-block: 2rem; padding-top: 1rem; } a { display: grid; gap: .25rem; flex: 1 1 12rem; } span { font-size: .8rem; color: var(--muted); }</style>

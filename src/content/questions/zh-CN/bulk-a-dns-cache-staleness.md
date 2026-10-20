@@ -51,4 +51,7 @@ followUps:
   - 怎样确认长时间未活跃的客户端也已离开旧节点？
   - 为什么故障切换不能只依赖 DNS？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

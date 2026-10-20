@@ -7,6 +7,9 @@ const question = (locale: 'zh-CN' | 'en', id = 'measure-outcome'): QuestionRecor
   kind: 'question',
   status: 'published',
   locale,
+  perspective: 'candidate',
+  perspectiveReview: 'reviewed',
+  qualityTier: 'extended',
   title: 'Measure outcomes',
   question: 'How would you establish and measure the outcome?',
   intent: 'Tests whether outcome evidence is explicit.',
@@ -66,6 +69,12 @@ describe('validateQuestionCollections', () => {
       'general-interview: missing zh-CN question missing-question',
       'general-interview: missing en question missing-question',
     ]);
+  });
+
+  it('requires every question in a reviewed core path to be a reviewed core question', () => {
+    const reviewedCore = { ...generalSet, reviewedCore: true };
+    expect(validateQuestionCollections([reviewedCore], [question('zh-CN'), question('en')]))
+      .toContain('general-interview: reviewed core path includes non-core question measure-outcome');
   });
 
   it('rejects incomplete bilingual copy and empty candidate prompt sections', () => {

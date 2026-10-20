@@ -42,4 +42,7 @@ followUps:
   - 哪些错误可以作为学习成本？
   - 如何确保组织风险没有被转嫁给成员？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

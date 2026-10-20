@@ -64,4 +64,7 @@ followUps:
   - >-
     Should reading an expired entry renew it? How would you define observable behavior when deletion races with expiry
     cleanup?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

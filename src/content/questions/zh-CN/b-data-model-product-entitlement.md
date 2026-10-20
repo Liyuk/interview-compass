@@ -43,4 +43,7 @@ followUps:
   - 如果成员同时属于两个子公司但只占一个席位，怎样表达归属和使用记录？
   - 合同中途把席位从一个子公司转给另一个，费用和审计记录如何变化？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

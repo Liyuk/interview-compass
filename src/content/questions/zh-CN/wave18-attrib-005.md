@@ -42,4 +42,7 @@ topics:
   - ethics
   - metrics
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

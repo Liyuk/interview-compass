@@ -1,8 +1,39 @@
 # Interview Compass
 
+[![Build and deploy](https://github.com/Liyuk/interview-compass/actions/workflows/deploy.yml/badge.svg)](https://github.com/Liyuk/interview-compass/actions/workflows/deploy.yml)
+[![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
+[![Content: CC BY-NC-SA 4.0](https://img.shields.io/badge/content-CC_BY--NC--SA_4.0-lightgrey)](CONTENT-LICENSE.md)
+
+面向工程师与工程经理的双语面试 / 晋升问题库：从目标出发，用好问题而不是标准答案来准备。
+
+A bilingual interview and promotion question library for engineers and engineering managers: start from a goal, and prepare with good questions rather than model answers.
+
+**[打开中文站点](https://liyuk.github.io/interview-compass/)** · **[Open the English site](https://liyuk.github.io/interview-compass/en/)**
+
+## What's inside
+
+- **Goal paths.** Six scenario paths: external interviews, campus hiring, interviewer design, promotion, self-reflection, and operations review. Five cross-domain paths cover product thinking, questioning, and business, technical, and team planning.
+- **Curated question sets.** Short ordered sets for a general interview, technical essentials, interviewer evidence, and promotion conversations, plus a due-diligence guide for reverse questions.
+- **Capability map.** Eight domains, A–H: professional problem solving, business understanding, judgment, delivery, collaboration, organization, learning, and professional responsibility. Each question has one primary capability.
+- **Search and filters.** Pagefind search in Chinese and English. The full library filters by role, scenario, scope, track, capability, topic, and format. Pick one of six engineering specializations and a responsibility stage, and questions plus search stay on reviewed matches.
+- **AI analysis prompts.** A question page can build a structured prompt for an external AI tool you choose. The prompt stays on the page until you copy it.
+- **Companion skill.** [`skills/interview-compass-coach/`](skills/interview-compass-coach/) looks up the public question feed for practice or review, with the same evidence and privacy limits.
+
+## See it
+
+[![Interview Compass home: choose a preparation guide or a curated set](docs/assets/home.jpg)](https://liyuk.github.io/interview-compass/)
+
+[![A question page on personal contribution within a team result, with intent and evidence](docs/assets/question.jpg)](https://liyuk.github.io/interview-compass/questions/h-attribution-team-vs-personal/)
+
+[![The full question bank with role, scenario, scope, and track filters](docs/assets/question-bank.jpg)](https://liyuk.github.io/interview-compass/questions/)
+
+## About
+
 Interview Compass is a bilingual, question-first heuristic library for external interviews, hiring, promotion, and project reflection. Start from a goal or search directly; use questions to compare approaches, examine context and causality, and make contribution visible through evidence. It does not prescribe answers or automatically score people.
 
 This repository contains the Interview Compass site and its source content. The site serves engineers and engineering managers. Product sense, operating workflows, design collaboration, and commercial reasoning expand engineering business understanding; they are not separate target careers.
+
+Maintainer reference: [current site architecture](docs/architecture/current-state.md). Dated plans, reviews, and design explorations record past decisions and should not be read as a description of the current implementation.
 
 ## Explore locally
 

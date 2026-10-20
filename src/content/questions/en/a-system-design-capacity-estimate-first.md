@@ -30,4 +30,7 @@ source:
   - attribution: inspired
     label: "system-design-primer: clarify requirements and capacity before choosing components (the prompt is original)"
     url: https://github.com/donnemartin/system-design-primer/blob/master/README.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

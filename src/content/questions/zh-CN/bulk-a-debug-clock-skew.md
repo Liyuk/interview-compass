@@ -45,4 +45,7 @@ source:
     url: https://github.com/donnemartin/system-design-primer/blob/master/README.md
 relatedQuestions: []
 followUps: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

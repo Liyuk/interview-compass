@@ -30,4 +30,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的系统设计题：在线编辑器的数据模型"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

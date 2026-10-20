@@ -51,4 +51,7 @@ followUps:
   - 如果销售机会需要短期演示，怎样与长期产品承诺分开？
   - 什么新证据会使你改变暂缓决定？
 relatedQuestions: []
+perspectiveReview: inferred
+qualityTier: extended
+perspective: candidate
 ---

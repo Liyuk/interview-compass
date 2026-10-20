@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: uniqueness and foresight"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

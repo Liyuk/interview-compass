@@ -54,4 +54,7 @@ followUps:
     usage?
   - If a seat moves between subsidiaries mid-contract, what changes in billing and audit history?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

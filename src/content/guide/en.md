@@ -1,0 +1,78 @@
+---
+title: Guide
+description: How to read Interview Compass, how it is organized, and its content rules.
+---
+
+Interview Compass is a heuristic question library for job candidates, interviewers, promotion, and project review. It helps readers compare approaches, check causality and personal contribution, and explain results with evidence. It provides no model answers and does not automatically score candidates.
+
+This site serves engineers: general software engineering, frontend, backend, mobile, AI, and data engineering, including professional and engineering-management paths. Product sense, operating workflows, design collaboration, and commercial questions develop engineering business understanding; they are not separate target jobs. Judge the engineer’s actual contribution and mandate, without requiring ownership of another function.
+
+## Role and stage targets
+
+Start with the [preparation guide](../guide/) to understand capabilities and responsibility, then choose the role and stage you want to prepare for or assess, or explore all questions. The top-right control lets you switch at any time. Lists, previews, counts, and search strictly use reviewed role–stage combinations; topic and format filters narrow that set further. Clear page filters or view all if there is no intersection.
+
+One question may serve several stages with different responsibility, judgment, and outcome evidence. Stage is not question difficulty or an automatic score. Comparing stages inside a question does not change your site target. Direct links outside your target remain readable with a scope notice.
+
+Choices stay in this browser. Explicit all mode is remembered; dismissing the chooser only suppresses it for the current session. Use **Copy filtered link** to share the target and page filters. A link never overwrites the recipient’s saved default unless they explicitly adopt it; they can also remove the link target.
+
+## How questions are organized
+
+Every question has exactly one **primary capability**: the one thing it is mainly meant to examine. The eight domains are: A professional problem solving and implementation, B business understanding and domain modeling, C value judgment and direction setting, D delivery and ongoing operations, E collaboration, communication, and influence, F people and organization building, G learning, adaptation, and sustained growth, and H professional responsibility and work style.
+
+Roles, topics, responsibility scopes, career tracks, use cases, and question formats are independent views. They are different entry points to the same questions and never create duplicate copies.
+
+## Ways in
+
+- You know what you want: search.
+- You need a starting point: open Goal paths and choose a task such as interviewing, hiring, promotion preparation, or project review.
+- You want to explore by capability: open the capability map.
+- You are preparing by function: open Roles. External interviews, interviewer design, and promotion each have a separate entry under Use cases.
+- You want to combine conditions: stack filters in the question library. The address bar keeps your selection so you can share it.
+
+## Questioning methods
+
+Interviewers start with the role’s goals and responsibility scope, then use contrasting experiences, comparisons between options, causal probes, and hands-on details to verify experience and judgment. For setbacks or conflict, ask about the context, the person’s actions, outcomes, and what changed afterward. Follow-ups should fill context, test alternative explanations, and clarify contribution—not steer someone toward a model answer.
+
+Candidates can start from a real situation and explain the goal, their responsibility, constraints, actions, alternatives and trade-offs, then the result, attribution evidence, and reflection. STAR can help organize an experience, but technical, case, and system-design questions should not be forced into it. Make reasoning, comparisons, hands-on participation, and evidence visible. See the full [questioning methods](../framework/) for interviewer prompts, candidate responses, and mutual due diligence.
+
+## External interviews and internal promotion
+
+An external interview asks whether someone can perform the target role. A promotion review asks whether they have sustained a wider scope of responsibility over time and produced verifiable, attributable results. The two can reuse questions, but they require different preparation and evidence horizons.
+
+The promotion page provides question paths for individual contributors, first-line managers, and managers of managers. These are browsing filters, not company level criteria. Use your organization’s capability model and promotion rules for stage expectations, review periods, and packet formats. Prepare evidence for target scope, sustained outcomes, how those outcomes were achieved, and both supporting and contrary evidence.
+
+## How to use a question
+
+Questions are prompts for inquiry, not model answers. Some have individually edited analysis and are labeled “Question-specific analysis · reviewed”. Others are labeled “Shared reading guide · question-specific review pending”. Shared prompts are not established conclusions about that question. Without a reviewed analysis, first restate the decision or uncertainty the question asks you to resolve.
+
+Useful judgments compare internal history, similar cases, industry or competitor references, alternatives, and the cost of doing nothing. State the measurement basis and its limits. Then establish the goal, baseline, constraints, responsibility, the person’s actual actions, affected parties, outcomes, and plausible alternative causes. Hands-on evidence depends on the role: look for decisions and actions within the relevant scope, not a universal requirement to code personally.
+
+## Four evidence levels
+
+Questions include shared 1–4 evidence references. A smaller set of reviewed questions also has question-specific anchors, clearly labeled on the page. Unreviewed shared anchors are not precise conclusions about an individual prompt. These are references for one capability, not automatic scores or an overall judgment of a person.
+
+- **1 · Not passing**: Core concepts, basic facts, or the account cannot be made clear; for experience questions, the person cannot explain what they did. Confirmed deliberate fabrication is not passing. Inconsistency or missing detail alone means the evidence needs checking.
+- **2 · Passing**: Basic concepts and reasoning are clear, with credible evidence of having done the work or a sound response to the prompt.
+- **3 · Excellent**: The person gives a structured reflection, examines what worked and what did not, and shows practice or insight above the common expectation for the role and level.
+- **4 · Exceptional**: The person shows a field-leading result within the relevant scope; the result is measurable, verifiable, and credibly attributable to their decisions and work.
+
+Expectations depend on the role's capability model, level, and responsibility scope. A score of 2 is the usual baseline; excellent evidence in one or two dimensions is meaningful, while exceptional evidence should be rare.
+
+## Recurring lenses
+
+- **Comparison and competition:** State the comparison set, evaluation criteria, and time horizon; explain whether the differences are large enough to change a judgment or action.
+- **Challenging goals and outcomes:** Explain the difficulty relative to the baseline, key constraints, outcome measures, and stop-loss conditions; describe how to adjust or stop when progress misses expectations.
+- **Causality and contribution:** Clarify personal responsibility, key actions, and trade-offs; test other contributing factors and contrary evidence, distinguishing individual contribution from team results.
+- **Cost and risk:** Compare implementation, maintenance, and opportunity costs; identify key assumptions, failure impact, validation methods, and fallback plans.
+- **Progress and evolution:** Explain how work was staged, assumptions validated, and investment expanded over time; use evidence to decide whether to continue, adjust, or change direction.
+- **Growth:** Examine learning, self-direction, thinking, and resilience through concrete behavior, not labels.
+- **Mutual due diligence:** Both sides should clarify the actual work, goals, decision rights, resource support, and team environment before judging fit.
+
+Resource coordination can be explored under causality and contribution or progress and evolution: focus on how the candidate coordinated dependencies, secured resources, and made trade-offs, using concrete actions and outcomes as evidence.
+
+## Content rules
+
+- Questions stay open-ended with no model answers, sample answers, automatic scores, or hiring recommendations; the levels are evidence references.
+- Every published question has Chinese and English versions with the same primary capability.
+- Every question states its provenance: adapted, derived, inspired, or original to this site. No source is invented.
+- Wording is distinct from source articles, and similar questions are kept apart only when they examine different evidence.

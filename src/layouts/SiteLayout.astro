@@ -1,11 +1,16 @@
 ---
+import { pagePresentationFor } from '../lib/page-presentation';
 import SiteMasthead from '../components/SiteMasthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ReadingJourney from '../components/ReadingJourney.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import WikiSidebar from '../components/WikiSidebar.astro';
+import EditorialNavigation from '../components/docs/EditorialNavigation.astro';
+import ReadingNavigation from '../components/docs/ReadingNavigation.astro';
+import CurrentCollection from '../components/docs/CurrentCollection.astro';
+import ArticleRelations from '../components/docs/ArticleRelations.astro';
+import DocumentNavigation from '../components/docs/DocumentNavigation.astro';
 import WikiOutline from '../components/WikiOutline.astro';
-import { activeNavFor, breadcrumbsFor, titleFor, type RouteRef } from '../lib/routes';
+import { activeNavFor, breadcrumbsFor, switchLocaleRoute, titleFor, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
 import { normalizeWikiOutline, type WikiOutlineItem } from '../lib/wiki-outline';
 
@@ -18,10 +23,13 @@ const publicBase = base.endsWith('/') ? base : `${base}/`;
 const title = titleFor(route, locale);
 const currentNav = activeNavFor(route);
 const active = ['roles', 'topics', 'capabilities'].includes(currentNav) ? 'browse' : currentNav;
+const presentation = pagePresentationFor(route);
+const hasSidebar = Boolean(presentation.section) || route.type === 'search';
+const hasReadingTools = presentation.kind === 'section' || presentation.kind === 'article';
 const crumbs = breadcrumbsFor(route, locale, base);
 ---
 <!doctype html>
-<html lang={locale} data-pagefind-filter="locale[lang]">
+<html lang={locale} data-pagefind-filter="locale[lang], kind[data-search-kind]" data-search-kind={route.type === 'question' ? 'questions' : 'docs'}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -29,18 +37,26 @@ const crumbs = breadcrumbsFor(route, locale, base);
     <meta name="theme-color" content="#fbfaf8" />
     {redirectTo && <><meta http-equiv="refresh" content={`0;url=${redirectTo}`} /><link rel="canonical" href={redirectTo} /></>}
     <link rel="icon" type="image/svg+xml" href={`${publicBase}favicon.svg`} />
+    {route.type === 'question' && <>
+      <link rel="alternate" hreflang="zh-CN" href={switchLocaleRoute(route, 'zh-CN', base)} />
+      <link rel="alternate" hreflang="en" href={switchLocaleRoute(route, 'en', base)} />
+    </>}
     <title>{route.type === 'home' ? 'Interview Compass' : `${title} · Interview Compass`}</title>
   </head>
-  <body data-route-type={route.type}>
+  <body data-route-type={route.type} data-page-kind={presentation.kind}>
+    <span hidden data-pagefind-sort="title[data-sort-title]" data-sort-title={title} />
     <a class="skip-link" href="#main">{en ? 'Skip to content' : '跳到正文'}</a>
     <SiteMasthead locale={locale} active={active} route={route} wiki={route.type !== 'home'} />
     {route.type === 'home' ? <div class="page-frame">
-      <main id="main" class="main-content"><slot /></main>
-    </div> : <div class="page-frame wiki-page-frame">
+      <main id="main" class="main-content" data-pagefind-body><slot /></main>
+    </div> : <div class="page-frame wiki-page-frame" id={route.type === 'guide' ? '_top' : undefined}>
       <Breadcrumbs crumbs={crumbs} locale={locale} />
-      <div class="wiki-reading-grid">
-        <WikiSidebar route={route} locale={locale} base={base} />
-        <main id="main" class="main-content"><slot /></main>
+      <div class:list={['wiki-reading-grid', { 'has-section-nav': hasSidebar, 'has-outline': outline.length > 0 }]}>
+        {hasSidebar && <DocumentNavigation route={route} locale={locale} />}
+        <main id="main" class="main-content" data-pagefind-body={route.type !== 'question'} data-pagefind-ignore={['search', 'questions', 'not-found'].includes(route.type) ? 'all' : undefined}><slot />{hasReadingTools && <ArticleRelations route={route} locale={locale} />}
+          {hasReadingTools && route.type !== 'question' && <EditorialNavigation route={route} locale={locale} />}
+          {route.type === 'question' && <ReadingNavigation locale={locale} questionId={route.questionId} />}
+          {['question', 'collections', 'questions', 'search'].includes(route.type) && <CurrentCollection locale={locale} questionId={route.type === 'question' ? route.questionId : undefined} />}</main>
         <WikiOutline items={outline} locale={locale} />
       </div>
     </div>}

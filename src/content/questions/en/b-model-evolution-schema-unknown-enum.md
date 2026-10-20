@@ -78,4 +78,7 @@ source:
   - attribution: original
     label: Interview Compass 原创主题补充批次：微服务
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

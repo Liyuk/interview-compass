@@ -47,4 +47,7 @@ followUps:
   - 哪些例外应该保留人工判断并留下理由？
   - 如何验证自动化没有把少数高损失案例隐藏在平均指标里？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

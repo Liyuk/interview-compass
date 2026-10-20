@@ -44,4 +44,7 @@ followUps:
   - 脱敏会破坏判断所需上下文时，如何控制查看原文的例外？
   - 如何验证监测覆盖，而不是为了减少数据而漏掉风险？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

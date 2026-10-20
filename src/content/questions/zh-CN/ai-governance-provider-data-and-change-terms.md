@@ -43,4 +43,7 @@ formats:
 followUps:
   - 供应商无法提供充分证明但短期无替代方案时，怎样控制继续使用？
   - 怎样验证配置与合同承诺在实际请求链路上一致？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

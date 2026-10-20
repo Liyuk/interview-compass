@@ -22,4 +22,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["如何避免诊断泄露生成代码中的敏感路径？","怎样验证来源映射在优化后仍准确？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：客户端、框架、编译与技术规划"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

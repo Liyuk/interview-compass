@@ -54,4 +54,7 @@ followUps:
     forward?
   - When would you acknowledge that your original delivery was unhelpful and adjust it?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -35,4 +35,7 @@ source:
 topics:
   - feedback
   - communication
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

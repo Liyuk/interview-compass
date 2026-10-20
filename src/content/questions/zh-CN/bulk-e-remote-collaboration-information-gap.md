@@ -50,4 +50,7 @@ followUps:
   - 紧急事件如何绕过常规窗口？
   - 如何防止沉默被误读为同意？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

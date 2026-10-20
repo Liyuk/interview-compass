@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, adjusting a team when upward paths are blocked"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

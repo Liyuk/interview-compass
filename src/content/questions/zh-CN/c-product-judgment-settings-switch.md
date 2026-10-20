@@ -34,4 +34,7 @@ source:
   - attribution: derived
     label: "产品 sense：研发和产品怎么把“这个功能值不值得做”聊清楚"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/03/product-judgment-for-engineers/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

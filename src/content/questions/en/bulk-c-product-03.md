@@ -54,4 +54,7 @@ followUps:
   - How would you avoid participants guessing the conclusion the team wants to hear?
   - Which behavioral evidence would still be insufficient to prove sustained post-launch use?
 relatedQuestions: []
+perspectiveReview: inferred
+qualityTier: extended
+perspective: candidate
 ---

@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: industry benchmarking after unifying definitions"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

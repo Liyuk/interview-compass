@@ -42,4 +42,7 @@ source:
     label: System Design Primer：扩展与容量权衡
     url: https://github.com/donnemartin/system-design-primer
 followUps: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

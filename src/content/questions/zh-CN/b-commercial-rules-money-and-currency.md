@@ -31,4 +31,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：商业数据里的基础建模细节
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

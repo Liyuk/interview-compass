@@ -42,4 +42,7 @@ source:
   - attribution: adapted
     label: When a project conflict starts, align these three things first
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

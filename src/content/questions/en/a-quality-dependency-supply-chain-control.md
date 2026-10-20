@@ -25,4 +25,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["If no patch exists while scanners are probing the service, how would you choose temporary controls?","How would you prove every affected instance has been fixed?"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 D"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

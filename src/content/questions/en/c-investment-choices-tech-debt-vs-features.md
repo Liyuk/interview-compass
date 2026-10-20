@@ -49,4 +49,7 @@ source:
   - attribution: inspired
     label: em-interviews engineering leadership questions
     url: https://github.com/kaushikb9/em-interviews/blob/main/README.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

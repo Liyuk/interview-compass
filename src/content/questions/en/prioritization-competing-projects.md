@@ -36,4 +36,7 @@ relatedQuestions:
   - questionId: prioritization-limited-resources
     relation: Same trade-off theme
     contrast: Moves from ranking capacity across a portfolio to planning one team's quarter.
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

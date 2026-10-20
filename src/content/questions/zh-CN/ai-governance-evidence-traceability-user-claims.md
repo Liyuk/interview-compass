@@ -26,4 +26,7 @@ careerTracks:
   - senior-manager
 formats: ["case","artifact-review"]
 followUps: ["如果展示来源会暴露内部信息，怎样提供可验证性？","怎样发现用户把谨慎措辞仍理解成确定承诺？"]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

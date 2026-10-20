@@ -34,4 +34,7 @@ source:
   - attribution: derived
     label: "工程师为什么需要产品判断：怎样写一份真正有用的业务梳理"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

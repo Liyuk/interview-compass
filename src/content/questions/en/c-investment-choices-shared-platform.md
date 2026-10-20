@@ -33,4 +33,7 @@ source:
   - attribution: derived
     label: "Technical planning is business and competitive analysis: capability map and capability contract"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2025/11/technical-planning-business-and-competitive-analysis/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

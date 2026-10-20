@@ -47,4 +47,7 @@ source:
   - attribution: inspired
     label: Engineering Decision Skills（eng-reporting 方法）
     url: https://github.com/Liyuk/engineering-decision-skills
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

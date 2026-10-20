@@ -27,4 +27,7 @@ careerTracks:
   - senior-manager
 formats: ["planning","case"]
 followUps: ["What evidence could justify an exception when the business asks to ship on time?","How would you decide when the sample is too small to establish low risk?"]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

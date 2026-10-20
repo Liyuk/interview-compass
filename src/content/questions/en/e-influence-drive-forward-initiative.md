@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, pushing a forward-looking initiative"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

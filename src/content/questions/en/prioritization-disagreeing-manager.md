@@ -34,4 +34,7 @@ relatedQuestions:
   - questionId: prioritization-limited-resources
     relation: A disagreement about trade-offs
     contrast: Moves from explaining a capacity-constrained plan to handling disagreement among decision-makers about priorities.
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

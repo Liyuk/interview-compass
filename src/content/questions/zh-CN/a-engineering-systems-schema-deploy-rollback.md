@@ -30,7 +30,6 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - hiring
@@ -42,7 +41,6 @@ formats:
 followUps:
   - 新版本改变了数据结构，回滚应用本身很快，但已写入的新字段无法被旧版本识别。你会怎样设计发布闸门和恢复步骤？
   - 应用在迁移中被系统结束时如何恢复？
-  - 怎样处理长期未升级造成的多版本跳跃？
 source:
   - attribution: inspired
     label: DNXLabs DevOps 题库的主题覆盖；题面为本站独立编写
@@ -55,4 +53,13 @@ source:
     label: JavaGuide — backend, Java, database, concurrency, and distributed systems topics
     url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 假设回滚应用就能恢复已删除的数据结构，没有识别迁移的不可逆阶段。
+anchors:
+  notPassing: 只提“回滚”或“备份”，没有处理新旧应用与数据兼容。
+  passing: 按扩展、迁移、收缩说明发布顺序。
+  excellent: 列出混合版本兼容条件、闸门及字段不可逆时的恢复路径。
+  exceptional: 用中断和回退演练验证数据完整性，并明确何时停止清理旧字段。
 ---

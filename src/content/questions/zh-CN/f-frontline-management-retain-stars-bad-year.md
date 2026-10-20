@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的分级面试框架，一线技术经理"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

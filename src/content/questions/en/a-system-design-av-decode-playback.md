@@ -30,4 +30,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's system design question, audio and video decoding and playback"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

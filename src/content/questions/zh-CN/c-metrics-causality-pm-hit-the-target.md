@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：产品经理视角的指标达成
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

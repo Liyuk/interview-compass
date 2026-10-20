@@ -49,4 +49,7 @@ followUps:
     user?
   - If the operating system provides no final save opportunity, how would you reduce data-loss risk?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

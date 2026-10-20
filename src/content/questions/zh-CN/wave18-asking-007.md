@@ -38,4 +38,7 @@ topics:
   - communication
   - product-thinking
   - questioning
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

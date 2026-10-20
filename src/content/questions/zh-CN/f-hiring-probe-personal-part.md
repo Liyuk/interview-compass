@@ -44,4 +44,7 @@ source:
   - attribution: original
     label: 作者的面试提问套路：深挖个人在选型中的实际参与
 relatedQuestions: []
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

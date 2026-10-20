@@ -39,4 +39,7 @@ source:
   - attribution: inspired
     label: Landed AI Engineer Interview：推理服务与模型路由
     url: https://github.com/landedjobs/awesome-ai-engineer-interview
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

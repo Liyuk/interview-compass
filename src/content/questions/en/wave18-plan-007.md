@@ -37,4 +37,7 @@ source:
 topics:
   - planning
   - resource-allocation
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

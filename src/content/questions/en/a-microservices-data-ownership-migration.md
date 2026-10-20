@@ -23,4 +23,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["When dual writes diverge during transition, which value is authoritative?","How would you prove all legacy clients have migrated?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微服务"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

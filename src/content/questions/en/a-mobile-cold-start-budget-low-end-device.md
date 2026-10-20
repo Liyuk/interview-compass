@@ -21,4 +21,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["How would you rebalance if lazy loading causes jank after first interaction?","How would you avoid optimizing average devices while missing the long tail?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：客户端、框架、编译与技术规划"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

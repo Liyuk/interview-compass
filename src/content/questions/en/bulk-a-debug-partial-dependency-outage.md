@@ -39,4 +39,7 @@ source:
   - attribution: inspired
     label: System Design Primer：依赖故障与降级
     url: https://github.com/donnemartin/system-design-primer
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

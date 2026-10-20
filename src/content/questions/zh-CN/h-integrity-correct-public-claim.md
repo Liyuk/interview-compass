@@ -42,4 +42,7 @@ source:
 followUps:
   - 如果负责人担心更正会损害客户信任或上市节奏，你会怎样比较短期和长期影响？
   - 什么证据足以支持保留原说法，什么证据要求立刻撤回？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

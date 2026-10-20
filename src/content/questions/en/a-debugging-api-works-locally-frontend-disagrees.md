@@ -12,24 +12,40 @@ signals:
   - Separates the usual causes, namely environment differences, data differences, and differences in how it is called
   - Communicates with evidence the other side can also check, not "it works on my side"
 primaryCapability: professional.debugging
-topics: [debugging, backend, frontend]
+topics:
+  - debugging
+  - backend
+  - frontend
 roles:
   - engineering
   - backend
   - frontend
   - mobile
   - ai-engineer
-responsibilityScopes: [individual]
+responsibilityScopes:
+  - individual
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
-scenarios: [interview, campus]
-formats: [debugging, case]
+scenarios:
+  - interview
+  - campus
+formats:
+  - debugging
+  - case
 followUps:
   - The problem turns out to be on your side. How do you handle it?
   - The production logs show no trace of that request at all. What do you do?
 source:
   - attribution: original
-    label: "The author's leveled interview framework, junior engineer"
+    label: The author's leveled interview framework, junior engineer
+perspective: candidate
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: Insists the endpoint works locally and asks the other person to investigate, without reproducing or tracing the same request together.
+anchors:
+  notPassing: Says it works locally without reproducing the same request or showing evidence.
+  passing: Aligns the environment, parameters, and request, then identifies a verifiable difference.
+  excellent: Uses request IDs, traces, or logs to isolate a layer and explains what was ruled out.
+  exceptional: Reproduces the issue with the frontend partner, confirms the cause, and adds a check against recurrence.
 ---

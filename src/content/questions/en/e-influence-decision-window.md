@@ -46,4 +46,7 @@ source:
 followUps:
   - If executives demand a yes-or-no answer, how would you express a conditional decision with minimal detail?
   - Which information belongs in an asynchronous pre-read, and what must be discussed live?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

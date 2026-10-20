@@ -27,4 +27,7 @@ formats: [knowledge, case]
 source:
   - attribution: original
     label: Original to this site
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

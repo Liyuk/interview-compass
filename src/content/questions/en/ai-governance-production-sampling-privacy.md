@@ -50,4 +50,7 @@ followUps:
   - If redaction removes necessary context, how would you control access to the original?
   - How would you verify monitoring coverage without missing risks to minimize data?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

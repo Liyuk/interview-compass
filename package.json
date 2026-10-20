@@ -11,31 +11,35 @@
   "scripts": {
     "dev": "astro dev",
     "build:site": "astro build && node scripts/copy-legal-files.mjs",
-    "build:search": "pagefind --site dist --output-subdir pagefind",
+    "build:search": "pagefind --site dist --output-subdir pagefind && node scripts/build-search-reading-map.mjs",
     "build": "npm run build:site && npm run build:search",
     "preview": "astro preview",
     "test": "vitest run",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
     "check:content": "node scripts/check-content.mjs",
+    "check:core-candidates": "node scripts/check-core-question-candidates.mjs",
     "check:size": "node scripts/check-size.mjs",
     "report:coverage": "node scripts/coverage-report.mjs",
     "prepare:stage-applicability": "node scripts/prepare-stage-applicability.mjs",
     "report:stage-coverage": "node scripts/stage-coverage-report.mjs",
     "check:stage-coverage": "node scripts/stage-coverage-report.mjs --require-complete",
     "check": "astro check",
-    "ci": "npm run check && npm run check:content && npm run check:stage-coverage && npm run test:unit && npm run build && npm run check:size && npm run test:e2e"
+    "ci": "npm run check && npm run check:content && npm run check:stage-coverage && npm run check:core-candidates && npm run test:unit && npm run build && npm run check:shell && npm run check:knowledge-output && npm run check:size && npm run test:e2e",
+    "check:shell": "node scripts/check-site-shell.mjs",
+    "check:knowledge-output": "node scripts/check-knowledge-output.mjs"
   },
   "dependencies": {
-    "@astrojs/starlight": "0.42.6",
     "astro": "7.4.0",
     "pagefind": "1.5.2"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
     "@playwright/test": "1.64.1",
-    "js-yaml": "^4.3.2",
-    "typescript": "5.9.3",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^26.6.5",
+    "js-yaml": "^5.5.0",
+    "typescript": "6.0.3",
     "vitest": "5.0.5"
   },
   "overrides": {

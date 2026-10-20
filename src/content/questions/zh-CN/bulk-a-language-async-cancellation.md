@@ -53,4 +53,7 @@ followUps:
   - 如果外部写入已经完成但响应丢失，取消应代表什么？
   - 如何验证异常退出也会执行必要清理？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

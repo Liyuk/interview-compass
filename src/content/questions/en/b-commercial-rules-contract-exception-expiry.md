@@ -53,4 +53,7 @@ followUps:
   - If an exception needs renewal but its business owner cannot confirm in time, what should the system do?
   - How would you discover historical customer-specific branches scattered through code?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

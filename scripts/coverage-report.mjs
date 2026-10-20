@@ -1,5 +1,5 @@
 import { readFile, glob } from 'node:fs/promises';
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 import { domains, facetDefinitions } from '../src/lib/taxonomy.ts';
 
 const records = [];

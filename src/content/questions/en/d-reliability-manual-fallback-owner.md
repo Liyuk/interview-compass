@@ -58,4 +58,7 @@ followUps:
   - If restoring automation could harm users again, what low-volume validation would you use?
   - How would you reconcile spreadsheet entries that are complete, duplicated, or have unknown status?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

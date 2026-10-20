@@ -49,4 +49,7 @@ source:
   - attribution: derived
     label: 'Management retrospective: eight judgments from execution to systems'
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

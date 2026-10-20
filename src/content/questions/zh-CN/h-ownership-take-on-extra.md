@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：主动承担额外的挑战"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

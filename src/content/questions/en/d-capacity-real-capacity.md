@@ -42,4 +42,7 @@ source:
   - attribution: derived
     label: Under resource limits, how to avoid running on overdraft
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/working-under-resource-constraints/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

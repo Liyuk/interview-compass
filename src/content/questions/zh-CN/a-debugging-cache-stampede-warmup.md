@@ -44,4 +44,7 @@ followUps:
   - 【缓存故障恢复后数据库仍被打满，怎样定位二次拥塞？】缓存节点恢复后，大量请求同时回源，数据库连接池耗尽；扩容后流量仍周期性冲高。你会怎样判断是缓存预热、请求合并、限流还是查询退化问题？
   - 如何避免预热过程本身造成第二次雪崩？
   - 哪些缓存数据不适合批量预热？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

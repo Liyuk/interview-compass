@@ -46,4 +46,7 @@ source:
     label: Interview Compass Original Expansion Batch 2026-10-16 C
 followUps:
   - 客户上月的用量数据本月才补到，合同按月结算，已付款账单不能被静默覆盖。你会怎样处理调整和通知？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

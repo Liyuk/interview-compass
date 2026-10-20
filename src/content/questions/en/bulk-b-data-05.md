@@ -49,4 +49,7 @@ source:
     label: Interview Compass coverage-led original expansion batch 2026-10-17 C
 followUps:
   - Sales, support, and data teams apply different rules to identify active customers, while leadership wants one metric. How would you clarify the shared concept, its use cases, and limits that should remain distinct?
+perspectiveReview: inferred
+qualityTier: extended
+perspective: candidate
 ---

@@ -27,7 +27,6 @@ responsibilityScopes:
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - campus
@@ -40,4 +39,13 @@ source:
 followUps:
   - 如果副本延迟突增，哪些操作必须暂停分流？
   - 怎样验证用户可感知的一致性目标，而不仅是数据库复制指标？
+perspective: candidate
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 把所有陈旧读取都归为副本延迟，却不区分用户操作要求，也没有延迟失控时的回退。
+anchors:
+  notPassing: 未区分读己之写、单调读取和可延迟读取，也没有用户侧证据。
+  passing: 能说明哪些用户操作要求读到刚写入的数据，并检查副本延迟。
+  excellent: 按一致性目标选择粘滞主库或回源，并交代延迟和容量代价。
+  exceptional: 定义用户可感知的一致性指标、触发阈值和副本异常时的回退验证。
 ---

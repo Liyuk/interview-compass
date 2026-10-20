@@ -2,7 +2,7 @@ import type { Locale } from './taxonomy';
 
 export type LocalePairMap = Record<string, Partial<Record<Locale, string>>>;
 
-const normalizeBase = (base: string) => base === '/' ? '' : `/${base.split('/').filter(Boolean).join('/')}`;
+const normalizeBase = (base: string) => !base || base === '/' ? '' : `/${base.split('/').filter(Boolean).join('/')}`;
 
 export function addBase(route: string, base = ''): string {
   const normalizedRoute = `/${route.split('/').filter(Boolean).join('/')}${route.endsWith('/') && route !== '/' ? '/' : ''}`;

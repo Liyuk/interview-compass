@@ -31,4 +31,7 @@ source:
   - attribution: derived
     label: Blog post on what screeners and interviewers look for
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

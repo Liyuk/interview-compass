@@ -48,4 +48,7 @@ source:
 followUps:
   - If waiting for authorization would itself increase harm, what is the smallest action you could take first?
   - How would you preserve evidence to distinguish original data, script impact, and recovery actions?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

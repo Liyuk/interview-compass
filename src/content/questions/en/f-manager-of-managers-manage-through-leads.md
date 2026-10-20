@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: managing through team leads down to the front line"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -24,4 +24,7 @@ careerTracks:
   - senior-manager
 formats: ["debugging","case"]
 followUps: ["如果基准题已被训练数据污染，怎样恢复可比较的趋势？","谁应能访问隐藏评测集，如何留审计记录？"]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

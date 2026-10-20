@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：漏斗的构建
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

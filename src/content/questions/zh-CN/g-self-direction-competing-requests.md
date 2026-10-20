@@ -41,4 +41,7 @@ source:
 followUps:
   - 如果直属负责人没有回应而客户风险继续扩大，你会如何行动？
   - 什么证据会使你改变原先排序？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

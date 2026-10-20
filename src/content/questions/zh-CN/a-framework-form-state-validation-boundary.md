@@ -20,4 +20,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["跨字段规则应归组件、表单库还是领域层？","如何证明并发校验不会显示过期错误？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：客户端、框架、编译与技术规划"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

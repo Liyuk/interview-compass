@@ -34,4 +34,7 @@ source:
   - attribution: adapted
     label: "How to write a product overview without piling up an encyclopedia"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/09/product-overview-is-a-decision-model/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

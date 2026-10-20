@@ -1,0 +1,17 @@
+---
+import type { NavigationNode } from '../../lib/knowledge/types';
+import Icon from '../Icon.astro';
+interface Props { nodes: NavigationNode[] }
+const { nodes } = Astro.props;
+---
+<ul class="document-tree-list">
+  {nodes.map(node => <li class:list={{'document-linked-branch':node.children.length && node.href}}>
+    {node.children.length ? <>
+      {node.href && <a class="document-branch-link" href={node.href} aria-current={node.current ? 'page' : undefined}>{node.title}</a>}
+      <details open={node.expanded || node.current} data-document-branch>
+        <summary><Icon name="chevron-right" size={14} />{node.href ? <span class="sr-only">{node.locale === 'en' ? 'Subpages: ' : '子目录：'}{node.title}</span> : <span>{node.title}</span>}</summary>
+        <Astro.self nodes={node.children} />
+      </details>
+    </> : node.href ? <a href={node.href} aria-current={node.current ? 'page' : undefined}>{node.title}</a> : <span>{node.title}</span>}
+  </li>)}
+</ul>

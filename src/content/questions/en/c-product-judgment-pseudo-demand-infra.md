@@ -33,4 +33,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, pseudo-demand in technology"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

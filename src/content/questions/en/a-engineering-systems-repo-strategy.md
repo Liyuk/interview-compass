@@ -26,4 +26,7 @@ formats: [case, planning]
 source:
   - attribution: original
     label: "Original prompt"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

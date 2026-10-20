@@ -38,4 +38,7 @@ source:
   - attribution: inspired
     label: Landed AI Engineer Interview：训练数据治理
     url: https://github.com/landedjobs/awesome-ai-engineer-interview
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

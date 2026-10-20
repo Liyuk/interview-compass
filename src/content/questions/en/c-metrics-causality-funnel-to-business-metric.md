@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: how a funnel acts on the business metric"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

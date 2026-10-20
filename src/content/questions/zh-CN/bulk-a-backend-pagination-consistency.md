@@ -48,4 +48,7 @@ source:
     label: Interview Compass Original Expansion Batch 2026-10-16 D
 followUps:
   - 列表使用游标分页，用户浏览期间记录不断新增、删除和更新。产品要求翻页不重复也不漏掉符合条件的记录。你会如何定义语义？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

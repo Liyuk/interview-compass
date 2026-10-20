@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, organizational change"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

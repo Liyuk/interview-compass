@@ -33,4 +33,7 @@ source:
   - attribution: derived
     label: "Defining boundaries before bringing AI into an engineering organization (context boundary)"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/research/2026/08/ai-engineering-capability-boundaries/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

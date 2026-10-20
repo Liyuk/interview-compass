@@ -35,4 +35,7 @@ source:
   - attribution: adapted
     label: "数据度量工作指南（二）：指标争论之前，先定义测量对象"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/03/define-the-measurement-before-arguing-about-metrics/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

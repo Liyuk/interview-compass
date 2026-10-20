@@ -12,7 +12,10 @@ signals:
   - Protects the team meanwhile, for example by changing how people work together and recording facts, rather than waiting
   - If improvement fails, describes the steps taken under policy and keeps the process fair and compliant
 primaryCapability: people-organization.frontline-management
-topics: [management, feedback, ethics]
+topics:
+  - management
+  - feedback
+  - ethics
 roles:
   - manager
   - engineering
@@ -20,16 +23,31 @@ roles:
   - backend
   - mobile
   - ai-engineer
-responsibilityScopes: [team]
+responsibilityScopes:
+  - team
 careerTracks:
   - team-manager
   - senior-manager
-scenarios: [interview, hiring, self-reflection]
-formats: [behavioral, case]
+scenarios:
+  - interview
+  - hiring
+  - self-reflection
+formats:
+  - behavioral
+  - case
 followUps:
   - They are in fact technically strong and the team depends on them. How do you weigh that?
   - You find the earlier assessment of them was inaccurate. What do you do?
 source:
   - attribution: original
-    label: "The author's interview sequence, taking over a problem employee"
+    label: The author's interview sequence, taking over a problem employee
+perspective: manager
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: Repeats a predecessor’s negative label or lets harmful behavior continue to avoid conflict.
+anchors:
+  notPassing: Repeats a predecessor’s judgment or labels the person without verifying behavior directly.
+  passing: Names observed behavior and its impact on the team.
+  excellent: Sets expectations, opportunity, support, and a timeline while protecting the team as needed.
+  exceptional: Reviews change against consistent records and escalates fairly through organizational process if needed.
 ---

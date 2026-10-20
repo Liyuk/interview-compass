@@ -30,4 +30,7 @@ source:
   - attribution: derived
     label: 博客《筛选人和面试官到底在看什么》
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

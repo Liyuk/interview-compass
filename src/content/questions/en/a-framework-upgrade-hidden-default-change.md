@@ -22,4 +22,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["How would you respond to subtle production differences after tests pass?","How would you identify compatibility risks in third-party plugins?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：客户端、框架、编译与技术规划"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

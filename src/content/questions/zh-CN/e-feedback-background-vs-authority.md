@@ -39,4 +39,7 @@ source:
   - attribution: adapted
     label: 1-on-1 不是例会：信息、预期与决策权怎样对齐
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/one-on-ones-and-decision-rights/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

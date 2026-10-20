@@ -42,4 +42,7 @@ source:
 followUps:
   - 如果历史申请缺少当时的风险结果，你会怎样表达无法重现的部分？
   - 什么变化需要新规则版本，什么变化只是修复输入数据？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

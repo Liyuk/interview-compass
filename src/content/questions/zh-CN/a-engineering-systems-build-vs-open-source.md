@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：自研与开源的差异"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -1,5 +1,6 @@
 ---
 import type { QuestionRecord } from '../lib/content-model';
+import AsyncStatus from './docs/AsyncStatus.astro';
 import Icon from './Icon.astro';
 import { facetLabel, type Locale } from '../lib/taxonomy';
 import { pathFor } from '../lib/routes';
@@ -13,9 +14,10 @@ const data = { questionId: question.questionId, roles, primaryCapability: questi
 <section class="question-stage-guidance detail-block" aria-labelledby="question-stage-heading" data-question-stage data-pagefind-ignore>
   <h2 id="question-stage-heading">{en ? 'Same question, different stage expectations' : '同一道题，不同阶段看什么？'}</h2>
   <p>{en ? 'The question stays the same. Choose a target to compare responsibility, reasoning, and evidence. This changes the reading framework, not the question’s difficulty or your score.' : '题目不变，选择目标后比较责任、推理与证据要求。这会调整阅读框架，不给题目定难度，也不替你打分。'}</p>
+  <AsyncStatus loading={en ? 'Loading stage model…' : '正在加载阶段模型…'} retry={en ? 'Retry stage model' : '重试阶段模型'} />
   <div class="stage-controls">
-    <label for="question-target-role">{en ? 'Target role' : '目标岗位'}<span class="select-control"><select id="question-target-role" data-stage-role>{roles.map(role => <option value={role}>{facetLabel('roles', role, locale)}</option>)}</select><Icon name="chevron-down" size={16} /></span></label>
-    <label for="question-target-stage">{en ? 'Target responsibility' : '目标阶段'}<span class="select-control"><select id="question-target-stage" data-stage-select><option value="">{en ? 'Choose a stage' : '选择一个阶段'}</option></select><Icon name="chevron-down" size={16} /></span></label>
+    <label for="question-target-role">{en ? 'Target role' : '目标岗位'}<span class="select-control"><select disabled id="question-target-role" data-stage-role>{roles.map(role => <option value={role}>{facetLabel('roles', role, locale)}</option>)}</select><Icon name="chevron-down" size={16} /></span></label>
+    <label for="question-target-stage">{en ? 'Target responsibility' : '目标阶段'}<span class="select-control"><select disabled id="question-target-stage" data-stage-select><option value="">{en ? 'Choose a stage' : '选择一个阶段'}</option></select><Icon name="chevron-down" size={16} /></span></label>
   </div>
   <p class="model-note">{en ? 'These are rule-based reading prompts, not separately reviewed stage-specific answers or a verdict that this question applies to every stage. Use your actual role and authority.' : '以下是规则生成的阶段阅读提示，不是逐题复核的分阶段答案，也不表示这道题适用于所有阶段。请结合实际岗位和权限。'}</p>
   <p><a data-stage-model href={modelPaths[roles[0]]}>{en ? 'View the full role and stage model →' : '查看本岗位的完整阶段模型 →'}</a></p>

@@ -40,4 +40,7 @@ source:
 followUps:
   - 如果对象很大，深拷贝会带来明显成本，你有哪些替代方案？
   - 怎样让 API 契约明确说明调用后谁仍可以修改该对象？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

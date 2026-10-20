@@ -11,5 +11,5 @@ export function loadTargetRoles(): Promise<TargetRoleOption[]> {
       return response.json() as Promise<TargetRoleOption[]>;
     });
   })();
-  return pending;
+  return pending.catch(error => { pending = undefined; throw error; });
 }

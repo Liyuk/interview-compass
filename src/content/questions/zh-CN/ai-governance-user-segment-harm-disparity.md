@@ -26,4 +26,7 @@ careerTracks:
   - senior-manager
 formats: ["case","planning"]
 followUps: ["如果群体信息不应被收集，怎样评估差异影响？","业务上线收益明确但差异无法短期消除时，如何限定范围？"]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

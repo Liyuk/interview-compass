@@ -20,4 +20,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","system-design"]
 followUps: ["取消操作不可靠时，如何确保旧响应不会提交？","界面应如何表示新旧结果的过渡状态？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：客户端、框架、编译与技术规划"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

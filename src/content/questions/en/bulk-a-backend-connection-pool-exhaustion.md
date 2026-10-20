@@ -60,4 +60,7 @@ followUps:
   - How should tenants share the connection budget?
   - What metric should trigger rejection of new requests?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

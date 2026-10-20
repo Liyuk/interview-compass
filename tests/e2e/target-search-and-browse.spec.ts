@@ -6,7 +6,7 @@ const target = { roleId: 'frontend', stageId: 'senior-engineer' };
 const applicable = new Set(entries.filter(entry => matchesTarget(entry, target)).map(entry => entry.questionId));
 
 test('real Pagefind applies target filtering before full-page and instant ranking limits', async ({ page }) => {
-  await page.goto('search/?q=回滚&profileRole=frontend&profileStage=senior-engineer');
+  await page.goto('search/?q=回滚&searchScope=questions&profileRole=frontend&profileStage=senior-engineer');
   await expect(page.locator('.search-page-result-title').first()).toBeVisible();
   const results = await page.locator('.search-page-result-title').evaluateAll(links => links.map(link => new URL((link as HTMLAnchorElement).href).pathname));
   expect(results.length).toBeGreaterThan(0);
@@ -14,18 +14,19 @@ test('real Pagefind applies target filtering before full-page and instant rankin
   const expected = await page.evaluate(async () => {
     const index = await import(location.origin + '/interview-compass/pagefind/pagefind.js');
     const response = await index.search('回滚', { filters: { locale: 'zh-CN', profile: 'frontend:senior-engineer' } });
-    return Promise.all(response.results.slice(0, 20).map(async (item: { data(): Promise<{ url: string }> }) => new URL((await item.data()).url, location.origin).pathname));
+    return Promise.all(response.results.slice(0, 50).map(async (item: { data(): Promise<{ url: string }> }) => new URL((await item.data()).url, location.origin).pathname));
   });
   expect(results).toEqual(expected);
-  await page.getByRole('searchbox').fill('取消');
+  await page.goto('./?profileRole=frontend&profileStage=senior-engineer');
+  await page.locator('#site-search').fill('取消');
   const instant = await page.evaluate(async () => {
     const index = await import(location.origin + '/interview-compass/pagefind/pagefind.js');
     const response = await index.search('取消', { filters: { locale: 'zh-CN', profile: 'frontend:senior-engineer' } });
     return Promise.all(response.results.slice(0, 8).map(async (item: { data(): Promise<{ url: string }> }) => new URL((await item.data()).url, location.origin).pathname));
   });
-  await expect(page.locator('.search-results .search-result')).toHaveCount(instant.length);
-  expect(await page.locator('.search-results .search-result').evaluateAll(links => links.map(link => new URL((link as HTMLAnchorElement).href).pathname))).toEqual(instant);
-  await page.goto('en/search/?q=rollback&profileRole=frontend&profileStage=senior-engineer');
+  await expect(page.locator('.search-results .search-result[href*="/questions/"]')).toHaveCount(instant.length);
+  expect(await page.locator('.search-results .search-result[href*="/questions/"]').evaluateAll(links => links.map(link => new URL((link as HTMLAnchorElement).href).pathname))).toEqual(instant);
+  await page.goto('en/search/?q=rollback&searchScope=questions&profileRole=frontend&profileStage=senior-engineer');
   await expect(page.locator('.search-page-result-title').first()).toBeVisible();
   const english = await page.locator('.search-page-result-title').evaluateAll(links => links.map(link => new URL((link as HTMLAnchorElement).href).pathname));
   expect(english.every(path => path.includes('/en/') && applicable.has(path.split('/').filter(Boolean).at(-1)!))).toBe(true);
@@ -49,6 +50,7 @@ test('an invalid link is explained without overriding a saved target', async ({ 
   await expect(page.locator('[data-target-summary]')).toContainText('链接中的目标无效');
   await expect(page.locator('[data-profile-trigger]')).toContainText('全部题目');
   await expect(page.getByRole('dialog')).not.toBeVisible();
+  await page.locator('[data-profile-trigger]').click();
   await page.getByRole('button', { name: '移除链接目标', exact: true }).click();
   await expect(page.locator('[data-profile-trigger]')).toContainText('后端');
 });
@@ -69,7 +71,7 @@ test('static no-JavaScript browsing remains available without a blocking chooser
   await page.goto(`${baseURL}questions/`);
   await expect(page.locator('#question-list > li').first()).toBeVisible();
   await expect(page.getByRole('dialog')).not.toBeVisible();
-  const wikiNavigation = page.getByRole('navigation', { name: '知识导航' });
+  const wikiNavigation = page.getByRole('navigation', { name: '主导航' });
   await expect(wikiNavigation).toBeVisible();
   await expect(wikiNavigation.getByRole('link', { name: '面试题库' })).toBeVisible();
   await context.close();

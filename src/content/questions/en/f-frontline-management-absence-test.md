@@ -27,7 +27,6 @@ responsibilityScopes:
 careerTracks:
   - team-manager
   - senior-manager
-  - individual-contributor
 scenarios:
   - interview
   - promotion
@@ -48,4 +47,13 @@ source:
   - attribution: derived
     label: 职场发展问题：晋升与面试前的完整自查清单
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/08/career-growth-ten-questions/zh.md
+perspective: manager
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: Claims the team can operate without them but cannot name decisions actually delegated and tested.
+anchors:
+  notPassing: Says the team should be autonomous without an example of decisions made in their absence.
+  passing: Names one decision the team can make and one that still depends on the manager.
+  excellent: Reduces dependency on key judgments through delegation, context, and review.
+  exceptional: Rehearses an absence scenario and checks outcomes, escalation boundaries, and new team capability.
 ---

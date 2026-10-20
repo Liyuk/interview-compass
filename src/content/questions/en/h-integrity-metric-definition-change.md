@@ -50,4 +50,7 @@ followUps:
     If a decision-maker already committed budget or promotion based on the old result, how would you arrange a
     review?
   - If the old definition cannot be fully reconstructed, how would you communicate uncertainty?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

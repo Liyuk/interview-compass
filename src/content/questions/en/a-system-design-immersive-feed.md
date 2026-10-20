@@ -31,4 +31,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's system design question, an immersive feed"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

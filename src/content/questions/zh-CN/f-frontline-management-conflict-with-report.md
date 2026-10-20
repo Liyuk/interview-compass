@@ -12,7 +12,10 @@ signals:
   - 说明哪些部分可以因此调整，哪些必须坚持，并解释原因
   - 事后修复关系，并检查冲突是否暴露了管理上的问题
 primaryCapability: people-organization.frontline-management
-topics: [management, conflict-resolution, feedback]
+topics:
+  - management
+  - conflict-resolution
+  - feedback
 roles:
   - manager
   - engineering
@@ -20,16 +23,31 @@ roles:
   - backend
   - mobile
   - ai-engineer
-responsibilityScopes: [team]
+responsibilityScopes:
+  - team
 careerTracks:
   - team-manager
   - senior-manager
-scenarios: [interview, hiring, self-reflection]
-formats: [behavioral, case]
+scenarios:
+  - interview
+  - hiring
+  - self-reflection
+formats:
+  - behavioral
+  - case
 followUps:
   - 他是在大家面前公开反对你，你怎么当场处理？
   - 事后你发现他其实是对的，你怎么做？
 source:
   - attribution: original
-    label: "作者的面试提问套路：与下属的冲突"
+    label: 作者的面试提问套路：与下属的冲突
+perspective: manager
+perspectiveReview: reviewed
+qualityTier: core
+weakAnswer: 把下属反对视为不服从，先压制争论而没有核实对方的事实依据。
+anchors:
+  notPassing: 先要求服从或压下冲突，没有听取具体异议。
+  passing: 复述对方依据，区分事实争议与决定分歧。
+  excellent: 说明决定边界和调整理由，并承担自己判断的责任。
+  exceptional: 事后检查关系与流程是否修复；若自己判断错，公开纠正并补救。
 ---

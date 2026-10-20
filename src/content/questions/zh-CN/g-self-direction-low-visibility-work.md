@@ -41,4 +41,7 @@ source:
 followUps:
   - 如果没有足够数据估计事故概率，你会用什么低成本方式补证据？
   - 如果团队明确选择暂缓，你会留下哪些记录和监控信号？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

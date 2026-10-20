@@ -7,6 +7,7 @@ export type BrowseRecord = {
   title: string;
   question: string;
   intent: string;
+  qualityTier?: 'core' | 'extended';
   signals?: string[];
   primaryCapability: string;
   topics: string[];

@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: the biggest challenge"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

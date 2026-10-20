@@ -61,4 +61,7 @@ followUps:
   - 如何证明匿名化不可逆（可以安全撤回）？
   - 【CDC删除事件与物化视图】源数据库已删除客户记录，但变更数据捕获管道和下游物化视图仍保留旧值。你会如何建模删除语义、传播状态并验证清理完成？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

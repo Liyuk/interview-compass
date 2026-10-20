@@ -53,4 +53,7 @@ relatedQuestions:
   - questionId: b-feature-model-time-semantics
     relation: 同样关注特征的定义，但关注点从时间点的正确性转到定义细节的完整性。
     contrast: 本题关注窗口、去重、排除与缺失值的细节；相关题关注截止时间与信息泄漏。
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

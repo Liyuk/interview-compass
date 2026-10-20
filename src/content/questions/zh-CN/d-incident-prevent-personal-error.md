@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：个人失误的避免与优化
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -52,4 +52,7 @@ followUps:
   - >-
     When migrating to unified IDs, how would you handle duplicates, merges, and entities that cannot
     be matched automatically?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

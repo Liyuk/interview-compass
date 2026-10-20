@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, receiving new people and work"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

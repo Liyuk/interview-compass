@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, technology driving the business"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

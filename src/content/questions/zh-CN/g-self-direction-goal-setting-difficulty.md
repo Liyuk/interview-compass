@@ -43,4 +43,7 @@ source:
   - attribution: derived
     label: 目标、规划与复盘：把“交作业”变成自己的成长
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/07/goals-retrospectives-and-next-actions/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---
