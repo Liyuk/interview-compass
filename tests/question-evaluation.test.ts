@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { glob, readFile } from 'node:fs/promises';
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 import { questionEvaluation } from '../src/lib/question-evaluation';
 
 const record = (locale: 'zh-CN' | 'en') => ({
