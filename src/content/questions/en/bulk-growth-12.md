@@ -8,19 +8,13 @@ question: >-
   A channel has a low acquisition cost in a small test, but lead quality and conversion fall as spend
   increases. How would you validate the cost definition and true incrementality, distinguish channel
   saturation from audience or sales-capacity changes, and set a limit for additional spend?
-intent: >-
-  Assesses whether you verify the scope of a low-cost metric while managing marginal efficiency and channel
-  capacity instead of extrapolating a small-sample average.
-signals:
-  - Checks the cost denominator, downstream retention and payment, and whether users are truly incremental
-  - Compares marginal acquisition and conversion at different spend levels
-  - Investigates audience expansion, creative changes, sales follow-up, and conversion lag
-  - Defines budget steps and signals for stopping additional spend
-  - Breaks down quality by channel, audience, and funnel stage
-  - Checks lead definitions, conversion windows, and downstream sales evidence
-  - Distinguishes lead volume, qualified opportunities, closed deals, and collected revenue.
-  - Validates user intent, cost, conversion lag, and overlap with existing channels.
-  - Adjusts quality thresholds, sales allocation, or partner incentives with explicit validation measures.
+intent: "Assess whether you scale from marginal acquisition economics rather than early average cost, distinguishing channel saturation, audience quality, sales capacity, and attribution windows."
+signals: ["Align definitions and observation windows for leads, qualified opportunities, wins, and cash; compare marginal cost and quality by spend step.", "Check audience expansion, creative or placement changes, sales follow-up capacity, cycle length, and cross-channel overlap.", "Connect incremental gross margin with discounts, fulfillment, sales effort, refunds, and downstream cost.", "Propose staged spend tests with quality guardrails and stop or pullback criteria rather than extrapolating a small sample."]
+anchors:
+  notPassing: "Compares average cost without aligned funnel definitions."
+  passing: "Tracks marginal cost by spend level and at least one quality measure."
+  excellent: "Diagnoses audience, sales handling, overlap, and cycle lag and proposes guarded scaling."
+  exceptional: "Optimizes marginal budget against incremental margin and downstream cost with staged experiments, stop thresholds, and explicit attribution uncertainty."
 primaryCapability: delivery.operational-execution
 topics:
   - operations
@@ -33,13 +27,11 @@ roles:
   - data
   - product
 responsibilityScopes:
-  - multiple-teams
-  - individual
   - team
+  - multiple-teams
 careerTracks:
   - individual-contributor
   - team-manager
-  - senior-manager
 scenarios:
   - interview
   - operations-review
@@ -47,6 +39,7 @@ scenarios:
   - promotion
 formats:
   - case
+weakAnswer: "Multiplying a low average acquisition cost from a small test into a larger budget while ignoring quality decline, marginal cost, sales capacity, and realized margin."
 source:
   - attribution: inspired
     label: 品牌与增长面试工具：渠道策略、预算和商业结果
@@ -57,16 +50,10 @@ source:
     label: Interview Compass Original Expansion Batch 2026-10-17 B
   - attribution: original
     label: Interview Compass Original Expansion to 1,500 — Batch B
-followUps:
-  - If low CAC comes from users who would have converted anyway, how would you estimate channel lift?
-  - How would you reallocate spend when another channel has a higher marginal return?
-  - >-
-    A campaign expands reach and clicks, while qualified opportunities and final margin decline. How would you
-    test whether the issue is audience, creative, sales follow-up, or attribution window?
-  - If a channel contract pays per lead rather than closed deal, how would you control incentive misalignment?
-  - How would you account for sales-cycle lag in interim evaluation?
+followUps: ["When reach and clicks rise but qualified pipeline and gross margin fall, how do you isolate audience, sales capacity, or attribution-window effects?", "If a channel is paid per lead rather than closed deal, how do you prevent incentives for low-quality volume?"]
 relatedQuestions: []
-perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+perspective: "candidate"
+perspectiveReview: "reviewed"
+qualityTier: "core"
+
 ---
