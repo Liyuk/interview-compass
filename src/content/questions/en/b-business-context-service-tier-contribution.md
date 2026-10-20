@@ -5,11 +5,14 @@ status: published
 locale: en
 title: A premium service tier earns more revenue but consumes more human support, and renewal has not improved. How would you determine whether it creates incremental value?
 question: A premium service tier earns more revenue but consumes more human support, and renewal has not improved. How would you determine whether it creates incremental value?
-intent: Assess whether you distinguish revenue, service cost, customer outcomes, and portfolio effects instead of judging the tier by sales alone.
-signals:
-  - Defines the measures for incremental revenue, variable support cost, service capacity, and renewal or retention outcomes.
-  - Compares usage intensity, service outcomes, and counterfactual alternatives across customer segments.
-  - Explains the observation window, comparison evidence, and triggers for changing the tier.
+intent: "Assess whether you estimate the incremental value of a premium service tier over the base offer, including labor capacity and customer outcomes, while separating self-selection from the service’s effect."
+signals: ["Define tier revenue, variable service cost, shared fixed investment, and customer outcomes; list price is not contribution.", "Compare usage, support hours, delivery results, renewal, and alternatives by customer type; premium customers may be more complex already.", "Choose phased rollout, matched customers, or another useful comparison for causal evidence, and state sample and renewal-cycle limits.", "Set decision thresholds for repricing, eligibility, scope changes, or stopping sales, with a customer communication approach."]
+weakAnswer: "Assuming a more expensive tier is inherently more profitable and comparing bookings or overall renewal without service hours, customer mix, or fixed capability cost."
+anchors:
+  notPassing: "Uses tier price as proof of profit without service cost or customer segmentation."
+  passing: "Checks revenue and major service inputs by customer type and identifies selection or renewal timing issues."
+  excellent: "Estimates incremental contribution with a useful comparison or sensitivity analysis and explains fixed/shared costs and outcomes."
+  exceptional: "Uses auditable thresholds to compare scope, price, and capacity opportunity cost, states causal limits, and stages changes with customer protections."
 primaryCapability: domain-modeling.business-context
 topics:
   - commercialization
@@ -28,7 +31,6 @@ responsibilityScopes:
   - team
   - multiple-teams
 careerTracks:
-  - individual-contributor
   - team-manager
   - senior-manager
 scenarios:
@@ -44,13 +46,9 @@ source:
     label: Interview Compass 原创扩充（2026-10-14）
   - attribution: original
     label: Interview Compass 原创扩充批次 2026-10-15 C
-followUps:
-  - If high-cost customers were already more likely to renew, how would you avoid mistaking selection effects for service impact?
-  - If support cost is shared across teams, how would you allocate it without creating false precision?
-  - 【How do you decide whether to keep selling a high-service tier when margin falls?】A premium service tier increases contract value, but customer success hours far exceed plan and renewal has not improved. How would you judge its value across customer segments?
-  - Which costs belong to a customer and which are fixed capability investment?
-  - How do you avoid mistaking delayed renewal value for zero within a short window?
-perspective: candidate
-perspectiveReview: inferred
-qualityTier: extended
+followUps: ["If premium customers are more likely to renew anyway, which comparisons help estimate the service’s incremental effect?", "When shared support hours cannot be allocated precisely, how would you use a cost range to decide on the tier?"]
+perspective: "candidate"
+perspectiveReview: "reviewed"
+qualityTier: "core"
+
 ---
