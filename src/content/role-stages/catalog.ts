@@ -92,7 +92,7 @@ export const roleCraft: Record<string, RoleCraft> = {
     risks: b('权责不清、评价偏差、短期透支、关键人依赖及利益冲突', 'Unclear accountability, assessment bias, short-term extraction, key-person dependency, and conflicts of interest'),
     stages: [
       s('一线管理者', 'First-line manager', b('对团队结果、人才和健康负责，并明确实际授权。', 'Own team outcomes, talent, and health within a clear mandate.'), b('建立招聘、绩效、发展和授权机制，确保团队成员能够承担结果。', 'Establish hiring, performance, development, and delegation practices that enable people to own outcomes.')),
-      s('管理管理者', 'Multi-team Engineering Leader', b('通过多个管理者建设组织能力并验证经营或服务结果。', 'Build organizational capability through managers and verify business or service outcomes.'), b('校准管理质量、组织设计、资源组合和继任风险，不靠越级代做维持结果。', 'Calibrate management quality, organization design, resource portfolios, and succession rather than routinely bypass managers.')),
+      s('管理管理者', 'Multi-team Leader', b('通过多个管理者建设组织能力并验证经营或服务结果。', 'Build organizational capability through managers and verify business or service outcomes.'), b('校准管理质量、组织设计、资源组合和继任风险，不靠越级代做维持结果。', 'Calibrate management quality, organization design, resource portfolios, and succession rather than routinely bypass managers.')),
     ],
   },
 };
