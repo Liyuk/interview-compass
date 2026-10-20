@@ -10,6 +10,8 @@ The mismatch is semantic. A candidate-facing prompt can be used by an interviewe
 
 The existing `interviewer-evidence` collection does not resolve this: it includes candidate-facing questions intended to help interviewers gather evidence. Treating every question an interviewer can use as interviewer-perspective would misclassify its respondent. Treating only prompts that ask interviewers to make a decision leaves 13 current records, below the approved minimum of 30.
 
+The concrete source pool confirms the distinction: 31 unique IDs across four curated sets plus 12 reviewed-analysis IDs, with one overlap. In the `interviewer-evidence` set, six of eight entries currently have candidate respondent perspective. See `docs/reviews/2026-10-19-core-question-source-pool.md` for the IDs and counts.
+
 ## Recommendation
 
 Keep respondent perspective explicit and exclusive only where the question itself supports it. Model site audiences as a separate, multi-valued discovery relationship so the same question may serve candidate preparation, interviewer evidence gathering, and manager assessment without being duplicated or mislabeled.
