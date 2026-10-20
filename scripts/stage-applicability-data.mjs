@@ -1,6 +1,6 @@
 import { glob, readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 import { applicabilityFingerprintInput } from '../src/lib/question-applicability.ts';
 
 export async function loadApplicabilityQuestions() {

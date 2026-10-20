@@ -1,5 +1,5 @@
 import { readFile, glob } from 'node:fs/promises';
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 import { createHash } from 'node:crypto';
 import { applicabilityFingerprintInput, validateApplicability } from '../src/lib/question-applicability.ts';
 import { crossDomainPaths, domains, taxonomy } from '../src/lib/taxonomy.ts';
