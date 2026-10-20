@@ -60,11 +60,15 @@ Expectations depend on the role's capability model, level, and responsibility sc
 
 ## Recurring lenses
 
-- **Comparison and competition:** State the comparison set, measurement basis, time horizon, and differences. Competitor research matters when it changes a judgment or action.
-- **Challenging goals and outcomes:** Explain the baseline, constraints, difficulty, measurable result, and conditions for stopping or changing direction.
-- **Causality and contribution:** Show personal responsibility, decisions, actions, and trade-offs; test alternative causes and contrary evidence instead of claiming the whole team result.
+- **Comparison and competition:** State the comparison set, evaluation criteria, and time horizon; explain whether the differences are large enough to change a judgment or action.
+- **Challenging goals and outcomes:** Explain the difficulty relative to the baseline, key constraints, outcome measures, and stop-loss conditions; describe how to adjust or stop when progress misses expectations.
+- **Causality and contribution:** Clarify personal responsibility, key actions, and trade-offs; test other contributing factors and contrary evidence, distinguishing individual contribution from team results.
+- **Cost and risk:** Compare implementation, maintenance, and opportunity costs; identify key assumptions, failure impact, validation methods, and fallback plans.
+- **Progress and evolution:** Explain how work was staged, assumptions validated, and investment expanded over time; use evidence to decide whether to continue, adjust, or change direction.
 - **Growth:** Examine learning, self-direction, thinking, and resilience through concrete behavior, not labels.
-- **Mutual due diligence:** Both candidate and organization should clarify real work, motivations, decision rights, support, and cultural fit.
+- **Mutual due diligence:** Both sides should clarify the actual work, goals, decision rights, resource support, and team environment before judging fit.
+
+Resource coordination can be explored under causality and contribution or progress and evolution: focus on how the candidate coordinated dependencies, secured resources, and made trade-offs, using concrete actions and outcomes as evidence.
 
 ## Content rules
 
