@@ -94,13 +94,13 @@ describe('question quality migration', () => {
     const zhPath = join(root, 'src/content/questions/zh-CN/test-question.md');
     const before = await readFile(zhPath, 'utf8');
     const check = spawnSync('node', [script, '--root', root, '--check'], { encoding: 'utf8' });
-    expect(check.status).toBe(0);
+    expect(check.status, check.stderr || check.stdout).toBe(0);
     expect(check.stdout).toMatch(/2 records pending/i);
     expect(check.stdout).not.toContain('"lowConfidence"');
     expect(await readFile(zhPath, 'utf8')).toBe(before);
 
     const write = spawnSync('node', [script, '--root', root, '--write'], { encoding: 'utf8' });
-    expect(write.status).toBe(0);
+    expect(write.status, write.stderr || write.stdout).toBe(0);
     const zh = await readFile(zhPath, 'utf8');
     const en = await readFile(join(root, 'src/content/questions/en/test-question.md'), 'utf8');
     expect(zh).toContain('perspective: interviewer');
@@ -118,21 +118,22 @@ describe('question quality migration', () => {
     const root = await fixtureRoot();
     const script = new URL('../scripts/migrate-question-quality.mjs', import.meta.url).pathname;
     const first = spawnSync('node', [script, '--root', root, '--write'], { encoding: 'utf8' });
-    expect(first.status).toBe(0);
+    expect(first.status, first.stderr || first.stdout).toBe(0);
     for (const locale of ['zh-CN', 'en']) {
       const file = join(root, 'src/content/questions', locale, 'test-question.md');
       const content = (await readFile(file, 'utf8')).replace('perspective: interviewer', 'perspective: manager').replace('perspectiveReview: inferred', 'perspectiveReview: reviewed');
       await writeFile(file, content);
     }
     const rerun = spawnSync('node', [script, '--root', root, '--write'], { encoding: 'utf8' });
-    expect(rerun.status).toBe(0);
+    expect(rerun.status, rerun.stderr || rerun.stdout).toBe(0);
     for (const locale of ['zh-CN', 'en']) expect(await readFile(join(root, 'src/content/questions', locale, 'test-question.md'), 'utf8')).toMatch(/perspective: manager[\s\S]*perspectiveReview: reviewed/);
   });
 
   it('recomputes inferred assignments after the rule changes but leaves reviewed assignments intact', async () => {
     const root = await fixtureRoot();
     const script = new URL('../scripts/migrate-question-quality.mjs', import.meta.url).pathname;
-    expect(spawnSync('node', [script, '--root', root, '--write'], { encoding: 'utf8' }).status).toBe(0);
+    const initialWrite = spawnSync('node', [script, '--root', root, '--write'], { encoding: 'utf8' });
+    expect(initialWrite.status, initialWrite.stderr || initialWrite.stdout).toBe(0);
     for (const locale of ['zh-CN', 'en']) {
       const file = join(root, 'src/content/questions', locale, 'test-question.md');
       const source = await readFile(file, 'utf8');
@@ -143,7 +144,7 @@ describe('question quality migration', () => {
       await writeFile(file, changed);
     }
     const rerun = spawnSync('node', [script, '--root', root, '--write'], { encoding: 'utf8' });
-    expect(rerun.status).toBe(0);
+    expect(rerun.status, rerun.stderr || rerun.stdout).toBe(0);
     for (const locale of ['zh-CN', 'en']) expect(await readFile(join(root, 'src/content/questions', locale, 'test-question.md'), 'utf8')).toMatch(/perspective: candidate[\s\S]*perspectiveReview: inferred/);
     const report = JSON.parse(await readFile(join(root, 'docs/reviews/2026-10-19-question-perspective-migration.json'), 'utf8'));
     expect(report.lowConfidence).toHaveLength(1);
@@ -158,7 +159,7 @@ describe('question quality migration', () => {
       await writeFile(file, content);
     }
     const write = spawnSync('node', [script, '--root', root, '--write'], { encoding: 'utf8' });
-    expect(write.status).toBe(0);
+    expect(write.status, write.stderr || write.stdout).toBe(0);
     const report = JSON.parse(await readFile(join(root, 'docs/reviews/2026-10-19-question-perspective-migration.json'), 'utf8'));
     expect(report.lowConfidence).toHaveLength(1);
     const check = spawnSync('node', [script, '--root', root, '--check', '--details'], { encoding: 'utf8' });
