@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：指标达成但业务没有变好
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

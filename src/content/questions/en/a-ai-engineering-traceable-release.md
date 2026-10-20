@@ -51,4 +51,7 @@ source:
     url: https://github.com/atryx/ai-engineer-interview-questions
   - attribution: original
     label: 原创：生成式 AI 观测与敏感数据边界
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

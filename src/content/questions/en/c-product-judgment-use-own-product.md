@@ -35,4 +35,7 @@ source:
   - attribution: adapted
     label: "Use your own product: how developers build a real feedback loop"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/05/use-your-own-product-feedback-loop/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

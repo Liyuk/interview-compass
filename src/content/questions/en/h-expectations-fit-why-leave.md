@@ -39,4 +39,7 @@ source:
     url: https://www.hipeople.io/glossary/stress-interview
   - attribution: original
     label: "The author's interview sequence"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

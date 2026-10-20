@@ -65,4 +65,7 @@ followUps:
   - Which actions can be authorized in bulk, and which require item-by-item confirmation?
   - If the model chooses the wrong recipient, what remediation responsibility should the system carry?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

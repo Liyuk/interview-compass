@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's leveled interview framework, team-lead follow-ups"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

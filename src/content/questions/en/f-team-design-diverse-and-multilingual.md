@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, diverse and multilingual teams"
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

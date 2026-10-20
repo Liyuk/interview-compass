@@ -38,4 +38,7 @@ topics:
   - product-thinking
   - commercialization
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: a senior member's plateau"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

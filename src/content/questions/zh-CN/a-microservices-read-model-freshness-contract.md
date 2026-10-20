@@ -26,4 +26,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["哪些状态必须强一致，哪些可以最终一致？","怎样向用户表达处理中而不是显示过时成功？"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微服务"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

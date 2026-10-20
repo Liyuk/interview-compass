@@ -57,4 +57,7 @@ followUps:
   - >-
     Testing shows keyboard users cannot complete a core setup flow, while touch users can. The release date is
     public. How would you assess impact, choose a fix, and communicate launch conditions?
+perspectiveReview: inferred
+qualityTier: extended
+perspective: candidate
 ---

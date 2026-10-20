@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's leveled interview framework, junior engineer"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -50,4 +50,7 @@ followUps:
   - >-
     A colleague says you interrupted them in a meeting, but you remember adding a critical fact. How would you
     understand the impact and decide whether to change?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

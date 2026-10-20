@@ -47,4 +47,7 @@ followUps:
   - 额度跨越两个阶梯时如何拆分？
   - 负数调整应抵扣哪一周期？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

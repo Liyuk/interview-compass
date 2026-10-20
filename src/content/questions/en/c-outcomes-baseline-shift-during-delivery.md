@@ -26,4 +26,7 @@ scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["How would you present the result if old and new definitions imply opposite conclusions?","When should a goal be reset, and when should the original goal remain the evaluation basis?"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 C"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

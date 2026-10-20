@@ -60,4 +60,7 @@ followUps:
   - How should short-term training cost compare with longer-term gains?
   - How do you avoid improving metrics by under-recording complaints?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

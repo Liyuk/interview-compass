@@ -35,4 +35,7 @@ source:
   - attribution: adapted
     label: "数据度量工作指南（三）：指标分级，让数据先服务最重要的决策"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-tiers-prioritize-decisions/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

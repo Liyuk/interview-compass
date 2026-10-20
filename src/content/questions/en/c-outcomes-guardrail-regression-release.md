@@ -26,4 +26,7 @@ scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["If a guardrail worsens while the core outcome rises materially, what evidence would support continuing?","How would you prevent a team from making metrics look better by shifting costs elsewhere?"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 C"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

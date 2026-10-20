@@ -60,4 +60,7 @@ followUps:
     If training and serving cannot share the same computation code, how would you keep their results
     consistent?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

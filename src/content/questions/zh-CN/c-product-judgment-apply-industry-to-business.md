@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：把行业做法用于当下业务
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

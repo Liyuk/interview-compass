@@ -27,4 +27,7 @@ scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["How would the conclusion change if the effect persisted only for new users?","How would you design pre-launch validation for long-term effects?"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 C"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

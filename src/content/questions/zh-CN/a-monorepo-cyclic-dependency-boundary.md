@@ -50,4 +50,7 @@ source:
     label: System Design Primer — requirements, constraints, and trade-offs
     url: https://github.com/donnemartin/system-design-primer/blob/master/README.md
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

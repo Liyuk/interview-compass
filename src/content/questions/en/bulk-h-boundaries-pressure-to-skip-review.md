@@ -42,4 +42,7 @@ source:
   - attribution: inspired
     label: 'Monzo progression framework: responsibility and impact across levels'
     url: https://github.com/monzo/progression-framework
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -37,4 +37,7 @@ source:
 topics:
   - ethics
   - metrics
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

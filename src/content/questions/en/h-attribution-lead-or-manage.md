@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: led or managed, business result or problem solved"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

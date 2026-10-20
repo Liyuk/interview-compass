@@ -21,4 +21,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["system-design","case"]
 followUps: ["What evidence would make you stop and keep a modular monolith?","How would you prevent old and new architectures from coexisting indefinitely without ownership?"]
 source: [{"attribution":"original","label":"Interview Compass 原创主题补充批次：微前端"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

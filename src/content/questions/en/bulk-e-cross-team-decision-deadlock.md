@@ -44,4 +44,7 @@ source:
     label: 项目合作发生冲突时，先对齐哪三件事
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/03/resolving-project-conflicts/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

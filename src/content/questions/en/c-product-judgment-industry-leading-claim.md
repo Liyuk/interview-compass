@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: whether it is ahead in the industry"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

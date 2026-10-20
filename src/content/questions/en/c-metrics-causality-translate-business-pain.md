@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's leveled interview framework, first-line engineering manager"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -46,4 +46,7 @@ followUps:
   - >-
     If later evidence shows pausing caused a major opportunity cost, how would you review the original
     decision?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

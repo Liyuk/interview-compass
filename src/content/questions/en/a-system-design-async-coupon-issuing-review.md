@@ -32,4 +32,7 @@ source:
   - attribution: derived
     label: "Engineering Decision Skills: the tech-review pre-release review example"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/projects/2026/09/engineering-decision-skills/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

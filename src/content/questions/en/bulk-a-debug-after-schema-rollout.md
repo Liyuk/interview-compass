@@ -39,4 +39,7 @@ formats:
 source:
   - attribution: original
     label: 原创：渐进式数据库变更诊断
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

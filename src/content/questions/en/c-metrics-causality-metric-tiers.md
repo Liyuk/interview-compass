@@ -35,4 +35,7 @@ source:
   - attribution: adapted
     label: "Data metrics guide (3): metric tiers that let data serve the most important decisions first"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/04/metric-tiers-prioritize-decisions/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

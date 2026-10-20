@@ -49,4 +49,7 @@ followUps:
   - 多租户流量如何共享连接预算？
   - 什么指标触发拒绝新请求？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, curing a system that keeps failing"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

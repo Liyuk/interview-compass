@@ -41,4 +41,7 @@ source:
   - attribution: derived
     label: 产品资源排不上，研发接下项目后怎么推进？
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/consulting/2026/09/product-engineer-without-boundaries/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

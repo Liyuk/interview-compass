@@ -45,4 +45,7 @@ source:
     label: 产品判断：将跨职能流程画成可讨论的模型
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/02/engineer-product-judgment/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

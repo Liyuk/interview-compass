@@ -43,4 +43,7 @@ followUps:
   - 如果对方认为你是在利用新职权报复过去的分歧，你会怎样回应并核验？
   - 如果同类行为由另一位表现较弱的成员做出，你会用同一标准吗？
   - 一位过去与你同级的同事刚成为你的下属，第一次出现工作质量问题。你会怎样说明新职责、事实和支持方式？
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

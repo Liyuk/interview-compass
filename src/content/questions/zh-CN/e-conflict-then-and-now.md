@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：过去的冲突，当时与现在
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

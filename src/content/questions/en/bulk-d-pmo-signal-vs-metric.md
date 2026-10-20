@@ -42,4 +42,7 @@ source:
   - attribution: inspired
     label: 'Engineering Decision Skills: tech-planning and management-retro'
     url: https://github.com/Liyuk/engineering-decision-skills
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

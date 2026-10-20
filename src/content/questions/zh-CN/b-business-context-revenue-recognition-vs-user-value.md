@@ -48,4 +48,7 @@ followUps:
   - 【收入确认与客户实际使用脱节时看什么？】预付年费推动本季度收入上升，但客户实际使用下降，服务成本仍在增加。你会如何判断合同收入是否代表健康的客户价值？
   - 未消耗额度应如何影响产品决策？
   - 如何判断低使用是采用问题还是客户不再需要？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

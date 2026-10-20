@@ -48,4 +48,7 @@ source:
   - attribution: original
     label: "The author's interview sequence: probing personal involvement in a technology choice"
 relatedQuestions: []
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

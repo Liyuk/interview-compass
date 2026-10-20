@@ -45,4 +45,7 @@ source:
     label: 作者的面试提问套路：怎样看待做错的事
   - attribution: original
     label: 作者的面试提问套路：个人原因造成的事故
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

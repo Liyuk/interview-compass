@@ -48,4 +48,7 @@ followUps:
   - 【How do you control release risk when offline scores improve but the live cohort shifts?】A new model scores better on a fixed evaluation set, but an incoming customer cohort differs from training data and human review takes days. How would you stage, monitor, and expand rollout?
   - How do you establish launch confidence when high-risk samples are rare?
   - Which live signals can detect distribution shift?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's leveled interview framework, cross-functional crisis scenario"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

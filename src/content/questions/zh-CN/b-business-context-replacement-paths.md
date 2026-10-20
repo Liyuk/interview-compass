@@ -35,4 +35,7 @@ source:
   - attribution: derived
     label: "如何写一份产品概览：竞争不是名单，而是用户的替代路径"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/09/product-overview-is-a-decision-model/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

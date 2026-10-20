@@ -32,4 +32,7 @@ source:
   - attribution: inspired
     label: Sourcegraph 工程领导力面试题
     url: https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

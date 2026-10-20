@@ -47,4 +47,7 @@ followUps:
   - >-
     Design and implement a task pool that caps concurrency, supports cancellation, and does not abandon work already
     started during shutdown.
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

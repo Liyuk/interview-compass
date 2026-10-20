@@ -65,4 +65,7 @@ followUps:
   - 如果客户把续约与该功能绑定，决策依据应增加什么？
   - 如何通过服务化或配置验证需求，而不立即固化产品架构？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

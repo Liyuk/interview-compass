@@ -49,4 +49,7 @@ source:
   - attribution: original
     label: 作者的面试提问套路：因果推论是否扎实
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

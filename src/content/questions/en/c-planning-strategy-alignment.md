@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, whether strategic goals are consistent"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

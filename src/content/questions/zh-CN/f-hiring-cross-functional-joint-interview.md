@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的分级面试框架，跨职能联合面试"
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

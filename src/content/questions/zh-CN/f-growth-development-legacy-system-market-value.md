@@ -33,4 +33,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：技术周期与个人市场价值"
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: competitor benchmarking"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

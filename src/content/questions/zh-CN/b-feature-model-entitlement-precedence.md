@@ -52,4 +52,7 @@ source:
   - attribution: original
     label: Interview Compass Original Expansion to 1,500 — Batch B
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

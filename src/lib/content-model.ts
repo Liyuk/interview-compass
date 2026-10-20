@@ -1,5 +1,5 @@
 import { z } from 'astro/zod';
-import { hasTaxonomyId, type FacetKind } from './taxonomy';
+import { hasTaxonomyId, type FacetKind } from './taxonomy.ts';
 
 export const provenanceKinds = ['adapted', 'derived', 'inspired', 'original'] as const;
 
@@ -41,6 +41,22 @@ export const questionSpecificAnalysisSchema = z.object({
 
 export type QuestionSpecificAnalysis = z.infer<typeof questionSpecificAnalysisSchema>;
 
+export const perspectives = ['candidate', 'interviewer', 'manager'] as const;
+export type Perspective = typeof perspectives[number];
+
+export const perspectiveReviewStates = ['inferred', 'reviewed'] as const;
+export type PerspectiveReview = typeof perspectiveReviewStates[number];
+
+export const qualityTiers = ['core', 'extended'] as const;
+export type QualityTier = typeof qualityTiers[number];
+
+const questionAnchorsSchema = z.object({
+  notPassing: z.string().trim().min(1),
+  passing: z.string().trim().min(1),
+  excellent: z.string().trim().min(1),
+  exceptional: z.string().trim().min(1),
+}).strict();
+
 const facetFields = ['topics', 'roles', 'responsibilityScopes', 'careerTracks', 'scenarios', 'formats'] as const satisfies readonly FacetKind[];
 
 export const questionSchema = z.object({
@@ -48,6 +64,9 @@ export const questionSchema = z.object({
   kind: z.literal('question'),
   status: z.enum(['draft', 'published']),
   locale: z.enum(['zh-CN', 'en']),
+  perspective: z.enum(perspectives),
+  perspectiveReview: z.enum(perspectiveReviewStates),
+  qualityTier: z.enum(qualityTiers).default('extended'),
   title: z.string().trim().min(1),
   question: z.string().trim().min(1),
   intent: z.string().trim().min(1),
@@ -61,6 +80,8 @@ export const questionSchema = z.object({
   formats: z.array(z.string()).default([]),
   background: z.array(z.string()).optional(),
   followUps: z.array(z.string()).optional(),
+  weakAnswer: z.string().trim().min(1).optional(),
+  anchors: questionAnchorsSchema.optional(),
   relatedQuestions: z.array(z.object({
     questionId: z.string(),
     relation: z.string().trim().min(1),
@@ -75,6 +96,30 @@ export const questionSchema = z.object({
     record[facet].forEach((id, index) => {
       if (!hasTaxonomyId(facet, id)) context.addIssue({ code: 'custom', path: [facet, index], message: `Unknown ${facet} ID: ${id}` });
     });
+  }
+
+  if (record.qualityTier === 'core') {
+    if (record.signals.length < 3 || record.signals.length > 4) {
+      context.addIssue({ code: 'custom', path: ['signals'], message: 'Core questions need 3–4 observable signals' });
+    }
+    if (!record.followUps || record.followUps.length < 2 || record.followUps.length > 3) {
+      context.addIssue({ code: 'custom', path: ['followUps'], message: 'Core questions need 2–3 question-specific follow-ups' });
+    }
+    if (!record.weakAnswer) {
+      context.addIssue({ code: 'custom', path: ['weakAnswer'], message: 'Core questions need a question-specific weakAnswer' });
+    }
+    if (!record.anchors) {
+      context.addIssue({ code: 'custom', path: ['anchors'], message: 'Core questions need four question-specific anchors' });
+    }
+    if (record.perspectiveReview !== 'reviewed') {
+      context.addIssue({ code: 'custom', path: ['perspectiveReview'], message: 'Core questions require a reviewed perspective' });
+    }
+    if (record.careerTracks.length > 2) {
+      context.addIssue({ code: 'custom', path: ['careerTracks'], message: 'Core questions may list at most 2 career tracks' });
+    }
+    if (record.responsibilityScopes.length > 2) {
+      context.addIssue({ code: 'custom', path: ['responsibilityScopes'], message: 'Core questions may list at most 2 responsibility scopes' });
+    }
   }
 });
 
@@ -99,6 +144,16 @@ export function validateBilingualPairs(inputs: readonly unknown[]): string[] {
     const [first, ...rest] = pair;
     for (const other of rest) {
       if (other.primaryCapability !== first.primaryCapability) errors.push(`Primary capability differs between locales for ${questionId}`);
+      if (other.perspective !== first.perspective) errors.push(`Perspective differs between locales for ${questionId}`);
+      if (other.perspectiveReview !== first.perspectiveReview) errors.push(`Perspective review state differs between locales for ${questionId}`);
+      if (other.qualityTier !== first.qualityTier) errors.push(`Quality tier differs between locales for ${questionId}`);
+      for (const facet of facetFields) {
+        if ([...other[facet]].sort().join('|') !== [...first[facet]].sort().join('|')) errors.push(`${facet} differs between locales for ${questionId}`);
+      }
+      if (first.qualityTier === 'core' || other.qualityTier === 'core') {
+        if (other.signals.length !== first.signals.length) errors.push(`Core signals count differs between locales for ${questionId}`);
+        if ((other.followUps?.length ?? 0) !== (first.followUps?.length ?? 0)) errors.push(`Core followUps count differs between locales for ${questionId}`);
+      }
     }
   }
   return errors;

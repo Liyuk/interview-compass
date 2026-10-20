@@ -69,4 +69,7 @@ source:
     url: https://github.com/yangshun/tech-interview-handbook
   - attribution: original
     label: Interview Compass Original Expansion Batch 2026-10-16 C
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

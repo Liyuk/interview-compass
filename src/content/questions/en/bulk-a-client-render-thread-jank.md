@@ -36,4 +36,7 @@ source:
   - attribution: inspired
     label: Android Interview Questions — Android, Kotlin, lifecycle, and architecture topics
     url: https://github.com/MindorksOpenSource/android-interview-questions/blob/master/README.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

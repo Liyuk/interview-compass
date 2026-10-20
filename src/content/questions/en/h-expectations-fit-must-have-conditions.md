@@ -60,4 +60,7 @@ source:
     label: Interview Compass 原创扩充（2026-10-14）
   - attribution: original
     label: Original to this site
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -31,4 +31,7 @@ source:
   - attribution: inspired
     label: "筛选人和面试官到底在看什么（项目追问：自动保存的例子）"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

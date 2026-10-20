@@ -50,4 +50,7 @@ source:
     label: 'Thinking practice (1): the Top K problem, finding the most important things first'
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2024/02/top-k-thinking/zh.md
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

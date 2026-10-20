@@ -40,4 +40,7 @@ source:
     label: Sourcegraph engineering leadership interview themes
     url: >-
       https://github.com/sourcegraph/handbook/blob/main/content/departments/engineering/dev/hiring/engineering-leadership.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

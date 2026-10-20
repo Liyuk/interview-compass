@@ -40,4 +40,7 @@ source:
   - attribution: derived
     label: 从零搭团队时，先设计什么
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2023/06/from-zero-design-the-team/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

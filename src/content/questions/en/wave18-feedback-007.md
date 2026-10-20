@@ -39,4 +39,7 @@ topics:
   - feedback
   - communication
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

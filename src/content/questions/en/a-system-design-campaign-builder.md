@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's system design question, a campaign and mechanics builder"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

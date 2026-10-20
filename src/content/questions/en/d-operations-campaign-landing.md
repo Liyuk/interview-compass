@@ -42,4 +42,7 @@ source:
   - attribution: derived
     label: When product has no capacity and engineering takes the project
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/consulting/2026/09/product-engineer-without-boundaries/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

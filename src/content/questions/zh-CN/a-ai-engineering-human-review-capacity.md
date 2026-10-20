@@ -61,4 +61,7 @@ relatedQuestions:
   - questionId: bulk-c-metrics-06
     relation: 相关问题进一步评估自动化流程带来的整体净价值。
     contrast: 本题聚焦单个结果如何分流以及人审容量；相关题聚焦速度、复核和高价值客户风险的整体结果。
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

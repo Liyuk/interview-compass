@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：失败带来的对未来的经验
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

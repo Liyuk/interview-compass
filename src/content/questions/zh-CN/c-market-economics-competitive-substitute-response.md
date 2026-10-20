@@ -27,4 +27,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["客户要求匹配竞品价格但并未准备迁移时，你会如何回应？","哪些证据会让你接受主动降价？"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 B"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -57,4 +57,7 @@ followUps:
   - If the original acceptance criteria were ambiguous, who resolves the dispute?
   - How do you turn this dispute into a reusable acceptance template?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

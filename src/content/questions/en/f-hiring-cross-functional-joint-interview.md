@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's leveled interview framework, cross-functional joint interview"
+perspective: interviewer
+perspectiveReview: inferred
+qualityTier: extended
 ---

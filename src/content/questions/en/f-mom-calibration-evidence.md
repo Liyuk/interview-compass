@@ -54,4 +54,7 @@ followUps:
     than label it first?
   - How would you explain calibration to employees without exposing other people’s personal information?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

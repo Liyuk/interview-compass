@@ -71,4 +71,7 @@ followUps:
   - How would you prevent “parallel development” from concealing final integration risk?
   - When should the supplier issue be escalated, and when should the approach change?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

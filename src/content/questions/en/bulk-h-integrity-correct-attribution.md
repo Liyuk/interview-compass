@@ -57,4 +57,7 @@ followUps:
   - How can impact be shown without quantitative metrics?
   - How do you avoid reducing collaboration to “just support”?
   - Product, engineering, and operations delivered together. You owned interfaces and release coordination, while product shaped the key need and others ran operations. How would you explain the boundary?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

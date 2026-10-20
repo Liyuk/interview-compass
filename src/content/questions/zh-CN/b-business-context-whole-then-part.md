@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：先讲全局，再讲自己的部分
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

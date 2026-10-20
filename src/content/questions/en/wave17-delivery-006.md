@@ -48,4 +48,7 @@ relatedQuestions:
     contrast: >-
       Moves from adjusting a plan when a fixed goal meets reduced capacity to choosing the most important work
       before planning starts.
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

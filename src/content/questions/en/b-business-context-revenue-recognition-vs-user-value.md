@@ -64,4 +64,7 @@ followUps:
     customer value?
   - How should unused entitlement affect product decisions?
   - How would you tell an adoption issue from a customer no longer needing the service?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

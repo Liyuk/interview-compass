@@ -49,4 +49,7 @@ followUps:
   - 【短时下载链接发出后权限被撤销，怎样界定仍可访问的窗口？】服务用签名 URL 分享敏感报告，链接有效期为 24 小时。用户被移出组织后，旧链接仍可访问；缩短有效期会增加服务压力。你会如何设计撤销和访问校验？
   - 如何在 CDN 缓存下执行即时撤销？
   - 跨组织转发链接时应该如何归属审计责任？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

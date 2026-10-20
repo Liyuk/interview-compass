@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：成员的疲惫与惰性"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

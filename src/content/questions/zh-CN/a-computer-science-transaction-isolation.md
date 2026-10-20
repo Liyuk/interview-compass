@@ -32,4 +32,7 @@ source:
   - attribution: inspired
     label: JavaGuide 的数据库与并发知识整理
     url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

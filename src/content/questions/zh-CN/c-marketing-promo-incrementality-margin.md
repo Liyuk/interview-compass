@@ -44,4 +44,7 @@ source:
     label: Interview Compass 原创扩充批次 2026-10-15 E
   - attribution: original
     label: Interview Compass coverage-led original expansion batch 2026-10-17 C
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

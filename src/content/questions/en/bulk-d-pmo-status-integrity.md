@@ -45,4 +45,7 @@ source:
     label: 管理复盘：从执行到系统的八个判断
     url: >-
       https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/management-retrospective/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

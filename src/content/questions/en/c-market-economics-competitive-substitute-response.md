@@ -27,4 +27,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["How would you respond when customers ask to match a competitor price but are not ready to switch?","What evidence would make you accept a proactive price reduction?"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 B"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

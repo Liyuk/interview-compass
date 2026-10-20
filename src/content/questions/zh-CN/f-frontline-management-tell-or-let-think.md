@@ -42,4 +42,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：何时告诉答案，何时让对方自己想
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

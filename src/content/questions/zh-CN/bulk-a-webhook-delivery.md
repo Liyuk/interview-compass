@@ -48,4 +48,7 @@ followUps:
   - 【Webhook 接收方故障时，怎样设置重试避免同步放大？】合作方接口故障后，平台按固定间隔重试，恢复瞬间请求量反而达到平时十倍。你会如何调整退避、抖动、队列隔离和重放方式？
   - 如何避免单一租户阻塞所有回调队列？
   - 对有顺序要求的事件，退避会产生什么影响？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -27,4 +27,7 @@ formats: [coding, knowledge]
 source:
   - attribution: original
     label: 本站原创
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -49,4 +49,7 @@ followUps:
     If returning ownership puts a near-term commitment at risk, how would you negotiate scope and risk
     acceptance?
   - How would you tell necessary support from masking an organizational capability or authority gap?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -34,4 +34,7 @@ source:
   - attribution: inspired
     label: JavaGuide's notes on databases and concurrency
     url: https://github.com/Snailclimb/JavaGuide/blob/main/README.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

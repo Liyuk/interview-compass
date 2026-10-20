@@ -44,4 +44,7 @@ source:
   - attribution: inspired
     label: U.S. OPM Structured Interviews guidance
     url: https://www.opm.gov/policy-data-oversight/assessment-and-selection/structured-interviews/
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

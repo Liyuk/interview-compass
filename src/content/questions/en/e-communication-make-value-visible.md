@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, making a manager see the value or the problem"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

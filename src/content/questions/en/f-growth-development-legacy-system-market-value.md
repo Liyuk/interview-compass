@@ -33,4 +33,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, technology cycles and personal market value"
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

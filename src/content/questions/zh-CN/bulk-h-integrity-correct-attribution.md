@@ -59,4 +59,7 @@ followUps:
   - 没有量化指标时如何证明自己的影响？
   - 如何避免把协作描述成只做了支持？
   - 项目由产品、研发和运营共同完成，你负责接口和上线协调，但关键需求由产品提出、现场运营由他人执行。你会怎样讲清责任边界？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

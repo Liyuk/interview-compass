@@ -31,4 +31,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：一线管理者之间的冲突"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

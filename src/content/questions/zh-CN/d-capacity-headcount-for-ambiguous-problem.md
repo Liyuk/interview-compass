@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：模糊问题下的人力与资源规划"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

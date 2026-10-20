@@ -46,4 +46,7 @@ source:
 followUps:
   - If your manager does not respond while customer risk grows, how would you proceed?
   - What evidence would cause you to change the original order?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

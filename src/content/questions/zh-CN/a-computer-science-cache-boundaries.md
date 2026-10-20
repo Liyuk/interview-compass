@@ -31,4 +31,7 @@ source:
   - attribution: derived
     label: "筛选人和面试官到底在看什么（基础：知道答案的边界）"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

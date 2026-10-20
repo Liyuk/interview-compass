@@ -45,4 +45,7 @@ followUps:
   - 怎样构造能暴露重复证据与互相矛盾文档的评测样本？
   - 如果减少上下文提高忠实度却降低覆盖，如何决定取舍？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence, a member's fatigue and inertia"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

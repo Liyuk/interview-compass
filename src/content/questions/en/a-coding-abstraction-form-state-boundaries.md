@@ -30,4 +30,7 @@ source:
   - attribution: derived
     label: "What screeners and interviewers are really looking for (resume: replacing a duty list with problem, action, result)"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2022/07/campus-recruitment-training/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

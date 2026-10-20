@@ -48,4 +48,7 @@ source:
 followUps:
   - If the object is large and deep copying is expensive, what alternatives are available?
   - How can an API contract make clear who may mutate the object after the call?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

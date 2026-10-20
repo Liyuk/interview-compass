@@ -52,4 +52,7 @@ source:
     label: 作者的面试提问套路：三到五年的技术规划
   - attribution: original
     label: 作者的面试提问套路：长期规划与半年计划的校准
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

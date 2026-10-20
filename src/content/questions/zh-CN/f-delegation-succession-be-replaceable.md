@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：被顶替与继任"
+perspective: manager
+perspectiveReview: inferred
+qualityTier: extended
 ---

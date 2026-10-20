@@ -46,4 +46,7 @@ followUps:
   - Which mistakes are acceptable learning costs?
   - How do you ensure organizational risk is not simply shifted to the teammate?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -45,4 +45,7 @@ followUps:
   - 如果某经理总是给自己的团队更高评价，你会怎样用证据检验而非先定性？
   - 如何让成员理解校准过程，而不泄露他人的个人信息？
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

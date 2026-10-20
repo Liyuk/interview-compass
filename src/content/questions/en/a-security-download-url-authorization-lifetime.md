@@ -49,4 +49,7 @@ followUps:
   - 【How do you bound access after permissions are revoked from an issued download link?】A service shares sensitive reports with signed URLs valid for 24 hours. A removed user can still access an old link; shorter expiry adds load. How would you design revocation and access checks?
   - How can revocation be immediate when a CDN caches content?
   - Who owns audit responsibility when a link is forwarded across organizations?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：拆解含糊问题与信息来源"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

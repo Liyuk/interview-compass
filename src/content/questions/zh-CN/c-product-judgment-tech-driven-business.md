@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：技术驱动业务"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

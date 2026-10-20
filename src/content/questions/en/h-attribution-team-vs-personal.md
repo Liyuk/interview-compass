@@ -75,4 +75,7 @@ source:
   - attribution: original
     label: 'The author''s interview sequence: probing actual contribution and output'
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

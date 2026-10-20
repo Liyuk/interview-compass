@@ -36,4 +36,7 @@ followUps:
 source:
   - attribution: original
     label: 作者的面试提问套路：统一定义后的行业对标
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -66,4 +66,7 @@ followUps:
   - If a channel contract pays per lead rather than closed deal, how would you control incentive misalignment?
   - How would you account for sales-cycle lag in interim evaluation?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

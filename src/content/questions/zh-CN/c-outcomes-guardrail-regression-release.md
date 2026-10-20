@@ -26,4 +26,7 @@ scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["当护栏变差但核心结果显著提升，什么证据支持继续？","如何避免团队通过转移成本让指标看起来变好？"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 C"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

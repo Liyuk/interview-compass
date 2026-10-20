@@ -51,4 +51,7 @@ source:
     label: GitHub 技术面试与工程体系调研；题目为本站独立编写
     url: https://github.com/yangshun/tech-interview-handbook
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

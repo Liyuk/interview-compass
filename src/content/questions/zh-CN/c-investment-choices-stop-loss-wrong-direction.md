@@ -34,4 +34,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的面试提问套路：新方向错误的止损"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

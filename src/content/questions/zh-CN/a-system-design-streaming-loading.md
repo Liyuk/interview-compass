@@ -31,4 +31,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的系统设计题：流媒体加载与请求"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

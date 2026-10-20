@@ -57,4 +57,7 @@ followUps:
   - If the criticism was disrespectful, how do you address both substance and boundaries?
   - What signals would tell you to pause or adjust workload?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -41,4 +41,7 @@ source:
   - attribution: inspired
     label: Designer Interview Questions（仅作主题启发；本站独立原创，不复制原问题）
     url: https://github.com/briannhinton/designer-interview-questions
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

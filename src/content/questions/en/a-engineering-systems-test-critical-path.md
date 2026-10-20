@@ -32,4 +32,7 @@ source:
   - attribution: derived
     label: "Thinking practice (4): structured thinking in practice (interview: the risk-ranked testing example)"
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2026/08/structured-thinking-practice/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

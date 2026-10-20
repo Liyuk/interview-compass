@@ -27,4 +27,7 @@ scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["Should a high-return project still be prioritized if it creates concentration risk?","How would you handle team ownership or prior commitments in resource allocation?"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 C"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -26,4 +26,7 @@ careerTracks:
   - senior-manager
 formats: ["case","artifact-review"]
 followUps: ["How could you make a result verifiable without exposing internal information?","How would you detect users interpreting cautious wording as a definite promise?"]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

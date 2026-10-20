@@ -52,4 +52,7 @@ followUps:
   - If the expert resists delegation after a past incident, how would you build evidence gradually?
   - When is hiring another expert more appropriate than distributing current capability?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

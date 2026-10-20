@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "作者的系统设计题：协同文档"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

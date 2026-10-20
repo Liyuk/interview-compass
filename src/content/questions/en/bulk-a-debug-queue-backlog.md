@@ -39,4 +39,7 @@ source:
   - attribution: inspired
     label: DevOps Interview Questions：容量与运行诊断
     url: https://github.com/DNXLabs/DevOps-Interview-Questions
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

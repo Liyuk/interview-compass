@@ -33,4 +33,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: long-term and short-term benefit"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

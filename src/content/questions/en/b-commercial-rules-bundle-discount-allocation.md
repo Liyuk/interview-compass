@@ -53,4 +53,7 @@ followUps:
   - >-
     How would you prevent marketing metrics and actual settlement from using different allocation
     rules?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

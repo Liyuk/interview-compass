@@ -26,4 +26,7 @@ scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["If another experiment costs more than the potential upside, how would you handle insufficient evidence?","How would you prevent “not disproven” from being treated as “proven effective”?"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 C"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -25,4 +25,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["With limited time, how would you choose attack paths that must be tested?","Which risks require design changes rather than more monitoring?"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 D"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

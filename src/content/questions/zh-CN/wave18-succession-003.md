@@ -36,4 +36,7 @@ topics:
   - management
   - hiring
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

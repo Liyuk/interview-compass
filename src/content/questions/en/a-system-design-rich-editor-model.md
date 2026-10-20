@@ -30,4 +30,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's system design question, the data model of an online editor"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

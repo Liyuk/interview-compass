@@ -32,4 +32,7 @@ followUps:
 source:
   - attribution: original
     label: "Written from the common concept-split problem in model evolution"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

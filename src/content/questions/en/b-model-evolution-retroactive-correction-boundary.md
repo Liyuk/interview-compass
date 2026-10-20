@@ -88,4 +88,7 @@ followUps:
   - If old results were materially wrong, how would you balance historical authenticity and correction?
   - How should later trend analysis select a version and remain comparable?
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -35,4 +35,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's interview sequence: resources and collaboration scope at decision time"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

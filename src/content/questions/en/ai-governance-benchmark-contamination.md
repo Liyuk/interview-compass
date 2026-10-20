@@ -24,4 +24,7 @@ careerTracks:
   - senior-manager
 formats: ["debugging","case"]
 followUps: ["How would you restore a comparable trend if benchmark items entered training data?","Who should access a hidden evaluation set, and what audit trail is needed?"]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

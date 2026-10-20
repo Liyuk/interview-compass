@@ -35,4 +35,7 @@ formats:
 source:
   - attribution: original
     label: 原创：数据质量与生产问题定位
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

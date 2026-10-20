@@ -27,4 +27,7 @@ scenarios: ["interview","hiring","promotion","operations-review"]
 formats: ["case","planning"]
 followUps: ["Without a clean control group, how would you avoid false precision in attribution?","If initiatives cannot be isolated but resources must be ranked, how would you use limited evidence?"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 C"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

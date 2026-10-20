@@ -40,4 +40,7 @@ source:
 followUps:
   - 如果大家能复述步骤，却在事故中仍沿用旧习惯，你会如何定位障碍？
   - 怎样判断方法本身不适配团队，而不是培训次数不够？
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

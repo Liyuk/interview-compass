@@ -34,4 +34,7 @@ relatedQuestions:
   - questionId: prioritization-limited-resources
     relation: 取舍出现分歧
     contrast: 从解释资源约束下的规划，转为处理决策者之间对优先级的分歧。
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

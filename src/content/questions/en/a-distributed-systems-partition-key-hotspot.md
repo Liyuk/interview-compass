@@ -44,4 +44,7 @@ source:
 followUps:
   - If a hot key cannot be split and queries must preserve ordering, what trade-offs remain?
   - How would you prevent write salting from making reads and deduplication much more complex?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

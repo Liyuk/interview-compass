@@ -42,4 +42,7 @@ source:
   - attribution: inspired
     label: 'Metrics guide (2): define the measurement before arguing about metrics'
     url: https://github.com/Liyuk/liyuk.github.io/blob/master/src/content/writing/2021/03/define-the-measurement-before-arguing-about-metrics/zh.md
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

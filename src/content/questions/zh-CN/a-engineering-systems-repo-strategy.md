@@ -26,4 +26,7 @@ formats: [case, planning]
 source:
   - attribution: original
     label: "原创题目"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

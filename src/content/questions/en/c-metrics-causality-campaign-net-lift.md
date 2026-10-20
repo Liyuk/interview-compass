@@ -61,4 +61,7 @@ source:
 followUps:
   - If random assignment is unavailable, what evidence would you use to estimate lift and what uncertainty would remain?
   - If leading indicators improve but business outcomes do not, would you continue, adjust, or stop?
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

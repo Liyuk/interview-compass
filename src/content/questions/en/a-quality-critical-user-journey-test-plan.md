@@ -26,4 +26,7 @@ scenarios: ["interview","hiring","promotion"]
 formats: ["case","planning"]
 followUps: ["If end-to-end tests are flaky, how would you retain critical coverage while reducing false alarms?","How would you adapt a strategy when coverage rises but real failures are missed?"]
 source: [{"attribution":"original","label":"Interview Compass 原创扩充批次 2026-10-15 D"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

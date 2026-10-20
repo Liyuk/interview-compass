@@ -27,4 +27,7 @@ scenarios: ["interview", "hiring"]
 formats: ["case"]
 followUps: []
 source: [{"attribution": "inspired", "label": "Dataskew 数据工程题库的主题覆盖；题面为本站独立编写", "url": "https://github.com/dataskew-io/data-engineering-interview-questions"}]
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

@@ -39,4 +39,7 @@ topics:
   - resource-allocation
   - business-planning
   - team-planning
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

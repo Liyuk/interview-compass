@@ -42,4 +42,7 @@ source:
     label: Interview Compass Original Expansion Batch 2026-10-16 B
 locale: en
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

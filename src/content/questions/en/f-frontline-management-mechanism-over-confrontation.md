@@ -33,4 +33,7 @@ followUps:
 source:
   - attribution: original
     label: "The author's leveled interview framework, senior engineer and small-team lead"
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---

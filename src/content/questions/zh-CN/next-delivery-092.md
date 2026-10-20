@@ -40,4 +40,7 @@ source:
     label: Interview Compass Original Expansion Batch 2026-10-16 B
 locale: zh-CN
 relatedQuestions: []
+perspective: candidate
+perspectiveReview: inferred
+qualityTier: extended
 ---
