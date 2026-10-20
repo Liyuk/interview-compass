@@ -24,7 +24,7 @@ test('primary navigation separates goals, questions, methods, guide, categories 
   await expect(page).toHaveURL(/\/topics\/$/);
   await page.goto('en/');
   if (await page.locator('.nav-toggle').isVisible()) await page.locator('.nav-toggle').click();
-  await expect(page.locator('.primary-nav a')).toHaveText(['Home', 'Preparation guide', 'Question bank']);
+  await expect(page.locator('.primary-nav a')).toHaveText(['Home', 'Preparation guide', 'Question library']);
 });
 
 test('handbook uses the shared knowledge rail, TOC, search, language and footer', async ({ page }) => {
@@ -195,7 +195,7 @@ test('role, scenario and topic pages group the same questions by capability', as
   await page.goto('en/scenarios/promotion/');
   await expect(page.getByRole('heading', { name: 'Prepare for promotion as a body of evidence' })).toBeVisible();
   await page.goto('en/roles/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Role paths');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Roles');
 });
 
 test('use cases present six goal-based paths and connect them to the right tools', async ({ page }) => {
