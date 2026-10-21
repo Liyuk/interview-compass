@@ -21,6 +21,9 @@ const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
 const publicBase = base.endsWith('/') ? base : `${base}/`;
 const title = titleFor(route, locale);
+const pageTitle = route.type === 'home'
+  ? `Interview Compass · ${en ? 'A guide to engineering interviews and promotions' : '工程师的面试与晋升指南'}`
+  : `${title} · Interview Compass`;
 const currentNav = activeNavFor(route);
 const active = ['roles', 'topics', 'capabilities'].includes(currentNav) ? 'browse' : currentNav;
 const presentation = pagePresentationFor(route);
@@ -34,6 +37,15 @@ const crumbs = breadcrumbsFor(route, locale, base);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    {route.type === 'home' && <>
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Interview Compass" />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={description} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:description" content={description} />
+    </>}
     <meta name="theme-color" content="#fbfaf8" />
     {redirectTo && <><meta http-equiv="refresh" content={`0;url=${redirectTo}`} /><link rel="canonical" href={redirectTo} /></>}
     <link rel="icon" type="image/svg+xml" href={`${publicBase}favicon.svg`} />
@@ -41,7 +53,7 @@ const crumbs = breadcrumbsFor(route, locale, base);
       <link rel="alternate" hreflang="zh-CN" href={switchLocaleRoute(route, 'zh-CN', base)} />
       <link rel="alternate" hreflang="en" href={switchLocaleRoute(route, 'en', base)} />
     </>}
-    <title>{route.type === 'home' ? 'Interview Compass' : `${title} · Interview Compass`}</title>
+    <title>{pageTitle}</title>
   </head>
   <body data-route-type={route.type} data-page-kind={presentation.kind}>
     <span hidden data-pagefind-sort="title[data-sort-title]" data-sort-title={title} />
