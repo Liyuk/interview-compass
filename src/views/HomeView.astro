@@ -33,10 +33,11 @@ const entries = [
   { ref: { type: 'capability-model' } as const, title: en ? 'Stages' : '阶段', text: en ? 'Compare responsibility and evidence.' : '对照责任范围和行为要求。' },
 ];
 ---
-<SiteLayout locale={locale} route={{ type: 'home' }} description={en ? 'A bilingual interview and promotion reference built from practical experience. Know the role, show the evidence, and prepare stories that can be checked.' : '一套来自一线实践的双语面试与晋升参考：先看清岗位，再讲清证据，把经历整理成能够支撑判断的故事。'}>
+<SiteLayout locale={locale} route={{ type: 'home' }} description={en ? 'A guide to engineering interviews and promotions. Know the role. Show the evidence. Use bilingual questions to examine your decisions, personal contribution, and impact.' : '工程师的面试与晋升指南。先看清岗位，再讲清证据。通过中英双语问题，梳理项目经历、个人贡献与实际影响。'}>
   <div class="home-page">
   <section class="hero hero-compass" aria-labelledby="home-title">
     <div class="hero-copy">
+      <p class="eyebrow">{en ? 'A guide to engineering interviews and promotions.' : '工程师的面试与晋升指南'}</p>
       <h1 id="home-title" class="page-title">{en ? 'Know the role. Show the evidence.' : '先看清岗位，再讲清证据。'}</h1>
       <p class="intro">{en ? 'A practical method for interviews and promotion reviews. Candidates learn what a question is testing and how to support a story with evidence. Interviewers and hiring managers use the same material to align on the role, probe for evidence, and assess fit.' : '一套面试与晋升的识人方法。候选人用它看懂题目在考什么、讲出能被核实的经历；面试官和管理者用同一套材料对齐岗位要求、追问证据、判断匹配。'}</p>
       <div class="hero-actions">
