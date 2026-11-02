@@ -10,9 +10,9 @@ test('curated reading retains its authored order, refresh, and translated return
   await page.reload();
   await expect(reading.locator('[data-reading-next]')).toHaveAttribute('href', /bulk-c-metrics-03/);
   await page.getByRole('link', { name: 'EN', exact: true }).click();
-  await expect(page.locator('[data-reading-next]')).toHaveAttribute('href', /\/en\/questions\/bulk-c-metrics-03\//);
+  await expect(page.locator('[data-reading-next]')).toHaveAttribute('href', /\/questions\/bulk-c-metrics-03\//);
   await page.locator('[data-session-return]').click();
-  await expect(page).toHaveURL(/\/en\/collections\/general-interview\//);
+  await expect(page).toHaveURL(/\/collections\/general-interview\//);
 });
 
 test('reading continues beyond the end of a visible results page', async ({ page }) => {
@@ -67,9 +67,9 @@ test('all return links retain the original results after moving and translating'
   await expect(page.locator('#page-status')).toContainText('第 2 /');
   await page.locator('#question-list > li a').first().click();
   await page.locator('[data-reading-next]').click();
-  const source = '/interview-compass/questions/?page=2&profile=all';
+  const source = '/interview-compass/zh/questions/?page=2&profile=all';
   await expect(page.locator('[data-session-return]')).toHaveAttribute('href', source);
   for (const link of await page.locator('[data-reading-return]').all()) await expect(link).toHaveAttribute('href', source);
   await page.getByRole('link', {name:'EN',exact:true}).click();
-  for (const link of await page.locator('[data-reading-return]').all()) await expect(link).toHaveAttribute('href', '/interview-compass/en/questions/?page=2&profile=all');
+  for (const link of await page.locator('[data-reading-return]').all()) await expect(link).toHaveAttribute('href', '/interview-compass/questions/?page=2&profile=all');
 });

@@ -17,7 +17,7 @@ test('a directly opened question exposes its permanent knowledge path', async ({
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('questions/prioritization-limited-resources/');
   const tree = page.getByRole('navigation', { name: '板块目录', exact: true });
-  const parent = tree.locator('a[href="/interview-compass/capabilities/value-direction/prioritization/"]');
+  const parent = tree.locator('a[href="/interview-compass/zh/capabilities/value-direction/prioritization/"]');
   await expect(parent).toBeVisible();
   await parent.click();
   await expect(page).toHaveURL(/\/capabilities\/value-direction\/prioritization\/$/);
@@ -26,7 +26,7 @@ test('a directly opened question exposes its permanent knowledge path', async ({
 
 test('mobile bilingual document navigation opens and returns keyboard focus', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  for (const prefix of ['', 'en/']) {
+  for (const prefix of ['', '../']) {
     await page.goto(`${prefix}handbook/`);
     const disclosure = page.locator('[data-wiki-disclosure]');
     await expect(disclosure).not.toHaveAttribute('open', '');
@@ -34,7 +34,7 @@ test('mobile bilingual document navigation opens and returns keyboard focus', as
     await trigger.click();
     const tree = page.getByRole('navigation', { name: prefix ? 'Section navigation' : '板块目录', exact: true });
     await expect(tree).toBeVisible();
-    await expect(tree.getByRole('link', { name: prefix ? 'How to use' : '使用说明', exact: true })).toHaveAttribute('href', `/interview-compass/${prefix}handbook/`);
+    await expect(tree.getByRole('link', { name: prefix ? 'How to use' : '使用说明', exact: true })).toHaveAttribute('href', prefix ? '/interview-compass/handbook/' : '/interview-compass/zh/handbook/');
     await page.keyboard.press('Escape');
     await expect(disclosure).not.toHaveAttribute('open', '');
     await expect(trigger).toBeFocused();
@@ -43,13 +43,14 @@ test('mobile bilingual document navigation opens and returns keyboard focus', as
 
 test('question lists and articles keep the same local board navigation', async ({ page }) => {
   await page.setViewportSize({width:1440,height:900});
-  for (const prefix of ['', 'en/']) {
+  for (const prefix of ['', '../']) {
     const board = page.locator('[data-wiki-sidebar]');
     await page.goto(`${prefix}questions/?profile=all`);
     await expect(board).toBeVisible();
     const links = await board.locator('.document-tree-list a').evaluateAll(nodes=>nodes.map(node=>new URL((node as HTMLAnchorElement).href).pathname));
-    expect(links).toContain(`/interview-compass/${prefix}collections/`);
-    expect(links).not.toContain(`/interview-compass/${prefix}handbook/`);
+    const localePrefix = prefix ? '' : 'zh/';
+    expect(links).toContain(`/interview-compass/${localePrefix}collections/`);
+    expect(links).not.toContain(`/interview-compass/${localePrefix}handbook/`);
     const before = await board.boundingBox();
     await page.goto(`${prefix}questions/prioritization-limited-resources/?profile=all`);
     await expect(board).toBeVisible();

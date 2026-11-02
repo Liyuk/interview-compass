@@ -52,7 +52,7 @@ const questions = collection.kind === 'question-set' ? collection.entries.flatMa
     <div class="candidate-guide-content">
       <aside class="candidate-guide-note">
         <strong>{en ? 'Use these to make your decision' : '用这些问题帮助自己决策'}</strong>
-        <p>{en ? 'Ask the questions that could change your decision. Request concrete examples and clarify what is known, expected, or still uncertain. These prompts do not score the interviewer or the organization.' : '优先询问那些答案可能改变你选择的问题。请对方给出具体例子，并分清已知事实、预期和不确定项。这些问题不是给面试官或组织打分。'}</p>
+        <p>{en ? 'Ask questions that could change your decision. Request examples and clarify what is known, expected, and still uncertain.' : '优先询问那些答案可能改变你选择的问题。请对方举例，并分清已知事实、预期和待确认的信息。'}</p>
       </aside>
       {collection.sections.map((section) => (
         <section class="candidate-prompt-section" aria-labelledby={`prompt-group-${section.id}`}>

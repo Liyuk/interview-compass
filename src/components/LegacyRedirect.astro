@@ -1,0 +1,25 @@
+---
+interface Props { to: string }
+const { to } = Astro.props;
+const destination = new URL(to, import.meta.env.SITE).href;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <link rel="canonical" href={destination} />
+    <title>Page moved · Interview Compass</title>
+  </head>
+  <body>
+    <p>This page moved. <a href={destination}>Continue to the new page</a>.</p>
+    <script is:inline define:vars={{ destination }}>
+      const target = new URL(destination);
+      for (const [key, value] of new URLSearchParams(location.search)) {
+        if (!target.searchParams.has(key)) target.searchParams.append(key, value);
+      }
+      location.replace(target.href);
+    </script>
+  </body>
+</html>

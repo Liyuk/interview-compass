@@ -10,7 +10,7 @@ for (const name of await readdir(directory)) {
   const text = gunzipSync(await readFile(new URL(name, directory))).toString();
   if (!text.startsWith('pagefind_dcd')) throw new Error(`Unsupported Pagefind fragment: ${name}`);
   const data = JSON.parse(text.slice('pagefind_dcd'.length));
-  const match = data.url.match(/^\/(?:en\/)?questions\/([a-z0-9-]+)\/$/);
+  const match = data.url.match(/^\/(?:zh\/)?questions\/([a-z0-9-]+)\/$/);
   if (match) ids[name.replace(/\.pf_fragment$/, '')] = match[1];
 }
 if (!Object.keys(ids).length) throw new Error('Search reading identities are missing');

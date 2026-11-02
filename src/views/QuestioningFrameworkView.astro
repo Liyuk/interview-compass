@@ -124,7 +124,7 @@ const headingFor = (id: string) => outline.find(item => item.id === id)!;
   <header class="framework-hero">
     <p class="eyebrow">{en ? 'HOW TO ASK · HOW TO ANSWER · HOW TO CHOOSE' : '如何提问 · 如何回答 · 如何判断'}</p>
     <h1 class="page-title">{en ? 'Interviewing guide' : '提问框架'}</h1>
-    <p class="intro">{en ? 'The library offers prompts, not model answers. This guide explains what the questions are designed to reveal and how candidates and interviewers can have a useful, evidence-based conversation.' : '本站提供问题和问题背后的考察逻辑，不提供标准答案。本页说明这些问题如何形成，也帮助双方把面试变成有证据、有来回的有效对话。'}</p>
+    <p class="intro">{en ? 'This guide explains what the questions examine and how candidates and interviewers can have a focused conversation grounded in evidence.' : '本页说明题目关注什么，以及候选人和面试官如何围绕证据展开有效交流。'}</p>
     <div class="framework-principle"><strong>{en ? 'Shared principle' : '共同原则'}</strong><span>{en ? 'Ask about observable work and context; distinguish facts, interpretation, and uncertainty.' : '围绕可观察的工作与背景提问；把事实、解释和不确定性分开。'}</span></div>
   </header>
 
@@ -149,7 +149,7 @@ const headingFor = (id: string) => outline.find(item => item.id === id)!;
     <ol class="framework-step-list">
       {interviewerSteps.map((step, index) => <li><span>{String(index + 1).padStart(2, '0')}</span><div><SectionHeading heading={headingFor(`interviewer-step-${index + 1}`)} /><p>{step.text}</p></div></li>)}
     </ol>
-    <div class="framework-note"><strong>{en ? 'Keep the inference bounded' : '控制推论边界'}</strong><p>{en ? 'Interview answers are evidence with limits. Gaps may reflect memory, access, role boundaries, or a poorly framed question. Clarify before drawing conclusions; do not infer intent or character from one response.' : '面试回答是有边界的证据。信息缺口可能来自记忆、权限、职责边界或问题本身不清楚。先追问澄清再下判断，不要凭单次回答推断动机或人格。'}</p></div>
+    <div class="framework-note"><strong>{en ? 'Interpret evidence in context' : '结合上下文理解证据'}</strong><p>{en ? 'A gap may reflect memory, access, role boundaries, or how the question was framed. Clarify the context, then compare the answer with other evidence over time.' : '信息缺口可能来自记忆、权限、职责边界或问题表述。先补足背景，再结合其他时期的证据综合判断。'}</p></div>
   </section>
 
   <section class="framework-section" aria-labelledby="candidate-framework-title">
@@ -165,13 +165,13 @@ const headingFor = (id: string) => outline.find(item => item.id === id)!;
     <div class="reverse-question-grid">
       {reverseQuestions.map((item, index) => <article><span>{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}
     </div>
-    <div class="promotion-reverse"><h3>{en ? 'For a promotion conversation' : '晋升沟通时，可以进一步确认'}</h3><ul>{promotionQuestions.map((question) => <li>{question}</li>)}</ul><p>{en ? 'These prompts clarify expectations, evidence, and organizational commitments. They are not scored against the candidate rubric.' : '这些问题用于澄清预期、证据和组织承诺，不使用候选人评分标准打分。'}</p></div>
+    <div class="promotion-reverse"><h3>{en ? 'For a promotion conversation' : '晋升沟通时，可以进一步确认'}</h3><ul>{promotionQuestions.map((question) => <li>{question}</li>)}</ul><p>{en ? 'Use these prompts to clarify expectations, evidence, and organizational commitments.' : '用这些问题澄清预期、证据和组织承诺。'}</p></div>
     <a class="framework-collection-link" href={pathFor({ type: 'collection', id: 'candidate-due-diligence' }, locale, base)}><span><strong>{en ? 'Browse the reverse-question guide' : '查看反向提问题单'}</strong><small>{en ? 'External role and promotion prompts, with purpose and decision use.' : '包含外部求职和晋升沟通，并说明每题想确认什么、怎样帮助决策。'}</small></span><Icon name="arrow-up-right" size={18} /></a>
   </section>
 
   <section class="framework-sources" aria-labelledby="framework-sources-title">
     <SectionHeading heading={headingFor('framework-sources-title')} />
-    <p>{en ? 'These sources support structured, job-related assessment practices; they do not validate this site’s question library or evidence anchors.' : '这些资料用于参考结构化、岗位相关的评估实践，不代表本站题库或评分锚点已经过效度验证。'}</p>
+    <p>{en ? 'These sources describe structured, job-related assessment practices. The library applies those ideas to engineering interviews and promotion.' : '这些资料介绍结构化、岗位相关的评估实践；本站将相关思路用于工程师面试与晋升。'}</p>
     <ul>
       <li><a href="https://www.opm.gov/policy-data-oversight/assessment-and-selection/other-assessment-methods/structured-interviews/" target="_blank" rel="noreferrer">U.S. Office of Personnel Management · Structured Interviews</a></li>
       <li><a href="https://www.opm.gov/policy-data-oversight/assessment-and-selection/assessment-strategy/" target="_blank" rel="noreferrer">U.S. Office of Personnel Management · Designing an Assessment Strategy</a></li>

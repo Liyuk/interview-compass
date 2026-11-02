@@ -3,7 +3,8 @@ import path from 'node:path';
 
 const root = path.resolve('dist');
 const limits = {
-  totalDist: 220 * 1024 * 1024,
+  // Canonicals, language alternates, social metadata, and JSON-LD add page-level SEO data.
+  totalDist: 230 * 1024 * 1024,
   maxHtml: 450 * 1024,
   maxJs: 220 * 1024,
   maxCss: 80 * 1024,

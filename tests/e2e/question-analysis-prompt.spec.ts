@@ -35,7 +35,7 @@ test('generated prompt can be copied and external submission stays under user co
 });
 
 test('prompt generator works in English and unreviewed questions stay clearly labeled', async ({ page }) => {
-  await page.goto('en/questions/a-coding-abstraction-defensive-edge-cases/');
+  await page.goto('../questions/a-coding-abstraction-defensive-edge-cases/');
   await page.getByRole('button', { name: 'Generate AI analysis prompt' }).click();
   const prompt = page.getByLabel('AI analysis prompt');
   await expect(prompt).toBeVisible();
@@ -48,5 +48,5 @@ test('prompt generator works in English and unreviewed questions stay clearly la
 
 test('the former practice page is removed in both languages', async ({ page }) => {
   expect((await page.goto('practice/'))?.status()).toBe(404);
-  expect((await page.goto('en/practice/'))?.status()).toBe(404);
+  expect((await page.goto('../practice/'))?.status()).toBe(404);
 });

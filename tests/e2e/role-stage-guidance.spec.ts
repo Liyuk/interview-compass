@@ -47,7 +47,7 @@ test('role matrices distinguish delivery, people responsibility, and domain evid
   const manager = matrix.getByRole('row').filter({ has: page.getByRole('link', { name: '数据团队管理者', exact: true }) });
   await expect(manager.locator('td').nth(5)).toContainText('100%');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await page.goto('en/capability-model/roles/data/');
+  await page.goto('../capability-model/roles/data/');
   const data = page.getByRole('region', { name: 'Role responsibility depth matrix' });
   const senior = data.getByRole('row').filter({ has: page.getByRole('link', { name: 'Senior Data Engineer', exact: true }) });
   await senior.locator('td').nth(1).getByText('Details', { exact: true }).click();

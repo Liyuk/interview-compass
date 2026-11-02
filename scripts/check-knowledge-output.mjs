@@ -42,9 +42,21 @@ export async function checkKnowledgeOutput({root,baseline,knowledge}) {
     }
   }
   for(const page of baseline.pages) {
-    const html=pages.get(page.url);
-    if(html===undefined) { failures.push(`Missing legacy page ${page.url}`); continue; }
-    const ids=pageIds.get(page.url);
+    const legacyPath = page.url.startsWith(base) ? page.url.slice(base.length) : page.url.replace(/^\//, '');
+    const localizedPath = page.locale === 'en'
+      ? legacyPath === 'en/404/' ? '404.html' : legacyPath.replace(/^en\//, '')
+      : page.locale === 'zh-CN'
+        ? legacyPath === '404.html' ? 'zh/404/' : `zh/${legacyPath}`
+        : legacyPath;
+    const localizedUrl = base + localizedPath;
+    const html=pages.get(localizedUrl);
+    if(html===undefined) {
+      failures.push(localizedUrl === page.url
+        ? `Missing legacy page ${page.url}`
+        : `Missing localized legacy page ${localizedUrl} (baseline: ${page.url})`);
+      continue;
+    }
+    const ids=pageIds.get(localizedUrl);
     const headingIds=new Set([...html.matchAll(/<h[1-6]\b[^>]*\bid="([^"]+)"/g)].map(match=>match[1]));
     const fragmentTargets=new Set();
     for(const [,hash] of html.matchAll(/\bhref="#([^"\s]+)"/g)) {
@@ -54,7 +66,7 @@ export async function checkKnowledgeOutput({root,baseline,knowledge}) {
       // The historic snapshot includes plugin-namespaced UI controls as well as document anchors.
       // Keep normal anchors and any currently referenced fragment; ignore retired namespaced controls.
       const pluginControl = /^[a-z][a-z0-9-]*__[a-z0-9_-]+$/i.test(id) && !headingIds.has(id) && !fragmentTargets.has(id);
-      if(!pluginControl && !ids.has(id)) failures.push(`Missing legacy anchor ${page.url}#${id}`);
+      if(!pluginControl && !ids.has(id)) failures.push(`Missing legacy anchor ${localizedUrl}#${id}`);
     }
   }
   if(knowledge) {

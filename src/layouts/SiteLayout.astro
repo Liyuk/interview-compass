@@ -10,7 +10,7 @@ import CurrentCollection from '../components/docs/CurrentCollection.astro';
 import ArticleRelations from '../components/docs/ArticleRelations.astro';
 import DocumentNavigation from '../components/docs/DocumentNavigation.astro';
 import WikiOutline from '../components/WikiOutline.astro';
-import { activeNavFor, breadcrumbsFor, switchLocaleRoute, titleFor, type RouteRef } from '../lib/routes';
+import { activeNavFor, breadcrumbsFor, pathFor, titleFor, type RouteRef } from '../lib/routes';
 import type { Locale } from '../lib/taxonomy';
 import { normalizeWikiOutline, type WikiOutlineItem } from '../lib/wiki-outline';
 
@@ -24,6 +24,13 @@ const title = titleFor(route, locale);
 const pageTitle = route.type === 'home'
   ? `Interview Compass · ${en ? 'A guide to engineering interviews and promotions' : '工程师的面试与晋升指南'}`
   : `${title} · Interview Compass`;
+const pageDescription = description || (en ? 'Explore practical questions and guides for engineering interviews and promotions.' : '浏览工程师面试与晋升的实用问题和指南。');
+const indexable = !['search', 'not-found'].includes(route.type) && !redirectTo;
+const canonicalUrl = new URL(pathFor(route, locale, base), import.meta.env.SITE).href;
+const alternateUrls = indexable ? [
+  { locale: 'en', url: new URL(pathFor(route, 'en', base), import.meta.env.SITE).href },
+  { locale: 'zh-CN', url: new URL(pathFor(route, 'zh-CN', base), import.meta.env.SITE).href },
+] : [];
 const currentNav = activeNavFor(route);
 const active = ['roles', 'topics', 'capabilities'].includes(currentNav) ? 'browse' : currentNav;
 const presentation = pagePresentationFor(route);
@@ -36,23 +43,54 @@ const crumbs = breadcrumbsFor(route, locale, base);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
-    {route.type === 'home' && <>
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Interview Compass" />
-      <meta property="og:title" content={pageTitle} />
-      <meta property="og:description" content={description} />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={pageTitle} />
-      <meta name="twitter:description" content={description} />
-    </>}
+    <meta name="description" content={pageDescription} />
+    <meta name="robots" content={indexable ? 'index,follow' : 'noindex,follow'} />
+    {indexable && <link rel="canonical" href={canonicalUrl} />}
+    {alternateUrls.map(({ locale: alternateLocale, url }) => <link rel="alternate" hreflang={alternateLocale} href={url} />)}
+    {indexable && <link rel="alternate" hreflang="x-default" href={alternateUrls[0].url} />}
+    <meta property="og:type" content={['article', 'section'].includes(presentation.kind) ? 'article' : 'website'} />
+    <meta property="og:site_name" content="Interview Compass" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content={en ? 'en_US' : 'zh_CN'} />
+    <meta property="og:locale:alternate" content={en ? 'zh_CN' : 'en_US'} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
     <meta name="theme-color" content="#fbfaf8" />
-    {redirectTo && <><meta http-equiv="refresh" content={`0;url=${redirectTo}`} /><link rel="canonical" href={redirectTo} /></>}
     <link rel="icon" type="image/svg+xml" href={`${publicBase}favicon.svg`} />
-    {route.type === 'question' && <>
-      <link rel="alternate" hreflang="zh-CN" href={switchLocaleRoute(route, 'zh-CN', base)} />
-      <link rel="alternate" hreflang="en" href={switchLocaleRoute(route, 'en', base)} />
-    </>}
+    <link rel="alternate" type="text/plain" href={`${publicBase}llms.txt`} title="AI crawler overview" />
+    {indexable && <script type="application/ld+json" set:html={JSON.stringify([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: pageTitle,
+        description: pageDescription,
+        inLanguage: locale === 'en' ? 'en' : 'zh-CN',
+        isPartOf: { '@id': `${new URL(pathFor({ type: 'home' }, 'en', base), import.meta.env.SITE).href}#website` },
+      },
+      ...(route.type === 'home' ? [{
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        '@id': `${new URL(pathFor({ type: 'home' }, 'en', base), import.meta.env.SITE).href}#website`,
+        url: new URL(pathFor({ type: 'home' }, 'en', base), import.meta.env.SITE).href,
+        name: 'Interview Compass',
+        inLanguage: locale === 'en' ? 'en' : 'zh-CN',
+      }] : []),
+      ...(crumbs.length > 1 ? [{
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: crumbs.map((crumb, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: crumb.label,
+          item: new URL(crumb.href ?? pathFor(route, locale, base), import.meta.env.SITE).href,
+        })),
+      }] : []),
+    ]).replace(/</g, '\\u003c')} />}
     <title>{pageTitle}</title>
   </head>
   <body data-route-type={route.type} data-page-kind={presentation.kind}>

@@ -15,14 +15,14 @@ it('groups preparation content under one board and leaves global search neutral'
 it('provides localized preparation routes and a safe return into the guide',async()=>{
  const {pathFor,breadcrumbsFor}=await import('../src/lib/routes');
  const {readingReturnPath}=await import('../src/lib/reading-journey');
- expect(pathFor({type:'preparation'},'en','/interview-compass/')).toBe('/interview-compass/en/guide/');
+ expect(pathFor({type:'preparation'},'en','/interview-compass/')).toBe('/interview-compass/guide/');
  expect(breadcrumbsFor({type:'framework'},'zh-CN','').map(c=>c.label)).toEqual(['首页','准备指南','提问框架']);
- expect(readingReturnPath('/interview-compass/guide/direction/?profile=all','zh-CN','/interview-compass/')).toBe('/interview-compass/guide/direction/?profile=all');
+ expect(readingReturnPath('/interview-compass/guide/direction/?profile=all','zh-CN','/interview-compass/')).toBe('/interview-compass/zh/guide/direction/?profile=all');
 });
 
 it('uses one guide ancestor and keeps search and context categories under their actual owners',async()=>{
  const {breadcrumbsFor}=await import('../src/lib/routes');
  expect(breadcrumbsFor({type:'guide-capabilities'},'en').map(c=>c.label)).toEqual(['Home','Preparation guide','Understand the capability framework']);
  expect(breadcrumbsFor({type:'search'},'en').map(c=>c.label)).toEqual(['Home','Search results']);
- expect(breadcrumbsFor({type:'scenario',id:'hiring'},'en').at(-2)?.href).toBe('/en/browse/');
+ expect(breadcrumbsFor({type:'scenario',id:'hiring'},'en').at(-2)?.href).toBe('/browse/');
 });

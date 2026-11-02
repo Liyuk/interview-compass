@@ -16,9 +16,12 @@ export function createReadingSession(storage: ReadingStorage, registry: Knowledg
     const locale = options.locale ?? value.locale;
     let source = readingReturnPath(value.source, value.locale, options.base) ?? '';
     if (source && locale !== value.locale) {
-      const prefix = `${options.base.replace(/\/$/, '')}/`;
-      const suffix = source.slice(prefix.length).replace(/^en\//, '');
-      source = `${prefix}${locale === 'en' ? 'en/' : ''}${suffix}`;
+      const currentPrefix = `${options.base.replace(/\/$/, '')}/${value.locale === 'zh-CN' ? 'zh/' : ''}`;
+      const targetPrefix = `${options.base.replace(/\/$/, '')}/${locale === 'zh-CN' ? 'zh/' : ''}`;
+      const url = new URL(source, 'https://reading.invalid');
+      const suffix = url.pathname.slice(currentPrefix.length);
+      source = `${targetPrefix}${suffix}${url.search}${url.hash}`;
+      source = readingReturnPath(source, locale, options.base) ?? '';
     }
     return { ...value, locale, source, questionIds: [...new Set(value.questionIds)].filter(id => typeof id === 'string' && registry.page(`question:${id}`, locale)?.kind === 'question') };
   }

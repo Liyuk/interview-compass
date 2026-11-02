@@ -26,10 +26,10 @@ test('real Pagefind applies target filtering before full-page and instant rankin
   });
   await expect(page.locator('.search-results .search-result[href*="/questions/"]')).toHaveCount(instant.length);
   expect(await page.locator('.search-results .search-result[href*="/questions/"]').evaluateAll(links => links.map(link => new URL((link as HTMLAnchorElement).href).pathname))).toEqual(instant);
-  await page.goto('en/search/?q=rollback&searchScope=questions&profileRole=frontend&profileStage=senior-engineer');
+  await page.goto('../search/?q=rollback&searchScope=questions&profileRole=frontend&profileStage=senior-engineer');
   await expect(page.locator('.search-page-result-title').first()).toBeVisible();
   const english = await page.locator('.search-page-result-title').evaluateAll(links => links.map(link => new URL((link as HTMLAnchorElement).href).pathname));
-  expect(english.every(path => path.includes('/en/') && applicable.has(path.split('/').filter(Boolean).at(-1)!))).toBe(true);
+  expect(english.every(path => !path.includes('/zh/') && applicable.has(path.split('/').filter(Boolean).at(-1)!))).toBe(true);
 });
 
 test('curated sets retain selection order, filter counts, and never fill gaps with unrelated questions', async ({ page }) => {

@@ -19,10 +19,10 @@ test('a new visitor chooses a preparation direction before setting a target',asy
 
 test('global search is neutral and preparation documents share their board in both languages',async({page})=>{
  await page.setViewportSize({width:1440,height:900});
- for(const prefix of ['', 'en/']){
+ for(const prefix of ['', '../']){
   for(const route of ['guide/','handbook/','framework/','capability-model/','browse/','roles/frontend/']){
    await page.goto(`${prefix}${route}`);
-   await expect(page.locator('#primary-navigation [aria-current=page]')).toHaveAttribute('href',new RegExp(`/${prefix}guide/`));
+   await expect(page.locator('#primary-navigation [aria-current=page]')).toHaveAttribute('href', prefix ? '/interview-compass/guide/' : '/interview-compass/zh/guide/');
    await expect(page.locator('[data-wiki-sidebar]')).toBeVisible();
    await expect(page.locator('.breadcrumbs')).toContainText(prefix ? 'Preparation guide' : '准备指南');
   }

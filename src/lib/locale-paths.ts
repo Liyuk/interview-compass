@@ -27,5 +27,5 @@ export function localeSwitchPath(
       if (target) return addBase(target, base);
     }
   }
-  return addBase(to === 'en' ? '/en/' : '/', base);
+  return addBase(to === 'en' ? '/' : '/zh/', base);
 }

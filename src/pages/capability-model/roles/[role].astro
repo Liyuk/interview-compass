@@ -4,4 +4,4 @@ import { audienceRoles } from '../../../lib/taxonomy';
 export function getStaticPaths() { return audienceRoles.map(role => ({ params: { role: role.id } })); }
 const roleId = Astro.params.role!;
 ---
-<RoleStageModelView roleId={roleId} locale="zh-CN" />
+<RoleStageModelView roleId={roleId} locale="en" />

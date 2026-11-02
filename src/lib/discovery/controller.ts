@@ -48,7 +48,7 @@ async function loadCatalog() {
     if (!response.ok) throw new Error('catalog');
     const payload = await response.json();
     if (!Array.isArray(payload.questions) || !payload.questions.every((item: CatalogRecord) => typeof item.questionId === 'string' && typeof item.question === 'string' && Array.isArray(item.profiles))) throw new Error('catalog-version');
-    return payload.questions.map((item: CatalogRecord) => ({ id: item.questionId, title: item.question, url: `${base}/${en ? 'en/' : ''}questions/${item.questionId}/`, profiles: item.profiles, facets: { capability: [item.primaryCapability], domain: [item.primaryCapability.split('.')[0]], topic: item.topics, role: item.roles, scope: item.responsibilityScopes, track: item.careerTracks, scenario: item.scenarios, format: item.formats } }));
+    return payload.questions.map((item: CatalogRecord) => ({ id: item.questionId, title: item.question, url: `${base}/${en ? '' : 'zh/'}questions/${item.questionId}/`, profiles: item.profiles, facets: { capability: [item.primaryCapability], domain: [item.primaryCapability.split('.')[0]], topic: item.topics, role: item.roles, scope: item.responsibilityScopes, track: item.careerTracks, scenario: item.scenarios, format: item.formats } }));
   }).catch(reason => { catalogPending = undefined; throw reason; });
   catalog = await catalogPending;
   return catalog!;

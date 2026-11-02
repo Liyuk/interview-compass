@@ -1,22 +1,22 @@
 # Interview Compass
 
-**工程师的面试与晋升指南**
-
 **A guide to engineering interviews and promotions.**
+
+**工程师的面试与晋升指南**
 
 [![Build and deploy](https://github.com/Liyuk/interview-compass/actions/workflows/deploy.yml/badge.svg)](https://github.com/Liyuk/interview-compass/actions/workflows/deploy.yml)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
 [![Content: CC BY-NC-SA 4.0](https://img.shields.io/badge/content-CC_BY--NC--SA_4.0-lightgrey)](CONTENT-LICENSE.md)
 
-**先看清岗位，再讲清证据。**
-
 **Know the role. Show the evidence.**
+
+**先看清岗位，再讲清证据。**
 
 一套面向候选人、面试官与管理者的双语面试和晋升参考。看懂岗位要解决什么、问题想判断什么，再用有上下文、能核实的经历说明能力与匹配度。
 
 A bilingual interview and promotion reference for candidates, interviewers, and hiring managers. Understand what the role needs and what a question is testing, then use contextual, checkable experience to explain capability and fit.
 
-**[打开中文站点](https://liyuk.github.io/interview-compass/)** · **[Open the English site](https://liyuk.github.io/interview-compass/en/)**
+**[Open the English site](https://liyuk.github.io/interview-compass/)** · **[打开中文站点](https://liyuk.github.io/interview-compass/zh/)**
 
 ## Built from practice
 
@@ -62,7 +62,7 @@ npm ci
 npm run dev
 ```
 
-The site has Chinese and English routes for the home page, six goal-based paths, curated question sets, a filterable full library, a user guide, the questioning framework, an eight-domain capability map, role, scenario and topic views, and question pages. Question cards distinguish individually reviewed analysis from shared reading prompts. Stage profiles describe role-specific behaviors, evidence to inspect, and the distinction between professional-contributor and management paths. First-time visitors can select one of six engineering specializations and a responsibility stage, then browse strictly matching questions and search results. The header always allows changing the target or viewing all questions. A shared link temporarily overrides the local choice without overwriting it. Search uses Pagefind per language and reviewed role–stage combination. The Pages base path is `/interview-compass/`; the Chinese site is at `/interview-compass/` and English at `/interview-compass/en/`.
+The site has English routes at the root and Chinese routes under `/zh/` for the home page, six goal-based paths, curated question sets, a filterable question library, guides, an eight-domain capability map, role, scenario and topic views, and question pages. Question cards distinguish reviewed analysis from shared reading prompts. Stage profiles describe role-specific behaviors and evidence across professional-contributor and management paths. Visitors can select an engineering specialization and responsibility stage, then browse matching questions and search results. The header keeps the target controls available, and shared links preserve each recipient’s saved preference. Search uses Pagefind by language and reviewed role–stage combination. The GitHub Pages base path is `/interview-compass/`.
 
 Each question page can generate a structured analysis prompt for a user-selected external AI tool. The site does not collect answers or send them anywhere. The question library also has a compact public data feed for selected question cards. The companion skill at `skills/interview-compass-coach/` uses that feed for question lookup and follows the same evidence and privacy limits.
 

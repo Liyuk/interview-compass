@@ -13,13 +13,13 @@ const data = { questionId: question.questionId, roles, primaryCapability: questi
 ---
 <section class="question-stage-guidance detail-block" aria-labelledby="question-stage-heading" data-question-stage data-pagefind-ignore>
   <h2 id="question-stage-heading">{en ? 'What changes across career stages?' : '同一道题，不同阶段看什么？'}</h2>
-  <p>{en ? 'The question stays the same. Choose a target to compare responsibility, reasoning, and evidence. This changes the reading framework, not the question’s difficulty or your score.' : '题目不变，选择目标后比较责任、推理与证据要求。这会调整阅读框架，不给题目定难度，也不替你打分。'}</p>
+  <p>{en ? 'Choose a target to compare the responsibility, reasoning, and evidence expected at that stage.' : '选择目标阶段，对照相应的责任、推理和证据要求。'}</p>
   <AsyncStatus loading={en ? 'Loading stage model…' : '正在加载阶段模型…'} retry={en ? 'Retry stage model' : '重试阶段模型'} />
   <div class="stage-controls">
     <label for="question-target-role">{en ? 'Target role' : '目标岗位'}<span class="select-control"><select disabled id="question-target-role" data-stage-role>{roles.map(role => <option value={role}>{facetLabel('roles', role, locale)}</option>)}</select><Icon name="chevron-down" size={16} /></span></label>
     <label for="question-target-stage">{en ? 'Target responsibility' : '目标阶段'}<span class="select-control"><select disabled id="question-target-stage" data-stage-select><option value="">{en ? 'Choose a stage' : '选择一个阶段'}</option></select><Icon name="chevron-down" size={16} /></span></label>
   </div>
-  <p class="model-note">{en ? 'These are rule-based reading prompts, not separately reviewed stage-specific answers or a verdict that this question applies to every stage. Use your actual role and authority.' : '以下是规则生成的阶段阅读提示，不是逐题复核的分阶段答案，也不表示这道题适用于所有阶段。请结合实际岗位和权限。'}</p>
+  <p class="model-note">{en ? 'These rule-based prompts connect the question to each stage. Apply them to your actual role and authority.' : '这些规则提示用于联系问题与阶段要求，请结合实际岗位和权限理解。'}</p>
   <p><a data-stage-model href={modelPaths[roles[0]]}>{en ? 'View the full role and stage model →' : '查看本岗位的完整阶段模型 →'}</a></p>
   <div data-stage-detail hidden>
     <p class="stage-status" role="status" aria-live="polite" data-stage-status></p>
@@ -34,7 +34,7 @@ const data = { questionId: question.questionId, roles, primaryCapability: questi
     <details><summary>{en ? 'Connect this question’s signals to stage evidence' : '结合本题信号，检查阶段证据'}</summary><ul data-stage-signals></ul><ul data-stage-evidence></ul></details>
     <details><summary>{en ? 'How to calibrate the 1–4 anchors' : '如何按目标阶段校准 1–4 分'}</summary><p data-stage-field="scoreNote"></p><ol data-stage-scores></ol></details>
   </div>
-  <details class="stage-compare"><summary>{en ? 'Compare expectations across stages' : '展开对比各阶段要求'}</summary><p>{en ? 'This table compares responsibility lenses, not mandatory question coverage or a ranking of people.' : '这里对比责任视角，不表示各阶段必考范围，也不是对人的排名。'}</p><div class="stage-table-scroll"><table><thead><tr><th>{en ? 'Stage' : '阶段'}</th><th>{en ? 'Responsibility' : '责任要求'}</th><th>{en ? 'Result evidence' : '结果证据'}</th></tr></thead><tbody data-stage-compare></tbody></table></div></details>
+  <details class="stage-compare"><summary>{en ? 'Compare expectations across stages' : '展开对比各阶段要求'}</summary><p>{en ? 'Compare how responsibility and outcome evidence change across stages.' : '对照各阶段的责任范围和结果证据要求。'}</p><div class="stage-table-scroll"><table><thead><tr><th>{en ? 'Stage' : '阶段'}</th><th>{en ? 'Responsibility' : '责任要求'}</th><th>{en ? 'Result evidence' : '结果证据'}</th></tr></thead><tbody data-stage-compare></tbody></table></div></details>
   <noscript><p>{en ? 'Enable JavaScript for the stage comparison. Role models and question evidence remain available.' : '阶段对比需要 JavaScript；岗位模型及本题证据仍可直接阅读。'}</p></noscript>
   <script type="application/json" data-stage-question set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
 </section>

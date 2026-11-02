@@ -16,7 +16,7 @@ test('the handbook exposes the shared outline and maps a section when changing l
   await page.goto('handbook/#岗位与阶段目标');
   await expect(page.getByRole('navigation', { name: '本页目录', exact: true })).toBeVisible();
   await page.getByRole('link', { name: 'EN', exact: true }).click();
-  await expect(page).toHaveURL(/\/en\/handbook\/#role-and-stage-targets$/);
+  await expect(page).toHaveURL(/\/handbook\/#role-and-stage-targets$/);
   await expect(page.locator('h2#role-and-stage-targets')).toBeVisible();
 });
 
@@ -25,7 +25,7 @@ test('a chapter selected after load remains selected when switching language', a
   await page.goto('framework/');
   await page.getByRole('navigation', { name: '本页目录', exact: true }).locator('a[href="#interviewer-step-2"]').click();
   await page.getByRole('link', { name: 'EN', exact: true }).click();
-  await expect(page).toHaveURL(/\/en\/framework\/#interviewer-step-2$/);
+  await expect(page).toHaveURL(/\/framework\/#interviewer-step-2$/);
   await expect(page.locator('h3#interviewer-step-2')).toBeVisible();
 });
 
