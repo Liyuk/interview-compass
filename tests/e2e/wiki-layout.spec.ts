@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 
 test('all route families retain global navigation with task appropriate content', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
-  for (const prefix of ['', 'en/']) {
+  for (const prefix of ['', '../']) {
     for (const route of ['', 'questions/', 'questions/prioritization-limited-resources/', 'search/?q=rollback', 'browse/', 'roles/frontend/', 'topics/planning/', 'scenarios/promotion/', 'capabilities/delivery/', 'capabilities/delivery/capacity-planning/', 'capability-model/', 'capability-model/stages/junior-engineer/', 'capability-model/dimensions/business-results/', 'capability-model/mapping/', 'collections/', 'collections/general-interview/', 'paths/business-planning/', 'framework/', 'handbook/']) {
       await page.goto(`${prefix}${route}`);
       await expect(page.locator('main h1').first()).toBeVisible();
@@ -30,7 +30,7 @@ test('all route families retain global navigation with task appropriate content'
 test('section navigation stays local and mobile menus do not move the article', async ({ page }) => {
   for (const width of [320,390,768,1024,1440]) {
     await page.setViewportSize({width,height:900});
-    for (const route of ['questions/', 'capabilities/delivery/capacity-planning/', 'handbook/', 'en/handbook/']) {
+    for (const route of ['questions/', 'capabilities/delivery/capacity-planning/', 'handbook/', '../handbook/']) {
       await page.goto(route);
       await expect(page.locator('main h1').first()).toBeVisible();
       const layout = await page.evaluate(() => ({
@@ -165,7 +165,7 @@ test('mobile home renders its collapsed navigation before first paint', async ({
 
 test('the English footer wraps when fallback fonts widen its links at tablet widths', async ({ page }) => {
   await page.setViewportSize({width:768,height:900});
-  await page.goto('en/handbook/');
+  await page.goto('../handbook/');
   await page.addStyleTag({content:'.site-footer { font-family: monospace; }'});
   const layout = await page.evaluate(()=>({width:innerWidth, scrollWidth:document.documentElement.scrollWidth}));
   expect(layout.scrollWidth).toBeLessThanOrEqual(layout.width);

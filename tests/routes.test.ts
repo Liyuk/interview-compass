@@ -34,24 +34,24 @@ describe('taxonomy', () => {
 
 describe('route model', () => {
   it('builds base-aware, localized paths from one definition', () => {
-    expect(pathFor({ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' }, 'zh-CN', base)).toBe('/interview-compass/capabilities/delivery/capacity-planning/');
-    expect(pathFor({ type: 'role', id: 'product' }, 'en', base)).toBe('/interview-compass/en/roles/product/');
-    expect(pathFor({ type: 'home' }, 'en', base)).toBe('/interview-compass/en/');
-    expect(pathFor({ type: 'search' }, 'zh-CN', base)).toBe('/interview-compass/search/');
-    expect(pathFor({ type: 'search' }, 'en', base)).toBe('/interview-compass/en/search/');
-    expect(pathFor({ type: 'collections' }, 'zh-CN', base)).toBe('/interview-compass/collections/');
-    expect(pathFor({ type: 'collection', id: 'general-interview' }, 'en', base)).toBe('/interview-compass/en/collections/general-interview/');
-    expect(pathFor({ type: 'framework' }, 'zh-CN', base)).toBe('/interview-compass/framework/');
-    expect(pathFor({ type: 'guide' }, 'zh-CN', base)).toBe('/interview-compass/handbook/');
-    expect(pathFor({ type: 'role-stage-model', role: 'product' }, 'en', base)).toBe('/interview-compass/en/capability-model/roles/product/');
+    expect(pathFor({ type: 'leaf', domain: 'delivery', leaf: 'capacity-planning' }, 'zh-CN', base)).toBe('/interview-compass/zh/capabilities/delivery/capacity-planning/');
+    expect(pathFor({ type: 'role', id: 'product' }, 'en', base)).toBe('/interview-compass/roles/product/');
+    expect(pathFor({ type: 'home' }, 'en', base)).toBe('/interview-compass/');
+    expect(pathFor({ type: 'search' }, 'zh-CN', base)).toBe('/interview-compass/zh/search/');
+    expect(pathFor({ type: 'search' }, 'en', base)).toBe('/interview-compass/search/');
+    expect(pathFor({ type: 'collections' }, 'zh-CN', base)).toBe('/interview-compass/zh/collections/');
+    expect(pathFor({ type: 'collection', id: 'general-interview' }, 'en', base)).toBe('/interview-compass/collections/general-interview/');
+    expect(pathFor({ type: 'framework' }, 'zh-CN', base)).toBe('/interview-compass/zh/framework/');
+    expect(pathFor({ type: 'guide' }, 'zh-CN', base)).toBe('/interview-compass/zh/handbook/');
+    expect(pathFor({ type: 'role-stage-model', role: 'product' }, 'en', base)).toBe('/interview-compass/capability-model/roles/product/');
     expect(activeNavFor({ type: 'role-stage-model', role: 'product' })).toBe('capability-model');
     expect(breadcrumbsFor({ type: 'role-stage-model', role: 'product' }, 'zh-CN', base).map(c => c.label)).toEqual(['首页', '准备指南', '阶段能力', '产品 · 阶段能力']);
   });
 
   it('models localized not-found pages as wiki routes without a misleading current section', () => {
     const notFound: RouteRef = { type: 'not-found' };
-    expect(pathFor(notFound, 'zh-CN', base)).toBe('/interview-compass/404.html');
-    expect(pathFor(notFound, 'en', base)).toBe('/interview-compass/en/404/');
+    expect(pathFor(notFound, 'zh-CN', base)).toBe('/interview-compass/zh/404/');
+    expect(pathFor(notFound, 'en', base)).toBe('/interview-compass/404.html');
     expect(titleFor(notFound, 'zh-CN')).toBe('页面不存在');
     expect(titleFor(notFound, 'en')).toBe('Page not found');
     expect(parentOf(notFound)).toEqual({ type: 'home' });
@@ -60,14 +60,14 @@ describe('route model', () => {
   });
 
   it('switches language to the same route in the other locale', () => {
-    expect(switchLocaleRoute(question, 'en', base)).toBe('/interview-compass/en/questions/planning-reduced-resources/');
+    expect(switchLocaleRoute(question, 'en', base)).toBe('/interview-compass/questions/planning-reduced-resources/');
   });
 
   it('gives a question the canonical trail Home > Questions > Domain > Leaf > Question', () => {
     const crumbs = breadcrumbsFor(question, 'en', base);
     expect(crumbs.map((crumb) => crumb.label)).toEqual(['Home', 'Question library', 'Delivery and ongoing operations', 'Capacity and dependencies', '调整计划']);
     expect(crumbs.at(-1)?.href).toBeUndefined();
-    expect(crumbs[2].href).toBe('/interview-compass/en/capabilities/delivery/');
+    expect(crumbs[2].href).toBe('/interview-compass/capabilities/delivery/');
   });
 
   it('uses the natural hierarchy for facet and capability pages', () => {

@@ -31,7 +31,7 @@ test('candidate due diligence questions are useful for hiring and promotion with
   await expect(page.getByRole('heading', { name: '晋升沟通' })).toBeVisible();
   await expect(page.getByText('评估参考')).toHaveCount(0);
   await expect(page.getByText('4 · 卓越')).toHaveCount(0);
-  await page.goto('en/collections/candidate-due-diligence/');
+  await page.goto('../collections/candidate-due-diligence/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Questions to assess a role');
   await expect(page.getByRole('heading', { name: 'Promotion conversations' })).toBeVisible();
 });
@@ -49,7 +49,7 @@ test('questioning framework explains interviewer probes, candidate answers, and 
   await expect(page.getByRole('heading', { name: '用反向提问做双向尽调' })).toBeVisible();
   await expect(page.getByText(/前后矛盾是澄清背景的线索/)).toBeVisible();
   await expect(page.locator('.framework-collection-link')).toHaveAttribute('href', /\/collections\/candidate-due-diligence\/$/);
-  await page.goto('en/framework/');
+  await page.goto('../framework/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Interviewing guide');
   await expect(page.getByRole('heading', { name: 'Compare options, test assumptions, and verify outcomes' })).toBeVisible();
   for (const lens of ['Learning', 'Self-direction', 'Thinking', 'Resilience']) await expect(page.locator('.growth-lenses').getByText(lens, { exact: true })).toBeVisible();

@@ -1,0 +1,23 @@
+# Interview Compass
+
+> A bilingual reference for engineering interviews and promotion. Start with the role, examine decisions and contribution, and support conclusions with evidence.
+
+## English
+
+- [Home](https://liyuk.github.io/interview-compass/): Overview and entry points.
+- [Preparation guide](https://liyuk.github.io/interview-compass/guide/): Choose a role, responsibility scope, and useful questions.
+- [Question library](https://liyuk.github.io/interview-compass/questions/): Search published interview and promotion questions.
+- [Interviewing guide](https://liyuk.github.io/interview-compass/framework/): Plan questions, follow-ups, and evidence review.
+- [Capability map](https://liyuk.github.io/interview-compass/capabilities/): Browse questions by capability.
+- [Career-stage model](https://liyuk.github.io/interview-compass/capability-model/): Compare responsibility across career stages.
+
+## 简体中文
+
+- [首页](https://liyuk.github.io/interview-compass/zh/): 站点介绍与内容入口。
+- [准备指南](https://liyuk.github.io/interview-compass/zh/guide/): 确定岗位、责任范围与练习方向。
+- [面试题库](https://liyuk.github.io/interview-compass/zh/questions/): 浏览与搜索面试、晋升问题。
+- [提问框架](https://liyuk.github.io/interview-compass/zh/framework/): 设计问题、追问并核验证据。
+- [能力地图](https://liyuk.github.io/interview-compass/zh/capabilities/): 按能力查找问题。
+- [阶段能力模型](https://liyuk.github.io/interview-compass/zh/capability-model/): 对照不同职业阶段的责任要求。
+
+This file is a compact navigation aid. Use the linked pages as the source of truth; page content and metadata describe the full context.

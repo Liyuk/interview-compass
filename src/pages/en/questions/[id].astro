@@ -1,8 +1,0 @@
----
-import QuestionView from '../../../views/QuestionView.astro';
-import { questionStaticPaths } from '../../../lib/site-data';
-const locale = 'en' as const;
-export function getStaticPaths() { return questionStaticPaths('en'); }
-const { id } = Astro.params as Record<string, string>;
----
-<QuestionView locale={locale} id={id} />

@@ -71,32 +71,32 @@ const lenses = en ? [
     <h1 class="page-title">{en ? 'Overall approach' : '整体思路'}</h1>
     <p class="approach-thesis">{en ? 'Make the work happen. Then understand what made it work.' : '先把事情做成，再看清它为什么能成。'}</p>
     <p>{en ? 'Interview Compass applies that habit to interviews and promotion: know the role, show the evidence.' : 'Interview Compass 把这种思路放进面试与晋升：先看清岗位，再讲清证据。'}</p>
-    <p class="intro">{en ? 'The site serves three perspectives: candidates, interviewers, and managers. Candidates are the primary audience: use the library to prepare for interviews, promotion conversations, and defenses with evidence from your own work. Interviewers and managers can use the same framework to make and support decisions.' : '站点有三个视角：候选人、面试官和管理者。候选人是主要服务对象，可以用题库从自己的经历里找证据，准备面试、晋升沟通和答辩；面试官和管理者也能用同一套框架做判断、推动事情。'}</p>
+    <p class="intro">{en ? 'Candidates use the library to prepare for interviews, promotion conversations, and defenses with evidence from their own work. Interviewers and managers use the same framework to clarify expectations and support decisions.' : '候选人可以从自己的经历中整理证据，准备面试、晋升沟通和答辩；面试官和管理者可以用同一套框架明确要求、支持判断。'}</p>
   </header>
 
   <section id="why-this-site">
     <h2>{en ? 'Why this site exists' : '为什么做这个站点'}</h2>
     <p>{en ? 'A polished story or a successful launch is not enough to judge the work. The same result can come from different decisions, team contributions, constraints, and luck. A useful conversation reconstructs the path from the goal to the outcome and makes the evidence inspectable.' : '一段讲得漂亮的经历，或一个成功上线的项目，都不足以说明工作做得如何。同一个结果可能来自不同判断、团队贡献、限制条件，甚至运气。真正有用的交流，要能还原从目标到结果的过程，让依据可以被检查。'}</p>
-    <p>{en ? 'That is why the library is organized around questions, evidence, and follow-ups rather than model answers. The questions help people explain their own work and help interviewers test what they need to know without pretending every person or context is identical.' : '所以这里的内容以问题、证据和追问为主，不提供一套标准答案。问题帮助当事人讲清自己的工作，也帮助面试官核实需要了解的内容，而不是假设每个人、每种情境都一样。'}</p>
+    <p>{en ? 'Questions, evidence, and follow-ups help candidates explain their work and help interviewers examine role-relevant decisions in context.' : '问题、证据和追问帮助候选人讲清工作经历，也帮助面试官结合岗位背景核实判断。'}</p>
   </section>
 
   <section id="work-to-outcome">
     <h2>{en ? 'From a real goal to an outcome' : '从真实目标到实际结果'}</h2>
-    <p>{en ? 'The sequence below is a reasoning path, not a script. In practice, teams revisit earlier steps as facts change.' : '下面是一条思考路径，不是要求照念的话术。实际工作中，事实变了，就要回头重新判断。'}</p>
+    <p>{en ? 'Use this sequence to structure the conversation. Revisit earlier steps as facts change.' : '按这条思路展开交流；事实变化时，回到前面的步骤重新判断。'}</p>
     <ol class="approach-steps">{steps.map(([title, description], index) => <li><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{title}</h3><p>{description}</p></div></li>)}</ol>
     <aside class="approach-callout"><strong>{en ? 'The through-line is execution.' : '贯穿始终的是把事情做成。'}</strong><p>{en ? 'A good explanation shows what needed to change, why this path was chosen, how people made it happen, what the result cost, and what the team learned.' : '有说服力的经历要讲清楚：什么需要改变，为什么选这条路，大家如何把它推进，结果付出了什么代价，以及团队学到了什么。'}</p></aside>
   </section>
 
   <section id="eight-lenses">
     <h2>{en ? 'Eight lenses on the work' : '观察工作的八个维度'}</h2>
-    <p>{en ? 'The domains are different lenses on the same work, not eight boxes a person must check. A project may require several at once; role scope changes what evidence is appropriate.' : '八个能力域是观察同一份工作的不同视角，不是要求一个人逐格打勾。完成一个项目可能同时需要多个维度；责任范围不同，合适的证据也会不同。'}</p>
+    <p>{en ? 'Use the eight domains to examine different parts of the same work. A project may draw on several at once, and the role’s scope shapes the evidence to look for.' : '八个能力域从不同角度观察同一份工作。一个项目可能同时涉及多个维度，岗位责任也决定应关注哪些证据。'}</p>
     <dl class="approach-lenses">{lenses.map(([letter, title, description]) => <div><dt><span>{letter}</span>{title}</dt><dd>{description}</dd></div>)}</dl>
   </section>
 
   <section id="candidate-perspective" class="candidate-perspective">
     <p class="eyebrow">{en ? 'PERSPECTIVE 1 · CANDIDATE' : '视角一 · 候选人'}</p>
-    <h2>{en ? 'Use the site to prepare your evidence, not memorize answers' : '用站点整理证据，不是背标准答案'}</h2>
-    <p>{en ? 'Most people who arrive here are preparing to be a candidate. Start from the role and decision you care about, then use the questions to find and explain evidence from work you have actually done. The library is a map for preparation, not a checklist you need to finish.' : '大多数来这里的人，是为了准备自己作为候选人的那一面。先从目标岗位和这次要争取的机会出发，再用题目找到真实经历里的证据，把自己的判断和贡献讲明白。题库是准备地图，不是必须刷完的清单。'}</p>
+    <h2>{en ? 'Prepare with evidence from your work' : '从真实经历中整理证据'}</h2>
+    <p>{en ? 'Start with the role and decision you care about. Use the questions to find evidence from work you have done and explain how your choices shaped the outcome. Follow the path that serves your preparation.' : '从目标岗位和要做的决定开始，用题目梳理真实经历，说明你的选择如何影响结果。沿着适合自己的路径准备。'}</p>
     <ol class="candidate-steps">
       <li><strong>{en ? 'Choose a target.' : '先定目标。'}</strong>{en ? 'Pick the role, responsibility scope, and context: an external interview, promotion review, or project/technical defense. A title alone does not tell you what evidence the decision requires.' : '选清岗位、目标责任范围和场景：外部面试、晋升评审，还是项目/技术答辩。职位名称本身不能说明这次判断需要什么证据。'}</li>
       <li><strong>{en ? 'Translate the target into work.' : '把目标还原成工作。'}</strong>{en ? 'What outcomes does the role own? Which technical fundamentals, business understanding, collaboration, or leadership decisions matter? Use the role and capability pages to identify the expected scope.' : '这个角色要对什么结果负责？哪些技术基础、业务理解、协作或管理判断最重要？通过岗位和能力页面看清预期责任范围。'}</li>
@@ -104,7 +104,7 @@ const lenses = en ? [
       <li><strong>{en ? 'Check what the result proves.' : '检查结果能证明什么。'}</strong>{en ? 'Separate team outcome from your contribution. State the evidence, its limits, side effects, and other possible causes. A failed or delayed project can still show sound judgment if you explain what changed in your later work.' : '把团队结果和个人贡献分开，说明证据、边界、副作用和其他可能原因。项目失败或延期也可以体现好的判断，前提是讲清后来做法有什么改变。'}</li>
       <li><strong>{en ? 'Practice the conversation and assess fit.' : '练习交流，也判断是否匹配。'}</strong>{en ? 'Use questions to find gaps, then practice answering follow-ups in your own words. Ask the interviewer about real responsibilities, standards, support, and constraints; compare those answers with what you need and what the organization can sustain.' : '用题目找到经历中的缺口，再用自己的话练习追问。也要向面试官了解真实责任、标准、支持和约束，并对照个人诉求判断组织能否持续匹配。'}</li>
     </ol>
-    <p>{en ? 'The goal is not to sound flawless. It is to help the other person understand your decisions and evidence, notice what you still need to learn, and decide whether the role fits both sides.' : '目标不是把自己讲得毫无缺点，而是让对方听懂你的判断和证据，看见你还要补什么，也让你判断这份工作是否适合双方。'}</p>
+    <p>{en ? 'Explain your decisions and evidence clearly, identify what you still want to learn, and decide whether the role fits your goals.' : '清楚说明判断和证据，找出自己还想了解的部分，再判断岗位是否符合你的目标。'}</p>
     <p class="approach-links"><a href={pathFor({ type: 'preparation' }, locale, base)}>{en ? 'Follow the preparation guide' : '按准备指南确定方向'}</a><a href={pathFor({ type: 'collection', id: 'core-candidate-preparation' }, locale, base)}>{en ? 'Practice candidate questions' : '练习候选人精选题'}</a><a href={pathFor({ type: 'collection', id: 'technical-selected' }, locale, base)}>{en ? 'Review technical questions' : '复习技术精选题'}</a><a href={pathFor({ type: 'collection', id: 'candidate-due-diligence' }, locale, base)}>{en ? 'Prepare questions for the employer' : '准备反向提问'}</a></p>
     <p class="approach-links"><a href={pathFor({ type: 'topic', id: 'operating-systems' }, locale, base)}>{en ? 'Operating systems' : '操作系统'}</a><a href={pathFor({ type: 'topic', id: 'computer-networks' }, locale, base)}>{en ? 'Computer networks' : '计算机网络'}</a><a href={pathFor({ type: 'topic', id: 'databases' }, locale, base)}>{en ? 'Databases' : '数据库'}</a></p>
   </section>
@@ -112,7 +112,7 @@ const lenses = en ? [
   <section id="interviewer-perspective">
     <p class="eyebrow">{en ? 'PERSPECTIVE 2 · INTERVIEWER' : '视角二 · 面试官'}</p>
     <h2>{en ? 'Design questions around the decision you need to make' : '围绕要做的判断设计问题'}</h2>
-    <p>{en ? 'Start with the role’s outcomes and responsibility scope. Decide which evidence would change your assessment, then use questions and follow-ups to gather it. Keep the criteria comparable while allowing candidates to show different paths; separate observed facts from interpretation, and do not turn one answer into a verdict on someone’s character.' : '从岗位结果和责任范围开始，先想清楚什么证据会影响判断，再用问题和追问把它收集出来。标准要可比较，也要允许候选人用不同路径展示能力；把观察到的事实和自己的解释分开，不用单次回答给人品行下定论。'}</p>
+    <p>{en ? 'Start with the role’s outcomes and responsibility scope. Decide which evidence would change your assessment, then use questions and follow-ups to gather it. Keep criteria comparable while leaving room for different paths, and distinguish observed facts from interpretation.' : '从岗位结果和责任范围开始，想清楚哪些证据会影响判断，再通过问题和追问收集信息。保持标准可比较，也给不同经历留出空间；把观察到的事实与个人解释分开。'}</p>
     <p class="approach-links"><a href={pathFor({ type: 'framework' }, locale, base)}>{en ? 'Read the interviewing method' : '阅读提问方法'}</a><a href={pathFor({ type: 'collection', id: 'core-interviewer-evidence' }, locale, base)}>{en ? 'Browse interviewer questions' : '查看面试官取证题单'}</a></p>
   </section>
 
@@ -130,7 +130,7 @@ const lenses = en ? [
 
   <section id="people-judgment">
     <h2>{en ? 'People, judgment, and fit' : '识人、判断与匹配'}</h2>
-    <p>{en ? 'Questions about humility, ego, maturity, resilience, or professionalism should not become personality labels. Look at behavior over time: how someone responds to disagreement, updates a view when evidence changes, credits others, owns mistakes, regulates emotion, and treats commitments.' : '谦卑、自我感、成熟度、韧性或职业操守，不该被简化成性格标签。要看一段时间里的行为：如何面对不同意见，证据变化时是否修正观点，是否承认他人贡献、承担错误、管理情绪并遵守承诺。'}</p>
+    <p>{en ? 'Assess humility, maturity, resilience, and professionalism through behavior over time: responses to disagreement, updates when evidence changes, credit given to others, ownership of mistakes, emotional regulation, and follow-through on commitments.' : '结合一段时间里的行为，判断谦逊、成熟、韧性与职业操守：如何面对异议，是否根据新证据调整观点，是否认可他人贡献、承担错误、管理情绪并履行承诺。'}</p>
     <p>{en ? 'Confidence or a strong ego is not automatically a problem; the question is whether capability is real and whether the person can learn, collaborate, and keep the impact of that style within healthy bounds. Fit is also mutual: compare what the person needs, what the organization can offer, and whether that match can last as the work changes.' : '自信或较强的自我感不自动等于问题；要看能力是否扎实，也要看这个人能否学习、协作，并把自身风格带来的影响控制在健康范围内。匹配也是双向的：对照个人的诉求、组织能提供的条件，以及工作变化后这种匹配能否持续。'}</p>
     <p>{en ? 'Setbacks belong in the same evidence-based view. A failed project does not settle the question by itself; examine the decisions, constraints, response, recovery, and whether learning changed later behavior.' : '挫折也应放在同一套证据视角里看。项目失败本身不能定论；要检查当时的判断、限制条件、应对和恢复过程，以及学到的东西是否改变了后续行为。'}</p>
   </section>

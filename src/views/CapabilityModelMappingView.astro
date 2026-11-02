@@ -18,7 +18,7 @@ const outline = [
 ];
 ---
 <SiteLayout locale={locale} route={route} description={en ? 'A cautious guide to partial cross-company level mapping.' : '了解跨公司职级映射可以比较什么，以及它的边界。'} outline={outline}>
-  <p class="eyebrow">{en ? 'PARTIAL COMPARISON · NOT A RUBRIC' : '部分对照 · 不是晋升标准'}</p>
+<p class="eyebrow">{en ? 'LEVEL MAPPING · COMPARISON GUIDE' : '职级映射 · 对照参考'}</p>
   <h1 class="page-title">{en ? 'Cross-company level mapping' : '跨公司职级映射：可比范围与边界'}</h1>
   <p class="source-date">{mapping.reviewDate}</p>
   <p class="intro">{mapping.intro}</p>
@@ -26,7 +26,7 @@ const outline = [
   <section class="model-section" aria-labelledby="mapping-sources-heading">
     <div class="model-section-heading">
       <div><p class="eyebrow">{en ? 'External references' : '外部参考'}</p><h2 id="mapping-sources-heading">{en ? 'What these sources can tell you' : '两个来源各自能提供什么'}</h2></div>
-      <p>{en ? 'Use them as discovery and comparison aids. Neither publishes a complete, authoritative promotion rubric for every role.' : '它们适合用来发现职级名称和对照线索；都不能代表每个岗位完整、权威的晋升能力标准。'}</p>
+      <p>{en ? 'Use these sources to compare titles and identify shared signals. Check your organization’s rubric for role-specific expectations.' : '用这些资料比较职级名称、寻找共通线索；具体岗位要求以所在组织的标准为准。'}</p>
     </div>
     <div class="mapping-grid mapping-grid-two">
       {mapping.references.map((reference) => <article class="mapping-card">
@@ -48,7 +48,7 @@ const outline = [
   </section>
 
   <aside class="model-callout">
-    <div><p class="eyebrow">{en ? 'Capability model' : '能力模型'}</p><strong>{en ? 'Our capability model is an editorial heuristic for organizing questions, not a company level conversion.' : '本站能力模型是整理题库用的启发式草稿，不是公司职级换算表。'}</strong></div>
+    <div><p class="eyebrow">{en ? 'Capability model' : '能力模型'}</p><strong>{en ? 'The editorial model organizes questions by responsibility and evidence. Use your company rubric for level decisions.' : '编辑模型按责任与证据组织题库；职级判断请结合所在组织的标准。'}</strong></div>
     <a class="button-link" href={pathFor({ type: 'capability-model' }, locale, base)}>{en ? 'View the model' : '查看本站模型'} <Icon name="arrow-right" size={16} /></a>
   </aside>
 </SiteLayout>

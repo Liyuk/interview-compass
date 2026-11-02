@@ -101,21 +101,21 @@ describe('taxonomy audit coverage', () => {
 });
 
 describe('localized routes and search', () => {
-  it('applies the GitHub Pages base to root and English routes exactly once', () => {
+  it('applies the GitHub Pages base to root and prefixed legacy routes exactly once', () => {
     expect(addBase('/questions/q1/', '/interview-compass')).toBe('/interview-compass/questions/q1/');
     expect(addBase('/en/questions/q1/', '/interview-compass')).toBe('/interview-compass/en/questions/q1/');
     expect(addBase('/interview-compass/en/questions/q1/', '/interview-compass')).toBe('/interview-compass/en/questions/q1/');
   });
 
   it('switches language on the paired question route and falls back to that locale home when unpaired', () => {
-    expect(localeSwitchPath('/questions/q1/', 'zh-CN', 'en', { q1: { 'zh-CN': '/questions/q1/', en: '/en/questions/q1/' } }, '/interview-compass'))
-      .toBe('/interview-compass/en/questions/q1/');
-    expect(localeSwitchPath('/questions/q2/', 'zh-CN', 'en', {}, '/interview-compass')).toBe('/interview-compass/en/');
+    expect(localeSwitchPath('/zh/questions/q1/', 'zh-CN', 'en', { q1: { 'zh-CN': '/zh/questions/q1/', en: '/questions/q1/' } }, '/interview-compass'))
+      .toBe('/interview-compass/questions/q1/');
+    expect(localeSwitchPath('/zh/questions/q2/', 'zh-CN', 'en', {}, '/interview-compass')).toBe('/interview-compass/');
   });
 
   it('accepts only same-origin search destinations inside the configured base path', () => {
     const options = { origin: 'https://liyuk.github.io', basePath: '/interview-compass' };
-    expect(safeSearchResultHref('/interview-compass/en/questions/q1/', options)).toBe('/interview-compass/en/questions/q1/');
+    expect(safeSearchResultHref('/interview-compass/questions/q1/', options)).toBe('/interview-compass/questions/q1/');
     expect(safeSearchResultHref('https://example.com/phishing', options)).toBeUndefined();
     expect(safeSearchResultHref('javascript:alert(1)', options)).toBeUndefined();
     expect(safeSearchResultHref('/outside/questions/q1/', options)).toBeUndefined();

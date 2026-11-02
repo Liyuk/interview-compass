@@ -18,41 +18,41 @@ const outline=article==='capabilities' ? [{id:'framework-overview',label:en?'Cap
 <SiteLayout locale={locale} route={route} outline={outline} description={en?'Understand capabilities and role expectations, choose your preparation direction, and start with relevant questions.':'理解能力与角色要求，确定准备方向，再进入相关方法与问题清单。'}>
  <h1 class="page-title">{titleFor(route,locale)}</h1>
  {!article ? <>
-  <p class="intro">{en?'You do not need to read every guide before practicing. Set a target, understand what the interview is trying to learn, then work through relevant questions and review your evidence.':'不必读完所有说明再开始练习。先确定目标，理解面试各方想判断什么，再进入相关题目，用真实经历和证据复盘。'}</p>
+  <p class="intro">{en?'Choose a target, review what the interview needs to learn, then practice with relevant questions and evidence from your work.':'先确定目标，了解面试要判断什么，再用相关问题和真实工作证据练习。'}</p>
   <h2 id="reading-route">{en?'Recommended reading':'推荐阅读顺序'}</h2>
   <ol class="preparation-reading-list">{steps.map(step=><li><a href={pathFor(step.route,locale,base)}>{en?step.en:step.zh}</a><p>{en?step.english:step.description}</p></li>)}</ol>
   <h2 id="reference-reading">{en?'References when you need them':'遇到具体问题时再查'}</h2>
-  <p>{en?'The capability framework, role-stage model, and category index provide detail when you need it. External repositories are optional supplements for targeted study; they are not prerequisites for using this site.':'能力框架、岗位阶段模型和分类索引用于回答具体问题时查阅。外部仓库只是定向补充资料，不是使用本站或开始练习的前置要求。'}</p>
+  <p>{en?'Use the capability framework, role-stage model, and category index when you need more detail. External repositories offer focused material for deeper study.':'需要更多细节时，查阅能力框架、岗位阶段模型和分类索引。外部仓库可用于专项学习。'}</p>
   <p><a href={link('guide-capabilities')}>{en?'Capability framework':'能力框架'}</a> · <a href={link('capability-model')}>{en?'Role and stage requirements':'岗位与阶段要求'}</a> · <a href={link('browse')}>{en?'Category index':'分类索引'}</a></p>
   <p class="supplementary-link"><span>{en?'Optional external reading':'可选外部资料'}</span><a href={pathFor({type:'guide-resources'},locale,base)}>{en?'External interview resources':'外部面试资料参考'}</a><small>{en?'CS fundamentals, project deep dives, and behavioral interview prompts.':'计算机基础、项目深挖与行为面试题的外部参考。'}</small></p>
   <h2 id="start-preparing">{en?'Start preparing':'开始准备'}</h2>
   <p>{en?'Already know your direction? Browse the library, choose a curated set, or search directly. Your current target is always available in the upper-right corner.':'已经明确准备方向？可以直接进入题库、选择精选题单或搜索。右上角随时可以查看和修改当前目标。'}</p>
   <p class="journey-links"><a href={link('questions')}>{en?'Open the question library':'进入面试题库'}</a><a href={link('collections')}>{en?'Choose a curated set':'选择精选题单'}</a><a href={link('search')}>{en?'Search all content':'全站搜索'}</a></p>
  </> : article==='capabilities' ? <>
-  <p class="intro">{en?'A capability describes what a question examines. A responsibility stage describes the scope in which evidence is interpreted. Neither is a label for a person’s overall ability.':'能力说明问题考察什么，责任阶段说明在什么范围内理解证据。先看清这两个坐标，再确定准备方向。'}</p>
+  <p class="intro">{en?'A capability describes what a question examines; a responsibility stage sets the scope for interpreting evidence. Together they help you choose a useful preparation direction.':'能力说明问题考察什么，责任阶段说明如何结合范围理解证据。用这两个坐标确定准备方向。'}</p>
   <h2 id="framework-overview">{en?'Capabilities, responsibility, evidence':'能力、责任与证据'}</h2>
   <p>{en?'Read the model through three questions: what work is involved, what decisions and outcomes the role owns, and what observable evidence supports a judgment. The same question can be useful at several stages, with different expectations for responsibility and contribution.':'可以用三个问题读模型：涉及哪些工作，本人负责哪些判断与结果，用什么可观察的证据支持结论。同一道题可以用于多个阶段，变化的是责任、取舍与贡献的要求。'}</p>
   <p>{en?'Professional contribution and engineering management are different responsibility paths. Years of experience and company titles do not automatically determine a stage.':'专业贡献与工程管理是不同的责任路径。工作年限、公司职级名称和项目规模不能直接决定阶段。'}</p>
   <h2 id="capability-domains">{en?'Eight capability domains':'八个能力域'}</h2>
   <dl class="preparation-domains">{domains.map(domain=><div><dt><a href={pathFor({type:'domain',domain:domain.id},locale,base)}>{domain.letter} · {pick(domain.name,locale)}</a></dt><dd>{pick(domain.description,locale)}</dd></div>)}</dl>
   <h2 id="using-the-framework">{en?'Use the framework':'如何使用框架'}</h2>
-  <p>{en?'Each published question has one primary capability. Role, topic, context, and question format are overlapping views of the same content. The categories aim for clear boundaries; they do not claim to exhaust every possible interview topic.':'每道已发布问题有一个主要能力归属。岗位、主题、场景和题型是同一批问题的交叉视角。主分类追求边界清晰，不代表本站穷尽了所有面试知识。'}</p>
+  <p>{en?'Each published question has one primary capability. Role, topic, context, and format provide different ways into the same library, with clear categories for browsing.':'每道已发布问题有一个主要能力归属。岗位、主题、场景和题型提供不同入口，分类清晰，便于查找。'}</p>
   <p>{en?'Read role expectations before choosing a target. Shared 1–4 evidence references describe individual dimensions; dedicated question analyses are labelled separately and never form an automatic overall score.':'选目标前先了解角色要求。共用的 1–4 档证据参考用于理解单项能力；逐题分析会单独标识，不据此自动生成个人总分。'}</p>
   <p class="journey-links"><a href={link('guide-direction')}>{en?'Choose your preparation direction':'确定准备方向'}</a><a href={link('capability-model')}>{en?'Read role expectations':'阅读角色要求'}</a></p>
  </> : <>
-  <p class="intro">{en?'Choose the work and responsibility you want to prepare for or assess. Read the expectations first; apply a target when you are ready. Exploring these pages does not change your target.':'选择本次准备或评估的工作与责任范围。先阅读要求，再明确应用目标；浏览模型和比较阶段不会自动修改当前选择。'}</p>
+  <p class="intro">{en?'Choose the work and responsibility you want to prepare for or assess. Review the expectations, then set a target when you are ready.':'选择本次准备或评估的工作与责任范围。先了解要求，再设置目标。'}</p>
   <h2 id="choose-role">{en?'Understand the role':'理解岗位'}</h2>
-  <p>{en?'Candidates choose the role they are preparing for. Interviewers choose the role being assessed. Cross-functional topics broaden engineering judgment; they do not create additional target professions.':'候选人选择准备胜任的岗位，面试官选择被评估的岗位。业务、产品与协作主题用于拓展工程判断，不额外生成求职岗位。'}</p>
+  <p>{en?'Candidates choose the role they are preparing for; interviewers choose the role being assessed. Cross-functional topics add business, product, and collaboration context to engineering work.':'候选人选择准备胜任的岗位，面试官选择正在评估的岗位。业务、产品和协作主题补充工程工作的背景。'}</p>
   <ul>{audienceRoles.map(role=><li><a href={pathFor({type:'role-stage-model',role:role.id},locale,base)}>{pick(role.name,locale)}</a></li>)}</ul>
   <h2 id="choose-responsibility">{en?'Choose target responsibility':'确定目标责任'}</h2>
-  <p>{en?'Compare the scope, decisions, contribution and evidence for a role. For promotion, focus on sustained responsibility and attributable outcomes. Your target stage is the responsibility you are preparing for, not an automated assessment of your current level.':'对照岗位的责任范围、判断、贡献与证据。晋升准备尤其关注持续承担的责任和可归因结果。目标阶段表示准备承担的责任，不是对当前水平的自动测评。'}</p>
+  <p>{en?'Compare a role’s scope, decisions, contribution, and evidence. For promotion, focus on sustained responsibility and attributable outcomes. Your target stage describes the responsibility you are preparing to take on.':'对照岗位的责任范围、判断、贡献与证据。晋升准备关注持续承担的责任和可归因结果。目标阶段表示你准备承担的责任。'}</p>
   <button type="button" class="secondary-button preparation-target-action" data-edit-target>{en?'Choose a preparation or assessment target':'选择准备或评估目标'}</button>
   <noscript><p>{en?'With JavaScript disabled, use the role pages and their matching-question links to browse directly.':'未启用 JavaScript 时，可通过岗位模型页的匹配题目链接直接浏览。'}</p></noscript>
   <h2 id="choose-context">{en?'Choose the context':'选择使用场景'}</h2>
   <p>{en?'The target contains a role and stage. Interview, promotion and interviewer contexts are independent question filters. A context can change which questions are useful without changing your target.':'准备目标由岗位与阶段组成。求职、晋升和面试官等场景是独立筛选条件；切换场景可以改变问题清单，不必修改准备目标。'}</p>
   <p><a href={link('scenarios')}>{en?'Read preparation paths by context':'按使用场景阅读准备路径'}</a></p>
   <h2 id="start-preparing">{en?'Start preparing':'开始准备'}</h2>
-  <p>{en?'Use the interviewing guide alongside the requirements of the role. Curated sets keep their intended order; when no questions match a target, the page explains why instead of adding unrelated questions.':'把共用提问方法与实际角色要求结合起来。精选题单保留编辑顺序；目标没有匹配题目时会说明原因，不自动补入无关内容。'}</p>
+  <p>{en?'Use the interviewing guide with the role requirements. Curated sets follow an intentional order; when no questions match a target, the page explains what is missing.':'结合岗位要求阅读提问指南。精选题单按设计顺序排列；目标没有匹配题目时，页面会说明原因。'}</p>
   <p class="journey-links"><a href={link('framework')}>{en?'Read preparation methods':'阅读提问与准备方法'}</a><a href={link('questions')}>{en?'Open the question library':'进入面试题库'}</a><a href={link('collections')}>{en?'Choose a curated set':'选择精选题单'}</a></p>
  </>}
 </SiteLayout>

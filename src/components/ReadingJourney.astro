@@ -5,7 +5,7 @@
   const journeyDetails = 'details:not([data-wiki-disclosure]):not([data-wiki-outline])';
   const locale: Locale = document.documentElement.lang === 'en' ? 'en' : 'zh-CN';
   const base = import.meta.env.BASE_URL;
-  const prefix = `${base.replace(/\/$/, '')}/${locale === 'en' ? 'en/' : ''}questions/`;
+  const prefix = `${base.replace(/\/$/, '')}/${locale === 'en' ? '' : 'zh/'}questions/`;
   const current = `${location.pathname}${location.search}${location.hash}`;
   try {
     const saved = JSON.parse(sessionStorage.getItem(key) ?? 'null');

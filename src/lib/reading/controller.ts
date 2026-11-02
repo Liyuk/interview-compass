@@ -8,7 +8,7 @@ import { withLinkPreference } from '../target-preferences';
 const locale = document.documentElement.lang === 'en' ? 'en' : 'zh-CN';
 const en = locale === 'en';
 const base = import.meta.env.BASE_URL;
-const prefix = `${base.replace(/\/$/, '')}/${en ? 'en/' : ''}`;
+const prefix = `${base.replace(/\/$/, '')}/${en ? '' : 'zh/'}`;
 const navigation = document.querySelector<HTMLElement>('[data-reading-navigation]');
 const collectionRoot = document.querySelector<HTMLDetailsElement>('[data-current-collection]');
 const currentQuestion = navigation?.dataset.currentQuestion;

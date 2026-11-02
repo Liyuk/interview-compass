@@ -12,7 +12,7 @@ if (errors.length) throw new Error(errors.join('; '));
 ---
 <section class="model-section" aria-labelledby="role-matrix-heading">
   <h2 id="role-matrix-heading">{en ? 'This role’s stage × A–H responsibility depth' : '本岗位的阶段 × A–H 责任深度'}</h2>
-  <p id="role-matrix-note">{en ? 'Editorial responsibility anchors, not measured mastery, company levels, or the 1–4 response score. Read within the role-relevant leaves. Integrity and safety apply at every stage; higher responsibility adds prevention and correction scope.' : '这是编辑性责任参照，不是实测掌握率、公司职级或回答的 1–4 分。请在岗位相关叶子内比较。诚信与安全始终是共同底线；更高责任扩大的是防护与纠偏范围。'}</p>
+  <p id="role-matrix-note">{en ? 'Use these editorial anchors to compare responsibility within role-relevant capabilities. Integrity and safety apply at every stage; broader responsibility adds prevention and correction.' : '用这些编辑性参照比较岗位相关能力的责任范围。诚信与安全贯穿各阶段；责任范围越大，越需要预防问题并推动纠偏。'}</p>
   <details><summary>{en ? 'Read the depth labels' : '查看各档位的含义'}</summary><dl>{depthAnchors.map(anchor => <><dt>{anchor.percent}% · {pick(anchor.name, locale)}</dt><dd>{pick(anchor.description, locale)}</dd></>)}</dl></details>
   <div class="matrix-scroll" role="region" aria-label={en ? 'Role responsibility depth matrix' : '岗位责任深度矩阵'} tabindex="0">
     <table class="capability-matrix" aria-describedby="role-matrix-note">

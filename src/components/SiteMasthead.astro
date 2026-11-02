@@ -62,14 +62,14 @@ const nav = siteNavigationFor(route, locale, base);
   </div>
   <dialog class="profile-dialog" data-profile-dialog aria-labelledby="profile-dialog-title" aria-describedby="profile-dialog-description">
     <h2 id="profile-dialog-title">{en ? 'Choose your preparation target' : '选择你的准备目标'}</h2>
-    <p id="profile-dialog-description">{en ? 'For engineers: choose your specialization and target responsibility. Questions and search will show only reviewed matches. You can switch or explore everything at any time.' : '面向工程师，选择专业方向和准备承担的责任阶段。题目与搜索将只显示已审核的匹配内容，随时可以切换或查看全部。'}</p>
+    <p id="profile-dialog-description">{en ? 'Choose your engineering specialization and target responsibility. The library will focus on reviewed matches; change your target or browse everything whenever you like.' : '选择工程专业方向和目标责任阶段，题库会优先显示已审核的匹配内容。你可以随时切换目标或浏览全部题目。'}</p>
     <p data-profile-error role="status" hidden>{en ? 'Preparation targets could not load. Retry or browse all questions.' : '准备目标暂时无法加载，请重试或先浏览全部题目。'}</p>
     <button type="button" class="secondary-button" data-profile-retry hidden>{en ? 'Retry' : '重试加载'}</button>
     <label for="profile-role">{en ? 'Role type' : '岗位类型'}</label>
     <span class="select-control"><select id="profile-role"><option value="">{en ? 'Choose a role' : '选择岗位'}</option></select><Icon name="chevron-down" size={16} /></span>
     <label for="profile-stage">{en ? 'Target stage' : '目标阶段'}</label>
     <span class="select-control"><select id="profile-stage" disabled><option value="">{en ? 'Choose a stage' : '选择阶段'}</option></select><Icon name="chevron-down" size={16} /></span>
-    <p class="profile-stage-description" data-profile-stage-description aria-live="polite">{en ? 'Stages describe responsibility, not years of experience or company title equivalence.' : '阶段表示责任要求，不按年限或公司职级名称换算。'}</p>
+    <p class="profile-stage-description" data-profile-stage-description aria-live="polite">{en ? 'Stages describe the responsibility you take on. Compare them with your organization’s expectations.' : '阶段描述承担的责任范围，可结合所在组织的要求理解。'}</p>
     <div class="profile-dialog-actions">
       <button type="button" class="profile-apply" data-profile-apply disabled>{en ? 'Browse this target' : '按此目标浏览'}</button>
       <button type="button" class="secondary-button" data-profile-all>{en ? 'Explore all questions' : '先看全部题目'}</button>

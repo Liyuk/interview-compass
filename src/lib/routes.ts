@@ -56,7 +56,7 @@ const labels = {
 
 export const navLabel = (key: keyof typeof labels, locale: Locale) => pick(labels[key], locale);
 
-const prefix = (locale: Locale) => (locale === 'en' ? '/en' : '');
+const prefix = (locale: Locale) => (locale === 'zh-CN' ? '/zh' : '');
 
 export function pathFor(ref: RouteRef, locale: Locale, base = ''): string {
   const root = prefix(locale);
@@ -67,7 +67,7 @@ export function pathFor(ref: RouteRef, locale: Locale, base = ''): string {
       case 'guide-direction': return `${root}/guide/direction/`;
       case 'guide-resources': return `${root}/guide/resources/`;
       case 'home': return `${root}/`;
-      case 'not-found': return locale === 'en' ? `${root}/404/` : `${root}/404.html`;
+      case 'not-found': return locale === 'en' ? `${root}/404.html` : `${root}/404/`;
       case 'browse': return `${root}/browse/`;
       case 'questions': return `${root}/questions/`;
       case 'search': return `${root}/search/`;

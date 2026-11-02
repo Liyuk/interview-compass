@@ -3,4 +3,4 @@ import CapabilityModelDimensionView from '../../../views/CapabilityModelDimensio
 import { dimensionIds, type CapabilityDimensionId } from '../../../lib/capability-model';
 export function getStaticPaths() { return dimensionIds.map((dimension) => ({ params: { dimension } })); }
 ---
-<CapabilityModelDimensionView locale="zh-CN" dimension={Astro.params.dimension as CapabilityDimensionId} />
+<CapabilityModelDimensionView locale="en" dimension={Astro.params.dimension as CapabilityDimensionId} />

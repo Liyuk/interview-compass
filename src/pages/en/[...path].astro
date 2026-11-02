@@ -1,0 +1,34 @@
+---
+import LegacyRedirect from '../../components/LegacyRedirect.astro';
+import { loadKnowledgeRegistry } from '../../lib/knowledge/site-registry';
+import { legacyEnglishPath } from '../../lib/legacy-routes';
+import { facetPageStaticPaths } from '../../lib/site-data';
+
+export async function getStaticPaths() {
+  const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL.slice(0, -1) : import.meta.env.BASE_URL;
+  const registry = await loadKnowledgeRegistry();
+  const redirects = new Map<string, string>();
+
+  for (const page of registry.pages('en')) {
+    if (!page.href || page.contentId === 'not-found') continue;
+    const oldPath = page.contentId === 'home' ? '' : legacyEnglishPath(page.href, base);
+    if (oldPath) redirects.set(oldPath, page.href);
+  }
+
+  redirects.set('404', `${base}/404.html`);
+
+  for (const kind of ['roles', 'scenarios', 'topics'] as const) {
+    const pages = await facetPageStaticPaths(kind, 'en');
+    for (const { params } of pages) {
+      const to = `${base}/${kind}/${params.id}/page/${params.page}/`;
+      redirects.set(legacyEnglishPath(to, base), to);
+    }
+  }
+
+  return [...redirects].map(([path, to]) => ({ params: { path }, props: { to } }));
+}
+
+const { to } = Astro.props;
+---
+
+<LegacyRedirect to={to} />

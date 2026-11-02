@@ -16,7 +16,7 @@ describe('task based page presentation', () => {
       const links = siteNavigationFor({ type: 'path', id: 'business-planning' }, locale, '/interview-compass/');
       expect(links).toHaveLength(3);
       expect(links.filter(link => link.current).map(link => link.key)).toEqual(['preparation']);
-      expect(links.every(link => link.href.startsWith(`/interview-compass/${locale === 'en' ? 'en/' : ''}`))).toBe(true);
+      expect(links.every(link => link.href.startsWith(`/interview-compass/${locale === 'zh-CN' ? 'zh/' : ''}`))).toBe(true);
       expect(siteNavigationFor({ type: 'topic', id: 'planning' }, locale, '').filter(link => link.current).map(link => link.key)).toEqual(['preparation']);
     }
   });

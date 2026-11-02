@@ -13,7 +13,7 @@ it('moves through a curated collection in authored order', () => {
   expect(session.current().next?.contentId).toBe('question:q2');
   expect(session.move(1).current?.contentId).toBe('question:q2');
   expect(session.current().next).toBeUndefined();
-  expect(session.current().source).toBe('/en/collections/technical/');
+  expect(session.current().source).toBe('/collections/technical/');
 });
 
 it('restores a saved reading order and survives unavailable or corrupt storage', () => {
@@ -53,7 +53,7 @@ it('rejects collection additions beyond 200 without silently dropping questions'
 it('migrates the old reading return without accepting foreign or malformed sources', () => {
   const storage = memory();
   storage.set('interview-compass-reading-return', JSON.stringify({from:'/en/questions/?page=2',to:'/en/questions/q1/'}));
-  expect(createReadingSession(storage,registry,{base:'/'}).current().source).toBe('/en/questions/?page=2');
+  expect(createReadingSession(storage,registry,{base:'/'}).current().source).toBe('/questions/?page=2');
   for(const source of ['//evil.example/en/questions/','/outside/questions/','/en/questions/\\evil','/en/questions/\u0000']) {
     const session = createReadingSession(memory(),registry,{base:'/'});
     expect(session.open({locale:'en',source,questionIds:['q1'],currentId:'q1'}).source).toBe('');
@@ -64,7 +64,7 @@ it('preserves the order and source when the reader changes language', () => {
   const storage = memory();
   createReadingSession(storage,registry,{base:'/'}).open({locale:'en',source:'/en/questions/?page=2&topic=cache',questionIds:['q3','q1','q2'],currentId:'q1'});
   const translated = createReadingSession(storage,registry,{base:'/',locale:'zh-CN'}).current();
-  expect(translated.source).toBe('/questions/?page=2&topic=cache');
+  expect(translated.source).toBe('/zh/questions/?page=2&topic=cache');
   expect(translated.current?.locale).toBe('zh-CN');
   expect(translated.next?.contentId).toBe('question:q2');
 });

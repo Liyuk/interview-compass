@@ -23,7 +23,7 @@ test('query and independent facets share URLs, back navigation, and locale switc
   await expect(page).toHaveURL(href);
   await expect(page.locator('select[name=topic]')).toHaveValue('system-design');
   await page.getByRole('link', { name: 'EN', exact: true }).click();
-  await expect(page).toHaveURL(/\/en\/questions\/.*topic=system-design.*searchScope=questions/);
+  await expect(page).toHaveURL(/\/questions\/.*topic=system-design.*searchScope=questions/);
 });
 
 test('instant search can reach documents while a preparation target is active', async ({ page }) => {

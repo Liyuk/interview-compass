@@ -22,7 +22,7 @@ test('primary navigation separates goals, questions, methods, guide, categories 
   await page.locator('main').getByRole('link',{name:'分类索引',exact:true}).click();
   await page.locator('.browse-index').getByRole('link', { name: /主题索引/ }).click();
   await expect(page).toHaveURL(/\/topics\/$/);
-  await page.goto('en/');
+  await page.goto('../');
   if (await page.locator('.nav-toggle').isVisible()) await page.locator('.nav-toggle').click();
   await expect(page.locator('.primary-nav a')).toHaveText(['Home', 'Preparation guide', 'Question library']);
 });
@@ -45,12 +45,12 @@ test('handbook uses the shared knowledge rail, TOC, search, language and footer'
   await expect(page.locator('#site-search')).toBeVisible();
   await expect(page.locator('.breadcrumbs')).toContainText('使用说明');
   await expect(page.locator('main')).toContainText('共用的 1–4 分证据参考');
-  await expect(page.locator('main')).toContainText('少部分已复核题目另有专属锚点');
+  await expect(page.locator('main')).toContainText('部分已复核题目还附有专属锚点');
   await expect(page.locator('main')).toContainText('提问方法');
   await expect(page.getByRole('main').getByRole('link', { name: '提问方法', exact: true })).toBeVisible();
   await expect(page.locator('.site-footer')).toContainText('© 2026 Liyuk');
   await page.getByRole('link', { name: 'EN' }).click();
-  await expect(page).toHaveURL(/\/en\/handbook\//);
+  await expect(page).toHaveURL(/\/handbook\//);
   if ((page.viewportSize()?.width ?? 1280) <= 760) await page.locator('[data-wiki-disclosure] > summary').click();
   await expect(page.getByRole('navigation', { name: 'Section navigation' }).getByRole('link', { name: 'How to use' })).toHaveAttribute('aria-current', 'page');
   if ((page.viewportSize()?.width ?? 1280) <= 760) await page.keyboard.press('Escape');
@@ -65,7 +65,7 @@ test('handbook uses the shared knowledge rail, TOC, search, language and footer'
 
 test('mobile navigation opens and closes without horizontal overflow', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 740 });
-  await page.goto('en/');
+  await page.goto('../');
   await expect(page.locator('.primary-nav')).toBeHidden();
   await page.locator('.nav-toggle').click();
   await expect(page.locator('.primary-nav')).toBeVisible();
@@ -87,7 +87,7 @@ test('audit paths show tagged questions in Chinese and English without changing 
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(zhTitle);
     await expect(page.locator('.question-list li').first()).toBeVisible();
     await expect(page.locator('.leaf-section').first()).toBeVisible();
-    await page.goto(`en/${path}`);
+    await page.goto(`../${path}`);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(enTitle);
     await expect(page.locator('.question-list li').first()).toBeVisible();
   }
@@ -99,7 +99,7 @@ test('capability leaves explain their classification boundary in both languages'
   await expect(zhBoundary.getByRole('heading', { name: '分类边界' })).toBeVisible();
   await expect(zhBoundary).toContainText('收录');
   await expect(zhBoundary).toContainText('相邻分类判断');
-  await page.goto('en/capabilities/professional/product-discovery-design/');
+  await page.goto('../capabilities/professional/product-discovery-design/');
   const enBoundary = page.locator('.leaf-boundary');
   await expect(enBoundary.getByRole('heading', { name: 'Classification boundary' })).toBeVisible();
   await expect(enBoundary).toContainText('Include');
@@ -110,7 +110,7 @@ test('capability path: home to domain to leaf to question with a canonical bread
   await page.goto('./');
   await page.locator('.hero-entry').filter({ hasText: '看懂问题主要在考察什么' }).click();
   await page.locator('.domain-block h3 a', { hasText: 'D ·' }).click();
-  await expect(page).toHaveURL(/\/interview-compass\/capabilities\/delivery\/$/);
+  await expect(page).toHaveURL(/\/interview-compass\/zh\/capabilities\/delivery\/$/);
   await page.getByRole('link', { name: '容量与依赖' }).first().click();
   await expect(page).toHaveURL(/\/capabilities\/delivery\/capacity-planning\/$/);
   const targetBatch = page.locator('.reading-batch').filter({ has: page.getByRole('link', { name: /可用工时减少三成/, includeHidden: true }) }).first();
@@ -140,9 +140,9 @@ test('question detail explains intent and signals, links its source, and keeps t
   for (const level of ['1 · 不通过', '2 · 通过', '3 · 优秀', '4 · 卓越']) await expect(page.getByRole('heading', { name: level, exact: true })).toBeVisible();
   await expect(page.getByText('本站原创')).toBeVisible();
   const href = await page.locator('.metadata-block a', { hasText: '通用工程' }).first().getAttribute('href');
-  expect(href).toMatch(/^\/interview-compass\/roles\/engineering\/$/);
+  expect(href).toMatch(/^\/interview-compass\/zh\/roles\/engineering\/$/);
   await page.getByRole('link', { name: 'EN' }).click();
-  await expect(page).toHaveURL(/\/interview-compass\/en\/questions\/prioritization-limited-resources\/$/);
+  await expect(page).toHaveURL(/\/interview-compass\/questions\/prioritization-limited-resources\/$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('How would you plan next quarter');
   await page.locator('.shared-question-framework > summary').click();
@@ -192,9 +192,9 @@ test('role, scenario and topic pages group the same questions by capability', as
   await expect(page.locator('select[name="scenario"]')).toHaveValue('promotion');
   await expect(page.locator('select[name="track"]')).toHaveValue('individual-contributor');
   await expect(page.locator('#question-list > li:visible').first()).toBeVisible();
-  await page.goto('en/scenarios/promotion/');
+  await page.goto('../scenarios/promotion/');
   await expect(page.getByRole('heading', { name: 'Prepare for promotion as a body of evidence' })).toBeVisible();
-  await page.goto('en/roles/');
+  await page.goto('../roles/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Roles');
 });
 
@@ -246,7 +246,7 @@ test('use cases present six goal-based paths and connect them to the right tools
   await expect(selfReview.getByRole('link', { name: '浏览复盘问题' })).toHaveAttribute('href', /\/scenarios\/self-reflection\/$/);
   await expect(selfReview.locator('a[href*="practice"]')).toHaveCount(0);
 
-  await page.goto('en/scenarios/');
+  await page.goto('../scenarios/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Choose a goal');
   await expect(page.locator('.scenario-path')).toHaveCount(6);
   await expect(page.getByText('Job candidate', { exact: true })).toBeVisible();
@@ -256,7 +256,7 @@ test('removed legacy question URLs return 404 in both locales', async ({ page })
   const zhResponse = await page.goto('questions/bulk-b-commercial-05/');
   expect(zhResponse?.status()).toBe(404);
 
-  const enResponse = await page.goto('en/questions/exp1500-b-015/');
+  const enResponse = await page.goto('../questions/exp1500-b-015/');
   expect(enResponse?.status()).toBe(404);
 });
 
@@ -267,7 +267,7 @@ test('footer publishes copyright and the separate code and content licenses', as
   await expect(footer.getByRole('link', { name: '代码许可 · MIT' })).toHaveAttribute('href', '/interview-compass/LICENSE');
   await expect(footer.getByRole('link', { name: '内容许可 · CC BY-NC-SA 4.0' })).toHaveAttribute('href', '/interview-compass/CONTENT-LICENSE.md');
   for (const file of ['LICENSE', 'CONTENT-LICENSE.md']) {
-    const response = await page.request.get(new URL(file, page.url()).href);
+    const response = await page.request.get(new URL(`/interview-compass/${file}`, page.url()).href);
     expect(response.ok()).toBeTruthy();
   }
 });
@@ -325,7 +325,7 @@ test('search supports keyboard focus and finds a localized question', async ({ p
   const searchAllHref = await page.locator('.search-all').getAttribute('href');
   if (!searchAllHref) throw new Error('Expected the all-results link to have an href');
   const allMatches = new URL(searchAllHref, page.url());
-  expect(allMatches.pathname).toBe('/interview-compass/search/');
+  expect(allMatches.pathname).toBe('/interview-compass/zh/search/');
   expect(allMatches.searchParams.get('q')).toBe('资源只够做两项');
   await page.keyboard.press('Escape');
   await expect(page.locator('.search-results')).toBeHidden();
@@ -334,13 +334,13 @@ test('search supports keyboard focus and finds a localized question', async ({ p
 test('language switching keeps search and question-library state', async ({ page }) => {
   await page.goto('search/?q=资源只够做两项');
   await page.locator('.language-switch a').click();
-  await expect(page).toHaveURL(/\/en\/search\//);
+  await expect(page).toHaveURL(/\/search\//);
   expect(new URL(page.url()).searchParams.get('q')).toBe('资源只够做两项');
   await expect(page.locator('#site-search')).toHaveValue('资源只够做两项');
 
   await page.goto('questions/?role=backend&scenario=promotion&page=2');
   await page.locator('.language-switch a').click();
-  await expect(page).toHaveURL(/\/en\/questions\//);
+  await expect(page).toHaveURL(/\/questions\//);
   expect(new URL(page.url()).search).toBe('?role=backend&scenario=promotion&page=2');
   await expect(page.locator('select[name="role"]')).toHaveValue('backend');
   await expect(page.locator('select[name="scenario"]')).toHaveValue('promotion');
@@ -348,10 +348,10 @@ test('language switching keeps search and question-library state', async ({ page
 });
 
 test('English search stays within the English index', async ({ page }) => {
-  await page.goto('en/');
+  await page.goto('../');
   await page.locator('#site-search').fill('capacity');
   await expect(page.locator('.search-results')).toBeVisible();
-  await expect(page.locator('.search-results a').first()).toHaveAttribute('href', /\/interview-compass\/en\//);
+  await expect(page.locator('.search-results a').first()).toHaveAttribute('href', /\/interview-compass\/(?!zh\/)/);
   await expect(page.locator('.search-results')).not.toContainText('资源只够做两项');
 });
 
@@ -372,21 +372,21 @@ test('search submits to the complete results page and opens a result under the P
   await expect(page).toHaveURL(/\/search\/?\?q=%E8%B5%84%E6%BA%90%E5%8F%AA%E5%A4%9F%E5%81%9A%E4%B8%A4%E9%A1%B9/);
   const result = page.locator('.search-page-result a').filter({ hasText: '资源只够做两项' }).first();
   await expect(result).toBeVisible();
-  await expect(result).toHaveAttribute('href', /^\/interview-compass\/questions\//);
+  await expect(result).toHaveAttribute('href', /^\/interview-compass\/zh\/questions\//);
   await result.click();
-  await expect(page).toHaveURL(/\/interview-compass\/questions\//);
+  await expect(page).toHaveURL(/\/interview-compass\/zh\/questions\//);
   await expect(page.getByRole('heading', { level: 1 })).toContainText('资源只够做两项');
 });
 
 test('English results are selected before the visible-result limit', async ({ page }) => {
-  await page.goto('en/?searchScope=questions');
+  await page.goto('../?searchScope=questions');
   await page.locator('#site-search').fill('AI');
   const resultLinks = page.locator('.search-results .search-result');
-  await expect(page.locator('.search-results .search-result[href*="/en/questions/"]')).toHaveCount(8);
+  await expect(page.locator('.search-results .search-result[href*="/questions/"]:not([href*="/zh/"])')).toHaveCount(8);
   expect(await resultLinks.count()).toBeLessThanOrEqual(16);
   const hrefs = await resultLinks.evaluateAll((links) => links.map((link) => (link as HTMLAnchorElement).getAttribute('href')));
   expect(hrefs.length).toBeGreaterThan(0);
-  expect(hrefs.every((href) => href?.includes('/interview-compass/en/'))).toBe(true);
+  expect(hrefs.every((href) => href?.startsWith('/interview-compass/') && !href.includes('/zh/'))).toBe(true);
 });
 
 test('search preserves Pagefind ranking and caps the visible results at eight', async ({ page }) => {
@@ -449,7 +449,7 @@ test('search reports an index failure in the active language', async ({ page }) 
     contentType: 'application/javascript',
     body: `export async function search(query, options) { if(options?.filters?.kind === 'docs') return {results:[]}; throw new Error('index unavailable'); }`,
   }));
-  await page.goto('en/');
+  await page.goto('../');
   await page.locator('#site-search').fill('failure');
   await expect(page.locator('.search-results')).toContainText('Search is unavailable. Try again.');
 });
@@ -535,7 +535,7 @@ test('skip link and navigation are keyboard reachable', async ({ page }) => {
 });
 
 test('deep links resolve under the Pages base in both languages', async ({ page }) => {
-  for (const path of ['capabilities/', 'en/capabilities/delivery/', 'paths/product-end-to-end/', 'en/scenarios/interview/']) {
+  for (const path of ['capabilities/', '../capabilities/delivery/', 'paths/product-end-to-end/', '../scenarios/interview/']) {
     const response = await page.goto(path);
     expect(response?.status()).toBe(200);
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
@@ -545,10 +545,10 @@ test('deep links resolve under the Pages base in both languages', async ({ page 
 test('capability model internal links retain the GitHub Pages base path', async ({ page }) => {
   await page.goto('capability-model/');
   const stageLink = page.locator('.stage-card').first();
-  await expect(stageLink).toHaveAttribute('href', /^\/interview-compass\/capability-model\/stages\//);
+  await expect(stageLink).toHaveAttribute('href', /^\/interview-compass\/zh\/capability-model\/stages\//);
   await stageLink.click();
-  await expect(page).toHaveURL(/\/interview-compass\/capability-model\/stages\/junior-engineer\//);
-  await expect(page.getByRole('link', { name: /查看维度变迁/ }).first()).toHaveAttribute('href', /^\/interview-compass\/capability-model\/dimensions\//);
+  await expect(page).toHaveURL(/\/interview-compass\/zh\/capability-model\/stages\/junior-engineer\//);
+  await expect(page.getByRole('link', { name: /查看维度变迁/ }).first()).toHaveAttribute('href', /^\/interview-compass\/zh\/capability-model\/dimensions\//);
 });
 
 test('capability dimension progression separates the IC and management paths', async ({ page }) => {
@@ -576,11 +576,11 @@ test('level mapping page distinguishes comparison clues from capability standard
   await expect(page.locator('.mapping-card').nth(1)).toContainText('粗略参考');
   await expect(page.getByText('本站不提供固定等价换算')).toBeVisible();
   await expect(page.getByText(/薪酬/)).toHaveCount(0);
-  await page.goto('en/capability-model/mapping/');
+  await page.goto('../capability-model/mapping/');
   await expect(page.getByRole('heading', { name: 'Cross-company level mapping', level: 1 })).toBeVisible();
   await expect(page.getByText('These references do not define capability standards.')).toBeVisible();
   await page.goto('capability-model/');
-  await expect(page.getByText('这是为组织本站题库而整理的通用启发式草稿')).toBeVisible();
+  await expect(page.getByText('这个编辑框架围绕责任与证据组织题库，可与所在组织的晋升标准对照使用。')).toBeVisible();
 });
 
 test('mobile layout keeps the main content within the viewport', async ({ page, isMobile }) => {
@@ -594,7 +594,7 @@ test('mobile layout keeps the main content within the viewport', async ({ page, 
 });
 
 test('matrix provides anchored expectations in both locales without page overflow', async ({ page }) => {
-  for (const prefix of ['', 'en/']) {
+  for (const prefix of ['', '../']) {
     await page.goto(`${prefix}capability-model/`);
     await page.locator('.reference-disclosure > summary').click();
     const matrix = page.locator('.capability-matrix');
@@ -615,7 +615,7 @@ test('stage profiles explain evaluation lenses, evidence limits, and conditional
   await expect(page.getByRole('heading', { name: '面试中需要核验的证据链' })).toBeVisible();
   await expect(page.getByText('仅当岗位规则允许且任务适合 AI 辅助时观察；不使用 AI 不能单独作为负面判断。')).toBeVisible();
   await expect(page.getByText('本标准的基础要求').first()).toBeVisible();
-  await page.goto('en/capability-model/stages/engineering-manager/');
+  await page.goto('../capability-model/stages/engineering-manager/');
   await expect(page.getByRole('heading', { name: 'Four complementary evaluation lenses' })).toBeVisible();
   await expect(page.getByText('Understands the team’s business flow, key domain rules, and data definitions')).toBeVisible();
   await expect(page.getByText(/Assess AI risk only when the team’s products, tools, or workflows involve AI\./)).toBeVisible();
@@ -695,9 +695,9 @@ test('home gives three audience-specific core paths to the first question in one
     await expect(page.locator('[data-core-question-path] a[data-core-question-link]').first()).toBeVisible();
     await page.goto('');
   }
-  await page.goto('en/');
+  await page.goto('../');
   await page.locator('[data-core-audience="candidate"]').click();
-  await expect(page).toHaveURL(/\/en\/collections\/core-candidate-preparation\/$/);
+  await expect(page).toHaveURL(/\/collections\/core-candidate-preparation\/$/);
   await expect(page.locator('[data-core-question-path] a[data-core-question-link]').first()).toBeVisible();
 });
 
@@ -731,7 +731,7 @@ test('question detail emphasizes evidence according to its reviewed respondent p
     if (perspective === 'interviewer') await expect(page.locator('[data-perspective-guide] [data-perspective-evidence]')).toContainText('卓越');
     if (perspective === 'manager') await expect(page.locator('[data-manager-feedback]')).toBeVisible();
     await expect(page.locator('head link[rel="alternate"][hreflang="zh-CN"]')).toHaveAttribute('href', /questions\//);
-    await expect(page.locator('head link[rel="alternate"][hreflang="en"]')).toHaveAttribute('href', /en\/questions\//);
+    await expect(page.locator('head link[rel="alternate"][hreflang="en"]')).toHaveAttribute('href', /questions\//);
   }
 });
 
