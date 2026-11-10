@@ -30,18 +30,18 @@
     "check:knowledge-output": "node scripts/check-knowledge-output.mjs"
   },
   "dependencies": {
-    "astro": "7.4.2",
-    "pagefind": "1.5.2"
+    "astro": "7.4.7",
+    "pagefind": "1.6.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
     "@astrojs/sitemap": "^3.7.4",
-    "@playwright/test": "1.64.1",
+    "@playwright/test": "1.65.0",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "js-yaml": "^5.5.0",
     "typescript": "6.0.3",
-    "vitest": "5.0.5"
+    "vitest": "5.1.0"
   },
   "overrides": {
     "postcss-selector-parser": "7.1.6"
